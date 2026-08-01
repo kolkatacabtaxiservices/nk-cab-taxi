@@ -1,0 +1,172 @@
+﻿node :  ΓÜá Specified "redirects" will not automatically work with "output: export". See more info here: 
+https://nextjs.org/docs/messages/export-no-custom-routes
+At line:1 char:1
++ node ".\node_modules\next\dist\bin\next" build 2>&1 | Out-File -FileP ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ( ΓÜá Specified ...o-custom-routes:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+ ΓÜá Specified "headers" will not automatically work with "output: export". See more info here: 
+https://nextjs.org/docs/messages/export-no-custom-routes
+   Γû▓ Next.js 15.5.20
+
+   Creating an optimized production build ...
+ ΓÜá Specified "redirects" will not automatically work with "output: export". See more info here: 
+https://nextjs.org/docs/messages/export-no-custom-routes
+ ΓÜá Specified "headers" will not automatically work with "output: export". See more info here: 
+https://nextjs.org/docs/messages/export-no-custom-routes
+ ΓÜá Specified "redirects" will not automatically work with "output: export". See more info here: 
+https://nextjs.org/docs/messages/export-no-custom-routes
+ ΓÜá Specified "headers" will not automatically work with "output: export". See more info here: 
+https://nextjs.org/docs/messages/export-no-custom-routes
+ ΓÜá Specified "redirects" will not automatically work with "output: export". See more info here: 
+https://nextjs.org/docs/messages/export-no-custom-routes
+ ΓÜá Specified "headers" will not automatically work with "output: export". See more info here: 
+https://nextjs.org/docs/messages/export-no-custom-routes
+ Γ£ô Compiled successfully in 14.5s
+   Linting and checking validity of types ...
+
+./src/app/services/round-trip/page.tsx
+10:30  Warning: 'Route' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/services/wedding-car-rental/page.tsx
+9:37  Warning: 'Star' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/services/[service]/[city]/page.tsx
+5:45  Warning: 'Users' is defined but never used.  @typescript-eslint/no-unused-vars
+107:9  Warning: 'ServiceIcon' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/tours/[tour]/page.tsx
+4:59  Warning: 'ChevronRight' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/[state]/[city]/wedding-car/page.tsx
+30:9  Warning: 'metaPrices' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+
+./src/components/FareCalculator.tsx
+4:30  Warning: 'Car' is defined but never used.  @typescript-eslint/no-unused-vars
+4:42  Warning: 'ArrowRight' is defined but never used.  @typescript-eslint/no-unused-vars
+4:54  Warning: 'IndianRupee' is defined but never used.  @typescript-eslint/no-unused-vars
+4:94  Warning: 'ChevronDown' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/lib/cityContent.ts
+347:17  Warning: 'stateName' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+   Collecting page data ...
+   Generating static pages (0/16763) ...
+   Generating static pages (4190/16763) 
+   Generating static pages (8381/16763) 
+   Generating static pages (11705/16763) 
+   Generating static pages (12572/16763) 
+ Γ£ô Generating static pages (16763/16763)
+   Finalizing page optimization ...
+   Collecting build traces ...
+ ΓÜá rewrites, redirects, and headers are not applied when exporting your application, detected (redirects, headers). 
+See more info here: https://nextjs.org/docs/messages/export-no-custom-routes
+   Exporting (0/2) ...
+ Γ£ô Exporting (2/2)
+
+Route (app)                                           Size  First Load JS
+Γöî Γùï /                                                228 B         140 kB
+Γö£ Γùï /_not-found                                      127 B         103 kB
+Γö£ ΓùÅ /[state]                                       2.66 kB         136 kB
+Γö£   Γö£ /west-bengal
+Γö£   Γö£ /odisha
+Γö£   Γö£ /jharkhand
+Γö£   Γöö [+2 more paths]
+Γö£ ΓùÅ /[state]/[city]                                3.04 kB         140 kB
+Γö£   Γö£ /west-bengal/kolkata
+Γö£   Γö£ /west-bengal/siliguri
+Γö£   Γö£ /west-bengal/darjeeling
+Γö£   Γöö [+116 more paths]
+Γö£ ΓùÅ /[state]/[city]/airport-transfer               2.67 kB         136 kB
+Γö£   Γö£ /west-bengal/kolkata/airport-transfer
+Γö£   Γö£ /west-bengal/siliguri/airport-transfer
+Γö£   Γö£ /west-bengal/darjeeling/airport-transfer
+Γö£   Γöö [+116 more paths]
+Γö£ ΓùÅ /[state]/[city]/local                          2.67 kB         136 kB
+Γö£   Γö£ /west-bengal/kolkata/local
+Γö£   Γö£ /west-bengal/siliguri/local
+Γö£   Γö£ /west-bengal/darjeeling/local
+Γö£   Γöö [+116 more paths]
+Γö£ ΓùÅ /[state]/[city]/one-way                        2.67 kB         136 kB
+Γö£   Γö£ /west-bengal/kolkata/one-way
+Γö£   Γö£ /west-bengal/siliguri/one-way
+Γö£   Γö£ /west-bengal/darjeeling/one-way
+Γö£   Γöö [+116 more paths]
+Γö£ ΓùÅ /[state]/[city]/outstation                     2.67 kB         136 kB
+Γö£   Γö£ /west-bengal/kolkata/outstation
+Γö£   Γö£ /west-bengal/siliguri/outstation
+Γö£   Γö£ /west-bengal/darjeeling/outstation
+Γö£   Γöö [+116 more paths]
+Γö£ ΓùÅ /[state]/[city]/round-trip                     2.67 kB         136 kB
+Γö£   Γö£ /west-bengal/kolkata/round-trip
+Γö£   Γö£ /west-bengal/siliguri/round-trip
+Γö£   Γö£ /west-bengal/darjeeling/round-trip
+Γö£   Γöö [+116 more paths]
+Γö£ ΓùÅ /[state]/[city]/wedding-car                    2.67 kB         136 kB
+Γö£   Γö£ /west-bengal/kolkata/wedding-car
+Γö£   Γö£ /west-bengal/siliguri/wedding-car
+Γö£   Γö£ /west-bengal/darjeeling/wedding-car
+Γö£   Γöö [+116 more paths]
+Γö£ Γùï /about                                           132 B         116 kB
+Γö£ Γùï /apple-icon.png                                    0 B            0 B
+Γö£ Γùï /blog                                          3.23 kB         115 kB
+Γö£ ΓùÅ /blog/[slug]                                   1.42 kB         113 kB
+Γö£   Γö£ /blog/complete-guide-cab-service-kolkata
+Γö£   Γö£ /blog/kolkata-to-darjeeling-road-trip-guide
+Γö£   Γö£ /blog/kolkata-airport-cab-service-guide
+Γö£   Γöö [+7 more paths]
+Γö£ Γùï /contact                                       4.08 kB         137 kB
+Γö£ Γùï /faq                                             132 B         116 kB
+Γö£ Γùï /fare-chart                                    3.23 kB         115 kB
+Γö£ Γùï /fleet                                         3.89 kB         116 kB
+Γö£ Γùï /icon.png                                          0 B            0 B
+Γö£ Γùï /jamshedpur-to-kolkata-cab                       140 B         137 kB
+Γö£ Γùï /kolkata-cab-vs-ola-uber                         132 B         116 kB
+Γö£ Γùï /kolkata-to-jamshedpur-cab                       140 B         137 kB
+Γö£ ΓùÅ /kolkata/[area]                                2.66 kB         136 kB
+Γö£   Γö£ /kolkata/salt-lake
+Γö£   Γö£ /kolkata/new-town
+Γö£   Γö£ /kolkata/howrah
+Γö£   Γöö [+9 more paths]
+Γö£ Γùï /privacy-policy                                1.42 kB         113 kB
+Γö£ ΓùÅ /routes/[route]                                1.48 kB         141 kB
+Γö£   Γö£ /routes/kolkata-to-siliguri
+Γö£   Γö£ /routes/siliguri-to-kolkata
+Γö£   Γö£ /routes/kolkata-to-darjeeling
+Γö£   Γöö [+13805 more paths]
+Γö£ ΓùÅ /routes/[route]/[vehicle]                      1.48 kB         141 kB
+Γö£   Γö£ /routes/kolkata-to-salt-lake-kolkata/sedan
+Γö£   Γö£ /routes/kolkata-to-salt-lake-kolkata/suv
+Γö£   Γö£ /routes/kolkata-to-salt-lake-kolkata/tempo
+Γö£   Γöö [+1997 more paths]
+Γö£ Γùï /services                                      3.89 kB         116 kB
+Γö£ ΓùÅ /services/[service]/[city]                       140 B         137 kB
+Γö£   Γö£ /services/local-taxi/kolkata
+Γö£   Γö£ /services/outstation/kolkata
+Γö£   Γö£ /services/one-way/kolkata
+Γö£   Γöö [+46 more paths]
+Γö£ Γùï /services/airport-transfer                       140 B         137 kB
+Γö£ Γùï /services/corporate-car-rental                   140 B         137 kB
+Γö£ Γùï /services/local-taxi                             140 B         137 kB
+Γö£ Γùï /services/one-way                                140 B         137 kB
+Γö£ Γùï /services/outstation                             140 B         137 kB
+Γö£ Γùï /services/round-trip                             140 B         137 kB
+Γö£ Γùï /services/wedding-car-rental                     140 B         137 kB
+Γö£ Γùï /terms                                         1.42 kB         113 kB
+Γö£ Γùï /tours                                         3.23 kB         115 kB
+Γöö ΓùÅ /tours/[tour]                                  2.66 kB         136 kB
+    Γö£ /tours/darjeeling-tour
+    Γö£ /tours/puri-konark-tour
+    Γö£ /tours/sundarbans-tour
+    Γöö [+17 more paths]
++ First Load JS shared by all                       103 kB
+  Γö£ chunks/1255-e3fb9cba5defc177.js                46.4 kB
+  Γö£ chunks/4bd1b696-f785427dddbba9fb.js            54.2 kB
+  Γöö other shared chunks (total)                       2 kB
+
+
+Γùï  (Static)  prerendered as static content
+ΓùÅ  (SSG)     prerendered as static HTML (uses generateStaticParams)
+

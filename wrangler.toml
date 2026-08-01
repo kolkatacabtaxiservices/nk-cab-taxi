@@ -1,0 +1,24 @@
+# wrangler.toml — Cloudflare Pages configuration
+# Used by: wrangler pages deploy out --project-name=nk-cab-taxi
+#
+# Cloudflare Pages serves static HTML from ./out/ directly via CDN.
+# Dynamic API routes are handled by ./functions/api/*.ts (Pages Functions).
+# This setup provides:
+#   - Zero CPU cost for static pages (CDN serves them directly)
+#   - No Error 1102 — ever
+#   - Free tier: unlimited static requests, 100k dynamic function calls/day
+#
+# Pages project must be created once in Cloudflare Dashboard:
+#   https://dash.cloudflare.com → Pages → Create a project → Direct Upload
+# Or via CLI: wrangler pages project create nk-cab-taxi
+
+name = "nk-cab-taxi"
+pages_build_output_dir = "out"
+compatibility_date = "2025-07-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+NEXT_PUBLIC_SITE_URL = "https://www.nkcabtaxi.com"
+
+[observability]
+enabled = true

@@ -1,0 +1,42 @@
+{
+  "name": "nk-cab-taxi",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "postbuild": "node scripts/cleanup-out.js",
+    "start": "next start",
+    "lint": "eslint",
+    "build:cf": "node scripts/split-routes-by-city.js && node scripts/generate-static-sitemaps.js && node scripts/generate-static-files.js && next build && node scripts/cleanup-out.js",
+    "deploy": "wrangler pages deploy out --project-name=nk-cab-taxi --commit-dirty=true"
+  },
+  "dependencies": {
+    "framer-motion": "^12.38.0",
+    "lucide-react": "^1.7.0",
+    "next": "15",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260710.1",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "babel-plugin-react-compiler": "1.0.0",
+    "cross-env": "^10.1.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.1",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "wrangler": "4.111.0"
+  },
+  "browserslist": [
+    "Chrome >= 94",
+    "Firefox >= 94",
+    "Safari >= 15.4",
+    "Edge >= 94",
+    "iOS >= 15.4"
+  ]
+}
