@@ -1,5 +1,5 @@
 # wrangler.toml — Cloudflare Pages configuration
-# Used by: wrangler pages deploy out --project-name=nk-cab-taxi
+# Used by: wrangler pages deploy out --project-name=kolkata-cab-service
 #
 # Cloudflare Pages serves static HTML from ./out/ directly via CDN.
 # Dynamic API routes are handled by ./functions/api/*.ts (Pages Functions).
@@ -12,7 +12,7 @@
 #   https://dash.cloudflare.com → Pages → Create a project → Direct Upload
 # Or via CLI: wrangler pages project create nk-cab-taxi
 
-name = "nk-cab-taxi"
+name = "kolkata-cab-service"
 pages_build_output_dir = "out"
 compatibility_date = "2025-07-01"
 compatibility_flags = ["nodejs_compat"]
