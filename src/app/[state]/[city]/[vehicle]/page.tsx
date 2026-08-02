@@ -213,8 +213,6 @@ export default async function CityVehiclePage({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFaqSchema(faqs)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(vehicleSchema) }} />
-      {/* AggregateRating — 4.8★ star ratings in vehicle SERPs */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateAggregateRatingSchema()) }} />
 
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="relative text-white py-12 lg:py-16 overflow-hidden">

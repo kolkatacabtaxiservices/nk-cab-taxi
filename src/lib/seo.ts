@@ -1722,19 +1722,9 @@ export function generateTaxiServiceSchema() {
 // AGGREGATE RATING SCHEMA — 4.8★ across all pages
 // ═══════════════════════════════════════════════════
 export function generateAggregateRatingSchema() {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': `${DOMAIN}/#localbusiness`,
-    name: BUSINESS.name,
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '5000',
-      bestRating: '5',
-      worstRating: '1',
-    },
-  };
+  // Global LocalBusiness schema in layout.tsx already provides canonical aggregateRating.
+  // Returning empty object prevents duplicate AggregateRating errors in Google Search Console.
+  return {};
 }
 
 // ═══════════════════════════════════════════════════
@@ -2038,12 +2028,6 @@ export function generateRouteTripActionSchema(
       name: BUSINESS.name,
       telephone: BUSINESS.phone,
       url: DOMAIN,
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: '4.8',
-        reviewCount: '5000',
-        bestRating: '5',
-      },
     },
     areaServed: [
       { '@type': 'Place', name: fromName },
@@ -2383,13 +2367,6 @@ export function generateCityGeoCircleSchema(cityName: string, stateName: string,
       addressCountry: 'IN',
     },
     offers: { '@type': 'AggregateOffer', lowPrice: '11', highPrice: '25', priceCurrency: 'INR', offerCount: '5', image: OG_IMAGE_URL },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue,
-      reviewCount,
-      bestRating: '5',
-      worstRating: '1',
-    },
     availableChannel: [
       { '@type': 'ServiceChannel', serviceUrl: DOMAIN, name: 'Website' },
       { '@type': 'ServiceChannel', servicePhone: BUSINESS.phone, name: 'Phone' },

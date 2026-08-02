@@ -135,13 +135,6 @@ export default async function AreaPage({ params }: { params: Promise<{ area: str
     ],
     priceRange: '₹₹',
     openingHoursSpecification: { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'], opens: '00:00', closes: '23:59' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '2847',
-      bestRating: '5',
-      worstRating: '1',
-    },
   };
 
   return (
