@@ -34,11 +34,11 @@ export default function ContactPage() {
         'ContactPage'
       )) }} />
 
-      {/* Geo meta — Jamshedpur primary */}
-      <meta name="geo.region" content="IN-JH" />
-      <meta name="geo.placename" content="Jamshedpur" />
-      <meta name="geo.position" content="22.8046;86.2029" />
-      <meta name="ICBM" content="22.8046, 86.2029" />
+      {/* Geo meta — Kolkata primary (main business hub) */}
+      <meta name="geo.region" content="IN-WB" />
+      <meta name="geo.placename" content="Kolkata" />
+      <meta name="geo.position" content="22.5726;88.3639" />
+      <meta name="ICBM" content="22.5726, 88.3639" />
 
       <section className="relative text-white py-16 overflow-hidden">
         <HeroBanner hideDots />

@@ -7,7 +7,7 @@ import FAQSection from '@/components/FAQSection';
 import GoogleMapEmbed from '@/components/GoogleMapEmbed';
 
 import { BUSINESS, getVehicles } from '@/lib/data';
-import { generateFleetPageMetadata, generateFleetOfferCatalogSchema, generateBreadcrumbSchema, generateFaqSchema } from '@/lib/seo';
+import { generateFleetPageMetadata, generateFleetOfferCatalogSchema, generateBreadcrumbSchema, generateFaqSchema, generateAggregateRatingSchema } from '@/lib/seo';
 
 export const dynamic = 'force-static';
 export const revalidate = false;
@@ -41,6 +41,8 @@ export default function FleetPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFleetOfferCatalogSchema(vehicles)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema([{ name: 'Home', url: BUSINESS.domain }, { name: 'Our Fleet', url: `${BUSINESS.domain}/fleet` }])) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFaqSchema(faqs)) }} />
+      {/* AggregateRating — 4.8★ star rating for fleet/vehicle queries */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateAggregateRatingSchema()) }} />
 
       {/* Geo meta — Kolkata primary */}
       <meta name="geo.region" content="IN-WB" />
@@ -248,24 +250,62 @@ export default function FleetPage() {
         </div>
       </section>
 
-      {/* City Coverage */}
-      <section className="py-12 bg-gray-50">
+      {/* Hub City × Vehicle Matrix — direct links to vehicle-city pages */}
+      <section className="py-12 bg-gray-50" aria-label="Book by city and vehicle type">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-secondary mb-6">Car Rental Available in <span className="text-primary">These Cities</span></h2>
+          <h2 className="text-2xl font-bold text-secondary mb-2">Book Your Vehicle — <span className="text-primary">City & Type</span></h2>
+          <p className="text-gray-500 text-sm mb-6">Select a city and vehicle type for instant booking information and pricing.</p>
+
+          {/* Hub cities × vehicle types matrix */}
+          {[
+            { city: 'Kolkata', state: 'west-bengal', citySlug: 'kolkata', sedan: 12, suv: 16, innova: 18 },
+            { city: 'Ranchi', state: 'jharkhand', citySlug: 'ranchi', sedan: 12, suv: 16, innova: 18 },
+            { city: 'Jamshedpur', state: 'jharkhand', citySlug: 'jamshedpur', sedan: 12, suv: 16, innova: 18 },
+            { city: 'Bhubaneswar', state: 'odisha', citySlug: 'bhubaneswar', sedan: 12, suv: 16, innova: 18 },
+            { city: 'Patna', state: 'bihar', citySlug: 'patna', sedan: 14, suv: 18, innova: 20 },
+          ].map((hub) => (
+            <div key={hub.city} className="mb-6 bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
+              <h3 className="font-bold text-secondary mb-3 text-base" style={{ fontFamily: 'var(--font-syne, Syne, sans-serif)' }}>
+                🏙️ Car Rental in <span className="text-primary">{hub.city}</span>
+              </h3>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Sedan Cab', slug: 'sedan', rate: hub.sedan, models: 'Dzire / Amaze', icon: '🚗' },
+                  { label: 'SUV Cab', slug: 'suv', rate: hub.suv, models: 'Ertiga / Innova', icon: '🚙' },
+                  { label: 'Innova Crysta', slug: 'tempo', rate: hub.innova, models: 'Crysta / Fortuner', icon: '🚐' },
+                  { label: 'Luxury Cab', slug: 'luxury', rate: 28, models: 'Fortuner / BMW', icon: '⭐' },
+                ].map((v) => (
+                  <Link
+                    key={v.slug}
+                    href={`/${hub.state}/${hub.citySlug}/${v.slug}`}
+                    className="group p-3 bg-accent rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-md transition-all"
+                  >
+                    <span className="text-xl">{v.icon}</span>
+                    <p className="font-semibold text-secondary text-xs mt-1 mb-0.5 group-hover:text-primary transition-colors">{v.label}</p>
+                    <p className="text-xs text-gray-400">{v.models}</p>
+                    <p className="text-xs font-bold text-primary mt-1">₹{v.rate}/km</p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ))}
+
+          {/* More cities */}
+          <h3 className="text-base font-bold text-secondary mt-8 mb-4">Car Rental Available in <span className="text-primary">More Cities</span></h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
             {[
-              { name: 'Kolkata', href: '/west-bengal/kolkata' },
-              { name: 'Ranchi', href: '/jharkhand/ranchi' },
-              { name: 'Jamshedpur', href: '/jharkhand/jamshedpur' },
               { name: 'Dhanbad', href: '/jharkhand/dhanbad' },
               { name: 'Bokaro', href: '/jharkhand/bokaro' },
-              { name: 'Bhubaneswar', href: '/odisha/bhubaneswar' },
               { name: 'Puri', href: '/odisha/puri' },
               { name: 'Siliguri', href: '/west-bengal/siliguri' },
               { name: 'Darjeeling', href: '/west-bengal/darjeeling' },
               { name: 'Durgapur', href: '/west-bengal/durgapur' },
               { name: 'Asansol', href: '/west-bengal/asansol' },
               { name: 'Howrah', href: '/west-bengal/howrah' },
+              { name: 'Deoghar', href: '/jharkhand/deoghar' },
+              { name: 'Cuttack', href: '/odisha/cuttack' },
+              { name: 'Gaya', href: '/bihar/gaya' },
+              { name: 'Varanasi', href: '/uttar-pradesh/varanasi' },
             ].map((city) => (
               <Link key={city.name} href={city.href} className="group p-4 bg-white rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-md transition-all">
                 <p className="font-semibold text-secondary text-sm group-hover:text-primary transition-colors">🚗 {city.name}</p>

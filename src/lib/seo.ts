@@ -1718,6 +1718,350 @@ export function generateTaxiServiceSchema() {
   };
 }
 
+// ═══════════════════════════════════════════════════
+// AGGREGATE RATING SCHEMA — 4.8★ across all pages
+// ═══════════════════════════════════════════════════
+export function generateAggregateRatingSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    '@id': `${DOMAIN}/#localbusiness`,
+    name: BUSINESS.name,
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      reviewCount: '5000',
+      bestRating: '5',
+      worstRating: '1',
+    },
+  };
+}
+
+// ═══════════════════════════════════════════════════
+// SITELINKS SEARCH BOX — homepage only
+// ═══════════════════════════════════════════════════
+export function generateSitelinksSearchBoxSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${DOMAIN}/#website`,
+    url: DOMAIN,
+    name: BUSINESS.name,
+    description: BUSINESS.tagline,
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${DOMAIN}/routes/{search_term_string}-cab`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  };
+}
+
+// ═══════════════════════════════════════════════════
+// VEHICLE RENTAL SCHEMA — city-vehicle pages
+// ═══════════════════════════════════════════════════
+export function generateVehicleRentalSchema(
+  vehicleName: string,
+  vehicleModels: string[],
+  cityName: string,
+  stateName: string,
+  pricePerKm: number,
+  capacity: string | number,
+  imageUrl?: string,
+) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: `${vehicleName} Cab in ${cityName}`,
+    description: `Hire ${vehicleName} (${vehicleModels.slice(0, 2).join(', ')}) in ${cityName}, ${stateName}. Seats ${capacity} passengers. AC, GPS tracked, police-verified driver. Available 24/7 for airport, outstation, local & one-way trips.`,
+    brand: { '@type': 'Brand', name: BUSINESS.name },
+    image: imageUrl || `${DOMAIN}/navbanner.webp`,
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'INR',
+      price: pricePerKm,
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: pricePerKm,
+        priceCurrency: 'INR',
+        unitText: 'KM',
+        referenceQuantity: {
+          '@type': 'QuantitativeValue',
+          value: '1',
+          unitCode: 'KMT',
+        },
+      },
+      availability: 'https://schema.org/InStock',
+      validFrom: '2024-01-01',
+      url: DOMAIN,
+      seller: {
+        '@type': 'LocalBusiness',
+        name: BUSINESS.name,
+        telephone: BUSINESS.phone,
+        url: DOMAIN,
+      },
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      reviewCount: '5000',
+      bestRating: '5',
+    },
+  };
+}
+
+// ═══════════════════════════════════════════════════
+// SERVICE AREA SCHEMA — 5-state coverage
+// ═══════════════════════════════════════════════════
+export function generateServiceAreaSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    '@id': `${DOMAIN}/#localbusiness`,
+    name: BUSINESS.name,
+    areaServed: [
+      {
+        '@type': 'State',
+        name: 'West Bengal',
+        alternateName: 'WB',
+        containsPlace: [
+          { '@type': 'City', name: 'Kolkata' },
+          { '@type': 'City', name: 'Howrah' },
+          { '@type': 'City', name: 'Siliguri' },
+          { '@type': 'City', name: 'Darjeeling' },
+          { '@type': 'City', name: 'Durgapur' },
+          { '@type': 'City', name: 'Asansol' },
+          { '@type': 'City', name: 'Kharagpur' },
+          { '@type': 'City', name: 'Haldia' },
+        ],
+      },
+      {
+        '@type': 'State',
+        name: 'Jharkhand',
+        alternateName: 'JH',
+        containsPlace: [
+          { '@type': 'City', name: 'Ranchi' },
+          { '@type': 'City', name: 'Jamshedpur' },
+          { '@type': 'City', name: 'Dhanbad' },
+          { '@type': 'City', name: 'Bokaro' },
+          { '@type': 'City', name: 'Deoghar' },
+          { '@type': 'City', name: 'Hazaribagh' },
+        ],
+      },
+      {
+        '@type': 'State',
+        name: 'Odisha',
+        alternateName: 'OR',
+        containsPlace: [
+          { '@type': 'City', name: 'Bhubaneswar' },
+          { '@type': 'City', name: 'Puri' },
+          { '@type': 'City', name: 'Cuttack' },
+          { '@type': 'City', name: 'Rourkela' },
+          { '@type': 'City', name: 'Berhampur' },
+        ],
+      },
+      {
+        '@type': 'State',
+        name: 'Bihar',
+        alternateName: 'BR',
+        containsPlace: [
+          { '@type': 'City', name: 'Patna' },
+          { '@type': 'City', name: 'Gaya' },
+          { '@type': 'City', name: 'Bodh Gaya' },
+        ],
+      },
+      {
+        '@type': 'State',
+        name: 'Uttar Pradesh',
+        alternateName: 'UP',
+        containsPlace: [
+          { '@type': 'City', name: 'Varanasi' },
+          { '@type': 'City', name: 'Prayagraj' },
+          { '@type': 'City', name: 'Ayodhya' },
+        ],
+      },
+    ],
+  };
+}
+
+// ═══════════════════════════════════════════════════
+// GENERIC ARTICLE SCHEMA — for non-blog article pages
+// Use generateArticleSchema(blog) for blog posts
+// ═══════════════════════════════════════════════════
+export function generateGenericArticleSchema(
+  title: string,
+  description: string,
+  url: string,
+  datePublished: string,
+  dateModified?: string,
+  imageUrl?: string,
+) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description,
+    url,
+    datePublished,
+    dateModified: dateModified || datePublished,
+    image: imageUrl || `${DOMAIN}/navbanner.webp`,
+    author: {
+      '@type': 'Organization',
+      name: BUSINESS.name,
+      url: DOMAIN,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: BUSINESS.name,
+      url: DOMAIN,
+      logo: {
+        '@type': 'ImageObject',
+        url: LOGO_URL,
+        width: 512,
+        height: 512,
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': url,
+    },
+  };
+}
+
+// ═══════════════════════════════════════════════════
+// CITY OFFER CATALOG SCHEMA — rich city pages
+// ═══════════════════════════════════════════════════
+export function generateCityOfferCatalogSchema(
+  cityName: string,
+  stateName: string,
+  stateSlug: string,
+  citySlug: string,
+  sedanRate: number,
+  suvRate: number,
+  innovaRate: number,
+  airportFare: number,
+  localPackage4hr: number,
+) {
+  const cityUrl = `${DOMAIN}/${stateSlug}/${citySlug}`;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'OfferCatalog',
+    name: `Cab Services in ${cityName}`,
+    url: cityUrl,
+    provider: {
+      '@type': 'LocalBusiness',
+      name: BUSINESS.name,
+      telephone: BUSINESS.phone,
+      url: DOMAIN,
+    },
+    offers: [
+      {
+        '@type': 'Offer',
+        name: `Sedan Cab in ${cityName}`,
+        description: `Swift Dzire / Honda Amaze outstation cab in ${cityName}, ${stateName}. AC, GPS tracked.`,
+        priceSpecification: {
+          '@type': 'UnitPriceSpecification',
+          price: sedanRate,
+          priceCurrency: 'INR',
+          unitText: 'KM',
+        },
+        availability: 'https://schema.org/InStock',
+        url: `${cityUrl}/sedan`,
+      },
+      {
+        '@type': 'Offer',
+        name: `SUV Cab in ${cityName}`,
+        description: `Ertiga / Innova outstation cab in ${cityName}. 6-seater, AC.`,
+        priceSpecification: {
+          '@type': 'UnitPriceSpecification',
+          price: suvRate,
+          priceCurrency: 'INR',
+          unitText: 'KM',
+        },
+        availability: 'https://schema.org/InStock',
+        url: `${cityUrl}/suv`,
+      },
+      {
+        '@type': 'Offer',
+        name: `Innova Crysta Cab in ${cityName}`,
+        description: `Premium 7-seater Innova Crysta cab in ${cityName}.`,
+        priceSpecification: {
+          '@type': 'UnitPriceSpecification',
+          price: innovaRate,
+          priceCurrency: 'INR',
+          unitText: 'KM',
+        },
+        availability: 'https://schema.org/InStock',
+      },
+      {
+        '@type': 'Offer',
+        name: `Airport Taxi in ${cityName}`,
+        description: `Fixed-fare airport transfer in ${cityName}. Flight tracking included.`,
+        price: airportFare,
+        priceCurrency: 'INR',
+        availability: 'https://schema.org/InStock',
+        url: `${cityUrl}/airport-transfer`,
+      },
+      {
+        '@type': 'Offer',
+        name: `Local Taxi in ${cityName} (4hr Package)`,
+        description: `Hourly cab in ${cityName} — 4 hours / 40 km local package.`,
+        price: localPackage4hr,
+        priceCurrency: 'INR',
+        availability: 'https://schema.org/InStock',
+        url: `${cityUrl}/local`,
+      },
+    ],
+  };
+}
+
+// ═══════════════════════════════════════════════════
+// ROUTE TRIP ACTION SCHEMA — route pages
+// ═══════════════════════════════════════════════════
+export function generateRouteTripActionSchema(
+  fromName: string,
+  toName: string,
+  distance?: number,
+  priceSaloon?: number,
+) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: `${fromName} to ${toName} Cab`,
+    description: `Book ${fromName} to ${toName} cab online. ${distance ? `${distance} km journey.` : ''} Sedan from ₹${priceSaloon ?? 12}/km. AC, GPS tracked, 24/7 available.`,
+    serviceType: 'Taxi/Cab Service',
+    provider: {
+      '@type': 'LocalBusiness',
+      name: BUSINESS.name,
+      telephone: BUSINESS.phone,
+      url: DOMAIN,
+    },
+    areaServed: [
+      { '@type': 'Place', name: fromName },
+      { '@type': 'Place', name: toName },
+    ],
+    offers: {
+      '@type': 'Offer',
+      price: priceSaloon ?? 12,
+      priceCurrency: 'INR',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: priceSaloon ?? 12,
+        priceCurrency: 'INR',
+        unitText: 'KM',
+      },
+      availability: 'https://schema.org/InStock',
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      reviewCount: '5000',
+      bestRating: '5',
+    },
+  };
+}
 export function generateHowToBookSchema() {
   return {
     '@context': 'https://schema.org',

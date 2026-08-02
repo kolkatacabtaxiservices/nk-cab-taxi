@@ -13,7 +13,7 @@ import FareCalculator from '@/components/FareCalculator';
 import FleetSection from '@/components/FleetSection';
 import { getState, getCity, getAllCities, getVehicles, BUSINESS, getStatePriceLabels, getStateFares } from '@/lib/data';
 import { getRoutesFrom, getRoutesTo, getPopularLocalRoutes } from '@/lib/routeData';
-import { generateCityMetadata, generateFaqSchema, generateBreadcrumbSchema, generateCityServiceSchema, getCityGeoMeta, generateCityGeoCircleSchema } from '@/lib/seo';
+import { generateCityMetadata, generateFaqSchema, generateBreadcrumbSchema, generateCityServiceSchema, getCityGeoMeta, generateCityGeoCircleSchema, generateAggregateRatingSchema, generateServiceAreaSchema, generateCityOfferCatalogSchema } from '@/lib/seo';
 import { generateCityPageContent } from '@/lib/cityContent';
 import { formatBoldText } from '@/lib/textHelper';
 
@@ -164,6 +164,16 @@ export default async function CityPage({ params }: { params: Promise<{ state: st
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateCityServiceSchema(city.name, state.name, city.alternateNames)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateCityGeoCircleSchema(city.name, state.name, city.lat, city.lng, city.alternateNames)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(routeItemListSchema) }} />
+      {/* AggregateRating — star ratings boost CTR in SERPs */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateAggregateRatingSchema()) }} />
+      {/* ServiceArea — geographic coverage signal */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceAreaSchema()) }} />
+      {/* CityOfferCatalog — vehicle/service price listings */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateCityOfferCatalogSchema(
+        city.name, state.name, state.slug, city.slug,
+        prices.sedanRate, prices.suvRate, prices.innovaRate,
+        prices.airportSedanNum, prices.localPkgSedan
+      )) }} />
 
       {/* Hero */}
       <section className="relative text-white py-12 lg:py-16 overflow-hidden">
@@ -514,6 +524,36 @@ export default async function CityPage({ params }: { params: Promise<{ state: st
         title={`Cab Service Coverage in ${city.name}`}
         subtitle={`We provide cab pickup and drop across all areas of ${city.name}, ${state.name}. View our service coverage area.`}
       />
+
+      {/* Vehicle Type Internal Links — boosts crawl to city-vehicle sub-pages */}
+      <section className="py-10 bg-white" aria-label="Book by vehicle type">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-xl font-bold text-secondary mb-5" style={{ fontFamily: 'Syne, sans-serif' }}>
+            Book by Vehicle in <span className="text-primary">{city.name}</span>
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {[
+              { label: 'Sedan Cab', slug: 'sedan', icon: '🚗', price: prices.sedanPerKm, desc: 'Swift Dzire / Honda Amaze' },
+              { label: 'SUV Cab', slug: 'suv', icon: '🚙', price: prices.suvPerKm, desc: 'Ertiga / Innova' },
+              { label: 'Innova Crysta', slug: 'tempo', icon: '🚐', price: prices.tempoPerKm, desc: '12-Seater Group' },
+              { label: 'Luxury Cab', slug: 'luxury', icon: '⭐', price: '₹28/km', desc: 'Fortuner / BMW' },
+            ].map((v) => (
+              <Link
+                key={v.slug}
+                href={`/${state.slug}/${city.slug}/${v.slug}`}
+                className="block p-4 bg-accent rounded-2xl border border-gray-100 hover:border-primary/30 hover:shadow-md transition-all group card-hover"
+              >
+                <div className="text-2xl mb-2">{v.icon}</div>
+                <h3 className="font-bold text-secondary text-sm mb-0.5 group-hover:text-primary transition-colors" style={{ fontFamily: 'var(--font-syne, Syne, sans-serif)' }}>
+                  {v.label} in {city.name}
+                </h3>
+                <p className="text-xs text-gray-500 mb-1">{v.desc}</p>
+                <span className="text-xs font-bold text-primary">{v.price}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* CTA */}
       <section className="py-12 bg-gradient-to-r from-primary to-amber-500">

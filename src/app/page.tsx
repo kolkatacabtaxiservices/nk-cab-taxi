@@ -15,7 +15,8 @@ import { getPopularRoutes } from '@/lib/routeData';
 import {
   generateFaqSchema, generateReviewSchema,
   generatePopularRoutesItemListSchema, generateHomePageMetadata,
-  generateSeasonalOfferSchema
+  generateSeasonalOfferSchema, generateAggregateRatingSchema,
+  generateSitelinksSearchBoxSchema, generateServiceAreaSchema,
 } from '@/lib/seo';
 
 const FareCalculator = nextDynamic(() => import('@/components/FareCalculator'), {
@@ -153,6 +154,12 @@ export default async function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateReviewSchema(testimonials)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generatePopularRoutesItemListSchema(popularRoutes)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateSeasonalOfferSchema()) }} />
+      {/* AggregateRating — star ratings in SERPs */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateAggregateRatingSchema()) }} />
+      {/* SitelinksSearchBox — appears in branded searches */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateSitelinksSearchBoxSchema()) }} />
+      {/* ServiceArea — 5-state coverage signal */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceAreaSchema()) }} />
 
       {/* ═══ HERO — Banner Slideshow + Booking Form ═══ */}
       <section id="hero" className="relative min-h-[90vh] lg:min-h-screen flex items-center overflow-hidden">
@@ -984,16 +991,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ═══ FLOATING MOBILE BOTTOM CTA ═══ */}
-      <div className="floating-booking-strip lg:hidden">
-        <a href={`tel:${BUSINESS.phone}`} className="flex-1 flex items-center justify-center gap-2 py-2.5 btn-primary rounded-xl text-sm font-bold">
-          <Phone size={16} /> Call Now
-        </a>
-        <a href={`${BUSINESS.whatsappLink}?text=${encodeURIComponent('Hi! I want to book a cab in Kolkata.')}`}
-          className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-green-600 hover:bg-green-500 text-white rounded-xl text-sm font-bold transition-colors">
-          💬 WhatsApp
-        </a>
-      </div>
+      {/* FloatingButtons component (layout.tsx) already provides persistent Call + WhatsApp buttons */}
     </>
   );
 }

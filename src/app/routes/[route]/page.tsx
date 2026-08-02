@@ -34,7 +34,7 @@ const FareCalculator = nextDynamic(() => import('@/components/FareCalculator'), 
 import { getCity, getState, BUSINESS } from '@/lib/data';
 import { getRoute, getRoutesFrom, getPopularLocalRoutes, isHubRoute } from '@/lib/routeData';
 import { getAllRouteSlugs } from '@/lib/routeDataStatic';
-import { generateRouteMetadata, generateFaqSchema, generateBreadcrumbSchema, generateEnhancedRouteSchema } from '@/lib/seo';
+import { generateRouteMetadata, generateFaqSchema, generateBreadcrumbSchema, generateEnhancedRouteSchema, generateRouteTripActionSchema, generateAggregateRatingSchema } from '@/lib/seo';
 import { generateRoutePageContent } from '@/lib/routeContent';
 import { formatBoldText, parseParagraphsWithBold } from '@/lib/textHelper';
 
@@ -149,6 +149,10 @@ export default async function RoutePage({ params }: { params: Promise<{ route: s
           : []),
         { name: `${route.fromName} to ${route.toName}`, url: `${BUSINESS.domain}/routes/${route.slug}` },
       ])) }} />
+      {/* Service schema with pricing — improves route-specific rich results */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateRouteTripActionSchema(route.fromName, route.toName, route.distance, route.priceSaloon)) }} />
+      {/* AggregateRating — 4.8★ in SERPs for route pages */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateAggregateRatingSchema()) }} />
 
       {/* Hero */}
       <section className="relative text-white py-12 lg:py-16 overflow-hidden">

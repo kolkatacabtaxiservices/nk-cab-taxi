@@ -9,7 +9,7 @@ import BookingForm from '@/components/BookingForm';
 import FAQSection from '@/components/FAQSection';
 import GoogleMapEmbed from '@/components/GoogleMapEmbed';
 import { getCity, getState, getVehicle, getVehicles, getStateFares, getStatePriceLabels, BUSINESS } from '@/lib/data';
-import { generateFaqSchema, generateBreadcrumbSchema, getCityGeoMeta } from '@/lib/seo';
+import { generateFaqSchema, generateBreadcrumbSchema, getCityGeoMeta, generateAggregateRatingSchema } from '@/lib/seo';
 
 // Hub cities jinke liye vehicle-specific pages build hongi
 const HUB_CITY_VEHICLE_PARAMS: { state: string; city: string }[] = [
@@ -179,12 +179,26 @@ export default async function CityVehiclePage({
     name: `${vehicle.name} Cab in ${city.name}`,
     description: `${vehicle.name} cab & taxi service in ${city.name}. Rate: ₹${ratePerKm}/km. Models: ${vehicle.models.join(', ')}. ${vehicle.capacity} passengers. AC, GPS tracked.`,
     brand: { '@type': 'Brand', name: 'NK Cab & Taxi' },
+    image: `${BUSINESS.domain}/navbanner.webp`,
     offers: {
       '@type': 'Offer',
       price: ratePerKm,
       priceCurrency: 'INR',
       availability: 'https://schema.org/InStock',
-      seller: { '@type': 'Organization', name: 'NK Cab & Taxi', telephone: BUSINESS.phone },
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: ratePerKm,
+        priceCurrency: 'INR',
+        unitText: 'KM',
+      },
+      seller: { '@type': 'Organization', name: 'NK Cab & Taxi', telephone: BUSINESS.phone, url: BUSINESS.domain },
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      reviewCount: '5000',
+      bestRating: '5',
+      worstRating: '1',
     },
   };
 
@@ -199,6 +213,8 @@ export default async function CityVehiclePage({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFaqSchema(faqs)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(vehicleSchema) }} />
+      {/* AggregateRating — 4.8★ star ratings in vehicle SERPs */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateAggregateRatingSchema()) }} />
 
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="relative text-white py-12 lg:py-16 overflow-hidden">

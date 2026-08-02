@@ -108,6 +108,83 @@ export default function BlogListPage() {
       {/* CTA */}
       <GoogleMapEmbed />
 
+      {/* Internal Links — city, service & route pages */}
+      <section className="py-10 bg-white" aria-label="Explore cab services">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-xl font-bold text-secondary mb-6" style={{ fontFamily: 'var(--font-syne, Syne, sans-serif)' }}>
+            Explore <span className="text-primary">Cab Services</span>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Top Cities */}
+            <div>
+              <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-3">Top Cities</h3>
+              <ul className="space-y-2">
+                {[
+                  { label: 'Cab Service in Kolkata', href: '/west-bengal/kolkata' },
+                  { label: 'Cab Service in Ranchi', href: '/jharkhand/ranchi' },
+                  { label: 'Cab Service in Bhubaneswar', href: '/odisha/bhubaneswar' },
+                  { label: 'Cab Service in Siliguri', href: '/west-bengal/siliguri' },
+                  { label: 'Cab Service in Jamshedpur', href: '/jharkhand/jamshedpur' },
+                  { label: 'Cab Service in Puri', href: '/odisha/puri' },
+                  { label: 'Cab Service in Darjeeling', href: '/west-bengal/darjeeling' },
+                ].map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="text-sm text-gray-600 hover:text-primary transition-colors flex items-center gap-1.5">
+                      <ChevronRight size={12} className="text-primary/60 flex-shrink-0" />
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {/* Services */}
+            <div>
+              <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-3">Our Services</h3>
+              <ul className="space-y-2">
+                {[
+                  { label: 'Airport Transfer Service', href: '/services/airport-transfer' },
+                  { label: 'Outstation Cab Service', href: '/services/outstation' },
+                  { label: 'One Way Taxi Service', href: '/services/one-way' },
+                  { label: 'Round Trip Cab Service', href: '/services/round-trip' },
+                  { label: 'Local Taxi Service', href: '/services/local-taxi' },
+                  { label: 'Car Rental Fleet', href: '/fleet' },
+                  { label: 'Cab Fare Chart 2026', href: '/fare-chart' },
+                ].map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="text-sm text-gray-600 hover:text-primary transition-colors flex items-center gap-1.5">
+                      <ChevronRight size={12} className="text-primary/60 flex-shrink-0" />
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {/* Popular Routes */}
+            <div>
+              <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-3">Popular Routes</h3>
+              <ul className="space-y-2">
+                {[
+                  { label: 'Kolkata to Puri Cab', href: '/routes/kolkata-to-puri-cab' },
+                  { label: 'Kolkata to Darjeeling Cab', href: '/routes/kolkata-to-darjeeling-cab' },
+                  { label: 'Kolkata to Digha Cab', href: '/routes/kolkata-to-digha-cab' },
+                  { label: 'Kolkata to Siliguri Cab', href: '/routes/kolkata-to-siliguri-cab' },
+                  { label: 'Ranchi to Kolkata Cab', href: '/routes/ranchi-to-kolkata-cab' },
+                  { label: 'Bhubaneswar to Puri Cab', href: '/routes/bhubaneswar-to-puri-cab' },
+                  { label: 'Kolkata to Varanasi Cab', href: '/routes/kolkata-to-varanasi-cab' },
+                ].map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="text-sm text-gray-600 hover:text-primary transition-colors flex items-center gap-1.5">
+                      <ChevronRight size={12} className="text-primary/60 flex-shrink-0" />
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-12 bg-gradient-to-r from-primary to-amber-500">
         <div className="max-w-4xl mx-auto px-4 text-center text-white">
           <h2 className="text-2xl md:text-3xl font-bold mb-3">Need a Cab? Book Now!</h2>

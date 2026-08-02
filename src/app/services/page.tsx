@@ -6,7 +6,7 @@ import HeroBanner from '@/components/HeroBanner';
 import FAQSection from '@/components/FAQSection';
 import GoogleMapEmbed from '@/components/GoogleMapEmbed';
 import { BUSINESS, getAllCities } from '@/lib/data';
-import { generateFaqSchema, generateBreadcrumbSchema } from '@/lib/seo';
+import { generateFaqSchema, generateBreadcrumbSchema, generateAggregateRatingSchema } from '@/lib/seo';
 
 export const dynamic = 'force-static';
 export const revalidate = false;
@@ -168,6 +168,8 @@ export default function ServicesPage() {
         { name: 'Home', url: BUSINESS.domain },
         { name: 'Services', url: `${BUSINESS.domain}/services` },
       ])) }} />
+      {/* AggregateRating — 4.8★ for service pages */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateAggregateRatingSchema()) }} />
 
       {/* Hero */}
       <section className="relative text-white py-14 lg:py-20 overflow-hidden">
