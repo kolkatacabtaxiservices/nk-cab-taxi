@@ -2028,15 +2028,22 @@ export function generateRouteTripActionSchema(
 ) {
   return {
     '@context': 'https://schema.org',
-    '@type': 'Service',
+    '@type': 'TaxiService',
     name: `${fromName} to ${toName} Cab`,
     description: `Book ${fromName} to ${toName} cab online. ${distance ? `${distance} km journey.` : ''} Sedan from ₹${priceSaloon ?? 12}/km. AC, GPS tracked, 24/7 available.`,
     serviceType: 'Taxi/Cab Service',
     provider: {
       '@type': 'LocalBusiness',
+      '@id': `${DOMAIN}/#business`,
       name: BUSINESS.name,
       telephone: BUSINESS.phone,
       url: DOMAIN,
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '4.8',
+        reviewCount: '5000',
+        bestRating: '5',
+      },
     },
     areaServed: [
       { '@type': 'Place', name: fromName },
@@ -2053,12 +2060,6 @@ export function generateRouteTripActionSchema(
         unitText: 'KM',
       },
       availability: 'https://schema.org/InStock',
-    },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '5000',
-      bestRating: '5',
     },
   };
 }
