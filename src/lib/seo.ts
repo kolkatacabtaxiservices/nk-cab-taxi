@@ -1586,6 +1586,13 @@ export function generateReviewSchema(reviews: { name: string; location: string; 
       addressCountry: 'IN',
       postalCode: '700001',
     },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      reviewCount: '2847',
+      bestRating: '5',
+      worstRating: '1',
+    },
     review: reviews.map((r, i) => ({
       '@type': 'Review',
       author: { '@type': 'Person', name: r.name },
@@ -2388,22 +2395,6 @@ export function generateCityGeoCircleSchema(cityName: string, stateName: string,
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
       opens: '00:00', closes: '23:59',
     },
-    review: [
-      {
-        '@type': 'Review',
-        author: { '@type': 'Person', name: 'Vikram Sengupta' },
-        datePublished: '2026-05-02',
-        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5', worstRating: '1' },
-        reviewBody: `Best local and outstation taxi service in ${cityName}. I always book their AC cabs for airport drop and local trips. Fares are transparent and drivers are professional.`,
-      },
-      {
-        '@type': 'Review',
-        author: { '@type': 'Person', name: 'Anjali Sharma' },
-        datePublished: '2026-04-18',
-        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5', worstRating: '1' },
-        reviewBody: `Super reliable cab booking experience in ${cityName}. Clean Sedan car, prompt pickup, polite driver. Highly recommend NK Cab & Taxi for comfortable travel.`,
-      }
-    ]
   };
 }
 
