@@ -1809,8 +1809,19 @@ export function generateServiceAreaSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    '@id': `${DOMAIN}/#localbusiness`,
+    '@id': `${DOMAIN}/#business`,
     name: BUSINESS.name,
+    telephone: BUSINESS.phone,
+    priceRange: '₹₹',
+    image: OG_IMAGE_URL,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Park Street Area',
+      addressLocality: 'Kolkata',
+      addressRegion: 'West Bengal',
+      addressCountry: 'IN',
+      postalCode: '700001',
+    },
     areaServed: [
       {
         '@type': 'State',
