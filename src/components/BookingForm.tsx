@@ -114,16 +114,19 @@ export default function BookingForm({ defaultFrom = '', defaultTo = '', compact 
       if (response.ok && data.success) {
         setSubmittedData({ phone: phoneForDisplay, whatsappUrl });
         setStatus('success');
+        // Auto reset form after 10 seconds if user doesn't interact
+        setTimeout(() => {
+          setForm(getInitialForm());
+          setStatus('idle');
+          setSubmittedData(null);
+        }, 10000);
       } else {
-        // API returned an error — still show success but mention we'll call
-        // The booking intent was received; fall back to WhatsApp for confirmation
-        setSubmittedData({ phone: phoneForDisplay, whatsappUrl });
-        setStatus('success');
+        setStatus('error');
+        setErrorMsg(data.error || 'Failed to submit booking. Please call or WhatsApp us.');
       }
     } catch {
-      // Network error or API unreachable — show success with WhatsApp fallback
-      setSubmittedData({ phone: phoneForDisplay, whatsappUrl });
-      setStatus('success');
+      setStatus('error');
+      setErrorMsg('Network error. Please try again or call us directly.');
     }
   };
 
