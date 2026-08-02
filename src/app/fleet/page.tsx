@@ -265,7 +265,7 @@ export default function FleetPage() {
             { city: 'Patna', state: 'bihar', citySlug: 'patna', sedan: 14, suv: 18, innova: 20 },
           ].map((hub) => (
             <div key={hub.city} className="mb-6 bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
-              <h3 className="font-bold text-secondary mb-3 text-base" style={{ fontFamily: 'var(--font-syne, Syne, sans-serif)' }}>
+              <h3 className="font-bold text-secondary mb-3 text-base">
                 🏙️ Car Rental in <span className="text-primary">{hub.city}</span>
               </h3>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">

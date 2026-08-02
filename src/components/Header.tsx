@@ -113,7 +113,6 @@ export default function Header() {
               <div>
                 <span
                   className="font-extrabold text-[#0D1B2A] text-lg lg:text-xl leading-tight block tracking-tight"
-                  style={{ fontFamily: 'Syne, sans-serif' }}
                 >
                   NK Cab <span className="text-[#FF6B00]">&</span> Taxi
                 </span>

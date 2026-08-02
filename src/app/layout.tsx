@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Syne } from 'next/font/google';
+import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -18,13 +18,12 @@ const inter = Inter({
   adjustFontFallback: true, // reduces CLS by matching fallback metrics to Inter
 });
 
-const syne = Syne({
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800'],
   display: 'swap',
-  variable: '--font-syne',
+  variable: '--font-heading',
   preload: true,
-  adjustFontFallback: true,
 });
 
 export const metadata: Metadata = {
@@ -209,7 +208,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }}
         />
       </head>
-      <body className={`${inter.className} ${syne.variable} antialiased`} suppressHydrationWarning>
+      <body className={`${inter.variable} ${plusJakarta.variable} ${inter.className} font-sans antialiased`} suppressHydrationWarning>
         {/* noscript fallback — update with your GA4 ID */}
         <Header />
         <main className="min-h-screen">{children}</main>

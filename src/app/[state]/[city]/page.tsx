@@ -528,7 +528,7 @@ export default async function CityPage({ params }: { params: Promise<{ state: st
       {/* Vehicle Type Internal Links — boosts crawl to city-vehicle sub-pages */}
       <section className="py-10 bg-white" aria-label="Book by vehicle type">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-xl font-bold text-secondary mb-5" style={{ fontFamily: 'Syne, sans-serif' }}>
+          <h2 className="text-xl font-bold text-secondary mb-5">
             Book by Vehicle in <span className="text-primary">{city.name}</span>
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -544,7 +544,7 @@ export default async function CityPage({ params }: { params: Promise<{ state: st
                 className="block p-4 bg-accent rounded-2xl border border-gray-100 hover:border-primary/30 hover:shadow-md transition-all group card-hover"
               >
                 <div className="text-2xl mb-2">{v.icon}</div>
-                <h3 className="font-bold text-secondary text-sm mb-0.5 group-hover:text-primary transition-colors" style={{ fontFamily: 'var(--font-syne, Syne, sans-serif)' }}>
+                <h3 className="font-bold text-secondary text-sm mb-0.5 group-hover:text-primary transition-colors">
                   {v.label} in {city.name}
                 </h3>
                 <p className="text-xs text-gray-500 mb-1">{v.desc}</p>

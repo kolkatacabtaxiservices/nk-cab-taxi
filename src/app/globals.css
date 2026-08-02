@@ -17,8 +17,8 @@
   --color-nk-orange: #FF6B00;
   --color-nk-dark: #0D1B2A;
   --color-nk-gold: #F5A623;
-  --font-heading: var(--font-syne, 'Syne', sans-serif);
-  --font-body: 'Inter', sans-serif;
+  --font-heading: var(--font-heading, 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif);
+  --font-body: var(--font-inter, 'Inter', system-ui, -apple-system, sans-serif);
 }
 
 @layer base {
@@ -36,14 +36,14 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: #F7F5F0;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-inter, 'Inter', system-ui, -apple-system, sans-serif);
     /* Prevent floating buttons from covering bottom page content on mobile */
     padding-bottom: 0;
   }
   h1, h2, h3, h4, h5, h6 {
-    line-height: 1.2;
+    line-height: 1.25;
     letter-spacing: -0.02em;
-    font-family: var(--font-syne, 'Syne', sans-serif);
+    font-family: var(--font-heading, 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif);
     font-weight: 700;
   }
   img {
@@ -142,7 +142,7 @@
 
   /* ── NK Monogram ── */
   .nk-monogram {
-    font-family: 'Syne', sans-serif;
+    font-family: var(--font-heading);
     font-weight: 800;
     letter-spacing: -0.05em;
   }
@@ -157,7 +157,7 @@
     border-radius: 12px;
     background: linear-gradient(135deg, #FF6B00, #F5A623);
     color: white;
-    font-family: 'Syne', sans-serif;
+    font-family: var(--font-heading);
     font-weight: 800;
     font-size: 1.1rem;
     letter-spacing: -0.05em;
@@ -379,7 +379,7 @@
     border-radius: 12px;
     background: linear-gradient(135deg, #FF6B00, #F5A623);
     display: flex; align-items: center; justify-content: center;
-    font-family: 'Syne', sans-serif;
+    font-family: var(--font-heading);
     font-weight: 800;
     color: white;
     font-size: 18px;

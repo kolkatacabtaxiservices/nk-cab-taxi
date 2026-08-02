@@ -177,7 +177,7 @@ export default async function HomePage() {
                 <span className="text-gray-300">⭐ 4.8 Rating · 5,000+ Happy Customers · Kolkata&apos;s Trusted Cab</span>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-5" style={{ fontFamily: 'Syne, sans-serif' }}>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-5">
                 Trusted Kolkata<br />
                 <span className="text-gradient">Cab Service</span>
                 <span className="block text-xl sm:text-2xl lg:text-2xl font-bold text-white/80 mt-2">
@@ -276,7 +276,7 @@ export default async function HomePage() {
                 <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center text-white mb-4 shadow-orange`}>
                   {stat.icon}
                 </div>
-                <p className="text-3xl font-extrabold text-[#0D1B2A] leading-none" style={{ fontFamily: 'Syne, sans-serif' }}>{stat.value}</p>
+                <p className="text-3xl font-extrabold text-[#0D1B2A] leading-none">{stat.value}</p>
                 <p className="text-sm font-semibold text-[#0D1B2A] mt-1">{stat.label}</p>
                 <p className="text-xs text-gray-400 mt-0.5">{stat.sub}</p>
               </div>
@@ -290,7 +290,7 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <div className="tag-orange inline-flex mb-4">🚖 Our Services</div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0D1B2A] mb-4" style={{ fontFamily: 'Syne, sans-serif' }}>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0D1B2A] mb-4">
               Every Type of <span className="text-gradient">Cab & Taxi</span>
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto">Local rides to long-distance trips, weddings to corporate travel — all across Kolkata & East India.</p>
@@ -322,7 +322,7 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-10">
             <div className="tag-orange inline-flex mb-4">📍 West Bengal Coverage</div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#0D1B2A] mb-3" style={{ fontFamily: 'Syne, sans-serif' }}>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#0D1B2A] mb-3">
               Cab Service Across <span className="text-gradient">West Bengal</span>
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto">
@@ -350,7 +350,7 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-10">
             <div className="tag-orange inline-flex mb-4">🗺️ Multi-State Coverage</div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#0D1B2A] mb-3" style={{ fontFamily: 'Syne, sans-serif' }}>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#0D1B2A] mb-3">
               Jharkhand &amp; <span className="text-gradient">Odisha</span>
             </h2>
           </div>
@@ -362,7 +362,7 @@ export default async function HomePage() {
                   <MapPin size={18} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-[#0D1B2A] text-lg" style={{ fontFamily: 'Syne, sans-serif' }}>Jharkhand</h3>
+                  <h3 className="font-bold text-[#0D1B2A] text-lg">Jharkhand</h3>
                   <p className="text-gray-400 text-xs">Ranchi · Jamshedpur · Dhanbad</p>
                 </div>
               </div>
@@ -387,7 +387,7 @@ export default async function HomePage() {
                   <MapPin size={18} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-[#0D1B2A] text-lg" style={{ fontFamily: 'Syne, sans-serif' }}>Odisha</h3>
+                  <h3 className="font-bold text-[#0D1B2A] text-lg">Odisha</h3>
                   <p className="text-gray-400 text-xs">Bhubaneswar · Puri · Cuttack</p>
                 </div>
               </div>
@@ -415,7 +415,7 @@ export default async function HomePage() {
             <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-[rgba(255,107,0,0.3)] rounded-full text-[#FF6B00] text-xs font-semibold uppercase tracking-wider mb-4">
               🗺️ Our Coverage
             </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3" style={{ fontFamily: 'Syne, sans-serif' }}>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">
               Cab Service Across <span className="text-gradient">5 States</span>
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
@@ -438,7 +438,7 @@ export default async function HomePage() {
                 <div className={`w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br ${state.color} flex items-center justify-center text-2xl shadow-lg`}>
                   {state.flag}
                 </div>
-                <h3 className="font-bold text-white text-base mb-1 group-hover:text-[#FF6B00] transition-colors" style={{ fontFamily: 'Syne, sans-serif' }}>
+                <h3 className="font-bold text-white text-base mb-1 group-hover:text-[#FF6B00] transition-colors">
                   {state.name}
                 </h3>
                 <p className="text-gray-500 text-xs mb-3 leading-relaxed">{state.hubs}</p>
@@ -461,7 +461,7 @@ export default async function HomePage() {
             <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-[rgba(255,107,0,0.3)] rounded-full text-[#FF6B00] text-xs font-semibold uppercase tracking-wider mb-4">
               💰 Transparent Pricing
             </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3" style={{ fontFamily: 'Syne, sans-serif' }}>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">
               Kolkata Cab <span className="text-gradient">Fare Chart</span>
             </h2>
             <p className="text-gray-400">Fixed rates — no surge, no hidden charges. What you see is what you pay.</p>
@@ -506,7 +506,7 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <div className="tag-orange inline-flex mb-4">⚡ Simple Booking</div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#0D1B2A] mb-3" style={{ fontFamily: 'Syne, sans-serif' }}>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#0D1B2A] mb-3">
               Book in <span className="text-gradient">3 Steps</span>
             </h2>
           </div>
@@ -524,7 +524,7 @@ export default async function HomePage() {
                 <div className="w-16 h-16 mx-auto bg-[#FF6B00]/10 rounded-2xl flex items-center justify-center text-[#FF6B00] mb-5 mt-2">
                   {item.icon}
                 </div>
-                <h3 className="font-bold text-[#0D1B2A] text-lg mb-2" style={{ fontFamily: 'Syne, sans-serif' }}>{item.title}</h3>
+                <h3 className="font-bold text-[#0D1B2A] text-lg mb-2">{item.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -537,7 +537,7 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-10">
             <div className="tag-orange inline-flex mb-4">🛣️ Popular Routes</div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#0D1B2A] mb-3" style={{ fontFamily: 'Syne, sans-serif' }}>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#0D1B2A] mb-3">
               Most Booked <span className="text-gradient">Routes</span>
             </h2>
             <p className="text-gray-500">Top cab routes from Kolkata and across our service area</p>
@@ -571,7 +571,7 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-10">
             <div className="tag-orange inline-flex mb-4">🚗 Our Fleet</div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#0D1B2A] mb-3" style={{ fontFamily: 'Syne, sans-serif' }}>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#0D1B2A] mb-3">
               Well-Maintained <span className="text-gradient">AC Vehicles</span>
             </h2>
             <p className="text-gray-500">Clean, sanitized, GPS-tracked fleet. Regularly inspected for your safety.</p>
@@ -589,7 +589,7 @@ export default async function HomePage() {
                   <div className="absolute top-3 right-3 badge-orange">AC Fleet</div>
                 </div>
                 <div className="p-5">
-                  <h3 className="font-bold text-[#0D1B2A] text-lg mb-1" style={{ fontFamily: 'Syne, sans-serif' }}>{vehicle.name}</h3>
+                  <h3 className="font-bold text-[#0D1B2A] text-lg mb-1">{vehicle.name}</h3>
                   <p className="text-gray-400 text-sm mb-3">{vehicle.models.join(', ')}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     <span className="px-2.5 py-1 bg-[#FF6B00]/10 text-[#FF6B00] text-xs font-semibold rounded-full">👥 {vehicle.capacity} Pax</span>
@@ -622,7 +622,7 @@ export default async function HomePage() {
             <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-[rgba(255,107,0,0.3)] rounded-full text-[#FF6B00] text-xs font-semibold uppercase tracking-wider mb-4">
               🏆 Why NK Cab & Taxi
             </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3" style={{ fontFamily: 'Syne, sans-serif' }}>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">
               Trusted by <span className="text-gradient">5,000+</span> Travelers
             </h2>
             <p className="text-gray-400 max-w-xl mx-auto">Here&apos;s why Kolkata&apos;s travelers choose us over Ola, Uber, and other local operators.</p>
@@ -640,7 +640,7 @@ export default async function HomePage() {
                 <div className="w-12 h-12 bg-[#FF6B00]/20 rounded-xl flex items-center justify-center text-[#FF6B00] mb-4">
                   {item.icon}
                 </div>
-                <h3 className="font-bold text-white text-base mb-2" style={{ fontFamily: 'Syne, sans-serif' }}>{item.title}</h3>
+                <h3 className="font-bold text-white text-base mb-2">{item.title}</h3>
                 <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -649,7 +649,7 @@ export default async function HomePage() {
           {/* NK Cab vs Uber/Ola comparison */}
           <div className="mt-12 bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
             <div className="p-6 border-b border-white/10">
-              <h3 className="text-white font-bold text-xl" style={{ fontFamily: 'Syne, sans-serif' }}>
+              <h3 className="text-white font-bold text-xl">
                 NK Cab & Taxi vs <span className="text-gradient">Uber / Ola</span>
               </h3>
             </div>
@@ -690,7 +690,7 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-10">
             <div className="tag-orange inline-flex mb-4">⭐ Reviews</div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#0D1B2A] mb-3" style={{ fontFamily: 'Syne, sans-serif' }}>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#0D1B2A] mb-3">
               What Kolkata <span className="text-gradient">Travelers Say</span>
             </h2>
             <p className="text-gray-500">5,000+ customers trust NK Cab & Taxi across Kolkata & East India</p>
@@ -743,7 +743,7 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-10">
             <div className="tag-orange inline-flex mb-4">🎉 Festival Cab</div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#0D1B2A] mb-3" style={{ fontFamily: 'Syne, sans-serif' }}>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#0D1B2A] mb-3">
               Festival &amp; <span className="text-gradient">Seasonal Service</span>
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto">Durga Puja, Diwali, Christmas, summer vacations — fixed rates, no surge, always available.</p>
@@ -757,7 +757,7 @@ export default async function HomePage() {
             ].map((item, i) => (
               <div key={i} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm card-hover">
                 <div className="text-4xl mb-4">{item.emoji}</div>
-                <h3 className="font-bold text-[#0D1B2A] text-base mb-2" style={{ fontFamily: 'Syne, sans-serif' }}>{item.title}</h3>
+                <h3 className="font-bold text-[#0D1B2A] text-base mb-2">{item.title}</h3>
                 <p className="text-gray-500 text-sm mb-3 leading-relaxed">{item.desc}</p>
                 <span className="text-xs text-[#FF6B00] font-semibold">📅 {item.period}</span>
               </div>
@@ -776,7 +776,7 @@ export default async function HomePage() {
           <div className="relative">
             <div className="absolute -inset-1 bg-gradient-to-br from-[#FF6B00]/20 to-[#F5A623]/20 rounded-3xl blur-xl" />
             <div className="relative glass-dark rounded-3xl p-10 border border-[rgba(255,107,0,0.2)]">
-              <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3" style={{ fontFamily: 'Syne, sans-serif' }}>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">
                 Book Your <span className="text-gradient">Kolkata Cab</span> Now!
               </h2>
               <p className="text-gray-400 mb-8">24/7 available. Confirm in under 2 minutes. No app needed.</p>
@@ -810,7 +810,7 @@ export default async function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
             {/* Main content — 3 cols */}
             <div className="lg:col-span-3 space-y-6">
-              <h2 className="text-2xl md:text-3xl font-extrabold text-[#0D1B2A]" style={{ fontFamily: 'Syne, sans-serif' }}>
+              <h2 className="text-2xl md:text-3xl font-extrabold text-[#0D1B2A]">
                 About <span className="text-gradient">NK Cab & Taxi</span> — Kolkata&apos;s Trusted Partner
               </h2>
               <div className="space-y-4 text-gray-600 leading-relaxed text-sm sm:text-base">
@@ -849,7 +849,7 @@ export default async function HomePage() {
 
               {/* Airport section */}
               <div className="bg-[#F7F5F0] rounded-2xl p-6">
-                <h3 className="font-bold text-[#0D1B2A] text-lg mb-3 flex items-center gap-2" style={{ fontFamily: 'Syne, sans-serif' }}>
+                <h3 className="font-bold text-[#0D1B2A] text-lg mb-3 flex items-center gap-2">
                   <Plane size={18} className="text-[#FF6B00]" /> Kolkata Airport Transfer — Fixed Fares
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -861,7 +861,7 @@ export default async function HomePage() {
 
               {/* NAP for local SEO */}
               <address className="bg-[#0D1B2A] rounded-2xl p-6 not-italic">
-                <h3 className="text-white font-bold text-base mb-4" style={{ fontFamily: 'Syne, sans-serif' }}>Contact NK Cab & Taxi</h3>
+                <h3 className="text-white font-bold text-base mb-4">Contact NK Cab & Taxi</h3>
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   <div className="space-y-1.5">
                     <p className="font-bold text-white">NK Cab & Taxi</p>
@@ -882,7 +882,7 @@ export default async function HomePage() {
             <div className="lg:col-span-2 space-y-5">
               {/* Why Choose Us */}
               <div className="bg-[#F7F5F0] rounded-2xl p-6">
-                <h3 className="font-bold text-[#0D1B2A] mb-4" style={{ fontFamily: 'Syne, sans-serif' }}>Why Choose NK Cab?</h3>
+                <h3 className="font-bold text-[#0D1B2A] mb-4">Why Choose NK Cab?</h3>
                 <ul className="space-y-2 text-sm text-gray-700">
                   {[
                     '₹12/km Sedan — no surge pricing ever',
@@ -904,7 +904,7 @@ export default async function HomePage() {
 
               {/* Services quick links */}
               <div className="bg-[#0D1B2A] rounded-2xl p-6">
-                <h3 className="font-bold text-white mb-4" style={{ fontFamily: 'Syne, sans-serif' }}>Popular Services</h3>
+                <h3 className="font-bold text-white mb-4">Popular Services</h3>
                 <div className="space-y-1">
                   {[
                     { name: 'Airport Transfer Kolkata', href: '/services/airport-transfer' },
@@ -932,7 +932,7 @@ export default async function HomePage() {
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-10">
             <div className="tag-orange inline-flex mb-4">❓ FAQ</div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#0D1B2A] mb-3" style={{ fontFamily: 'Syne, sans-serif' }}>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#0D1B2A] mb-3">
               Frequently Asked <span className="text-gradient">Questions</span>
             </h2>
           </div>
@@ -943,7 +943,7 @@ export default async function HomePage() {
       {/* ═══ SEO LINK CLOUD ═══ */}
       <section className="py-10 bg-white" id="popular-searches">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-xl font-bold text-[#0D1B2A] mb-6" style={{ fontFamily: 'Syne, sans-serif' }}>Popular Searches</h2>
+          <h2 className="text-xl font-bold text-[#0D1B2A] mb-6">Popular Searches</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div>
               <h3 className="text-sm font-bold text-[#0D1B2A] mb-3 flex items-center gap-1.5"><MapPin size={13} className="text-[#FF6B00]" /> By City</h3>

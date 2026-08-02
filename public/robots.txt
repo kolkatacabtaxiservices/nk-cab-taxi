@@ -9,8 +9,6 @@ Disallow: /*?car=suv
 Disallow: /*?car=tempo
 Disallow: /*?car=luxury
 Disallow: /*?car=innova
-# Block all query string URLs to prevent duplicate content indexing
-Disallow: /*?*
 # Block path-based car type variants (returned 403/404 for 8,149 pages in GSC)
 Disallow: /routes/*/sedan
 Disallow: /routes/*/suv
@@ -18,7 +16,6 @@ Disallow: /routes/*/tempo
 Disallow: /routes/*/luxury
 Disallow: /routes/*/innova
 
-# ── AI Training Crawlers (block) ──────────────────────────────
 User-agent: Amazonbot
 Disallow: /
 
@@ -42,6 +39,12 @@ Disallow: /
 
 User-agent: FacebookBot
 Disallow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Google-CloudVertexBot
+Allow: /
 
 User-agent: GPTBot
 Disallow: /
@@ -79,14 +82,7 @@ Disallow: /
 User-agent: Anchor Browser
 Disallow: /
 
-# ── Search Engine Crawlers (allow) ────────────────────────────
 User-agent: Googlebot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: Google-CloudVertexBot
 Allow: /
 
 User-agent: BingBot
@@ -113,5 +109,5 @@ Allow: /
 User-agent: DuckAssistBot
 Allow: /
 
-# ── Sitemaps ───────────────────────────────────────────────────
 Sitemap: https://www.nkcabtaxi.com/sitemap_index.xml
+Sitemap: https://www.nkcabtaxi.com/sitemap.xml

@@ -111,7 +111,7 @@ export default function BlogListPage() {
       {/* Internal Links — city, service & route pages */}
       <section className="py-10 bg-white" aria-label="Explore cab services">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-xl font-bold text-secondary mb-6" style={{ fontFamily: 'var(--font-syne, Syne, sans-serif)' }}>
+          <h2 className="text-xl font-bold text-secondary mb-6">
             Explore <span className="text-primary">Cab Services</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

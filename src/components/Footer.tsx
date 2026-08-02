@@ -67,7 +67,7 @@ export default async function Footer() {
         <div className="max-w-7xl mx-auto px-4 py-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-              <p className="text-white font-bold text-lg" style={{ fontFamily: 'Syne, sans-serif' }}>
+              <p className="text-white font-bold text-lg">
                 Ready to Book Your Cab?
               </p>
               <p className="text-gray-400 text-sm">24/7 available · Confirm in 2 minutes · No app needed</p>
@@ -102,7 +102,7 @@ export default async function Footer() {
                 className="rounded-full shrink-0"
               />
               <div>
-                <span className="font-extrabold text-white text-lg leading-tight block" style={{ fontFamily: 'Syne, sans-serif' }}>
+                <span className="font-extrabold text-white text-lg leading-tight block">
                   NK Cab <span className="text-[#FF6B00]">&</span> Taxi
                 </span>
                 <span className="text-[#F5A623] text-[10px] font-semibold uppercase tracking-[0.15em]">Kolkata · East India</span>
@@ -160,7 +160,7 @@ export default async function Footer() {
 
           {/* West Bengal Cities */}
           <div>
-            <h3 className="text-white font-bold mb-5 text-sm uppercase tracking-wider flex items-center gap-2" style={{ fontFamily: 'Syne, sans-serif' }}>
+            <h3 className="text-white font-bold mb-5 text-sm uppercase tracking-wider flex items-center gap-2">
               <span className="w-4 h-0.5 bg-[#FF6B00] rounded-full inline-block" />
               <Link href="/west-bengal" className="hover:text-[#FF6B00] transition-colors">
                 West Bengal
@@ -182,7 +182,7 @@ export default async function Footer() {
 
           {/* Kolkata Areas + Other States */}
           <div>
-            <h3 className="text-white font-bold mb-5 text-sm uppercase tracking-wider flex items-center gap-2" style={{ fontFamily: 'Syne, sans-serif' }}>
+            <h3 className="text-white font-bold mb-5 text-sm uppercase tracking-wider flex items-center gap-2">
               <span className="w-4 h-0.5 bg-[#FF6B00] rounded-full inline-block" />
               Kolkata Areas
             </h3>
@@ -195,7 +195,7 @@ export default async function Footer() {
                 </Link>
               ))}
             </div>
-            <h3 className="text-white font-bold mb-3 text-sm uppercase tracking-wider flex items-center gap-2" style={{ fontFamily: 'Syne, sans-serif' }}>
+            <h3 className="text-white font-bold mb-3 text-sm uppercase tracking-wider flex items-center gap-2">
               <span className="w-4 h-0.5 bg-[#F5A623] rounded-full inline-block" />
               JH, OD, BR & UP
             </h3>
@@ -212,7 +212,7 @@ export default async function Footer() {
 
           {/* Routes + Services + Quick */}
           <div>
-            <h3 className="text-white font-bold mb-5 text-sm uppercase tracking-wider flex items-center gap-2" style={{ fontFamily: 'Syne, sans-serif' }}>
+            <h3 className="text-white font-bold mb-5 text-sm uppercase tracking-wider flex items-center gap-2">
               <span className="w-4 h-0.5 bg-[#FF6B00] rounded-full inline-block" />
               Popular Routes
             </h3>
@@ -225,7 +225,7 @@ export default async function Footer() {
                 </Link>
               ))}
             </div>
-            <h3 className="text-white font-bold mb-3 text-sm uppercase tracking-wider flex items-center gap-2" style={{ fontFamily: 'Syne, sans-serif' }}>
+            <h3 className="text-white font-bold mb-3 text-sm uppercase tracking-wider flex items-center gap-2">
               <span className="w-4 h-0.5 bg-[#F5A623] rounded-full inline-block" />
               Services
             </h3>
