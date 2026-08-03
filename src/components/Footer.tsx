@@ -105,7 +105,7 @@ export default async function Footer() {
                 <span className="font-extrabold text-white text-lg leading-tight block">
                   NK Cab <span className="text-[#FF6B00]">&</span> Taxi
                 </span>
-                <span className="text-[#F5A623] text-[10px] font-semibold uppercase tracking-[0.15em]">Kolkata · East India</span>
+                <span className="text-[#F5A623] text-[10px] font-semibold uppercase tracking-[0.15em]">Taxi | Cab Service</span>
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">

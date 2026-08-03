@@ -987,8 +987,8 @@ export function generateLocalBusinessSchema() {
     logo: {
       '@type': 'ImageObject',
       url: LOGO_URL,
-      width: 500,
-      height: 500,
+      width: 1024,
+      height: 1024,
     },
     description: `${BUSINESS.name} is Kolkata's most trusted cab and taxi service. We provide outstation, local, one-way, round trip, airport transfer, wedding car rental, and corporate car rental across West Bengal, Jharkhand, and Odisha.`,
     foundingDate: `${BUSINESS.foundYear}`,
@@ -1111,8 +1111,8 @@ export function generateOrganizationSchema() {
     logo: {
       '@type': 'ImageObject',
       url: LOGO_URL,
-      width: 500,
-      height: 500,
+      width: 1024,
+      height: 1024,
     },
     foundingDate: `${BUSINESS.foundYear}`,
     foundingLocation: { '@type': 'Place', name: 'Kolkata, West Bengal, India' },
