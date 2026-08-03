@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useRef, useState, useEffect } from 'react';
 import { MapPin } from 'lucide-react';
@@ -60,13 +60,13 @@ export default function GoogleMapEmbed({
   let mapTitle = '';
 
   if (fromCity && toCity && fromLat && fromLng && toLat && toLng) {
-    mapSrc = `https://maps.google.com/maps?width=100%25&height=400&hl=en&saddr=${encodeURIComponent(fromCity + ', India')}&daddr=${encodeURIComponent(toCity + ', India')}&t=&ie=UTF8&iwloc=B&output=embed`;
+    mapSrc = `https://maps.google.com/maps?width=100%25&height=100%25&hl=en&saddr=${encodeURIComponent(fromCity + ', India')}&daddr=${encodeURIComponent(toCity + ', India')}&t=&ie=UTF8&iwloc=B&output=embed`;
     mapTitle = `${fromCity} to ${toCity} Route Map`;
   } else if (cityName && cityLat && cityLng) {
-    mapSrc = `https://maps.google.com/maps?width=100%25&height=400&hl=en&q=${encodeURIComponent(cityName + ', India')}&t=&z=12&ie=UTF8&iwloc=B&output=embed`;
+    mapSrc = `https://maps.google.com/maps?width=100%25&height=100%25&hl=en&q=${encodeURIComponent(cityName + ', India')}&t=&z=12&ie=UTF8&iwloc=B&output=embed`;
     mapTitle = `${cityName} Map — Cab Service Area`;
   } else {
-    mapSrc = `https://maps.google.com/maps?width=100%25&height=400&hl=en&q=Kolkata+Cab+Service,+Park+Street,+Kolkata,+West+Bengal,+India&t=&z=12&ie=UTF8&iwloc=B&output=embed`;
+    mapSrc = `https://maps.google.com/maps?width=100%25&height=100%25&hl=en&q=Kolkata+Cab+Service,+Park+Street,+Kolkata,+West+Bengal,+India&t=&z=12&ie=UTF8&iwloc=B&output=embed`;
     mapTitle = 'NK Cab & Taxi — Location Map';
   }
 
@@ -85,36 +85,35 @@ export default function GoogleMapEmbed({
           <p className="text-gray-500 text-sm mt-2 max-w-2xl mx-auto">{displaySubtitle}</p>
         </div>
 
-        <div className="relative rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-white" style={{ minHeight: 400 }}>
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none z-10 rounded-2xl" />
-
+        {/* Map Card Container — Responsive height h-[320px] on mobile to h-[450px] on desktop.
+            Iframe uses absolute inset-0 w-full h-full to guarantee 100% fill with zero bottom gap. */}
+        <div className="relative w-full h-[320px] sm:h-[400px] md:h-[450px] rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-white">
           {loaded ? (
             <iframe
               src={mapSrc}
               width="100%"
-              height="400"
+              height="100%"
               style={{ border: 0, display: 'block' }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title={mapTitle}
-              className="w-full"
+              className="absolute inset-0 w-full h-full border-0 block"
             />
           ) : (
             /* ── Placeholder shown before user scrolls to map ── */
             <div
-              className="w-full flex flex-col items-center justify-center gap-4 bg-gradient-to-br from-slate-100 to-slate-200"
-              style={{ height: 400 }}
+              className="absolute inset-0 w-full h-full flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-slate-100 to-slate-200"
               aria-label="Map loading placeholder"
             >
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-md">
-                <MapPin size={32} className="text-primary" />
+              <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-md">
+                <MapPin size={28} className="text-primary" />
               </div>
-              <p className="text-gray-500 text-sm font-medium">Map loads as you scroll</p>
+              <p className="text-gray-600 text-sm font-semibold">Map loads as you scroll</p>
               <button
                 type="button"
                 onClick={() => setLoaded(true)}
-                className="px-5 py-2 bg-primary text-white text-sm font-semibold rounded-full hover:bg-primary/90 transition-colors shadow"
+                className="px-5 py-2 bg-primary text-white text-xs sm:text-sm font-semibold rounded-full hover:bg-primary/90 transition-colors shadow"
               >
                 Load Map Now
               </button>
