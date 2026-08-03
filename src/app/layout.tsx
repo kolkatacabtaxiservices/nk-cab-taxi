@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(BUSINESS.domain),
   title: {
     default: 'NK Cab & Taxi Kolkata | ₹12/km | ⭐4.8 | Airport, Outstation, Local Taxi 24/7',
-    template: '%s | NK Cab & Taxi',
+    template: '%s',
   },
   description: `★4.8 NK Cab & Taxi — Best cab service in Kolkata & East India from ₹12/km. Airport taxi Kolkata | Outstation to Darjeeling, Puri, Ranchi, Bhubaneswar | Local 4hr ₹1,800. AC Innova, Ertiga, Sedan. No surge 24/7. Call ${BUSINESS.phone}`,
   keywords: [
