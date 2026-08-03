@@ -155,76 +155,71 @@ export default async function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateSeasonalOfferSchema()) }} />
 
       {/* ═══ HERO — Banner Slideshow + Booking Form ═══ */}
-      <section id="hero" className="relative bg-[#0D1B2A] lg:bg-transparent overflow-hidden">
-        {/* Background slideshow container:
-            On mobile (< lg): Dedicated aspect height (h-[220px] sm:h-[340px]) so banner images are crisp and uncropped.
-            On desktop (≥ lg): Absolute fill (lg:absolute lg:inset-0 lg:h-full) for full-screen hero backdrop. */}
-        <div className="relative h-[220px] sm:h-[340px] lg:absolute lg:inset-0 lg:h-full w-full overflow-hidden">
-          <HeroBanner />
-        </div>
+      <section id="hero" className="relative min-h-screen flex flex-col justify-between overflow-hidden">
+        {/* Background slideshow covering 100% of the Hero section backdrop */}
+        <HeroBanner />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-6 lg:py-0 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-0 lg:min-h-screen">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pt-8 pb-12 lg:py-16 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start lg:items-center">
 
-            {/* Left: Hero Text */}
-            <div className="text-white animate-slideUp pt-4 lg:pt-0">
+            {/* Left: Hero Text Content matching screenshot */}
+            <div className="text-white animate-slideUp">
               {/* Trust pill */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 glass rounded-full text-xs sm:text-sm mb-4 border border-white/10">
-                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                <span className="text-gray-200 font-medium">⭐ 4.8 Rating · 7,000+ Happy Customers · Kolkata&apos;s Trusted Cab</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-xs sm:text-sm mb-5 border border-white/20 shadow-md">
+                <span className="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse shadow-sm shadow-green-400" />
+                <span className="text-white font-medium">★ 4.8 Google Rating — Serving 80+ Cities Across East India</span>
               </div>
 
+              {/* Main Heading */}
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.15] mb-4">
-                Trusted Kolkata<br />
-                <span className="text-gradient">Cab Service</span>
-                <span className="block text-lg sm:text-2xl lg:text-2xl font-bold text-white/90 mt-1.5">
-                  Airport · Outstation · Local · 24/7
-                </span>
+                <span className="text-[#FF6B00]">NK Cab &amp; Taxi</span> — Best Taxi Booking ₹12/km
               </h1>
 
-              <p className="text-gray-300 text-sm sm:text-lg leading-relaxed mb-6 max-w-xl">
-                Book cab in <strong className="text-white">Kolkata</strong> from <strong className="text-[#FF6B00]">₹12/km</strong>.
-                Airport transfer, outstation, one-way, local packages — 80+ cities across
-                <strong className="text-white"> West Bengal, Jharkhand &amp; Odisha</strong>.
-                No surge. Instant WhatsApp confirm. 24/7.
+              {/* Subheading */}
+              <h2 className="text-lg sm:text-2xl font-bold text-white/95 mb-4">
+                Local Taxi, Outstation Cab &amp; Airport Transfer in Kolkata | 24/7
+              </h2>
+
+              <p className="text-gray-200 text-sm sm:text-base leading-relaxed mb-6 max-w-2xl">
+                Trusted Kolkata cab service for local taxi, outstation cab booking, airport transfer, one-way taxi, car rental &amp; wedding car. AC sedan ₹12/km, SUV ₹16/km. Book cab in Kolkata online or by call — no surge pricing, 24/7.
               </p>
 
-              {/* CTA Buttons */}
+              {/* Action Buttons matching screenshot */}
               <div className="flex flex-col sm:flex-row gap-3 mb-6">
                 <a
                   href={`tel:${BUSINESS.phone}`}
-                  className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 btn-primary rounded-xl text-base font-bold shadow-orange animate-nk-pulse"
+                  className="inline-flex items-center justify-center gap-3 px-7 py-4 bg-[#FF6B00] hover:bg-[#e05e00] text-white rounded-full text-base font-bold shadow-lg transition-all animate-nk-pulse"
                 >
-                  <Phone size={18} />
-                  Call: {BUSINESS.phoneDisplay}
+                  <Phone size={20} />
+                  Call Now: {BUSINESS.phoneDisplay}
                 </a>
                 <a
-                  href={`${BUSINESS.whatsappLink}?text=${encodeURIComponent('Hi! I want to book a cab in Kolkata.')}`}
-                  className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-green-600 hover:bg-green-500 text-white rounded-xl text-base font-bold transition-all"
+                  href="#booking-form"
+                  className="inline-flex items-center justify-center gap-2.5 px-7 py-4 bg-white/15 hover:bg-white/25 text-white rounded-full text-base font-bold border border-white/30 backdrop-blur-md transition-all"
                 >
-                  💬 WhatsApp Booking
+                  Book Online →
                 </a>
               </div>
 
-              {/* Trust badges row */}
-              <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs sm:text-sm text-gray-300">
-                <span className="flex items-center gap-1.5"><CheckCircle size={14} className="text-green-400" /> Police-verified drivers</span>
-                <span className="flex items-center gap-1.5"><CheckCircle size={14} className="text-green-400" /> No surge 24/7</span>
-                <span className="flex items-center gap-1.5"><CheckCircle size={14} className="text-green-400" /> GPS-tracked fleet</span>
-                <span className="flex items-center gap-1.5"><CheckCircle size={14} className="text-green-400" /> Confirm in 2 minutes</span>
+              {/* Trust Badges with Green Checkmarks matching screenshot */}
+              <div className="flex flex-wrap gap-x-5 gap-y-2 text-xs sm:text-sm text-gray-200 font-medium">
+                <span className="flex items-center gap-1.5"><CheckCircle size={15} className="text-green-400" /> Best Cab Service Kolkata</span>
+                <span className="flex items-center gap-1.5"><CheckCircle size={15} className="text-green-400" /> No Surge Pricing 24/7</span>
+                <span className="flex items-center gap-1.5"><CheckCircle size={15} className="text-green-400" /> ★4.8 Rated — 5000+ Customers</span>
               </div>
             </div>
 
-            {/* Right: Booking Form Card — Shows directly below Hero Text on mobile screens */}
-            <div className="animate-slideInRight pb-8 lg:pb-0" id="booking-form">
+            {/* Right: Booking Form Card — Sitting on top of the hero background */}
+            <div className="animate-slideInRight mt-6 lg:mt-0" id="booking-form">
               <BookingForm compact={false} />
             </div>
+
           </div>
         </div>
 
-        {/* Bottom wave (desktop only to prevent awkward mobile scroll gap) */}
-        <div className="absolute bottom-0 left-0 right-0 hidden lg:block" style={{ zIndex: 10 }}>
-          <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" className="w-full" preserveAspectRatio="none">
+        {/* Bottom wave */}
+        <div className="relative z-10 w-full">
+          <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" className="w-full h-10 sm:h-16" preserveAspectRatio="none">
             <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#F7F5F0" />
           </svg>
         </div>
