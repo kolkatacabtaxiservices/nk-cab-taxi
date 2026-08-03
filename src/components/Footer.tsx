@@ -238,6 +238,9 @@ export default async function Footer() {
                 ['Wedding Car Rental', '/services/wedding-car-rental'],
                 ['Corporate Cars', '/services/corporate-car-rental'],
                 ['Fare Chart', '/fare-chart'],
+                ['NK Cab vs Ola/Uber', '/kolkata-cab-vs-ola-uber'],
+                ['Kolkata to Jamshedpur Cab', '/kolkata-to-jamshedpur-cab'],
+                ['Jamshedpur to Kolkata Cab', '/jamshedpur-to-kolkata-cab'],
                 ['About Us', '/about'],
                 ['Contact', '/contact'],
               ].map(([name, href]) => (
