@@ -151,15 +151,8 @@ export default async function HomePage() {
     <>
       {/* Structured Data */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFaqSchema(faqs)) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateReviewSchema(testimonials)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generatePopularRoutesItemListSchema(popularRoutes)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateSeasonalOfferSchema()) }} />
-      {/* AggregateRating — star ratings in SERPs */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateAggregateRatingSchema()) }} />
-      {/* SitelinksSearchBox — appears in branded searches */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateSitelinksSearchBoxSchema()) }} />
-      {/* ServiceArea — 5-state coverage signal */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceAreaSchema()) }} />
 
       {/* ═══ HERO — Banner Slideshow + Booking Form ═══ */}
       <section id="hero" className="relative min-h-[90vh] lg:min-h-screen flex items-center overflow-hidden">

@@ -168,8 +168,6 @@ export default function ServicesPage() {
         { name: 'Home', url: BUSINESS.domain },
         { name: 'Services', url: `${BUSINESS.domain}/services` },
       ])) }} />
-      {/* AggregateRating — 4.8★ for service pages */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateAggregateRatingSchema()) }} />
 
       {/* Hero */}
       <section className="relative text-white py-14 lg:py-20 overflow-hidden">

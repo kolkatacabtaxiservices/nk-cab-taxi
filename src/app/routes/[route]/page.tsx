@@ -151,8 +151,6 @@ export default async function RoutePage({ params }: { params: Promise<{ route: s
       ])) }} />
       {/* Service schema with pricing — improves route-specific rich results */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateRouteTripActionSchema(route.fromName, route.toName, route.distance, route.priceSaloon)) }} />
-      {/* AggregateRating — 4.8★ in SERPs for route pages */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateAggregateRatingSchema()) }} />
 
       {/* Hero */}
       <section className="relative text-white py-12 lg:py-16 overflow-hidden">

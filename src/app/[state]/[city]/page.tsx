@@ -164,10 +164,6 @@ export default async function CityPage({ params }: { params: Promise<{ state: st
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateCityServiceSchema(city.name, state.name, city.alternateNames)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateCityGeoCircleSchema(city.name, state.name, city.lat, city.lng, city.alternateNames)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(routeItemListSchema) }} />
-      {/* AggregateRating — star ratings boost CTR in SERPs */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateAggregateRatingSchema()) }} />
-      {/* ServiceArea — geographic coverage signal */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceAreaSchema()) }} />
       {/* CityOfferCatalog — vehicle/service price listings */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateCityOfferCatalogSchema(
         city.name, state.name, state.slug, city.slug,

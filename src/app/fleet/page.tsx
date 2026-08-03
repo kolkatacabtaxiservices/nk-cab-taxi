@@ -41,8 +41,6 @@ export default function FleetPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFleetOfferCatalogSchema(vehicles)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema([{ name: 'Home', url: BUSINESS.domain }, { name: 'Our Fleet', url: `${BUSINESS.domain}/fleet` }])) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFaqSchema(faqs)) }} />
-      {/* AggregateRating — 4.8★ star rating for fleet/vehicle queries */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateAggregateRatingSchema()) }} />
 
       {/* Geo meta — Kolkata primary */}
       <meta name="geo.region" content="IN-WB" />
