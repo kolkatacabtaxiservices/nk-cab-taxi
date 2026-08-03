@@ -1107,6 +1107,7 @@ export function generateOrganizationSchema() {
     '@type': 'Organization',
     '@id': `${DOMAIN}/#organization`,
     name: BUSINESS.name,
+    alternateName: ['NK Cab Taxi', 'NK Cab', 'NK Taxi', 'nkcabtaxi', 'NK Cab & Taxi Kolkata'],
     url: DOMAIN,
     logo: {
       '@type': 'ImageObject',
@@ -1158,6 +1159,15 @@ export function generateWebsiteSchema() {
     '@type': 'WebSite',
     '@id': `${DOMAIN}/#website`,
     name: BUSINESS.name,
+    alternateName: [
+      'NK Cab & Taxi',
+      'NK Cab Taxi',
+      'NK Cab',
+      'NK Taxi',
+      'nkcabtaxi',
+      'nkcabtaxi.com',
+      'NK Cab & Taxi Kolkata',
+    ],
     url: DOMAIN,
     description: 'Best cab service in Kolkata — outstation, local, one-way, airport transfer, wedding car & corporate rental.',
     publisher: { '@id': `${DOMAIN}/#organization` },
