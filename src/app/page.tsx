@@ -155,30 +155,34 @@ export default async function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateSeasonalOfferSchema()) }} />
 
       {/* ═══ HERO — Banner Slideshow + Booking Form ═══ */}
-      <section id="hero" className="relative min-h-[90vh] lg:min-h-screen flex items-center overflow-hidden">
-        {/* Background slideshow: navbanner.webp / navbanner1.webp / navbanner2.webp / navbanner3.webp */}
-        <HeroBanner />
+      <section id="hero" className="relative bg-[#0D1B2A] lg:bg-transparent overflow-hidden">
+        {/* Background slideshow container:
+            On mobile (< lg): Dedicated aspect height (h-[220px] sm:h-[340px]) so banner images are crisp and uncropped.
+            On desktop (≥ lg): Absolute fill (lg:absolute lg:inset-0 lg:h-full) for full-screen hero backdrop. */}
+        <div className="relative h-[220px] sm:h-[340px] lg:absolute lg:inset-0 lg:h-full w-full overflow-hidden">
+          <HeroBanner />
+        </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-0 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center min-h-[80vh]">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-6 lg:py-0 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-0 lg:min-h-screen">
 
             {/* Left: Hero Text */}
-            <div className="text-white animate-slideUp">
+            <div className="text-white animate-slideUp pt-4 lg:pt-0">
               {/* Trust pill */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 glass rounded-full text-xs sm:text-sm mb-6 border border-white/10">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 glass rounded-full text-xs sm:text-sm mb-4 border border-white/10">
                 <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                <span className="text-gray-300">⭐ 4.8 Rating · 5,000+ Happy Customers · Kolkata&apos;s Trusted Cab</span>
+                <span className="text-gray-200 font-medium">⭐ 4.8 Rating · 7,000+ Happy Customers · Kolkata&apos;s Trusted Cab</span>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-5">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.15] mb-4">
                 Trusted Kolkata<br />
                 <span className="text-gradient">Cab Service</span>
-                <span className="block text-xl sm:text-2xl lg:text-2xl font-bold text-white/80 mt-2">
+                <span className="block text-lg sm:text-2xl lg:text-2xl font-bold text-white/90 mt-1.5">
                   Airport · Outstation · Local · 24/7
                 </span>
               </h1>
 
-              <p className="text-gray-200 text-base sm:text-lg leading-relaxed mb-8 max-w-xl">
+              <p className="text-gray-300 text-sm sm:text-lg leading-relaxed mb-6 max-w-xl">
                 Book cab in <strong className="text-white">Kolkata</strong> from <strong className="text-[#FF6B00]">₹12/km</strong>.
                 Airport transfer, outstation, one-way, local packages — 80+ cities across
                 <strong className="text-white"> West Bengal, Jharkhand &amp; Odisha</strong>.
@@ -186,24 +190,24 @@ export default async function HomePage() {
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3 mb-8">
+              <div className="flex flex-col sm:flex-row gap-3 mb-6">
                 <a
                   href={`tel:${BUSINESS.phone}`}
-                  className="inline-flex items-center justify-center gap-2.5 px-7 py-4 btn-primary rounded-2xl text-base font-bold shadow-orange animate-nk-pulse"
+                  className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 btn-primary rounded-xl text-base font-bold shadow-orange animate-nk-pulse"
                 >
-                  <Phone size={20} />
+                  <Phone size={18} />
                   Call: {BUSINESS.phoneDisplay}
                 </a>
                 <a
                   href={`${BUSINESS.whatsappLink}?text=${encodeURIComponent('Hi! I want to book a cab in Kolkata.')}`}
-                  className="inline-flex items-center justify-center gap-2.5 px-7 py-4 bg-green-600 hover:bg-green-500 text-white rounded-2xl text-base font-bold transition-all"
+                  className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-green-600 hover:bg-green-500 text-white rounded-xl text-base font-bold transition-all"
                 >
                   💬 WhatsApp Booking
                 </a>
               </div>
 
               {/* Trust badges row */}
-              <div className="flex flex-wrap gap-4 text-sm text-gray-300">
+              <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs sm:text-sm text-gray-300">
                 <span className="flex items-center gap-1.5"><CheckCircle size={14} className="text-green-400" /> Police-verified drivers</span>
                 <span className="flex items-center gap-1.5"><CheckCircle size={14} className="text-green-400" /> No surge 24/7</span>
                 <span className="flex items-center gap-1.5"><CheckCircle size={14} className="text-green-400" /> GPS-tracked fleet</span>
@@ -211,15 +215,15 @@ export default async function HomePage() {
               </div>
             </div>
 
-            {/* Right: Booking Form Card */}
-            <div className="animate-slideInRight" id="booking-form">
+            {/* Right: Booking Form Card — Shows directly below Hero Text on mobile screens */}
+            <div className="animate-slideInRight pb-8 lg:pb-0" id="booking-form">
               <BookingForm compact={false} />
             </div>
           </div>
         </div>
 
-        {/* Bottom wave */}
-        <div className="absolute bottom-0 left-0 right-0" style={{ zIndex: 10 }}>
+        {/* Bottom wave (desktop only to prevent awkward mobile scroll gap) */}
+        <div className="absolute bottom-0 left-0 right-0 hidden lg:block" style={{ zIndex: 10 }}>
           <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" className="w-full" preserveAspectRatio="none">
             <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#F7F5F0" />
           </svg>
@@ -418,10 +422,10 @@ export default async function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {[
               { flag: '🪷', name: 'West Bengal', slug: 'west-bengal', hubs: 'Kolkata · Siliguri · Durgapur', cities: '25+ cities', color: 'from-[#FF6B00] to-[#F5A623]' },
-              { flag: '⛏️', name: 'Jharkhand',   slug: 'jharkhand',   hubs: 'Ranchi · Jamshedpur · Dhanbad', cities: '12+ cities', color: 'from-[#FF6B00] to-red-500' },
-              { flag: '🛕', name: 'Odisha',       slug: 'odisha',      hubs: 'Bhubaneswar · Puri · Cuttack', cities: '10+ cities', color: 'from-[#F5A623] to-yellow-500' },
-              { flag: '🌾', name: 'Bihar',        slug: 'bihar',       hubs: 'Patna · Gaya · Muzaffarpur',   cities: '8+ cities',  color: 'from-green-500 to-emerald-600' },
-              { flag: '🕌', name: 'Uttar Pradesh',slug: 'uttar-pradesh',hubs: 'Varanasi · Ayodhya · Agra',  cities: '6+ cities',  color: 'from-purple-500 to-indigo-600' },
+              { flag: '⛏️', name: 'Jharkhand', slug: 'jharkhand', hubs: 'Ranchi · Jamshedpur · Dhanbad', cities: '12+ cities', color: 'from-[#FF6B00] to-red-500' },
+              { flag: '🛕', name: 'Odisha', slug: 'odisha', hubs: 'Bhubaneswar · Puri · Cuttack', cities: '10+ cities', color: 'from-[#F5A623] to-yellow-500' },
+              { flag: '🌾', name: 'Bihar', slug: 'bihar', hubs: 'Patna · Gaya · Muzaffarpur', cities: '8+ cities', color: 'from-green-500 to-emerald-600' },
+              { flag: '🕌', name: 'Uttar Pradesh', slug: 'uttar-pradesh', hubs: 'Varanasi · Ayodhya · Agra', cities: '6+ cities', color: 'from-purple-500 to-indigo-600' },
             ].map((state) => (
               <Link
                 key={state.slug}
