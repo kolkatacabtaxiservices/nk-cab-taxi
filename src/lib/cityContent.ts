@@ -32,8 +32,16 @@ const KOLKATA_AREAS = [
   { name: 'South Kolkata', areas: 'Alipore, New Alipore, Chetla, Ekbalpur' },
 ];
 
+// ══════════════════════════════════════════════════════════════
+// BRAND SEED — shifts template selection away from source site.
+// Since both sites share the same city slugs, we add a brand-
+// specific offset so NK Cab & Taxi always picks a different
+// template variant than the original site for every city/route.
+// ══════════════════════════════════════════════════════════════
+const NK_BRAND_SEED = 7;
+
 function getCityHash(name: string): number {
-  let hash = 0;
+  let hash = NK_BRAND_SEED; // seed offset — differentiates from source site
   for (let i = 0; i < name.length; i++) {
     hash += name.charCodeAt(i);
   }
@@ -51,36 +59,36 @@ function getAboutCityContent(input: CityContentInput): string[] {
   // Use 12-way rotation for more diversity
   const templateIndex = hash % 12;
 
-  // ── Paragraph 1: Natural, varied opening ──
+  // ── Paragraph 1: NK-brand-specific opening — unique to NK Cab & Taxi ──
   if (isKolkata) {
     const kolkataIntros = [
-      `Finding a reliable cab in Kolkata isn't always easy — between surge-happy apps and unreliable auto-walllahs, most people end up frustrated. That's why ${BUSINESS.name} runs fixed-rate taxi service across Kolkata, from Dum Dum to Garia, from Salt Lake to Howrah. We've been picking up passengers from Park Street at 3 AM and dropping off families at Netaji Subhas Chandra Bose International Airport during Durga Puja rush — rain or shine. Kolkata cab starts from ${displayRate}. Call ${BUSINESS.phone}.`,
-      `Kolkata's traffic can be unpredictable — a 10-km drive from New Town to Esplanade can take 45 minutes on a bad evening. ${BUSINESS.name} drivers know the city's pressure points: when to take VIP Road and when to slip through Ultadanga, when the Howrah Bridge is clear and when EM Bypass saves time. Local knowledge, clean AC cars, honest metering — that's what we offer Kolkata passengers every day. Rates from ${displayRate}. Book via WhatsApp on ${BUSINESS.phone}.`,
-      `${BUSINESS.name} is Kolkata's trusted cab service covering all 141 wards of the city plus Howrah, Bidhannagar, Rajarhat, and Barrackpore. Whether you're catching the 5 AM Rajdhani from Howrah, heading to AMRI or Apollo for a checkup, or need a late-night drop after an office event at Eco Space — we are on call 24/7. Our sedan cab from ${displayRate}. No surge pricing, ever. Dial ${BUSINESS.phone} to book.`,
+      `Surge pricing from Ola and Uber during Durga Puja can hit 2.5× — that's when NK Cab & Taxi gets the most calls. We don't surge. We never have. Our fixed-rate taxi service covers all of Kolkata from Dum Dum to Garia, Salt Lake to Howrah, 24/7. A Kolkata cab from NK Cab & Taxi starts at ${displayRate}. Call us directly: ${BUSINESS.phone} — no app needed.`,
+      `NK Cab & Taxi was built around one promise: your Kolkata cab fare should never change because it's a festival night or raining heavily. Whether you're leaving from Park Street at midnight or catching the 4 AM Shatabdi from Howrah — our sedan rate stays at ${displayRate}. No algorithm. No surge. Just call ${BUSINESS.phone} and we confirm in under 2 minutes.`,
+      `We've been running cab service across Kolkata long enough to know where the city chokes — EM Bypass at 6 PM, Ultadanga during match days, Rabindra Setu on festival evenings. NK Cab & Taxi drivers know Kolkata's pressure points and route around them. Fixed fares from ${displayRate}, AC fleet, 24/7 availability. Dial ${BUSINESS.phone} to book instantly.`,
     ];
     paragraphs.push(kolkataIntros[hash % 3]);
   } else if (city.type === 'hub') {
     const hubIntros = [
-      `${city.name} is a busy junction city — and busy cities need transport that doesn't let you down. ${BUSINESS.name} offers professional cab service in ${city.name}, ${stateName}, starting from ${displayRate}. We cover all areas, connect to all major highways, and run 24/7 including on public holidays and festival days. Whether it's a 6 AM corporate flight or a weekend family trip — our vehicles are always clean, drivers always professional. Call ${BUSINESS.phone} for booking.`,
-      `Running a business or managing family commitments in ${city.name}? Either way, reliable transport matters. ${BUSINESS.name} has been serving passengers in ${city.name} with fixed-rate cab service from ${displayRate}. No app, no surge — just call ${BUSINESS.phone}, tell us your pickup point and destination, and we confirm in under 2 minutes. Our drivers know ${city.name} well and reach you on time.`,
-      `${city.name} cab passengers often tell us the same thing: they tried app-based cabs and kept facing surge pricing, cancellations, or wrong pickups. ${BUSINESS.name} was started to solve exactly this problem. We run a transparent cab service in ${city.name} with fixed fares from ${displayRate}, verified drivers, and a direct phone line you can call anytime — ${BUSINESS.phone}. No hidden charges. No drama.`,
-      `Whether you're a resident of ${city.name} needing daily commute support or a visitor arriving for business — ${BUSINESS.name} covers your ground transportation in ${city.name} at honest rates starting from ${displayRate}. We pick up from your home, hotel, railway station, or any address. Call or WhatsApp ${BUSINESS.phone} — we reply fast.`,
+      `NK Cab & Taxi operates professional cab service in ${city.name}, ${stateName}, starting from ${displayRate}. We cover all areas, run 24/7 including festival days, and don't apply surge pricing — not during Diwali, not during peak season, not ever. One call to ${BUSINESS.phone} gets you a confirmed booking in under 2 minutes.`,
+      `In ${city.name}, reliable cab service is not as common as you'd think — surge pricing, last-minute cancellations, and wrong pickups are frequent complaints. NK Cab & Taxi was built to fix exactly this. Fixed fares from ${displayRate}, verified drivers who know ${city.name}, and a direct booking line: ${BUSINESS.phone}. No app, no registration, just confirm and go.`,
+      `NK Cab & Taxi runs a straightforward cab service in ${city.name}, ${stateName}: you call ${BUSINESS.phone}, we confirm in 2 minutes, driver arrives on time. Fares start from ${displayRate} with no surge — same rate at 3 AM as at noon. Our drivers know ${city.name}'s roads and traffic patterns intimately.`,
+      `Whether you're a ${city.name} resident needing daily commute support or a visitor here for business — NK Cab & Taxi covers your ground transport at honest rates from ${displayRate}. No hidden charges, no festival surcharge. WhatsApp or call ${BUSINESS.phone} — we move fast.`,
     ];
     paragraphs.push(hubIntros[hash % 4]);
   } else if (city.tourist) {
     const touristIntros = [
-      `${city.name} is one of those destinations that stays with you long after you leave. To make sure your visit here is stress-free, ${BUSINESS.name} provides dedicated tourist cab service in ${city.name} with experienced drivers who know every temple, viewpoint, and hidden gem. Rates start from ${displayRate}. We also do pick-and-drop from the railway station or nearest airport. Call ${BUSINESS.phone}.`,
-      `Getting around ${city.name} as a tourist can be tricky — unreliable autos, confusing e-rickshaw routes, and the ever-present worry of overcharging. ${BUSINESS.name} takes care of all of that. We offer clean AC cabs in ${city.name} with knowledgeable local drivers, fixed fares from ${displayRate}, and a booking line that's live 24/7: ${BUSINESS.phone}. Plan your itinerary, we'll handle the driving.`,
-      `Thousands of visitors come to ${city.name} every year for its unique attractions. ${BUSINESS.name} provides transport to every major spot from ${displayRate}. Our drivers are familiar with local areas, can suggest the best visit order, and will wait while you explore. Book for half-day sightseeing or a full-day tour — we customise based on your plan. Call ${BUSINESS.phone}.`,
-      `A cab in ${city.name} is practically essential for tourists — distances between the main attractions can be substantial, especially in peak summer. ${BUSINESS.name} offers fixed-rate tourist cabs in ${city.name} so you know exactly what you're paying before you start. No unpleasant surprises at the end of the day. From ${displayRate}. Available 24/7 on ${BUSINESS.phone}.`,
+      `NK Cab & Taxi provides dedicated tourist cab service in ${city.name} with drivers who know every temple, viewpoint, and local food spot worth visiting. Rates from ${displayRate}. We handle airport and station pickups, sightseeing runs, and drop-off to your next destination. Book directly on ${BUSINESS.phone} — no app needed.`,
+      `Travelling to ${city.name}? NK Cab & Taxi offers clean AC tourist cabs with knowledgeable local drivers and fixed fares from ${displayRate}. No overcharging, no route manipulation — just honest transport. Available 24/7 including festival travel and holiday season. Call ${BUSINESS.phone} anytime.`,
+      `Thousands of visitors come to ${city.name} each year and the one common frustration is unreliable local transport. NK Cab & Taxi solves this with a fixed-rate cab service from ${displayRate}, experienced local drivers, and a 24/7 booking line: ${BUSINESS.phone}. Half-day sightseeing or full-day tour — we customise.`,
+      `A cab in ${city.name} is practically essential for tourists — NK Cab & Taxi makes it simple. Fixed fare from ${displayRate}, no surge on peak days, driver who knows the landmarks. Call ${BUSINESS.phone}, tell us your plan, we handle the transport.`,
     ];
     paragraphs.push(touristIntros[hash % 4]);
   } else {
     const regularIntros = [
-      `${city.name} residents and visitors deserve transport that's predictable and priced fairly. ${BUSINESS.name} provides cab service in ${city.name}, ${stateName} from ${displayRate} — with verified drivers, clean AC vehicles, and zero surge pricing. Book by calling ${BUSINESS.phone} or sending a WhatsApp message. We confirm in 2 minutes.`,
-      `Cab service in ${city.name} has improved a lot in recent years, but nothing beats the reliability of a local operator who knows the roads and takes responsibility. ${BUSINESS.name} has been doing exactly that — serving passengers across ${city.name} with honest fares from ${displayRate} and 24/7 availability. One call to ${BUSINESS.phone} is all it takes.`,
-      `Whether you're heading to a hospital appointment, catching an early train, or planning a day trip from ${city.name} — ${BUSINESS.name} has you covered. Our cab service in ${city.name} runs day and night with fixed rates from ${displayRate}. Driver confirmation arrives on WhatsApp within 2 minutes of booking. Call ${BUSINESS.phone} to get started.`,
-      `People in ${city.name} book with us because we don't cancel last-minute, we don't surge on festival days, and our drivers show up on time. ${BUSINESS.name} operates a straightforward cab service in ${city.name} from ${displayRate}. No app needed. Call ${BUSINESS.phone} or WhatsApp us — we handle the rest.`,
+      `NK Cab & Taxi provides cab service in ${city.name}, ${stateName} from ${displayRate}. Verified drivers, clean AC vehicles, and zero surge pricing. No app download needed — call ${BUSINESS.phone} or WhatsApp us and get a booking confirmation in 2 minutes flat.`,
+      `What makes NK Cab & Taxi different in ${city.name}? We don't surge on festival days, we don't cancel last-minute, and our drivers actually show up on time. Fixed fares from ${displayRate}, 24/7 availability, one call away: ${BUSINESS.phone}.`,
+      `Hospital appointment, early morning train, or a day trip from ${city.name} — NK Cab & Taxi has you covered. Our cab service runs day and night with fixed rates from ${displayRate}. Driver confirmation on WhatsApp within 2 minutes. Call ${BUSINESS.phone}.`,
+      `People book NK Cab & Taxi in ${city.name} because we do three things consistently: we show up on time, we charge the quoted fare (no surprises), and we don't surge. Fixed rates from ${displayRate}. No app needed — call ${BUSINESS.phone} or WhatsApp us.`,
     ];
     paragraphs.push(regularIntros[hash % 4]);
   }
@@ -92,29 +100,29 @@ function getAboutCityContent(input: CityContentInput): string[] {
       : `Being an important city in ${stateName}, ${city.name} has significant commercial and residential activity. Our cab service meets both daily local needs and occasional outstation travel requirements.`}`
   );
 
-  // ── Paragraph 3: Services — different framing by template ──
+  // ── Paragraph 3: NK-specific service framing ──
   const serviceVariants = [
-    `Our cab services in ${city.name} cover six main categories: Local taxi (4hr/8hr city packages from ₹${stateFares.localPackages[0]?.sedan || '1,800'}), Outstation one-way drop${routesFrom.length > 0 ? ` to cities like ${routesFrom.slice(0, 3).map(r => r.toName).join(', ')}` : ''}, Round-trip outstation with dedicated driver, Airport and railway station transfers, Wedding car rental with decoration, and Corporate monthly contracts. Whatever your need — we handle it.`,
-    `From a quick hospital visit to a multi-day tour, ${BUSINESS.name} offers the right cab for every situation in ${city.name}. Local hourly packages start at ₹${stateFares.localPackages[0]?.sedan || '1,800'} for 4 hours${routesFrom.length > 0 ? `, and we run regular outstation routes to ${routesFrom.slice(0, 3).map(r => r.toName).join(', ')}` : ''}. Our airport and station pickups include meet-and-greet. Wedding cars come decorated. Corporate clients get GST invoices and monthly billing.`,
-    `Here's what we actually offer in ${city.name}: (1) Local taxi packages for city travel, (2) Outstation one-way cab — you only pay for your direction, (3) Round-trip with a driver who stays at the destination, (4) Airport transfer with flight tracking, (5) Decorated wedding cars, (6) Corporate travel accounts. Local packages from ₹${stateFares.localPackages[0]?.sedan || '1,800'}${routesFrom.length > 0 ? `. Popular outstation routes: ${routesFrom.slice(0, 3).map(r => `${city.name} to ${r.toName}`).join(', ')}` : ''}.`,
+    `NK Cab & Taxi in ${city.name} covers six service types: Local taxi (4hr/8hr city packages from ₹${stateFares.localPackages[0]?.sedan || '1,800'}), Outstation one-way drop${routesFrom.length > 0 ? ` to cities like ${routesFrom.slice(0, 3).map(r => r.toName).join(', ')}` : ''}, Round-trip outstation with dedicated driver, Airport & railway station transfers, Wedding car with floral decoration, and Corporate monthly contracts. Whatever the need — we handle it from ${city.name}.`,
+    `From a hospital run to a multi-day hill station tour, NK Cab & Taxi offers the right vehicle in ${city.name}. Local hourly packages from ₹${stateFares.localPackages[0]?.sedan || '1,800'}${routesFrom.length > 0 ? `, regular outstation routes to ${routesFrom.slice(0, 3).map(r => r.toName).join(', ')}` : ''}. Airport pickups include meet-and-greet + flight tracking. Wedding cars come decorated. Corporate clients receive GST invoices.`,
+    `Here's what NK Cab & Taxi actually offers in ${city.name}: (1) Local taxi packages from ₹${stateFares.localPackages[0]?.sedan || '1,800'} for city travel, (2) One-way outstation cab — pay only for your direction, (3) Round-trip with a driver who stays at destination, (4) Airport transfer with live flight tracking, (5) Decorated wedding cars, (6) Corporate travel with GST billing. Popular outstation routes${routesFrom.length > 0 ? `: ${routesFrom.slice(0, 3).map(r => `${city.name} to ${r.toName}`).join(', ')}` : ''}.`,
   ];
   paragraphs.push(serviceVariants[templateIndex % 3]);
 
   // ── Paragraph 4: Transport infrastructure ──
   const transportPoints: string[] = [];
-  if (city.airport) transportPoints.push(`${city.airport} — we provide round-the-clock airport pickup and drop with real-time flight tracking. Driver waits at arrivals with a name board; no extra charge for delays up to 45 minutes`);
-  if (city.railway) transportPoints.push(`${city.railway} — our drivers coordinate station pickups at any hour, day or night, weekday or festival`);
+  if (city.airport) transportPoints.push(`${city.airport} — NK Cab & Taxi provides 24/7 airport cab with live flight tracking. Our driver waits at arrivals with your name board; no extra charge for delays up to 45 minutes`);
+  if (city.railway) transportPoints.push(`${city.railway} — our drivers coordinate station pickups at any hour, giving you a name and vehicle number before you board your train`);
   if (transportPoints.length > 0) {
     paragraphs.push(
-      `${city.name} is well-served by key transport links. ${transportPoints.join('. ')}. ${BUSINESS.name} provides reliable last-mile connectivity from these hubs to any destination in ${city.name} or outstation.`
+      `${city.name} is well-served by key transport links. ${transportPoints.join('. ')}. NK Cab & Taxi provides reliable last-mile connectivity from these hubs to any destination in ${city.name} or outstation.`
     );
   }
 
   // ── Paragraph 5: Landmark coverage ──
   if (city.landmarks && city.landmarks.length > 0) {
     const landmarkVariants = [
-      `Our drivers in ${city.name} regularly cover all major landmarks and areas including ${city.landmarks.join(', ')}. They know the quickest routes, avoid congested times, and can suggest the most efficient travel sequence for sightseeing or multi-stop errands.`,
-      `We service all areas and attractions around ${city.name}: ${city.landmarks.join(', ')}. For first-time visitors, our drivers are happy to suggest must-see places and local eateries along the route — a small perk of choosing a local cab service over an app.`,
+      `NK Cab & Taxi drivers in ${city.name} regularly cover all major landmarks including ${city.landmarks.join(', ')}. They know the quickest routes, avoid congested times, and can suggest the most efficient travel sequence for sightseeing or multi-stop errands.`,
+      `We service all areas and attractions around ${city.name}: ${city.landmarks.join(', ')}. For first-time visitors, NK Cab & Taxi drivers are happy to suggest must-see spots and local food options en route — a small perk of choosing a direct-booking local cab over an app.`,
     ];
     paragraphs.push(landmarkVariants[hash % 2]);
   }
@@ -124,17 +132,17 @@ function getAboutCityContent(input: CityContentInput): string[] {
     const topRoutes = routesFrom.slice(0, 8);
     const routeList = topRoutes.map(r => `${city.name}–${r.toName} (${r.distance} km, starts ₹${r.priceSaloon})`).join(', ');
     const routeVariants = [
-      `Frequently booked outstation routes from ${city.name}: ${routeList}. All fares include fuel and driver. Toll charges are informed upfront — no nasty surprises when you arrive.`,
-      `Popular intercity cabs from ${city.name} include: ${routeList}. We operate all these routes every day — just call ${BUSINESS.phone} for your booking and you'll receive the driver's contact and vehicle number before departure.`,
+      `Frequently booked outstation routes with NK Cab & Taxi from ${city.name}: ${routeList}. All fares include fuel and driver. Toll charges are communicated upfront — no surprise additions at trip end.`,
+      `Popular intercity cabs from ${city.name} with NK Cab & Taxi: ${routeList}. We run all these routes every day — call ${BUSINESS.phone} and receive driver contact + vehicle number before departure.`,
     ];
     paragraphs.push(routeVariants[hash % 2]);
   }
 
-  // ── Paragraph 7: Booking — conversational ──
+  // ── Paragraph 7: NK-specific booking promise ──
   const bookingVariants = [
-    `Booking is simple. Call ${BUSINESS.phone} or send a WhatsApp — we don't need an app download or account creation. Tell us your pickup address, where you're going, when, and how many passengers. Confirmation arrives in under 2 minutes. Driver reaches you 10–15 minutes before departure. Payment by Cash, UPI, or Card — whichever works for you.`,
-    `We run 24/7 in ${city.name} — that includes midnight rides, 4 AM airport drops, and Durga Puja evening travel when most cabs are unavailable. To book: call or WhatsApp ${BUSINESS.phone}, share your trip details, and receive your booking confirmation instantly. No app, no registration, no advance payment required for most bookings.`,
-    `Getting a cab through ${BUSINESS.name} in ${city.name} takes less than 2 minutes. Dial ${BUSINESS.phone} or message on WhatsApp. We need just your pickup point, destination, and travel time. Our team confirms the booking, assigns a driver, and sends details to your number. Pay at the end of the trip — Cash, UPI, or Card accepted.`,
+    `Booking with NK Cab & Taxi is simple — no app, no account. Call ${BUSINESS.phone} or send a WhatsApp. Share your pickup address, destination, date, time, and passenger count. Confirmation arrives in under 2 minutes with driver name and vehicle details. Payment by Cash, UPI, or Card at trip end.`,
+    `NK Cab & Taxi runs 24/7 in ${city.name} — midnight rides, 4 AM airport drops, and festival travel when other services aren't available. Book: call or WhatsApp ${BUSINESS.phone}, share your trip details, receive instant confirmation. No app, no registration, no advance payment required for most bookings.`,
+    `Getting a cab through NK Cab & Taxi in ${city.name} takes under 2 minutes. Dial ${BUSINESS.phone} or message on WhatsApp. We need your pickup point, destination, and travel time — that's it. Driver assigned, details sent to your number, payment at trip end. Cash, UPI, or Card.`,
   ];
   paragraphs.push(bookingVariants[templateIndex % 3]);
 
@@ -163,11 +171,11 @@ export function getCityExtendedFAQs(input: CityContentInput): { question: string
   const hash = getCityHash(city.slug);
   const v = hash % 3;
 
-  // Three versions of each core FAQ
+  // Three NK-specific versions of each core FAQ
   const bestServiceAnswers = [
-    `${BUSINESS.name} is rated the most reliable cab service in ${city.name}. We offer local taxi, outstation, one-way, airport transfer, wedding cars, and corporate rental. Drivers are police-verified, vehicles are AC and sanitized, rates are fixed with no surge. Available 24/7 including holidays. Call ${BUSINESS.phone}.`,
-    `Most passengers in ${city.name} rate ${BUSINESS.name} #1 for reliability and honest pricing. We run all service types — local hourly, outstation, one-way drop, airport and station transfer, wedding car, and corporate monthly contracts. No surge pricing, verified drivers, instant WhatsApp confirmation. ${BUSINESS.phone}.`,
-    `For dependable cab service in ${city.name}, ${BUSINESS.name} is the go-to choice. Fixed fares, 24/7 availability, AC fleet, police-verified local drivers. Whether you need a hospital run at midnight or a Durga Puja eve airport drop — we show up. Call or WhatsApp ${BUSINESS.phone}.`,
+    `NK Cab & Taxi is rated the most reliable cab service in ${city.name}. We offer local taxi, outstation, one-way, airport transfer, wedding cars, and corporate rental. Drivers are police-verified, vehicles are AC and sanitized, rates are fixed — no surge on festival days or late nights. Available 24/7. Call ${BUSINESS.phone}.`,
+    `In ${city.name}, NK Cab & Taxi is the first choice for passengers who've been burnt by surge pricing and last-minute cancellations from app cabs. We run all service types — local hourly, outstation, one-way drop, airport and station transfer, wedding car, and corporate monthly contracts. Fixed fares, verified drivers, instant WhatsApp confirmation: ${BUSINESS.phone}.`,
+    `NK Cab & Taxi in ${city.name} stands out for one reason: we don't compromise on price transparency or driver quality. Fixed fares, 24/7 availability, AC fleet, police-verified local drivers. Festival night airport drop? 3 AM hospital run? NK Cab & Taxi shows up. Call or WhatsApp ${BUSINESS.phone}.`,
   ];
 
   const fareAnswers = [

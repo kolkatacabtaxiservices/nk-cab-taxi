@@ -5,27 +5,50 @@ import BookingForm from '@/components/BookingForm';
 import FAQSection from '@/components/FAQSection';
 import GoogleMapEmbed from '@/components/GoogleMapEmbed';
 import { BUSINESS, getLocalPackages } from '@/lib/data';
-import { generateServicePageMetadata, generateFaqSchema, generateBreadcrumbSchema, generateServiceTypeSchema } from '@/lib/seo';
-import { MapPin, Phone, CheckCircle } from 'lucide-react';
+import { generateFaqSchema, generateBreadcrumbSchema, generateServiceTypeSchema } from '@/lib/seo';
+import { MapPin, Phone, CheckCircle, Clock, Car } from 'lucide-react';
+import type { Metadata } from 'next';
 
 export const dynamic = 'force-static';
 export const revalidate = false;
 
-export const metadata = generateServicePageMetadata(
-  'Local Taxi Service',
-  'Local taxi service in Kolkata. Hourly cab rental for city travel, sightseeing, hospital, shopping & events. Sedan ₹1,800 for 4 hrs/40 km'
-);
+export const metadata: Metadata = {
+  title: `Kolkata Local Taxi ₹1,800/4hr | Hourly Cab Rental 24/7 | ${BUSINESS.name}`,
+  description: `Hourly local taxi in Kolkata — 4hr/40km Sedan ₹1,800, 8hr/80km ₹2,800, SUV ₹2,500. Hospital visits, airport drops, sightseeing, shopping. Covers Salt Lake, New Town, Howrah, Behala. Call ${BUSINESS.phone}.`.slice(0, 160),
+  keywords: [
+    'local taxi kolkata', 'kolkata local cab', 'hourly cab kolkata', 'cab on rent kolkata',
+    'local taxi booking kolkata', 'local cab service kolkata', 'cab for hospital kolkata',
+    'salt lake taxi', 'new town cab', 'howrah taxi', 'dum dum cab',
+    'half day cab kolkata', 'full day taxi kolkata', 'kolkata city cab rent',
+    'kolkata sightseeing cab', 'cab for shopping kolkata', 'local innova kolkata',
+  ],
+  alternates: { canonical: `${BUSINESS.domain}/services/local-taxi` },
+  openGraph: {
+    title: `Local Taxi Kolkata ₹1,800/4hr | Hourly Cab on Rent | ${BUSINESS.name}`,
+    description: `Hourly cab rental in Kolkata from ₹1,800 (4hr/40km). Hospital, airport, shopping, sightseeing. Salt Lake, New Town, Howrah covered. No surge. Call ${BUSINESS.phone}`,
+    type: 'website',
+    siteName: BUSINESS.name,
+    url: `${BUSINESS.domain}/services/local-taxi`,
+    locale: 'en_IN',
+    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: `Local Taxi Kolkata — ${BUSINESS.name}` }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Local Taxi Kolkata ₹1,800/4hr | Hourly Cab | ${BUSINESS.name}`,
+    description: `Hourly local cab in Kolkata from ₹1,800. All areas covered. No surge 24/7. Call ${BUSINESS.phone}`,
+  },
+};
 
 export default function LocalTaxiPage() {
   const packages = getLocalPackages();
 
   const faqs = [
-    { question: 'What is local taxi service in Kolkata?', answer: `Local taxi service in Kolkata means hourly cab rental for travel within the city — for hospital visits, shopping, sightseeing, office travel, airport drops, or any local purpose. ${BUSINESS.name} offers local taxi packages starting from ₹1,800 for 4 hours/40 km. Call ${BUSINESS.phone}.` },
-    { question: 'What are the local taxi packages in Kolkata?', answer: 'Kolkata local taxi packages: 4 Hours/40 KM — Sedan ₹1,800, SUV ₹2,500; 8 Hours/80 KM — Sedan ₹2,800, SUV ₹3,800; 12 Hours/120 KM — Sedan ₹3,800, SUV ₹5,200. Extra hours ₹150/hr, extra km ₹12–16/km.' },
-    { question: 'Do you provide local cabs in all areas of Kolkata?', answer: `Yes! We provide local taxi service across all Kolkata areas including Salt Lake, New Town, Howrah, Park Street, Ballygunge, Dum Dum, Barasat, Behala, Tollygunge, Gariahat, Esplanade, and all suburbs. Pick up from home, office, hotel, or railway station.` },
-    { question: 'Can I hire a cab for a full day in Kolkata?', answer: 'Yes! Our full-day (8 hours/80 km) cab package is ideal for city sightseeing, multiple appointments, or a full day of travel in Kolkata. Sedan ₹2,800, SUV ₹3,800. Extra usage charged separately.' },
-    { question: 'Is local taxi available for hospital visits in Kolkata?', answer: `Yes, we provide local taxi for hospital visits, medical appointments, and discharge in Kolkata. Available for SSKM, AMRI, Apollo, Fortis, Belle Vue, and all hospitals across Kolkata. Book at ${BUSINESS.phone}.` },
-    { question: 'Do you provide outstation taxi from Kolkata too?', answer: 'Yes! Along with local Kolkata taxi, we provide outstation cab service from Kolkata to 500+ cities including Darjeeling, Puri, Ranchi, Jamshedpur, Bhubaneswar, and more. One-way and round trip available.' },
+    { question: 'Which Kolkata package is right — 4hr or 8hr?', answer: 'Choose the 4hr/40km package (₹1,800 Sedan) if you have 2–3 stops within a small radius — hospital visit, bank, then home. Choose the 8hr/80km package (₹2,800 Sedan) if you need the driver all day: multiple offices, full-day shopping, or sightseeing across North and South Kolkata. Both packages include extra km/hr billing at ₹12/km for overuse.' },
+    { question: 'Can the local taxi wait while I visit a hospital or office?', answer: `Yes — our local taxi drivers wait throughout your appointment without running the meter. Whether it\'s a 20-minute consultation at AMRI Salt Lake or a 3-hour procedure at SSKM Kolkata, your driver parks nearby and stays on call. No extra waiting charge within the package time. Call ${BUSINESS.phone} to book.` },
+    { question: 'Is there traffic-aware routing in Kolkata cabs?', answer: 'Yes. Our Kolkata drivers know local traffic patterns well — EM Bypass vs Ultadanga, Gariahat routing during Pujas, the VIP Road vs New Town Expressway choice. They use live maps plus experience to avoid congestion. This local knowledge significantly reduces your actual travel time compared to app-based cabs.' },
+    { question: 'Can I hire a local taxi for Kolkata Durga Puja pandal hopping?', answer: `Absolutely. Our local taxi packages are perfect for Durga Puja pandal hopping — we provide 8hr/80km or 12hr/120km packages for Puja nights. Unlike app cabs, our rates do NOT surge during festivals. You pay the same fixed rate on Ashtami night as on any regular day. Pre-book via WhatsApp to guarantee availability.` },
+    { question: 'Do you serve outskirt areas like Barasat, Barrackpore, Howrah?', answer: `Yes! Our local taxi covers not just central Kolkata but also extended areas including Barasat, Barrackpore, Kamarhati, Belghoria, Sodepur, Howrah, Shibpur, Belur, Bally, Uttarpara, and Serampore. For distances beyond 40km, extra km charges (₹12/km Sedan) apply on top of the base package.` },
+    { question: 'What vehicles are available for local taxi in Kolkata?', answer: 'We offer Sedan (Swift Dzire, Honda Amaze — 4 passengers, ₹1,800/4hr), SUV (Ertiga, Innova — 6 passengers, ₹2,500/4hr), Innova Crysta (7 passengers, ₹3,200/4hr), and Tempo Traveller (12 passengers, ₹3,500/4hr) for group travel. All are AC, clean, and sanitized before each trip.' },
   ];
 
   const localAreas = [
@@ -225,8 +248,8 @@ export default function LocalTaxiPage() {
 
       <section className="py-12 bg-gradient-to-r from-primary to-amber-500 text-white text-center">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">Book Local Taxi — Kolkata, Ranchi & More</h2>
-          <p className="text-white/90 mb-6">4 Hrs ₹1,800 | 8 Hrs ₹2,800 | 24/7 Available | AC Vehicles</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">Stuck Somewhere in Kolkata? Call for an Instant Cab!</h2>
+          <p className="text-white/90 mb-6">Local taxi available in 15–20 minutes across Kolkata — hospital, airport, shopping, office. No surge, no waiting. ₹1,800 for 4hrs.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
               <Phone size={22} /> {BUSINESS.phone}

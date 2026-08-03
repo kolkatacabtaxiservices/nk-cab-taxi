@@ -5,9 +5,29 @@ import HeroBanner from '@/components/HeroBanner';
 import GoogleMapEmbed from '@/components/GoogleMapEmbed';
 
 import { BUSINESS, getTours } from '@/lib/data';
-import { generateToursListingMetadata, generateToursItemListSchema, generateBreadcrumbSchema } from '@/lib/seo';
+import { generateToursItemListSchema, generateBreadcrumbSchema } from '@/lib/seo';
 
-export const metadata = generateToursListingMetadata();
+export const metadata = {
+  title: `Tour Packages from Kolkata 2026 — Darjeeling, Puri, Sundarbans, Bodh Gaya | NK Cab & Taxi`,
+  description: `Curated East India tour packages by cab. Darjeeling hill (3D ₹14,500), Puri-Konark circuit (3D ₹12,500), Sundarbans (2D), Deoghar pilgrimage, Bodh Gaya Buddhist tour. AC cab + driver included. Call ${BUSINESS.phone}.`,
+  openGraph: {
+    title: `Tour Packages from Kolkata — Darjeeling, Puri, Bodh Gaya | NK Cab & Taxi`,
+    description: `East India tours with AC cab. Darjeeling, Puri, Sundarbans, Deoghar. All-inclusive. Call ${BUSINESS.phone}.`,
+    type: 'website',
+    siteName: 'NK Cab & Taxi',
+    url: `${BUSINESS.domain}/tours`,
+    locale: 'en_IN',
+    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: 'Tour Packages from Kolkata — NK Cab & Taxi' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Tour Packages — Darjeeling, Puri, Bodh Gaya | NK Cab & Taxi`,
+    description: `East India tours with driver + AC cab. Kolkata, Ranchi, Jharkhand. Call ${BUSINESS.phone}`,
+    images: [`${BUSINESS.domain}/navbanner.webp`],
+  },
+  alternates: { canonical: `${BUSINESS.domain}/tours` },
+  other: { thumbnail: `${BUSINESS.domain}/navbanner.webp` },
+};
 
 // Force fully static SSG — zero ISR Reads/Writes on Vercel
 export const dynamic = 'force-static';

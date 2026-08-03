@@ -7,24 +7,44 @@ import FAQSection from '@/components/FAQSection';
 import GoogleMapEmbed from '@/components/GoogleMapEmbed';
 
 import { BUSINESS, getVehicles } from '@/lib/data';
-import { generateFleetPageMetadata, generateFleetOfferCatalogSchema, generateBreadcrumbSchema, generateFaqSchema, generateAggregateRatingSchema } from '@/lib/seo';
+import { generateFleetOfferCatalogSchema, generateBreadcrumbSchema, generateFaqSchema, generateAggregateRatingSchema } from '@/lib/seo';
 
 export const dynamic = 'force-static';
 export const revalidate = false;
-export const metadata = generateFleetPageMetadata();
+export const metadata = {
+  title: `Car Rental Kolkata With Driver | Innova ₹18/km, Sedan ₹12/km, Tempo ₹22/km — NK Cab & Taxi`,
+  description: `Driver-included car rental in Kolkata. No surge, no self-drive stress. Innova Crysta ₹18/km | Sedan ₹12/km | Tempo Traveller ₹22/km. AC fleet for local, airport & outstation. Call ${BUSINESS.phone}`,
+  openGraph: {
+    title: `Kolkata Car Rental With Driver — Innova, Ertiga, Sedan | NK Cab & Taxi`,
+    description: `Driver-included rentals. No surge. AC fleet in Kolkata, Ranchi & 80+ cities. Innova ₹18/km | Sedan ₹12/km. Call ${BUSINESS.phone}`,
+    type: 'website',
+    siteName: 'NK Cab & Taxi',
+    url: `${BUSINESS.domain}/fleet`,
+    locale: 'en_IN',
+    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: 'NK Cab & Taxi Fleet — Innova Crysta, Ertiga, Dzire, Tempo Traveller' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Car Rental Kolkata | Innova ₹18/km | Sedan ₹12/km — NK Cab & Taxi`,
+    description: `Driver-included. AC fleet. No surge. Kolkata, Ranchi, 80+ cities. Call ${BUSINESS.phone}`,
+    images: [`${BUSINESS.domain}/navbanner.webp`],
+  },
+  alternates: { canonical: `${BUSINESS.domain}/fleet` },
+  other: { thumbnail: `${BUSINESS.domain}/navbanner.webp` },
+};
 
 export default function FleetPage() {
   const vehicles = getVehicles();
 
   const faqs = [
-    { question: 'What types of cars are available for rent in Kolkata?', answer: `${BUSINESS.name} offers Sedan (Swift Dzire, Honda Amaze), SUV (Ertiga, Innova), Premium SUV (Innova Crysta), Tempo Traveller (12-17 seater), and Luxury vehicles (Fortuner, Mercedes). All vehicles are AC, well-maintained, and GPS-tracked. Call ${BUSINESS.phone} to book.` },
-    { question: 'What is the per km rate for car rental?', answer: 'Sedan: ₹12/km, SUV: ₹16/km, Innova Crysta: ₹18/km, Tempo Traveller: ₹22/km, Luxury: ₹25/km. These rates include AC, fuel, and driver. Toll and parking charges are extra.' },
-    { question: 'Do you provide car rental in Ranchi and Jamshedpur?', answer: `Yes! ${BUSINESS.name} operates across Kolkata, Ranchi, Jamshedpur, Dhanbad, Bokaro, Bhubaneswar, and 80+ cities. Same fleet, same rates. Call ${BUSINESS.phone} for booking in any city.` },
-    { question: 'Can I rent a car for a wedding in Kolkata?', answer: `Yes! We offer decorated wedding cars — Innova Crysta, Fortuner, and luxury sedans with flower decoration, ribbon, and professional chauffeur. Starting ₹3,500 for 4 hours. Book via ${BUSINESS.phone}.` },
-    { question: 'Is there a minimum booking distance?', answer: 'For outstation trips, minimum booking is 250 km per day. For local rides, we offer 4hr/40km and 8hr/80km packages starting ₹1,800. No minimum for airport transfers.' },
-    { question: 'Do you offer Tempo Traveller for group travel?', answer: `Yes! 12-seater and 17-seater Tempo Travellers available for group outings, pilgrimages, corporate events, and wedding parties. Rate: ₹22/km. Book via ${BUSINESS.phone} or WhatsApp.` },
-    { question: 'Are the cars AC and sanitized?', answer: 'Yes! Every vehicle in our fleet is fully air-conditioned, regularly sanitized, and GPS-tracked. Drivers are police-verified with 5+ years of experience. We maintain the highest safety standards.' },
-    { question: 'How do I choose the right vehicle for my trip?', answer: 'Sedan (4 pax, 2 bags): Best for couples and solo travellers. SUV (6 pax, 3 bags): Ideal for families. Innova Crysta (7 pax, 4 bags): Premium family/business travel. Tempo (12+ pax): Group trips.' },
+    { question: 'How does NK Cab & Taxi differ from self-drive rental platforms like Zoomcar?', answer: `NK Cab & Taxi provides driver-included car rental — you don't drive, you travel. Our drivers know every route across East India, handle tolls and fuel, and you reach your destination without the stress of unfamiliar roads. Unlike self-drive platforms, we operate 24/7, include driver accommodation for outstation trips, and offer no surge pricing. Call ${BUSINESS.phone} for bookings.` },
+    { question: 'How many vehicles does NK Cab & Taxi have in its fleet?', answer: `Our active fleet covers: 12+ Sedans (Swift Dzire, Honda Amaze), 8+ SUVs (Ertiga, Innova MUV), 6+ Premium SUVs (Innova Crysta), 4 Tempo Travellers (12-seat and 17-seat), and 2 luxury vehicles (Fortuner, high-end sedans). Fleet size varies seasonally — during Durga Puja and year-end we partner with vetted associate vehicles. All associate vehicles meet the same fitness and documentation standards. Call ${BUSINESS.phone} for current availability.` },
+    { question: 'What is the minimum booking period for a Tempo Traveller in Kolkata?', answer: `Tempo Traveller minimum booking is 8 hours/80 km for local (in-city) use at ₹5,500. For outstation, minimum 250 km/day applies (₹22/km). Our 12-seat Tempo is ideal for corporate team outings, pilgrimage groups (Gangasagar, Deoghar), school trips, and wedding guest transport. For 17-seater, add ₹2,000 to the base rate. Call ${BUSINESS.phone} — Tempo must be booked 48+ hours in advance.` },
+    { question: 'How often are NK Cab & Taxi vehicles serviced?', answer: `Every vehicle in our fleet undergoes: (1) Pre-trip inspection by driver before each booking, (2) Monthly servicing at authorized service centres (Honda, Maruti, Toyota ASS), (3) Quarterly RTO fitness certificate renewal for commercial vehicles, (4) Annual insurance renewal and PUC testing. Vehicles with any mechanical issue are taken off the road immediately — we do not operate compromised vehicles.` },
+    { question: 'Can I hire a Fortuner or luxury car in Kolkata for a day?', answer: `Yes. We offer Fortuner and luxury sedan rental for full-day (8hr/80km, ₹8,000+), airport transfers (₹3,500+), and multi-day outstation trips. These vehicles are available with advance booking (minimum 48 hours). Suitable for corporate client pickups, wedding car, and high-profile airport transfers. Call ${BUSINESS.phone} for luxury vehicle availability.` },
+    { question: 'Is Innova Crysta available for Kolkata to Darjeeling / long hill station routes?', answer: `Yes — Innova Crysta is our recommended vehicle for hill station routes. The Crysta's higher ground clearance, stronger AC performance at altitude, and 7-passenger capacity make it ideal for the 74-hairpin section before Darjeeling, and for routes like Kolkata–Gangtok, Kolkata–Kalimpong, and Ranchi–Netarhat. Rate: ₹18/km outstation. Full Kolkata–Darjeeling: ₹11,000 approx (596 km). Call ${BUSINESS.phone}.` },
+    { question: 'Are the vehicles non-AC option available for budget trips?', answer: `No — all NK Cab & Taxi vehicles are air-conditioned. We made a deliberate decision not to maintain non-AC vehicles: during summer months in West Bengal, Jharkhand, and Odisha (March–June, humidity peaks 85–95%), non-AC travel for 4+ hours is genuinely uncomfortable and we do not want to offer that. Our Sedan AC rate of ₹12/km is already among the most competitive in East India.` },
+    { question: 'What luggage capacity can I expect for a Kolkata to Puri family trip in an Ertiga?', answer: `The Maruti Ertiga has a 209-litre boot — fits 2 large trolley bags (28") comfortably. With 5 passengers, you'd have 3 large bags + cabin bags in the Ertiga. For 6 passengers with heavy luggage, we recommend Innova Crysta (larger boot + rear cargo area). For groups with 4+ large bags, mention luggage count at booking and we'll assign the right vehicle. Call ${BUSINESS.phone}.` },
   ];
 
   // Color schemes per vehicle type for visual variety

@@ -6,11 +6,31 @@ import BookingForm from '@/components/BookingForm';
 import FAQSection from '@/components/FAQSection';
 import GoogleMapEmbed from '@/components/GoogleMapEmbed';
 import { BUSINESS } from '@/lib/data';
-import { generateContactMetadata, generateContactPageSchema, generateBreadcrumbSchema, generateFaqSchema, generateWebPageSchema } from '@/lib/seo';
+import { generateContactPageSchema, generateBreadcrumbSchema, generateFaqSchema, generateWebPageSchema } from '@/lib/seo';
 
 export const dynamic = 'force-static';
 export const revalidate = false;
-export const metadata = generateContactMetadata();
+export const metadata = {
+  title: { absolute: `Book Cab Now — Call or WhatsApp ${BUSINESS.phone} | NK Cab & Taxi 24/7` },
+  description: `Book NK Cab & Taxi instantly — call ${BUSINESS.phone} or WhatsApp. No app, no registration. Sedan ₹12/km, airport, outstation, wedding car. 80+ cities across East India. Confirm in 2 minutes.`,
+  openGraph: {
+    title: `Book Cab — Call ${BUSINESS.phone} | NK Cab & Taxi 24/7`,
+    description: `Call or WhatsApp ${BUSINESS.phone}. No app. Instant 2-minute confirm. Sedan ₹12/km. 80+ cities East India.`,
+    type: 'website',
+    siteName: 'NK Cab & Taxi',
+    url: `${BUSINESS.domain}/contact`,
+    locale: 'en_IN',
+    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: 'Contact NK Cab & Taxi' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Book Cab Now — ${BUSINESS.phone} | NK Cab & Taxi`,
+    description: `WhatsApp or call ${BUSINESS.phone}. No app. 2-min confirm. ₹12/km.`,
+    images: [`${BUSINESS.domain}/navbanner.webp`],
+  },
+  alternates: { canonical: `${BUSINESS.domain}/contact` },
+  other: { thumbnail: `${BUSINESS.domain}/navbanner.webp` },
+};
 
 const contactFaqs = [
   { question: `What is the phone number of ${BUSINESS.name}?`, answer: `You can reach ${BUSINESS.name} at ${BUSINESS.phone}. This number is available 24/7 for cab bookings, quotes, and customer support. You can also WhatsApp us at the same number for instant booking confirmation.` },

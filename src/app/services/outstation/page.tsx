@@ -6,16 +6,39 @@ import FAQSection from '@/components/FAQSection';
 import GoogleMapEmbed from '@/components/GoogleMapEmbed';
 import { BUSINESS, getAllStates } from '@/lib/data';
 import { getPopularRoutes } from '@/lib/routeData';
-import { generateServicePageMetadata, generateFaqSchema, generateBreadcrumbSchema, generateServiceTypeSchema } from '@/lib/seo';
+import { generateFaqSchema, generateBreadcrumbSchema, generateServiceTypeSchema } from '@/lib/seo';
 import { Phone, CheckCircle } from 'lucide-react';
+import type { Metadata } from 'next';
 
 export const dynamic = 'force-static';
 export const revalidate = false;
 
-export const metadata = generateServicePageMetadata(
-  'Outstation Cab Service',
-  'Kolkata outstation cab service across 500+ routes. Sedan ₹12/km, SUV ₹16/km. One-way & round trip. 24/7 booking'
-);
+export const metadata: Metadata = {
+  title: `Outstation Cab Kolkata ₹12/km | One-Way & Round Trip | 500+ Routes | ${BUSINESS.name}`,
+  description: `Outstation cab from Kolkata across 500+ routes. Sedan ₹12/km, SUV ₹16/km, Innova ₹18/km. Darjeeling, Puri, Digha, Ranchi, Jamshedpur, Bhubaneswar. 24/7 booking. Call ${BUSINESS.phone}.`.slice(0, 160),
+  keywords: [
+    'outstation cab kolkata', 'outstation taxi kolkata', 'intercity cab kolkata',
+    'kolkata to darjeeling cab', 'kolkata to puri cab', 'kolkata to digha cab',
+    'kolkata to ranchi cab', 'kolkata to bhubaneswar cab', 'kolkata outstation booking',
+    'outstation cab fare kolkata', 'long distance cab kolkata', 'kolkata to jamshedpur cab',
+    'ac outstation cab kolkata', 'outstation innova kolkata', 'verified driver outstation kolkata',
+  ],
+  alternates: { canonical: `${BUSINESS.domain}/services/outstation` },
+  openGraph: {
+    title: `Outstation Cab Kolkata ₹12/km | 500+ Routes | ${BUSINESS.name}`,
+    description: `Outstation taxi from Kolkata to 500+ cities. Sedan ₹12/km | SUV ₹16/km | Innova ₹18/km. One-way & round trip. 24/7. No surge. Call ${BUSINESS.phone}`,
+    type: 'website',
+    siteName: BUSINESS.name,
+    url: `${BUSINESS.domain}/services/outstation`,
+    locale: 'en_IN',
+    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: `Outstation Cab Service Kolkata — ${BUSINESS.name}` }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Outstation Cab Kolkata ₹12/km | 500+ Routes | ${BUSINESS.name}`,
+    description: `Intercity cab from Kolkata. Sedan ₹12/km. Darjeeling, Puri, Ranchi, Bhubaneswar & more. No surge. Call ${BUSINESS.phone}`,
+  },
+};
 
 export default async function OutstationPage() {
   const states = getAllStates();

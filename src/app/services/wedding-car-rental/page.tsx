@@ -5,25 +5,48 @@ import BookingForm from '@/components/BookingForm';
 import FAQSection from '@/components/FAQSection';
 import GoogleMapEmbed from '@/components/GoogleMapEmbed';
 import { BUSINESS } from '@/lib/data';
-import { generateServicePageMetadata, generateFaqSchema, generateBreadcrumbSchema, generateWeddingCarSchema } from '@/lib/seo';
-import { Heart, Phone, CheckCircle } from 'lucide-react';
+import { generateFaqSchema, generateBreadcrumbSchema, generateWeddingCarSchema } from '@/lib/seo';
+import { Heart, Phone, CheckCircle, Calendar, Star } from 'lucide-react';
+import type { Metadata } from 'next';
 
 export const dynamic = 'force-static';
 export const revalidate = false;
 
-export const metadata = generateServicePageMetadata(
-  'Wedding Car Rental',
-  'Premium wedding car rental in Kolkata with flower decoration. Decorated Innova Crysta, Fortuner & luxury sedans for baraat, vidaai, wedding functions'
-);
+export const metadata: Metadata = {
+  title: `Wedding Car Rental Kolkata | Decorated Innova, Fortuner ₹3,500 | Baraat & Vidaai | ${BUSINESS.name}`,
+  description: `Premium wedding car rental in Kolkata with fresh flower decoration. Innova Crysta ₹5,000, Fortuner ₹8,000, Sedan ₹3,500. Baraat fleet, vidaai car, guest transport. Book 2 weeks early. Call ${BUSINESS.phone}.`.slice(0, 160),
+  keywords: [
+    'wedding car rental kolkata', 'wedding car kolkata', 'decorated car kolkata wedding',
+    'baraat car kolkata', 'vidaai car kolkata', 'innova crysta wedding kolkata',
+    'fortuner wedding car kolkata', 'flower decorated car kolkata', 'wedding cab kolkata',
+    'wedding car booking kolkata', 'bridal car kolkata', 'dulha car kolkata',
+    'wedding fleet kolkata', 'marriage car kolkata', 'wedding chauffeur kolkata',
+  ],
+  alternates: { canonical: `${BUSINESS.domain}/services/wedding-car-rental` },
+  openGraph: {
+    title: `Wedding Car Rental Kolkata | Decorated Innova & Fortuner | ${BUSINESS.name}`,
+    description: `Flower-decorated wedding cars in Kolkata. Innova Crysta ₹5,000, Fortuner ₹8,000. Baraat fleet, vidaai arrangements. Professional chauffeur. Call ${BUSINESS.phone}`,
+    type: 'website',
+    siteName: BUSINESS.name,
+    url: `${BUSINESS.domain}/services/wedding-car-rental`,
+    locale: 'en_IN',
+    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: `Wedding Car Rental Kolkata — ${BUSINESS.name}` }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Wedding Car Rental Kolkata | Decorated Cars from ₹3,500`,
+    description: `Premium wedding cars in Kolkata. Innova, Fortuner with flower decoration. Baraat & vidaai service. Call ${BUSINESS.phone}`,
+  },
+};
 
 export default function WeddingCarPage() {
   const faqs = [
-    { question: 'What wedding car rental services are available in Kolkata?', answer: `${BUSINESS.name} provides premium wedding car rental in Kolkata with flower decoration, ribbon decoration, red carpet entrance, and professional chauffeurs. Vehicles include decorated Innova Crysta, Fortuner, luxury sedans, and Tempo Travellers for baraat processions. Call ${BUSINESS.phone} for packages.` },
-    { question: 'What is the price of wedding car rental in Kolkata?', answer: 'Wedding car rental in Kolkata: Decorated Sedan ₹3,500–₹5,000; Decorated Innova Crysta ₹5,000–₹8,000; Decorated Fortuner ₹8,000–₹12,000; Luxury Mercedes/BMW ₹12,000–₹20,000 per day. Price includes decoration and driver.' },
-    { question: 'Do you provide decorated car for baraat in Kolkata?', answer: 'Yes! We provide beautifully decorated cars for baraat with flower garland, ribbon, and traditional decoration. We also provide Tempo Travellers and multiple vehicles for larger baraat processions in Kolkata.' },
-    { question: 'Can I book a wedding car for vidaai (bride send-off)?', answer: 'Absolutely! We specialize in vidaai car arrangements with tasteful flower decoration, red carpet, and a professional chauffeur to ensure the bride feels special. Available across all areas of Kolkata.' },
-    { question: 'How early should I book a wedding car in Kolkata?', answer: 'For peak wedding seasons (November–February and May–June), book 2–4 weeks in advance. For last-minute bookings, call us at least 48 hours before the wedding. WhatsApp us for availability.' },
-    { question: 'Do you provide multiple cars for a wedding?', answer: 'Yes! We provide a complete wedding car fleet — decorated groom car, bride car (vidaai), baraat fleet, guest transport Tempo Travellers, and airport/station pickup. Full wedding transportation packages available.' },
+    { question: 'How is the flower decoration done for wedding cars in Kolkata?', answer: `Our team prepares fresh flower garlands, ribbon bows, and decorative elements on the morning of your wedding day — within 2 hours of your scheduled pickup. We use fresh marigold, rose, and seasonal flowers sourced locally. The decoration is done professionally and looks beautiful for photos. Call ${BUSINESS.phone} to discuss specific decoration preferences.` },
+    { question: 'Which Kolkata wedding season should I book in advance?', answer: 'Kolkata has two peak wedding seasons: November–February (winter weddings, most popular) and May–June (pre-monsoon auspicious dates). During these months our decorated fleet books up 2–3 weeks in advance. For Muhurats in November–January, we recommend booking 3–4 weeks early. Off-season bookings can be made 1 week before.' },
+    { question: 'Can you provide multiple decorated cars for a big baraat in Kolkata?', answer: 'Yes! We manage fleet baraat arrangements — from 3 to 20+ decorated vehicles including the groom’s main car (Innova Crysta or Fortuner), 2–4 supporting sedans for family, and 1–2 Tempo Travellers for larger wedding groups. All vehicles are decorated in a coordinated theme. Call for a complete wedding transport quote.' },
+    { question: 'What is the difference between baraat car and vidaai car arrangements?', answer: 'The baraat car (groom’s side) typically features bold, festive decoration with marigold garlands and ribbons, focused on visual impact for the procession. The vidaai car (bride’s send-off) has a more elegant, romantic decoration — white/pink rose garlands, subtle ribbon, and a calm interior. We customize decoration separately for both occasions upon request.' },
+    { question: 'Do you provide cars for guest transport to wedding venues in Kolkata?', answer: 'Yes! Besides the main bridal/baraat vehicles, we provide multiple Tempo Travellers (12–17 seater) and sedans for wedding guest transport from hotels, railway stations, and Kolkata airport (CCU). Our coordination team manages the schedule so all guests reach the venue on time. Essential for destination weddings within West Bengal.' },
+    { question: 'Is there a cancellation policy for wedding car bookings?', answer: 'Wedding car bookings cancelled more than 7 days before the event receive a full refund of any advance paid. Cancellations within 3–7 days attract a 30% cancellation fee. Cancellations within 48 hours are non-refundable due to decoration and driver scheduling costs. We strongly recommend confirming the booking once wedding dates are fixed.' },
   ];
 
   const packages = [
@@ -173,8 +196,8 @@ export default function WeddingCarPage() {
 
       <section className="py-12 bg-gradient-to-r from-primary to-amber-500 text-white text-center">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">Book Wedding Car — Kolkata, Ranchi & More</h2>
-          <p className="text-white/90 mb-6">Make your special day unforgettable. Premium decorated cars with professional chauffeurs.</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">Your Special Day Deserves a Perfect Car — Book Early!</h2>
+          <p className="text-white/90 mb-6">Wedding car bookings fill up fast during November–February. Secure your decorated Innova Crysta or Fortuner now — no last-minute stress on your big day.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
               <Phone size={22} /> {BUSINESS.phone}

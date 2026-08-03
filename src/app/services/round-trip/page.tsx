@@ -6,16 +6,39 @@ import FAQSection from '@/components/FAQSection';
 import GoogleMapEmbed from '@/components/GoogleMapEmbed';
 import { BUSINESS } from '@/lib/data';
 import { getPopularRoutes } from '@/lib/routeData';
-import { generateServicePageMetadata, generateFaqSchema, generateBreadcrumbSchema, generateServiceTypeSchema } from '@/lib/seo';
+import { generateFaqSchema, generateBreadcrumbSchema, generateServiceTypeSchema } from '@/lib/seo';
 import { Phone, CheckCircle } from 'lucide-react';
+import type { Metadata } from 'next';
 
 export const dynamic = 'force-static';
 export const revalidate = false;
 
-export const metadata = generateServicePageMetadata(
-  'Round Trip Cab Service',
-  'Round trip cab from Kolkata with driver. Multi-day tours, pilgrimage, family vacation. Driver stays with you. Sedan ₹12/km, SUV ₹16/km'
-);
+export const metadata: Metadata = {
+  title: `Round Trip Cab Kolkata | Driver Stays With You | Darjeeling, Puri & More | ${BUSINESS.name}`,
+  description: `Multi-day round trip cab from Kolkata. Driver stays throughout your tour. Sedan ₹12/km, Innova ₹18/km. Darjeeling 4–5 days, Puri 3–4 days, Varanasi 5–6 days. Call ${BUSINESS.phone}.`.slice(0, 160),
+  keywords: [
+    'round trip cab kolkata', 'round trip taxi kolkata', 'kolkata round trip cab',
+    'multi day cab kolkata', 'driver stays kolkata tour', 'kolkata to darjeeling round trip cab',
+    'kolkata to puri round trip', 'kolkata to varanasi round trip cab',
+    'tour cab kolkata', 'pilgrimage cab kolkata', 'family tour cab from kolkata',
+    'kolkata round trip package', 'driver accommodation included kolkata', 'kolkata holiday cab',
+  ],
+  alternates: { canonical: `${BUSINESS.domain}/services/round-trip` },
+  openGraph: {
+    title: `Round Trip Cab Kolkata | Driver Stays | Darjeeling, Puri, Varanasi | ${BUSINESS.name}`,
+    description: `Multi-day round trip from Kolkata with driver accommodation included. Darjeeling 4–5 days, Puri 3–4 days. ₹12/km Sedan. No surge. Call ${BUSINESS.phone}`,
+    type: 'website',
+    siteName: BUSINESS.name,
+    url: `${BUSINESS.domain}/services/round-trip`,
+    locale: 'en_IN',
+    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: `Round Trip Cab Kolkata — ${BUSINESS.name}` }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Round Trip Cab Kolkata | Driver Stays With You | ${BUSINESS.name}`,
+    description: `Multi-day tour cabs from Kolkata. Driver stays all days. Darjeeling, Puri, Varanasi. Call ${BUSINESS.phone}`,
+  },
+};
 
 export default async function RoundTripPage() {
   const routes = await getPopularRoutes(9);

@@ -6,16 +6,39 @@ import FAQSection from '@/components/FAQSection';
 import GoogleMapEmbed from '@/components/GoogleMapEmbed';
 import { BUSINESS } from '@/lib/data';
 import { getPopularRoutes } from '@/lib/routeData';
-import { generateServicePageMetadata, generateFaqSchema, generateBreadcrumbSchema, generateServiceTypeSchema } from '@/lib/seo';
+import { generateFaqSchema, generateBreadcrumbSchema, generateServiceTypeSchema } from '@/lib/seo';
 import { ArrowRight, Phone, CheckCircle } from 'lucide-react';
+import type { Metadata } from 'next';
 
 export const dynamic = 'force-static';
 export const revalidate = false;
 
-export const metadata = generateServicePageMetadata(
-  'One Way Taxi Service',
-  'One-way cab service from Kolkata. Pay only for one side — no return charge. Best price guaranteed, AC vehicles, 24/7 booking'
-);
+export const metadata: Metadata = {
+  title: `One Way Cab Kolkata ₹12/km | No Return Fare | 500+ Routes | ${BUSINESS.name}`,
+  description: `One-way taxi from Kolkata — pay only for the trip you take, zero return charges. Sedan ₹12/km. Kolkata→Digha ₹2,280, →Ranchi ₹4,800, →Puri ₹5,880. 500+ destinations. Call ${BUSINESS.phone}.`.slice(0, 160),
+  keywords: [
+    'one way cab kolkata', 'one way taxi kolkata', 'one side cab kolkata',
+    'kolkata one way drop', 'no return cab kolkata', 'one way outstation kolkata',
+    'kolkata to digha one way cab', 'kolkata to puri one way', 'kolkata to ranchi one way cab',
+    'one way cab booking kolkata', 'single journey cab kolkata', 'drop cab kolkata',
+    'cheap one way cab kolkata', 'one way cab fare kolkata', 'point to point cab kolkata',
+  ],
+  alternates: { canonical: `${BUSINESS.domain}/services/one-way` },
+  openGraph: {
+    title: `One Way Cab Kolkata ₹12/km | No Return Fare | ${BUSINESS.name}`,
+    description: `One-way cab from Kolkata to 500+ cities. Pay only one side. Sedan ₹12/km. Digha, Puri, Ranchi, Darjeeling covered. No surge. Call ${BUSINESS.phone}`,
+    type: 'website',
+    siteName: BUSINESS.name,
+    url: `${BUSINESS.domain}/services/one-way`,
+    locale: 'en_IN',
+    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: `One Way Cab Kolkata — ${BUSINESS.name}` }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `One Way Cab Kolkata ₹12/km | No Return Fare`,
+    description: `One-way taxi from Kolkata. 500+ routes. Pay only for the distance you travel. Call ${BUSINESS.phone}`,
+  },
+};
 
 export default async function OneWayPage() {
   const routes = await getPopularRoutes(12);

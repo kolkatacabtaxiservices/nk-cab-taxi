@@ -107,7 +107,10 @@ function getRoadDescription(distance: number, via: string[], fromName: string, t
 
 // ─── Booking steps — 3 natural variations ───
 function getBookingSteps(fromName: string, toName: string): { step: number; title: string; description: string }[] {
-  const hash = (fromName + toName).split('').reduce((a, c) => a + c.charCodeAt(0), 0);
+  // Add brand seed to booking steps hash so NK Cab & Taxi gets different step wording than source site
+  const NK_BOOKING_SEED = 5;
+  const rawHash = (fromName + toName).split('').reduce((a, c) => a + c.charCodeAt(0), 0);
+  const hash = rawHash + NK_BOOKING_SEED;
   const v = hash % 3;
 
   const step1 = [
@@ -140,7 +143,10 @@ function getBookingSteps(fromName: string, toName: string): { step: number; titl
 }
 
 function getSlugHash(slug: string): number {
-  let hash = 0;
+  // NK_ROUTE_BRAND_SEED=11 — shifts template selection so NK Cab & Taxi pages
+  // always pick different intro/FAQ variants than the source site for every route.
+  const NK_ROUTE_BRAND_SEED = 11;
+  let hash = NK_ROUTE_BRAND_SEED;
   for (let i = 0; i < slug.length; i++) {
     hash += slug.charCodeAt(i);
   }

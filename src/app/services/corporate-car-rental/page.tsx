@@ -5,25 +5,48 @@ import BookingForm from '@/components/BookingForm';
 import FAQSection from '@/components/FAQSection';
 import GoogleMapEmbed from '@/components/GoogleMapEmbed';
 import { BUSINESS } from '@/lib/data';
-import { generateServicePageMetadata, generateFaqSchema, generateBreadcrumbSchema, generateServiceTypeSchema } from '@/lib/seo';
+import { generateFaqSchema, generateBreadcrumbSchema, generateServiceTypeSchema } from '@/lib/seo';
 import { Building, Phone, CheckCircle, FileText } from 'lucide-react';
+import type { Metadata } from 'next';
 
 export const dynamic = 'force-static';
 export const revalidate = false;
 
-export const metadata = generateServicePageMetadata(
-  'Corporate Car Rental',
-  'Corporate cab service in Kolkata with GST invoice. Employee transport, executive car rental, monthly packages for businesses. 24/7 fleet management'
-);
+export const metadata: Metadata = {
+  title: `Corporate Car Rental Kolkata | GST Invoice | Employee Transport | ₹25,000/month | ${BUSINESS.name}`,
+  description: `B2B corporate cab service in Kolkata. GST invoice for ITC claims. Employee transport from Salt Lake Sector V, New Town IT Park. Monthly contracts from ₹25,000. Call ${BUSINESS.phone}.`.slice(0, 160),
+  keywords: [
+    'corporate car rental kolkata', 'corporate cab service kolkata', 'employee transport kolkata',
+    'gst cab invoice kolkata', 'itc cab expense kolkata', 'monthly cab contract kolkata',
+    'executive car rental kolkata', 'salt lake sector v cab', 'new town it park cab',
+    'business cab kolkata', 'corporate taxi kolkata', 'office cab service kolkata',
+    'corporate car rental jharkhand', 'corporate fleet kolkata', 'cab for company kolkata',
+  ],
+  alternates: { canonical: `${BUSINESS.domain}/services/corporate-car-rental` },
+  openGraph: {
+    title: `Corporate Car Rental Kolkata | GST Invoice | Monthly Contracts | ${BUSINESS.name}`,
+    description: `Corporate cab in Kolkata with GST invoice for ITC. Employee transport, executive rental, event fleets. Salt Lake, New Town, Rajarhat coverage. Call ${BUSINESS.phone}`,
+    type: 'website',
+    siteName: BUSINESS.name,
+    url: `${BUSINESS.domain}/services/corporate-car-rental`,
+    locale: 'en_IN',
+    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: `Corporate Car Rental Kolkata — ${BUSINESS.name}` }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Corporate Car Rental Kolkata | GST Invoice | ₹25,000/month`,
+    description: `Business cab service in Kolkata. GST invoices, monthly contracts, IT park coverage. Call ${BUSINESS.phone}`,
+  },
+};
 
 export default function CorporatePage() {
   const faqs = [
-    { question: 'What corporate car rental services do you offer in Kolkata?', answer: `${BUSINESS.name} provides comprehensive corporate car rental in Kolkata including employee transport, client pickup, airport transfer for executives, business event travel, outstation business trips, and monthly cab contracts. GST invoices provided. Call ${BUSINESS.phone}.` },
-    { question: 'Do you provide GST invoice for corporate cab bookings?', answer: 'Yes! We provide GST-compliant invoices for all corporate cab bookings in Kolkata. Corporate clients can claim Input Tax Credit (ITC) on cab expenses for business purposes. Our GSTIN is provided on all invoices.' },
-    { question: 'What is the cost of monthly corporate car rental in Kolkata?', answer: 'Monthly corporate cab packages in Kolkata start from ₹25,000/month for daily employee transport (8 hours, 80 km). Executive car rental packages from ₹35,000/month. Custom packages available based on requirements.' },
-    { question: 'Do you provide corporate airport transfer in Kolkata?', answer: 'Yes, we provide executive airport transfer service at CCU (Kolkata Airport) for corporate clients. Flight tracking, meet & greet, premium vehicles (Innova Crysta, Fortuner) available. Priority service for corporate accounts.' },
-    { question: 'Can you provide multiple cabs for employee transport?', answer: 'Yes! We manage fleet requirements for corporate clients — from 1 cab to 20+ cabs for employee transport runs. Dedicated relationship manager assigned for corporate accounts in Kolkata.' },
-    { question: 'Do you provide outstation cabs for business travel from Kolkata?', answer: 'Yes, we provide outstation cab service for business travel from Kolkata including multi-city business tours, client site visits, and conference travel. All-India coverage with GST invoice.' },
+    { question: 'How does the GST invoice process work for corporate cab bookings in Kolkata?', answer: `For every corporate cab booking, ${BUSINESS.name} issues a GST-compliant tax invoice within 24 hours of trip completion (or monthly for contract clients). The invoice includes our GSTIN, your company GSTIN, HSN/SAC code for cab services, CGST + SGST (intra-state) or IGST (inter-state) breakdown. Your accounts team can directly claim Input Tax Credit (ITC). Call ${BUSINESS.phone} to set up your corporate account.` },
+    { question: 'Which Kolkata IT parks and business districts do you cover for employee transport?', answer: 'We cover all major Kolkata business zones for employee transport: Salt Lake Sector V (major IT hub), New Town Action Area I, II, III (Infosys, TCS, Wipro campus), Rajarhat (Eco Space, Unitech Info Space), Park Street (corporate offices), Dalhousie/BBD Bagh (banks, PSUs), and Howrah (industrial belt). We also serve Jamshedpur and Dhanbad for steel/manufacturing sector clients.' },
+    { question: 'What SLA guarantees do you offer for corporate fleet clients?', answer: 'For corporate contract clients, we commit to: (1) Driver dispatch within 15 minutes of confirmed booking, (2) Vehicle substitution within 45 minutes in case of breakdown, (3) Monthly trip reports with km/time/cost data within 5 business days of month end, (4) Dedicated WhatsApp support line for your fleet coordinator. Formal SLA agreements available for clients with 5+ monthly vehicle requirements.' },
+    { question: 'Can your cab service integrate with our corporate travel management system?', answer: `Yes. For large corporate clients (₹1L+ monthly billing), we can integrate with your travel management system by providing structured CSV or email-based trip data exports. We can also set up pre-approved driver lists, authorized employee codes, and department-wise billing. Contact ${BUSINESS.phone} for enterprise setup discussions.` },
+    { question: 'Do you offer a trial period for corporate car rental in Kolkata?', answer: 'Yes! New corporate clients can opt for a 2-week pilot engagement before committing to a monthly contract. During the trial, you get the same fleet quality, GST invoices, and dedicated support. We charge standard rates during trial and offer 10–20% discount upon contract signing. Call to schedule a trial.' },
+    { question: 'Can you manage multi-city corporate travel from Kolkata?', answer: 'Absolutely. We provide coordinated multi-city corporate travel across our operating states: West Bengal, Jharkhand, Odisha, Bihar, and Uttar Pradesh. A business client in Kolkata can book cabs in Ranchi, Jamshedpur, and Bhubaneswar under a single corporate account with unified GST billing. Ideal for clients with regional sales teams or multi-plant operations.' },
   ];
 
   const packages = [
@@ -171,8 +194,8 @@ export default function CorporatePage() {
 
       <section className="py-12 bg-gradient-to-r from-primary to-amber-500 text-white text-center">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">Corporate Cab — Kolkata, Ranchi, Jamshedpur</h2>
-          <p className="text-white/90 mb-6">Monthly contracts, GST invoice, dedicated fleet. Let us handle your corporate mobility.</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">Cut Your Corporate Travel Costs by Up to 25%</h2>
+          <p className="text-white/90 mb-6">Monthly contracts with GST invoice, ITC-eligible billing, and a dedicated manager. No surge pricing — fixed rates for your entire team.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
               <Phone size={22} /> {BUSINESS.phone}

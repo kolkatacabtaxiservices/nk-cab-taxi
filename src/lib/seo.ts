@@ -111,21 +111,38 @@ export function generateRouteMetadata(
   priceSuvActual?: number
 ): Metadata {
   const routeSlug = slug || `${fromName.toLowerCase().replace(/\s+/g, '-')}-to-${toName.toLowerCase().replace(/\s+/g, '-')}`;
-  // Use actual route priceSuv from data if provided — prevents meta/body price mismatch.
-  // Falls back to 1.27× estimate only for non-route callers that don't have route data.
   const priceSuv = priceSuvActual ?? Math.round(priceSaloon * 1.27);
-  // CTR-optimized title — ⭐4.8 rating + price + trust signal improves click-through rate
-  // Research shows star ratings in titles boost CTR by 15-30% for local service searches
-  const title = `${fromName} to ${toName} Cab ₹${priceSaloon} | ⭐4.8 AC Taxi | Book 24/7`;
+
+  // Deterministic hash → selects different template per route pair
+  const nameHash = (fromName + toName).split('').reduce((a, c) => a + c.charCodeAt(0), 0);
+  const tv = nameHash % 4; // title variant
+  const dv = nameHash % 6; // description variant
 
   const altWords: string[] = [];
   if (fromAlternateNames && fromAlternateNames.length > 0) altWords.push(...fromAlternateNames);
   if (toAlternateNames && toAlternateNames.length > 0) altWords.push(...toAlternateNames);
-  const altSuffix = altWords.length > 0 ? ` Also from: ${altWords.slice(0, 2).join(', ')}.` : '';
-  // Action-oriented description with price + social proof + direct CTA
-  const desc = `Book ${fromName} to ${toName} cab from ₹${priceSaloon}.${altSuffix} ${distance} km trip. Sedan ₹${priceSaloon} | SUV ₹${priceSuv}. AC, ⭐4.8 rated, 24/7. Instant WhatsApp confirm. Call ${BUSINESS.phone}`.slice(0, 160);
+  const altSuffix = altWords.length > 0 ? ` Also: ${altWords.slice(0, 2).join(', ')}.` : '';
 
-  // Full keyword set for Bing / DDG / Yahoo — includes typo variants
+  // 4 structurally different title templates — avoids identical <title> across all route pages
+  const titles = [
+    `${fromName} to ${toName} Cab ₹${priceSaloon} | ⭐4.8 AC Taxi | Book 24/7`,
+    `${fromName} to ${toName} Taxi ₹${priceSaloon} | ${distance}km One Way | NK Cab & Taxi`,
+    `Book ${fromName}→${toName} Cab | Sedan ₹${priceSaloon} SUV ₹${priceSuv} | ⭐4.8 Rated`,
+    `${fromName} to ${toName} One Way Cab ₹${priceSaloon} | ${distance}km AC Taxi 24/7`,
+  ];
+  const title = titles[tv];
+
+  // 6 structurally different description templates — uniquifies meta across route pages
+  const descs = [
+    `Book ${fromName} to ${toName} cab from ₹${priceSaloon}.${altSuffix} ${distance} km. Sedan ₹${priceSaloon} | SUV ₹${priceSuv}. AC, ⭐4.8, 24/7. Instant WhatsApp confirm. Call ${BUSINESS.phone}`.slice(0, 160),
+    `${fromName} to ${toName} taxi: ${distance} km, Sedan ₹${priceSaloon}, SUV ₹${priceSuv}.${altSuffix} AC cab, verified driver, zero surge. Fixed fare. Book now: ${BUSINESS.phone}`.slice(0, 160),
+    `${distance} km ${fromName}–${toName} cab from ₹${priceSaloon}. One-way & round trip.${altSuffix} AC Sedan, SUV, Innova available. 24/7, no cancellation. Call ${BUSINESS.phone}`.slice(0, 160),
+    `Best fare: ${fromName} to ${toName} cab ₹${priceSaloon} (Sedan), ₹${priceSuv} (SUV).${altSuffix} ${distance} km outstation trip, AC, 24/7 booking. WhatsApp ${BUSINESS.phone}`.slice(0, 160),
+    `${fromName} to ${toName} outstation cab ₹${priceSaloon}.${altSuffix} ${distance} km | ⭐4.8 | Police-verified driver | No surge | Cash/UPI. Book: ${BUSINESS.phone}`.slice(0, 160),
+    `Cheap ${fromName} to ${toName} cab from ₹${priceSaloon}.${altSuffix} ${distance} km drive. Sedan, SUV, Innova Crysta, Tempo Traveller. AC, 24/7 available. Call ${BUSINESS.phone}`.slice(0, 160),
+  ];
+  const desc = descs[dv];
+
   const keywords = generateRouteKeywords(fromName, toName, fromAlternateNames, toAlternateNames);
 
   return {
@@ -331,35 +348,112 @@ export function generateCityMetadata(cityName: string, stateName: string): Metad
   const baseRate    = STATE_RATES[stateSlug]    ?? '₹12/km';
   const airportRate = AIRPORT_RATES[stateSlug]  ?? '1200';
 
-  // City-specific strong meta descriptions — keyword-frontloaded, price + social proof
+  // City-specific meta descriptions — 30+ individual city entries + 4 type-specific fallbacks
+  // This eliminates the single generic template that was applied to 109/119 cities
   const cityDescs: Record<string, string> = {
-    'kolkata':     `★4.8 rated cab service in Kolkata. Outstation ₹12/km | Airport taxi ₹1,200 | Local 4hr ₹1,800. Dzire, Ertiga, Innova Crysta. Salt Lake, New Town, Howrah. No surge pricing. Call ${BUSINESS.phone}`,
-    'ranchi':      `★4.8 cab service in Ranchi ₹12/km. Birsa Munda Airport taxi ₹1,200 | Kolkata, Jamshedpur cab. Innova, SUV, Sedan 24/7. Book ranchi taxi online. Call ${BUSINESS.phone}`,
-    'jamshedpur':  `★4.8 cab service in Jamshedpur ₹12/km. Tatanagar taxi — Kolkata ₹2,400, Ranchi ₹1,800. AC Sedan & Innova. 24/7. Book jamshedpur cab online. Call ${BUSINESS.phone}`,
-    'bhubaneswar': `★4.8 cab service in Bhubaneswar ₹12/km. Biju Patnaik Airport taxi ₹1,200 | Puri, Konark tour. Dzire, Ertiga, Innova 24/7. Book bhubaneswar cab. Call ${BUSINESS.phone}`,
-    'siliguri':    `★4.8 cab service in Siliguri ₹12/km. Bagdogra Airport taxi ₹1,200. Darjeeling, Gangtok route. Dzire, Ertiga, Innova. 24/7. Book siliguri cab. Call ${BUSINESS.phone}`,
-    'darjeeling':  `★4.8 cab service in Darjeeling ₹12/km. Local 4hr ₹1,800. Sightseeing, Siliguri, Kolkata route. Dzire, Innova. 24/7. Book darjeeling taxi. Call ${BUSINESS.phone}`,
-    'dhanbad':     `★4.8 cab service in Dhanbad ₹12/km. Kolkata, Ranchi, Deoghar route. Innova, SUV, Sedan. 24/7 taxi. No surge. Book dhanbad cab. Call ${BUSINESS.phone}`,
-    'bokaro':      `★4.8 cab service in Bokaro ₹12/km. Ranchi, Dhanbad, Kolkata route taxi. AC Sedan & SUV. 24/7. No surge. Book bokaro cab. Call ${BUSINESS.phone}`,
-    'deoghar':     `★4.8 cab service in Deoghar ₹12/km. Baidyanath Dham taxi, Jasidih station, Ranchi route. Innova & Sedan. 24/7. Book deoghar cab. Call ${BUSINESS.phone}`,
-    'puri':        `★4.8 cab service in Puri ₹12/km. Jagannath Temple taxi, Konark, Bhubaneswar route. Dzire, Ertiga, Innova Crysta. 24/7. Book puri cab. Call ${BUSINESS.phone}`,
+    // ── Major Hubs (hand-crafted) ──
+    'kolkata':             `★4.8 rated cab service in Kolkata. Outstation ₹12/km | Airport taxi ₹1,200 | Local 4hr ₹1,800. Dzire, Ertiga, Innova Crysta. Salt Lake, New Town, Howrah. No surge pricing. Call ${BUSINESS.phone}`,
+    'ranchi':              `★4.8 cab service in Ranchi ₹12/km. Birsa Munda Airport taxi ₹1,200 | Kolkata, Jamshedpur cab. Innova, SUV, Sedan 24/7. Book ranchi taxi online. Call ${BUSINESS.phone}`,
+    'jamshedpur':          `★4.8 cab service in Jamshedpur ₹12/km. Tatanagar taxi — Kolkata ₹4,500, Ranchi ₹1,800. AC Sedan & Innova. 24/7. Book jamshedpur cab online. Call ${BUSINESS.phone}`,
+    'bhubaneswar':         `★4.8 cab service in Bhubaneswar ₹12/km. Biju Patnaik Airport taxi ₹1,200 | Puri ₹1,000, Konark ₹1,100. Dzire, Ertiga, Innova 24/7. Call ${BUSINESS.phone}`,
+    'siliguri':            `★4.8 cab service in Siliguri ₹12/km. Bagdogra Airport taxi ₹1,200. Darjeeling (90km), Gangtok (120km). Dzire, Ertiga, Innova. 24/7. Call ${BUSINESS.phone}`,
+    'darjeeling':          `★4.8 cab in Darjeeling ₹12/km. Local 4hr ₹1,800 | Tiger Hill, Toy Train, Tea Garden sightseeing. Siliguri, Kolkata route. Innova hill-certified. 24/7. Call ${BUSINESS.phone}`,
+    'dhanbad':             `★4.8 cab service in Dhanbad ₹12/km. Kolkata (175km ₹2,200), Ranchi (150km ₹2,000), Deoghar (100km ₹1,600). AC Sedan, Innova. 24/7 taxi. Call ${BUSINESS.phone}`,
+    'bokaro':              `★4.8 cab in Bokaro ₹12/km. Ranchi (100km ₹1,600), Dhanbad (70km ₹1,200), Kolkata (260km ₹3,400). Bokaro Steel City taxi. AC Sedan & SUV. Call ${BUSINESS.phone}`,
+    'deoghar':             `★4.8 cab in Deoghar ₹12/km. Baidyanath Dham & Jasidih station taxi. Ranchi (170km ₹2,200), Kolkata (350km ₹4,500). No surge during Shravan. Innova & Sedan. Call ${BUSINESS.phone}`,
+    'puri':                `★4.8 cab in Puri ₹12/km. Jagannath Temple & Konark Sun Temple taxi. Kolkata (500km), Bhubaneswar (60km ₹1,000). Dzire, Ertiga, Innova Crysta. 24/7. Call ${BUSINESS.phone}`,
+    // ── West Bengal Cities ──
+    'durgapur':            `★4.8 cab service in Durgapur ₹12/km. Kolkata (170km ₹2,200), Asansol (40km ₹800). Steel city taxi — DPL, City Centre, Benachity. Sedan, SUV, Innova. 24/7. Call ${BUSINESS.phone}`,
+    'asansol':             `★4.8 cab in Asansol ₹12/km. Kolkata (200km ₹2,600), Durgapur (40km ₹800), Dhanbad (65km ₹1,100). AC Sedan, SUV. Burnpur, Kulti, Raniganj areas. 24/7. Call ${BUSINESS.phone}`,
+    'howrah':              `★4.8 cab in Howrah ₹12/km. Howrah Station taxi, Kolkata drop ₹800, CCU Airport ₹1,200. Sibpur, Belur Math, Shalimar — all areas. AC Dzire, Innova. 24/7. Call ${BUSINESS.phone}`,
+    'kharagpur':           `★4.8 cab in Kharagpur ₹12/km. Kolkata (120km ₹1,800), Bhubaneswar (350km ₹4,500). IIT Kharagpur area cab. Sedan, SUV 24/7. Digha, Odisha route. Call ${BUSINESS.phone}`,
+    'bardhaman':           `★4.8 cab in Bardhaman ₹12/km. Kolkata (105km ₹1,600), Durgapur (55km ₹1,000). Bardhaman University, Meghnad Saha area. Sedan & SUV. 24/7 taxi. Call ${BUSINESS.phone}`,
+    'haldia':              `★4.8 cab in Haldia ₹12/km. Kolkata (130km ₹1,900), Digha (100km ₹1,600). Haldia Port, HOC, IOCL plant area taxi. Sedan, SUV. 24/7 booking. Call ${BUSINESS.phone}`,
+    'midnapore':           `★4.8 cab in Midnapore ₹12/km. Kolkata (120km ₹1,800), Digha (120km ₹1,800). Midnapore Medical College area. Outstation, local taxi. Sedan & Innova. 24/7. Call ${BUSINESS.phone}`,
+    'digha':               `★4.8 cab in Digha ₹12/km. Kolkata (185km ₹2,500), Mandarmani (45km ₹900). Beach resort taxi — hotel pickup, sea beach sightseeing. Dzire, Ertiga. 24/7. Call ${BUSINESS.phone}`,
+    'mandarmani':          `★4.8 cab in Mandarmani ₹12/km. Kolkata (180km ₹2,400), Digha (45km ₹900). Resort pickup, Tajpur & Shankarpur sightseeing. AC Sedan & SUV. 24/7. Call ${BUSINESS.phone}`,
+    'bolpur-shantiniketan':`★4.8 cab in Shantiniketan ₹12/km. Kolkata (155km ₹2,100). Visva-Bharati, Baul Mela, Joydeb Kenduli. Heritage sightseeing taxi. Sedan & Innova. 24/7. Call ${BUSINESS.phone}`,
+    'sundarbans':          `★4.8 cab to Sundarbans ₹12/km. Godkhali ghat (120km from Kolkata ₹1,800). Tiger reserve access, Sajnekhali WLS. Sedan & SUV with driver wait. 24/7. Call ${BUSINESS.phone}`,
+    'mayapur':             `★4.8 cab to Mayapur ₹12/km. Kolkata (130km ₹1,900). ISKCON temple complex taxi. Nabadwip ferry ghat, Chandannagar route. Dzire, Ertiga. 24/7. Call ${BUSINESS.phone}`,
+    'gangasagar':          `★4.8 cab to Gangasagar ₹12/km. Kolkata (135km ₹2,000) to Kachuberia ghat. Makar Sankranti mela cab. No surge. Sedan & SUV. 24/7 service. Call ${BUSINESS.phone}`,
+    'bishnupur':           `★4.8 cab to Bishnupur ₹12/km. Kolkata (200km ₹2,600). Terracotta temples, Baluchari saree market. Heritage tour taxi. Sedan, Innova. 24/7. Call ${BUSINESS.phone}`,
+    'kolkata-airport':     `★4.8 Kolkata Airport cab. CCU airport transfer from ₹1,200. Flight tracking, meet & greet. Salt Lake ₹900, Howrah ₹1,100, New Town ₹850. AC Sedan & Innova. 24/7. Call ${BUSINESS.phone}`,
+    'salt-lake-kolkata':   `★4.8 cab in Salt Lake (Bidhannagar) ₹12/km. Sector V IT hub, City Centre, Karunamoyee. CCU airport ₹900. Kolkata outstation, local. Dzire, Innova. 24/7. Call ${BUSINESS.phone}`,
+    'new-town-kolkata':    `★4.8 cab in New Town (Rajarhat) ₹12/km. Eco Park, Biswa Bangla, Nazrul Tirtha. IT sector, Action Area I-III. Airport ₹850. Sedan, SUV. 24/7. Call ${BUSINESS.phone}`,
+    'barasat':             `★4.8 cab in Barasat ₹12/km. Kolkata (35km ₹800), Basirhat (50km ₹1,000), Bongaon (40km ₹900). NH35 corridor. Barasat court, Jagaddal. AC Sedan. 24/7. Call ${BUSINESS.phone}`,
+    // ── Odisha Cities ──
+    'cuttack':             `★4.8 cab in Cuttack ₹12/km. Bhubaneswar (30km ₹700), Puri (90km ₹1,400). Silver filigree city — Barabati Fort, Cuttack Chandi temple taxi. AC Sedan & SUV. 24/7. Call ${BUSINESS.phone}`,
+    'rourkela':            `★4.8 cab in Rourkela ₹12/km. Bhubaneswar (375km ₹4,800), Ranchi (150km ₹2,000). SAIL plant, RSP colony, Bondamunda. Sedan & Innova. 24/7 taxi. Call ${BUSINESS.phone}`,
+    'berhampur':           `★4.8 cab in Berhampur ₹12/km. Bhubaneswar (165km ₹2,500), Puri (165km ₹2,500). Gopalpur beach, Taptapani. Silk city taxi — Silk market, Thakurani temple. AC Sedan. 24/7. Call ${BUSINESS.phone}`,
+    'konark':              `★4.8 cab to Konark ₹12/km. Puri (35km ₹700), Bhubaneswar (65km ₹1,100), Kolkata (535km). UNESCO Sun Temple taxi. Chandrabhaga beach. Dzire, Innova. 24/7. Call ${BUSINESS.phone}`,
+    // ── Jharkhand Cities ──
+    'hazaribagh':          `★4.8 cab in Hazaribagh ₹12/km. Ranchi (95km ₹1,500), Dhanbad (100km ₹1,600). Hazaribagh National Park, Canary Hill. Sedan & SUV. 24/7 taxi. Call ${BUSINESS.phone}`,
+    'giridih':             `★4.8 cab in Giridih ₹12/km. Ranchi (160km ₹2,200), Dhanbad (90km ₹1,400). Parasnath Jain pilgrimage, Usri Falls. Sedan & SUV. 24/7. Call ${BUSINESS.phone}`,
+    'netarhat':            `★4.8 cab to Netarhat ₹12/km. Ranchi (156km ₹2,200). Sunrise point, Lodh Falls, Betla NP. Queen of Jharkhand hill station cab. Innova hill-certified. 24/7. Call ${BUSINESS.phone}`,
+    // ── Bihar Cities ──
+    'patna':               `★4.8 cab in Patna ₹14/km. Gaya (100km ₹1,500), Varanasi (250km ₹3,800), Kolkata (590km). Patna Sahib, Gandhi Maidan, AIIMS Patna. AC Sedan, Innova. 24/7. Call ${BUSINESS.phone}`,
+    'gaya':                `★4.8 cab in Gaya ₹14/km. Bodh Gaya (17km ₹400), Patna (100km ₹1,500), Rajgir (75km ₹1,200). Gaya Airport (GAY) transfers. Vishnupad temple taxi. Sedan & SUV. 24/7. Call ${BUSINESS.phone}`,
+    'bodh-gaya':           `★4.8 cab in Bodh Gaya ₹14/km. Gaya Airport (17km ₹400), Rajgir (60km ₹1,000), Nalanda (90km ₹1,400). Mahabodhi Temple, Buddhist circuit. Sedan & Innova. 24/7. Call ${BUSINESS.phone}`,
+    'nalanda':             `★4.8 cab to Nalanda ₹14/km. Patna (90km ₹1,400), Rajgir (15km ₹400), Bodh Gaya (90km ₹1,400). Nalanda University ruins, Bihar Sharif. Buddhist circuit cab. Sedan. 24/7. Call ${BUSINESS.phone}`,
+    'rajgir':              `★4.8 cab to Rajgir ₹14/km. Patna (100km ₹1,500), Bodh Gaya (60km ₹1,000), Nalanda (15km ₹400). Vishwa Shanti Stupa, hot springs. Buddhist tour taxi. Sedan & SUV. 24/7. Call ${BUSINESS.phone}`,
+    // ── Uttar Pradesh Cities ──
+    'varanasi':            `★4.8 cab in Varanasi ₹14/km. Kolkata (680km ₹8,000), Patna (250km ₹3,800). Kashi Vishwanath, Ganga Aarti, Sarnath (10km). Ghats taxi. Sedan & Innova 24/7. Call ${BUSINESS.phone}`,
+    'prayagraj':           `★4.8 cab in Prayagraj ₹14/km. Varanasi (120km ₹1,900), Lucknow (200km ₹3,000). Triveni Sangam, Anand Bhavan. Maha Kumbh taxi — advance booking essential. 24/7. Call ${BUSINESS.phone}`,
   };
-  const desc = cityDescs[citySlug] || `★4.8 rated cab service in ${cityName} from ${baseRate}. Local, outstation, airport ₹${airportRate} & one-way taxi. AC Innova, SUV, Sedan. 24/7. No surge. Call ${BUSINESS.phone}`;
 
-  // City-specific strong titles — keyword-first with rate + action + social proof
+  // 4 type-specific fallback templates — for remaining cities not in the map above
+  // Each template has a different structure/emphasis to avoid identical meta across city types
+  function getCityFallbackDesc(slug: string, name: string, rate: string, airRate: string): string {
+    const hash = slug.split('').reduce((a, c) => a + c.charCodeAt(0), 0) % 4;
+    const templates = [
+      `★4.8 cab service in ${name} from ${rate}. Local taxi, outstation & airport transfer ₹${airRate}. AC Sedan, SUV, Innova. Verified driver. No surge pricing. Book now: ${BUSINESS.phone}`,
+      `Reliable cab in ${name} from ${rate}. One-way & round trip outstation, airport ₹${airRate}, local hourly hire. AC fleet — Dzire, Ertiga, Innova. 24/7 availability. Call ${BUSINESS.phone}`,
+      `Book taxi in ${name} from ${rate}. Outstation, airport drop ₹${airRate}, local sightseeing. AC Sedan, Innova Crysta, Tempo. ★4.8 rated. Instant confirm. WhatsApp ${BUSINESS.phone}`,
+      `${name} cab service from ${rate}. Airport transfer ₹${airRate} | one-way & round trip | local taxi. AC fleet with verified drivers. No hidden charges. Available 24/7. Call ${BUSINESS.phone}`,
+    ];
+    return templates[hash];
+  }
+
+  const desc = cityDescs[citySlug] || getCityFallbackDesc(citySlug, cityName, baseRate, airportRate);
+
+  // City-specific titles — hub cities get unique keyword-rich titles, others get type-specific variants
   const cityTitles: Record<string, string> = {
-    'kolkata':     `Cab Service in Kolkata ₹12/km | Kolkata Taxi Booking | ★4.8 24/7`,
-    'ranchi':      `Cab Service in Ranchi ₹12/km | Ranchi Taxi Booking | ★4.8 24/7`,
-    'jamshedpur':  `Cab Service in Jamshedpur ₹12/km | Jamshedpur Taxi | ★4.8 24/7`,
-    'bhubaneswar': `Cab Service in Bhubaneswar ₹12/km | Airport Taxi | ★4.8 24/7`,
-    'siliguri':    `Cab Service in Siliguri ₹12/km | Bagdogra Airport Cab | ★4.8`,
-    'darjeeling':  `Cab Service in Darjeeling ₹12/km | Darjeeling Taxi | ★4.8 24/7`,
-    'dhanbad':     `Cab Service in Dhanbad ₹12/km | Dhanbad Taxi Booking | ★4.8`,
-    'puri':        `Cab Service in Puri ₹12/km | Jagannath Temple Taxi | ★4.8`,
-    'deoghar':     `Cab Service in Deoghar ₹12/km | Baidyanath Dham Taxi | ★4.8`,
-    'bokaro':      `Cab Service in Bokaro ₹12/km | Bokaro Taxi Booking | ★4.8`,
+    'kolkata':             `Cab Service in Kolkata ₹12/km | Kolkata Taxi Booking | ★4.8 24/7`,
+    'ranchi':              `Cab Service in Ranchi ₹12/km | Ranchi Taxi Booking | ★4.8 24/7`,
+    'jamshedpur':          `Cab Service in Jamshedpur ₹12/km | Jamshedpur Taxi | ★4.8 24/7`,
+    'bhubaneswar':         `Cab Service in Bhubaneswar ₹12/km | Airport Taxi | ★4.8 24/7`,
+    'siliguri':            `Cab Service in Siliguri ₹12/km | Bagdogra Airport Cab | ★4.8`,
+    'darjeeling':          `Cab Service in Darjeeling ₹12/km | Hill Station Taxi | ★4.8 24/7`,
+    'dhanbad':             `Cab Service in Dhanbad ₹12/km | Dhanbad Taxi Booking | ★4.8`,
+    'puri':                `Cab Service in Puri ₹12/km | Jagannath Temple Taxi | ★4.8`,
+    'deoghar':             `Cab Service in Deoghar ₹12/km | Baidyanath Dham Taxi | ★4.8`,
+    'bokaro':              `Cab Service in Bokaro ₹12/km | Bokaro Taxi Booking | ★4.8`,
+    'durgapur':            `Cab Service in Durgapur ₹12/km | Durgapur Taxi | Book Online ★4.8`,
+    'asansol':             `Cab Service in Asansol ₹12/km | Asansol Taxi Booking | ★4.8`,
+    'howrah':              `Cab Service in Howrah ₹12/km | Howrah Station Taxi | ★4.8 24/7`,
+    'cuttack':             `Cab Service in Cuttack ₹12/km | Cuttack Taxi | Bhubaneswar Route ★4.8`,
+    'rourkela':            `Cab Service in Rourkela ₹12/km | Rourkela Taxi Booking | ★4.8`,
+    'patna':               `Cab Service in Patna ₹14/km | Patna Taxi Booking | ★4.8 24/7`,
+    'varanasi':            `Cab Service in Varanasi ₹14/km | Kashi Temple Taxi | ★4.8 24/7`,
+    'prayagraj':           `Cab Service in Prayagraj ₹14/km | Kumbh Mela Taxi | ★4.8`,
+    'gaya':                `Cab Service in Gaya ₹14/km | Bodh Gaya Taxi | Airport Transfer ★4.8`,
+    'bodh-gaya':           `Cab Service in Bodh Gaya ₹14/km | Buddhist Circuit Taxi | ★4.8`,
+    'hazaribagh':          `Cab Service in Hazaribagh ₹12/km | Hazaribagh Taxi | Ranchi Route ★4.8`,
+    'haldia':              `Cab Service in Haldia ₹12/km | Haldia Port Taxi | Kolkata Route ★4.8`,
+    'konark':              `Cab Service in Konark ₹12/km | Sun Temple Taxi | Puri–Bhubaneswar ★4.8`,
   };
-  const title = cityTitles[citySlug] || `Cab Service in ${cityName} ${baseRate} | ★4.8 Taxi & Car Rental 24/7`;
+  // 4 title variants for cities not in the map — different structures avoid identical <title>
+  function getCityFallbackTitle(slug: string, name: string, rate: string): string {
+    const hash = slug.split('').reduce((a, c) => a + c.charCodeAt(0), 0) % 4;
+    const variants = [
+      `Cab Service in ${name} ${rate} | ★4.8 Taxi & Car Rental 24/7`,
+      `${name} Cab Service ${rate} | Taxi Booking | ★4.8 Rated`,
+      `Book Cab in ${name} ${rate} | One Way & Outstation Taxi | ★4.8`,
+      `${name} Taxi Service ${rate} | AC Cab, Airport Transfer | ★4.8 24/7`,
+    ];
+    return variants[hash];
+  }
+  const title = cityTitles[citySlug] || getCityFallbackTitle(citySlug, cityName, baseRate);
 
   // Keywords for Bing/DDG — use hub keyword bank if available
   const hubKeywords = HUB_CITY_KEYWORDS[citySlug] || [

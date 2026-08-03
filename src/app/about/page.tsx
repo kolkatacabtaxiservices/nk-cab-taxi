@@ -11,10 +11,11 @@ export const revalidate = false;
 export const metadata = generateAboutMetadata();
 
 const faqItems = [
-  { question: 'Where is NK Cab & Taxi based?', answer: `${BUSINESS.name} is based out of Kolkata, West Bengal, and operates across 5 states including West Bengal, Jharkhand, Odisha, Bihar, and Uttar Pradesh.` },
-  { question: 'How long has NK Cab & Taxi been operating?', answer: `${BUSINESS.name} has been providing reliable cab and car rental services since ${BUSINESS.foundYear}. With over 5 years of operations, we have served 5,000+ customers across 80+ cities.` },
-  { question: 'Are your drivers verified?', answer: 'Yes. All our drivers are police-verified with background checks and hold valid commercial driving licences. Vehicles carry all required documents including registration, insurance, and pollution certificates.' },
-  { question: 'Can I get a GST invoice for corporate bookings?', answer: 'Yes, we provide GST-compliant invoices for all corporate cab bookings. Our corporate clients in Jamshedpur, Kolkata and other cities can claim GST input tax credit on cab expenses.' },
+  { question: 'Why does NK Cab & Taxi not use surge pricing?', answer: `Surge pricing was rejected as a business model when ${BUSINESS.name} was founded. The founding logic was simple: a passenger booking an airport cab at 5 AM during a storm needs reliable transport the most — penalizing them with 2.5x fares is the opposite of good service. Our fixed-rate commitment means every passenger pays the same whether it's Durga Puja night, a monsoon afternoon, or a regular Tuesday.` },
+  { question: 'How are NK Cab & Taxi drivers selected?', answer: `Every ${BUSINESS.name} driver goes through: (1) Police verification and background check, (2) Valid commercial driving licence with minimum 5 years experience, (3) Vehicle inspection for roadworthiness, insurance, and documentation compliance, (4) Personal interview with our operations team. We do not onboard drivers anonymously through an app — we know every driver in our network personally.` },
+  { question: 'Can NK Cab & Taxi handle group bookings for 15–20 passengers?', answer: `Yes. Our Tempo Traveller fleet (12-seat and 17-seat vehicles) handles group bookings for corporate events, wedding guest transport, school/college trips, and pilgrimages. For groups above 20, we provide multiple coordinated vehicles. Call ${BUSINESS.phone} for group booking rates — we offer group discounts.` },
+  { question: 'Does NK Cab & Taxi operate on public holidays and festival days?', answer: `Yes — 24/7, 365 days. We operate on all public holidays including Durga Puja (all 5 days), Diwali, Eid, Christmas, and all state-specific holidays in West Bengal, Jharkhand, and Odisha. Importantly, our rates do NOT increase on holidays — the same fixed rates apply on Mahalaya morning as on any regular day.` },
+  { question: 'What is NK Cab & Taxi\'s service area?', answer: `Our primary coverage: Kolkata (all 141 wards + Howrah, Bidhannagar, Rajarhat), Ranchi, Jamshedpur, Dhanbad, Bhubaneswar, Puri, and 80+ cities across West Bengal, Jharkhand, Odisha, Bihar, and Uttar Pradesh. For outstation routes, we connect 500+ city pairs. Airport transfer at CCU (Kolkata), IXR (Ranchi), BBI (Bhubaneswar).` },
 ];
 
 export default function AboutPage() {
@@ -72,38 +73,45 @@ export default function AboutPage() {
       {/* Who We Are */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-secondary mb-5">Who We Are</h2>
+          <h2 className="text-2xl font-bold text-secondary mb-5">Who We Are — And Why We Do This Differently</h2>
           <div className="space-y-4 text-gray-600 leading-relaxed">
             <p>
-              <strong>{BUSINESS.name}</strong> is Kolkata&apos;s leading cab and car rental service, operating across East India since {BUSINESS.foundYear}. Founded with a mission to provide safe, reliable, and affordable transportation, we have grown from a small Kolkata-based cab provider to a multi-state operator serving 80+ cities across West Bengal, Jharkhand, Odisha, Bihar, and Uttar Pradesh.
+              <strong>{BUSINESS.name}</strong> started in {BUSINESS.foundYear} from a simple frustration: cab booking in Kolkata was unpredictable. App-based services surged prices during the exact moments people needed reliable transport most &mdash; storms, festivals, early morning flights. Yellow taxis negotiated fares at the passenger&apos;s disadvantage. NK Cab &amp; Taxi was built around one founding principle: <strong>fixed rates, always.</strong>
             </p>
             <p>
-              Our hub cities — Kolkata, Ranchi, Jamshedpur, and Bhubaneswar — serve as central operational points from which we connect 80+ cities through 500+ routes. In collaboration with trusted regional taxi networks like <a href="https://www.kolkatacabservice.com/" target="_blank" rel="noopener" className="text-primary font-medium hover:underline">Kolkata Cab Service</a>, we ensure complete coverage across all major routes including Kolkata to Darjeeling, Ranchi to Jamshedpur, airport transfers at Netaji Subhash Chandra Bose International Airport (CCU), and premium wedding car rentals.
+              What started as a Kolkata outstation service with 5 vehicles has grown into a multi-state operation covering 80+ cities across West Bengal, Jharkhand, Odisha, Bihar, and Uttar Pradesh. Our operational hubs in Kolkata, Ranchi, and Jamshedpur allow us to provide both local taxi service and long-distance outstation cabs without compromising on response time or driver quality.
             </p>
             <p>
-              We provide a complete range of car rental services including <strong>local taxi</strong> for city travel in Kolkata, <strong>outstation cabs</strong> for intercity journeys, <strong>one-way taxi</strong> for point-to-point affordable travel, <strong>round-trip packages</strong> for multi-day tours, <strong>airport and railway station transfers</strong>, <strong>wedding car rental</strong> with beautiful flower decoration, and <strong>corporate car rental</strong> with GST invoices and monthly packages.
+              We operate 7 service categories: local taxi (hourly), outstation one-way, outstation round trip, airport transfer, railway station pickup, wedding car rental, and corporate fleet management. Every service runs on the same fixed-rate, no-surge promise that defines the brand.
             </p>
             <p>
-              Our fleet includes AC Sedans (Swift Dzire, Honda Amaze), SUVs (Ertiga, Innova, Innova Crysta), Tempo Travellers (12–17 seater), and Luxury vehicles (Fortuner, Mercedes). All vehicles are regularly maintained, sanitized, and driven by police-verified, experienced professional drivers.
-            </p>
-            <p>
-              At {BUSINESS.name}, customer satisfaction is our highest priority. We offer transparent pricing with no hidden charges, 24/7 customer support, instant WhatsApp confirmation, and a best-price guarantee. We accept Cash, UPI (Google Pay, PhonePe, Paytm), Credit/Debit Cards, and Online Bank Transfers.
+              Our fleet ranges from AC Sedans (Swift Dzire, Honda Amaze) to SUVs (Ertiga, Innova) to Innova Crysta, Tempo Traveller (12–17 seater), and luxury vehicles (Fortuner). All vehicles carry valid fitness certificates, insurance, and commercial registration. Drivers hold valid commercial licences with police verification.
             </p>
           </div>
 
-          {/* Trust Points */}
+          {/* Why Fixed Rate Matters — NK's Unique Philosophy */}
+          <div className="mt-10 p-6 bg-accent/50 rounded-2xl border border-primary/10">
+            <h3 className="text-xl font-bold text-secondary mb-3">Why We Reject Surge Pricing — Our Founding Philosophy</h3>
+            <div className="space-y-3 text-gray-600 text-sm leading-relaxed">
+              <p>When Durga Puja begins and everyone needs a cab simultaneously &mdash; that&apos;s when a surge algorithm raises prices 2&ndash;3x. But that&apos;s also exactly when Kolkata families need reliable transport the most. We believe charging more when passengers have fewer alternatives is not service; it&apos;s exploitation.</p>
+              <p>NK Cab &amp; Taxi has never used surge pricing since {BUSINESS.foundYear} &mdash; not during Ashtami night, not during monsoon storms, not during New Year&apos;s Eve. This isn&apos;t a marketing claim. It&apos;s the operational decision we made at founding and have maintained every day since.</p>
+              <p>The consequence is that passengers can <strong>predict their travel cost in advance</strong> — which is what genuine planning requires.</p>
+            </div>
+          </div>
+
+          {/* Operational Commitments */}
           <div className="mt-10">
-            <h3 className="text-xl font-bold text-secondary mb-4">Our Commitment to You</h3>
+            <h3 className="text-xl font-bold text-secondary mb-4">What We Commit to on Every Booking</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
-                'Police-verified drivers with clean backgrounds',
-                'AC vehicles — clean, sanitized before every trip',
-                'Transparent pricing — no hidden or surge charges',
-                '24/7 customer support and instant confirmation',
-                'GPS-tracked vehicles for your safety',
-                'GST invoices for all corporate bookings',
-                'Flexible payment — Cash, UPI, Card, Bank Transfer',
-                'Best price guarantee — we match any genuine quote',
+                'Driver dispatched with name & vehicle number within 2 minutes of booking',
+                'Fixed rate quoted upfront — no changes after booking',
+                'Driver arrives 10–15 minutes before scheduled time',
+                'No advance payment required for most bookings',
+                'Toll and parking receipts shown — no markup',
+                'Flight tracking for all airport pickup bookings',
+                'Driver accommodation included in multi-day round trips',
+                'GST invoice within 24 hours for corporate bookings',
               ].map((point, i) => (
                 <div key={i} className="flex items-center gap-2 text-sm text-gray-600">
                   <CheckCircle size={16} className="text-green-500 shrink-0" />
@@ -170,8 +178,8 @@ export default function AboutPage() {
 
       <section className="py-12 bg-gradient-to-r from-primary to-amber-500 text-center text-white">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Experience Kolkata&apos;s Best Cab Service</h2>
-          <p className="text-white/90 mb-6 max-w-xl mx-auto">Book your cab now and experience safe, reliable, and affordable travel across East India.</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">Fixed Rate. Verified Driver. Instant Confirmation.</h2>
+          <p className="text-white/90 mb-6 max-w-xl mx-auto">No surge, no surprises &mdash; book your cab across East India and know exactly what you&apos;ll pay before you travel.</p>
           <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary font-bold rounded-full text-lg hover:scale-105 transition-all">
             <Phone size={22} /> Call {BUSINESS.phone}
           </a>
