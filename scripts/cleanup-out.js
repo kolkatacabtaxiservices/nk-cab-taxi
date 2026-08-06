@@ -34,7 +34,7 @@ function cleanDir(dir, isRoot = false) {
       cleanDir(fullPath, false); // Never root after first level
     } else if (entry.name.endsWith('.txt')) {
       // At root level: preserve robots.txt and any IndexNow key files
-      if (isRoot && (PRESERVE_ROOT_TXT.has(entry.name) || /^[a-f0-9]{32}\.txt$/.test(entry.name))) {
+      if (isRoot && (PRESERVE_ROOT_TXT.has(entry.name) || /^[a-f0-9]+\.txt$/i.test(entry.name))) {
         console.log(`  ✅ Preserved root-level: ${entry.name}`);
         continue;
       }
