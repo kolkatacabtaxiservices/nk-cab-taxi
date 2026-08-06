@@ -20,12 +20,12 @@ const faqItems = [
 
 export default function AboutPage() {
   const milestones = [
-    { year: '2019', title: 'Founded', desc: 'Started operations in Kolkata, West Bengal with a small fleet of 5 vehicles, focused on outstation cab service.' },
-    { year: '2020', title: 'Expanded to 3 States', desc: 'Extended service to Jharkhand and Odisha, covering 30+ cities from our Kolkata hub.' },
-    { year: '2021', title: '1,000+ Customers', desc: 'Crossed 1,000 happy customers milestone with 4.8★ average rating. Launched airport transfer service.' },
-    { year: '2022', title: 'Corporate & Wedding', desc: 'Launched dedicated corporate car rental and wedding car rental services with expanded fleet.' },
-    { year: '2023', title: '80+ Cities, 500+ Routes', desc: 'Expanded to 80+ cities across Jharkhand, West Bengal, Odisha, Bihar, and Uttar Pradesh. Launched Tempo Traveller and luxury segments.' },
-    { year: '2024', title: '5,000+ Customers', desc: 'Serving 5,000+ customers across 80+ cities. Focused on Kolkata, Ranchi, Jamshedpur & East India.' },
+    { year: '2019', title: 'Launched', desc: 'Started operations in Kolkata, West Bengal with a small fleet of 5 vehicles, focused on outstation cab service.' },
+    { year: '2020', title: 'Entered Three States', desc: 'Extended service to Jharkhand and Odisha, covering 30+ cities from our Kolkata hub.' },
+    { year: '2021', title: '1,000 Riders Reached', desc: 'Crossed 1,000 happy customers milestone with 4.8★ average rating. Launched airport transfer service.' },
+    { year: '2022', title: 'Corporate and Wedding Lines', desc: 'Launched dedicated corporate car rental and wedding car rental services with expanded fleet.' },
+    { year: '2023', title: 'A Wider Network', desc: 'Expanded to 80+ cities across Jharkhand, West Bengal, Odisha, Bihar, and Uttar Pradesh. Launched Tempo Traveller and luxury segments.' },
+    { year: '2024', title: '5,000+ Riders Served', desc: 'Serving 5,000+ customers across 80+ cities. Focused on Kolkata, Ranchi, Jamshedpur & East India.' },
   ];
 
   return (
@@ -35,7 +35,7 @@ export default function AboutPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFaqSchema(faqItems)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateWebPageSchema(
         'About NK Cab & Taxi',
-        'Learn about NK Cab & Taxi — trusted cab provider across West Bengal, Jharkhand & Odisha since 2019.',
+        'Who we are at NK Cab & Taxi — dependable cab operator across West Bengal, Jharkhand & Odisha, in business since 2019.',
         `${BUSINESS.domain}/about`,
         'AboutPage'
       )) }} />
@@ -46,7 +46,7 @@ export default function AboutPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <Breadcrumbs items={[{ name: 'About Us', href: '/about' }]} />
           <h1 className="text-3xl md:text-4xl font-extrabold mt-4 mb-4">About <span className="text-gradient">{BUSINESS.name}</span></h1>
-          <p className="text-lg text-gray-300 max-w-3xl">{BUSINESS.tagline} &mdash; East India&apos;s trusted cab &amp; taxi service since {BUSINESS.foundYear}. Verified drivers, AC vehicles, no hidden charges.</p>
+          <p className="text-lg text-gray-300 max-w-3xl">{BUSINESS.tagline} &mdash; a reliable cab &amp; taxi partner for East India since {BUSINESS.foundYear}. Vetted chauffeurs, air-conditioned cars, transparent pricing.</p>
         </div>
       </section>
 
@@ -55,10 +55,10 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
-              { value: `${new Date().getFullYear() - BUSINESS.foundYear}+`, label: 'Years of Service', icon: <Award size={24} /> },
-              { value: '5,000+', label: 'Happy Customers', icon: <Users size={24} /> },
-              { value: '80+', label: 'Cities Covered', icon: <MapPin size={24} /> },
-              { value: '4.8★', label: 'Average Rating', icon: <Star size={24} /> },
+              { value: `${new Date().getFullYear() - BUSINESS.foundYear}+`, label: 'Years on the Road', icon: <Award size={24} /> },
+              { value: '5,000+', label: 'Riders Served', icon: <Users size={24} /> },
+              { value: '80+', label: 'Cities on the Map', icon: <MapPin size={24} /> },
+              { value: '4.8★', label: 'Customer Rating', icon: <Star size={24} /> },
             ].map((stat, i) => (
               <div key={i} className="flex flex-col items-center gap-2">
                 <div className="opacity-70">{stat.icon}</div>
@@ -126,15 +126,15 @@ export default function AboutPage() {
       {/* Services We Offer */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-secondary mb-6">Services We Offer in Kolkata, Ranchi & East India</h2>
+          <h2 className="text-2xl font-bold text-secondary mb-6">What We Offer Across Kolkata, Ranchi & East India</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: <MapPin size={28} />, title: 'Local Taxi Kolkata', desc: 'Hourly cab rental for city sightseeing, shopping, hospital, and events in Kolkata. Packages from ₹1,800.' },
-              { icon: <Shield size={28} />, title: 'Outstation Cab', desc: 'Intercity cab service from Kolkata to 80+ cities. One-way and round trip. Sedan ₹12/km.' },
-              { icon: <TrendingUp size={28} />, title: 'One-Way Taxi', desc: 'Pay only for one side. Most affordable option for point-to-point intercity travel from Kolkata.' },
-              { icon: <Users size={28} />, title: 'Airport Transfer', desc: 'Pickup & drop at Netaji Subhash Airport (CCU). Flight tracking, name board, 24/7 service.' },
-              { icon: <Heart size={28} />, title: 'Wedding Car Rental', desc: 'Decorated Innova Crysta, Fortuner & luxury cars for baraat, vidaai, and wedding functions in Kolkata.' },
-              { icon: <Building size={28} />, title: 'Corporate Car Rental', desc: 'Employee transport, client meetings, monthly contracts, GST invoices for businesses in Kolkata.' },
+              { icon: <MapPin size={28} />, title: 'City Taxi Kolkata', desc: 'Hourly hire for sightseeing, shopping, hospital visits, and functions in Kolkata. Plans start at ₹1,800.' },
+              { icon: <Shield size={28} />, title: 'Outstation Rides', desc: 'Intercity travel from Kolkata to 80+ cities, one-way or round trip, from ₹12/km in a Sedan.' },
+              { icon: <TrendingUp size={28} />, title: 'One-Way Trips', desc: 'Bill only for the outward leg — the most budget-friendly way to travel point to point from Kolkata.' },
+              { icon: <Users size={28} />, title: 'Airport Pickups', desc: 'Pickups and drops at Netaji Subhash Airport (CCU) with flight tracking, a name board, and 24/7 availability.' },
+              { icon: <Heart size={28} />, title: 'Wedding Fleet', desc: 'Decorated Innova Crysta, Fortuner, and luxury cars for baraat, vidaai, and functions in Kolkata.' },
+              { icon: <Building size={28} />, title: 'Corporate Fleet', desc: 'Staff transport, client meetings, monthly contracts, and GST invoices for businesses in Kolkata.' },
             ].map((item, i) => (
               <div key={i} className="p-6 bg-white rounded-2xl shadow-sm border border-gray-100">
                 <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center text-primary mb-4">{item.icon}</div>
@@ -149,7 +149,7 @@ export default function AboutPage() {
       {/* Our Journey — Milestones */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-secondary mb-8">Our Journey Since {BUSINESS.foundYear}</h2>
+          <h2 className="text-2xl font-bold text-secondary mb-8">The Road So Far Since {BUSINESS.foundYear}</h2>
           <div className="space-y-4">
             {milestones.map((m, i) => (
               <div key={i} className="flex gap-4 items-start">
@@ -169,7 +169,7 @@ export default function AboutPage() {
       {/* FAQ */}
       <section className="py-12 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4">
-          <FAQSection faqs={faqItems} title="About NK Cab & Taxi — FAQs" />
+          <FAQSection faqs={faqItems} title={`About ${BUSINESS.name} — Common Questions`} />
         </div>
       </section>
 

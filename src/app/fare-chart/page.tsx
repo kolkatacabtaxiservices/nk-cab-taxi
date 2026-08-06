@@ -12,10 +12,10 @@ export const dynamic = 'force-static';
 export const revalidate = false;
 export const metadata: Metadata = {
   title: `Kolkata Cab Fare Chart 2026 — Taxi Rate Per KM | Local & Outstation`,
-  description: `Complete cab fare chart for Kolkata 2026. Sedan ₹12/km, SUV ₹16/km, Innova Crysta ₹18/km. Local packages from ₹1,800, airport fares, outstation rates. No surge pricing. Call ${BUSINESS.phone}.`,
+  description: `The full Kolkata taxi price list for 2026 — sedans ₹12/km, SUVs ₹16/km, Innova Crysta ₹18/km. Local hire from ₹1,800, airport fares, and outstation pricing. Fixed rates with no surge. Ring ${BUSINESS.phone}.`,
   openGraph: {
-    title: `Kolkata Cab Fare Chart 2026 | Sedan ₹12/km, SUV ₹16/km`,
-    description: `Complete pricing guide — outstation ₹12/km sedan, local 4hr ₹1,800, airport ₹800+. No hidden charges. No surge. Call ${BUSINESS.phone}`,
+    title: `Kolkata Taxi Rates 2026 | Sedan ₹12/km, SUV ₹16/km`,
+    description: `Everything you need to price a ride — outstation ₹12/km sedan, local 4hr ₹1,800, airport from ₹800+. Transparent, no surge. Call ${BUSINESS.phone}`,
     type: 'website',
     siteName: 'NK Cab & Taxi',
     url: `${BUSINESS.domain}/fare-chart`,
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: `Kolkata Cab Fare Chart 2026 | ₹12/km Sedan`,
-    description: `Outstation ₹12/km | Local 4hr ₹1,800 | Airport from ₹800. No surge. Call ${BUSINESS.phone}`,
+    title: `Kolkata Taxi Rates 2026 | From ₹12/km Sedan`,
+    description: `Outstation ₹12/km | Local 4hr ₹1,800 | Airport from ₹800. Surge-free. Call ${BUSINESS.phone}`,
     images: [`${BUSINESS.domain}/navbanner.webp`],
   },
   alternates: { canonical: `${BUSINESS.domain}/fare-chart` },
@@ -52,8 +52,8 @@ export default async function FareChartPage() {
     { item: 'Extra KM (Tempo Traveller)', rate: '₹22/km' },
     { item: 'Extra Hour (Sedan)', rate: '₹150/hr' },
     { item: 'Extra Hour (SUV)', rate: '₹200/hr' },
-    { item: 'Driver Night Halt', rate: '₹300/night' },
-    { item: 'Outstation Min/Day', rate: '250 km' },
+    { item: 'Driver Night Allowance', rate: '₹300/night' },
+    { item: 'Outstation Daily Minimum', rate: '250 km' },
   ];
 
   const airportFares = [
@@ -73,8 +73,8 @@ export default async function FareChartPage() {
       ])) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateCabPriceSchema()) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateWebPageSchema(
-        'Kolkata Cab Fare Chart 2026',
-        'Complete cab fare chart with per-km rates, local packages, and airport fares.',
+        'Kolkata Taxi Fare Guide 2026',
+        'Per-km rates, local hire plans, and airport transfer fares in one place.',
         `${BUSINESS.domain}/fare-chart`
       )) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateItemListSchema(
@@ -91,26 +91,26 @@ export default async function FareChartPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <Breadcrumbs items={[{ name: 'Fare Chart', href: '/fare-chart' }]} />
           <h1 className="text-3xl md:text-4xl font-extrabold mt-4 mb-3">
-            Kolkata Cab <span className="text-gradient">Fare Chart</span>
+            Kolkata Taxi <span className="text-gradient">Fare Guide</span>
           </h1>
-          <p className="text-gray-300 max-w-3xl">Complete pricing guide — transparent rates, no hidden charges, no surge pricing. Same rate 24/7, 365 days.</p>
+          <p className="text-gray-300 max-w-3xl">Full price list — honest per-km rates, no add-on surprises, and the same fare all day, every day of the year.</p>
         </div>
       </section>
 
       {/* Per KM Rates */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-secondary mb-2">Outstation Cab Rates — Per KM</h2>
-          <p className="text-gray-500 text-sm mb-6">Applicable for all outstation trips from Kolkata and other cities</p>
+          <h2 className="text-2xl font-bold text-secondary mb-2">Outstation Pricing — Per Kilometre</h2>
+          <p className="text-gray-500 text-sm mb-6">Applies to every outstation journey starting from Kolkata and nearby towns</p>
           <div className="overflow-x-auto rounded-2xl shadow-sm border border-gray-100">
             <table className="w-full border-collapse bg-white">
               <thead>
                 <tr className="bg-secondary text-white">
-                  <th className="px-5 py-4 text-left text-sm font-semibold">Vehicle Type</th>
+                  <th className="px-5 py-4 text-left text-sm font-semibold">Car Class</th>
                   <th className="px-5 py-4 text-left text-sm font-semibold">Models</th>
                   <th className="px-5 py-4 text-center text-sm font-semibold">Capacity</th>
                   <th className="px-5 py-4 text-center text-sm font-semibold">Luggage</th>
-                  <th className="px-5 py-4 text-right text-sm font-semibold">Rate/KM</th>
+                  <th className="px-5 py-4 text-right text-sm font-semibold">Per KM</th>
                 </tr>
               </thead>
               <tbody>
@@ -132,13 +132,13 @@ export default async function FareChartPage() {
       {/* Local Packages */}
       <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-secondary mb-2">Local Taxi Packages — Kolkata</h2>
-          <p className="text-gray-500 text-sm mb-6">Hourly packages for city sightseeing, shopping, hospital visits, and local travel</p>
+          <h2 className="text-2xl font-bold text-secondary mb-2">Local Hire Plans — Kolkata</h2>
+          <p className="text-gray-500 text-sm mb-6">Hourly deals for sightseeing, shopping runs, hospital visits, and trips around town</p>
           <div className="overflow-x-auto rounded-2xl shadow-sm border border-gray-100">
             <table className="w-full border-collapse bg-white">
               <thead>
                 <tr className="bg-secondary text-white">
-                  <th className="px-5 py-4 text-left text-sm font-semibold">Package</th>
+                  <th className="px-5 py-4 text-left text-sm font-semibold">Plan</th>
                   <th className="px-5 py-4 text-center text-sm font-semibold">Sedan</th>
                   <th className="px-5 py-4 text-center text-sm font-semibold">SUV</th>
                   <th className="px-5 py-4 text-center text-sm font-semibold">Innova Crysta</th>
@@ -164,13 +164,13 @@ export default async function FareChartPage() {
       {/* Airport Fares */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-secondary mb-2">Airport Cab Fares — Kolkata (CCU)</h2>
-          <p className="text-gray-500 text-sm mb-6">Fixed-rate airport transfers. No surge pricing. Flight tracking included.</p>
+          <h2 className="text-2xl font-bold text-secondary mb-2">Airport Transfer Rates — Kolkata (CCU)</h2>
+          <p className="text-gray-500 text-sm mb-6">Flat airport fares with live flight tracking — never a surge, ever.</p>
           <div className="overflow-x-auto rounded-2xl shadow-sm border border-gray-100">
             <table className="w-full border-collapse bg-white">
               <thead>
                 <tr className="bg-secondary text-white">
-                  <th className="px-5 py-4 text-left text-sm font-semibold">Area (To/From Airport)</th>
+                  <th className="px-5 py-4 text-left text-sm font-semibold">Zone (Airport ↔ City)</th>
                   <th className="px-5 py-4 text-center text-sm font-semibold">Sedan</th>
                   <th className="px-5 py-4 text-center text-sm font-semibold">SUV</th>
                 </tr>
@@ -192,7 +192,7 @@ export default async function FareChartPage() {
       {/* Extra Charges */}
       <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-secondary mb-6">Extra Charges & Policies</h2>
+          <h2 className="text-2xl font-bold text-secondary mb-6">Add-Ons & Billing Rules</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {extraCharges.map((charge) => (
               <div key={charge.item} className="p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
@@ -202,11 +202,11 @@ export default async function FareChartPage() {
             ))}
           </div>
           <div className="mt-8 p-6 bg-green-50 rounded-2xl border border-green-100">
-            <h3 className="font-bold text-secondary mb-2">✅ What&apos;s Included in the Fare</h3>
-            <p className="text-gray-600 text-sm">Fuel charges, Driver charges, AC, Vehicle maintenance</p>
-            <h3 className="font-bold text-secondary mt-4 mb-2">❌ Not Included (Actual amount payable)</h3>
-            <p className="text-gray-600 text-sm">Toll charges, Parking fees, State border permit (if applicable)</p>
-            <p className="text-xs text-gray-400 mt-3">* All additional charges are communicated upfront before booking confirmation. Zero markup on toll and parking.</p>
+            <h3 className="font-bold text-secondary mb-2">✅ Covered in Your Fare</h3>
+            <p className="text-gray-600 text-sm">Fuel, driver, air conditioning, and vehicle upkeep</p>
+            <h3 className="font-bold text-secondary mt-4 mb-2">❌ Extra, Payable as Incurred</h3>
+            <p className="text-gray-600 text-sm">Tolls, parking fees, and state border permit where applicable</p>
+            <p className="text-xs text-gray-400 mt-3">* Every extra is told to you before the booking is confirmed. We add no margin on tolls or parking.</p>
           </div>
         </div>
       </section>
@@ -214,8 +214,8 @@ export default async function FareChartPage() {
       {/* Route-wise Fares */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-secondary mb-2">Popular Route Fares from Kolkata</h2>
-          <p className="text-gray-500 text-sm mb-6">One-way cab fares for popular routes</p>
+          <h2 className="text-2xl font-bold text-secondary mb-2">Route-Wise Fares From Kolkata</h2>
+          <p className="text-gray-500 text-sm mb-6">One-way pricing for our most-booked routes</p>
           <div className="overflow-x-auto rounded-2xl shadow-sm border border-gray-100">
             <table className="w-full border-collapse bg-white">
               <thead>
@@ -258,8 +258,8 @@ export default async function FareChartPage() {
 
       <section className="py-12 bg-gradient-to-r from-primary to-amber-500">
         <div className="max-w-4xl mx-auto px-4 text-center text-white">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">Book at These Rates — Call Now!</h2>
-          <p className="text-white/90 mb-6">Same transparent rates online and offline. No hidden charges. No surge pricing.</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">Lock In These Rates — Call Today</h2>
+          <p className="text-white/90 mb-6">The price you see here is the price you pay — over the phone or online.</p>
           <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
             <Phone size={22} /> {BUSINESS.phone}
           </a>

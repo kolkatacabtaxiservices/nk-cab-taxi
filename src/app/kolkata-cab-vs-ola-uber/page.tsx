@@ -12,8 +12,8 @@ export const dynamic = 'force-static';
 export const revalidate = false;
 
 export const metadata: Metadata = {
-  title: { absolute: `NK Cab & Taxi vs Ola vs Uber — Best Taxi Comparison 2026` },
-  description: `Compare ${BUSINESS.name} with Ola, Uber, Rapido & InDrive in Kolkata. No surge pricing, fixed rates, verified drivers. See why 5000+ customers choose us over app-based cabs. Call ${BUSINESS.phone}.`,
+  title: { absolute: `NK Cab & Taxi vs Ola vs Uber — A Fair 2026 Showdown` },
+  description: `See how ${BUSINESS.name} measures up against Ola, Uber, Rapido and InDrive in Kolkata. Surge-free fares, fixed rates, vetted chauffeurs. Find out why 5000+ riders prefer us to app taxis. Call ${BUSINESS.phone}.`,
   keywords: [
     'ola alternative kolkata', 'uber alternative kolkata', 'best cab service kolkata',
     'kolkata cab vs ola', 'kolkata cab vs uber', 'no surge pricing cab kolkata',
@@ -21,18 +21,18 @@ export const metadata: Metadata = {
     'reliable cab service kolkata', 'cheap cab kolkata no surge',
   ],
   openGraph: {
-    title: 'NK Cab & Taxi vs Ola vs Uber — Honest Comparison',
-    description: 'Fixed rates, no surge, verified drivers. See why customers switch from Ola & Uber.',
+    title: 'NK Cab & Taxi vs Ola vs Uber — Straight-Talk Comparison',
+    description: 'Flat fares, zero surge, vetted drivers. Discover why riders move away from Ola and Uber.',
     url: `${BUSINESS.domain}/kolkata-cab-vs-ola-uber`,
     siteName: BUSINESS.name,
     locale: 'en_IN',
     type: 'article',
-    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: 'NK Cab & Taxi vs Ola vs Uber Comparison' }],
+    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: 'NK Cab & Taxi compared against Ola and Uber' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NK Cab & Taxi vs Ola vs Uber — Honest Comparison',
-    description: 'Fixed rates, no surge, verified drivers. See why customers switch from Ola & Uber.',
+    title: 'NK Cab & Taxi vs Ola vs Uber — Straight-Talk Comparison',
+    description: 'Flat fares, zero surge, vetted drivers. Discover why riders move away from Ola and Uber.',
     images: [`${BUSINESS.domain}/navbanner.webp`],
   },
   alternates: { canonical: `${BUSINESS.domain}/kolkata-cab-vs-ola-uber` },
@@ -42,31 +42,31 @@ export const metadata: Metadata = {
 };
 
 const features = [
-  { feature: 'Surge Pricing', ours: false, oursText: 'Never — Fixed rates 24/7', ola: true, olaText: '2-3x during peak', uber: true, uberText: '2-4x during peak' },
-  { feature: 'Night Surcharge', ours: false, oursText: 'Same rate day & night', ola: true, olaText: '1.5x after 11 PM', uber: true, uberText: '1.25-2x at night' },
-  { feature: 'Festival Pricing', ours: false, oursText: 'No increase during Durga Puja, Diwali', ola: true, olaText: '3-5x during Puja', uber: true, uberText: '3-5x during Puja' },
-  { feature: 'Booking Method', ours: true, oursText: 'Call / WhatsApp / Website', ola: true, olaText: 'App only', uber: true, uberText: 'App only' },
-  { feature: 'Driver Verification', ours: true, oursText: 'Police-verified, 5+ yrs exp', ola: true, olaText: 'Basic background check', uber: true, uberText: 'Basic background check' },
-  { feature: 'Advance Booking', ours: true, oursText: 'Book days in advance', ola: true, olaText: 'Limited availability', uber: true, uberText: 'Limited availability' },
-  { feature: 'Outstation Service', ours: true, oursText: '500+ routes, one-way from ₹12/km', ola: false, olaText: 'Very limited routes', uber: false, uberText: 'Not available' },
-  { feature: 'Wedding Car Rental', ours: true, oursText: 'Decorated Crysta from ₹5,000/day', ola: false, olaText: 'Not available', uber: false, uberText: 'Not available' },
-  { feature: 'Corporate Contracts', ours: true, oursText: 'Monthly contracts, GST invoices', ola: true, olaText: 'Ola Corporate', uber: true, uberText: 'Uber for Business' },
-  { feature: 'Cancellation', ours: true, oursText: 'Free up to 4 hrs before', ola: false, olaText: '₹50-100 fee', uber: false, uberText: '₹50-150 fee' },
-  { feature: 'Payment Options', ours: true, oursText: 'Cash, UPI, Card, Bank Transfer', ola: true, olaText: 'App payment, UPI', uber: true, uberText: 'App payment, UPI' },
-  { feature: 'Flight Tracking', ours: true, oursText: 'Real-time tracking, no delay charge', ola: false, olaText: 'Not available', uber: false, uberText: 'Not available' },
-  { feature: 'Tempo Traveller', ours: true, oursText: '12-17 seater available', ola: false, olaText: 'Not available', uber: false, uberText: 'Not available' },
-  { feature: 'App Required', ours: true, oursText: 'No app needed — just call', ola: false, olaText: 'Must download app', uber: false, uberText: 'Must download app' },
+  { feature: 'Surge Pricing', ours: false, oursText: 'Absent — flat fares around the clock', ola: true, olaText: '2-3x in busy hours', uber: true, uberText: '2-4x in busy hours' },
+  { feature: 'Night Surcharge', ours: false, oursText: 'Identical fare all hours', ola: true, olaText: '1.5x past 11 PM', uber: true, uberText: '1.25-2x after dark' },
+  { feature: 'Festival Pricing', ours: false, oursText: 'Prices steady across Durga Puja, Diwali', ola: true, olaText: '3-5x in Puja week', uber: true, uberText: '3-5x in Puja week' },
+  { feature: 'Booking Channel', ours: true, oursText: 'Phone, WhatsApp, or website', ola: true, olaText: 'App only', uber: true, uberText: 'App only' },
+  { feature: 'Driver Screening', ours: true, oursText: 'Police-checked, 5+ years on road', ola: true, olaText: 'Standard background check', uber: true, uberText: 'Standard background check' },
+  { feature: 'Pre-Planned Bookings', ours: true, oursText: 'Reserve days ahead', ola: true, olaText: 'Rarely available', uber: true, uberText: 'Rarely available' },
+  { feature: 'Outstation Trips', ours: true, oursText: '500+ routes, single-leg from ₹12/km', ola: false, olaText: 'Very few routes', uber: false, uberText: 'Not offered' },
+  { feature: 'Wedding Cars', ours: true, oursText: 'Bedecked Crysta from ₹5,000/day', ola: false, olaText: 'Not offered', uber: false, uberText: 'Not offered' },
+  { feature: 'Corporate Deals', ours: true, oursText: 'Month-to-month plans with GST bills', ola: true, olaText: 'Ola Corporate', uber: true, uberText: 'Uber for Business' },
+  { feature: 'Cancellation Rules', ours: true, oursText: 'No charge 4 hours ahead', ola: false, olaText: '₹50-100 charge', uber: false, uberText: '₹50-150 charge' },
+  { feature: 'Payment Choices', ours: true, oursText: 'Cash, UPI, cards, or bank transfer', ola: true, olaText: 'In-app payment, UPI', uber: true, uberText: 'In-app payment, UPI' },
+  { feature: 'Flight Monitoring', ours: true, oursText: 'Live flight updates, no wait fees', ola: false, olaText: 'Not offered', uber: false, uberText: 'Not offered' },
+  { feature: 'Tempo Travellers', ours: true, oursText: '12-17 seaters on call', ola: false, olaText: 'Not offered', uber: false, uberText: 'Not offered' },
+  { feature: 'App Requirement', ours: true, oursText: 'No download — phone us', ola: false, olaText: 'App download required', uber: false, uberText: 'App download required' },
 ];
 
 const faqs = [
-  { question: 'Is NK Cab & Taxi better than Ola for outstation trips?', answer: `Yes. Ola has very limited outstation coverage from Kolkata. ${BUSINESS.name} covers 500+ outstation routes including Kolkata to Darjeeling (₹6,500), Puri (₹5,500), Digha (₹2,500), Siliguri (₹6,000), and more. One-way pricing available — you don't pay for return.` },
-  { question: 'Why is there no surge pricing with NK Cab & Taxi?', answer: `We operate on a fixed-rate model. Our rates are pre-determined based on distance and vehicle type. Whether it's 3 AM, Durga Puja, New Year's Eve, or heavy rain — the rate stays the same. This is fundamentally different from Ola/Uber's algorithm-based dynamic pricing.` },
-  { question: 'Can I book without downloading an app?', answer: `Yes! Just call ${BUSINESS.phone} or WhatsApp us. No app download, no account creation, no OTP verification needed. We confirm your booking within 2 minutes with complete driver and vehicle details.` },
-  { question: 'How are your drivers different from Ola/Uber drivers?', answer: 'Our drivers are full-time professionals — not part-time gig workers. They are police-verified, have minimum 5 years commercial driving experience, know the city routes, and are trained in customer service. They drive the same vehicle daily and maintain it well.' },
-  { question: 'What about safety compared to Ola and Uber?', answer: `All our vehicles are GPS-tracked with live location sharing. You get the driver's name, photo, phone number, and vehicle number before pickup. Our drivers are police-verified and we have 24/7 support at ${BUSINESS.phone}. For women passengers, we also offer female-preferred driver option on request.` },
-  { question: 'Is NK Cab & Taxi cheaper than Uber?', answer: 'During normal hours, our rates are comparable to Ola/Uber. But during peak hours, festivals, rain, or late night — when Ola/Uber surge to 2-5x — our rates remain the same fixed rate. Over time, our customers save 30-50% compared to app-based cabs.' },
-  { question: 'Do you provide airport cab service like Ola/Uber?', answer: `Yes, and better! Our airport service includes real-time flight tracking — if your flight is delayed, our driver adjusts automatically. No waiting charges for delays. Fixed fare from airport: Salt Lake ₹1200, Park Street ₹1200, Howrah ₹1200 (Sedan). No surge at any time.` },
-  { question: 'Can I use NK Cab & Taxi for daily office commute?', answer: `Absolutely. We offer monthly corporate packages at 15-25% discount over standard rates. Dedicated vehicle, same driver daily, fixed schedule. GST invoices provided. Many IT companies in Salt Lake Sector V and New Town use our corporate cab service.` },
+  { question: 'Does NK Cab & Taxi beat Ola for outstation journeys?', answer: `Yes. Ola serves very few long-distance routes out of Kolkata. ${BUSINESS.name} runs 500+ outstation routes such as Kolkata to Darjeeling (₹6,500), Puri (₹5,500), Digha (₹2,500), and Siliguri (₹6,000). Single-leg pricing means you never pay for the return.` },
+  { question: 'Why does NK Cab & Taxi avoid surge pricing?', answer: `We follow a fixed-fare model. Our prices are set in advance by distance and car type. At 3 AM, during Durga Puja, on New Year's Eve, or in heavy rain — the fare never moves. That sets us apart from the algorithm-driven pricing used by Ola and Uber.` },
+  { question: 'Can I book a cab without any app?', answer: `Of course. Ring ${BUSINESS.phone} or message us on WhatsApp. No download, no sign-up, no OTP checks. Your ride is confirmed in under two minutes with full driver and vehicle information.` },
+  { question: 'What makes your chauffeurs stand out from Ola and Uber drivers?', answer: 'Our chauffeurs are career professionals rather than occasional gig workers. Each is police-verified, holds at least five years of commercial driving experience, knows the city streets, and has undergone customer-service training. They handle the same car daily and keep it in excellent condition.' },
+  { question: 'How safe is NK Cab & Taxi compared with Ola and Uber?', answer: `Every car we run is GPS-monitored with live location sharing. Before pickup you receive the driver's name, photo, mobile number, and registration plate. Drivers are police-checked, and help is available 24/7 at ${BUSINESS.phone}. For women travellers we can also assign a female-preferred chauffeur on request.` },
+  { question: 'Is NK Cab & Taxi more affordable than Uber?', answer: 'In ordinary traffic our fares sit close to Ola and Uber. The difference shows in rush hour, festivals, rain, or after dark, when Ola and Uber climb 2-5x while ours hold firm. Across a year, our regulars save an estimated 30-50% versus app taxis.' },
+  { question: 'Does NK Cab & Taxi offer airport rides like Ola and Uber?', answer: `We do — and with more care. Our airport service monitors flights in real time, so a delayed arrival is handled automatically by your chauffeur with no wait fee. Airport fares are flat: Salt Lake ₹1,200, Park Street ₹1,200, Howrah ₹1,200 (sedan). Surge never applies.` },
+  { question: 'Is NK Cab & Taxi a good fit for daily office travel?', answer: `Certainly. Monthly business plans come with 15-25% savings on standard pricing, a dedicated car, the same chauffeur daily, and a fixed timetable. GST bills are provided, and numerous tech firms across Salt Lake Sector V and New Town already rely on our corporate fleet.` },
 ];
 
 export default function ComparisonPage() {
@@ -87,10 +87,10 @@ export default function ComparisonPage() {
             <span className="text-gradient">NK Cab & Taxi</span> vs Ola vs Uber
           </h1>
           <p className="text-lg text-gray-300 max-w-3xl mb-6">
-            Honest comparison — why 5,000+ Kolkata customers switched from app-based cabs to {BUSINESS.name}. No surge pricing, fixed rates, verified drivers, and services that Ola & Uber simply don&apos;t offer.
+            A straight comparison — the reasons over 5,000 Kolkata riders have left app taxis behind for {BUSINESS.name}. Surge-free fares, set rates, vetted drivers, and extras that Ola and Uber simply do not provide.
           </p>
           <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-amber-500 text-white font-bold rounded-full shadow-lg">
-            <Phone size={18} /> Try Us: {BUSINESS.phone}
+            <Phone size={18} /> Give Us a Try: {BUSINESS.phone}
           </a>
         </div>
       </section>
@@ -98,7 +98,7 @@ export default function ComparisonPage() {
       {/* Comparison Table */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-8 text-center">Feature-by-Feature Comparison</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-8 text-center">Side-by-Side Feature Comparison</h2>
           <div className="overflow-x-auto rounded-2xl border border-gray-100 shadow-lg">
             <table className="w-full border-collapse">
               <thead>
@@ -138,15 +138,15 @@ export default function ComparisonPage() {
       {/* Key Advantages */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-8 text-center">Why Customers Switch to <span className="text-primary">{BUSINESS.name}</span></h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-8 text-center">The Reasons Riders Move to <span className="text-primary">{BUSINESS.name}</span></h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: <CreditCard size={24} />, title: 'Zero Surge Pricing', desc: 'Ola & Uber charge 2-5x during Durga Puja, rain, or late night. We charge the SAME rate — always. Save 30-50% during peak times.' },
-              { icon: <Shield size={24} />, title: 'Professional Drivers', desc: 'Not part-time gig workers. Full-time, police-verified drivers with 5+ years experience who know every Kolkata road.' },
-              { icon: <Phone size={24} />, title: 'No App Needed', desc: 'Just call or WhatsApp. No downloading apps, no creating accounts, no OTP hassles. Book in 2 minutes flat.' },
-              { icon: <Car size={24} />, title: 'Outstation Specialist', desc: '500+ outstation routes that Ola/Uber don\'t cover. Kolkata to Darjeeling, Puri, Digha, Sundarbans — one-way from ₹12/km.' },
-              { icon: <Clock size={24} />, title: 'Advance Booking', desc: 'Book days or weeks in advance with guaranteed availability. Perfect for airport transfers, weddings, and planned trips.' },
-              { icon: <MapPin size={24} />, title: 'Airport Expert', desc: 'Flight tracking, meet & greet at arrival gate, no waiting charges for delays. Fixed airport fare — never variable.' },
+              { icon: <CreditCard size={24} />, title: 'No Surge, Ever', desc: 'Ola and Uber raise fares 2-5x for Durga Puja, rain, or late nights. Our rate stays identical, no matter when. Pocket 30-50% more savings in peak hours.' },
+              { icon: <Shield size={24} />, title: 'Professional Chauffeurs', desc: 'Not occasional gig workers. Full-time, police-checked chauffeurs with 5+ years of experience and total command of Kolkata streets.' },
+              { icon: <Phone size={24} />, title: 'No App Required', desc: 'Simply call or WhatsApp. Skip downloads, skip sign-ups, skip OTP loops. Booking takes two minutes, done.' },
+              { icon: <Car size={24} />, title: 'Outstation Experts', desc: '500+ long-distance routes Ola and Uber do not cover, including Kolkata to Darjeeling, Puri, Digha, and Sundarbans — one-way from ₹12/km.' },
+              { icon: <Clock size={24} />, title: 'Bookings Made Ahead', desc: 'Reserve days or weeks in advance with guaranteed car allocation, ideal for airport runs, weddings, and scheduled travel.' },
+              { icon: <MapPin size={24} />, title: 'Airport Specialists', desc: 'Live flight monitoring, a greeting at the arrival gate, and zero wait charges for delays. Airport fares stay fixed — never fluctuating.' },
             ].map((card, i) => (
               <div key={i} className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
                 <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center text-primary mb-4">{card.icon}</div>
@@ -161,7 +161,7 @@ export default function ComparisonPage() {
       {/* Pricing Comparison */}
       <section className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-8 text-center">Price Comparison — Real Examples</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-8 text-center">Fare Comparison — Real-Life Examples</h2>
           <div className="overflow-x-auto rounded-2xl border border-gray-100 shadow-sm">
             <table className="w-full border-collapse">
               <thead>
@@ -170,17 +170,17 @@ export default function ComparisonPage() {
                   <th className="px-4 py-3 text-center text-sm bg-primary/20">🏆 Our Rate</th>
                   <th className="px-4 py-3 text-center text-sm">Ola (Peak)</th>
                   <th className="px-4 py-3 text-center text-sm">Uber (Peak)</th>
-                  <th className="px-4 py-3 text-center text-sm text-green-300">You Save</th>
+                  <th className="px-4 py-3 text-center text-sm text-green-300">Your Saving</th>
                 </tr>
               </thead>
               <tbody>
                 {[
                   { route: 'Airport → Salt Lake', ours: '₹1,200', ola: '₹2,200–1,800', uber: '₹1,400–2,000', save: '₹200–800' },
                   { route: 'Airport → Howrah', ours: '₹1,200', ola: '₹1,800–2,500', uber: '₹1,600–2,800', save: '₹400–1,600' },
-                  { route: 'Kolkata → Darjeeling', ours: '₹6,500', ola: 'Not Available', uber: 'Not Available', save: '—' },
-                  { route: 'Kolkata → Digha', ours: '₹2,500', ola: 'Not Available', uber: 'Not Available', save: '—' },
+                  { route: 'Kolkata → Darjeeling', ours: '₹6,500', ola: 'Unavailable', uber: 'Unavailable', save: '—' },
+                  { route: 'Kolkata → Digha', ours: '₹2,500', ola: 'Unavailable', uber: 'Unavailable', save: '—' },
                   { route: 'Park Street → New Town', ours: '₹700', ola: '₹900–1,400', uber: '₹1800–1,500', save: '₹200–800' },
-                  { route: 'Durga Puja Night Ride', ours: '₹12/km', ola: '₹33–55/km', uber: '₹30–50/km', save: '60–80%' },
+                  { route: 'Puja-Night City Ride', ours: '₹12/km', ola: '₹33–55/km', uber: '₹30–50/km', save: '60–80%' },
                 ].map((r, i) => (
                   <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
                     <td className="px-4 py-3 font-semibold text-secondary text-sm">{r.route}</td>
@@ -193,14 +193,14 @@ export default function ComparisonPage() {
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-gray-400 mt-3 text-center">* Ola/Uber peak rates based on actual user reports during Durga Puja and rainy season. Our rates are fixed year-round.</p>
+          <p className="text-xs text-gray-400 mt-3 text-center">* Peak-season figures for Ola/Uber come from rider reports gathered during Durga Puja and the monsoons. Our pricing remains constant throughout the year.</p>
         </div>
       </section>
 
       {/* FAQ */}
       <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <FAQSection faqs={faqs} title="NK Cab & Taxi vs Ola vs Uber — FAQs" />
+          <FAQSection faqs={faqs} title="NK Cab & Taxi vs Ola vs Uber — Questions and Answers" />
         </div>
       </section>
 
@@ -209,13 +209,13 @@ export default function ComparisonPage() {
 
       <section className="py-12 bg-gradient-to-r from-primary to-amber-500 text-white text-center">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">Switch to Fixed-Rate Cab Service</h2>
-          <p className="text-white/90 mb-6">No surge. No app. No hassle. Just call & ride.</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">Move to a Fixed-Fare Cab Service</h2>
+          <p className="text-white/90 mb-6">No surge, no app, no fuss. Just phone and go.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
               <Phone size={22} /> {BUSINESS.phone}
             </a>
-            <a href={`https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent('Hi! I want to try your cab service instead of Ola/Uber.')}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-500 text-white font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
+            <a href={`https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent('Hello! I would like to use your cab service in place of Ola or Uber.')}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-500 text-white font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
               💬 WhatsApp
             </a>
           </div>

@@ -23,8 +23,8 @@ export const dynamic = 'force-static';
 export const revalidate = false;
 
 export const metadata: Metadata = {
-  title: `Jamshedpur to Kolkata Cab ₹${PRICE_SEDAN} | One Way Taxi, Cheapest Cab | ${BUSINESS.name}`,
-  description: `Book Jamshedpur to Kolkata cab from ₹${PRICE_SEDAN}. One way taxi, round trip, cheapest cab. ${DISTANCE} km. AC sedan/SUV. 24/7 booking. Call ${BUSINESS.phone}.`,
+  title: `Jamshedpur to Kolkata Cab from ₹${PRICE_SEDAN} | One-Way Taxi & Round Trip | ${BUSINESS.name}`,
+  description: `Hire a Jamshedpur to Kolkata taxi starting ₹${PRICE_SEDAN}. One-way drop, round trips, budget-friendly AC sedan & SUV. ${DISTANCE} km journey. Book anytime at ${BUSINESS.phone}.`,
   keywords: [
     'jamshedpur to kolkata cab', 'jamshedpur to kolkata taxi', 'jamshedpur to kolkata car',
     'jamshedpur to kolkata cab fare', 'jamshedpur to kolkata one way cab',
@@ -39,18 +39,18 @@ export const metadata: Metadata = {
     'jamshedpur to kolkata airport cab', 'jamshedpur to howrah cab',
   ],
   openGraph: {
-    title: `Jamshedpur to Kolkata Cab ₹${PRICE_SEDAN} | ${BUSINESS.name}`,
-    description: `Book Jamshedpur to Kolkata taxi. ${DISTANCE} km, from ₹${PRICE_SEDAN}. One way & round trip. Call ${BUSINESS.phone}`,
+    title: `Jamshedpur to Kolkata Taxi ₹${PRICE_SEDAN} | ${BUSINESS.name}`,
+    description: `Reserve your Jamshedpur to Kolkata ride. ${DISTANCE} km, starting ₹${PRICE_SEDAN}. One-way and round trip. Call ${BUSINESS.phone}`,
     type: 'website',
     siteName: BUSINESS.name,
     url: `${BUSINESS.domain}/jamshedpur-to-kolkata-cab`,
     locale: 'en_IN',
-    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: 'Jamshedpur to NK Cab & Taxi' }],
+    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: 'Jamshedpur to Kolkata cab booking with NK Cab & Taxi' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: `Jamshedpur to Kolkata Cab ₹${PRICE_SEDAN}`,
-    description: `Book Jamshedpur to Kolkata taxi. ${DISTANCE} km, AC cabs. Call ${BUSINESS.phone}`,
+    title: `Jamshedpur to Kolkata Taxi ₹${PRICE_SEDAN}`,
+    description: `Jamshedpur to Kolkata taxi reserved in minutes. ${DISTANCE} km, AC vehicles. Call ${BUSINESS.phone}`,
     images: [`${BUSINESS.domain}/navbanner.webp`],
   },
   alternates: {
@@ -68,16 +68,16 @@ export default function JamshedpurToKolkataCabPage() {
   const vehicles = getVehicles();
 
   const faqs = [
-    { question: 'What is the cab fare from Jamshedpur to Kolkata?', answer: `Jamshedpur to Kolkata cab fare starts from ₹${PRICE_SEDAN} for Sedan (Swift Dzire, Honda Amaze), ₹${PRICE_SUV} for SUV (Ertiga, Innova Crysta), and ₹${PRICE_TEMPO} for Tempo Traveller. Toll and parking extra. Call ${BUSINESS.phone}.` },
-    { question: 'How far is Kolkata from Jamshedpur?', answer: `Kolkata is ${DISTANCE} km from Jamshedpur via NH 16 highway. The cab journey takes approximately ${DURATION} hours through Baharagora, Kharagpur, and Kolaghat.` },
-    { question: 'Is one way cab available from Jamshedpur to Kolkata?', answer: `Yes! One-way cab from Jamshedpur to Kolkata is available at ₹${PRICE_SEDAN} (sedan). You pay only one side fare — no return charges. Call ${BUSINESS.phone} to book.` },
-    { question: 'What is the cheapest cab from Jamshedpur to Kolkata?', answer: `The cheapest cab from Jamshedpur to Kolkata is our Sedan (Swift Dzire) at just ₹${PRICE_SEDAN}. Includes fuel, driver charges. No hidden fees. Call ${BUSINESS.phone}.` },
-    { question: 'Can I get a cab from Tatanagar to Kolkata?', answer: `Yes! Tatanagar (Jamshedpur) to Kolkata cab is available 24/7. We pick up from Tatanagar Junction, Jubilee Park area, Bistupur, Sakchi, or any location in Jamshedpur. Sedan from ₹${PRICE_SEDAN}.` },
-    { question: 'Do you provide cab from Jamshedpur to Kolkata Airport?', answer: 'Yes! Jamshedpur to Kolkata Airport (CCU) cab is available. Distance is 285 km. Fare starts at ₹4,750 for sedan. We drop you directly at the departure terminal. Ideal for catching flights.' },
-    { question: 'Is Jamshedpur to Howrah cab available?', answer: 'Yes! Jamshedpur to Howrah cab is available at ₹4,350 (sedan). We drop you at Howrah Station or any location in Howrah. The route via NH 16 takes about 4 hours.' },
-    { question: 'Can I book Jamshedpur to Kolkata cab for a group?', answer: `Yes! For groups, we offer Tempo Traveller (12-17 seater) from ₹${PRICE_TEMPO}. Multiple sedans and SUVs also available for wedding groups, corporate teams, and family trips. Call ${BUSINESS.phone}.` },
-    { question: 'Is night travel available from Jamshedpur to Kolkata?', answer: 'Yes! Our cab service operates 24/7. Late night and early morning departures are available without any surcharge. All drivers have extensive NH 16 highway experience.' },
-    { question: 'What payment methods are accepted?', answer: `We accept Cash, UPI (Google Pay, Paytm, PhonePe), Debit/Credit Cards, and Online Bank Transfer. GST-compliant invoices available for corporate bookings.` },
+    { question: 'How much does a Jamshedpur to Kolkata cab cost?', answer: `A sedan (Swift Dzire or Honda Amaze) ride from Jamshedpur to Kolkata starts at ₹${PRICE_SEDAN}, an SUV (Ertiga or Innova Crysta) at ₹${PRICE_SUV}, and a Tempo Traveller at ₹${PRICE_TEMPO}. Toll and parking are billed separately. Reach us at ${BUSINESS.phone}.` },
+    { question: 'What is the road distance between Jamshedpur and Kolkata?', answer: `Driving over NH 16, the gap between Jamshedpur and Kolkata is ${DISTANCE} km. The ride normally takes around ${DURATION} hours, passing Baharagora, Kharagpur, and Kolaghat en route.` },
+    { question: 'Can I take a one-way cab from Jamshedpur to Kolkata?', answer: `Certainly. A one-way sedan from Jamshedpur to Kolkata costs ₹${PRICE_SEDAN}; you pay for a single leg only, with no return fare. Dial ${BUSINESS.phone} to reserve it.` },
+    { question: 'Which is the most budget-friendly cab option on this route?', answer: `Our Sedan (Swift Dzire) is the lowest-cost option at ₹${PRICE_SEDAN}, covering fuel and driver charges with nothing hidden. Call ${BUSINESS.phone} to book.` },
+    { question: 'Do you run cabs from Tatanagar to Kolkata?', answer: `Absolutely — Tatanagar (Jamshedpur) to Kolkata rides run round the clock. We collect you from Tatanagar Junction, Jubilee Park, Bistupur, Sakchi, or wherever you are in Jamshedpur. Sedans begin at ₹${PRICE_SEDAN}.` },
+    { question: 'Can you drop me at Kolkata Airport from Jamshedpur?', answer: 'Yes — we serve Kolkata Airport (CCU) from Jamshedpur over 285 km, with sedans from ₹4,750. You are dropped straight at the departure gate, perfect for flight connections.' },
+    { question: 'Do you offer a Jamshedpur to Howrah ride?', answer: 'Yes — Howrah-bound sedans from Jamshedpur are ₹4,350, delivering you at Howrah Station or anywhere in Howrah. The NH 16 route takes roughly 4 hours.' },
+    { question: 'Do you accommodate group travel on this route?', answer: `For larger parties we provide Tempo Travellers (12-17 seats) from ₹${PRICE_TEMPO}. Extra sedans and SUVs can be lined up for weddings, office teams, and family outings. Call ${BUSINESS.phone}.` },
+    { question: 'Can I travel overnight from Jamshedpur to Kolkata?', answer: 'Our fleet never stops — late-night and pre-dawn departures run without any extra fee, and every chauffeur knows NH 16 thoroughly.' },
+    { question: 'Which payment options do you accept?', answer: `We take cash, UPI (Google Pay, Paytm, PhonePe), debit/credit cards, and online bank transfers. GST invoices are issued for business bookings.` },
   ];
 
   const relatedRoutes = [
@@ -106,16 +106,16 @@ export default function JamshedpurToKolkataCabPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <Breadcrumbs items={[{ name: 'Jamshedpur to Kolkata Cab', href: '/jamshedpur-to-kolkata-cab' }]} />
           <h1 className="text-3xl md:text-5xl font-extrabold mt-4 mb-4">
-            Jamshedpur to Kolkata <span className="text-gradient">Cab Service</span>
+            Jamshedpur to Kolkata <span className="text-gradient">Cab & Taxi Hire</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mb-6">
-            Book the cheapest one-way & round trip cab from Jamshedpur to Kolkata. {DISTANCE} km, {DURATION} hours. Starting <strong className="text-primary">₹{PRICE_SEDAN}</strong>. 24/7 service.
+            Reserve an economical one-way or round-trip cab from Jamshedpur to Kolkata. {DISTANCE} km, roughly {DURATION} hours, from <strong className="text-primary">₹{PRICE_SEDAN}</strong>. Available around the clock.
           </p>
           <div className="flex flex-wrap gap-4 text-sm text-gray-300">
             <span className="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-full"><MapPin size={14} /> {DISTANCE} km</span>
             <span className="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-full"><Clock size={14} /> {DURATION} hours</span>
-            <span className="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-full"><Route size={14} /> Via {VIA.join(', ')}</span>
-            <span className="flex items-center gap-1.5 bg-primary/20 border border-primary/30 px-3 py-1.5 rounded-full text-primary font-bold"><Car size={14} /> From ₹{PRICE_SEDAN}</span>
+            <span className="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-full"><Route size={14} /> Route: {VIA.join(', ')}</span>
+            <span className="flex items-center gap-1.5 bg-primary/20 border border-primary/30 px-3 py-1.5 rounded-full text-primary font-bold"><Car size={14} /> Starting ₹{PRICE_SEDAN}</span>
           </div>
         </div>
       </section>
@@ -123,7 +123,7 @@ export default function JamshedpurToKolkataCabPage() {
       {/* Pricing */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-secondary mb-6">Jamshedpur to Kolkata Cab Fare — One Way & Round Trip</h2>
+          <h2 className="text-2xl font-bold text-secondary mb-6">Jamshedpur to Kolkata Cab Rates — One-Way & Round Trip</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
             {vehicles.slice(0, 4).map((v) => (
               <div key={v.id} className="p-6 bg-gradient-to-br from-accent/50 to-white rounded-2xl border border-primary/10 card-hover text-center">
@@ -136,11 +136,11 @@ export default function JamshedpurToKolkataCabPage() {
           </div>
           <div className="bg-green-50 border border-green-200 rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
-              <h3 className="font-bold text-secondary text-lg">🎯 Best Price Guarantee</h3>
-              <p className="text-gray-500 text-sm">Transparent pricing. No hidden charges. Toll & parking extra.</p>
+              <h3 className="font-bold text-secondary text-lg">🎯 Lowest Fare Promise</h3>
+              <p className="text-gray-500 text-sm">Upfront rates with no surprise costs. Toll and parking billed separately.</p>
             </div>
             <a href={`tel:${BUSINESS.phone}`} className="px-8 py-3 bg-gradient-to-r from-primary to-amber-500 text-white font-bold rounded-full shadow-lg hover:scale-105 transition-all whitespace-nowrap">
-              <Phone size={16} className="inline mr-2" />Call {BUSINESS.phone}
+              <Phone size={16} className="inline mr-2" />Book on {BUSINESS.phone}
             </a>
           </div>
         </div>
@@ -149,13 +149,13 @@ export default function JamshedpurToKolkataCabPage() {
       {/* Content */}
       <section className="py-12 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-secondary mb-4">Jamshedpur to Kolkata Cab — Complete Travel Guide</h2>
+          <h2 className="text-2xl font-bold text-secondary mb-4">Jamshedpur to Kolkata Cab — The Complete Guide</h2>
           
           {/* ── QUICK ANSWER BOX — targets AI Overviews / Featured Snippets ── */}
           <div className="mb-6 p-5 bg-amber-50 border border-amber-200 rounded-2xl flex flex-col md:flex-row gap-4 items-center">
             <div className="flex-1 w-full">
               <h3 className="text-base font-bold text-secondary mb-3 flex items-center gap-2">
-                ⚡ Quick Answer — Jamshedpur to Kolkata Cab Route Facts
+                ⚡ Quick Facts — Jamshedpur to Kolkata Cab Route
               </h3>
               <dl className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
                 <div className="bg-white rounded-xl p-3 text-center border border-amber-100">
@@ -176,10 +176,10 @@ export default function JamshedpurToKolkataCabPage() {
                 </div>
               </dl>
               <p className="text-xs text-gray-500 mt-3">
-                📍 Highway Route: Jamshedpur → Baharagora → Kharagpur → Kolaghat → Kolkata (NH 18 and NH 16)
+                📍 Suggested Route: Jamshedpur → Baharagora → Kharagpur → Kolaghat → Kolkata (NH 18 and NH 16)
               </p>
               <p className="text-xs text-gray-500 mt-1">
-                📞 24/7 Helpline: <a href={`tel:${BUSINESS.phone}`} className="text-primary font-semibold hover:underline">{BUSINESS.phone}</a> | No surge pricing, flat fares guaranteed.
+                📞 Always-On Help: <a href={`tel:${BUSINESS.phone}`} className="text-primary font-semibold hover:underline">{BUSINESS.phone}</a> | Fixed fares, no surge pricing, ever.
               </p>
             </div>
             <div className="relative w-full md:w-48 h-32 rounded-xl overflow-hidden shrink-0 border border-amber-200 shadow-sm">
@@ -194,23 +194,23 @@ export default function JamshedpurToKolkataCabPage() {
             </div>
           </div>
           <p className="text-gray-600 mb-4">
-            Looking for the <strong>best cab from Jamshedpur to Kolkata</strong>? {BUSINESS.name} provides the most reliable and affordable cab service from Jamshedpur (Tatanagar) to Kolkata. Whether you need a <strong>one-way taxi from Jamshedpur to Kolkata</strong>, a round trip, or a direct drop to Kolkata Airport or Howrah Station — we offer the <strong>cheapest cab</strong> with AC vehicles and experienced highway drivers.
+            Searching for the <strong>best cab from Jamshedpur to Kolkata</strong>? {BUSINESS.name} is a dependable, budget-friendly option connecting Jamshedpur (Tatanagar) with Kolkata. Be it a <strong>one-way taxi from Jamshedpur to Kolkata</strong>, a round trip, or a direct ride to Kolkata Airport or Howrah Station — you get a <strong>value-for-money cab</strong> with air-conditioned cars and veteran highway drivers.
           </p>
           <p className="text-gray-600 mb-4">
-            The <strong>Jamshedpur to Kolkata distance is {DISTANCE} km</strong> via NH 16. The cab travels through Baharagora, Kharagpur, and Kolaghat before entering Kolkata. The journey takes approximately {DURATION} hours in clean, well-maintained AC vehicles with experienced drivers who know this route thoroughly.
+            The <strong>Jamshedpur to Kolkata distance is {DISTANCE} km</strong> along NH 16. Cabs roll through Baharagora, Kharagpur, and Kolaghat on the approach to Kolkata. Expect about {DURATION} hours inside spotless, well-kept AC vehicles steered by drivers familiar with every mile of this corridor.
           </p>
 
-          <h3 className="text-xl font-bold text-secondary mt-8 mb-3">Jamshedpur to Kolkata One Way Cab</h3>
+          <h3 className="text-xl font-bold text-secondary mt-8 mb-3">Jamshedpur to Kolkata One-Way Taxi</h3>
           <p className="text-gray-600 mb-4">
-            Our <strong>Jamshedpur to Kolkata one-way cab</strong> is the cheapest way to travel between these two cities. Pay only for the one-way journey at ₹{PRICE_SEDAN} (sedan). No return fare, no hidden charges. We pick up from anywhere in Jamshedpur — Tatanagar Junction, Bistupur, Sakchi, Telco, Sonari, Kadma, Adityapur, or Gamharia.
+            Our <strong>Jamshedpur to Kolkata one-way cab</strong> is the thriftiest way to move between these cities. You settle only the single-leg fare of ₹{PRICE_SEDAN} (sedan) — no return charges, nothing concealed. Pickups happen anywhere in Jamshedpur: Tatanagar Junction, Bistupur, Sakchi, Telco, Sonari, Kadma, Adityapur, or Gamharia.
           </p>
 
-          <h3 className="text-xl font-bold text-secondary mt-8 mb-3">Jamshedpur to Kolkata Airport/Howrah Cab</h3>
+          <h3 className="text-xl font-bold text-secondary mt-8 mb-3">Direct Cabs to Kolkata Airport or Howrah</h3>
           <p className="text-gray-600 mb-4">
-            Need to catch a flight or train? We provide direct cab from <strong>Jamshedpur to Kolkata Airport (CCU)</strong> at ₹4,750 and <strong>Jamshedpur to Howrah Station</strong> at ₹4,350. Early morning pickups available for catching early flights and trains.
+            Have a flight or train to board? Book a direct <strong>Jamshedpur to Kolkata Airport (CCU)</strong> cab at ₹4,750 or a <strong>Jamshedpur to Howrah Station</strong> ride at ₹4,350. Dawn departures are available so you never miss an early connection.
           </p>
 
-          <h3 className="text-xl font-bold text-secondary mt-8 mb-3">Route Map — NH 16</h3>
+          <h3 className="text-xl font-bold text-secondary mt-8 mb-3">Route Stops — NH 16</h3>
           <div className="flex flex-wrap gap-2 mb-6">
             {['Jamshedpur (Tatanagar)', 'Baharagora', 'Kharagpur', 'Kolaghat', 'Kolkata'].map((stop, i, arr) => (
               <span key={stop} className="flex items-center gap-1">
@@ -222,10 +222,10 @@ export default function JamshedpurToKolkataCabPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
             {[
-              { icon: <CreditCard size={20} />, title: 'Cheapest Fare', desc: `Starting ₹${PRICE_SEDAN}. No return charges.` },
-              { icon: <Shield size={20} />, title: 'Safe & Reliable', desc: 'Verified drivers. GPS-tracked vehicles.' },
-              { icon: <Clock size={20} />, title: '24/7 Service', desc: 'Day, night, early morning — always available.' },
-              { icon: <Star size={20} />, title: 'Multiple Pickup Points', desc: 'Tatanagar, Bistupur, Sakchi, Telco, Sonari, Kadma.' },
+              { icon: <CreditCard size={20} />, title: 'Lowest Fare', desc: `From ₹${PRICE_SEDAN}. Nothing to pay on return.` },
+              { icon: <Shield size={20} />, title: 'Safe and Dependable', desc: 'Screened chauffeurs. GPS-monitored cars.' },
+              { icon: <Clock size={20} />, title: 'Round-the-Clock Availability', desc: 'Mornings, evenings, late nights — we are always on.' },
+              { icon: <Star size={20} />, title: 'Many Pickup Spots', desc: 'Tatanagar, Bistupur, Sakchi, Telco, Sonari, Kadma and more.' },
             ].map((item, i) => (
               <div key={i} className="flex gap-3 p-4 bg-white rounded-xl border border-gray-100">
                 <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center text-primary shrink-0">{item.icon}</div>
@@ -242,14 +242,14 @@ export default function JamshedpurToKolkataCabPage() {
       {/* Related Routes */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-secondary mb-6">Related Routes from Jamshedpur</h2>
+          <h2 className="text-2xl font-bold text-secondary mb-6">Other Routes from Jamshedpur</h2>
           {/* Cross-link to dynamic route page to avoid cannibalization confusion */}
           <div className="mb-6 p-4 bg-blue-50 border border-blue-100 rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <div>
-              <p className="font-semibold text-secondary text-sm">📍 Detailed Route: Jamshedpur → Kolkata</p>
-              <p className="text-xs text-gray-500 mt-0.5">Distance, fare chart, map, stopovers, and more</p>
+              <p className="font-semibold text-secondary text-sm">📍 Full Route Guide: Jamshedpur → Kolkata</p>
+              <p className="text-xs text-gray-500 mt-0.5">Distance, fare list, map, halts, and much more</p>
             </div>
-            <Link href="/routes/jamshedpur-to-kolkata" className="text-sm font-bold text-primary hover:underline whitespace-nowrap">View Route Details →</Link>
+            <Link href="/routes/jamshedpur-to-kolkata" className="text-sm font-bold text-primary hover:underline whitespace-nowrap">See Route Details →</Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {relatedRoutes.map((route) => (
@@ -273,7 +273,7 @@ export default function JamshedpurToKolkataCabPage() {
       {/* FAQ */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <FAQSection faqs={faqs} title="Jamshedpur to Kolkata Cab — FAQs" />
+          <FAQSection faqs={faqs} title="Jamshedpur to Kolkata Cab — Frequently Asked Questions" />
         </div>
       </section>
 
@@ -282,14 +282,14 @@ export default function JamshedpurToKolkataCabPage() {
 
       <section className="py-12 bg-gradient-to-r from-primary to-amber-500">
         <div className="max-w-4xl mx-auto px-4 text-center text-white">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">Book Jamshedpur to Kolkata Cab Now!</h2>
-          <p className="text-white/90 mb-6">Cheapest fare. AC cabs. 24/7 instant booking.</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">Reserve Your Jamshedpur to Kolkata Cab Today!</h2>
+          <p className="text-white/90 mb-6">Lowest fares. AC vehicles. Instant booking at any hour.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
-              <Phone size={22} /> Call {BUSINESS.phone}
+              <Phone size={22} /> Call {BUSINESS.phone} Now
             </a>
-            <a href={`https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent('Hi! I want to book a cab from Jamshedpur to Kolkata. Please share fare details.')}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-500 text-white font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
-              💬 WhatsApp Booking
+            <a href={`https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent('Hello! I need a cab from Jamshedpur to Kolkata. Please send me the fare details.')}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-500 text-white font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
+              💬 WhatsApp Us to Book
             </a>
           </div>
         </div>

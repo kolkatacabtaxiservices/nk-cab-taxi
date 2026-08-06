@@ -8,21 +8,21 @@ import { BUSINESS, getTours } from '@/lib/data';
 import { generateToursItemListSchema, generateBreadcrumbSchema } from '@/lib/seo';
 
 export const metadata = {
-  title: `Tour Packages from Kolkata 2026 — Darjeeling, Puri, Sundarbans, Bodh Gaya | NK Cab & Taxi`,
-  description: `Curated East India tour packages by cab. Darjeeling hill (3D ₹14,500), Puri-Konark circuit (3D ₹12,500), Sundarbans (2D), Deoghar pilgrimage, Bodh Gaya Buddhist tour. AC cab + driver included. Call ${BUSINESS.phone}.`,
+  title: `Kolkata Tour Packages 2026 — Darjeeling, Puri, Sundarbans, Bodh Gaya | NK Cab & Taxi`,
+  description: `Handpicked East India road-trip packages. Darjeeling hills (3D ₹14,500), Puri-Konark circuit (3D ₹12,500), Sundarbans (2D), Deoghar pilgrimage, Bodh Gaya Buddhist tour. Air-conditioned cab and chauffeur included. Call ${BUSINESS.phone}.`,
   openGraph: {
-    title: `Tour Packages from Kolkata — Darjeeling, Puri, Bodh Gaya | NK Cab & Taxi`,
-    description: `East India tours with AC cab. Darjeeling, Puri, Sundarbans, Deoghar. All-inclusive. Call ${BUSINESS.phone}.`,
+    title: `Kolkata Tour Packages — Darjeeling, Puri, Bodh Gaya | NK Cab & Taxi`,
+    description: `East India trips with air-conditioned cab. Darjeeling, Puri, Sundarbans, Deoghar. All-inclusive. Call ${BUSINESS.phone}.`,
     type: 'website',
     siteName: 'NK Cab & Taxi',
     url: `${BUSINESS.domain}/tours`,
     locale: 'en_IN',
-    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: 'Tour Packages from Kolkata — NK Cab & Taxi' }],
+    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: 'Kolkata Tour Packages — NK Cab & Taxi' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: `Tour Packages — Darjeeling, Puri, Bodh Gaya | NK Cab & Taxi`,
-    description: `East India tours with driver + AC cab. Kolkata, Ranchi, Jharkhand. Call ${BUSINESS.phone}`,
+    description: `East India tours with chauffeur and air-conditioned cab. Kolkata, Ranchi, Jharkhand. Call ${BUSINESS.phone}`,
     images: [`${BUSINESS.domain}/navbanner.webp`],
   },
   alternates: { canonical: `${BUSINESS.domain}/tours` },
@@ -61,7 +61,7 @@ export default function ToursPage() {
           <Breadcrumbs items={[{ name: 'Tour Packages', href: '/tours' }]} />
           <h1 className="text-3xl md:text-4xl font-extrabold mt-4 mb-4">Tour <span className="text-gradient">Packages</span></h1>
           <p className="text-lg text-gray-300 max-w-3xl">
-            Explore East India with our curated tour packages. Hill stations, pilgrimages, wildlife safaris, and city tours — all with AC cab, experienced driver, and transparent pricing.
+            Discover East India through our handpicked tour packages. Hill retreats, sacred pilgrimages, wildlife safaris, and heritage city jaunts — every trip comes with an air-conditioned cab, a skilled chauffeur, and clear upfront pricing.
           </p>
         </div>
       </section>
@@ -111,11 +111,11 @@ export default function ToursPage() {
                   {/* Pricing */}
                   <div className="flex items-end justify-between pt-4 border-t border-gray-100">
                     <div>
-                      <span className="text-xs text-gray-400">Sedan from</span>
+                      <span className="text-xs text-gray-400">Sedan starts at</span>
                       <p className="text-2xl font-bold text-primary">₹{tour.pricing.sedan.toLocaleString('en-IN')}</p>
                     </div>
                     <span className="inline-flex items-center gap-1 text-primary text-sm font-semibold group-hover:gap-2 transition-all">
-                      View Details <ChevronRight size={16} />
+                      See Details <ChevronRight size={16} />
                     </span>
                   </div>
                 </div>
@@ -130,13 +130,13 @@ export default function ToursPage() {
 
       <section className="py-12 bg-gradient-to-r from-primary to-amber-500">
         <div className="max-w-4xl mx-auto px-4 text-center text-white">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">Need a Custom Tour Package?</h2>
-          <p className="text-white/90 mb-6">We create personalized tour itineraries based on your interests, budget, and schedule. Call us to plan your dream trip!</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">Want a Tailor-Made Tour Package?</h2>
+          <p className="text-white/90 mb-6">We craft custom itineraries around your tastes, budget, and time. Give us a call and let us plan the journey of your dreams.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
               <Phone size={22} /> {BUSINESS.phone}
             </a>
-            <a href={`${BUSINESS.whatsappLink}?text=${encodeURIComponent('Hi! I want to know about tour packages.')}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-500 text-white font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
+            <a href={`${BUSINESS.whatsappLink}?text=${encodeURIComponent('Hi! I would like details about tour packages.')}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-500 text-white font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
               💬 WhatsApp
             </a>
           </div>

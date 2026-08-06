@@ -25,28 +25,28 @@ export const metadata: Metadata = {
   alternates: { canonical: `${BUSINESS.domain}/services/wedding-car-rental` },
   openGraph: {
     title: `Wedding Car Rental Kolkata | Decorated Innova & Fortuner | ${BUSINESS.name}`,
-    description: `Flower-decorated wedding cars in Kolkata. Innova Crysta ₹5,000, Fortuner ₹8,000. Baraat fleet, vidaai arrangements. Professional chauffeur. Call ${BUSINESS.phone}`,
+    description: `Flower-decorated wedding cars in Kolkata. Innova Crysta ₹5,000, Fortuner ₹8,000. Baraat fleet, vidaai arrangements. Professional chauffeur. Fixed fares. Call ${BUSINESS.phone}`,
     type: 'website',
     siteName: BUSINESS.name,
     url: `${BUSINESS.domain}/services/wedding-car-rental`,
     locale: 'en_IN',
-    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: `Wedding Car Rental Kolkata — ${BUSINESS.name}` }],
+    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: `Marriage Car Hire Service Kolkata — ${BUSINESS.name}` }],
   },
   twitter: {
     card: 'summary_large_image',
     title: `Wedding Car Rental Kolkata | Decorated Cars from ₹3,500`,
-    description: `Premium wedding cars in Kolkata. Innova, Fortuner with flower decoration. Baraat & vidaai service. Call ${BUSINESS.phone}`,
+    description: `Premium wedding cars in Kolkata. Innova, Fortuner with flower decoration. Baraat & vidaai service. Fixed fares. Call ${BUSINESS.phone}`,
   },
 };
 
 export default function WeddingCarPage() {
   const faqs = [
-    { question: 'How is the flower decoration done for wedding cars in Kolkata?', answer: `Our team prepares fresh flower garlands, ribbon bows, and decorative elements on the morning of your wedding day — within 2 hours of your scheduled pickup. We use fresh marigold, rose, and seasonal flowers sourced locally. The decoration is done professionally and looks beautiful for photos. Call ${BUSINESS.phone} to discuss specific decoration preferences.` },
-    { question: 'Which Kolkata wedding season should I book in advance?', answer: 'Kolkata has two peak wedding seasons: November–February (winter weddings, most popular) and May–June (pre-monsoon auspicious dates). During these months our decorated fleet books up 2–3 weeks in advance. For Muhurats in November–January, we recommend booking 3–4 weeks early. Off-season bookings can be made 1 week before.' },
-    { question: 'Can you provide multiple decorated cars for a big baraat in Kolkata?', answer: 'Yes! We manage fleet baraat arrangements — from 3 to 20+ decorated vehicles including the groom’s main car (Innova Crysta or Fortuner), 2–4 supporting sedans for family, and 1–2 Tempo Travellers for larger wedding groups. All vehicles are decorated in a coordinated theme. Call for a complete wedding transport quote.' },
-    { question: 'What is the difference between baraat car and vidaai car arrangements?', answer: 'The baraat car (groom’s side) typically features bold, festive decoration with marigold garlands and ribbons, focused on visual impact for the procession. The vidaai car (bride’s send-off) has a more elegant, romantic decoration — white/pink rose garlands, subtle ribbon, and a calm interior. We customize decoration separately for both occasions upon request.' },
-    { question: 'Do you provide cars for guest transport to wedding venues in Kolkata?', answer: 'Yes! Besides the main bridal/baraat vehicles, we provide multiple Tempo Travellers (12–17 seater) and sedans for wedding guest transport from hotels, railway stations, and Kolkata airport (CCU). Our coordination team manages the schedule so all guests reach the venue on time. Essential for destination weddings within West Bengal.' },
-    { question: 'Is there a cancellation policy for wedding car bookings?', answer: 'Wedding car bookings cancelled more than 7 days before the event receive a full refund of any advance paid. Cancellations within 3–7 days attract a 30% cancellation fee. Cancellations within 48 hours are non-refundable due to decoration and driver scheduling costs. We strongly recommend confirming the booking once wedding dates are fixed.' },
+    { question: 'How is the flower decoration done for wedding cars in Kolkata?', answer: `Our team puts together fresh flower garlands, ribbon bows and decorative elements on the morning of your wedding, within 2 hours of your scheduled pickup. We use fresh marigold, rose and seasonal flowers sourced locally, finished professionally for photographs. Call ${BUSINESS.phone} to discuss decoration preferences.` },
+    { question: 'How early should I book during Kolkata wedding season?', answer: 'Kolkata has two peak wedding seasons: November–February (winter weddings, the most sought-after) and May–June (pre-monsoon auspicious dates). In these months the decorated fleet books out 2–3 weeks in advance. For Muhurats in November–January we suggest booking 3–4 weeks early. Off-season bookings can be made about a week ahead.' },
+    { question: 'Can you provide multiple decorated cars for a large baraat in Kolkata?', answer: 'Yes — we manage full fleet baraat arrangements, from 3 to 20+ decorated vehicles, including the groom’s main car (Innova Crysta or Fortuner), 2–4 supporting sedans for family and 1–2 Tempo Travellers for larger groups. Every vehicle is decorated in a coordinated theme. Call for a complete wedding transport quote.' },
+    { question: 'How does a baraat car differ from a vidaai car?', answer: 'The baraat car (groom’s side) carries bold, festive decoration — marigold garlands and ribbons built for procession impact. The vidaai car (bride’s send-off) is softer and more romantic — white/pink rose garlands, subtle ribbon and a calm interior. We customise the decoration for each occasion on request.' },
+    { question: 'Do you arrange guest transport to wedding venues in Kolkata?', answer: 'Yes — besides the main bridal and baraat vehicles, we supply Tempo Travellers (12–17 seater) and sedans to bring guests in from hotels, railway stations and Kolkata airport (CCU). Our coordination team manages the schedule so everyone reaches the venue on time — essential for destination weddings across West Bengal.' },
+    { question: 'What is the cancellation policy for wedding car bookings?', answer: 'Bookings cancelled more than 7 days before the event get a full refund of any advance. Cancellations 3–7 days out carry a 30% fee, and those within 48 hours are non-refundable given decoration and driver scheduling costs. We strongly suggest confirming once your wedding dates are fixed.' },
   ];
 
   const packages = [
@@ -71,7 +71,7 @@ export default function WeddingCarPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <Breadcrumbs items={[{ name: 'Services', href: '/services' }, { name: 'Wedding Car Rental', href: '/services/wedding-car-rental' }]} />
           <h1 className="text-3xl md:text-4xl font-extrabold mt-4 mb-4">Wedding Car <span className="text-gradient">Rental in Kolkata</span> ₹3,500 | Decorated Cars</h1>
-          <p className="text-lg text-gray-300 max-w-3xl">Premium decorated cars for your special day in Kolkata — baraat, vidaai, wedding functions. Flower-decorated Innova Crysta, Fortuner & luxury sedans with professional chauffeurs.</p>
+          <p className="text-lg text-gray-300 max-w-3xl">Premium decorated cars for your big day in Kolkata — baraat, vidaai, wedding functions. Flower-decorated Innova Crysta, Fortuner and luxury sedans with professional chauffeurs.</p>
           <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center gap-2 px-6 py-3 mt-6 bg-gradient-to-r from-primary to-amber-500 text-white font-bold rounded-full shadow-lg">
             <Phone size={18} /> Book Wedding Car: {BUSINESS.phone}
           </a>
@@ -98,13 +98,13 @@ export default function WeddingCarPage() {
                 <h2 className="text-2xl font-bold text-secondary mb-4">Wedding Car Rental Service in Kolkata</h2>
                 <div className="space-y-4 text-gray-600">
                   <p>
-                    Make your wedding day unforgettable with <strong>{BUSINESS.name}</strong>&apos;s premium wedding car rental service in Kolkata. We provide beautifully decorated vehicles for every wedding occasion — baraat (groom&apos;s procession), vidaai (bride&apos;s send-off), wedding reception, and family transport. Serving all areas of Kolkata including Salt Lake, New Town, Howrah, Park Street, Ballygunge, Behala, Dum Dum, and all Kolkata suburbs.
+                    Make your wedding day unforgettable with <strong>{BUSINESS.name}</strong>&apos;s premium wedding car rental service in Kolkata. We supply beautifully decorated vehicles for every wedding occasion — baraat (groom&apos;s procession), vidaai (bride&apos;s send-off), reception and family transport — across Salt Lake, New Town, Howrah, Park Street, Ballygunge, Behala, Dum Dum and all Kolkata suburbs.
                   </p>
                   <p>
-                    Our fleet of wedding cars includes elegantly decorated Innova Crysta (7-seater), Toyota Fortuner, luxury sedans, and Mercedes/BMW for the most premium experience. All vehicles come with fresh flower garlands, ribbon and bow decoration, red carpet, and a professionally dressed, experienced chauffeur to make the bride and groom feel truly royal.
+                    Our wedding fleet features elegantly decorated Innova Crysta (7-seater), Toyota Fortuner, luxury sedans and Mercedes/BMW for the most premium touch. Every car arrives with fresh flower garlands, ribbon-and-bow decoration, a red carpet and a formally dressed, experienced chauffeur so the bride and groom feel truly royal.
                   </p>
                   <p>
-                    We also provide fleet arrangements for complete wedding transportation — multiple decorated vehicles for baraat procession, Tempo Travellers for wedding guests, and airport/railway pickup service for guests arriving from out of town. Call {BUSINESS.phone} to discuss your complete wedding transport needs.
+                    We also run complete wedding transport — fleets of decorated cars for the baraat procession, Tempo Travellers for guests and airport/railway pickups for those arriving from out of town. Call {BUSINESS.phone} to plan your full wedding transport.
                   </p>
                 </div>
               </div>
@@ -134,15 +134,15 @@ export default function WeddingCarPage() {
 
               {/* Why choose */}
               <div>
-                <h3 className="text-xl font-bold text-secondary mb-4">Why Choose Us for Wedding Car Rental in Kolkata?</h3>
+                <h3 className="text-xl font-bold text-secondary mb-4">Why Pick Us for Wedding Cars in Kolkata?</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {[
-                    'Fresh flower decoration arranged on the morning of your wedding',
+                    'Fresh flower decoration set up on the morning of your wedding',
                     'Professional chauffeurs in formal attire',
-                    'On-time pickup — we guarantee no delays on your special day',
-                    'Red carpet, ribbon, and bow included in all packages',
-                    'Serving all Kolkata areas — Salt Lake, New Town, Howrah & more',
-                    'Baraat procession fleet — 5 to 20+ vehicles available',
+                    'Punctual pickup — no delays on your big day',
+                    'Red carpet, ribbon and bow included in every package',
+                    'Covers all Kolkata areas — Salt Lake, New Town, Howrah & more',
+                    'Baraat procession fleets — 5 to 20+ vehicles available',
                     'Innova Crysta, Fortuner, BMW, Mercedes available',
                     '4.9★ rating from 428+ wedding customers in Kolkata',
                   ].map((point, i) => (
@@ -158,7 +158,7 @@ export default function WeddingCarPage() {
             <div className="lg:sticky lg:top-24 lg:self-start space-y-4">
               <BookingForm />
               <div className="p-4 bg-secondary rounded-xl text-white text-center">
-                <p className="text-sm text-gray-300 mb-2">Wedding Car Booking</p>
+                <p className="text-sm text-gray-300 mb-2">Reserve a Wedding Car</p>
                 <a href={`tel:${BUSINESS.phone}`} className="text-xl font-bold hover:text-primary transition-colors">📞 {BUSINESS.phone}</a>
               </div>
             </div>
@@ -166,14 +166,14 @@ export default function WeddingCarPage() {
         </div>
       </section>
 
-      <section className="py-12 bg-gray-50"><div className="max-w-7xl mx-auto px-4"><FAQSection faqs={faqs} title="Wedding Car Rental Kolkata — FAQs" /></div></section>
+      <section className="py-12 bg-gray-50"><div className="max-w-7xl mx-auto px-4"><FAQSection faqs={faqs} title="Wedding Car Rental Kolkata — Common Questions" /></div></section>
 
       {/* Multi-City Wedding Coverage */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-secondary mb-4">Wedding Car Rental in <span className="text-primary">Other Cities</span></h2>
+          <h2 className="text-2xl font-bold text-secondary mb-4">Wedding Cars in <span className="text-primary">Other Cities</span></h2>
           <p className="text-gray-600 mb-6">
-            Planning a wedding outside Kolkata? {BUSINESS.name} provides decorated wedding car rental in <strong>Ranchi</strong>, <strong>Jamshedpur</strong>, <strong>Bhubaneswar</strong>, <strong>Dhanbad</strong>, and other cities across East India. Same premium decoration, professional chauffeurs, and on-time guarantee.
+            Planning a wedding outside Kolkata? {BUSINESS.name} provides decorated wedding cars in <strong>Ranchi</strong>, <strong>Jamshedpur</strong>, <strong>Bhubaneswar</strong>, <strong>Dhanbad</strong> and other cities across East India — the same premium decoration, professional chauffeurs and on-time guarantee.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {[
@@ -196,13 +196,13 @@ export default function WeddingCarPage() {
 
       <section className="py-12 bg-gradient-to-r from-primary to-amber-500 text-white text-center">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">Your Special Day Deserves a Perfect Car — Book Early!</h2>
-          <p className="text-white/90 mb-6">Wedding car bookings fill up fast during November–February. Secure your decorated Innova Crysta or Fortuner now — no last-minute stress on your big day.</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">Your Big Day Deserves a Perfect Car — Reserve Early!</h2>
+          <p className="text-white/90 mb-6">Wedding car bookings fill up fast between November and February. Lock in your decorated Innova Crysta or Fortuner now — no last-minute stress on the day.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
               <Phone size={22} /> {BUSINESS.phone}
             </a>
-            <a href={`${BUSINESS.whatsappLink}?text=${encodeURIComponent('Hi! I want to book a decorated wedding car.')}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-500 text-white font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
+            <a href={`${BUSINESS.whatsappLink}?text=${encodeURIComponent('Hi! I would like to book a decorated wedding car.')}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-500 text-white font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
               💬 WhatsApp
             </a>
           </div>

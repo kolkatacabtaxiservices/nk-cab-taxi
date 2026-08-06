@@ -54,8 +54,8 @@ export async function generateMetadata({
     : vehicleSlug === 'tempo' ? fares.tempo.pricePerKm
     : fares.luxury?.pricePerKm ?? 28;
 
-  const title = `${vehicle.name} Cab in ${city.name} ₹${rate}/km | Book 24/7 | NK Cab & Taxi`;
-  const description = `Book ${vehicle.name} (${vehicle.models.slice(0, 2).join(', ')}) in ${city.name} from ₹${rate}/km. Airport transfer, outstation, local packages. AC, GPS tracked, police-verified drivers. No surge 24/7. Call ${BUSINESS.phone}`;
+  const title = `${vehicle.name} Taxi in ${city.name} ₹${rate}/km | Reserve 24/7 | NK Cab & Taxi`;
+  const description = `Hire a ${vehicle.name} (${vehicle.models.slice(0, 2).join(', ')}) in ${city.name} from ₹${rate}/km. Airport runs, outstation trips, city packages. AC, GPS fitted, verified drivers. Fixed fares round the clock. Call ${BUSINESS.phone}`;
   const canonical = `${BUSINESS.domain}/${stateSlug}/${citySlug}/${vehicleSlug}`;
 
   return {
@@ -68,7 +68,7 @@ export async function generateMetadata({
       siteName: 'NK Cab & Taxi',
       title,
       description,
-      images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: `${vehicle.name} cab in ${city.name}` }],
+      images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: `${vehicle.name} taxi in ${city.name}` }],
       url: canonical,
     },
     twitter: {
@@ -138,31 +138,31 @@ export default async function CityVehiclePage({
     },
     {
       question: `What is the ${vehicle.name} fare in ${city.name}?`,
-      answer: `${vehicle.name} (${vehicle.models.slice(0, 2).join(', ')}) fare in ${city.name}: Outstation ₹${ratePerKm}/km | Local package ₹${localFare} (4hr/40km) | Airport ₹${airportFare}. 24/7 available. No surge pricing. Call ${BUSINESS.phone}.`,
+      answer: `${vehicle.name} (${vehicle.models.slice(0, 2).join(', ')}) rates in ${city.name}: outstation ₹${ratePerKm}/km | city package ₹${localFare} (4hr/40km) | airport ₹${airportFare}. Service runs around the clock with no surge. Ring ${BUSINESS.phone}.`,
     },
     {
       question: `How many passengers can travel in ${vehicle.name} in ${city.name}?`,
-      answer: `Our ${vehicle.name} accommodates ${vehicle.capacity} passengers with ${vehicle.luggage} luggage bags. Models available: ${vehicle.models.join(', ')}. All AC, GPS-tracked, and sanitized.`,
+      answer: `A ${vehicle.name} seats ${vehicle.capacity} passengers and takes ${vehicle.luggage} bags. Available models: ${vehicle.models.join(', ')}. All are AC-fitted, GPS-tracked, and sanitised.`,
     },
     {
       question: `Is ${vehicle.name} available for outstation trips from ${city.name}?`,
-      answer: `Yes! ${vehicle.name} is available for outstation trips from ${city.name} at ₹${ratePerKm}/km. One-way and round trip both available. 24/7 service with no surge pricing. Book at ${BUSINESS.phone}.`,
+      answer: `Yes — ${vehicle.name} runs outstation trips from ${city.name} at ₹${ratePerKm}/km, one-way or round trip. Service is 24/7 with fixed fares. Reserve at ${BUSINESS.phone}.`,
     },
     {
       question: `Can I book ${vehicle.name} for airport pickup in ${city.name}?`,
-      answer: `Yes! We provide ${vehicle.name} airport transfer in ${city.name} from ₹${airportFare}${city.airport ? ` (${city.airport})` : ''}. Real-time flight tracking, meet & greet, no surge pricing. Call ${BUSINESS.phone}.`,
+      answer: `Yes — ${vehicle.name} airport transfers in ${city.name} start at ₹${airportFare}${city.airport ? ` (${city.airport})` : ''}, with live flight tracking, meet and greet, and fixed pricing. Call ${BUSINESS.phone}.`,
     },
     {
       question: `What is the ${vehicle.name} local package fare in ${city.name}?`,
-      answer: `${vehicle.name} local package in ${city.name}: ₹${localFare} for 4 hours/40 km. Extra km at ₹${ratePerKm}/km. Available for city sightseeing, hospital, shopping, office travel. Call ${BUSINESS.phone}.`,
+      answer: `A ${vehicle.name} city package in ${city.name} costs ₹${localFare} for 4 hours/40 km, with extra km at ₹${ratePerKm}/km. Great for sightseeing, hospital runs, shopping, and office trips. Call ${BUSINESS.phone}.`,
     },
     {
       question: `How to book ${vehicle.name} in ${city.name}?`,
-      answer: `Call ${BUSINESS.phone} or WhatsApp to book ${vehicle.name} in ${city.name}. You can also fill the online booking form on this page. Instant confirmation with driver details within 2 minutes. No advance payment required.`,
+      answer: `Ring ${BUSINESS.phone} or use WhatsApp to reserve a ${vehicle.name} in ${city.name}, or fill the booking form on this page. Confirmation with driver details arrives within 2 minutes, with no advance payment needed.`,
     },
     {
       question: `Does NK Cab & Taxi offer ${vehicle.name} for round trip from ${city.name}?`,
-      answer: `Yes! ${vehicle.name} round trip is available from ${city.name} with driver accommodation included for multi-day trips. Fixed rate — no surge, no hidden charges. Call ${BUSINESS.phone} for quotes.`,
+      answer: `Yes — ${vehicle.name} round trips run from ${city.name}, with driver stay included on multi-day journeys. Rates are fixed, with no surge and no hidden fees. Call ${BUSINESS.phone} for a quote.`,
     },
   ];
 
@@ -176,8 +176,8 @@ export default async function CityVehiclePage({
   const vehicleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    name: `${vehicle.name} Cab in ${city.name}`,
-    description: `${vehicle.name} cab & taxi service in ${city.name}. Rate: ₹${ratePerKm}/km. Models: ${vehicle.models.join(', ')}. ${vehicle.capacity} passengers. AC, GPS tracked.`,
+    name: `${vehicle.name} Taxi in ${city.name}`,
+    description: `${vehicle.name} taxi service in ${city.name}. Tariff ₹${ratePerKm}/km. Models: ${vehicle.models.join(', ')}. Seats ${vehicle.capacity}. AC, GPS fitted.`,
     brand: { '@type': 'Brand', name: 'NK Cab & Taxi' },
     image: `${BUSINESS.domain}/navbanner.webp`,
     offers: {
@@ -224,17 +224,17 @@ export default async function CityVehiclePage({
             { name: vehicle.name, href: `/${stateSlug}/${citySlug}/${vehicleSlug}` },
           ]} />
           <h1 className="text-2xl md:text-4xl font-extrabold mt-4 mb-3">
-            {vehicle.name} Cab in{' '}
+            {vehicle.name} Taxi in{' '}
             <span className="text-gradient">{city.name}</span>
-            {' '}— ₹{ratePerKm}/km | Book 24/7
+            {' '}— ₹{ratePerKm}/km | Reserve Round the Clock
           </h1>
           <p className="text-gray-300 max-w-3xl mb-4">
-            Book {vehicle.name} ({vehicle.models.slice(0, 2).join(', ')}) in {city.name}.{' '}
-            {vehicle.capacity} passengers, AC, GPS tracked. Local package ₹{localFare} | Outstation ₹{ratePerKm}/km | Airport ₹{airportFare}. No surge pricing.
+            Hire a {vehicle.name} ({vehicle.models.slice(0, 2).join(', ')}) in {city.name}.{' '}
+            {vehicle.capacity} seats, AC, GPS fitted. City pack ₹{localFare} | Outstation ₹{ratePerKm}/km | Airport ₹{airportFare}. Fixed fares, no surge.
           </p>
           <div className="flex flex-wrap gap-3 text-sm text-gray-300 mb-6">
             <span className="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-full">
-              <Users size={14} /> {vehicle.capacity} Pax
+              <Users size={14} /> {vehicle.capacity} Seats
             </span>
             <span className="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-full">
               <Briefcase size={14} /> {vehicle.luggage} Bags
@@ -251,7 +251,7 @@ export default async function CityVehiclePage({
               href={`tel:${BUSINESS.phone}`}
               className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-amber-500 text-white font-bold rounded-full shadow-lg hover:scale-105 transition-all"
             >
-              <Phone size={18} /> Book {vehicle.name}: {BUSINESS.phone}
+              <Phone size={18} /> Reserve {vehicle.name}: {BUSINESS.phone}
             </a>
             <a
               href={`https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(`Hi! I want to book a ${vehicle.name} in ${city.name}.`)}`}
@@ -271,7 +271,7 @@ export default async function CityVehiclePage({
             <div className="relative h-64 sm:h-80 lg:h-96">
               <Image
                 src={vehicle.image}
-                alt={`${vehicle.name} cab in ${city.name} — ${vehicle.models.join(', ')}`}
+                alt={`${vehicle.name} taxi in ${city.name} — ${vehicle.models.join(', ')}`}
                 fill
                 className="object-contain p-6 drop-shadow-2xl"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -285,10 +285,10 @@ export default async function CityVehiclePage({
               <p className="text-gray-300 mb-6">{vehicle.description}</p>
               <div className="grid grid-cols-2 gap-3 mb-6">
                 {[
-                  { icon: <Users size={16} className="text-primary" />, label: `${vehicle.capacity} Passengers`, sub: 'Max capacity' },
-                  { icon: <Briefcase size={16} className="text-primary" />, label: `${vehicle.luggage} Bags`, sub: 'Luggage space' },
-                  { icon: <Fuel size={16} className="text-primary" />, label: 'AC Vehicle', sub: 'Climate control' },
-                  { icon: <Gauge size={16} className="text-primary" />, label: 'GPS Tracked', sub: 'Live location' },
+                  { icon: <Users size={16} className="text-primary" />, label: `${vehicle.capacity} Seats`, sub: 'Maximum occupancy' },
+                  { icon: <Briefcase size={16} className="text-primary" />, label: `${vehicle.luggage} Bags`, sub: 'Baggage allowance' },
+                  { icon: <Fuel size={16} className="text-primary" />, label: 'AC Car', sub: 'Climate control' },
+                  { icon: <Gauge size={16} className="text-primary" />, label: 'GPS Enabled', sub: 'Live tracking' },
                 ].map((spec, i) => (
                   <div key={i} className="flex items-center gap-2.5 p-3 bg-white/5 rounded-xl border border-white/10">
                     {spec.icon}
@@ -300,7 +300,7 @@ export default async function CityVehiclePage({
                 ))}
               </div>
               <div className="mb-5">
-                <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Available Models</h4>
+                <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Models on Offer</h4>
                 <div className="flex flex-wrap gap-2">
                   {vehicle.models.map(m => (
                     <span key={m} className="px-3 py-1.5 bg-white/10 text-white/90 text-xs font-medium rounded-lg border border-white/10">{m}</span>
@@ -323,38 +323,38 @@ export default async function CityVehiclePage({
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-2xl font-bold text-secondary mb-6">
-            {vehicle.name} Fare in {city.name}
+            {vehicle.name} Pricing in {city.name}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             <div className="p-6 bg-accent rounded-2xl border-2 border-primary/20 text-center">
-              <p className="text-sm text-gray-500 mb-1">Outstation Rate</p>
+              <p className="text-sm text-gray-500 mb-1">Outstation Tariff</p>
               <p className="text-4xl font-extrabold text-primary">₹{ratePerKm}<span className="text-lg">/km</span></p>
-              <p className="text-xs text-gray-500 mt-1">One-way & round trip</p>
+              <p className="text-xs text-gray-500 mt-1">One-way or round trip</p>
             </div>
             <div className="p-6 bg-gray-50 rounded-2xl border border-gray-100 text-center">
-              <p className="text-sm text-gray-500 mb-1">Local Package</p>
+              <p className="text-sm text-gray-500 mb-1">City Package</p>
               <p className="text-4xl font-extrabold text-secondary">₹{localFare}</p>
               <p className="text-xs text-gray-500 mt-1">4 Hours / 40 KM</p>
             </div>
             <div className="p-6 bg-gray-50 rounded-2xl border border-gray-100 text-center">
-              <p className="text-sm text-gray-500 mb-1">Airport Transfer</p>
+              <p className="text-sm text-gray-500 mb-1">Airport Runs</p>
               <p className="text-4xl font-extrabold text-secondary">₹{airportFare}</p>
-              <p className="text-xs text-gray-500 mt-1">Pickup or drop</p>
+              <p className="text-xs text-gray-500 mt-1">Pickup or drop-off</p>
             </div>
           </div>
 
           {/* Included / Extra */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="p-6 bg-green-50 rounded-2xl border border-green-100">
-              <h3 className="font-bold text-secondary mb-3">✅ Included in Fare</h3>
+              <h3 className="font-bold text-secondary mb-3">✅ Covered in the Fare</h3>
               <div className="space-y-2 text-sm text-gray-600">
                 {[
-                  'AC vehicle with music system',
-                  'Fuel charges for entire trip',
-                  'Experienced, police-verified driver',
-                  'GPS tracking & live location sharing',
-                  'Free cancellation (4 hrs before)',
-                  'No surge pricing — fixed fare 24/7',
+                  'AC car with music system',
+                  'Full fuel for the trip',
+                  'Verified, experienced driver',
+                  'GPS tracking with live location sharing',
+                  'Free cancellation up to 4 hours prior',
+                  'No surge pricing — stable fare around the clock',
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-2">
                     <CheckCircle size={14} className="text-green-500 shrink-0" /> {item}
@@ -363,15 +363,15 @@ export default async function CityVehiclePage({
               </div>
             </div>
             <div className="p-6 bg-amber-50 rounded-2xl border border-amber-100">
-              <h3 className="font-bold text-secondary mb-3">ℹ️ Extra Charges</h3>
+              <h3 className="font-bold text-secondary mb-3">ℹ️ Additional Costs</h3>
               <div className="space-y-2 text-sm text-gray-600">
                 {[
-                  'Toll charges (as per actuals)',
-                  'Parking charges (as per actuals)',
-                  `Night charges: ₹${vehicle.driverAllowance} (10 PM–6 AM)`,
-                  'State permit (if applicable)',
-                  `Driver allowance: ₹${vehicle.driverAllowance}/day (multi-day trips)`,
-                  'Extra km beyond package: same per-km rate',
+                  'Toll charges (billed at actual)',
+                  'Parking fees (billed at actual)',
+                  `Night surcharge: ₹${vehicle.driverAllowance} (10 PM–6 AM)`,
+                  'State permit fee (where applicable)',
+                  `Driver allowance: ₹${vehicle.driverAllowance} per day for multi-day runs`,
+                  'Extra kilometres beyond the package: same per-km rate',
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-2">
                     <span className="text-amber-500 shrink-0">•</span> {item}
@@ -387,9 +387,9 @@ export default async function CityVehiclePage({
       <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-2xl font-bold text-secondary mb-2">
-            Other Vehicles Available in {city.name}
+            Other Vehicle Choices in {city.name}
           </h2>
-          <p className="text-gray-500 text-sm mb-6">Compare vehicles and choose the best fit for your trip</p>
+          <p className="text-gray-500 text-sm mb-6">Size up the options and pick the right car for your journey</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {otherVehicles.map(v => {
               const vRate = v.id === 'sedan' ? fares.sedan.pricePerKm
@@ -405,7 +405,7 @@ export default async function CityVehiclePage({
                   <div className="relative h-36 bg-gradient-to-br from-accent to-orange-50">
                     <Image
                       src={v.image}
-                      alt={`${v.name} in ${city.name}`}
+                      alt={`${v.name} option in ${city.name}`}
                       fill
                       className="object-contain p-4"
                       sizes="(max-width: 768px) 100vw, 25vw"
@@ -438,7 +438,7 @@ export default async function CityVehiclePage({
         <div className="max-w-7xl mx-auto px-4">
           <FAQSection
             faqs={faqs}
-            title={`${vehicle.name} Cab in ${city.name} — FAQs`}
+            title={`${vehicle.name} Queries — ${city.name}`}
           />
         </div>
       </section>
@@ -448,18 +448,18 @@ export default async function CityVehiclePage({
         fromCity={city.name}
         fromLat={city.lat}
         fromLng={city.lng}
-        title={`${city.name} — ${vehicle.name} Cab Service`}
-        subtitle={`Book ${vehicle.name} anywhere in ${city.name}. Rate: ₹${ratePerKm}/km.`}
+        title={`${city.name} — ${vehicle.name} Taxi Service`}
+        subtitle={`Reserve a ${vehicle.name} anywhere across ${city.name}. Tariff: ₹${ratePerKm}/km.`}
       />
 
       {/* ── Bottom CTA ───────────────────────────────────────── */}
       <section className="py-12 bg-gradient-to-r from-primary to-amber-500">
         <div className="max-w-4xl mx-auto px-4 text-center text-white">
           <h2 className="text-2xl md:text-3xl font-bold mb-2">
-            Book {vehicle.name} in {city.name} — ₹{ratePerKm}/km
+            Reserve a {vehicle.name} in {city.name} — ₹{ratePerKm}/km
           </h2>
           <p className="text-white/90 mb-6">
-            {vehicle.models.slice(0, 2).join(', ')} • {vehicle.capacity} passengers • AC • GPS Tracked • No surge 24/7
+            {vehicle.models.slice(0, 2).join(', ')} • {vehicle.capacity} seats • AC • GPS • Fixed fares round the clock
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -479,7 +479,7 @@ export default async function CityVehiclePage({
             href={`/${stateSlug}/${citySlug}`}
             className="inline-flex items-center gap-1 mt-5 text-white/80 text-sm hover:text-white transition-colors"
           >
-            <ArrowLeft size={14} /> All services in {city.name}
+            <ArrowLeft size={14} /> All services offered in {city.name}
           </Link>
         </div>
       </section>

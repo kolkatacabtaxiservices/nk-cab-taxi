@@ -24,7 +24,7 @@ const FareCalculator = nextDynamic(() => import('@/components/FareCalculator'), 
     <div className="py-20 text-center">
       <div className="inline-flex items-center gap-3 px-6 py-3 bg-[#0D1B2A]/5 rounded-full text-gray-400 text-sm border border-gray-100">
         <div className="w-4 h-4 border-2 border-[#FF6B00]/30 border-t-[#FF6B00] rounded-full animate-spin" />
-        Calculating fares…
+        Working out your fare…
       </div>
     </div>
   ),
@@ -34,7 +34,7 @@ const GoogleMapEmbed = nextDynamic(() => import('@/components/GoogleMapEmbed'), 
     <div className="py-16 text-center">
       <div className="inline-flex items-center gap-3 px-6 py-3 bg-[#0D1B2A]/5 rounded-full text-gray-400 text-sm border border-gray-100">
         <div className="w-4 h-4 border-2 border-[#FF6B00]/30 border-t-[#FF6B00] rounded-full animate-spin" />
-        Loading map…
+        Pulling up the map…
       </div>
     </div>
   ),
@@ -61,25 +61,25 @@ export default async function HomePage() {
   const vehicles = getVehicles();
 
   const faqs = [
-    { question: `What is the phone number of ${BUSINESS.name}?`, answer: `You can call us at ${BUSINESS.phone} or WhatsApp us anytime. We are available 24/7, 365 days a year for cab bookings across Kolkata and East India.` },
-    { question: 'What cities do you cover for cab service?', answer: `We provide cab services across West Bengal, Jharkhand, Odisha, Bihar, and Uttar Pradesh. Primary hub is Kolkata. We cover 80+ cities including Howrah, Siliguri, Darjeeling, Durgapur, Asansol, Ranchi, Bhubaneswar, Jamshedpur, Patna and more.` },
-    { question: 'What types of cabs are available in Kolkata?', answer: 'We offer Sedan (Swift Dzire, Honda Amaze), SUV (Ertiga, Innova, Innova Crysta), Tempo Traveller (12-17 seater), and Luxury cars (Fortuner, Mercedes). We also provide decorated cars for weddings.' },
-    { question: 'Do you provide one-way taxi service from Kolkata?', answer: 'Yes! We offer one-way taxi service from Kolkata to all major cities. You pay only for the one-way journey with no return charges. This is the most affordable option for point-to-point travel.' },
-    { question: 'How can I book a cab in Kolkata?', answer: `You can book a cab by calling ${BUSINESS.phone}, sending a WhatsApp message, or filling out the booking form on our website. We provide instant confirmation and fare details.` },
-    { question: 'Do you provide Kolkata airport cab service?', answer: `Yes! We provide pickup and drop service at Netaji Subhash Chandra Bose International Airport (CCU), Dum Dum. Sedan from ₹1800, SUV from ₹2,200. Our driver tracks your flight and waits with a name board. Call ${BUSINESS.phone}.` },
-    { question: 'Which West Bengal cities do you serve?', answer: `We serve all major West Bengal cities: Kolkata, Howrah, Salt Lake, New Town, Siliguri, Darjeeling, Durgapur, Asansol, Kharagpur, Haldia, Malda, Cooch Behar, Krishnanagar, Bardhaman, Bankura, Midnapore, Kalyani, Barasat, Digha, Shantiniketan, and Murshidabad.` },
-    { question: 'What is the cab fare per km in Kolkata?', answer: 'Cab fare in Kolkata starts at ₹12/km for Sedan (Swift Dzire, Honda Amaze), ₹16/km for SUV (Ertiga, Innova), ₹18/km for Innova Crysta, and ₹22/km for Tempo Traveller. Local packages start from ₹1,800 for 4 hours/40 km. All fares include fuel and driver charges — no hidden costs.' },
-    { question: 'Do you provide wedding car rental in Kolkata?', answer: 'Yes, we offer premium wedding car rental services in Kolkata with flower decoration, ribbon decoration, red carpet, and professional chauffeurs. Decorated Innova Crysta, Fortuner, and luxury sedans for baraat, vidaai, and wedding functions.' },
-    { question: 'What payment methods do you accept?', answer: 'We accept Cash, UPI (Google Pay, PhonePe, Paytm), Credit/Debit Cards, and Online Bank Transfers. Payment can be made before or after the trip as per your convenience.' },
+    { question: `How do I reach ${BUSINESS.name}?`, answer: `Ring ${BUSINESS.phone} or ping us on WhatsApp at any hour. Our desk runs 24/7, all 365 days, for cab bookings across Kolkata and the eastern states.` },
+    { question: 'Which cities can I book a cab from?', answer: `Our network covers West Bengal, Jharkhand, Odisha, Bihar, and Uttar Pradesh, with Kolkata as the main hub. We serve 80+ towns and cities, among them Howrah, Siliguri, Darjeeling, Durgapur, Asansol, Ranchi, Bhubaneswar, Jamshedpur, and Patna.` },
+    { question: 'Which vehicles can I hire in Kolkata?', answer: 'We keep Sedans (Swift Dzire, Honda Amaze), SUVs (Ertiga, Innova, Innova Crysta), 12-17 seat Tempo Travellers, and Luxury rides such as Fortuner and Mercedes. Decorated wedding cars are available too.' },
+    { question: 'Is one-way taxi service available from Kolkata?', answer: 'Yes. One-way cabs run from Kolkata to every major city we serve — you pay only for the outward leg, with no return charge. It is the most economical way to travel point to point.' },
+    { question: 'What is the quickest way to book a cab in Kolkata?', answer: `Call ${BUSINESS.phone}, send a WhatsApp message, or fill the booking form on this site. You get instant confirmation and the fare before you confirm.` },
+    { question: 'Do you run cabs to and from Kolkata airport?', answer: `Yes — pickups and drops at Netaji Subhash Chandra Bose International Airport (CCU), Dum Dum. Sedans from ₹1,800, SUVs from ₹2,200. The chauffeur watches your flight and waits with a name board. Call ${BUSINESS.phone}.` },
+    { question: 'Which towns in West Bengal does the service cover?', answer: 'Every major town is covered: Kolkata, Howrah, Salt Lake, New Town, Siliguri, Darjeeling, Durgapur, Asansol, Kharagpur, Haldia, Malda, Cooch Behar, Krishnanagar, Bardhaman, Bankura, Midnapore, Kalyani, Barasat, Digha, Shantiniketan, and Murshidabad.' },
+    { question: 'What does a cab cost per kilometre in Kolkata?', answer: 'Sedans (Swift Dzire, Honda Amaze) start at ₹12/km, SUVs (Ertiga, Innova) at ₹16/km, Innova Crysta at ₹18/km, and Tempo Travellers at ₹22/km. Local hire begins at ₹1,800 for 4 hours/40 km. Fuel and driver are included — no hidden extras.' },
+    { question: 'Can I rent wedding cars in Kolkata?', answer: 'Yes. Our wedding fleet includes flower and ribbon-trimmed Innova Crysta, Fortuner, and luxury sedans, with red-carpet service and formally dressed chauffeurs — perfect for baraat, vidaai, and every function in between.' },
+    { question: 'How can I pay for my trip?', answer: 'Cash, UPI (Google Pay, PhonePe, Paytm), Credit/Debit Cards, and online bank transfers. Settle before or after the ride, whichever you prefer.' },
   ];
 
   const testimonials = [
-    { name: 'Rajesh Kumar', location: 'Kolkata', rating: 5, text: 'Excellent service! Booked a cab from Kolkata to Darjeeling. The driver was professional, car was clean, and the entire trip was very comfortable. Highly recommended!' },
-    { name: 'Priya Sharma', location: 'Salt Lake, Kolkata', rating: 5, text: 'Best cab service in Kolkata! Used their service for airport pickup from CCU. Very punctual — driver was waiting with a name board. Very affordable pricing.' },
-    { name: 'Amit Singh', location: 'Howrah', rating: 5, text: 'Booked a round trip from Kolkata to Puri. Everything was perfect — on time pickup, comfortable Innova, and the driver was like a guide sharing local knowledge.' },
-    { name: 'Sunita Devi', location: 'New Town, Kolkata', rating: 5, text: 'Used their wedding car rental service. The decorated Innova Crysta looked absolutely stunning. Everyone at the wedding was impressed. Thank you NK Cab & Taxi!' },
-    { name: 'Mohammed Iqbal', location: 'Park Street, Kolkata', rating: 5, text: 'Traveled from Kolkata to Varanasi. The one-way fare was very reasonable compared to other services. Clean car, experienced driver. Will definitely use again!' },
-    { name: 'Ananya Chatterjee', location: 'Ballygunge, Kolkata', rating: 5, text: 'Regular customer for over a year now. I use NK Cab & Taxi for my weekly outstation trips. Fixed rates, no surge pricing, always clean and well-maintained.' },
+    { name: 'Rajesh Kumar', location: 'Kolkata', rating: 5, text: 'Flawless ride from Kolkata to Darjeeling. The car was spotless, the driver courteous and careful, and the whole journey comfortable. I recommend them without hesitation.' },
+    { name: 'Priya Sharma', location: 'Salt Lake, Kolkata', rating: 5, text: 'Hands-down the best airport service in Kolkata. Picked us up from CCU right on time — driver at the gate with a name board. The fare was very reasonable.' },
+    { name: 'Amit Singh', location: 'Howrah', rating: 5, text: 'Booked the round trip to Puri. On-time pickup, a comfortable Innova, and a driver who doubled as a guide with local tips. Everything went without a hitch.' },
+    { name: 'Sunita Devi', location: 'New Town, Kolkata', rating: 5, text: 'Hired the wedding car service. The decorated Innova Crysta was gorgeous and the whole family loved it. A big thank you to the NK Cab & Taxi team!' },
+    { name: 'Mohammed Iqbal', location: 'Park Street, Kolkata', rating: 5, text: 'Rode from Kolkata to Varanasi on the one-way fare — far better value than any competitor. Clean car, seasoned driver, and I will definitely rebook.' },
+    { name: 'Ananya Chatterjee', location: 'Ballygunge, Kolkata', rating: 5, text: 'A loyal customer for over a year on my weekly outstation runs. Fixed rates, zero surge surprises, and the cars are always clean and well kept.' },
   ];
 
   const wbCities = [
@@ -167,21 +167,21 @@ export default async function HomePage() {
               {/* Trust pill */}
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-xs sm:text-sm mb-5 border border-white/20 shadow-md">
                 <span className="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse shadow-sm shadow-green-400" />
-                <span className="text-white font-medium">★ 4.8 Google Rating — Serving 80+ Cities Across East India</span>
+                <span className="text-white font-medium">★ Rated 4.8 on Google — 80+ Cities in Five States</span>
               </div>
 
               {/* Main Heading */}
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.15] mb-4">
-                <span className="text-[#FF6B00]">NK Cab &amp; Taxi</span> — Best Taxi Booking ₹12/km
+                <span className="text-[#FF6B00]">NK Cab &amp; Taxi</span> — Kolkata&apos;s Trusted Taxi from ₹12/km
               </h1>
 
               {/* Subheading */}
               <h2 className="text-lg sm:text-2xl font-bold text-white/95 mb-4">
-                Local Taxi, Outstation Cab &amp; Airport Transfer in Kolkata | 24/7
+                City Rides, Outstation Cars &amp; Airport Pickups — Kolkata | Always Open
               </h2>
 
               <p className="text-gray-200 text-sm sm:text-base leading-relaxed mb-6 max-w-2xl">
-                Trusted Kolkata cab service for local taxi, outstation cab booking, airport transfer, one-way taxi, car rental &amp; wedding car. AC sedan ₹12/km, SUV ₹16/km. Book cab in Kolkata online or by call — no surge pricing, 24/7.
+                Kolkata&apos;s go-to provider for city rides, outstation bookings, airport drops, one-way hires, car rental &amp; wedding fleets. AC sedans from ₹12/km, SUVs from ₹16/km. Reserve on the site or by phone — flat fares, never surge, round the clock.
               </p>
 
               {/* Action Buttons matching screenshot */}
@@ -191,21 +191,21 @@ export default async function HomePage() {
                   className="inline-flex items-center justify-center gap-3 px-7 py-4 bg-[#FF6B00] hover:bg-[#e05e00] text-white rounded-full text-base font-bold shadow-lg transition-all animate-nk-pulse"
                 >
                   <Phone size={20} />
-                  Call Now: {BUSINESS.phoneDisplay}
+                  Call Us Now: {BUSINESS.phoneDisplay}
                 </a>
                 <a
                   href="#booking-form"
                   className="inline-flex items-center justify-center gap-2.5 px-7 py-4 bg-white/15 hover:bg-white/25 text-white rounded-full text-base font-bold border border-white/30 backdrop-blur-md transition-all"
                 >
-                  Book Online →
+                  Reserve a Cab →
                 </a>
               </div>
 
               {/* Trust Badges with Green Checkmarks matching screenshot */}
               <div className="flex flex-wrap gap-x-5 gap-y-2 text-xs sm:text-sm text-gray-200 font-medium">
-                <span className="flex items-center gap-1.5"><CheckCircle size={15} className="text-green-400" /> Best Cab Service Kolkata</span>
-                <span className="flex items-center gap-1.5"><CheckCircle size={15} className="text-green-400" /> No Surge Pricing 24/7</span>
-                <span className="flex items-center gap-1.5"><CheckCircle size={15} className="text-green-400" /> ★4.8 Rated — 5000+ Customers</span>
+                <span className="flex items-center gap-1.5"><CheckCircle size={15} className="text-green-400" /> Top-Rated Cabs in Kolkata</span>
+                <span className="flex items-center gap-1.5"><CheckCircle size={15} className="text-green-400" /> Fixed Fares at Every Hour</span>
+                <span className="flex items-center gap-1.5"><CheckCircle size={15} className="text-green-400" /> ★4.8 from 5,000+ Riders</span>
               </div>
             </div>
 
@@ -259,10 +259,10 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
-              { value: '5,000+', label: 'Happy Customers', sub: 'Across East India', icon: <Users className="w-6 h-6" />, color: 'from-orange-500 to-amber-400' },
-              { value: '500+', label: 'Routes Covered', sub: '5 States · 80+ Cities', icon: <Route className="w-6 h-6" />, color: 'from-orange-600 to-orange-400' },
-              { value: '₹12/km', label: 'Starting Fare', sub: 'AC Sedan · No Surge', icon: <TrendingUp className="w-6 h-6" />, color: 'from-amber-500 to-yellow-400' },
-              { value: '4.8★', label: 'Google Rating', sub: '2,847+ Reviews', icon: <Star className="w-6 h-6" />, color: 'from-orange-500 to-red-400' },
+              { value: '5,000+', label: 'Satisfied Riders', sub: 'Across East India', icon: <Users className="w-6 h-6" />, color: 'from-orange-500 to-amber-400' },
+              { value: '500+', label: 'Intercity Routes', sub: '5 States · 80+ Cities', icon: <Route className="w-6 h-6" />, color: 'from-orange-600 to-orange-400' },
+              { value: '₹12/km', label: 'Base Fare', sub: 'AC Sedan · No Surge', icon: <TrendingUp className="w-6 h-6" />, color: 'from-amber-500 to-yellow-400' },
+              { value: '4.8★', label: 'Google Score', sub: '2,847+ Reviews', icon: <Star className="w-6 h-6" />, color: 'from-orange-500 to-red-400' },
             ].map((stat, i) => (
               <div key={i} className="bg-white rounded-2xl p-5 sm:p-6 border border-[rgba(255,107,0,0.08)] shadow-sm card-hover">
                 <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center text-white mb-4 shadow-orange`}>
@@ -506,8 +506,8 @@ export default async function HomePage() {
             <div className="hidden md:block absolute top-10 left-[18%] right-[18%] h-0.5 bg-gradient-to-r from-[#FF6B00] via-[#F5A623] to-[#FF6B00] rounded-full opacity-30" />
             {[
               { step: '01', icon: <Phone size={28} />, title: 'Call or WhatsApp', desc: `Dial ${BUSINESS.phone} or WhatsApp us. Share your route, date, time, and passenger count.` },
-              { step: '02', icon: <Car size={28} />, title: 'Choose Vehicle', desc: 'Pick from Sedan, SUV, Innova Crysta, or Tempo Traveller. Get instant fare quote.' },
-              { step: '03', icon: <MapPin size={28} />, title: 'Enjoy Your Ride', desc: 'Driver reaches on time with confirmation. GPS-tracked, AC vehicle, verified driver.' },
+              { step: '02', icon: <Car size={28} />, title: 'Pick Your Car', desc: 'Choose between Sedan, SUV, Innova Crysta, or Tempo Traveller for an instant quote.' },
+              { step: '03', icon: <MapPin size={28} />, title: 'Get on the Road', desc: 'Chauffeur arrives on time, GPS-tracked AC car, verified driver, confirmation shared.' },
             ].map((item, i) => (
               <div key={i} className="relative bg-white rounded-2xl p-8 border border-gray-100 shadow-sm card-hover text-center">
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-[#FF6B00] rounded-full flex items-center justify-center text-white text-xs font-bold">
@@ -551,8 +551,8 @@ export default async function HomePage() {
             ))}
           </div>
           <div className="mt-8 text-center">
-            <Link href="/west-bengal/kolkata" className="inline-flex items-center gap-2 px-7 py-3.5 btn-dark rounded-full font-semibold">
-              View All Kolkata Routes <ArrowRight size={16} />
+              <Link href="/west-bengal/kolkata" className="inline-flex items-center gap-2 px-7 py-3.5 btn-dark rounded-full font-semibold">
+              Browse Kolkata Routes <ArrowRight size={16} />
             </Link>
           </div>
         </div>
@@ -600,8 +600,8 @@ export default async function HomePage() {
             ))}
           </div>
           <div className="text-center mt-8">
-            <Link href="/fleet" className="inline-flex items-center gap-2 px-7 py-3.5 btn-dark rounded-full font-semibold">
-              View Full Fleet <ArrowRight size={16} />
+              <Link href="/fleet" className="inline-flex items-center gap-2 px-7 py-3.5 btn-dark rounded-full font-semibold">
+              See the Complete Fleet <ArrowRight size={16} />
             </Link>
           </div>
         </div>
@@ -614,19 +614,19 @@ export default async function HomePage() {
             <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-[rgba(255,107,0,0.3)] rounded-full text-[#FF6B00] text-xs font-semibold uppercase tracking-wider mb-4">
               🏆 Why NK Cab & Taxi
             </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">
-              Trusted by <span className="text-gradient">5,000+</span> Travelers
-            </h2>
-            <p className="text-gray-400 max-w-xl mx-auto">Here&apos;s why Kolkata&apos;s travelers choose us over Ola, Uber, and other local operators.</p>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">
+                <span className="text-gradient">5,000+</span> Riders Rely on Us
+              </h2>
+              <p className="text-gray-400 max-w-xl mx-auto">Here is why so many riders in Kolkata choose us over app taxis and local fleets.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              { icon: <Shield className="w-7 h-7" />, title: '100% Verified Drivers', desc: 'Police-verified, background-checked drivers with 5+ years commercial experience.' },
-              { icon: <Clock className="w-7 h-7" />, title: '24/7 — No Surge Ever', desc: 'Same fixed rate at 3 AM, during Durga Puja, or on any holiday. No surge pricing.' },
-              { icon: <CreditCard className="w-7 h-7" />, title: 'Transparent Pricing', desc: 'All-inclusive fares. Toll, parking communicated upfront. Zero hidden charges.' },
-              { icon: <Zap className="w-7 h-7" />, title: 'Instant Confirmation', desc: 'WhatsApp booking confirmed in under 2 minutes with driver name & number.' },
-              { icon: <MapPin className="w-7 h-7" />, title: '80+ Cities · 500+ Routes', desc: 'WB, Jharkhand, Odisha, Bihar, UP. Local, outstation, one-way all available.' },
-              { icon: <Headphones className="w-7 h-7" />, title: 'Always Reachable', desc: '24/7 phone support. No bot, no IVR — a real person picks up every call.' },
+              { icon: <Shield className="w-7 h-7" />, title: 'Police-Checked Chauffeurs', desc: 'Every driver is verified and vetted, with 5+ years of commercial experience.' },
+              { icon: <Clock className="w-7 h-7" />, title: 'One Fixed Rate, Always', desc: 'The same fare at 3 AM, on Durga Puja, or on a public holiday. No surge, period.' },
+              { icon: <CreditCard className="w-7 h-7" />, title: 'Fares With No Surprises', desc: 'All-inclusive quotes. Toll and parking are flagged before you book. Zero extras.' },
+              { icon: <Zap className="w-7 h-7" />, title: 'Fast WhatsApp Booking', desc: 'Ride confirmed in under 2 minutes with the driver name and number.' },
+              { icon: <MapPin className="w-7 h-7" />, title: 'Five States · 500+ Routes', desc: 'WB, Jharkhand, Odisha, Bihar, UP — local, outstation, and one-way trips.' },
+              { icon: <Headphones className="w-7 h-7" />, title: 'A Human Answers', desc: '24/7 phone support with no bot and no IVR — a real person, every call.' },
             ].map((item, i) => (
               <div key={i} className="glass-orange rounded-2xl p-6 card-hover border border-[rgba(255,107,0,0.1)]">
                 <div className="w-12 h-12 bg-[#FF6B00]/20 rounded-xl flex items-center justify-center text-[#FF6B00] mb-4">
@@ -656,13 +656,13 @@ export default async function HomePage() {
                 </thead>
                 <tbody>
                   {[
-                    ['Surge Pricing', '❌ Never — Fixed 24/7', '✅ 2-3x during rain/festivals'],
-                    ['Outstation (500+ routes)', '✅ All major cities covered', '❌ Limited availability'],
-                    ['Airport Pickup (CCU)', '✅ ₹1,800 flat, flight tracking', '⚠️ Surge pricing variable'],
-                    ['Cancellations', '❌ Zero cancellations policy', '✅ Frequent driver cancellations'],
-                    ['Wedding Cars', '✅ Decorated cars, red carpet', '❌ Not available'],
-                    ['Corporate GST Billing', '✅ Monthly contracts, GST invoice', '❌ Limited support'],
-                    ['WhatsApp Booking', '✅ Confirm in 2 minutes', '❌ App-only booking'],
+                    ['Surge Pricing', '❌ Never — flat round the clock', '✅ 2-3x in rain or festival season'],
+                    ['Outstation (500+ routes)', '✅ Every major city reachable', '❌ Patchy availability'],
+                    ['Airport Pickup (CCU)', '✅ ₹1,800 flat + flight tracking', '⚠️ Fare shifts with demand'],
+                    ['Cancellations', '❌ No-cancel policy', '✅ Drivers cancel often'],
+                    ['Wedding Cars', '✅ Decorated fleet, red carpet', '❌ Not offered'],
+                    ['Corporate GST Billing', '✅ Monthly plans, GST invoice', '❌ Weak support'],
+                    ['WhatsApp Booking', '✅ Confirmed in two minutes', '❌ App login required'],
                   ].map(([feature, us, them], i) => (
                     <tr key={i} className="border-b border-white/5">
                       <td className="px-5 py-3.5 text-gray-300 text-sm font-medium">{feature}</td>
@@ -685,7 +685,7 @@ export default async function HomePage() {
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#0D1B2A] mb-3">
               What Kolkata <span className="text-gradient">Travelers Say</span>
             </h2>
-            <p className="text-gray-500">5,000+ customers trust NK Cab & Taxi across Kolkata & East India</p>
+            <p className="text-gray-500">4.8 stars from riders across the city and eastern India</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {testimonials.map((t, i) => (
@@ -711,7 +711,7 @@ export default async function HomePage() {
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#0D1B2A] rounded-full text-white text-sm">
               <Star size={14} className="text-[#F5A623] fill-[#F5A623]" />
-              <span>4.8/5 rating · 2,847+ Google reviews</span>
+              <span>★ 4.8 average from 2,847+ Google reviews</span>
             </div>
             <a href={BUSINESS.gbpReviewLink} target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 btn-primary rounded-full text-sm font-bold">
@@ -727,7 +727,7 @@ export default async function HomePage() {
       {/* ═══ GOOGLE MAP ═══ */}
       <GoogleMapEmbed
         title="Our Service Area — Kolkata & East India"
-        subtitle="NK Cab & Taxi covers 80+ cities across West Bengal, Jharkhand, Odisha, Bihar & Uttar Pradesh."
+        subtitle="Reaching 80+ cities across West Bengal, Jharkhand, Odisha, Bihar & Uttar Pradesh."
       />
 
       {/* ═══ FESTIVAL CAB SERVICE ═══ */}
@@ -742,10 +742,10 @@ export default async function HomePage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
-              { emoji: '🪔', title: 'Durga Puja Cab', desc: 'Pandal hopping, airport transfers, outstation. Dedicated cabs for all 5 days.', period: 'Sep–Oct' },
-              { emoji: '🎆', title: 'Diwali & Kali Puja', desc: 'Safe late-night cab rides during celebrations. Family travel, party drops.', period: 'Oct–Nov' },
-              { emoji: '🎄', title: 'Christmas & New Year', desc: 'Airport transfers, party transportation, outstation trips.', period: 'Dec–Jan' },
-              { emoji: '☀️', title: 'Summer Holiday Cab', desc: 'Darjeeling, Puri, Digha, Sundarbans packages with AC cab.', period: 'Apr–Jun' },
+              { emoji: '🪔', title: 'Durga Puja Cab', desc: 'Pandal hopping, airport runs, outstation — dedicated cars across all 5 days.', period: 'Sep–Oct' },
+              { emoji: '🎆', title: 'Diwali & Kali Puja', desc: 'Safe late-night pickups through the festivities — family outings and party drops.', period: 'Oct–Nov' },
+              { emoji: '🎄', title: 'Christmas & New Year', desc: 'Airport runs, party movement, and outstation journeys.', period: 'Dec–Jan' },
+              { emoji: '☀️', title: 'Summer Holiday Cab', desc: 'AC packages to Darjeeling, Puri, Digha, and Sundarbans.', period: 'Apr–Jun' },
             ].map((item, i) => (
               <div key={i} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm card-hover">
                 <div className="text-4xl mb-4">{item.emoji}</div>
@@ -769,9 +769,9 @@ export default async function HomePage() {
             <div className="absolute -inset-1 bg-gradient-to-br from-[#FF6B00]/20 to-[#F5A623]/20 rounded-3xl blur-xl" />
             <div className="relative glass-dark rounded-3xl p-10 border border-[rgba(255,107,0,0.2)]">
               <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">
-                Book Your <span className="text-gradient">Kolkata Cab</span> Now!
+                Reserve Your <span className="text-gradient">Kolkata Taxi</span> Today
               </h2>
-              <p className="text-gray-400 mb-8">24/7 available. Confirm in under 2 minutes. No app needed.</p>
+              <p className="text-gray-400 mb-8">Open round the clock. Confirmed in under two minutes, no app download.</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center justify-center gap-3 px-8 py-4 btn-primary rounded-2xl text-lg font-bold shadow-orange-lg">
                   <Phone size={22} /> {BUSINESS.phoneDisplay}
@@ -845,9 +845,9 @@ export default async function HomePage() {
                   <Plane size={18} className="text-[#FF6B00]" /> Kolkata Airport Transfer — Fixed Fares
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  NSCBI Airport (CCU) in Dum Dum — 30-45 min drive from Kolkata. Flight tracking included, driver waits with name board.
+                  NSCBI Airport (CCU) sits in Dum Dum, 30-45 min from the city. We monitor arrivals in real time, and the chauffeur is at the arrivals gate holding a name board.
                   <br /><strong>Sample fares:</strong> Airport → Salt Lake ₹1,200 · Airport → Howrah ₹800 · Airport → Park Street ₹700 (Sedan).
-                  Fixed pricing — no surge even during rain or peak hours.
+                  Rates are locked — no surge in rain or rush hours.
                 </p>
               </div>
 

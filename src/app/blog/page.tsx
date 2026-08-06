@@ -11,21 +11,21 @@ import blogsData from '@/data/blogs.json';
 export const dynamic = 'force-static';
 export const revalidate = false;
 export const metadata: Metadata = {
-  title: { absolute: `Travel Blog — NK Cab & Taxi | Route Guides, Tips & Fare Charts` },
-  description: `Read travel guides, route tips, fare charts, and booking guides from ${BUSINESS.name}. Expert advice for cab travel in Kolkata and across East India. Updated 2026.`,
+  title: { absolute: `Kolkata Travel Blog — NK Cab & Taxi | Route Guides, Tips & Fare Charts` },
+  description: `Browse route guides, travel tips, fare charts, and booking how-tos from ${BUSINESS.name}. Practical advice for cab journeys in Kolkata and across East India. Refreshed for 2026.`,
   openGraph: {
-    title: `Travel Blog — ${BUSINESS.name} | Route Guides & Cab Tips`,
-    description: `Travel guides, route tips, fare charts and expert advice for cab travel in Kolkata & East India. Updated 2026.`,
+    title: `Kolkata Travel Blog — ${BUSINESS.name} | Route Guides & Cab Tips`,
+    description: `Route guides, fare charts, and expert tips for cab travel in Kolkata and East India. Updated 2026.`,
     url: `${BUSINESS.domain}/blog`,
     siteName: BUSINESS.name,
     locale: 'en_IN',
     type: 'website',
-    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: `Travel Blog — ${BUSINESS.name}` }],
+    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: `Kolkata Travel Blog — ${BUSINESS.name}` }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: `Travel Blog — ${BUSINESS.name} | Route Guides & Cab Tips`,
-    description: `Expert travel guides, fare charts and booking tips for Kolkata & East India cab travel.`,
+    title: `Kolkata Travel Blog — ${BUSINESS.name} | Route Guides & Cab Tips`,
+    description: `Practical travel guides, fare charts, and booking tips for cab trips in Kolkata and East India.`,
     images: [`${BUSINESS.domain}/navbanner.webp`],
   },
   alternates: { canonical: `${BUSINESS.domain}/blog` },
@@ -52,8 +52,8 @@ export default function BlogListPage() {
       ])) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBlogListingSchema(blogs)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateWebPageSchema(
-        'Travel Blog — NK Cab & Taxi',
-        'Travel guides, route tips, fare charts, and booking guides from NK Cab & Taxi.',
+        'Kolkata Travel Blog — NK Cab & Taxi',
+        'Route guides, travel tips, fare charts, and booking how-tos from NK Cab & Taxi.',
         `${BUSINESS.domain}/blog`,
         'CollectionPage'
       )) }} />
@@ -66,9 +66,9 @@ export default function BlogListPage() {
             { name: 'Blog', href: '/blog' },
           ]} />
           <h1 className="text-3xl md:text-4xl font-extrabold mt-4 mb-3">
-            Travel <span className="text-gradient">Blog</span> — Guides, Tips & Fare Charts
+            Travel <span className="text-gradient">Blog</span> — Route Guides, Tips & Fare Charts
           </h1>
-          <p className="text-gray-300 max-w-3xl">Expert travel guides, route information, fare charts, and booking tips from NK Cab & Taxi. Plan your perfect trip.</p>
+          <p className="text-gray-300 max-w-3xl">Route guides, fare charts, and booking tips from NK Cab & Taxi to help you plan a smooth journey.</p>
         </div>
       </section>
 
@@ -95,7 +95,7 @@ export default function BlogListPage() {
                   <div className="flex items-center justify-between">
                     <span className="text-xs text-gray-400">{new Date(blog.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
                     <span className="inline-flex items-center gap-1 text-primary text-sm font-semibold group-hover:gap-2 transition-all">
-                      Read <ChevronRight size={14} />
+                      Open <ChevronRight size={14} />
                     </span>
                   </div>
                 </div>
@@ -109,7 +109,7 @@ export default function BlogListPage() {
       <GoogleMapEmbed />
 
       {/* Internal Links — city, service & route pages */}
-      <section className="py-10 bg-white" aria-label="Explore cab services">
+      <section className="py-10 bg-white" aria-label="Browse cab services">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-xl font-bold text-secondary mb-6">
             Explore <span className="text-primary">Cab Services</span>
@@ -117,7 +117,7 @@ export default function BlogListPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Top Cities */}
             <div>
-              <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-3">Top Cities</h3>
+              <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-3">Popular Cities</h3>
               <ul className="space-y-2">
                 {[
                   { label: 'Cab Service in Kolkata', href: '/west-bengal/kolkata' },
@@ -161,7 +161,7 @@ export default function BlogListPage() {
             </div>
             {/* Popular Routes */}
             <div>
-              <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-3">Popular Routes</h3>
+              <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-3">Top Routes</h3>
               <ul className="space-y-2">
                 {[
                   { label: 'Kolkata to Puri Cab', href: '/routes/kolkata-to-puri-cab' },
@@ -187,8 +187,8 @@ export default function BlogListPage() {
 
       <section className="py-12 bg-gradient-to-r from-primary to-amber-500">
         <div className="max-w-4xl mx-auto px-4 text-center text-white">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">Need a Cab? Book Now!</h2>
-          <p className="text-white/90 mb-6">Call us 24/7 for instant booking across 80+ cities in East India.</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">Need a Cab? Reserve Now!</h2>
+          <p className="text-white/90 mb-6">Reach us anytime for quick booking across 80+ cities in East India.</p>
           <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
             📞 {BUSINESS.phone}
           </a>

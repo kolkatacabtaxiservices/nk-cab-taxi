@@ -16,7 +16,7 @@ const GoogleMapEmbed = nextDynamic(() => import('@/components/GoogleMapEmbed'), 
     <div className="py-16 text-center">
       <div className="inline-flex items-center gap-3 px-6 py-3 bg-gray-50 rounded-full text-gray-400 text-sm border border-gray-100">
         <div className="w-4 h-4 border-2 border-primary/30 border-t-primary rounded-full animate-spin" />
-        Loading map&hellip;
+        Preparing map&hellip;
       </div>
     </div>
   ),
@@ -26,7 +26,7 @@ const FareCalculator = nextDynamic(() => import('@/components/FareCalculator'), 
     <div className="py-20 text-center">
       <div className="inline-flex items-center gap-3 px-6 py-3 bg-gray-50 rounded-full text-gray-400 text-sm border border-gray-100">
         <div className="w-4 h-4 border-2 border-primary/30 border-t-primary rounded-full animate-spin" />
-        Calculating fares&hellip;
+        Estimating fares&hellip;
       </div>
     </div>
   ),
@@ -164,13 +164,13 @@ export default async function RoutePage({ params }: { params: Promise<{ route: s
             { name: `${route.fromName} to ${route.toName}`, href: `/routes/${route.slug}` },
           ]} />
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold mt-4 mb-4">
-            {route.fromName} to {route.toName} <span className="text-gradient">Cab ₹{route.priceSaloon}</span> | Book Online 24/7
+            {route.fromName} to {route.toName} <span className="text-gradient">Cab Fare ₹{route.priceSaloon}</span> — Reserve Round the Clock
           </h1>
           {((fromCity?.alternateNames && fromCity.alternateNames.length > 0) || (toCity?.alternateNames && toCity.alternateNames.length > 0)) && (
             <p className="text-xs text-gray-300 font-medium mb-3 italic">
-              {fromCity?.alternateNames && fromCity.alternateNames.length > 0 && `Also known as: ${fromCity.alternateNames.join(', ')} (pickup)`}
+              {fromCity?.alternateNames && fromCity.alternateNames.length > 0 && `Aliases: ${fromCity.alternateNames.join(', ')} (pickup point)`}
               {fromCity?.alternateNames && fromCity.alternateNames.length > 0 && toCity?.alternateNames && toCity.alternateNames.length > 0 && ` | `}
-              {toCity?.alternateNames && toCity.alternateNames.length > 0 && `Also known as: ${toCity.alternateNames.join(', ')} (drop)`}
+              {toCity?.alternateNames && toCity.alternateNames.length > 0 && `Aliases: ${toCity.alternateNames.join(', ')} (drop-off point)`}
             </p>
           )}
 
@@ -178,7 +178,7 @@ export default async function RoutePage({ params }: { params: Promise<{ route: s
           <div className="flex flex-wrap gap-3 text-sm text-gray-300 mb-6">
             <span className="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-full"><MapPin size={14} /> {route.distance} km</span>
             <span className="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-full"><Clock size={14} /> {route.duration} hours</span>
-            <span className="flex items-center gap-1.5 bg-primary/30 px-3 py-1.5 rounded-full font-semibold">From ₹{route.priceSaloon}</span>
+            <span className="flex items-center gap-1.5 bg-primary/30 px-3 py-1.5 rounded-full font-semibold">Starts at ₹{route.priceSaloon}</span>
             {route.via.length > 0 && (
               <span className="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-full"><Navigation size={14} /> via {route.via[0]}</span>
             )}
@@ -187,7 +187,7 @@ export default async function RoutePage({ params }: { params: Promise<{ route: s
           {/* Reverse Route Link */}
           <div className="flex flex-wrap gap-3 items-center mb-4">
             <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-amber-500 text-white font-bold rounded-full shadow-lg">
-              <Phone size={18} /> Book Now: {BUSINESS.phone}
+              <Phone size={18} /> Call to Book: {BUSINESS.phone}
             </a>
             {hasReverseRoute && (
             <Link href={`/routes/${content.reverseRouteSlug}`} className="inline-flex items-center gap-2 px-4 py-2.5 bg-white/10 text-white/90 text-sm rounded-full hover:bg-white/20 transition-colors border border-white/20">
@@ -208,39 +208,39 @@ export default async function RoutePage({ params }: { params: Promise<{ route: s
               <div className="mb-6 p-5 bg-amber-50 border border-amber-200 rounded-2xl flex flex-col md:flex-row gap-4 items-center" itemProp="description">
                 <div className="flex-1 w-full">
                   <h3 className="text-base font-bold text-secondary mb-3 flex items-center gap-2">
-                    ⚡ Quick Answer — {route.fromName} to {route.toName} Cab
+                    ⚡ Fast Facts — {route.fromName} to {route.toName} Cab
                   </h3>
                   <dl className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
                     <div className="bg-white rounded-xl p-3 text-center border border-amber-100">
-                      <dt className="text-xs text-gray-400 mb-1">Distance</dt>
+                      <dt className="text-xs text-gray-400 mb-1">Route Length</dt>
                       <dd className="font-bold text-secondary">{route.distance} km</dd>
                     </div>
                     <div className="bg-white rounded-xl p-3 text-center border border-amber-100">
-                      <dt className="text-xs text-gray-400 mb-1">Travel Time</dt>
+                      <dt className="text-xs text-gray-400 mb-1">Journey Time</dt>
                       <dd className="font-bold text-secondary">{route.duration} hrs</dd>
                     </div>
                     <div className="bg-white rounded-xl p-3 text-center border border-amber-100">
-                      <dt className="text-xs text-gray-400 mb-1">Sedan Fare</dt>
+                      <dt className="text-xs text-gray-400 mb-1">Sedan Cost</dt>
                       <dd className="font-bold text-primary">₹{route.priceSaloon}</dd>
                     </div>
                     <div className="bg-white rounded-xl p-3 text-center border border-amber-100">
-                      <dt className="text-xs text-gray-400 mb-1">SUV Fare</dt>
+                      <dt className="text-xs text-gray-400 mb-1">SUV Cost</dt>
                       <dd className="font-bold text-primary">₹{route.priceSuv}</dd>
                     </div>
                   </dl>
                   {route.via.length > 0 && (
                     <p className="text-xs text-gray-500 mt-3">
-                      📍 Route: {route.fromName} → {route.via.join(' → ')} → {route.toName}
+                      📍 Pathway: {route.fromName} → {route.via.join(' → ')} → {route.toName}
                     </p>
                   )}
                   <p className="text-xs text-gray-500 mt-1">
-                    📞 Book instantly: <a href={`tel:${BUSINESS.phone}`} className="text-primary font-semibold hover:underline">{BUSINESS.phone}</a> | One-way &amp; round trip available 24/7
+                    📞 Reserve right away: <a href={`tel:${BUSINESS.phone}`} className="text-primary font-semibold hover:underline">{BUSINESS.phone}</a> | One-way and round-trip options open 24/7
                   </p>
                 </div>
                 <div className="relative w-full md:w-48 h-32 rounded-xl overflow-hidden shrink-0 border border-amber-200 shadow-sm">
                   <Image
                     src="/navbanner.webp"
-                    alt={`NK Cab & Taxi — ${route.fromName} to ${route.toName} Cab booking`}
+                    alt={`${route.fromName} to ${route.toName} taxi hire by NK Cab & Taxi`}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 192px"
@@ -250,21 +250,21 @@ export default async function RoutePage({ params }: { params: Promise<{ route: s
               </div>
 
               {/* Rich About Content */}
-              <h2 className="text-2xl font-bold text-secondary mb-4">{route.fromName} to {route.toName} Cab — Taxi Fare, Distance &amp; Booking</h2>
+              <h2 className="text-2xl font-bold text-secondary mb-4">{route.fromName} to {route.toName} — Taxi Fare Guide, Distance &amp; Booking</h2>
               {content.aboutContent.map((para, i) => (
                 <p key={i} className="text-gray-600 mb-4 leading-relaxed">{formatBoldText(para)}</p>
               ))}
 
               {/* Pricing Table */}
-              <h3 className="text-xl font-bold text-secondary mt-8 mb-4">Cab Fare from {route.fromName} to {route.toName}</h3>
+              <h3 className="text-xl font-bold text-secondary mt-8 mb-4">Pricing for the {route.fromName} to {route.toName} Trip</h3>
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100">
                   <thead>
                     <tr className="bg-secondary text-white">
-                      <th className="px-4 py-3 text-left text-sm">Vehicle</th>
-                      <th className="px-4 py-3 text-left text-sm">Models</th>
-                      <th className="px-4 py-3 text-center text-sm">Capacity</th>
-                      <th className="px-4 py-3 text-right text-sm">Fare (One-Way)</th>
+                      <th className="px-4 py-3 text-left text-sm">Car</th>
+                      <th className="px-4 py-3 text-left text-sm">Model Names</th>
+                      <th className="px-4 py-3 text-center text-sm">Seats</th>
+                      <th className="px-4 py-3 text-right text-sm">One-Way Price</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -289,55 +289,55 @@ export default async function RoutePage({ params }: { params: Promise<{ route: s
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-gray-400 mt-2">* Prices include fuel, driver charges. Toll and parking extra.</p>
+              <p className="text-xs text-gray-400 mt-2">* Quoted rates cover fuel and driver fees; tolls and parking are billed separately.</p>
 
               {/* Cab vs Train vs Bus Comparison Table */}
-              <h3 className="text-xl font-bold text-secondary mt-8 mb-4">Cab vs Train vs Bus Comparison — {route.fromName} to {route.toName}</h3>
+              <h3 className="text-xl font-bold text-secondary mt-8 mb-4">Cab, Train or Bus? Comparison for {route.fromName} to {route.toName}</h3>
               <div className="overflow-x-auto rounded-xl border border-gray-100 shadow-sm">
                 <table className="w-full border-collapse bg-white">
                   <thead>
                     <tr className="bg-secondary text-white text-sm">
-                      <th className="px-4 py-3 text-left">Feature</th>
+                      <th className="px-4 py-3 text-left">Aspect</th>
                       <th className="px-4 py-3 text-center">NK Cab & Taxi</th>
-                      <th className="px-4 py-3 text-center">Train / Railway</th>
-                      <th className="px-4 py-3 text-center">Bus / Public Transport</th>
+                      <th className="px-4 py-3 text-center">Train</th>
+                      <th className="px-4 py-3 text-center">Bus / Public Transit</th>
                     </tr>
                   </thead>
                   <tbody className="text-sm text-gray-600">
                     <tr className="border-b border-gray-100">
-                      <td className="px-4 py-3 font-semibold text-secondary">Privacy &amp; Comfort</td>
-                      <td className="px-4 py-3 text-center text-green-600 font-medium bg-green-50/30 font-semibold">✅ 100% Private, AC, sanitized, stop anywhere</td>
-                      <td className="px-4 py-3 text-center">❌ Shared berths, crowded station rush</td>
-                      <td className="px-4 py-3 text-center">❌ Shared seats, fixed passenger stops</td>
+                      <td className="px-4 py-3 font-semibold text-secondary">Privacy and Comfort</td>
+                      <td className="px-4 py-3 text-center text-green-600 font-medium bg-green-50/30 font-semibold">✅ Fully private, AC, sanitised, halt anywhere</td>
+                      <td className="px-4 py-3 text-center">❌ Shared coaches, packed station crowds</td>
+                      <td className="px-4 py-3 text-center">❌ Shared seating, predetermined stops</td>
                     </tr>
                     <tr className="border-b border-gray-100 bg-gray-50/50">
-                      <td className="px-4 py-3 font-semibold text-secondary">Doorstep Pick &amp; Drop</td>
-                      <td className="px-4 py-3 text-center text-green-600 font-medium bg-green-50/30 font-semibold">✅ Yes, door-to-door, 24/7 pickup from home</td>
-                      <td className="px-4 py-3 text-center">❌ Station-to-station only, extra auto/taxi cost</td>
-                      <td className="px-4 py-3 text-center">❌ Bus stand-to-stand only, limited auto options</td>
+                      <td className="px-4 py-3 font-semibold text-secondary">Door-to-Door Pickup</td>
+                      <td className="px-4 py-3 text-center text-green-600 font-medium bg-green-50/30 font-semibold">✅ Yes — doorstep pickups and drops, day or night</td>
+                      <td className="px-4 py-3 text-center">❌ Terminus to terminus only; add auto fare</td>
+                      <td className="px-4 py-3 text-center">❌ Depot to depot only; few autos at stops</td>
                     </tr>
                     <tr className="border-b border-gray-100">
-                      <td className="px-4 py-3 font-semibold text-secondary">Schedule Flexibility</td>
-                      <td className="px-4 py-3 text-center text-green-600 font-medium bg-green-50/30 font-semibold">✅ Start anytime, change route, take rest stops</td>
-                      <td className="px-4 py-3 text-center">❌ Fixed train timings, delay risks</td>
-                      <td className="px-4 py-3 text-center">❌ Fixed bus schedules, delay risks</td>
+                      <td className="px-4 py-3 font-semibold text-secondary">Flexible Scheduling</td>
+                      <td className="px-4 py-3 text-center text-green-600 font-medium bg-green-50/30 font-semibold">✅ Depart on your schedule, detour and pause freely</td>
+                      <td className="px-4 py-3 text-center">❌ Rigid timetables, frequent delays</td>
+                      <td className="px-4 py-3 text-center">❌ Fixed bus runs, late-running risk</td>
                     </tr>
                     <tr className="border-b border-gray-100 bg-gray-50/50">
-                      <td className="px-4 py-3 font-semibold text-secondary">Luggage Convenience</td>
-                      <td className="px-4 py-3 text-center text-green-600 font-medium bg-green-50/30 font-semibold">✅ Unlimited trunk luggage space, no safety concern</td>
-                      <td className="px-4 py-3 text-center">❌ Hard to carry heavy bags, theft risk</td>
-                      <td className="px-4 py-3 text-center">❌ Limited baggage space, safety risk</td>
+                      <td className="px-4 py-3 font-semibold text-secondary">Baggage Handling</td>
+                      <td className="px-4 py-3 text-center text-green-600 font-medium bg-green-50/30 font-semibold">✅ Spacious boot for all your bags, no worries</td>
+                      <td className="px-4 py-3 text-center">❌ Heavy luggage is hard to manage; theft risk</td>
+                      <td className="px-4 py-3 text-center">❌ Restricted baggage allowance, safety concerns</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
 
               {/* Road Conditions */}
-              <h3 className="text-xl font-bold text-secondary mt-8 mb-4">Road Conditions — {route.fromName} to {route.toName}</h3>
+              <h3 className="text-xl font-bold text-secondary mt-8 mb-4">Driving Conditions on the {route.fromName} to {route.toName} Route</h3>
               <p className="text-gray-600 mb-4 leading-relaxed">{content.roadDescription}</p>
 
               {/* Travel Tips */}
-              <h3 className="text-xl font-bold text-secondary mt-8 mb-4">Travel Tips for {route.fromName} to {route.toName} Trip</h3>
+              <h3 className="text-xl font-bold text-secondary mt-8 mb-4">Handy Tips for Your {route.fromName} to {route.toName} Trip</h3>
               <div className="space-y-3">
                 {content.travelTips.map((tip, i) => (
                   <div key={i} className="flex items-start gap-3 p-3 bg-amber-50 rounded-xl border border-amber-100">
@@ -350,7 +350,7 @@ export default async function RoutePage({ params }: { params: Promise<{ route: s
               {/* Seasonal & Festival Travel Guide */}
               {content.seasonalContent && (
                 <>
-                  <h3 className="text-xl font-bold text-secondary mt-8 mb-4">Seasonal &amp; Festival Travel Guide</h3>
+                  <h3 className="text-xl font-bold text-secondary mt-8 mb-4">Festival and Seasonal Trip Notes</h3>
                   <div className="p-5 bg-blue-50/50 border border-blue-100 rounded-2xl text-sm text-gray-600 leading-relaxed">
                     {parseParagraphsWithBold(content.seasonalContent)}
                   </div>
@@ -358,17 +358,17 @@ export default async function RoutePage({ params }: { params: Promise<{ route: s
               )}
 
               {/* Why Choose Us */}
-              <h3 className="text-xl font-bold text-secondary mt-8 mb-4">Why Choose {BUSINESS.name} for {route.fromName} to {route.toName}?</h3>
+              <h3 className="text-xl font-bold text-secondary mt-8 mb-4">Why Take {route.fromName} to {route.toName} with {BUSINESS.name}?</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {[
-                  '24/7 availability with instant booking confirmation',
-                  'Experienced, police-verified drivers with route expertise',
-                  'Clean, well-maintained AC vehicles (sanitized before each trip)',
-                  'Real-time GPS tracking — share live location with family',
-                  'Flexible pickup from home, hotel, airport, or railway station',
-                  `Best price guarantee — starting ₹${route.priceSaloon} for Sedan`,
-                  'Free cancellation up to 4 hours before pickup',
-                  'No surge pricing — fixed fares 365 days a year',
+                  'Around-the-clock service with instant booking confirmation',
+                  'Route-savvy drivers who are verified and experienced',
+                  'Spotless AC cars, cleaned before every journey',
+                  'Live GPS tracking — keep your family posted on your location',
+                  'Pickup wherever you like: home, hotel, airport, or station',
+                  `Assured lowest rates — Sedan from ₹${route.priceSaloon}`,
+                  'Cancel at no cost up to 4 hours before pickup',
+                  'No surge pricing — stable fares all 365 days',
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-2 text-sm text-gray-600">
                     <span className="w-5 h-5 bg-green-100 text-green-600 rounded-full flex items-center justify-center shrink-0 text-xs">✓</span>
@@ -378,7 +378,7 @@ export default async function RoutePage({ params }: { params: Promise<{ route: s
               </div>
 
               {/* How to Book — Step by Step */}
-              <h3 className="text-xl font-bold text-secondary mt-8 mb-4">How to Book {route.fromName} to {route.toName} Cab</h3>
+              <h3 className="text-xl font-bold text-secondary mt-8 mb-4">Booking Your {route.fromName} to {route.toName} Cab</h3>
               <div className="space-y-4">
                 {content.bookingSteps.map((step) => (
                   <div key={step.step} className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl border border-gray-100">
@@ -396,11 +396,11 @@ export default async function RoutePage({ params }: { params: Promise<{ route: s
               {/* Pickup/Drop Points */}
               {(fromCity?.landmarks || toCity?.landmarks) && (
                 <>
-                  <h3 className="text-xl font-bold text-secondary mt-8 mb-4">Pickup & Drop Points</h3>
+                  <h3 className="text-xl font-bold text-secondary mt-8 mb-4">Pickup and Drop Locations</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {fromCity?.landmarks && (
                       <div className="p-4 bg-blue-50 rounded-xl border border-blue-100">
-                        <h4 className="font-semibold text-secondary mb-3 flex items-center gap-2"><MapPin size={16} className="text-primary" /> Pickup in {route.fromName}</h4>
+                        <h4 className="font-semibold text-secondary mb-3 flex items-center gap-2"><MapPin size={16} className="text-primary" /> Boarding in {route.fromName}</h4>
                         <div className="flex flex-wrap gap-2">
                           {fromCity.landmarks.map((l) => (
                             <span key={l} className="px-3 py-1 bg-white rounded-full text-xs text-gray-700 border border-gray-200">{l}</span>
@@ -412,7 +412,7 @@ export default async function RoutePage({ params }: { params: Promise<{ route: s
                     )}
                     {toCity?.landmarks && (
                       <div className="p-4 bg-green-50 rounded-xl border border-green-100">
-                        <h4 className="font-semibold text-secondary mb-3 flex items-center gap-2"><MapPin size={16} className="text-green-600" /> Drop in {route.toName}</h4>
+                        <h4 className="font-semibold text-secondary mb-3 flex items-center gap-2"><MapPin size={16} className="text-green-600" /> Alighting in {route.toName}</h4>
                         <div className="flex flex-wrap gap-2">
                           {toCity.landmarks.map((l) => (
                             <span key={l} className="px-3 py-1 bg-white rounded-full text-xs text-gray-700 border border-gray-200">{l}</span>
@@ -429,11 +429,11 @@ export default async function RoutePage({ params }: { params: Promise<{ route: s
               {/* About Destination */}
               {toCity && toCity.tourist && (
                 <>
-                  <h3 className="text-xl font-bold text-secondary mt-8 mb-4">About {route.toName} — Tourist Guide</h3>
+                  <h3 className="text-xl font-bold text-secondary mt-8 mb-4">Visiting {route.toName} — Quick Travel Guide</h3>
                   <p className="text-gray-600 mb-3">{toCity.description}</p>
                   {toCity.landmarks && (
                     <div>
-                      <h4 className="font-semibold text-secondary text-sm mb-2">Must-Visit Places in {route.toName}:</h4>
+                      <h4 className="font-semibold text-secondary text-sm mb-2">Top Attractions in {route.toName}:</h4>
                       <div className="flex flex-wrap gap-2">
                         {toCity.landmarks.map((l) => (
                           <span key={l} className="px-3 py-1.5 bg-accent rounded-full text-sm text-gray-700">{l}</span>
@@ -447,7 +447,7 @@ export default async function RoutePage({ params }: { params: Promise<{ route: s
               {/* About Source City */}
               {fromCity && fromCity.tourist && (
                 <>
-                  <h3 className="text-xl font-bold text-secondary mt-8 mb-4">About {route.fromName}</h3>
+                  <h3 className="text-xl font-bold text-secondary mt-8 mb-4">Getting to Know {route.fromName}</h3>
                   <p className="text-gray-600 mb-3">{fromCity.description}</p>
                 </>
               )}
@@ -457,7 +457,7 @@ export default async function RoutePage({ params }: { params: Promise<{ route: s
             <div className="lg:sticky lg:top-24 lg:self-start space-y-4">
               {/* Key Highlights */}
               <div className="p-4 bg-accent rounded-xl space-y-3">
-                <h4 className="font-bold text-secondary text-sm">Route Summary</h4>
+                <h4 className="font-bold text-secondary text-sm">Trip Snapshot</h4>
                 {content.keyHighlights.map((h, i) => (
                   <div key={i} className="flex justify-between text-sm">
                     <span className="text-gray-500">{h.label}</span>
@@ -468,7 +468,7 @@ export default async function RoutePage({ params }: { params: Promise<{ route: s
 
               {/* Quick call */}
               <div className="p-4 bg-secondary rounded-xl text-white text-center">
-                <p className="text-sm text-gray-300 mb-2">Need help? Call us now</p>
+                <p className="text-sm text-gray-300 mb-2">Need assistance? Ring us anytime</p>
                 <a href={`tel:${BUSINESS.phone}`} className="text-xl font-bold hover:text-primary transition-colors">
                   📞 {BUSINESS.phone}
                 </a>
@@ -479,7 +479,7 @@ export default async function RoutePage({ params }: { params: Promise<{ route: s
                 href={`https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(`Hi! I want to book a cab from ${route.fromName} to ${route.toName}.`)}`}
                 className="block w-full p-4 bg-green-500 text-white text-center rounded-xl font-bold hover:bg-green-600 transition-colors"
               >
-                💬 Book on WhatsApp
+                💬 Chat on WhatsApp
               </a>
             </div>
           </div>
@@ -508,8 +508,8 @@ export default async function RoutePage({ params }: { params: Promise<{ route: s
       {relatedRoutes.length > 0 && (
         <section className="py-12 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-2xl font-bold text-secondary mb-2">Other Cab Routes from <span className="text-primary">{route.fromName}</span></h2>
-            <p className="text-gray-500 text-sm mb-6">Explore more outstation routes from {route.fromName} with affordable pricing</p>
+            <h2 className="text-2xl font-bold text-secondary mb-2">More Outstation Routes from <span className="text-primary">{route.fromName}</span></h2>
+            <p className="text-gray-500 text-sm mb-6">Find budget-friendly trips from {route.fromName} beyond the city</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {relatedRoutes.map((r) => (
                 <Link key={r.slug} href={`/routes/${r.slug}`} className="group bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:shadow-md hover:border-primary/30 transition-all">
@@ -527,8 +527,8 @@ export default async function RoutePage({ params }: { params: Promise<{ route: s
       {localRoutesFrom.length > 0 && (
         <section className="py-12 bg-white">
           <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-2xl font-bold text-secondary mb-2">Popular Nearby Routes from <span className="text-primary">{route.fromName}</span></h2>
-            <p className="text-gray-500 text-sm mb-6">Explore nearby destinations from {route.fromName} with affordable cab service</p>
+            <h2 className="text-2xl font-bold text-secondary mb-2">Top Short-Haul Routes from <span className="text-primary">{route.fromName}</span></h2>
+            <p className="text-gray-500 text-sm mb-6">See close-by getaways from {route.fromName} at easy rates</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {localRoutesFrom.filter(r => r.slug !== route.slug).slice(0, 6).map((r) => (
                 <Link key={r.slug} href={`/routes/${r.slug}`} className="group bg-white rounded-xl border border-gray-100 p-4 shadow-sm hover:shadow-md hover:border-primary/30 transition-all">
@@ -553,8 +553,8 @@ export default async function RoutePage({ params }: { params: Promise<{ route: s
       {localRoutesTo.length > 0 && (
         <section className="py-12 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-2xl font-bold text-secondary mb-2">Continue from <span className="text-primary">{route.toName}</span> — Popular Routes</h2>
-            <p className="text-gray-500 text-sm mb-6">Continue your journey — explore nearby places from {route.toName}</p>
+            <h2 className="text-2xl font-bold text-secondary mb-2">Extend Your Trip from <span className="text-primary">{route.toName}</span></h2>
+            <p className="text-gray-500 text-sm mb-6">Carry on travelling — check out nearby towns from {route.toName}</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {localRoutesTo.filter(r => r.slug !== route.slug).slice(0, 6).map((r) => (
                 <Link key={r.slug} href={`/routes/${r.slug}`} className="group bg-white rounded-xl border border-gray-100 p-4 shadow-sm hover:shadow-md hover:border-primary/30 transition-all">
@@ -578,7 +578,7 @@ export default async function RoutePage({ params }: { params: Promise<{ route: s
       {/* FAQ  — Now with 12+ FAQs */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <FAQSection faqs={content.faqs} title={`Frequently Asked Questions — ${route.fromName} to ${route.toName} Cab Service`} />
+          <FAQSection faqs={content.faqs} title={`Common Questions — ${route.fromName} to ${route.toName} Cab`} />
         </div>
       </section>
 
@@ -593,70 +593,70 @@ export default async function RoutePage({ params }: { params: Promise<{ route: s
         fromLng={fromCity?.lng}
         toLat={toCity?.lat}
         toLng={toCity?.lng}
-        title={`${route.fromName} to ${route.toName} — Route Map & Directions`}
-        subtitle={`View the ${route.distance} km driving route from ${route.fromName} to ${route.toName}. Estimated travel time: ${route.duration} hours.`}
+        title={`${route.fromName} to ${route.toName} — Driving Map and Directions`}
+        subtitle={`See the ${route.distance} km road path from ${route.fromName} to ${route.toName}. Approximate drive time: ${route.duration} hours.`}
       />
 
       {/* Popular Searches — SEO Keyword Links (internal, crawlable) */}
       <section className="py-8 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <h3 className="text-sm font-semibold text-gray-400 mb-3">People Also Search For</h3>
+          <h3 className="text-sm font-semibold text-gray-400 mb-3">Popular Search Terms</h3>
           <div className="flex flex-wrap gap-2">
             {/* Route-specific internal links (first 15) — crawlable for SEO */}
             <Link href={`/routes/${route.from}-to-${route.to}`} className="px-3 py-1.5 bg-white border border-gray-200 rounded-full text-xs text-gray-600 hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-colors">
-              {route.fromName} to {route.toName} cab
+              {route.fromName} to {route.toName} taxi
             </Link>
             <Link href={`/routes/${route.to}-to-${route.from}`} className="px-3 py-1.5 bg-white border border-gray-200 rounded-full text-xs text-gray-600 hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-colors">
-              {route.toName} to {route.fromName} cab
+              {route.toName} to {route.fromName} taxi
             </Link>
             <Link href={`/${route.fromState}/${route.from}/outstation`} className="px-3 py-1.5 bg-white border border-gray-200 rounded-full text-xs text-gray-600 hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-colors">
-              outstation cab from {route.fromName}
+              outstation taxi from {route.fromName}
             </Link>
             <Link href={`/${route.fromState}/${route.from}/one-way`} className="px-3 py-1.5 bg-white border border-gray-200 rounded-full text-xs text-gray-600 hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-colors">
-              one way cab from {route.fromName}
+              one-way taxi from {route.fromName}
             </Link>
             <Link href={`/${route.toState}/${route.to}/outstation`} className="px-3 py-1.5 bg-white border border-gray-200 rounded-full text-xs text-gray-600 hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-colors">
-              outstation cab from {route.toName}
+              outstation taxi from {route.toName}
             </Link>
             <Link href={`/${route.toState}/${route.to}/one-way`} className="px-3 py-1.5 bg-white border border-gray-200 rounded-full text-xs text-gray-600 hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-colors">
-              one way cab from {route.toName}
+              one-way taxi from {route.toName}
             </Link>
             <Link href={`/${route.fromState}/${route.from}`} className="px-3 py-1.5 bg-white border border-gray-200 rounded-full text-xs text-gray-600 hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-colors">
-              cab service in {route.fromName}
+              taxi service in {route.fromName}
             </Link>
             <Link href={`/${route.toState}/${route.to}`} className="px-3 py-1.5 bg-white border border-gray-200 rounded-full text-xs text-gray-600 hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-colors">
-              cab service in {route.toName}
+              taxi service in {route.toName}
             </Link>
             <Link href={`/${route.fromState}/${route.from}/airport-transfer`} className="px-3 py-1.5 bg-white border border-gray-200 rounded-full text-xs text-gray-600 hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-colors">
-              {route.fromName} airport cab
+              {route.fromName} airport taxi
             </Link>
             <Link href={`/${route.toState}/${route.to}/airport-transfer`} className="px-3 py-1.5 bg-white border border-gray-200 rounded-full text-xs text-gray-600 hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-colors">
-              {route.toName} airport cab
+              {route.toName} airport taxi
             </Link>
             <Link href={`/${route.fromState}/${route.from}/round-trip`} className="px-3 py-1.5 bg-white border border-gray-200 rounded-full text-xs text-gray-600 hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-colors">
-              round trip from {route.fromName}
+              round-trip taxi from {route.fromName}
             </Link>
             <Link href={`/${route.toState}/${route.to}/round-trip`} className="px-3 py-1.5 bg-white border border-gray-200 rounded-full text-xs text-gray-600 hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-colors">
-              round trip from {route.toName}
+              round-trip taxi from {route.toName}
             </Link>
             {/* Vehicle-specific route links — hub routes get detail pages, others scroll to booking */}
             <Link href={isHubRoute(route.slug) ? `/routes/${route.slug}/sedan` : `/routes/${route.slug}#booking-form`} className="px-3 py-1.5 bg-white border border-gray-200 rounded-full text-xs text-gray-600 hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-colors">
-              {route.fromName} to {route.toName} sedan cab
+              {route.fromName} to {route.toName} sedan taxi
             </Link>
             <Link href={isHubRoute(route.slug) ? `/routes/${route.slug}/suv` : `/routes/${route.slug}#booking-form`} className="px-3 py-1.5 bg-white border border-gray-200 rounded-full text-xs text-gray-600 hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-colors">
-              {route.fromName} to {route.toName} SUV cab
+              {route.fromName} to {route.toName} SUV taxi
             </Link>
             <Link href={isHubRoute(route.slug) ? `/routes/${route.slug}/tempo` : `/routes/${route.slug}#booking-form`} className="px-3 py-1.5 bg-white border border-gray-200 rounded-full text-xs text-gray-600 hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-colors">
-              {route.fromName} to {route.toName} tempo traveller
+              {route.fromName} to {route.toName} tempo traveller hire
             </Link>
             <Link href="/services/outstation" className="px-3 py-1.5 bg-white border border-gray-200 rounded-full text-xs text-gray-600 hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-colors">
-              outstation cab service
+              outstation taxi hire
             </Link>
             <Link href="/services/one-way" className="px-3 py-1.5 bg-white border border-gray-200 rounded-full text-xs text-gray-600 hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-colors">
-              one way cab booking
+              one-way cab reservation
             </Link>
             <Link href="/services/airport-transfer" className="px-3 py-1.5 bg-white border border-gray-200 rounded-full text-xs text-gray-600 hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-colors">
-              airport taxi service
+              airport transfer service
             </Link>
             {/* Remaining keywords — booking intent → WhatsApp */}
             {content.popularKeywords.slice(18, 30).map((kw, i) => (
@@ -677,30 +677,30 @@ export default async function RoutePage({ params }: { params: Promise<{ route: s
       {/* Cross-Linking Mesh — Reverse Route + City Pages */}
       <section className="py-10 bg-white border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4">
-          <h3 className="text-lg font-bold text-secondary mb-4">Related Pages</h3>
+          <h3 className="text-lg font-bold text-secondary mb-4">Related Links</h3>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {/* Reverse Route */}
             {hasReverseRoute && (
               <Link href={`/routes/${content.reverseRouteSlug}`} className="group p-4 bg-gray-50 rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-md transition-all">
-                <p className="text-xs text-gray-400 mb-1">Reverse Route</p>
+                <p className="text-xs text-gray-400 mb-1">Return Direction</p>
                 <p className="font-semibold text-secondary text-sm group-hover:text-primary transition-colors">🔄 {content.reverseRouteLabel} Cab</p>
-                <p className="text-xs text-gray-400 mt-1">One-way &amp; round trip available</p>
+                <p className="text-xs text-gray-400 mt-1">One-way and round-trip options offered</p>
               </Link>
             )}
             {/* Source City Page */}
             {fromState && !['bihar', 'uttar-pradesh', 'delhi-ncr', 'uttarakhand', 'madhya-pradesh'].includes(route.fromState) && (
               <Link href={`/${route.fromState}/${route.from}`} className="group p-4 bg-gray-50 rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-md transition-all">
-                <p className="text-xs text-gray-400 mb-1">Cab Service In</p>
+                <p className="text-xs text-gray-400 mb-1">Taxi Service In</p>
                 <p className="font-semibold text-secondary text-sm group-hover:text-primary transition-colors">📍 {route.fromName}</p>
-                <p className="text-xs text-gray-400 mt-1">Local, outstation, airport cab</p>
+                <p className="text-xs text-gray-400 mt-1">City, outstation and airport taxi</p>
               </Link>
             )}
             {/* Destination City Page */}
             {toState && !['bihar', 'uttar-pradesh', 'delhi-ncr', 'uttarakhand', 'madhya-pradesh'].includes(route.toState) && (
               <Link href={`/${route.toState}/${route.to}`} className="group p-4 bg-gray-50 rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-md transition-all">
-                <p className="text-xs text-gray-400 mb-1">Cab Service In</p>
+                <p className="text-xs text-gray-400 mb-1">Taxi Service In</p>
                 <p className="font-semibold text-secondary text-sm group-hover:text-primary transition-colors">📍 {route.toName}</p>
-                <p className="text-xs text-gray-400 mt-1">Local, outstation, airport cab</p>
+                <p className="text-xs text-gray-400 mt-1">City, outstation and airport taxi</p>
               </Link>
             )}
           </div>
@@ -710,8 +710,8 @@ export default async function RoutePage({ params }: { params: Promise<{ route: s
       {/* CTA */}
       <section className="py-12 bg-gradient-to-r from-primary to-amber-500">
         <div className="max-w-4xl mx-auto px-4 text-center text-white">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">Book {route.fromName} to {route.toName} Cab Now!</h2>
-          <p className="text-white/90 mb-6">Starting from ₹{route.priceSaloon} • {route.distance} km • {route.duration} hours</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">Reserve Your {route.fromName} to {route.toName} Cab Today!</h2>
+          <p className="text-white/90 mb-6">Fares begin at ₹{route.priceSaloon} • {route.distance} km • {route.duration} hours</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
               <Phone size={22} /> {BUSINESS.phone}

@@ -172,7 +172,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <Breadcrumbs items={breadcrumbs} />
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mt-4 mb-4">
-            Cab Service in <span className="text-gradient">{state.name}</span> {prices.displayRate} | Book Taxi Online 24/7
+            Cab Service in <span className="text-gradient">{state.name}</span> {prices.displayRate} | Reserve Taxi Online Day or Night
           </h1>
           <p className="text-lg text-gray-300 max-w-3xl mb-6">{state.description}</p>
           <div className="flex flex-wrap gap-4">
@@ -186,7 +186,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
       {/* Cities Grid */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-8">Cab Service in {state.name} — <span className="text-primary">{state.cities.length} Cities</span> | All Areas Covered</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-8">Cab Service in {state.name} — <span className="text-primary">{state.cities.length} Cities</span> | Every Area Covered</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {state.cities.map((city) => (
               <Link key={city.slug} href={`/${state.slug}/${city.slug}`} className="group p-5 bg-white rounded-xl border border-gray-100 card-hover shadow-sm">
@@ -230,7 +230,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-2">Popular Local Routes in <span className="text-primary">{state.name}</span></h2>
-            <p className="text-gray-500 mb-8">Book affordable cab service on popular nearby routes across {state.name}</p>
+            <p className="text-gray-500 mb-8">Reserve a fixed-fare ride on the most-used routes across {state.name}</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
               {localRoutesSample.map((route) => (
                 <Link key={route.slug} href={`/routes/${route.slug}`} className="group bg-white rounded-xl border border-gray-100 p-4 shadow-sm hover:shadow-md hover:border-primary/30 transition-all">
@@ -280,7 +280,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
       {/* FAQ */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <FAQSection faqs={faqs} title={`FAQs — Cab Service in ${state.name}`} />
+          <FAQSection faqs={faqs} title={`Common Queries — Taxi Service in ${state.name}`} />
         </div>
       </section>
 
@@ -288,7 +288,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
       <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <article className="max-w-4xl space-y-6" itemScope itemType="https://schema.org/Article">
-            <h2 className="text-2xl font-bold text-secondary">Cab Service in {state.name} — Trusted Taxi Service by NK Cab &amp; Taxi</h2>
+            <h2 className="text-2xl font-bold text-secondary">Taxi Service in {state.name} — Trusted Fleet by NK Cab &amp; Taxi</h2>
             <div className="space-y-4 text-gray-600 leading-relaxed">
               {stateSlug === 'west-bengal' && (
                 <>

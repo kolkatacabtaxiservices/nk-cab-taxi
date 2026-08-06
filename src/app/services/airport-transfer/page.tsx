@@ -13,8 +13,8 @@ export const dynamic = 'force-static';
 export const revalidate = false;
 
 export const metadata: Metadata = {
-  title: 'Airport Cab Kolkata ₹1200 | CCU Taxi Pickup & Drop | Book 24/7',
-  description: `Airport cab service at Kolkata (CCU), Ranchi (IXR), Bhubaneswar (BBI). Sedan ₹1,200, SUV ₹1,800, Innova ₹2,200. Flight tracking, meet & greet, 24/7. No surge. Call ${BUSINESS.phone}`.slice(0, 160),
+  title: 'Kolkata Airport Cab ₹1200 | CCU Pickup & Drop Taxi | 24/7 Booking',
+  description: `Airport taxi service across Kolkata (CCU), Ranchi (IXR), Bhubaneswar (BBI). Sedan ₹1,200, SUV ₹1,800, Innova ₹2,200. Live flight tracking, arrivals meet & greet, round-the-clock. Flat fares. Call ${BUSINESS.phone}`.slice(0, 160),
   keywords: [
     'kolkata airport cab', 'kolkata airport taxi', 'ccu airport cab', 'ccu airport taxi',
     'netaji subhash airport cab', 'netaji subhash chandra bose airport taxi',
@@ -28,36 +28,36 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: `${BUSINESS.domain}/services/airport-transfer` },
   openGraph: {
-    title: 'Airport Cab Kolkata ₹1200 | CCU Pickup & Drop | 24/7',
-    description: `Kolkata airport taxi from ₹1,200. CCU pickup & drop, flight tracking, no surge. Sedan, SUV, Innova Crysta. Call ${BUSINESS.phone}`,
+    title: 'Kolkata Airport Taxi ₹1200 | CCU Pickup & Drop | 24/7',
+    description: `Airport taxis in Kolkata from ₹1,200. CCU pickups and drops with live flight tracking and flat fares. Sedan, SUV, Innova Crysta fleet. Call ${BUSINESS.phone}`,
     type: 'website',
     siteName: BUSINESS.name,
     url: `${BUSINESS.domain}/services/airport-transfer`,
     locale: 'en_IN',
-    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: 'Airport Cab Kolkata CCU Transfer Service' }],
+    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: 'Kolkata CCU Airport Transfer Cab Service' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Airport Cab Kolkata ₹1200 | CCU Taxi 24/7',
-    description: `Kolkata airport taxi from ₹1,200. No surge. 24/7. Call ${BUSINESS.phone}`,
+    title: 'Airport Taxi Kolkata ₹1200 | CCU Cab 24/7',
+    description: `Airport cab in Kolkata from ₹1,200. Flat fares day and night. Call ${BUSINESS.phone}`,
   },
 };
 
 export default function AirportTransferPage() {
   const faqs = [
-    { question: 'How does airport pickup work at Kolkata airport?', answer: `Our driver tracks your flight in real-time at Netaji Subhash Chandra Bose International Airport (CCU), Dum Dum. He waits at the arrival gate with a name board. No extra charges for flight delays. Call ${BUSINESS.phone} to book airport pickup.` },
-    { question: 'Which airports do you serve for cab service?', answer: 'We serve airports across our 3-state service area: Kolkata (CCU), Ranchi (IXR), Bhubaneswar (BBI), and Bagdogra/Siliguri (IXB). Our primary hub is CCU, Kolkata.' },
-    { question: 'What is the airport transfer fare from Kolkata airport?', answer: 'Airport transfer fares depend on distance. From CCU airport: Sedan ₹1,200–₹1,800 for city centre (Salt Lake, New Town, Howrah, Park Street). SUV ₹1,800–₹2,200. For outstation drops, per-km rates apply.' },
-    { question: 'Do you provide Kolkata airport cab at night?', answer: 'Yes! We operate 24/7 at Kolkata airport including early morning and late night flights. No night surcharges — same rate applies all day.' },
-    { question: 'Can I book airport transfer for a group from Kolkata?', answer: 'Yes! We provide Tempo Travellers and multiple vehicles for group airport transfers from CCU. Perfect for corporate teams, families, and wedding groups.' },
-    { question: 'How early should I book a cab from Kolkata airport?', answer: `We recommend booking at least 2 hours before your pickup time. For outstation trips from Kolkata airport, book 1 day in advance. WhatsApp ${BUSINESS.phone} — we confirm instantly.` },
+    { question: 'How does pickup from Kolkata airport work?', answer: `Your driver follows your flight live at Netaji Subhash Chandra Bose International Airport (CCU), Dum Dum. He stands at the arrivals gate holding a name board. If the flight runs late, no added fee applies. Ring ${BUSINESS.phone} to reserve your pickup.` },
+    { question: 'At which airports can we get a cab?', answer: 'Our cabs run at airports throughout the three states we operate in: Kolkata (CCU), Ranchi (IXR), Bhubaneswar (BBI) and Bagdogra/Siliguri (IXB). CCU in Kolkata remains our main base.' },
+    { question: 'How much does an airport transfer from Kolkata cost?', answer: 'Transfer pricing is set by distance. Leaving CCU airport: a Sedan to the city centre (Salt Lake, New Town, Howrah, Park Street) runs ₹1,200–₹1,800 and an SUV ₹1,800–₹2,200. Outstation drops are billed at per-kilometre rates.' },
+    { question: 'Is a night-time airport cab available in Kolkata?', answer: 'Certainly — we run round the clock at Kolkata airport, covering early-morning and very late flights. Night-time travel carries no extra cost; the same fare applies at every hour.' },
+    { question: 'Can a group book an airport transfer in Kolkata?', answer: 'Of course — Tempo Travellers and several cars can be arranged for group transfers from CCU, ideal for corporate teams, families and wedding parties.' },
+    { question: 'How far in advance should a Kolkata airport cab be booked?', answer: `Book at least 2 hours ahead of your pickup. For outstation journeys starting from Kolkata airport, plan a day earlier. WhatsApp ${BUSINESS.phone} for an immediate confirmation.` },
   ];
 
   const airports = [
-    { code: 'CCU', name: 'Netaji Subhash Chandra Bose Intl. Airport', city: 'Kolkata', note: 'Primary hub — Dum Dum, Kolkata' },
-    { code: 'IXR', name: 'Birsa Munda Airport', city: 'Ranchi', note: 'Jharkhand hub' },
-    { code: 'BBI', name: 'Biju Patnaik Intl. Airport', city: 'Bhubaneswar', note: 'Odisha hub' },
-    { code: 'IXB', name: 'Bagdogra Airport', city: 'Siliguri', note: 'North Bengal — Gateway to Darjeeling' },
+    { code: 'CCU', name: 'Netaji Subhash Chandra Bose Intl. Airport', city: 'Kolkata', note: 'Main base at Dum Dum, Kolkata' },
+    { code: 'IXR', name: 'Birsa Munda Airport', city: 'Ranchi', note: 'Serves Jharkhand' },
+    { code: 'BBI', name: 'Biju Patnaik Intl. Airport', city: 'Bhubaneswar', note: 'Serves Odisha' },
+    { code: 'IXB', name: 'Bagdogra Airport', city: 'Siliguri', note: 'North Bengal entry point to Darjeeling' },
   ];
 
   const fareTable = [
@@ -82,8 +82,8 @@ export default function AirportTransferPage() {
         <HeroBanner hideDots />
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <Breadcrumbs items={[{ name: 'Services', href: '/services' }, { name: 'Airport Transfer', href: '/services/airport-transfer' }]} />
-          <h1 className="text-3xl md:text-4xl font-extrabold mt-4 mb-4">Airport <span className="text-gradient">Transfer Service</span> in Kolkata ₹1,200 | 24/7 CCU Cab</h1>
-          <p className="text-lg text-gray-300 max-w-3xl">Reliable airport cab service at Netaji Subhash Chandra Bose Airport (CCU), Kolkata. Flight tracking, meet & greet at arrival gate, 24/7 availability — no waiting.</p>
+          <h1 className="text-3xl md:text-4xl font-extrabold mt-4 mb-4">Airport <span className="text-gradient">Cab Service</span> in Kolkata ₹1,200 | 24/7 CCU Taxi</h1>
+          <p className="text-lg text-gray-300 max-w-3xl">Dependable airport taxi service at Netaji Subhash Chandra Bose Airport (CCU), Kolkata. Live flight tracking, meet-and-greet at the arrivals gate, service around the clock — zero waiting.</p>
           <div className="flex flex-wrap gap-4 mt-6">
             <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-amber-500 text-white font-bold rounded-full shadow-lg">
               <Phone size={18} /> Book Now: {BUSINESS.phone}
@@ -97,11 +97,11 @@ export default function AirportTransferPage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-600">
             {[
-              { icon: <Plane size={16} />, text: 'Flight Tracking Included' },
-              { icon: <Clock size={16} />, text: '24/7 Airport Service' },
-              { icon: <Shield size={16} />, text: 'Verified Drivers' },
-              { icon: <Star size={16} />, text: '4.9★ Airport Rating' },
-              { icon: <CheckCircle size={16} />, text: 'No Surge at Night' },
+              { icon: <Plane size={16} />, text: 'Live Flight Tracking' },
+              { icon: <Clock size={16} />, text: 'Round-the-Clock Airport Service' },
+              { icon: <Shield size={16} />, text: 'Background-Checked Drivers' },
+              { icon: <Star size={16} />, text: 'Rated 4.9★ by Airport Travelers' },
+              { icon: <CheckCircle size={16} />, text: 'Flat Fares at Night' },
             ].map((badge, i) => (
               <div key={i} className="flex items-center gap-1.5 text-primary font-medium">
                 {badge.icon} {badge.text}
@@ -117,34 +117,34 @@ export default function AirportTransferPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             <div className="lg:col-span-2 space-y-8">
               <div>
-                <h2 className="text-2xl font-bold text-secondary mb-4">Kolkata Airport Cab Service — CCU Pickup & Drop</h2>
+                <h2 className="text-2xl font-bold text-secondary mb-4">Airport Pickup & Drop — Kolkata CCU Cab Service</h2>
                 <div className="space-y-4 text-gray-600">
                   <p>
-                    <strong>{BUSINESS.name}</strong> provides the most reliable airport cab service in Kolkata at Netaji Subhash Chandra Bose International Airport (IATA: CCU), Dum Dum. Whether you need a pickup from the airport to Salt Lake, New Town, Howrah, Park Street, or any other area in Kolkata — or a departure drop from anywhere in the city to CCU — we have you covered, 24 hours a day, 7 days a week.
+                    <strong>{BUSINESS.name}</strong> runs a trusted airport taxi service in Kolkata from Netaji Subhash Chandra Bose International Airport (IATA: CCU), Dum Dum. Need a ride from the terminal to Salt Lake, New Town, Howrah, Park Street, or any other locality — or a pre-flight drop from anywhere in the city to CCU? We handle both, seven days a week, around the clock.
                   </p>
                   <p>
-                    Our airport cab service works simply: book via call or WhatsApp at {BUSINESS.phone}. Our driver tracks your flight in real-time. On arrival, he waits at the arrival gate with a name board displaying your name. No extra charges if your flight is delayed.
+                    Using the airport cab service is straightforward: reserve over a call or WhatsApp on {BUSINESS.phone}. Our driver monitors your flight live, then waits at the arrivals gate holding a board with your name. A delayed flight never attracts a surcharge.
                   </p>
                   <p>
-                    For departure pickups, our driver arrives at your location 15–20 minutes before the scheduled pickup time to ensure you reach the airport with plenty of time for check-in. We cover all terminals at Kolkata airport — domestic and international.
+                    For outbound journeys, the driver reaches your address 15–20 minutes ahead of the agreed time so you have ample margin for check-in. Every terminal at Kolkata airport, domestic and international, is covered.
                   </p>
                   <p>
-                    Beyond Kolkata, we also provide airport cab service at Birsa Munda (Ranchi), Biju Patnaik (Bhubaneswar), and Bagdogra (Siliguri/Darjeeling) airports.
+                    Outside Kolkata, airport transfers are available at Birsa Munda (Ranchi), Biju Patnaik (Bhubaneswar), and Bagdogra (Siliguri/Darjeeling).
                   </p>
                 </div>
               </div>
 
               {/* Fare Table */}
               <div>
-                <h3 className="text-xl font-bold text-secondary mb-4">Kolkata Airport Transfer Fare</h3>
+                <h3 className="text-xl font-bold text-secondary mb-4">Kolkata Airport Transfer Pricing</h3>
                 <div className="overflow-x-auto rounded-xl border border-gray-100 shadow-sm">
                   <table className="w-full border-collapse bg-white">
                     <thead>
                       <tr className="bg-secondary text-white">
-                        <th className="px-4 py-3 text-left text-sm">Vehicle</th>
-                        <th className="px-4 py-3 text-center text-sm">Capacity</th>
-                        <th className="px-4 py-3 text-center text-sm">City Transfer (CCU)</th>
-                        <th className="px-4 py-3 text-center text-sm">Outstation Rate</th>
+                        <th className="px-4 py-3 text-left text-sm">Car Type</th>
+                        <th className="px-4 py-3 text-center text-sm">Seats</th>
+                        <th className="px-4 py-3 text-center text-sm">City Run (CCU)</th>
+                        <th className="px-4 py-3 text-center text-sm">Intercity Rate</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -159,17 +159,17 @@ export default function AirportTransferPage() {
                     </tbody>
                   </table>
                 </div>
-                <p className="text-xs text-gray-400 mt-2">* Toll & parking charges extra for outstation. No surcharge for night flights.</p>
+                <p className="text-xs text-gray-400 mt-2">* Intercity trips add toll and parking. Night flights carry no surcharge.</p>
               </div>
 
               {/* How it works */}
               <div>
-                <h3 className="text-xl font-bold text-secondary mb-4">How Kolkata Airport Cab Booking Works</h3>
+                <h3 className="text-xl font-bold text-secondary mb-4">Booking Your Kolkata Airport Cab in Three Steps</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {[
-                    { step: '1', title: 'Book via Call / WhatsApp', desc: `Call or WhatsApp ${BUSINESS.phone} with your flight details and pickup location.` },
-                    { step: '2', title: 'Driver Assigned Instantly', desc: 'We assign a verified driver and share his name & contact within minutes.' },
-                    { step: '3', title: 'Arrive & Ride Comfortably', desc: 'Driver meets you at the arrival gate with a name board. Flight delays are tracked automatically.' },
+                    { step: '1', title: 'Reserve by Call or WhatsApp', desc: `Share your flight number and pickup spot with us on ${BUSINESS.phone} by call or WhatsApp.` },
+                    { step: '2', title: 'Driver Confirmed in Minutes', desc: 'A background-checked driver is allotted and his name plus phone number reach you within minutes.' },
+                    { step: '3', title: 'Meet, Board & Travel', desc: 'The driver greets you at the arrivals gate with a name board; flight delays are picked up automatically.' },
                   ].map((item, i) => (
                     <div key={i} className="p-5 bg-accent/50 rounded-xl border border-primary/10">
                       <div className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm mb-3">{item.step}</div>
@@ -182,7 +182,7 @@ export default function AirportTransferPage() {
 
               {/* Airports */}
               <div>
-                <h3 className="text-xl font-bold text-secondary mb-4">Airports We Serve</h3>
+                <h3 className="text-xl font-bold text-secondary mb-4">Airports Covered by Our Cabs</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {airports.map((airport) => (
                     <div key={airport.code} className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg border border-gray-100">
@@ -201,7 +201,7 @@ export default function AirportTransferPage() {
             <div className="lg:sticky lg:top-24 lg:self-start space-y-4">
               <BookingForm />
               <div className="p-4 bg-secondary rounded-xl text-white text-center">
-                <p className="text-sm text-gray-300 mb-2">Airport Transfer Helpline</p>
+                <p className="text-sm text-gray-300 mb-2">Airport Cab Helpline</p>
                 <a href={`tel:${BUSINESS.phone}`} className="text-xl font-bold hover:text-primary transition-colors">
                   📞 {BUSINESS.phone}
                 </a>
@@ -213,16 +213,16 @@ export default function AirportTransferPage() {
 
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <FAQSection faqs={faqs} title="Kolkata Airport Cab — FAQs" />
+          <FAQSection faqs={faqs} title="Kolkata Airport Transfer — Common Questions" />
         </div>
       </section>
 
       {/* Multi-Airport Coverage */}
       <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-secondary mb-4">Airport Cab Service at <span className="text-primary">Other Airports</span></h2>
+          <h2 className="text-2xl font-bold text-secondary mb-4">Airport Taxi Service at <span className="text-primary">Other Airports</span></h2>
           <p className="text-gray-600 mb-6">
-            Besides Kolkata Airport (CCU), {BUSINESS.name} provides airport cab service at <strong>Birsa Munda Airport, Ranchi</strong> and <strong>Biju Patnaik Airport, Bhubaneswar</strong>. Same reliable service — flight tracking, meet & greet, 24/7 availability, no surge pricing. We also provide airport transfers from Jamshedpur, Dhanbad, and Siliguri to their nearest airports.
+            Apart from Kolkata Airport (CCU), {BUSINESS.name} runs airport transfers at <strong>Birsa Munda Airport, Ranchi</strong> and <strong>Biju Patnaik Airport, Bhubaneswar</strong> — the same dependable service with live flight tracking, arrivals meet-and-greet, round-the-clock availability and flat pricing. Airport rides to the closest terminals are also arranged from Jamshedpur, Dhanbad and Siliguri.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
@@ -244,13 +244,13 @@ export default function AirportTransferPage() {
 
       <section className="py-12 bg-gradient-to-r from-primary to-amber-500 text-white text-center">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">Book Airport Cab — Kolkata, Ranchi, Bhubaneswar</h2>
-          <p className="text-white/90 mb-6">Airport pickup & drop — any time, any terminal. 24/7 service. No surge pricing.</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">Reserve an Airport Cab — Kolkata, Ranchi, Bhubaneswar</h2>
+          <p className="text-white/90 mb-6">Airport pickups and drops at any hour, from any terminal. Around-the-clock service with flat fares.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
               <Phone size={22} /> {BUSINESS.phone}
             </a>
-            <a href={`${BUSINESS.whatsappLink}?text=${encodeURIComponent('Hi! I need a cab for airport transfer. Please share fare details.')}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-500 text-white font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
+            <a href={`${BUSINESS.whatsappLink}?text=${encodeURIComponent('Hi! Please share airport transfer cab details and fares.')}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-500 text-white font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
               💬 WhatsApp
             </a>
           </div>

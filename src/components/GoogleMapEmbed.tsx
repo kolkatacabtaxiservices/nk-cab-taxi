@@ -61,17 +61,17 @@ export default function GoogleMapEmbed({
 
   if (fromCity && toCity && fromLat && fromLng && toLat && toLng) {
     mapSrc = `https://maps.google.com/maps?width=100%25&height=100%25&hl=en&saddr=${encodeURIComponent(fromCity + ', India')}&daddr=${encodeURIComponent(toCity + ', India')}&t=&ie=UTF8&iwloc=B&output=embed`;
-    mapTitle = `${fromCity} to ${toCity} Route Map`;
+    mapTitle = `${fromCity} to ${toCity} Driving Route`;
   } else if (cityName && cityLat && cityLng) {
     mapSrc = `https://maps.google.com/maps?width=100%25&height=100%25&hl=en&q=${encodeURIComponent(cityName + ', India')}&t=&z=12&ie=UTF8&iwloc=B&output=embed`;
-    mapTitle = `${cityName} Map — Cab Service Area`;
+    mapTitle = `${cityName} Map — Taxi Coverage Area`;
   } else {
     mapSrc = `https://maps.google.com/maps?width=100%25&height=100%25&hl=en&q=Kolkata+Cab+Service,+Park+Street,+Kolkata,+West+Bengal,+India&t=&z=12&ie=UTF8&iwloc=B&output=embed`;
-    mapTitle = 'NK Cab & Taxi — Location Map';
+    mapTitle = 'NK Cab & Taxi — Office Location';
   }
 
-  const displayTitle = title || (fromCity && toCity ? `${fromCity} to ${toCity} — Route Map` : cityName ? `Cab Service in ${cityName} — Coverage Map` : 'Our Service Area');
-  const displaySubtitle = subtitle || (fromCity && toCity ? `View the driving route from ${fromCity} to ${toCity}. Our experienced drivers know the best routes for a comfortable journey.` : cityName ? `We provide cab pickup and drop across all areas of ${cityName}. View our coverage area.` : 'NK Cab & Taxi covers 80+ cities across West Bengal, Jharkhand, Odisha, Bihar & Uttar Pradesh.');
+  const displayTitle = title || (fromCity && toCity ? `${fromCity} to ${toCity} — Route Map` : cityName ? `Cab Service in ${cityName} — Coverage Map` : 'Our Coverage Area');
+  const displaySubtitle = subtitle || (fromCity && toCity ? `See the driving route between ${fromCity} and ${toCity}. Our veteran drivers pick the smoothest roads for an easy ride.` : cityName ? `We offer taxi pickup and drop-off in every part of ${cityName}. Explore our service footprint.` : 'NK Cab & Taxi serves 80+ cities in West Bengal, Jharkhand, Odisha, Bihar and Uttar Pradesh.');
 
   return (
     <section ref={sectionRef} className="google-map-section py-10 bg-gray-50 border-t border-gray-100">
@@ -79,7 +79,7 @@ export default function GoogleMapEmbed({
         <div className="text-center mb-6">
           <div className="inline-flex items-center gap-2 text-primary mb-2">
             <MapPin size={20} />
-            <span className="text-sm font-semibold uppercase tracking-wide">Map &amp; Directions</span>
+            <span className="text-sm font-semibold uppercase tracking-wide">Locations &amp; Routes</span>
           </div>
           <h2 className="text-2xl md:text-3xl font-bold text-secondary">{displayTitle}</h2>
           <p className="text-gray-500 text-sm mt-2 max-w-2xl mx-auto">{displaySubtitle}</p>
@@ -109,13 +109,13 @@ export default function GoogleMapEmbed({
               <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-md">
                 <MapPin size={28} className="text-primary" />
               </div>
-              <p className="text-gray-600 text-sm font-semibold">Map loads as you scroll</p>
+              <p className="text-gray-600 text-sm font-semibold">Map appears as you scroll</p>
               <button
                 type="button"
                 onClick={() => setLoaded(true)}
                 className="px-5 py-2 bg-primary text-white text-xs sm:text-sm font-semibold rounded-full hover:bg-primary/90 transition-colors shadow"
               >
-                Load Map Now
+                Show Map Now
               </button>
             </div>
           )}
@@ -131,7 +131,7 @@ export default function GoogleMapEmbed({
               className="inline-flex items-center gap-2 text-sm text-primary font-medium hover:underline"
             >
               <MapPin size={14} />
-              Open {fromCity} to {toCity} directions in Google Maps ↗
+              Get {fromCity} to {toCity} directions on Google Maps ↗
             </a>
           </div>
         )}
@@ -144,7 +144,7 @@ export default function GoogleMapEmbed({
               className="inline-flex items-center gap-2 text-sm text-primary font-medium hover:underline"
             >
               <MapPin size={14} />
-              View {cityName} on Google Maps ↗
+              Open {cityName} in Google Maps ↗
             </a>
           </div>
         )}

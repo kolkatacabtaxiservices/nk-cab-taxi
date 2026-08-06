@@ -14,7 +14,7 @@ const GoogleMapEmbed = nextDynamic(() => import('@/components/GoogleMapEmbed'), 
     <div className="py-16 text-center">
       <div className="inline-flex items-center gap-3 px-6 py-3 bg-gray-50 rounded-full text-gray-400 text-sm border border-gray-100">
         <div className="w-4 h-4 border-2 border-primary/30 border-t-primary rounded-full animate-spin" />
-        Loading map&hellip;
+        Preparing map&hellip;
       </div>
     </div>
   ),
@@ -24,7 +24,7 @@ const FareCalculator = nextDynamic(() => import('@/components/FareCalculator'), 
     <div className="py-20 text-center">
       <div className="inline-flex items-center gap-3 px-6 py-3 bg-gray-50 rounded-full text-gray-400 text-sm border border-gray-100">
         <div className="w-4 h-4 border-2 border-primary/30 border-t-primary rounded-full animate-spin" />
-        Calculating fares&hellip;
+        Estimating fares&hellip;
       </div>
     </div>
   ),
@@ -102,14 +102,14 @@ export default async function VehicleRoutePage({ params }: { params: Promise<{ r
   const fare = getVehicleFare(route, vehicleSlug, vehicle.pricePerKm);
 
   const faqs = [
-    { question: `What is the ${vehicle.name} fare from ${route.fromName} to ${route.toName}?`, answer: `The ${vehicle.name} (${vehicle.models.slice(0, 2).join(', ')}) fare from ${route.fromName} to ${route.toName} is ₹${fare} for one-way trip. Distance: ${route.distance} km. Fare includes AC, fuel, and driver. Toll and parking are extra. Call ${BUSINESS.phone} to book.` },
-    { question: `Which ${vehicle.name} models are available for ${route.fromName} to ${route.toName}?`, answer: `We offer ${vehicle.models.join(', ')} for the ${route.fromName} to ${route.toName} route. All vehicles are AC, well-maintained, GPS-tracked, and sanitized before each trip.` },
-    { question: `How many passengers can travel in a ${vehicle.name} from ${route.fromName} to ${route.toName}?`, answer: `Our ${vehicle.name} can accommodate ${vehicle.capacity} passengers with ${vehicle.luggage} luggage bags. For the ${route.distance} km journey from ${route.fromName} to ${route.toName}, this is ideal for ${vehicle.capacity <= 4 ? 'couples, solo travellers, and small families' : vehicle.capacity <= 7 ? 'families and medium groups' : 'large groups, pilgrimages, and corporate outings'}.` },
-    { question: `Is round trip available for ${vehicle.name} from ${route.fromName} to ${route.toName}?`, answer: `Yes! Both one-way and round trip are available for ${vehicle.name} on the ${route.fromName} to ${route.toName} route. Round trip fare is approximately ₹${Math.round(fare * 1.8)} with driver accommodation included. Call ${BUSINESS.phone} for exact pricing.` },
-    { question: `Can I book a ${vehicle.name} for ${route.fromName} to ${route.toName} at night?`, answer: `Yes! We provide 24/7 ${vehicle.name} cab service from ${route.fromName} to ${route.toName}. Early morning 3 AM pickups, late night rides, festival bookings — all available at the same fixed rate of ₹${fare}. No surge pricing ever. Call ${BUSINESS.phone}.` },
-    { question: `How to book ${vehicle.name} from ${route.fromName} to ${route.toName}?`, answer: `Call ${BUSINESS.phone} or WhatsApp us. You can also fill the online booking form on this page. Select "${vehicle.name}" as car type. Get instant confirmation with driver details within 2 minutes.` },
-    { question: `Is ${vehicle.name} comfortable for ${route.distance} km journey?`, answer: `Absolutely! Our ${vehicle.name} fleet features ${vehicle.features.join(', ')}. For the ${route.duration}-hour journey from ${route.fromName} to ${route.toName}, you'll enjoy a smooth, comfortable ride with experienced drivers who know the route well.` },
-    { question: `What is included in the ${vehicle.name} fare of ₹${fare}?`, answer: `The ₹${fare} fare for ${vehicle.name} from ${route.fromName} to ${route.toName} includes: AC vehicle, fuel charges, driver charges, and GST. Extra charges: toll (as per actuals), parking, and night charges (₹300 for 10 PM–6 AM).` },
+    { question: `What is the ${vehicle.name} fare from ${route.fromName} to ${route.toName}?`, answer: `A one-way ${vehicle.name} (${vehicle.models.slice(0, 2).join(', ')}) trip from ${route.fromName} to ${route.toName} costs ₹${fare}. The drive covers ${route.distance} km, and the fare covers AC, fuel and the driver. Toll and parking are billed separately. Ring ${BUSINESS.phone} to reserve.` },
+    { question: `Which ${vehicle.name} models are available for ${route.fromName} to ${route.toName}?`, answer: `On the ${route.fromName} to ${route.toName} route we run ${vehicle.models.join(', ')}. Every car is air-conditioned, regularly serviced, GPS-tracked, and cleaned ahead of each journey.` },
+    { question: `How many passengers can travel in a ${vehicle.name} from ${route.fromName} to ${route.toName}?`, answer: `A ${vehicle.name} seats ${vehicle.capacity} people and carries up to ${vehicle.luggage} bags. Over the ${route.distance} km run from ${route.fromName} to ${route.toName}, it suits ${vehicle.capacity <= 4 ? 'couples, solo travellers and small families' : vehicle.capacity <= 7 ? 'families and mid-size groups' : 'big parties, pilgrimages and office outings'}.` },
+    { question: `Is round trip available for ${vehicle.name} from ${route.fromName} to ${route.toName}?`, answer: `Yes — ${vehicle.name} is available for both one-way and round trip on the ${route.fromName} to ${route.toName} run. A round trip works out to roughly ₹${Math.round(fare * 1.8)}, with the driver stay included. Contact ${BUSINESS.phone} for the precise figure.` },
+    { question: `Can I book a ${vehicle.name} for ${route.fromName} to ${route.toName} at night?`, answer: `Certainly — ${vehicle.name} runs 24/7 between ${route.fromName} and ${route.toName}. Dawn pickups at 3 AM, late-night rides, and festive bookings all come at the single fixed rate of ₹${fare}. Surge pricing never applies. Call ${BUSINESS.phone}.` },
+    { question: `How to book ${vehicle.name} from ${route.fromName} to ${route.toName}?`, answer: `Ring ${BUSINESS.phone}, message us on WhatsApp, or use the booking form on this page and pick "${vehicle.name}" as your car. You will receive instant confirmation with driver details in about 2 minutes.` },
+    { question: `Is ${vehicle.name} comfortable for ${route.distance} km journey?`, answer: `Very much so. The ${vehicle.name} fleet comes with ${vehicle.features.join(', ')}. On the ${route.duration}-hour run from ${route.fromName} to ${route.toName}, expect a relaxed ride with drivers familiar with the road.` },
+    { question: `What is included in the ${vehicle.name} fare of ₹${fare}?`, answer: `The ₹${fare} ${vehicle.name} fare on the ${route.fromName} to ${route.toName} route covers the AC car, fuel, the driver, and GST. Extras are tolls (at actual), parking, and a ₹300 night charge between 10 PM and 6 AM.` },
   ];
 
   const otherVehicles = allVehicles.filter(v => v.id !== vehicleSlug && v.id !== 'wedding');
@@ -150,10 +150,10 @@ export default async function VehicleRoutePage({ params }: { params: Promise<{ r
             { name: vehicle.name, href: `/routes/${route.slug}/${vehicleSlug}` },
           ]} />
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold mt-4 mb-4">
-            {route.fromName} to {route.toName} <span className="text-gradient">{vehicle.name} Cab ₹{fare}</span>
+            {route.fromName} to {route.toName} <span className="text-gradient">{vehicle.name} Taxi ₹{fare}</span>
           </h1>
           <p className="text-gray-300 max-w-3xl mb-4">
-            Book {vehicle.name} ({vehicle.models.slice(0, 2).join(', ')}) from {route.fromName} to {route.toName}. {route.distance} km, {route.duration} hours. {vehicle.capacity} passengers, AC, GPS tracked. No surge pricing 24/7.
+            Reserve a {vehicle.name} ({vehicle.models.slice(0, 2).join(', ')}) for the {route.fromName} to {route.toName} run — {route.distance} km, {route.duration} hours, {vehicle.capacity} seats, AC and GPS fitted. Fixed fares around the clock.
           </p>
           <div className="flex flex-wrap gap-3 text-sm text-gray-300 mb-6">
             <span className="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-full"><MapPin size={14} /> {route.distance} km</span>
@@ -163,7 +163,7 @@ export default async function VehicleRoutePage({ params }: { params: Promise<{ r
           </div>
           <div className="flex flex-wrap gap-3">
             <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-amber-500 text-white font-bold rounded-full shadow-lg hover:scale-105 transition-all">
-              <Phone size={18} /> Book {vehicle.name}: {BUSINESS.phone}
+              <Phone size={18} /> Reserve {vehicle.name}: {BUSINESS.phone}
             </a>
             <a href={`https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(`Hi! I want to book a ${vehicle.name} from ${route.fromName} to ${route.toName}.`)}`} className="inline-flex items-center gap-2 px-6 py-3 bg-green-500 text-white font-bold rounded-full shadow-lg hover:scale-105 transition-all">
               💬 WhatsApp
@@ -177,7 +177,7 @@ export default async function VehicleRoutePage({ params }: { params: Promise<{ r
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div className="relative h-64 sm:h-80 lg:h-96">
-              <Image src={vehicle.image} alt={`${vehicle.name} - ${vehicle.models.join(', ')} for ${route.fromName} to ${route.toName}`} fill className="object-contain p-6 drop-shadow-2xl" sizes="(max-width: 1024px) 100vw, 50vw" priority />
+              <Image src={vehicle.image} alt={`${vehicle.name} — ${vehicle.models.join(', ')} on the ${route.fromName} to ${route.toName} route`} fill className="object-contain p-6 drop-shadow-2xl" sizes="(max-width: 1024px) 100vw, 50vw" priority />
             </div>
             <div className="text-white">
               <h2 className="text-3xl font-extrabold mb-4 text-primary">{vehicle.name}</h2>
@@ -185,23 +185,23 @@ export default async function VehicleRoutePage({ params }: { params: Promise<{ r
               <div className="grid grid-cols-2 gap-3 mb-6">
                 <div className="flex items-center gap-2.5 p-3 bg-white/5 rounded-xl border border-white/10">
                   <Users size={16} className="text-primary" />
-                  <div><p className="text-white text-sm font-semibold">{vehicle.capacity} Passengers</p><p className="text-gray-500 text-xs">Max capacity</p></div>
+                  <div><p className="text-white text-sm font-semibold">{vehicle.capacity} Seats</p><p className="text-gray-500 text-xs">Maximum occupancy</p></div>
                 </div>
                 <div className="flex items-center gap-2.5 p-3 bg-white/5 rounded-xl border border-white/10">
                   <Briefcase size={16} className="text-primary" />
-                  <div><p className="text-white text-sm font-semibold">{vehicle.luggage} Bags</p><p className="text-gray-500 text-xs">Luggage</p></div>
+                  <div><p className="text-white text-sm font-semibold">{vehicle.luggage} Bags</p><p className="text-gray-500 text-xs">Baggage allowance</p></div>
                 </div>
                 <div className="flex items-center gap-2.5 p-3 bg-white/5 rounded-xl border border-white/10">
                   <Fuel size={16} className="text-primary" />
-                  <div><p className="text-white text-sm font-semibold">AC Vehicle</p><p className="text-gray-500 text-xs">Climate control</p></div>
+                  <div><p className="text-white text-sm font-semibold">AC Car</p><p className="text-gray-500 text-xs">Climate control</p></div>
                 </div>
                 <div className="flex items-center gap-2.5 p-3 bg-white/5 rounded-xl border border-white/10">
                   <Gauge size={16} className="text-primary" />
-                  <div><p className="text-white text-sm font-semibold">GPS Tracked</p><p className="text-gray-500 text-xs">Live location</p></div>
+                  <div><p className="text-white text-sm font-semibold">GPS Enabled</p><p className="text-gray-500 text-xs">Live tracking</p></div>
                 </div>
               </div>
               <div className="mb-6">
-                <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Available Models</h4>
+                <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Models on Offer</h4>
                 <div className="flex flex-wrap gap-2">
                   {vehicle.models.map(m => (<span key={m} className="px-3 py-1.5 bg-white/10 text-white/90 text-xs font-medium rounded-lg border border-white/10">{m}</span>))}
                 </div>
@@ -217,39 +217,39 @@ export default async function VehicleRoutePage({ params }: { params: Promise<{ r
       {/* Route + Vehicle Pricing */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-secondary mb-6">{vehicle.name} Fare — {route.fromName} to {route.toName}</h2>
+          <h2 className="text-2xl font-bold text-secondary mb-6">{vehicle.name} Pricing on {route.fromName} to {route.toName}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             <div className="p-6 bg-accent rounded-2xl border-2 border-primary/20 text-center">
-              <p className="text-sm text-gray-500 mb-1">One-Way Fare</p>
+              <p className="text-sm text-gray-500 mb-1">One-Way Rate</p>
               <p className="text-4xl font-extrabold text-primary">₹{fare}</p>
               <p className="text-xs text-gray-500 mt-1">{route.distance} km • {route.duration} hrs</p>
             </div>
             <div className="p-6 bg-gray-50 rounded-2xl border border-gray-100 text-center">
-              <p className="text-sm text-gray-500 mb-1">Round Trip (Est.)</p>
+              <p className="text-sm text-gray-500 mb-1">Round Trip (Estimated)</p>
               <p className="text-4xl font-extrabold text-secondary">₹{Math.round(fare * 1.8)}</p>
-              <p className="text-xs text-gray-500 mt-1">Return included</p>
+              <p className="text-xs text-gray-500 mt-1">Return journey covered</p>
             </div>
             <div className="p-6 bg-gray-50 rounded-2xl border border-gray-100 text-center">
-              <p className="text-sm text-gray-500 mb-1">Per KM Rate</p>
+              <p className="text-sm text-gray-500 mb-1">Per-Kilometre Rate</p>
               <p className="text-4xl font-extrabold text-secondary">₹{vehicle.pricePerKm}</p>
-              <p className="text-xs text-gray-500 mt-1">All inclusive</p>
+              <p className="text-xs text-gray-500 mt-1">Everything included</p>
             </div>
           </div>
 
           {/* What's Included */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="p-6 bg-green-50 rounded-2xl border border-green-100">
-              <h3 className="font-bold text-secondary mb-3">✅ Included in ₹{fare}</h3>
+              <h3 className="font-bold text-secondary mb-3">✅ What the ₹{fare} Fare Covers</h3>
               <div className="space-y-2 text-sm text-gray-600">
-                {['AC vehicle with music system', 'Fuel charges for entire trip', 'Experienced, police-verified driver', 'GPS tracking & live location sharing', 'Free cancellation (4 hrs before)', 'No surge pricing — fixed fare 24/7'].map((item, i) => (
+                {['AC car with music system', 'Full fuel for the trip', 'Verified, experienced driver', 'GPS tracking with live location sharing', 'Free cancellation up to 4 hours prior', 'No surge pricing — stable fare around the clock'].map((item, i) => (
                   <div key={i} className="flex items-center gap-2"><CheckCircle size={14} className="text-green-500 shrink-0" /> {item}</div>
                 ))}
               </div>
             </div>
             <div className="p-6 bg-amber-50 rounded-2xl border border-amber-100">
-              <h3 className="font-bold text-secondary mb-3">ℹ️ Extra Charges</h3>
+              <h3 className="font-bold text-secondary mb-3">ℹ️ Additional Costs</h3>
               <div className="space-y-2 text-sm text-gray-600">
-                {['Toll charges (as per actuals)', 'Parking charges (as per actuals)', `Night charges: ₹${vehicle.driverAllowance} (10 PM–6 AM)`, 'State permit (if applicable)', `Driver allowance: ₹${vehicle.driverAllowance}/day (multi-day)`, 'Extra km beyond route: Same per-km rate'].map((item, i) => (
+                {['Toll charges (billed at actual)', 'Parking fees (billed at actual)', `Night surcharge: ₹${vehicle.driverAllowance} (10 PM–6 AM)`, 'State permit fee (where applicable)', `Driver allowance: ₹${vehicle.driverAllowance}/day (multi-day trips)`, 'Extra distance beyond the route: same per-km rate'].map((item, i) => (
                   <div key={i} className="flex items-center gap-2"><span className="text-amber-500 shrink-0">•</span> {item}</div>
                 ))}
               </div>
@@ -261,23 +261,23 @@ export default async function VehicleRoutePage({ params }: { params: Promise<{ r
       {/* Compare Other Vehicles */}
       <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-secondary mb-2">Compare Other Vehicles for {route.fromName} to {route.toName}</h2>
-          <p className="text-gray-500 text-sm mb-6">Choose the best vehicle for your {route.distance} km journey</p>
+          <h2 className="text-2xl font-bold text-secondary mb-2">Other Vehicle Choices for {route.fromName} to {route.toName}</h2>
+          <p className="text-gray-500 text-sm mb-6">Pick the right car for your {route.distance} km trip</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {otherVehicles.map(v => {
               const vFare = getVehicleFare(route, v.id, v.pricePerKm);
               return (
                 <Link key={v.id} href={`/routes/${route.slug}/${v.id}`} className="group bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-lg hover:border-primary/30 transition-all">
                   <div className="relative h-40 bg-gradient-to-br from-accent to-orange-50">
-                    <Image src={v.image} alt={`${v.name} for ${route.fromName} to ${route.toName}`} fill className="object-contain p-4" sizes="(max-width: 768px) 100vw, 33vw" />
+                    <Image src={v.image} alt={`${v.name} option on the ${route.fromName} to ${route.toName} route`} fill className="object-contain p-4" sizes="(max-width: 768px) 100vw, 33vw" />
                   </div>
                   <div className="p-5">
                     <h3 className="text-lg font-bold text-secondary group-hover:text-primary transition-colors">{v.name}</h3>
                     <p className="text-xs text-gray-500 mb-3">{v.models.slice(0, 2).join(', ')}</p>
                     <div className="flex items-center justify-between">
                       <div className="flex gap-3 text-xs text-gray-500">
-                        <span>👥 {v.capacity} Pax</span>
-                        <span>🧳 {v.luggage} Bags</span>
+                        <span>👥 {v.capacity} seats</span>
+                        <span>🧳 {v.luggage} bags</span>
                       </div>
                       <span className="text-xl font-extrabold text-primary">₹{vFare}</span>
                     </div>
@@ -299,7 +299,7 @@ export default async function VehicleRoutePage({ params }: { params: Promise<{ r
       {/* FAQ */}
       <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <FAQSection faqs={faqs} title={`${vehicle.name} Cab — ${route.fromName} to ${route.toName} FAQs`} />
+          <FAQSection faqs={faqs} title={`${vehicle.name} Queries — ${route.fromName} to ${route.toName}`} />
         </div>
       </section>
 
@@ -311,14 +311,14 @@ export default async function VehicleRoutePage({ params }: { params: Promise<{ r
         fromCity={route.fromName} toCity={route.toName}
         fromLat={fromCity?.lat} fromLng={fromCity?.lng}
         toLat={toCity?.lat} toLng={toCity?.lng}
-        title={`${route.fromName} to ${route.toName} ${vehicle.name} — Route Map`}
-        subtitle={`${route.distance} km driving route. Book ${vehicle.name} for ₹${fare}.`}
+        title={`${vehicle.name} Driving Map — ${route.fromName} to ${route.toName}`}
+        subtitle={`${route.distance} km road route. Reserve a ${vehicle.name} at ₹${fare}.`}
       />
 
       {/* Back to Route + CTA */}
       <section className="py-12 bg-gradient-to-r from-primary to-amber-500">
         <div className="max-w-4xl mx-auto px-4 text-center text-white">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">Book {vehicle.name} — {route.fromName} to {route.toName} ₹{fare}</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">Reserve a {vehicle.name} — {route.fromName} to {route.toName} at ₹{fare}</h2>
           <p className="text-white/90 mb-6">{vehicle.models.slice(0, 2).join(', ')} • {route.distance} km • {route.duration} hours • {vehicle.capacity} passengers</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
@@ -329,7 +329,7 @@ export default async function VehicleRoutePage({ params }: { params: Promise<{ r
             </a>
           </div>
           <Link href={`/routes/${route.slug}`} className="inline-flex items-center gap-2 mt-4 text-white/80 text-sm hover:text-white transition-colors">
-            ← View all vehicles for {route.fromName} to {route.toName}
+            ← See every vehicle option for {route.fromName} to {route.toName}
           </Link>
         </div>
       </section>

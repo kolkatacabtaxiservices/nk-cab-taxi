@@ -10,7 +10,7 @@ export default function FloatingButtons() {
       <a
         href={`tel:${BUSINESS.phone}`}
         className="fixed bottom-20 sm:bottom-24 right-4 sm:right-6 z-40 w-12 h-12 sm:w-14 sm:h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-lg shadow-primary/30 hover:scale-110 hover:shadow-primary/50 transition-all animate-pulse-slow"
-        aria-label="Call Now"
+        aria-label="Call us now"
         id="call-float"
       >
         <Phone size={22} />
@@ -18,11 +18,11 @@ export default function FloatingButtons() {
 
       {/* WhatsApp floating button — bottom right */}
       <a
-        href={`${BUSINESS.whatsappLink}?text=${encodeURIComponent('Hi! I want to book a cab. Please share details.')}`}
+        href={`${BUSINESS.whatsappLink}?text=${encodeURIComponent('Hi! I would like to book a cab. Please share the details.')}`}
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-40 w-12 h-12 sm:w-14 sm:h-14 bg-green-500 text-white rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 hover:scale-110 hover:shadow-green-500/50 transition-all animate-pulse-slow"
-        aria-label="Chat on WhatsApp"
+        aria-label="Message us on WhatsApp"
         id="whatsapp-float"
       >
         <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 sm:w-7 sm:h-7">

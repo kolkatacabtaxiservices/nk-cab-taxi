@@ -87,7 +87,7 @@ export default function BookingForm({ defaultFrom = '', defaultTo = '', compact 
     const cleanPhone = form.phone.replace(/\D/g, '');
     if (cleanPhone.length < 10) {
       setStatus('error');
-      setErrorMsg('Please enter a valid 10-digit mobile number.');
+      setErrorMsg('Enter a valid 10-digit mobile number.');
       return;
     }
 
@@ -122,11 +122,11 @@ export default function BookingForm({ defaultFrom = '', defaultTo = '', compact 
         }, 10000);
       } else {
         setStatus('error');
-        setErrorMsg(data.error || 'Failed to submit booking. Please call or WhatsApp us.');
+        setErrorMsg(data.error || 'Something went wrong. Please call or WhatsApp us instead.');
       }
     } catch {
       setStatus('error');
-      setErrorMsg('Network error. Please try again or call us directly.');
+      setErrorMsg('Connection issue. Please try again or call us directly.');
     }
   };
 
@@ -136,18 +136,18 @@ export default function BookingForm({ defaultFrom = '', defaultTo = '', compact 
   const renderSuccess = (isCompact: boolean) => (
     <div className={`${isCompact ? 'mt-4 p-4' : 'p-6'} bg-green-50 border border-green-200 rounded-2xl text-center animate-fadeIn`}>
       <CheckCircle size={isCompact ? 28 : 40} className="text-green-500 mx-auto mb-2" />
-      <p className={`text-green-700 font-bold ${isCompact ? 'text-sm' : 'text-lg'}`}>Booking Submitted Successfully!</p>
+      <p className={`text-green-700 font-bold ${isCompact ? 'text-sm' : 'text-lg'}`}>Booking Confirmed Successfully!</p>
       <p className={`text-green-600 ${isCompact ? 'text-xs' : 'text-sm'} mt-1`}>
-        Your booking details have been received. We will call you shortly at <strong>{submittedData?.phone}</strong>
+        We have received your booking details and will call you shortly at <strong>{submittedData?.phone}</strong>
       </p>
       <div className={`flex flex-col sm:flex-row gap-3 justify-center ${isCompact ? 'mt-3' : 'mt-4'}`}>
         <a href={submittedData?.whatsappUrl} target="_blank" rel="noopener noreferrer"
           className={`inline-flex items-center justify-center gap-2 ${isCompact ? 'px-4 py-2 text-xs' : 'px-6 py-2.5 text-sm'} bg-green-500 text-white font-bold rounded-full hover:bg-green-600 transition-colors shadow-md`}>
-          💬 Chat on WhatsApp
+          💬 Message on WhatsApp
         </a>
         <button type="button" onClick={resetForm}
           className={`inline-flex items-center justify-center gap-2 ${isCompact ? 'px-4 py-2 text-xs' : 'px-6 py-2.5 text-sm'} bg-primary text-white font-bold rounded-full hover:bg-primary/90 transition-colors shadow-md`}>
-          <RotateCcw size={isCompact ? 14 : 16} /> Book Another Cab
+          <RotateCcw size={isCompact ? 14 : 16} /> Book Another Ride
         </button>
       </div>
     </div>
@@ -163,7 +163,7 @@ export default function BookingForm({ defaultFrom = '', defaultTo = '', compact 
       <div className={`mt-3 flex flex-col sm:flex-row gap-2 justify-center ${isCompact ? 'text-xs' : 'text-sm'}`}>
         <a href={buildWhatsAppUrl(form)} target="_blank" rel="noopener noreferrer"
           className="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-green-500 text-white font-bold rounded-full hover:bg-green-600 transition-colors shadow-sm">
-          💬 Book on WhatsApp
+          💬 Reserve via WhatsApp
         </a>
         <a href={`tel:${BUSINESS.phone}`}
           className="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-primary text-white font-bold rounded-full hover:bg-primary/95 transition-colors shadow-sm">
@@ -181,14 +181,14 @@ export default function BookingForm({ defaultFrom = '', defaultTo = '', compact 
       <button type="submit" disabled={status === 'submitting'}
         className={`w-full ${isCompact ? 'mt-4 py-3' : 'py-3.5'} bg-gradient-to-r from-primary to-amber-500 text-white font-bold rounded-xl shadow-lg shadow-primary/30 hover:shadow-primary/50 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 ${isCompact ? '' : 'text-lg'} disabled:opacity-70 disabled:cursor-not-allowed`}>
         {status === 'submitting' ? (
-          <><span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Submitting...</>
+          <><span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Sending...</>
         ) : (
-          <><Send size={isCompact ? 18 : 20} /> Submit Booking</>
+          <><Send size={isCompact ? 18 : 20} /> Confirm Booking</>
         )}
       </button>
       {status === 'error' && renderError(isCompact)}
       <p className={`text-center text-xs ${isCompact ? 'text-gray-600' : 'text-gray-600'} mt-2`}>
-        Or call directly: <a href={`tel:${BUSINESS.phone}`} className="text-primary font-semibold hover:underline">{BUSINESS.phone}</a>
+        Or simply call: <a href={`tel:${BUSINESS.phone}`} className="text-primary font-semibold hover:underline">{BUSINESS.phone}</a>
       </p>
     </>
   );
@@ -202,8 +202,8 @@ export default function BookingForm({ defaultFrom = '', defaultTo = '', compact 
         {!flat && (
           <>
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-amber-400 to-primary rounded-t-2xl" />
-            <h2 className="text-lg font-bold text-secondary mb-1">Book Your Cab Now</h2>
-            <p className="text-gray-600 text-xs mb-4">Fill all details for instant confirmation</p>
+            <h2 className="text-lg font-bold text-secondary mb-1">Reserve Your Cab</h2>
+            <p className="text-gray-600 text-xs mb-4">Complete every field for a quick confirmation</p>
           </>
         )}
 
@@ -211,15 +211,15 @@ export default function BookingForm({ defaultFrom = '', defaultTo = '', compact 
           {/* Trip Type */}
           <div className="relative">
             <ChevronDown size={14} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
-            <select aria-label="Trip Type" value={form.tripType} onChange={e => setForm({...form, tripType: e.target.value})}
+            <select aria-label="Journey Type" value={form.tripType} onChange={e => setForm({...form, tripType: e.target.value})}
               className="w-full px-3 py-2.5 border border-gray-200 rounded-xl text-sm font-medium focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none bg-gray-50 hover:bg-white transition-colors appearance-none cursor-pointer">
-              <option value="one-way">➡️ One-Way</option>
-              <option value="round-trip">🔄 Round Trip</option>
-              <option value="local">📍 Local</option>
-              <option value="airport">✈️ Airport Transfer</option>
-              <option value="outstation">🏔️ Outstation</option>
-              <option value="wedding">💒 Wedding Car</option>
-              <option value="corporate">🏢 Corporate Travel</option>
+              <option value="one-way">➡️ One-Way Drop</option>
+              <option value="round-trip">🔄 Round Journey</option>
+              <option value="local">📍 Hourly Local</option>
+              <option value="airport">✈️ Airport Cab</option>
+              <option value="outstation">🏔️ Outstation Trip</option>
+              <option value="wedding">💒 Wedding Rental</option>
+              <option value="corporate">🏢 Corporate Hire</option>
             </select>
           </div>
 
@@ -227,7 +227,7 @@ export default function BookingForm({ defaultFrom = '', defaultTo = '', compact 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div className="relative">
               <MapPin size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-primary" />
-              <input aria-label="Pickup City" type="text" placeholder="Pickup City" value={form.from} onChange={e => setForm({...form, from: e.target.value})} required
+              <input aria-label="Pickup Location" type="text" placeholder="Pickup Location" value={form.from} onChange={e => setForm({...form, from: e.target.value})} required
                 className="w-full pl-8 pr-3 py-2.5 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none bg-gray-50" list="cities-from-compact" autoComplete="off" />
               <datalist id="cities-from-compact">
                 {allCities.map(c => <option key={c.slug} value={`${c.name}, ${c.stateName}`} />)}
@@ -236,7 +236,7 @@ export default function BookingForm({ defaultFrom = '', defaultTo = '', compact 
             {form.tripType !== 'local' && (
               <div className="relative">
                 <MapPin size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-green-500" />
-                <input aria-label="Drop City" type="text" placeholder="Drop City" value={form.to} onChange={e => setForm({...form, to: e.target.value})} required
+                <input aria-label="Drop Location" type="text" placeholder="Drop Location" value={form.to} onChange={e => setForm({...form, to: e.target.value})} required
                   className="w-full pl-8 pr-3 py-2.5 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none bg-gray-50" list="cities-to-compact" autoComplete="off" />
                 <datalist id="cities-to-compact">
                   {allCities.map(c => <option key={c.slug} value={`${c.name}, ${c.stateName}`} />)}
@@ -249,14 +249,14 @@ export default function BookingForm({ defaultFrom = '', defaultTo = '', compact 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div className="relative">
               <Calendar size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-              <input aria-label="Travel Date" type="date" value={form.date} onChange={e => setForm({...form, date: e.target.value})} required
+              <input aria-label="Journey Date" type="date" value={form.date} onChange={e => setForm({...form, date: e.target.value})} required
                 min={new Date().toISOString().split('T')[0]}
                 className="w-full pl-8 pr-3 py-2.5 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none bg-gray-50" />
             </div>
             <div className="relative">
               <Car size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
               <ChevronDown size={14} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
-              <select aria-label="Car Type" value={form.carType} onChange={e => setForm({...form, carType: e.target.value})}
+              <select aria-label="Vehicle Type" value={form.carType} onChange={e => setForm({...form, carType: e.target.value})}
                 className="w-full pl-8 pr-8 py-2.5 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none bg-gray-50 appearance-none cursor-pointer">
                 <option value="sedan">🚗 Sedan</option>
                 <option value="suv">🚙 SUV</option>
@@ -270,12 +270,12 @@ export default function BookingForm({ defaultFrom = '', defaultTo = '', compact 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div className="relative">
               <User size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-              <input aria-label="Your Name" type="text" placeholder="Your Name" value={form.name} onChange={e => setForm({...form, name: e.target.value})} required
+              <input aria-label="Full Name" type="text" placeholder="Full Name" value={form.name} onChange={e => setForm({...form, name: e.target.value})} required
                 className="w-full pl-8 pr-3 py-2.5 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none bg-gray-50" />
             </div>
             <div className="relative">
               <Phone size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-              <input aria-label="Phone Number" type="tel" placeholder="10-digit Mobile" value={form.phone} onChange={e => setForm({...form, phone: e.target.value})} required pattern="[0-9]{10}"
+              <input aria-label="Mobile Number" type="tel" placeholder="Mobile Number" value={form.phone} onChange={e => setForm({...form, phone: e.target.value})} required pattern="[0-9]{10}"
                 className="w-full pl-8 pr-3 py-2.5 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none bg-gray-50" />
             </div>
           </div>
@@ -293,24 +293,24 @@ export default function BookingForm({ defaultFrom = '', defaultTo = '', compact 
     <form onSubmit={handleSubmit} className="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-2xl border border-gray-100 relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-amber-400 to-primary" />
       
-      <h2 className="text-xl md:text-2xl font-bold text-secondary mb-2">Book Your Ride</h2>
-      <p className="text-gray-500 text-sm mb-6">Fill the form below and submit your booking</p>
+      <h2 className="text-xl md:text-2xl font-bold text-secondary mb-2">Reserve Your Ride</h2>
+      <p className="text-gray-500 text-sm mb-6">Fill in the details below and send your booking</p>
 
       <div className="space-y-4">
         {/* Trip type — Dropdown */}
         <div>
-          <label htmlFor="tripType" className="block text-sm font-medium text-gray-700 mb-1">Trip Type</label>
+          <label htmlFor="tripType" className="block text-sm font-medium text-gray-700 mb-1">Journey Type</label>
           <div className="relative">
             <ChevronDown size={16} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
             <select id="tripType" value={form.tripType} onChange={e => setForm({...form, tripType: e.target.value})}
               className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm font-medium focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none bg-gray-50 hover:bg-white transition-colors appearance-none cursor-pointer">
-              <option value="one-way">➡️ One-Way</option>
-              <option value="round-trip">🔄 Round Trip</option>
-              <option value="local">📍 Local</option>
-              <option value="airport">✈️ Airport Transfer</option>
-              <option value="outstation">🏔️ Outstation</option>
-              <option value="wedding">💒 Wedding Car</option>
-              <option value="corporate">🏢 Corporate Travel</option>
+              <option value="one-way">➡️ One-Way Drop</option>
+              <option value="round-trip">🔄 Round Journey</option>
+              <option value="local">📍 Hourly Local</option>
+              <option value="airport">✈️ Airport Cab</option>
+              <option value="outstation">🏔️ Outstation Trip</option>
+              <option value="wedding">💒 Wedding Rental</option>
+              <option value="corporate">🏢 Corporate Hire</option>
             </select>
           </div>
         </div>
@@ -318,13 +318,13 @@ export default function BookingForm({ defaultFrom = '', defaultTo = '', compact 
         {/* From/To — Text input with autocomplete suggestions */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label htmlFor="pickupCity" className="block text-sm font-medium text-gray-700 mb-1">Pickup City</label>
+            <label htmlFor="pickupCity" className="block text-sm font-medium text-gray-700 mb-1">Pickup Location</label>
             <div className="relative">
               <MapPin size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-primary" />
               <input 
                 id="pickupCity"
                 type="text" 
-                placeholder="Type pickup city name" 
+                placeholder="Enter pickup city" 
                 value={form.from} 
                 onChange={e => setForm({...form, from: e.target.value})} 
                 required
@@ -339,13 +339,13 @@ export default function BookingForm({ defaultFrom = '', defaultTo = '', compact 
           </div>
           {form.tripType !== 'local' && (
             <div>
-              <label htmlFor="dropCity" className="block text-sm font-medium text-gray-700 mb-1">Drop City</label>
+              <label htmlFor="dropCity" className="block text-sm font-medium text-gray-700 mb-1">Drop Location</label>
               <div className="relative">
                 <MapPin size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-green-500" />
                 <input 
                   id="dropCity"
                   type="text" 
-                  placeholder="Type drop city name" 
+                  placeholder="Enter drop city" 
                   value={form.to} 
                   onChange={e => setForm({...form, to: e.target.value})} 
                   required
@@ -364,7 +364,7 @@ export default function BookingForm({ defaultFrom = '', defaultTo = '', compact 
         {/* Date & Car */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label htmlFor="travelDate" className="block text-sm font-medium text-gray-700 mb-1">Travel Date</label>
+            <label htmlFor="travelDate" className="block text-sm font-medium text-gray-700 mb-1">Journey Date</label>
             <div className="relative">
               <Calendar size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
               <input id="travelDate" type="date" value={form.date} onChange={e => setForm({...form, date: e.target.value})} required
@@ -373,16 +373,16 @@ export default function BookingForm({ defaultFrom = '', defaultTo = '', compact 
             </div>
           </div>
           <div>
-            <label htmlFor="carType" className="block text-sm font-medium text-gray-700 mb-1">Car Type</label>
+            <label htmlFor="carType" className="block text-sm font-medium text-gray-700 mb-1">Vehicle Type</label>
             <div className="relative">
               <Car size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
               <ChevronDown size={16} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
               <select id="carType" value={form.carType} onChange={e => setForm({...form, carType: e.target.value})}
                 className="w-full pl-9 pr-8 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none bg-gray-50 hover:bg-white transition-colors appearance-none cursor-pointer">
-                <option value="sedan">🚗 Sedan (Swift Dzire / Amaze)</option>
-                <option value="suv">🚙 SUV (Ertiga / Innova)</option>
-                <option value="tempo">🚐 Tempo Traveller (12-17 Seater)</option>
-                <option value="luxury">✨ Luxury (Fortuner / Mercedes)</option>
+                <option value="sedan">🚗 Sedan (Swift Dzire, Amaze)</option>
+                <option value="suv">🚙 SUV (Ertiga, Innova)</option>
+                <option value="tempo">🚐 Tempo Traveller (12-17 Seats)</option>
+                <option value="luxury">✨ Luxury (Fortuner, Mercedes)</option>
               </select>
             </div>
           </div>
@@ -391,18 +391,18 @@ export default function BookingForm({ defaultFrom = '', defaultTo = '', compact 
         {/* Name & Phone */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+            <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
             <div className="relative">
               <User size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-              <input id="fullName" type="text" placeholder="Enter your name" value={form.name} onChange={e => setForm({...form, name: e.target.value})} required
+              <input id="fullName" type="text" placeholder="Your full name" value={form.name} onChange={e => setForm({...form, name: e.target.value})} required
                 className="w-full pl-9 pr-3 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none bg-gray-50" />
             </div>
           </div>
           <div>
-            <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+            <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700 mb-1">Mobile Number</label>
             <div className="relative">
               <Phone size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-              <input id="phoneNumber" type="tel" placeholder="10-digit mobile number" value={form.phone} onChange={e => setForm({...form, phone: e.target.value})} required pattern="[0-9]{10}"
+              <input id="phoneNumber" type="tel" placeholder="10 digit mobile number" value={form.phone} onChange={e => setForm({...form, phone: e.target.value})} required pattern="[0-9]{10}"
                 className="w-full pl-9 pr-3 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none bg-gray-50" />
             </div>
           </div>

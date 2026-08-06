@@ -4,10 +4,10 @@ import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 
 const bannerImages = [
-  { src: '/navbanner.webp', alt: 'NK Cab & Taxi - Reliable cab booking across East India' },
-  { src: '/navbanner1.webp', alt: 'Outstation Cab Service - Affordable intercity travel' },
-  { src: '/navbanner2.webp', alt: 'Wedding Car Rental - Decorated cars for every occasion' },
-  { src: '/navbanner3.webp', alt: 'Airport Transfer Service - On-time pickup and drop' },
+  { src: '/navbanner.webp', alt: 'NK Cab & Taxi - Trusted cab booking across East India' },
+  { src: '/navbanner1.webp', alt: 'Outstation Cab Rental - Low-cost trips between cities' },
+  { src: '/navbanner2.webp', alt: 'Wedding Car Fleet - Dressed-up cars for any celebration' },
+  { src: '/navbanner3.webp', alt: 'Airport Transfer Service - Punctual pickup and drop-off' },
 ];
 
 interface HeroBannerProps {
@@ -43,7 +43,7 @@ export default function HeroBanner({ hideDots = false }: HeroBannerProps) {
           avoiding forced reflow on every slide transition. */}
       <div
         role="region"
-        aria-label="Banner slideshow"
+        aria-label="Hero carousel"
         aria-live="polite"
         aria-atomic="false"
         className="absolute inset-0"
@@ -93,7 +93,7 @@ export default function HeroBanner({ hideDots = false }: HeroBannerProps) {
             <button
               key={index}
               type="button"
-              aria-label={`Go to slide ${index + 1}`}
+              aria-label={`Jump to slide ${index + 1}`}
               onClick={() => setCurrent(index)}
               className={`h-2 rounded-full transition-all duration-500 ${
                 index === current

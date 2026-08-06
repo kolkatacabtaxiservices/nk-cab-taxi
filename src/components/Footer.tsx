@@ -68,16 +68,16 @@ export default async function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
               <p className="text-white font-bold text-lg">
-                Ready to Book Your Cab?
+                Ready to Travel?
               </p>
-              <p className="text-gray-400 text-sm">24/7 available · Confirm in 2 minutes · No app needed</p>
+              <p className="text-gray-400 text-sm">Open round the clock · Confirmation within 2 minutes · No app required</p>
             </div>
             <div className="flex gap-3">
               <a href={`tel:${BUSINESS.phone}`}
                 className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#FF6B00] to-[#F5A623] text-white rounded-xl font-bold text-sm shadow-lg hover:shadow-orange-lg transition-all">
                 <Phone size={16} /> {BUSINESS.phoneDisplay}
               </a>
-              <a href={`${BUSINESS.whatsappLink}?text=${encodeURIComponent('Hi! I want to book a cab.')}`}
+              <a href={`${BUSINESS.whatsappLink}?text=${encodeURIComponent('Hi! I would like to book a cab.')}`}
                 className="flex items-center gap-2 px-6 py-3 bg-green-700 hover:bg-green-600 text-white rounded-xl font-bold text-sm transition-colors">
                 💬 WhatsApp
               </a>
@@ -109,7 +109,7 @@ export default async function Footer() {
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              Trusted cab & taxi service in Kolkata & East India. Airport transfers, outstation cabs, local taxi — AC vehicles, verified drivers, no surge pricing.
+              Dependable cab and taxi service based in Kolkata, serving East India. Airport pickups, outstation rides, and city taxis — air-conditioned cars, background-checked drivers, and steady fixed pricing.
             </p>
             <div className="space-y-3">
               <a href={`tel:${BUSINESS.phone}`} className="flex items-center gap-3 text-gray-300 hover:text-[#FF6B00] transition-colors text-sm">
@@ -134,7 +134,7 @@ export default async function Footer() {
                 <div className="w-8 h-8 bg-[#FF6B00]/15 rounded-lg flex items-center justify-center shrink-0">
                   <Clock size={14} className="text-[#FF6B00]" />
                 </div>
-                24/7, 365 Days
+                24/7, 365 Days a Year
               </div>
             </div>
 
@@ -176,7 +176,7 @@ export default async function Footer() {
               ))}
             </div>
             <Link href="/west-bengal" className="inline-flex items-center gap-1 text-[#FF6B00] text-xs font-semibold mt-4 hover:gap-2 transition-all">
-              All WB cities <ArrowRight size={12} />
+              View all WB cities <ArrowRight size={12} />
             </Link>
           </div>
 
@@ -184,7 +184,7 @@ export default async function Footer() {
           <div>
             <h3 className="text-white font-bold mb-5 text-sm uppercase tracking-wider flex items-center gap-2">
               <span className="w-4 h-0.5 bg-[#FF6B00] rounded-full inline-block" />
-              Kolkata Areas
+              Kolkata Zones
             </h3>
             <div className="space-y-0.5 mb-6">
               {kolkataAreas.slice(0, 6).map((area) => (
@@ -197,7 +197,7 @@ export default async function Footer() {
             </div>
             <h3 className="text-white font-bold mb-3 text-sm uppercase tracking-wider flex items-center gap-2">
               <span className="w-4 h-0.5 bg-[#F5A623] rounded-full inline-block" />
-              JH, OD, BR & UP
+              Jharkhand, Odisha, Bihar & UP
             </h3>
             <div className="grid grid-cols-2 gap-x-3">
               {otherStateCities.map((city) => (
@@ -214,7 +214,7 @@ export default async function Footer() {
           <div>
             <h3 className="text-white font-bold mb-5 text-sm uppercase tracking-wider flex items-center gap-2">
               <span className="w-4 h-0.5 bg-[#FF6B00] rounded-full inline-block" />
-              Popular Routes
+              Top Routes
             </h3>
             <div className="space-y-0.5 mb-6">
               {popularRoutes.map((r) => (
@@ -227,18 +227,18 @@ export default async function Footer() {
             </div>
             <h3 className="text-white font-bold mb-3 text-sm uppercase tracking-wider flex items-center gap-2">
               <span className="w-4 h-0.5 bg-[#F5A623] rounded-full inline-block" />
-              Services
+              Our Services
             </h3>
             <div className="space-y-0.5">
               {[
                 ['Airport Transfer', '/services/airport-transfer'],
                 ['Outstation Cab', '/services/outstation'],
-                ['One-Way Taxi', '/services/one-way'],
-                ['Local Taxi Kolkata', '/services/local-taxi'],
+                ['One-Way Cab', '/services/one-way'],
+                ['Kolkata Local Taxi', '/services/local-taxi'],
                 ['Wedding Car Rental', '/services/wedding-car-rental'],
-                ['Corporate Cars', '/services/corporate-car-rental'],
-                ['Fare Chart', '/fare-chart'],
-                ['NK Cab vs Ola/Uber', '/kolkata-cab-vs-ola-uber'],
+                ['Corporate Cabs', '/services/corporate-car-rental'],
+                ['Fare Rates', '/fare-chart'],
+                ['NK Cab vs Ola & Uber', '/kolkata-cab-vs-ola-uber'],
                 ['Kolkata to Jamshedpur Cab', '/kolkata-to-jamshedpur-cab'],
                 ['Jamshedpur to Kolkata Cab', '/jamshedpur-to-kolkata-cab'],
                 ['About Us', '/about'],
@@ -260,7 +260,7 @@ export default async function Footer() {
         <div className="max-w-7xl mx-auto px-4 py-5">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-3">
             <p className="text-gray-600 text-xs text-center">
-              © {new Date().getFullYear()} NK Cab & Taxi — All Rights Reserved · Kolkata, West Bengal, India
+              © {new Date().getFullYear()} NK Cab & Taxi — All rights reserved · Kolkata, West Bengal, India
             </p>
             <div className="flex items-center gap-4 text-xs text-gray-600">
               <Link href="/privacy-policy" className="hover:text-[#FF6B00] transition-colors">Privacy</Link>

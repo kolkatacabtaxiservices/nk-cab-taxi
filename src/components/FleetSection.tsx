@@ -43,13 +43,13 @@ export default function FleetSection({
         <div className="text-center mb-10">
           <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-3">
             {isRoute
-              ? <>Choose Your Vehicle — <span className="text-gradient">{fromName} to {toName}</span></>
-              : <>Our <span className="text-gradient">Fleet</span> — Cars Available {context}</>}
+              ? <>Select Your Car — <span className="text-gradient">{fromName} to {toName}</span></>
+              : <>Our <span className="text-gradient">Fleet</span> — Vehicles Ready {context}</>}
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto text-sm">
             {isRoute
-              ? `Select from our AC, GPS-tracked fleet for your ${distance} km journey. All fares include fuel & driver.`
-              : `Well-maintained AC vehicles available 24/7 ${context}. Sedan, SUV, Innova, Crysta & Tempo available.`}
+              ? `Pick from our air-conditioned, GPS-monitored cars for your ${distance} km trip. Every fare covers fuel and driver.`
+              : `Clean, air-conditioned cars ready around the clock ${context}. Choose from Sedan, SUV, Innova, Crysta and Tempo.`}
           </p>
         </div>
 
@@ -73,7 +73,7 @@ export default function FleetSection({
                   ? `/${stateSlug}/${citySlug}/${vehicle.id}`
                   : '#booking-form';
 
-            const btnLabel = (isHubOriginRoute || isHubCity) ? 'View Details' : 'Book Now';
+            const btnLabel = (isHubOriginRoute || isHubCity) ? 'See Options' : 'Reserve Now';
 
             return (
               <Link
@@ -101,13 +101,13 @@ export default function FleetSection({
                   </h3>
                   <p className="text-xs text-gray-500 mb-3">{vehicle.models.slice(0, 2).join(', ')}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="px-2.5 py-1 bg-amber-100 text-amber-800 text-xs font-medium rounded-full">👥 {vehicle.capacity} Pax</span>
+                    <span className="px-2.5 py-1 bg-amber-100 text-amber-800 text-xs font-medium rounded-full">👥 {vehicle.capacity} Seats</span>
                     <span className="px-2.5 py-1 bg-amber-100 text-amber-800 text-xs font-medium rounded-full">🧳 {vehicle.luggage} Bags</span>
                     <span className="px-2.5 py-1 bg-amber-100 text-amber-800 text-xs font-medium rounded-full">❄️ AC</span>
                   </div>
                   <div className="flex items-end justify-between">
                     <div>
-                      <span className="text-xs text-gray-500">{isRoute ? 'One-way fare' : 'Starting from'}</span>
+                      <span className="text-xs text-gray-500">{isRoute ? 'One-Way Rate' : 'Starting at'}</span>
                       <p className="text-xl font-bold text-primary">
                         {price || `₹${vehicle.pricePerKm}`}
                         <span className="text-sm text-gray-500 font-normal">{price ? '' : '/km'}</span>
@@ -129,7 +129,7 @@ export default function FleetSection({
               href="/fleet"
               className="inline-flex items-center gap-2 px-6 py-3 bg-secondary text-white font-semibold rounded-full hover:bg-secondary/90 transition-colors"
             >
-              View Full Fleet →
+              Browse Full Fleet →
             </Link>
           </div>
         )}

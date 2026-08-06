@@ -26,17 +26,17 @@ export const metadata: Metadata = {
   alternates: { canonical: `${BUSINESS.domain}/services/round-trip` },
   openGraph: {
     title: `Round Trip Cab Kolkata | Driver Stays | Darjeeling, Puri, Varanasi | ${BUSINESS.name}`,
-    description: `Multi-day round trip from Kolkata with driver accommodation included. Darjeeling 4–5 days, Puri 3–4 days. ₹12/km Sedan. No surge. Call ${BUSINESS.phone}`,
+    description: `Multi-day round trip from Kolkata with driver accommodation included. Darjeeling 4–5 days, Puri 3–4 days. Sedan ₹12/km. Fixed fares. Call ${BUSINESS.phone}`,
     type: 'website',
     siteName: BUSINESS.name,
     url: `${BUSINESS.domain}/services/round-trip`,
     locale: 'en_IN',
-    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: `Round Trip Cab Kolkata — ${BUSINESS.name}` }],
+    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: `Round Trip Taxi Service Kolkata — ${BUSINESS.name}` }],
   },
   twitter: {
     card: 'summary_large_image',
     title: `Round Trip Cab Kolkata | Driver Stays With You | ${BUSINESS.name}`,
-    description: `Multi-day tour cabs from Kolkata. Driver stays all days. Darjeeling, Puri, Varanasi. Call ${BUSINESS.phone}`,
+    description: `Multi-day tour cabs from Kolkata. Driver stays all days. Darjeeling, Puri, Varanasi. Fixed fares. Call ${BUSINESS.phone}`,
   },
 };
 
@@ -44,12 +44,12 @@ export default async function RoundTripPage() {
   const routes = await getPopularRoutes(9);
 
   const faqs = [
-    { question: 'What is round trip cab service from Kolkata?', answer: `Round trip cab from Kolkata means the driver accompanies you from Kolkata to your destination and stays with you for the full trip duration, then brings you back to Kolkata. Ideal for multi-day tours, pilgrimages, and family vacations. Call ${BUSINESS.phone}.` },
-    { question: 'What is the round trip cab fare from Kolkata?', answer: 'Round trip cab fare from Kolkata: Sedan ₹12/km (minimum 250 km/day), SUV ₹16/km, Innova Crysta ₹18/km, Tempo Traveller ₹22/km. Driver allowance ₹300/night included. Toll, parking extra.' },
-    { question: 'What is the difference between one-way and round trip cab?', answer: 'One-way: driver drops you at destination and returns, you pay only one side. Round trip: driver stays with you for the entire duration (including return). Round trip is better for tours where you need the cab throughout your stay.' },
-    { question: 'Can I do Kolkata to Darjeeling-Gangtok round trip?', answer: 'Yes! Our most popular round trip from Kolkata is Darjeeling-Gangtok (5-7 days). Innova Crysta recommended (handles mountain roads well). Full itinerary support, sightseeing stops included. Call for custom quote.' },
-    { question: 'Is driver accommodation included in round trip?', answer: 'Yes! Driver accommodation is included in all round trip cab bookings from Kolkata. The driver manages his own stay at each destination. Driver allowance of ₹300/night is included in the quoted fare.' },
-    { question: 'What are popular round trip packages from Kolkata?', answer: 'Popular round trips from Kolkata: Kolkata-Digha-Kolkata (2 days), Kolkata-Darjeeling-Kolkata (4-5 days), Kolkata-Puri-Konark-Kolkata (3-4 days), Kolkata-Varanasi-Ayodhya-Kolkata (5-6 days), Kolkata-Sundarbans-Kolkata (2-3 days).' },
+    { question: 'What does round trip cab service from Kolkata mean?', answer: `Round trip cab from Kolkata means the driver starts with you in Kolkata, stays with you for the whole tour, and finally brings you back to Kolkata. It suits multi-day tours, pilgrimages and family holidays. Call ${BUSINESS.phone}.` },
+    { question: 'How is the round trip fare from Kolkata calculated?', answer: 'Round trip fares from Kolkata: Sedan ₹12/km (min 250 km/day), SUV ₹16/km, Innova Crysta ₹18/km, Tempo Traveller ₹22/km. A ₹300/night driver allowance is included. Tolls and parking are billed as incurred.' },
+    { question: 'How is a round trip different from a one-way cab?', answer: 'One-way: the driver drops you at your destination and returns; you pay only one side. Round trip: the driver remains with you for the entire itinerary including the return. Choose round trip when you want the cab at your disposal throughout your stay.' },
+    { question: 'Can I take a Kolkata to Darjeeling-Gangtok round trip?', answer: 'Yes — our most booked round trip from Kolkata is Darjeeling-Gangtok (5–7 days). We recommend the Innova Crysta, which handles mountain roads very well. Full itinerary help and sightseeing stops are included. Call for a custom quote.' },
+    { question: 'Is driver accommodation covered on a round trip?', answer: 'Yes — driver accommodation is part of every round trip booking from Kolkata. The driver arranges his own stay at each destination, and the ₹300/night driver allowance is already inside the quoted fare.' },
+    { question: 'Which round trip packages are popular from Kolkata?', answer: 'Favourite round trips from Kolkata: Kolkata-Digha-Kolkata (2 days), Kolkata-Darjeeling-Kolkata (4–5 days), Kolkata-Puri-Konark-Kolkata (3–4 days), Kolkata-Varanasi-Ayodhya-Kolkata (5–6 days) and Kolkata-Sundarbans-Kolkata (2–3 days).' },
   ];
 
   const popularTours = [
@@ -64,7 +64,7 @@ export default async function RoundTripPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFaqSchema(faqs)) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceTypeSchema('Round Trip Cab Service Kolkata', 'round-trip', 'Multi-day round trip cab service from Kolkata. Driver stays with you for full tour duration. 500+ routes.')) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceTypeSchema('Round Trip Cab Service Kolkata', 'round-trip', 'Multi-day round trip cab service from Kolkata. Driver stays with you for the full tour. 500+ routes available.')) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema([
         { name: 'Home', url: BUSINESS.domain },
         { name: 'Services', url: `${BUSINESS.domain}/services` },
@@ -75,8 +75,8 @@ export default async function RoundTripPage() {
         <HeroBanner hideDots />
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <Breadcrumbs items={[{ name: 'Services', href: '/services' }, { name: 'Round Trip', href: '/services/round-trip' }]} />
-          <h1 className="text-3xl md:text-4xl font-extrabold mt-4 mb-4">Round Trip <span className="text-gradient">Cab Service</span> from Kolkata ₹12/km | Multi-Day Available</h1>
-          <p className="text-lg text-gray-300 max-w-3xl">Multi-day round trip cab from Kolkata — driver stays with you for the full tour. Darjeeling, Puri, Digha & 500+ routes. Sedan ₹12/km, Innova ₹18/km.</p>
+          <h1 className="text-3xl md:text-4xl font-extrabold mt-4 mb-4">Round Trip <span className="text-gradient">Cab Service</span> from Kolkata ₹12/km | Multi-Day Options</h1>
+          <p className="text-lg text-gray-300 max-w-3xl">Multi-day round trip cab from Kolkata — the driver stays with you for the whole tour. Darjeeling, Puri, Digha & 500+ routes. Sedan ₹12/km, Innova ₹18/km.</p>
           <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center gap-2 px-6 py-3 mt-6 bg-gradient-to-r from-primary to-amber-500 text-white font-bold rounded-full shadow-lg">
             <Phone size={18} /> Book Now: {BUSINESS.phone}
           </a>
@@ -88,23 +88,23 @@ export default async function RoundTripPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             <div className="lg:col-span-2 space-y-8">
               <div>
-                <h2 className="text-2xl font-bold text-secondary mb-4">Round Trip Cab from Kolkata — Multi-Day Tours</h2>
+                <h2 className="text-2xl font-bold text-secondary mb-4">Round Trip Cabs from Kolkata — Multi-Day Tours</h2>
                 <div className="space-y-4 text-gray-600">
                   <p>
-                    Round trip cab service from Kolkata is the ideal choice for multi-day tours, pilgrimages, and family vacations. With <strong>{BUSINESS.name}</strong>&apos;s round trip cab booking, a dedicated driver accompanies you from Kolkata to your destination and stays with you throughout your trip — handling all sightseeing, hotel-to-hotel transfers, and finally returning you safely to Kolkata.
+                    Round trip cab service from Kolkata is the go-to pick for multi-day tours, pilgrimages and family trips. With <strong>{BUSINESS.name}</strong>&apos;s round trip booking, a dedicated driver joins you in Kolkata and stays for the full journey — covering every sightseeing leg, hotel-to-hotel transfers, and bringing you back safely to Kolkata.
                   </p>
                   <p>
-                    Popular round trip destinations from Kolkata include Darjeeling (4–5 days), Puri & Konark (3–4 days), Varanasi & Ayodhya (5–6 days), Digha & Mandarmani (2 days), Siliguri & North Bengal (3–4 days), and the Sundarbans National Park (2–3 days). All vehicles are AC, and drivers are experienced, police-verified professionals.
+                    Favourite round trip destinations from Kolkata include Darjeeling (4–5 days), Puri & Konark (3–4 days), Varanasi & Ayodhya (5–6 days), Digha & Mandarmani (2 days), Siliguri & North Bengal (3–4 days) and the Sundarbans National Park (2–3 days). All cars are AC, and the chauffeurs are experienced, police-verified professionals.
                   </p>
                   <p>
-                    Round trip cab fare from Kolkata: Sedan ₹12/km, SUV ₹16/km, Innova Crysta ₹18/km — with minimum 250 km/day billing. Driver allowance and accommodation are included. Toll and parking are extra. We accept Cash, UPI, and Card payments.
+                    Round trip rates from Kolkata: Sedan ₹12/km, SUV ₹16/km, Innova Crysta ₹18/km — billed on a minimum 250 km/day. Driver allowance and accommodation are included, tolls and parking are extra. Cash, UPI and Card are all accepted.
                   </p>
                 </div>
               </div>
 
               {/* Popular tour packages */}
               <div>
-                <h3 className="text-xl font-bold text-secondary mb-4">Popular Round Trip Tour Packages from Kolkata</h3>
+                <h3 className="text-xl font-bold text-secondary mb-4">Popular Round Trip Packages from Kolkata</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {popularTours.map((tour, i) => (
                     <div key={i} className="p-4 bg-accent/50 rounded-xl border border-primary/10">
@@ -123,7 +123,7 @@ export default async function RoundTripPage() {
 
               {/* Fare */}
               <div>
-                <h3 className="text-xl font-bold text-secondary mb-4">Round Trip Cab Fare from Kolkata</h3>
+                <h3 className="text-xl font-bold text-secondary mb-4">Round Trip Rates from Kolkata</h3>
                 <div className="overflow-x-auto rounded-xl border border-gray-100 shadow-sm">
                   <table className="w-full border-collapse bg-white">
                     <thead>
@@ -156,17 +156,17 @@ export default async function RoundTripPage() {
 
               {/* why */}
               <div>
-                <h3 className="text-xl font-bold text-secondary mb-4">Why Book Round Trip Cab from Kolkata with Us?</h3>
+                <h3 className="text-xl font-bold text-secondary mb-4">Why Book a Round Trip Cab from Kolkata with Us?</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {[
-                    'Driver stays with you throughout the entire trip',
-                    'Flexible itinerary — change plans on the go',
-                    'Multiple sightseeing stops included',
-                    'Hotel-to-hotel transfers within each destination',
-                    'Driver accommodation included in the fare',
+                    'Driver stays with you for the entire journey',
+                    'Flexible itinerary — change plans as you go',
+                    'Plenty of sightseeing stops built in',
+                    'Hotel-to-hotel transfers at each destination',
+                    'Driver accommodation covered in the fare',
                     'Innova Crysta for mountain routes (Darjeeling, Gangtok)',
                     'WhatsApp itinerary confirmation before departure',
-                    '24/7 support during the trip for any assistance',
+                    'Round-the-clock support during the trip',
                   ].map((point, i) => (
                     <div key={i} className="flex items-start gap-2 text-sm text-gray-600">
                       <CheckCircle size={16} className="text-green-500 shrink-0 mt-0.5" />
@@ -193,7 +193,7 @@ export default async function RoundTripPage() {
             <div className="lg:sticky lg:top-24 lg:self-start space-y-4">
               <BookingForm />
               <div className="p-4 bg-secondary rounded-xl text-white text-center">
-                <p className="text-sm text-gray-300 mb-2">Round Trip Booking</p>
+                <p className="text-sm text-gray-300 mb-2">Reserve a Round Trip Cab</p>
                 <a href={`tel:${BUSINESS.phone}`} className="text-xl font-bold hover:text-primary transition-colors">📞 {BUSINESS.phone}</a>
               </div>
             </div>
@@ -201,14 +201,14 @@ export default async function RoundTripPage() {
         </div>
       </section>
 
-      <section className="py-12 bg-gray-50"><div className="max-w-7xl mx-auto px-4"><FAQSection faqs={faqs} title="Round Trip Cab from Kolkata — FAQs" /></div></section>
+      <section className="py-12 bg-gray-50"><div className="max-w-7xl mx-auto px-4"><FAQSection faqs={faqs} title="Round Trip Cab from Kolkata — Common Questions" /></div></section>
 
       {/* Multi-City Coverage */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-secondary mb-4">Round Trip from <span className="text-primary">Other Cities</span></h2>
+          <h2 className="text-2xl font-bold text-secondary mb-4">Round Trips from <span className="text-primary">Other Cities</span></h2>
           <p className="text-gray-600 mb-6">
-            Round trip cab service is also available from <strong>Ranchi</strong> (to Deoghar, Kolkata, Hazaribagh), <strong>Jamshedpur</strong> (to Kolkata, Ranchi, Parasnath), <strong>Bhubaneswar</strong> (to Puri, Konark, Chilika), and 80+ cities. Same driver-stays-with-you service.
+            Round trip service is also available from <strong>Ranchi</strong> (to Deoghar, Kolkata, Hazaribagh), <strong>Jamshedpur</strong> (to Kolkata, Ranchi, Parasnath), <strong>Bhubaneswar</strong> (to Puri, Konark, Chilika) and 80+ more cities, with the same driver-stays-with-you experience.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
             {[
@@ -231,13 +231,13 @@ export default async function RoundTripPage() {
 
       <section className="py-12 bg-gradient-to-r from-primary to-amber-500 text-white text-center">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">Book Round Trip — Kolkata, Ranchi & More</h2>
-          <p className="text-white/90 mb-6">Multi-day tours with dedicated driver. Darjeeling, Puri, Varanasi & more.</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">Reserve a Round Trip — Kolkata, Ranchi & More</h2>
+          <p className="text-white/90 mb-6">Multi-day tours with a dedicated driver. Darjeeling, Puri, Varanasi & beyond.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
               <Phone size={22} /> {BUSINESS.phone}
             </a>
-            <a href={`${BUSINESS.whatsappLink}?text=${encodeURIComponent('Hi! I want to book a round trip cab.')}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-500 text-white font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
+            <a href={`${BUSINESS.whatsappLink}?text=${encodeURIComponent('Hi! I would like to book a round trip cab.')}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-500 text-white font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
               💬 WhatsApp
             </a>
           </div>

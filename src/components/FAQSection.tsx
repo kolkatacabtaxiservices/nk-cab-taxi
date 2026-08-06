@@ -14,14 +14,14 @@ interface FAQSectionProps {
   title?: string;
 }
 
-export default function FAQSection({ faqs, title = 'Frequently Asked Questions' }: FAQSectionProps) {
+export default function FAQSection({ faqs, title = 'Common Questions & Answers' }: FAQSectionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
     <section className="py-12 md:py-16" id="faq-section">
       <div className="text-center mb-8 md:mb-10">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-amber-100 rounded-full text-amber-800 text-sm font-medium mb-3">
-          <HelpCircle size={14} /> FAQs
+          <HelpCircle size={14} /> Q&A
         </div>
         <h2 className="text-2xl md:text-3xl font-bold text-secondary text-balance">{title}</h2>
       </div>

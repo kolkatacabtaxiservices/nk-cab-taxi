@@ -30,7 +30,7 @@ const navigation = [
       { name: 'Bodh Gaya & Rajgir', href: '/tours/bodh-gaya-rajgir-tour' },
       { name: 'North Bengal Tour', href: '/tours/north-bengal-tour' },
       { name: 'Kolkata City Tour', href: '/tours/kolkata-city-tour' },
-      { name: 'All Packages →', href: '/tours' },
+      { name: 'All Tours →', href: '/tours' },
     ],
   },
   {
@@ -44,11 +44,11 @@ const navigation = [
       { name: 'Ranchi', href: '/jharkhand/ranchi' },
       { name: 'Jamshedpur', href: '/jharkhand/jamshedpur' },
       { name: 'Bhubaneswar', href: '/odisha/bhubaneswar' },
-      { name: 'All Cities →', href: '/west-bengal' },
+      { name: 'Browse All Cities →', href: '/west-bengal' },
     ],
   },
-  { name: 'Fleet', href: '/fleet' },
-  { name: 'Fare Chart', href: '/fare-chart' },
+  { name: 'Our Fleet', href: '/fleet' },
+  { name: 'Fare Rates', href: '/fare-chart' },
   { name: 'Blog', href: '/blog' },
   { name: 'Contact', href: '/contact' },
 ];
@@ -73,7 +73,7 @@ export default function Header() {
             <span className="inline-block w-2 h-2 bg-white rounded-full animate-pulse" />
             🚖 {BUSINESS.tagline} — Available {BUSINESS.hours}
           </span>
-          <span className="sm:hidden font-medium text-xs">🚖 NK Cab &amp; Taxi — 24/7 Available</span>
+          <span className="sm:hidden font-medium text-xs">🚖 NK Cab &amp; Taxi — Always Open</span>
           <a
             href={`tel:${BUSINESS.phone}`}
             className="flex items-center gap-1.5 font-bold hover:opacity-80 transition-opacity text-white"
@@ -172,7 +172,7 @@ export default function Header() {
             {/* CTA — desktop */}
             <div className="hidden lg:flex items-center gap-3">
               <a
-                href={`${BUSINESS.whatsappLink}?text=${encodeURIComponent('Hi! I want to book a cab.')}`}
+                href={`${BUSINESS.whatsappLink}?text=${encodeURIComponent('Hi! I would like to book a cab.')}`}
                 className="flex items-center gap-2 px-4 py-2 rounded-full border border-green-400 text-green-600 hover:bg-green-500 hover:text-white hover:border-green-500 transition-all text-sm font-semibold"
               >
                 💬 WhatsApp
@@ -182,7 +182,7 @@ export default function Header() {
                 className="flex items-center gap-2 px-5 py-2.5 btn-primary rounded-full text-sm font-bold"
               >
                 <Phone size={15} />
-                Call Now
+                Call Us
               </a>
             </div>
 
@@ -190,7 +190,7 @@ export default function Header() {
             <button
               className="lg:hidden p-2 rounded-xl border border-gray-200 text-[#0D1B2A] hover:bg-gray-50 hover:border-[#FF6B00]/30 transition-colors"
               onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label="Open menu"
+              aria-label="Open navigation menu"
             >
               {mobileOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
@@ -246,10 +246,10 @@ export default function Header() {
                   href={`tel:${BUSINESS.phone}`}
                   className="flex-1 flex items-center justify-center gap-2 py-3 btn-primary rounded-xl text-sm font-bold"
                 >
-                  <Phone size={16} /> Call Now
+                  <Phone size={16} /> Call Us
                 </a>
                 <a
-                  href={`${BUSINESS.whatsappLink}?text=${encodeURIComponent('Hi! I want to book a cab.')}`}
+                  href={`${BUSINESS.whatsappLink}?text=${encodeURIComponent('Hi! I would like to book a cab.')}`}
                   className="flex-1 flex items-center justify-center gap-2 py-3 bg-green-600 text-white font-bold rounded-xl text-sm hover:bg-green-500 transition-colors"
                 >
                   💬 WhatsApp

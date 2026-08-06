@@ -11,21 +11,21 @@ export const dynamic = 'force-static';
 export const revalidate = false;
 export const metadata: Metadata = {
   // `absolute` prevents layout template from appending "| NK Cab & Taxi" again
-  title: { absolute: `NK Cab & Taxi FAQ | Booking, Pricing, Routes & Payment` },
-  description: `FAQs about NK Cab & Taxi. How to book, pricing (₹12/km sedan), payment options, airport transfers, cancellation policy, wedding cars & corporate rental. Call ${BUSINESS.phone}.`,
+  title: { absolute: `NK Cab & Taxi Q&A | Booking, Fares, Routes & Payment` },
+  description: `Straight answers from NK Cab & Taxi — how to book, pricing from ₹12/km in a sedan, payment choices, airport transfers, cancellations, wedding cars and corporate hire. Call ${BUSINESS.phone}.`,
   openGraph: {
-    title: `NK Cab & Taxi FAQ — Booking, Fares & Routes Guide`,
-    description: `All your questions answered. Booking process, fares (₹12/km), payment, cancellation, airport cab, wedding cars. Call ${BUSINESS.phone}.`,
+    title: `NK Cab & Taxi Q&A — Booking, Fares & Routes`,
+    description: `Practical answers to common questions — booking, fares (₹12/km), payment, cancellations, airport runs, wedding cars. Call ${BUSINESS.phone}.`,
     type: 'website',
     siteName: 'NK Cab & Taxi',
     url: `${BUSINESS.domain}/faq`,
     locale: 'en_IN',
-    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: 'NK Cab & Taxi FAQ' }],
+    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: 'NK Cab & Taxi questions and answers' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: `NK Cab & Taxi FAQ | Booking & Fares Guide`,
-    description: `All questions answered. Fares ₹12/km. Call ${BUSINESS.phone}.`,
+    title: `NK Cab & Taxi Q&A | Booking and Fares`,
+    description: `Quick answers to common questions. Fares from ₹12/km. Call ${BUSINESS.phone}.`,
     images: [`${BUSINESS.domain}/navbanner.webp`],
   },
   alternates: { canonical: `${BUSINESS.domain}/faq` },
@@ -112,9 +112,9 @@ export default function FAQPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <Breadcrumbs items={[{ name: 'FAQ', href: '/faq' }]} />
           <h1 className="text-3xl md:text-4xl font-extrabold mt-4 mb-3">
-            Frequently Asked <span className="text-gradient">Questions</span>
+            Common Questions, <span className="text-gradient">Straight Answers</span>
           </h1>
-          <p className="text-gray-300 max-w-3xl">Everything you need to know about booking a cab with {BUSINESS.name}. Can&apos;t find your answer? Call {BUSINESS.phone}.</p>
+          <p className="text-gray-300 max-w-3xl">Practical answers on booking a car with {BUSINESS.name}. Question not covered? Ring {BUSINESS.phone}.</p>
         </div>
       </section>
 
@@ -133,8 +133,8 @@ export default function FAQPage() {
 
       <section className="py-12 bg-gradient-to-r from-primary to-amber-500">
         <div className="max-w-4xl mx-auto px-4 text-center text-white">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">Still Have Questions?</h2>
-          <p className="text-white/90 mb-6">Call us anytime — we&apos;re available 24/7!</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">Need a Quick Answer?</h2>
+          <p className="text-white/90 mb-6">Reach us any hour — someone is always on the line!</p>
           <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
             <Phone size={22} /> {BUSINESS.phone}
           </a>

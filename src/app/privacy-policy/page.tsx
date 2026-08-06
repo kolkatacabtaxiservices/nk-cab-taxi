@@ -8,7 +8,7 @@ export const dynamic = 'force-static';
 export const revalidate = false;
 export const metadata: Metadata = {
   title: `Privacy Policy | ${BUSINESS.name}`,
-  description: `Privacy Policy for ${BUSINESS.name}. Learn how we collect, use, and protect your personal data when booking cabs in Kolkata and across East India.`,
+  description: `How ${BUSINESS.name} handles your data. Read about what we gather, why we use it, and the steps we take to keep your details safe when booking a cab in Kolkata and East India.`,
   robots: { index: true, follow: true },
   alternates: { canonical: `${BUSINESS.domain}/privacy-policy` },
   other: {
@@ -40,7 +40,7 @@ export default function PrivacyPolicyPage() {
             Privacy <span className="text-gradient">Policy</span>
           </h1>
           <p className="text-gray-300 max-w-3xl">
-            Your privacy is important to us. This policy describes how {BUSINESS.name} collects, uses, and protects your information.
+            We take your privacy seriously. This page explains what data {BUSINESS.name} gathers, why we need it, and how we keep it secure.
           </p>
         </div>
       </section>
@@ -50,72 +50,72 @@ export default function PrivacyPolicyPage() {
         <div className="max-w-4xl mx-auto px-4 prose prose-gray max-w-none">
           <p className="text-sm text-gray-500 mb-6">Last Updated: May 2026</p>
 
-          <h2 className="text-xl font-bold text-secondary mb-3">1. Information We Collect</h2>
+          <h2 className="text-xl font-bold text-secondary mb-3">1. What Information We Gather</h2>
           <p className="text-gray-600 mb-4">
-            When you book a cab through {BUSINESS.name}, we may collect the following information:
+            We may ask for the details listed below when you make a booking with {BUSINESS.name}:
           </p>
           <ul className="list-disc pl-6 text-gray-600 mb-6 space-y-1">
-            <li>Name and contact details (phone number, email address)</li>
-            <li>Pickup and drop-off locations</li>
-            <li>Travel dates and preferences</li>
-            <li>Vehicle preferences and number of passengers</li>
-            <li>Payment information (for online transactions)</li>
-            <li>Communication records (WhatsApp messages, call logs for booking purposes)</li>
+            <li>Your name and how we can reach you (phone number, email address)</li>
+            <li>Where you want to be picked up and dropped off</li>
+            <li>Travel dates and any preferences you share</li>
+            <li>Your preferred vehicle type and passenger count</li>
+            <li>Payment details, only when you pay online</li>
+            <li>Booking-related communication such as WhatsApp messages and call records</li>
           </ul>
 
-          <h2 className="text-xl font-bold text-secondary mb-3">2. How We Use Your Information</h2>
+          <h2 className="text-xl font-bold text-secondary mb-3">2. How We Use What You Share</h2>
           <ul className="list-disc pl-6 text-gray-600 mb-6 space-y-1">
-            <li>To process and confirm your cab bookings</li>
-            <li>To assign a driver and vehicle for your trip</li>
-            <li>To communicate booking details, driver information, and trip updates</li>
-            <li>To provide customer support and handle queries</li>
-            <li>To improve our services and personalize your experience</li>
-            <li>To send promotional offers (only with your consent)</li>
-            <li>To comply with legal obligations</li>
+            <li>To confirm and manage your cab reservations</li>
+            <li>To match you with a suitable driver and vehicle</li>
+            <li>To send you booking confirmation, driver details, and trip updates</li>
+            <li>To answer your questions and provide support</li>
+            <li>To improve our service and tailor it to your needs</li>
+            <li>To share offers and promotions, only if you agree</li>
+            <li>To meet our legal requirements</li>
           </ul>
 
-          <h2 className="text-xl font-bold text-secondary mb-3">3. Data Sharing</h2>
+          <h2 className="text-xl font-bold text-secondary mb-3">3. Who We Share Data With</h2>
           <p className="text-gray-600 mb-4">
-            We do NOT sell, trade, or rent your personal information to third parties. We may share your data with:
+            We never sell, trade, or rent your personal details to anyone else. We may share your information only with:
           </p>
           <ul className="list-disc pl-6 text-gray-600 mb-6 space-y-1">
-            <li>Our drivers — only essential details (name, pickup location, phone number) needed for the trip</li>
-            <li>Payment processors — for secure transaction processing</li>
-            <li>Law enforcement — if required by law or to protect safety</li>
+            <li>Our drivers, who receive only what is essential for the trip, such as your name, pickup point, and phone number</li>
+            <li>Payment gateways, so online payments are processed safely</li>
+            <li>Authorities, only when the law demands it or safety is at risk</li>
           </ul>
 
-          <h2 className="text-xl font-bold text-secondary mb-3">4. Data Security</h2>
+          <h2 className="text-xl font-bold text-secondary mb-3">4. How We Protect Your Data</h2>
           <p className="text-gray-600 mb-6">
-            We implement reasonable security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. All payment transactions are encrypted using SSL technology. However, no internet transmission is 100% secure, and we cannot guarantee absolute security.
+            We use sensible safeguards to keep your personal information safe from unauthorized access, changes, leaks, or loss. Online payments are encrypted with SSL technology. Still, no internet connection can ever be 100% secure, so we cannot promise absolute protection.
           </p>
 
-          <h2 className="text-xl font-bold text-secondary mb-3">5. Cookies & Analytics</h2>
+          <h2 className="text-xl font-bold text-secondary mb-3">5. Cookies and Analytics</h2>
           <p className="text-gray-600 mb-6">
-            Our website may use cookies and analytics tools (such as Google Analytics) to understand user behavior, improve our services, and enhance your browsing experience. You can disable cookies in your browser settings at any time.
+            This site may use cookies and analytics tools such as Google Analytics to understand how visitors use it, improve our services, and make browsing smoother. You can switch off cookies anytime in your browser settings.
           </p>
 
-          <h2 className="text-xl font-bold text-secondary mb-3">6. Your Rights</h2>
-          <p className="text-gray-600 mb-4">You have the right to:</p>
+          <h2 className="text-xl font-bold text-secondary mb-3">6. Your Rights Over Your Data</h2>
+          <p className="text-gray-600 mb-4">As a user, you can:</p>
           <ul className="list-disc pl-6 text-gray-600 mb-6 space-y-1">
-            <li>Access, correct, or delete your personal data</li>
-            <li>Opt out of promotional communications</li>
-            <li>Request a copy of data we hold about you</li>
-            <li>Withdraw consent for data processing</li>
+            <li>View, update, or erase your personal data</li>
+            <li>Stop receiving promotional messages</li>
+            <li>Ask for a copy of the data we hold on you</li>
+            <li>Change your mind and withdraw consent for data processing</li>
           </ul>
 
-          <h2 className="text-xl font-bold text-secondary mb-3">7. Data Retention</h2>
+          <h2 className="text-xl font-bold text-secondary mb-3">7. How Long We Keep Your Data</h2>
           <p className="text-gray-600 mb-6">
-            We retain your booking data for a reasonable period to provide you with better service on future bookings and to comply with legal requirements. You may request deletion of your data at any time by contacting us.
+            We keep your booking details for a reasonable time so we can serve you better on future trips and meet legal obligations. You can ask us to delete your data at any time by getting in touch.
           </p>
 
-          <h2 className="text-xl font-bold text-secondary mb-3">8. Changes to This Policy</h2>
+          <h2 className="text-xl font-bold text-secondary mb-3">8. Updates to This Policy</h2>
           <p className="text-gray-600 mb-6">
-            We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated date. We encourage you to review this page periodically.
+            We may revise this Privacy Policy now and then. Any changes will appear on this page with a fresh date, so please check back occasionally.
           </p>
 
-          <h2 className="text-xl font-bold text-secondary mb-3">9. Contact Us</h2>
+          <h2 className="text-xl font-bold text-secondary mb-3">9. Getting in Touch</h2>
           <p className="text-gray-600 mb-2">
-            If you have any questions about this Privacy Policy, please contact us:
+            If you have any questions about this Privacy Policy, reach out to us:
           </p>
           <div className="bg-accent rounded-xl p-4 text-sm text-gray-700">
             <p><strong>{BUSINESS.name}</strong></p>

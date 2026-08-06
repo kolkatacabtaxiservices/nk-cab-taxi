@@ -14,8 +14,8 @@ export const dynamic = 'force-static';
 export const revalidate = false;
 
 export const metadata: Metadata = {
-  title: `Outstation Cab Kolkata ₹12/km | One-Way & Round Trip | 500+ Routes | ${BUSINESS.name}`,
-  description: `Outstation cab from Kolkata across 500+ routes. Sedan ₹12/km, SUV ₹16/km, Innova ₹18/km. Darjeeling, Puri, Digha, Ranchi, Jamshedpur, Bhubaneswar. 24/7 booking. Call ${BUSINESS.phone}.`.slice(0, 160),
+  title: `Outstation Taxi Kolkata ₹12/km | One-Way & Round Trip | 500+ Routes | ${BUSINESS.name}`,
+  description: `Intercity cab from Kolkata on 500+ routes. Sedan ₹12/km, SUV ₹16/km, Innova ₹18/km. Darjeeling, Puri, Digha, Ranchi, Jamshedpur, Bhubaneswar. Round-the-clock booking. Call ${BUSINESS.phone}.`.slice(0, 160),
   keywords: [
     'outstation cab kolkata', 'outstation taxi kolkata', 'intercity cab kolkata',
     'kolkata to darjeeling cab', 'kolkata to puri cab', 'kolkata to digha cab',
@@ -25,18 +25,18 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: `${BUSINESS.domain}/services/outstation` },
   openGraph: {
-    title: `Outstation Cab Kolkata ₹12/km | 500+ Routes | ${BUSINESS.name}`,
-    description: `Outstation taxi from Kolkata to 500+ cities. Sedan ₹12/km | SUV ₹16/km | Innova ₹18/km. One-way & round trip. 24/7. No surge. Call ${BUSINESS.phone}`,
+    title: `Outstation Taxi Kolkata ₹12/km | 500+ Routes | ${BUSINESS.name}`,
+    description: `Outstation cabs from Kolkata to 500+ cities. Sedan ₹12/km | SUV ₹16/km | Innova ₹18/km. One-way & round trips. Round the clock with flat fares. Call ${BUSINESS.phone}`,
     type: 'website',
     siteName: BUSINESS.name,
     url: `${BUSINESS.domain}/services/outstation`,
     locale: 'en_IN',
-    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: `Outstation Cab Service Kolkata — ${BUSINESS.name}` }],
+    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: `Outstation Taxi Service Kolkata — ${BUSINESS.name}` }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: `Outstation Cab Kolkata ₹12/km | 500+ Routes | ${BUSINESS.name}`,
-    description: `Intercity cab from Kolkata. Sedan ₹12/km. Darjeeling, Puri, Ranchi, Bhubaneswar & more. No surge. Call ${BUSINESS.phone}`,
+    title: `Outstation Taxi Kolkata ₹12/km | 500+ Routes | ${BUSINESS.name}`,
+    description: `Intercity taxi from Kolkata at ₹12/km sedan. Darjeeling, Puri, Ranchi, Bhubaneswar & more. Fixed fares. Call ${BUSINESS.phone}`,
   },
 };
 
@@ -45,12 +45,12 @@ export default async function OutstationPage() {
   const routes = await getPopularRoutes(12);
 
   const faqs = [
-    { question: 'What is outstation cab service from Kolkata?', answer: `Outstation cab from Kolkata means intercity taxi service where you travel between Kolkata and other cities. ${BUSINESS.name} covers 500+ outstation routes from Kolkata including Darjeeling, Puri, Ranchi, Bhubaneswar, Digha, Siliguri, Jamshedpur, and more. Available as one-way or round trip. Call ${BUSINESS.phone}.` },
-    { question: 'What is the outstation cab fare from Kolkata?', answer: 'Outstation cab fare from Kolkata: Sedan ₹12/km, SUV ₹16/km, Innova Crysta ₹18/km, Tempo Traveller ₹22/km. All fares include fuel and driver charges. Toll and parking are extra. Driver allowance of ₹300/day included for multi-day trips.' },
-    { question: 'What is the minimum booking for outstation trips?', answer: 'Minimum 150 km per day for one-way trips from Kolkata and 250 km per day for round trips. Driver allowance of ₹300/day is included in the fare.' },
-    { question: 'Is driver accommodation included on multi-day outstation trips?', answer: 'Yes, for multi-day round trips from Kolkata, driver accommodation is included in the fare. The driver manages his own stay at the destination city.' },
-    { question: 'Can I make stops on an outstation trip from Kolkata?', answer: 'Yes! You can make multiple stops and sightseeing detours. Additional km will be charged at the per-km rate. Discuss your itinerary when booking for the best experience.' },
-    { question: 'What is the best cab for Kolkata to Darjeeling trip?', answer: 'For Kolkata to Darjeeling (600 km), we recommend Innova Crysta or Ertiga, which handle mountain roads very well. Distance approx 600 km; estimated fare ₹7,200–₹9,600. Book via call or WhatsApp.' },
+    { question: 'What does outstation cab service from Kolkata mean?', answer: `An outstation cab from Kolkata is an intercity taxi that carries you between Kolkata and other towns. ${BUSINESS.name} serves 500+ routes from Kolkata, including Darjeeling, Puri, Ranchi, Bhubaneswar, Digha, Siliguri and Jamshedpur, as one-way or round trips. Call ${BUSINESS.phone}.` },
+    { question: 'How is outstation cab fare from Kolkata charged?', answer: 'Outstation fares from Kolkata: Sedan ₹12/km, SUV ₹16/km, Innova Crysta ₹18/km and Tempo Traveller ₹22/km. Fuel and driver charges sit inside these rates; tolls and parking are billed separately. Multi-day journeys include a ₹300/day driver allowance.' },
+    { question: 'Is there a minimum distance for outstation bookings?', answer: 'One-way journeys from Kolkata require at least 150 km per day, and round trips 250 km per day. The ₹300/day driver allowance is already part of the fare.' },
+    { question: 'On multi-day outstation trips, is driver accommodation covered?', answer: 'Yes — on multi-day round trips from Kolkata the driver stay is part of the fare, and the driver arranges his own lodging at the destination.' },
+    { question: 'Are stops allowed during an outstation trip from Kolkata?', answer: 'Certainly — multiple stops and sightseeing detours are welcome. Extra kilometres are billed at the per-km rate, so share your full itinerary while booking for the smoothest experience.' },
+    { question: 'Which cab suits a Kolkata to Darjeeling journey best?', answer: 'For the 600 km Kolkata–Darjeeling run, Innova Crysta or Ertiga are our picks — both manage hill roads comfortably. The stretch is about 600 km and estimates land near ₹7,200–₹9,600. Reserve by call or WhatsApp.' },
   ];
 
   const fareData = [
@@ -63,7 +63,7 @@ export default async function OutstationPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFaqSchema(faqs)) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceTypeSchema('Outstation Cab Service Kolkata', 'outstation', 'Comfortable intercity cab service from Kolkata across 500+ routes. One-way and round trip available.')) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceTypeSchema('Outstation Cab Service Kolkata', 'outstation', 'Easy intercity taxi service from Kolkata spanning 500+ routes, available as one-way or round trips.')) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema([
         { name: 'Home', url: BUSINESS.domain },
         { name: 'Services', url: `${BUSINESS.domain}/services` },
@@ -74,8 +74,8 @@ export default async function OutstationPage() {
         <HeroBanner hideDots />
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <Breadcrumbs items={[{ name: 'Services', href: '/services' }, { name: 'Outstation Cab', href: '/services/outstation' }]} />
-          <h1 className="text-3xl md:text-4xl font-extrabold mt-4 mb-4">Outstation <span className="text-gradient">Cab Service</span> from Kolkata ₹12/km | Book Online</h1>
-          <p className="text-lg text-gray-300 max-w-3xl">Book outstation cab from Kolkata to 500+ cities. AC Sedan ₹12/km, SUV ₹16/km, Innova Crysta ₹18/km. One-way & round trip. Verified drivers. No surge 24/7. Call {BUSINESS.phone}.</p>
+          <h1 className="text-3xl md:text-4xl font-extrabold mt-4 mb-4">Outstation <span className="text-gradient">Cab Service</span> from Kolkata ₹12/km | Reserve Online</h1>
+          <p className="text-lg text-gray-300 max-w-3xl">Outstation cabs from Kolkata to 500+ destinations. AC Sedan ₹12/km, SUV ₹16/km, Innova Crysta ₹18/km. One-way & round trips with police-verified drivers and flat fares, day and night. Call {BUSINESS.phone}.</p>
           <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center gap-2 px-6 py-3 mt-6 bg-gradient-to-r from-primary to-amber-500 text-white font-bold rounded-full shadow-lg">
             <Phone size={18} /> Book Now: {BUSINESS.phone}
           </a>
@@ -87,33 +87,33 @@ export default async function OutstationPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             <div className="lg:col-span-2 space-y-8">
               <div>
-                <h2 className="text-2xl font-bold text-secondary mb-4">Outstation Cab from Kolkata — Intercity Taxi Across East India</h2>
+                <h2 className="text-2xl font-bold text-secondary mb-4">Outstation Cabs from Kolkata — Intercity Travel Across East India</h2>
                 <div className="space-y-4 text-gray-600">
                   <p>
-                    <strong>{BUSINESS.name}</strong> provides outstation cab service from Kolkata across 500+ intercity routes connecting cities in West Bengal, Jharkhand, and Odisha. Whether you need a car for a business trip, family vacation, pilgrimage, or wedding — our outstation taxi from Kolkata offers AC vehicles, professional drivers, and transparent pricing.
+                    <strong>{BUSINESS.name}</strong> runs outstation taxi service from Kolkata across 500+ intercity routes that connect West Bengal, Jharkhand and Odisha. Whether it is a business visit, a family holiday, a pilgrimage or a wedding — our outstation cabs from Kolkata come with AC vehicles, courteous chauffeurs and straightforward pricing.
                   </p>
                   <p>
-                    Popular outstation destinations from Kolkata include Darjeeling (600 km), Digha (185 km), Puri (500 km), Siliguri (560 km), Ranchi (400 km), Jamshedpur (270 km), Bhubaneswar (450 km), Durgapur (180 km), and Dhanbad (300 km). We cover both one-way and round-trip options on all these routes.
+                    Favourite outstation destinations from Kolkata include Darjeeling (600 km), Digha (185 km), Puri (500 km), Siliguri (560 km), Ranchi (400 km), Jamshedpur (270 km), Bhubaneswar (450 km), Durgapur (180 km) and Dhanbad (300 km). One-way and round-trip options are both available on every route.
                   </p>
                   <p>
-                    Our outstation cab fare from Kolkata is transparent: Sedan ₹12/km, SUV ₹16/km, Innova Crysta ₹18/km, Tempo Traveller ₹22/km. All fares include fuel and driver charges. Toll, parking, and state permit charges are extra. Driver allowance of ₹300/night is included for multi-day trips.
+                    Our outstation fares from Kolkata are easy to follow: Sedan ₹12/km, SUV ₹16/km, Innova Crysta ₹18/km and Tempo Traveller ₹22/km. Fuel and driver charges are built into these rates. Tolls, parking and state permit fees are billed as incurred, and a ₹300/night driver allowance is covered for multi-day trips.
                   </p>
                 </div>
               </div>
 
               {/* Features */}
               <div>
-                <h3 className="text-xl font-bold text-secondary mb-4">Why Book Outstation Cab from Kolkata with Us?</h3>
+                <h3 className="text-xl font-bold text-secondary mb-4">Reasons to Book an Outstation Cab from Kolkata with Us</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {[
-                    'One-way outstation — pay only for one side, no return charge',
-                    'Round trip outstation — driver stays with you for multi-day trips',
-                    'No minimum distance restriction for short outstation trips',
-                    'AC vehicles — Swift Dzire, Ertiga, Innova Crysta, Tempo Traveller',
-                    'Police-verified, experienced outstation drivers',
-                    'Real-time WhatsApp updates throughout the journey',
-                    'Multiple stops and sightseeing detours allowed',
-                    'Driver allowance & accommodation included for round trips',
+                    'One-way outstation — no return-leg charge',
+                    'Round trip outstation — driver stays for multi-day trips',
+                    'No minimum-distance cap for shorter runs',
+                    'AC fleet — Swift Dzire, Ertiga, Innova Crysta, Tempo Traveller',
+                    'Police-verified chauffeurs with outstation experience',
+                    'Live WhatsApp updates at every stage of the trip',
+                    'Multiple stops and sightseeing detours are allowed',
+                    'Driver allowance & stay covered on round trips',
                   ].map((point, i) => (
                     <div key={i} className="flex items-start gap-2 text-sm text-gray-600">
                       <CheckCircle size={16} className="text-green-500 shrink-0 mt-0.5" />
@@ -125,7 +125,7 @@ export default async function OutstationPage() {
 
               {/* Fare Table */}
               <div>
-                <h3 className="text-xl font-bold text-secondary mb-4">Outstation Cab Fare from Kolkata</h3>
+                <h3 className="text-xl font-bold text-secondary mb-4">Outstation Cab Rates from Kolkata</h3>
                 <div className="overflow-x-auto rounded-xl border border-gray-100 shadow-sm">
                   <table className="w-full border-collapse bg-white">
                     <thead>
@@ -153,7 +153,7 @@ export default async function OutstationPage() {
 
               {/* Popular Routes */}
               <div>
-                <h3 className="text-xl font-bold text-secondary mb-4">Popular Outstation Routes from Kolkata</h3>
+                <h3 className="text-xl font-bold text-secondary mb-4">Top Outstation Routes from Kolkata</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                   {routes.map(r => (
                     <Link key={r.slug} href={`/routes/${r.slug}`} className="route-card bg-white rounded-xl p-3 border border-gray-100 hover:border-primary/30 transition-colors">
@@ -166,7 +166,7 @@ export default async function OutstationPage() {
 
               {/* All cities */}
               <div>
-                <h3 className="text-xl font-bold text-secondary mb-4">Outstation Cab from All Cities</h3>
+                <h3 className="text-xl font-bold text-secondary mb-4">Outstation Cabs across All Cities</h3>
                 {states.map(state => (
                   <div key={state.slug} className="mb-4">
                     <h4 className="font-semibold text-secondary text-sm mb-2">{state.name}:</h4>
@@ -183,7 +183,7 @@ export default async function OutstationPage() {
             <div className="lg:sticky lg:top-24 lg:self-start space-y-4">
               <BookingForm />
               <div className="p-4 bg-secondary rounded-xl text-white text-center">
-                <p className="text-sm text-gray-300 mb-2">Outstation Cab Booking</p>
+                <p className="text-sm text-gray-300 mb-2">Reserve an Outstation Cab</p>
                 <a href={`tel:${BUSINESS.phone}`} className="text-xl font-bold hover:text-primary transition-colors">📞 {BUSINESS.phone}</a>
               </div>
             </div>
@@ -191,14 +191,14 @@ export default async function OutstationPage() {
         </div>
       </section>
 
-      <section className="py-12 bg-gray-50"><div className="max-w-7xl mx-auto px-4"><FAQSection faqs={faqs} title="Outstation Cab from Kolkata — FAQs" /></div></section>
+      <section className="py-12 bg-gray-50"><div className="max-w-7xl mx-auto px-4"><FAQSection faqs={faqs} title="Outstation Cab from Kolkata — Common Questions" /></div></section>
 
       {/* Multi-City Coverage — SEO Content + Internal Links */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-secondary mb-4">Outstation Cab Service in <span className="text-primary">Other Cities</span></h2>
+          <h2 className="text-2xl font-bold text-secondary mb-4">Outstation Cabs in <span className="text-primary">Other Cities</span></h2>
           <p className="text-gray-600 mb-6">
-            Our outstation cab service isn&apos;t limited to Kolkata. {BUSINESS.name} operates outstation taxi services from <strong>Ranchi</strong> (to Jamshedpur, Dhanbad, Kolkata, Deoghar), <strong>Jamshedpur</strong> (to Kolkata, Ranchi, Dhanbad, Bokaro), <strong>Bhubaneswar</strong> (to Puri, Konark, Cuttack, Kolkata), and 80+ other cities across West Bengal, Jharkhand, Odisha, Bihar, and Uttar Pradesh. Same fleet, same rates, same quality.
+            Outstation travel is not limited to Kolkata. {BUSINESS.name} also runs outstation taxi services from <strong>Ranchi</strong> (to Jamshedpur, Dhanbad, Kolkata, Deoghar), <strong>Jamshedpur</strong> (to Kolkata, Ranchi, Dhanbad, Bokaro), <strong>Bhubaneswar</strong> (to Puri, Konark, Cuttack, Kolkata) and 80+ other cities across West Bengal, Jharkhand, Odisha, Bihar and Uttar Pradesh. Same fleet, same rates, same service standards.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
             {[
@@ -224,13 +224,13 @@ export default async function OutstationPage() {
 
       <section className="py-12 bg-gradient-to-r from-primary to-amber-500 text-white text-center">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">Book Outstation Cab from Kolkata</h2>
-          <p className="text-white/90 mb-6">500+ routes from Kolkata, Ranchi & Bhubaneswar. One-way & round trip. AC vehicles, verified drivers.</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">Reserve an Outstation Cab from Kolkata</h2>
+          <p className="text-white/90 mb-6">500+ routes from Kolkata, Ranchi & Bhubaneswar. One-way and round trips. AC fleet, verified chauffeurs, flat fares.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
               <Phone size={22} /> {BUSINESS.phone}
             </a>
-            <a href={`${BUSINESS.whatsappLink}?text=${encodeURIComponent('Hi! I want to book an outstation cab from Kolkata.')}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-500 text-white font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
+            <a href={`${BUSINESS.whatsappLink}?text=${encodeURIComponent('Hi! I would like to book an outstation cab from Kolkata.')}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-500 text-white font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
               💬 WhatsApp
             </a>
           </div>

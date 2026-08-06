@@ -117,12 +117,12 @@ export default async function CityPage({ params }: { params: Promise<{ state: st
   });
 
   const serviceTypes = [
-    { name: 'Local Taxi', slug: 'local', icon: <MapPin size={20} />, desc: `Hourly cab rental for city travel in ${city.name}`, price: `From ₹${prices.localPkgSedan}` },
-    { name: 'Outstation Cab', slug: 'outstation', icon: <Route size={20} />, desc: `Intercity cab from ${city.name}`, price: `From ${prices.sedanPerKm}` },
-    { name: 'One-Way Taxi', slug: 'one-way', icon: <ArrowRight size={20} />, desc: `Pay only one side from ${city.name}`, price: `From ${prices.sedanPerKm}` },
-    { name: 'Round Trip', slug: 'round-trip', icon: <RotateCcw size={20} />, desc: `Multi-day trips from ${city.name}`, price: `From ${prices.sedanPerKm}` },
-    { name: 'Airport Transfer', slug: 'airport-transfer', icon: <Plane size={20} />, desc: `Airport pickup/drop in ${city.name}`, price: `From ${prices.airportSedan}` },
-    { name: 'Wedding Car', slug: 'wedding-car', icon: <Heart size={20} />, desc: `Decorated car in ${city.name}`, price: 'From ₹5,000' },
+    { name: 'Local Taxi', slug: 'local', icon: <MapPin size={20} />, desc: `Hourly car hire for getting around ${city.name}`, price: `From ₹${prices.localPkgSedan}` },
+    { name: 'Outstation Taxi', slug: 'outstation', icon: <Route size={20} />, desc: `Intercity trips out of ${city.name}`, price: `From ${prices.sedanPerKm}` },
+    { name: 'One-Way Taxi', slug: 'one-way', icon: <ArrowRight size={20} />, desc: `Pay for the trip one way from ${city.name}`, price: `From ${prices.sedanPerKm}` },
+    { name: 'Round Trip', slug: 'round-trip', icon: <RotateCcw size={20} />, desc: `Multi-day trips with the same car and driver`, price: `From ${prices.sedanPerKm}` },
+    { name: 'Airport Taxi', slug: 'airport-transfer', icon: <Plane size={20} />, desc: `Airport pickups and drops in ${city.name}`, price: `From ${prices.airportSedan}` },
+    { name: 'Wedding Taxi', slug: 'wedding-car', icon: <Heart size={20} />, desc: `Decorated cars for your big day in ${city.name}`, price: 'From ₹5,000' },
   ];
 
   // ItemList schema for routes
@@ -181,16 +181,15 @@ export default async function CityPage({ params }: { params: Promise<{ state: st
           ]} />
           <h1 className="text-3xl md:text-4xl font-extrabold mt-4 mb-3">
             {city.slug === 'kolkata' ? (
-              <>Cab Service in <span className="text-gradient">Kolkata</span> — Book Taxi {prices.displayRate} | Airport, Outstation, Local 24/7</>
+              <>Taxi Service in <span className="text-gradient">Kolkata</span> — Reserve {prices.displayRate} | Airport, Outstation and City Runs 24/7</>
             ) : (
-              <>Cab Service in <span className="text-gradient">{city.name}</span> {prices.displayRate} | {city.name} Taxi 24/7</>
+              <>Taxi Service in <span className="text-gradient">{city.name}</span> {prices.displayRate} | {city.name} Cabs Run 24/7</>
             )}
           </h1>
           {city.alternateNames && city.alternateNames.length > 0 && (
             <p className="text-xs text-gray-300 font-medium mb-3 italic">
-              Also known as: {city.alternateNames.join(', ')}
-            </p>
-          )}
+              Aliases: {city.alternateNames.join(', ')}
+            </p>          )}
           <p className="text-gray-300 max-w-3xl mb-4">{city.description}</p>
           <div className="flex flex-wrap gap-3 text-sm text-gray-300 mb-4">
             {city.airport && <span className="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-full">✈️ {city.airport}</span>}
@@ -199,7 +198,7 @@ export default async function CityPage({ params }: { params: Promise<{ state: st
           </div>
           <div className="flex flex-wrap gap-3">
             <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-amber-500 text-white font-bold rounded-full shadow-lg">
-              <Phone size={18} /> Call Now
+              <Phone size={18} /> Call Us
             </a>
             <a href={`https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(`Hi! I need a cab in ${city.name}.`)}`} className="inline-flex items-center gap-2 px-6 py-3 bg-green-500 text-white font-bold rounded-full shadow-lg">
               💬 WhatsApp
@@ -212,43 +211,43 @@ export default async function CityPage({ params }: { params: Promise<{ state: st
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <article className="max-w-4xl" itemScope itemType="https://schema.org/Article">
-            <h2 className="text-2xl font-bold text-secondary mb-4">Cab Service in {city.name}, {state.name} — Best Taxi Service | Book Online {prices.displayRate}</h2>
+            <h2 className="text-2xl font-bold text-secondary mb-4">Taxi Service in {city.name}, {state.name} — Trusted Local Fleet | Reserve Online {prices.displayRate}</h2>
             
             {/* ── QUICK ANSWER BOX — targets AI Overviews / Featured Snippets ── */}
             <div className="mb-6 p-5 bg-amber-50 border border-amber-200 rounded-2xl flex flex-col md:flex-row gap-4 items-center">
               <div className="flex-1 w-full">
                 <h3 className="text-base font-bold text-secondary mb-3 flex items-center gap-2">
-                  ⚡ Quick Answer — {city.name} Cab Service Facts
+                  ⚡ Fast Facts — {city.name} Taxi Service at a Glance
                 </h3>
                 <dl className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
                   <div className="bg-white rounded-xl p-3 text-center border border-amber-100">
-                    <dt className="text-xs text-gray-400 mb-1">Local Sedan</dt>
+                    <dt className="text-xs text-gray-400 mb-1">City Package</dt>
                     <dd className="font-bold text-secondary">₹{prices.localPkgSedan}</dd>
                   </div>
                   <div className="bg-white rounded-xl p-3 text-center border border-amber-100">
-                    <dt className="text-xs text-gray-400 mb-1">Outstation Rate</dt>
+                    <dt className="text-xs text-gray-400 mb-1">Outstation Fare</dt>
                     <dd className="font-bold text-secondary">₹{prices.sedanRate}/km</dd>
                   </div>
                   <div className="bg-white rounded-xl p-3 text-center border border-amber-100">
-                    <dt className="text-xs text-gray-400 mb-1">Airport Transfer</dt>
+                    <dt className="text-xs text-gray-400 mb-1">Airport Run</dt>
                     <dd className="font-bold text-primary">{prices.airportSedan}</dd>
                   </div>
                   <div className="bg-white rounded-xl p-3 text-center border border-amber-100">
-                    <dt className="text-xs text-gray-400 mb-1">Service Areas</dt>
-                    <dd className="font-bold text-primary">City-wide 24/7</dd>
+                    <dt className="text-xs text-gray-400 mb-1">Coverage</dt>
+                    <dd className="font-bold text-primary">Across the City</dd>
                   </div>
                 </dl>
                 <p className="text-xs text-gray-500 mt-3">
-                  📍 Service Types: Local Hourly Packages (8h/80km), One-way Outstation, Round Trip, Airport Drop, and Luxury Wedding Cars.
+                  📍 Trip Options: City Hourly Plans (8h/80km), One-way Outstation, Round Trip, Airport Drops, and Luxury Wedding Cars.
                 </p>
                 <p className="text-xs text-gray-500 mt-1">
-                  📞 24/7 Booking: <a href={`tel:${BUSINESS.phone}`} className="text-primary font-semibold hover:underline">{BUSINESS.phone}</a> | All rates are clear & transparent.
+                  📞 Reserve Anytime: <a href={`tel:${BUSINESS.phone}`} className="text-primary font-semibold hover:underline">{BUSINESS.phone}</a> | Every fare is fixed and disclosed upfront.
                 </p>
               </div>
               <div className="relative w-full md:w-48 h-32 rounded-xl overflow-hidden shrink-0 border border-amber-200 shadow-sm">
                 <Image
                   src="/navbanner.webp"
-                  alt={`Cab service in ${city.name} - booking AC sedan and SUV taxi`}
+                  alt={`Taxi hire in ${city.name} - AC sedan and SUV fleet`}
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 192px"
@@ -266,8 +265,8 @@ export default async function CityPage({ params }: { params: Promise<{ state: st
       {/* Services Grid */}
       <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-secondary mb-2">Our Services in <span className="text-primary">{city.name}</span></h2>
-          <p className="text-gray-500 text-sm mb-6">Complete range of cab & car rental services available in {city.name}</p>
+          <h2 className="text-2xl font-bold text-secondary mb-2">What We Offer in <span className="text-primary">{city.name}</span></h2>
+          <p className="text-gray-500 text-sm mb-6">Full line-up of taxi and car rental services in {city.name}</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {serviceTypes.map((srv) => (
               <Link key={srv.slug} href={`/${stateSlug}/${citySlug}/${srv.slug}`} className="group p-5 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-primary/30 transition-all">
@@ -310,8 +309,7 @@ export default async function CityPage({ params }: { params: Promise<{ state: st
         <section className="py-12 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-secondary mb-2">Areas We Serve in <span className="text-primary">{city.name}</span></h2>
-            <p className="text-gray-500 text-sm mb-6">Pickup and drop from every corner of {city.name}</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <p className="text-gray-500 text-sm mb-6">Pickup and drop anywhere in {city.name}</p>            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {content.areas.map((area, i) => (
                 <div key={i} className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
                   <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center shrink-0 mt-0.5">
@@ -332,8 +330,8 @@ export default async function CityPage({ params }: { params: Promise<{ state: st
       {localRoutes.length > 0 && (
         <section className="py-12 bg-white">
           <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-2xl font-bold text-secondary mb-2">Popular Cab Routes from <span className="text-primary">{city.name}</span></h2>
-            <p className="text-gray-500 text-sm mb-6">Book affordable outstation cab from {city.name}. One-way & round trip available on all routes.</p>
+            <h2 className="text-2xl font-bold text-secondary mb-2">Popular Outstation Routes from <span className="text-primary">{city.name}</span></h2>
+            <p className="text-gray-500 text-sm mb-6">Plan an outstation trip from {city.name} at a fixed per-km fare. One-way and round-trip options on every route.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
               {localRoutes.map((route) => (
                 <Link key={route.slug} href={`/routes/${route.slug}`} className="group bg-white rounded-xl border border-gray-100 p-4 shadow-sm hover:shadow-md hover:border-primary/30 transition-all">
@@ -363,8 +361,8 @@ export default async function CityPage({ params }: { params: Promise<{ state: st
       {routesFrom.length > 12 && (
         <section className="py-12 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-2xl font-bold text-secondary mb-2">All Outstation Routes from <span className="text-primary">{city.name}</span></h2>
-            <p className="text-gray-500 text-sm mb-6">{routesFrom.length} routes available from {city.name}</p>
+            <h2 className="text-2xl font-bold text-secondary mb-2">Full Route List from <span className="text-primary">{city.name}</span></h2>
+            <p className="text-gray-500 text-sm mb-6">{routesFrom.length} outstation routes from {city.name}</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
               {routesFrom.map((route) => (
                 <Link key={route.slug} href={`/routes/${route.slug}`} className="flex items-center justify-between p-3 bg-white rounded-lg border border-gray-100 hover:border-primary/30 transition-all text-sm">
@@ -381,8 +379,8 @@ export default async function CityPage({ params }: { params: Promise<{ state: st
       {routesTo.length > 0 && (
         <section className="py-12 bg-white">
           <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-2xl font-bold text-secondary mb-2">Cab Routes to <span className="text-primary">{city.name}</span></h2>
-            <p className="text-gray-500 text-sm mb-6">Book cab from other cities to {city.name}</p>
+            <h2 className="text-2xl font-bold text-secondary mb-2">Taxi Routes to <span className="text-primary">{city.name}</span></h2>
+            <p className="text-gray-500 text-sm mb-6">Reserve a ride from nearby cities to {city.name}</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
               {routesTo.map((route) => (
                 <Link key={route.slug} href={`/routes/${route.slug}`} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100 hover:border-primary/30 transition-all text-sm">
@@ -398,15 +396,15 @@ export default async function CityPage({ params }: { params: Promise<{ state: st
       {/* Pricing */}
       <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-secondary mb-6">Cab Fare Chart in <span className="text-primary">{city.name}</span></h2>
+          <h2 className="text-2xl font-bold text-secondary mb-6">Taxi Fare Table in <span className="text-primary">{city.name}</span></h2>
           <div className="overflow-x-auto">
             <table className="w-full border-collapse bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100">
               <thead>
                 <tr className="bg-secondary text-white">
-                  <th className="px-4 py-3 text-left text-sm">Vehicle Type</th>
+                  <th className="px-4 py-3 text-left text-sm">Vehicle</th>
                   <th className="px-4 py-3 text-left text-sm">Models</th>
-                  <th className="px-4 py-3 text-center text-sm">Capacity</th>
-                  <th className="px-4 py-3 text-right text-sm">Per KM Rate</th>
+                  <th className="px-4 py-3 text-center text-sm">Seats</th>
+                  <th className="px-4 py-3 text-right text-sm">Rate / km</th>
                 </tr>
               </thead>
               <tbody>
@@ -414,7 +412,7 @@ export default async function CityPage({ params }: { params: Promise<{ state: st
                   <tr key={v.id} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
                     <td className="px-4 py-3 font-semibold text-secondary text-sm">{v.name}</td>
                     <td className="px-4 py-3 text-gray-500 text-sm">{v.models.slice(0, 2).join(', ')}</td>
-                    <td className="px-4 py-3 text-center text-sm">{v.capacity} persons</td>
+                    <td className="px-4 py-3 text-center text-sm">{v.capacity} seats</td>
                     <td className="px-4 py-3 text-right font-bold text-primary text-sm">₹{i === 0 ? prices.sedanRate : i === 1 ? prices.suvRate : i === 2 ? prices.innovaRate : i === 3 ? prices.crystaRate : prices.tempoRate}/km</td>
                   </tr>
                 ))}
@@ -422,7 +420,7 @@ export default async function CityPage({ params }: { params: Promise<{ state: st
             </table>
           </div>
 
-          <h3 className="text-xl font-bold text-secondary mt-8 mb-4">Local Taxi Packages in {city.name}</h3>
+          <h3 className="text-xl font-bold text-secondary mt-8 mb-4">City Taxi Packages in {city.name}</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {fares.localPackages.map((pkg) => (
               <div key={pkg.name} className="p-4 bg-white rounded-xl border border-primary/10 shadow-sm">
@@ -443,8 +441,8 @@ export default async function CityPage({ params }: { params: Promise<{ state: st
       {city.landmarks && city.landmarks.length > 0 && (
         <section className="py-12 bg-white">
           <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-2xl font-bold text-secondary mb-2">Pickup & Drop Points in <span className="text-primary">{city.name}</span></h2>
-            <p className="text-gray-500 text-sm mb-6">We pick up and drop at all major locations in {city.name}</p>
+            <h2 className="text-2xl font-bold text-secondary mb-2">Pickup and Drop Locations in <span className="text-primary">{city.name}</span></h2>
+            <p className="text-gray-500 text-sm mb-6">We cover every major spot in {city.name}</p>
             <div className="flex flex-wrap gap-3">
               {city.landmarks.map((l) => (
                 <span key={l} className="px-4 py-2 bg-gray-50 rounded-full border border-gray-200 text-sm text-gray-700 shadow-sm">{l}</span>
@@ -466,7 +464,7 @@ export default async function CityPage({ params }: { params: Promise<{ state: st
       {/* FAQ — Now with 10+ FAQs */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <FAQSection faqs={content.faqs} title={`Frequently Asked Questions — Cab Service in ${city.name}`} />
+          <FAQSection faqs={content.faqs} title={`Common Queries — Taxi Service in ${city.name}`} />
         </div>
       </section>
 
@@ -517,8 +515,8 @@ export default async function CityPage({ params }: { params: Promise<{ state: st
         cityName={city.name}
         cityLat={city.lat}
         cityLng={city.lng}
-        title={`Cab Service Coverage in ${city.name}`}
-        subtitle={`We provide cab pickup and drop across all areas of ${city.name}, ${state.name}. View our service coverage area.`}
+        title={`Taxi Service Coverage in ${city.name}`}
+        subtitle={`We offer taxi pickup and drop across every area of ${city.name}, ${state.name}. See our full coverage zone.`}
       />
 
       {/* Vehicle Type Internal Links — boosts crawl to city-vehicle sub-pages */}
@@ -554,8 +552,8 @@ export default async function CityPage({ params }: { params: Promise<{ state: st
       {/* CTA */}
       <section className="py-12 bg-gradient-to-r from-primary to-amber-500">
         <div className="max-w-4xl mx-auto px-4 text-center text-white">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">Book Your Cab in {city.name} Now!</h2>
-          <p className="text-white/90 mb-6">Call us for instant booking. Available 24/7 in {city.name}!</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">Reserve Your Taxi in {city.name} Today!</h2>
+          <p className="text-white/90 mb-6">One call and you are set. We are available day and night in {city.name}!</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
               <Phone size={22} /> {BUSINESS.phone}

@@ -24,7 +24,7 @@ export const revalidate = false;
 
 export const metadata: Metadata = {
   title: `Kolkata to Jamshedpur Cab ₹${PRICE_SEDAN} | One Way Taxi, Cheapest Cab | ${BUSINESS.name}`,
-  description: `Book Kolkata to Jamshedpur cab from ₹${PRICE_SEDAN}. One way taxi, round trip, cheapest cab. ${DISTANCE} km, AC sedan/SUV, 24/7. Call ${BUSINESS.phone}. Best fare guaranteed.`,
+  description: `Kolkata to Jamshedpur cab fare starts at ₹${PRICE_SEDAN}. One-way drop, round trips and airport pickups over ${DISTANCE} km of highway driving — AC sedan, SUV & Tempo Traveller, available round the clock. Call ${BUSINESS.phone} for an instant fare quote.`,
   keywords: [
     'kolkata to jamshedpur cab', 'kolkata to jamshedpur taxi', 'kolkata to jamshedpur car',
     'kolkata to jamshedpur cab fare', 'kolkata to jamshedpur one way cab',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: `Kolkata to Jamshedpur Cab ₹${PRICE_SEDAN} | ${BUSINESS.name}`,
-    description: `Book Kolkata to Jamshedpur taxi. ${DISTANCE} km, from ₹${PRICE_SEDAN}. One way & round trip. Call ${BUSINESS.phone}`,
+    description: `Door-to-door Kolkata to Jamshedpur taxi covering ${DISTANCE} km from ₹${PRICE_SEDAN}. One-way drops and round trips with AC cars. Call ${BUSINESS.phone}`,
     type: 'website',
     siteName: BUSINESS.name,
     url: `${BUSINESS.domain}/kolkata-to-jamshedpur-cab`,
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: `Kolkata to Jamshedpur Cab ₹${PRICE_SEDAN}`,
-    description: `Book Kolkata to Jamshedpur taxi. ${DISTANCE} km, AC cabs. Call ${BUSINESS.phone}`,
+    description: `Kolkata to Jamshedpur cab, ${DISTANCE} km highway run in an AC car. Call ${BUSINESS.phone}`,
     images: [`${BUSINESS.domain}/navbanner.webp`],
   },
   alternates: {
@@ -69,16 +69,16 @@ export default function KolkataToJamshedpurCabPage() {
   const vehicles = getVehicles();
 
   const faqs = [
-    { question: 'What is the cab fare from Kolkata to Jamshedpur?', answer: `Kolkata to Jamshedpur cab fare starts from ₹${PRICE_SEDAN} for Sedan (Swift Dzire, Honda Amaze), ₹${PRICE_SUV} for SUV (Ertiga, Innova Crysta), and ₹${PRICE_TEMPO} for Tempo Traveller. This is for one-way trip. Toll and parking extra. Call ${BUSINESS.phone} for exact quote.` },
-    { question: 'How far is Jamshedpur from Kolkata by road?', answer: `Jamshedpur is ${DISTANCE} km from Kolkata by road via NH 16 through Kolaghat, Kharagpur, and Baharagora. The journey takes approximately ${DURATION} hours depending on traffic conditions.` },
-    { question: 'Is one way cab available from Kolkata to Jamshedpur?', answer: `Yes! We offer one-way cab from Kolkata to Jamshedpur. You pay only for the one-way journey — no return charges. This is the cheapest option at ₹${PRICE_SEDAN} for sedan. Call ${BUSINESS.phone}.` },
-    { question: 'What is the cheapest cab from Kolkata to Jamshedpur?', answer: `The cheapest cab from Kolkata to Jamshedpur is our Sedan (Swift Dzire) at ₹${PRICE_SEDAN} one-way. This includes fuel and driver charges. For the best deal, book through our website or call ${BUSINESS.phone}.` },
-    { question: 'Can I book a round trip cab from Kolkata to Jamshedpur?', answer: `Yes! Round trip cab from Kolkata to Jamshedpur is available. Fare is calculated on total km (both ways). Minimum 250 km/day for overnight trips. Driver accommodation included. Call ${BUSINESS.phone} for round trip quotes.` },
-    { question: 'Which route does the cab take from Kolkata to Jamshedpur?', answer: `Our cabs take the NH 16 route: Kolkata → Kolaghat → Kharagpur → Baharagora → Jamshedpur. This is the fastest and smoothest highway route with good road conditions throughout.` },
-    { question: 'Is airport pickup available for Kolkata to Jamshedpur cab?', answer: `Yes! We provide Kolkata Airport (CCU) pickup for Jamshedpur drop. Our driver will meet you at the arrival gate with a name board. Flight tracking included. Distance from airport is 285 km. Fare from ₹4,750.` },
-    { question: 'Can I book Kolkata to Jamshedpur cab for wedding?', answer: `Absolutely! We provide decorated wedding cars from Kolkata to Jamshedpur. Innova Crysta, Fortuner, and luxury cars available with flower decoration. Perfect for baraat, vidaai, and wedding functions. Call ${BUSINESS.phone}.` },
-    { question: 'Do you provide cab from Howrah to Jamshedpur?', answer: `Yes! Howrah to Jamshedpur cab is available at ₹4,350 (sedan). We pick up from Howrah Station, Howrah Maidan, or any location in Howrah. Call ${BUSINESS.phone} for booking.` },
-    { question: 'Is night travel available from Kolkata to Jamshedpur?', answer: 'Yes, our Kolkata to Jamshedpur cab service is available 24/7 including late night and early morning. No night surcharge. All drivers are experienced with night driving on Highway NH 16.' },
+    { question: 'How much does a cab from Kolkata to Jamshedpur cost?', answer: `The Kolkata to Jamshedpur cab fare begins at ₹${PRICE_SEDAN} for a Sedan (Swift Dzire, Honda Amaze), ₹${PRICE_SUV} for an SUV (Ertiga, Innova Crysta), and ₹${PRICE_TEMPO} for a Tempo Traveller. These are one-way rates; toll and parking are billed separately. For a confirmed quote, call ${BUSINESS.phone}.` },
+    { question: 'What is the road distance and travel time from Kolkata to Jamshedpur?', answer: `Jamshedpur lies ${DISTANCE} km from Kolkata by road. Driving along NH 16 through Kolaghat, Kharagpur and Baharagora, the trip takes about ${DURATION} hours in normal traffic, with rest stops along the way as needed.` },
+    { question: 'Do you run a one-way cab from Kolkata to Jamshedpur?', answer: `Yes — one-way is our most economical option for this route. You are billed only for the forward journey and the cab's return leg is not charged to you. A one-way Sedan costs ₹${PRICE_SEDAN}. Call ${BUSINESS.phone} to confirm your booking.` },
+    { question: 'Which is the cheapest cab option from Kolkata to Jamshedpur?', answer: `The lowest-priced option on this route is our Sedan (Swift Dzire) at ₹${PRICE_SEDAN} one-way, which covers fuel and the driver's charges. To lock in the best available rate, book directly with us on ${BUSINESS.phone} rather than through aggregators.` },
+    { question: 'Is a round trip cab available from Kolkata to Jamshedpur?', answer: `Yes. A round trip gives you the same car and driver for both legs. Billing is on total distance covered both ways, with a minimum 250 km per day for overnight stays, and the driver's halt is arranged. Ask ${BUSINESS.phone} for a round trip quote.` },
+    { question: 'Which highway is used for the Kolkata to Jamshedpur drive?', answer: `Our cabs follow NH 16 — Kolkata to Kolaghat to Kharagpur to Baharagora and into Jamshedpur. It is the fastest and smoothest corridor on this route, with good road quality for the entire drive.` },
+    { question: 'Can you pick us up from Kolkata Airport for Jamshedpur?', answer: `Yes. For airport pickups we meet you at the CCU arrival gate holding a name board and track your flight's live status so a delay does not mean a missed ride. Airport to Jamshedpur is 285 km, with the Sedan fare from ₹4,750.` },
+    { question: 'Do you provide wedding cars from Kolkata to Jamshedpur?', answer: `We do. Decorated Innova Crysta, Fortuner and luxury sedans are available for baraat processions, vidaai and reception functions travelling from Kolkata to Jamshedpur. Call ${BUSINESS.phone} to plan decorations and timings.` },
+    { question: 'Is there a cab service from Howrah to Jamshedpur?', answer: `Yes, we pick up anywhere in Howrah — including Howrah Junction and Howrah Maidan — for Jamshedpur at ₹4,350 for a Sedan. Call ${BUSINESS.phone} to schedule the pickup.` },
+    { question: 'Can we travel at night from Kolkata to Jamshedpur?', answer: 'Yes, the service runs 24/7 with the same flat fare at any hour — there is no night surcharge. Our drivers are used to night driving on NH 16 and take required rest breaks on longer runs.' },
   ];
 
   const relatedRoutes = [
@@ -110,7 +110,7 @@ export default function KolkataToJamshedpurCabPage() {
             Kolkata to Jamshedpur <span className="text-gradient">Cab Service</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mb-6">
-            Book the cheapest one-way & round trip cab from Kolkata to Jamshedpur. {DISTANCE} km, {DURATION} hours. AC sedan, SUV, Tempo Traveller. Starting <strong className="text-primary">₹{PRICE_SEDAN}</strong>.
+            The Kolkata–Jamshedpur run in an AC cab — one-way drops or round trips over {DISTANCE} km, roughly {DURATION} hours of highway driving. Sedan, SUV and Tempo Traveller options, starting at <strong className="text-primary">₹{PRICE_SEDAN}</strong>.
           </p>
           <div className="flex flex-wrap gap-4 text-sm text-gray-300">
             <span className="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-full"><MapPin size={14} /> {DISTANCE} km</span>
@@ -198,19 +198,19 @@ export default function KolkataToJamshedpurCabPage() {
           </div>
 
           <p className="text-gray-600 mb-4">
-            Looking for the <strong>best cab service from Kolkata to Jamshedpur</strong>? {BUSINESS.name} provides the most reliable and affordable cab, taxi, and car rental service on the Kolkata–Jamshedpur route. Whether you need a <strong>one-way cab from Kolkata to Jamshedpur</strong>, a round trip, or an airport transfer — we have you covered with AC vehicles, experienced drivers, and the best fares starting at just ₹{PRICE_SEDAN}.
+            Planning the drive from Kolkata to Jamshedpur? {BUSINESS.name} runs one of the most dependable <strong>Kolkata to Jamshedpur cab services</strong> on this corridor — a private, air-conditioned car and a driver who knows NH 16 well, with fares from just ₹{PRICE_SEDAN}. Whether you need a <strong>one-way cab from Kolkata to Jamshedpur</strong>, a return booking, or an airport pickup at CCU, the arrangement stays the same: transparent pricing, a confirmed vehicle, and a professional at the wheel.
           </p>
           <p className="text-gray-600 mb-4">
-            The <strong>Kolkata to Jamshedpur distance is {DISTANCE} km</strong> via the smooth NH 16 highway. The journey passes through Kolaghat, Kharagpur, and Baharagora before entering Jamshedpur (Tatanagar). With our well-maintained vehicles and professional drivers, the trip takes approximately {DURATION} hours in comfortable AC conditions.
+            The <strong>Kolkata to Jamshedpur distance is {DISTANCE} km</strong>, covered along NH 16 past Kolaghat, Kharagpur and Baharagora before you reach Tatanagar. On a clear run the journey takes about {DURATION} hours. With a well-maintained car and a driver comfortable with highway driving, you arrive rested — whether you are travelling for business, a family visit, or a wedding function.
           </p>
 
           <h3 className="text-xl font-bold text-secondary mt-8 mb-3">Why Choose Our Kolkata to Jamshedpur Cab?</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
             {[
-              { icon: <CreditCard size={20} />, title: 'Cheapest Fare Guaranteed', desc: `Starting ₹${PRICE_SEDAN}. No hidden charges. Pay only for what you travel.` },
-              { icon: <Shield size={20} />, title: 'Verified Professional Drivers', desc: 'Background-checked, experienced NH 16 highway drivers.' },
-              { icon: <Clock size={20} />, title: '24/7 Availability', desc: 'Book anytime — day or night. Early morning & late night available.' },
-              { icon: <Star size={20} />, title: 'AC, Clean Vehicles', desc: 'Well-maintained fleet: Swift Dzire, Ertiga, Innova Crysta, Tempo.' },
+              { icon: <CreditCard size={20} />, title: 'Flat, Upfront Fares', desc: `From ₹${PRICE_SEDAN} with no hidden add-ons — you pay for the kilometres you actually cover.` },
+              { icon: <Shield size={20} />, title: 'Vetted Highway Drivers', desc: 'Background-checked professionals who drive the Kolkata–NH 16–Jamshedpur stretch regularly.' },
+              { icon: <Clock size={20} />, title: 'Round-the-Clock Dispatch', desc: 'Early departures and late-night arrivals handled at the same flat rate, any day.' },
+              { icon: <Star size={20} />, title: 'Fresh, AC Fleet', desc: 'Serviced cars — Swift Dzire, Ertiga, Innova Crysta and Tempo Traveller — cleaned before every trip.' },
             ].map((item, i) => (
               <div key={i} className="flex gap-3 p-4 bg-white rounded-xl border border-gray-100">
                 <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center text-primary shrink-0">{item.icon}</div>
@@ -224,17 +224,17 @@ export default function KolkataToJamshedpurCabPage() {
 
           <h3 className="text-xl font-bold text-secondary mt-8 mb-3">Kolkata to Jamshedpur One Way Cab</h3>
           <p className="text-gray-600 mb-4">
-            Our <strong>Kolkata to Jamshedpur one-way cab</strong> is the most affordable option for point-to-point travel. You pay only for the one-way journey — no return charges. One-way sedan starts at just ₹{PRICE_SEDAN}, making it the <strong>cheapest cab from Kolkata to Jamshedpur</strong>. Perfect for business trips, relocation, family visits, or any single-direction travel.
+            Our <strong>Kolkata to Jamshedpur one-way cab</strong> is the straightforward choice for a single-direction journey — you pay only for the way you travel, with no return-leg charge. A one-way Sedan is priced from ₹{PRICE_SEDAN}, which also makes it the <strong>most affordable cab from Kolkata to Jamshedpur</strong>. It suits business trips, relocations, family visits, or simply anyone not coming back the same way.
           </p>
 
           <h3 className="text-xl font-bold text-secondary mt-8 mb-3">Kolkata to Jamshedpur Round Trip Cab</h3>
           <p className="text-gray-600 mb-4">
-            Planning to return? Our <strong>Kolkata to Jamshedpur round trip cab</strong> offers you the same vehicle and driver for the entire journey. The fare is calculated on total km traveled (both ways). Minimum 250 km/day applies for overnight stays. Driver rest and accommodation is included. Ideal for weekend trips, business meetings with same-day return, and family functions.
+            Coming back the same way? Our <strong>Kolkata to Jamshedpur round trip cab</strong> keeps the same vehicle and driver with you for the whole journey. Fares are computed on total kilometres covered both ways, with a minimum 250 km per day on overnight stays; driver halt charges are covered as well. It works well for weekend trips, same-day meetings, and family functions that need transport at both ends.
           </p>
 
           <h3 className="text-xl font-bold text-secondary mt-8 mb-3">Airport to Jamshedpur Cab</h3>
           <p className="text-gray-600 mb-4">
-            Flying into Kolkata? We provide <strong>Kolkata Airport (CCU) to Jamshedpur cab</strong> service with flight tracking. Our driver will meet you at the arrival gate with a name board when you land. The airport to Jamshedpur distance is 285 km. Fare starts at ₹4,750 for sedan. Also available from <strong>Howrah to Jamshedpur</strong> at ₹4,350.
+            Flying into Kolkata? We run a <strong>Kolkata Airport (CCU) to Jamshedpur cab</strong> service with live flight tracking, meeting you at the arrival gate with a name board. The airport to Jamshedpur run is 285 km, with a Sedan fare from ₹4,750; a <strong>Howrah to Jamshedpur</strong> pickup is available from ₹4,350 as well.
           </p>
 
           <h3 className="text-xl font-bold text-secondary mt-8 mb-3">Route Details — NH 16 Highway</h3>
@@ -283,7 +283,7 @@ export default function KolkataToJamshedpurCabPage() {
       {/* FAQ */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <FAQSection faqs={faqs} title="Kolkata to Jamshedpur Cab — Frequently Asked Questions" />
+          <FAQSection faqs={faqs} title="Kolkata to Jamshedpur Cab — Your Questions Answered" />
         </div>
       </section>
 
@@ -292,13 +292,13 @@ export default function KolkataToJamshedpurCabPage() {
 
       <section className="py-12 bg-gradient-to-r from-primary to-amber-500">
         <div className="max-w-4xl mx-auto px-4 text-center text-white">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">Book Kolkata to Jamshedpur Cab Now!</h2>
-          <p className="text-white/90 mb-6">Best fare. AC cabs. 24/7 service. Instant confirmation.</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">Reserve Your Kolkata to Jamshedpur Cab</h2>
+          <p className="text-white/90 mb-6">Flat fares. AC cars. All-hours availability. Confirmation in minutes.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
               <Phone size={22} /> Call {BUSINESS.phone}
             </a>
-            <a href={`https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent('Hi! I want to book a cab from Kolkata to Jamshedpur. Please share fare details.')}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-500 text-white font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
+            <a href={`https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent('Hi, I need a cab from Kolkata to Jamshedpur. Please send me the fare details.')}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-500 text-white font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
               💬 WhatsApp Booking
             </a>
           </div>

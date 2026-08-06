@@ -5,7 +5,7 @@ import { BUSINESS } from '@/lib/data';
 
 export const metadata: Metadata = {
   title: `Page Not Found | ${BUSINESS.name}`,
-  description: `The page you're looking for doesn't exist. Browse our cab services, routes, or contact us at ${BUSINESS.phone}.`,
+  description: `The page you wanted is not available right now. Explore our cab services and popular routes, or get in touch with us at ${BUSINESS.phone} for help.`,
   robots: { index: false, follow: true },
 };
 
@@ -16,9 +16,9 @@ export default function NotFound() {
         <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-8">
           <span className="text-5xl font-extrabold text-primary">404</span>
         </div>
-        <h1 className="text-3xl md:text-4xl font-extrabold text-secondary mb-4">Page Not Found</h1>
+        <h1 className="text-3xl md:text-4xl font-extrabold text-secondary mb-4">This Page Could Not Be Found</h1>
         <p className="text-gray-500 mb-8 text-lg">
-          Sorry, the page you&apos;re looking for doesn&apos;t exist or has been moved. But don&apos;t worry — we&apos;re still here to help you book your cab!
+          The page you requested has likely been moved or no longer exists. No worries — our team is still ready to arrange your cab booking right away!
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
@@ -27,8 +27,8 @@ export default function NotFound() {
               <Home size={20} />
             </div>
             <div className="text-left">
-              <p className="font-bold text-secondary text-sm group-hover:text-primary transition-colors">Home Page</p>
-              <p className="text-xs text-gray-400">Back to main page</p>
+              <p className="font-bold text-secondary text-sm group-hover:text-primary transition-colors">Go to Homepage</p>
+              <p className="text-xs text-gray-400">Return to the main page</p>
             </div>
           </Link>
           <Link href="/contact" className="flex items-center gap-3 p-4 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-primary/30 transition-all group">
@@ -36,8 +36,8 @@ export default function NotFound() {
               <Phone size={20} />
             </div>
             <div className="text-left">
-              <p className="font-bold text-secondary text-sm group-hover:text-primary transition-colors">Contact Us</p>
-              <p className="text-xs text-gray-400">Book cab or get help</p>
+              <p className="font-bold text-secondary text-sm group-hover:text-primary transition-colors">Get in Touch</p>
+              <p className="text-xs text-gray-400">Book a cab or ask a question</p>
             </div>
           </Link>
           <Link href="/services/outstation" className="flex items-center gap-3 p-4 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-primary/30 transition-all group">
@@ -45,8 +45,8 @@ export default function NotFound() {
               <Route size={20} />
             </div>
             <div className="text-left">
-              <p className="font-bold text-secondary text-sm group-hover:text-primary transition-colors">Our Services</p>
-              <p className="text-xs text-gray-400">Browse cab services</p>
+              <p className="font-bold text-secondary text-sm group-hover:text-primary transition-colors">View Services</p>
+              <p className="text-xs text-gray-400">See all available cab services</p>
             </div>
           </Link>
           <Link href="/fleet" className="flex items-center gap-3 p-4 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-primary/30 transition-all group">
@@ -54,14 +54,14 @@ export default function NotFound() {
               <Car size={20} />
             </div>
             <div className="text-left">
-              <p className="font-bold text-secondary text-sm group-hover:text-primary transition-colors">Our Fleet</p>
-              <p className="text-xs text-gray-400">View available cars</p>
+              <p className="font-bold text-secondary text-sm group-hover:text-primary transition-colors">Explore Fleet</p>
+              <p className="text-xs text-gray-400">Look at our car options</p>
             </div>
           </Link>
         </div>
 
         <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-amber-500 text-white font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
-          <Phone size={22} /> Call {BUSINESS.phone}
+          <Phone size={22} /> Call {BUSINESS.phone} to Book
         </a>
       </div>
     </section>

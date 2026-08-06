@@ -36,11 +36,11 @@ export default async function TourDetailPage({ params }: { params: Promise<{ tou
   const relatedTours = allTours.filter(t => t.slug !== tour.slug).slice(0, 3);
 
   const faqs = [
-    { question: `What is the cost of ${tour.name}?`, answer: `The ${tour.name} starts at ₹${tour.pricing.sedan.toLocaleString('en-IN')} for Sedan, ₹${tour.pricing.suv.toLocaleString('en-IN')} for SUV, and ₹${tour.pricing.tempo.toLocaleString('en-IN')} for Tempo Traveller. This includes AC vehicle, fuel, driver allowance, and toll charges. Call ${BUSINESS.phone} for the best quote.` },
-    { question: `What is included in the ${tour.name}?`, answer: `The package includes: ${tour.included.join(', ')}. Not included: ${tour.excluded.join(', ')}. We can also arrange hotel bookings on request.` },
-    { question: `Can I customize the ${tour.name} itinerary?`, answer: `Absolutely! We offer fully customizable itineraries. You can add or remove stops, extend the trip, or modify the schedule. Call ${BUSINESS.phone} to discuss your requirements.` },
-    { question: `Is ${tour.name} available year-round?`, answer: `Yes, our car-based tour packages are available throughout the year. However, some destinations may have seasonal considerations (monsoon for hill stations, summer for plains). We recommend the best time when you book.` },
-    { question: `How do I book the ${tour.name}?`, answer: `You can book by calling ${BUSINESS.phone}, sending a WhatsApp message, or filling the booking form on this page. We provide instant confirmation and complete trip details.` },
+    { question: `How much does the ${tour.name} cost?`, answer: `Pricing for the ${tour.name} begins at ₹${tour.pricing.sedan.toLocaleString('en-IN')} for Sedan, ₹${tour.pricing.suv.toLocaleString('en-IN')} for SUV, and ₹${tour.pricing.tempo.toLocaleString('en-IN')} for Tempo Traveller. The rate covers an air-conditioned vehicle, fuel, driver allowance, and toll charges. Call ${BUSINESS.phone} for the best price.` },
+    { question: `What comes with the ${tour.name} package?`, answer: `Covered in the package: ${tour.included.join(', ')}. Not covered: ${tour.excluded.join(', ')}. On request, we can also arrange hotel stays.` },
+    { question: `Is the ${tour.name} itinerary flexible?`, answer: `Of course. Every plan can be tailored — add or drop stops, stretch the trip, or adjust the schedule. Call ${BUSINESS.phone} to discuss your preferences.` },
+    { question: `Can I take the ${tour.name} at any time of year?`, answer: `Yes, our chauffeur-driven packages run all year round. Some destinations do have seasonal notes though (monsoon for hill stations, summer heat for the plains). We suggest the ideal time when you reserve.` },
+    { question: `How can I reserve the ${tour.name}?`, answer: `Reserve by calling ${BUSINESS.phone}, messaging us on WhatsApp, or using the booking form on this page. You get immediate confirmation and the full itinerary.` },
   ];
 
   return (
@@ -82,11 +82,11 @@ export default async function TourDetailPage({ params }: { params: Promise<{ tou
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
               {/* Description */}
-              <h2 className="text-2xl font-bold text-secondary mb-4">{tour.name} — Book Cab Package</h2>
+              <h2 className="text-2xl font-bold text-secondary mb-4">{tour.name} — Cab Tour Package</h2>
               <p className="text-gray-600 mb-6">{tour.description}</p>
 
               {/* Highlights */}
-              <h3 className="text-xl font-bold text-secondary mt-8 mb-4">Tour Highlights</h3>
+              <h3 className="text-xl font-bold text-secondary mt-8 mb-4">Trip Highlights</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                 {tour.highlights.map((h) => (
                   <div key={h} className="flex items-center gap-2 text-sm text-gray-600">
@@ -97,7 +97,7 @@ export default async function TourDetailPage({ params }: { params: Promise<{ tou
               </div>
 
               {/* Itinerary */}
-              <h3 className="text-xl font-bold text-secondary mt-8 mb-4">Detailed Itinerary</h3>
+              <h3 className="text-xl font-bold text-secondary mt-8 mb-4">Day-by-Day Plan</h3>
               <div className="space-y-4 mb-8">
                 {tour.itinerary.map((item) => (
                   <div key={item.day} className="relative pl-8 pb-6 border-l-2 border-primary/20 last:border-transparent">
@@ -114,15 +114,15 @@ export default async function TourDetailPage({ params }: { params: Promise<{ tou
               </div>
 
               {/* Pricing Table */}
-              <h3 className="text-xl font-bold text-secondary mt-8 mb-4">Tour Package Pricing</h3>
+              <h3 className="text-xl font-bold text-secondary mt-8 mb-4">Package Rates</h3>
               <div className="overflow-x-auto mb-6">
                 <table className="w-full border-collapse bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100">
                   <thead>
                     <tr className="bg-secondary text-white">
-                      <th className="px-4 py-3 text-left text-sm">Vehicle Type</th>
+                      <th className="px-4 py-3 text-left text-sm">Car</th>
                       <th className="px-4 py-3 text-left text-sm">Models</th>
-                      <th className="px-4 py-3 text-center text-sm">Capacity</th>
-                      <th className="px-4 py-3 text-right text-sm">Package Price</th>
+                      <th className="px-4 py-3 text-center text-sm">Seats</th>
+                      <th className="px-4 py-3 text-right text-sm">Package Rate</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -152,7 +152,7 @@ export default async function TourDetailPage({ params }: { params: Promise<{ tou
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
                 <div className="p-5 bg-green-50 rounded-xl border border-green-200">
                   <h4 className="font-bold text-green-800 mb-3 flex items-center gap-2">
-                    <CheckCircle size={18} /> Included in Package
+                    <CheckCircle size={18} /> What Is Included
                   </h4>
                   <ul className="space-y-2">
                     {tour.included.map((item) => (
@@ -164,7 +164,7 @@ export default async function TourDetailPage({ params }: { params: Promise<{ tou
                 </div>
                 <div className="p-5 bg-red-50 rounded-xl border border-red-200">
                   <h4 className="font-bold text-red-800 mb-3 flex items-center gap-2">
-                    <XCircle size={18} /> Not Included
+                    <XCircle size={18} /> What Is Not Included
                   </h4>
                   <ul className="space-y-2">
                     {tour.excluded.map((item) => (
@@ -183,7 +183,7 @@ export default async function TourDetailPage({ params }: { params: Promise<{ tou
               
               {/* Quick call */}
               <div className="mt-4 p-4 bg-secondary rounded-xl text-white text-center">
-                <p className="text-sm text-gray-300 mb-2">Book This Tour</p>
+                <p className="text-sm text-gray-300 mb-2">Reserve This Tour</p>
                 <a href={`tel:${BUSINESS.phone}`} className="text-xl font-bold hover:text-primary transition-colors">
                   📞 {BUSINESS.phone}
                 </a>
@@ -191,12 +191,12 @@ export default async function TourDetailPage({ params }: { params: Promise<{ tou
 
               {/* WhatsApp booking */}
               <a
-                href={`https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(`Hi! I want to book the ${tour.name} package. Please share details.`)}`}
+                href={`https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(`Hi! I would like to book the ${tour.name} package. Please share details.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-3 w-full flex items-center justify-center gap-2 px-6 py-3 bg-green-500 text-white font-bold rounded-xl shadow-lg hover:scale-105 transition-all"
               >
-                💬 Book via WhatsApp
+                💬 Book Through WhatsApp
               </a>
             </div>
           </div>
@@ -207,7 +207,7 @@ export default async function TourDetailPage({ params }: { params: Promise<{ tou
       {relatedTours.length > 0 && (
         <section className="py-12 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-2xl font-bold text-secondary mb-6">Other <span className="text-primary">Tour Packages</span></h2>
+            <h2 className="text-2xl font-bold text-secondary mb-6">More <span className="text-primary">Tour Packages</span></h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {relatedTours.map((t) => (
                 <Link key={t.slug} href={`/tours/${t.slug}`} className="route-card bg-white rounded-xl p-5">
@@ -219,7 +219,7 @@ export default async function TourDetailPage({ params }: { params: Promise<{ tou
             </div>
             <div className="text-center mt-6">
               <Link href="/tours" className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
-                View All Tour Packages <ArrowRight size={18} />
+                See All Tour Packages <ArrowRight size={18} />
               </Link>
             </div>
           </div>
@@ -229,20 +229,20 @@ export default async function TourDetailPage({ params }: { params: Promise<{ tou
       {/* FAQ */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <FAQSection faqs={faqs} title={`FAQs — ${tour.name}`} />
+          <FAQSection faqs={faqs} title={`Questions — ${tour.name}`} />
         </div>
       </section>
 
       {/* CTA */}
       <section className="py-12 bg-gradient-to-r from-primary to-amber-500">
         <div className="max-w-4xl mx-auto px-4 text-center text-white">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">Book {tour.name} Now!</h2>
-          <p className="text-white/90 mb-6">{tour.duration} • From ₹{tour.pricing.sedan.toLocaleString('en-IN')} • AC Cab Included</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">Reserve {tour.name} Today!</h2>
+          <p className="text-white/90 mb-6">{tour.duration} • Starts at ₹{tour.pricing.sedan.toLocaleString('en-IN')} • AC Cab with Driver</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
               <Phone size={22} /> {BUSINESS.phone}
             </a>
-            <a href={`https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(`Hi! I want to book the ${tour.name}.`)}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-500 text-white font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
+            <a href={`https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(`Hi! I would like to book the ${tour.name}.`)}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-500 text-white font-bold rounded-full text-lg shadow-lg hover:scale-105 transition-all">
               💬 WhatsApp
             </a>
           </div>

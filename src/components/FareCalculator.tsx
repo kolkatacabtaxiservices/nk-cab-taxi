@@ -54,14 +54,14 @@ export default function FareCalculator({ defaultFrom = '', defaultTo = '' }: Far
     setResult(null);
 
     if (!from.trim() || !to.trim()) {
-      setError('Please enter both pickup and drop city');
+      setError('Enter both a pickup and a drop city');
       return;
     }
 
     const fromNorm = from.toLowerCase().trim().split(',')[0].trim();
     const toNorm = to.toLowerCase().trim().split(',')[0].trim();
     if (fromNorm === toNorm) {
-      setError('Pickup and drop city cannot be the same. Please enter different cities.');
+      setError('Pickup and drop cities must be different. Please choose distinct cities.');
       return;
     }
 
@@ -128,7 +128,7 @@ export default function FareCalculator({ defaultFrom = '', defaultTo = '' }: Far
           rates: RATES,
         });
       } else {
-        setError('City not found. Please select from the suggestions or call us for a quote.');
+        setError('City not recognised. Pick from the suggestions or call us for a quote.');
       }
       setCalculating(false);
     }, 600);
@@ -146,12 +146,12 @@ export default function FareCalculator({ defaultFrom = '', defaultTo = '' }: Far
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/10 rounded-full text-primary text-sm font-semibold mb-3">
             <Sparkles size={16} />
-            Instant Results — No Registration Required
+            Instant Estimates — No Sign-up Needed
           </div>
           <h2 className="text-2xl md:text-3xl font-bold text-secondary">
-            Instant <span className="text-gradient">Fare Calculator</span>
+            Cab <span className="text-gradient">Fare Estimator</span>
           </h2>
-          <p className="text-gray-500 text-sm mt-2">Get exact cab fare in seconds — transparent pricing with no hidden charges</p>
+          <p className="text-gray-500 text-sm mt-2">See your estimated fare within seconds — upfront pricing, no hidden extras</p>
         </div>
 
         <div className="max-w-4xl mx-auto">
@@ -162,7 +162,7 @@ export default function FareCalculator({ defaultFrom = '', defaultTo = '' }: Far
             <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr_auto] gap-4 items-end">
               <div>
                 <label htmlFor="calcFrom" className="block text-sm font-medium text-gray-700 mb-1.5">
-                  Pickup City
+                  Starting City
                 </label>
                 <div className="relative">
                   <MapPin size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-primary" />
@@ -184,7 +184,7 @@ export default function FareCalculator({ defaultFrom = '', defaultTo = '' }: Far
 
               <div>
                 <label htmlFor="calcTo" className="block text-sm font-medium text-gray-700 mb-1.5">
-                  Drop City
+                  Destination City
                 </label>
                 <div className="relative">
                   <MapPin size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-green-500" />
@@ -210,9 +210,9 @@ export default function FareCalculator({ defaultFrom = '', defaultTo = '' }: Far
                 className="py-3 px-6 bg-gradient-to-r from-primary to-amber-500 text-white font-bold rounded-xl shadow-lg shadow-primary/30 hover:shadow-primary/50 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed min-h-[48px]"
               >
                 {calculating ? (
-                  <><span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Calculating...</>
+                  <><span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Computing...</>
                 ) : (
-                  <><Calculator size={18} /> Calculate Fare</>
+                  <><Calculator size={18} /> Get Fare</>
                 )}
               </button>
             </div>
@@ -244,12 +244,12 @@ export default function FareCalculator({ defaultFrom = '', defaultTo = '' }: Far
                   </div>
                   {!result.routeExists && (
                     <span className="px-3 py-1 bg-amber-500/20 text-amber-300 text-xs rounded-full font-medium">
-                      ⚡ Estimated Fare
+                      ⚡ Estimated Rate
                     </span>
                   )}
                   {result.routeExists && (
                     <span className="px-3 py-1 bg-green-500/20 text-green-300 text-xs rounded-full font-medium">
-                      ✅ Exact Fare
+                      ✅ Confirmed Fare
                     </span>
                   )}
                 </div>
@@ -258,10 +258,10 @@ export default function FareCalculator({ defaultFrom = '', defaultTo = '' }: Far
               {/* Vehicle Cards */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {[
-                  { name: 'Sedan', emoji: '🚗', models: 'Swift Dzire, Amaze', capacity: '4 Passengers', fare: result.sedan, perKm: result.rates.sedan, popular: false },
-                  { name: 'SUV', emoji: '🚙', models: 'Ertiga, Innova', capacity: '6 Passengers', fare: result.suv, perKm: result.rates.suv, popular: true },
-                  { name: 'Tempo', emoji: '🚐', models: 'Tempo Traveller', capacity: '12 Passengers', fare: result.tempo, perKm: result.rates.tempo, popular: false },
-                  { name: 'Luxury', emoji: '✨', models: 'Fortuner, Mercedes', capacity: '4 Passengers', fare: result.luxury, perKm: result.rates.luxury, popular: false },
+                  { name: 'Sedan', emoji: '🚗', models: 'Swift Dzire, Amaze', capacity: '4 Seats', fare: result.sedan, perKm: result.rates.sedan, popular: false },
+                  { name: 'SUV', emoji: '🚙', models: 'Ertiga, Innova', capacity: '6 Seats', fare: result.suv, perKm: result.rates.suv, popular: true },
+                  { name: 'Tempo', emoji: '🚐', models: 'Tempo Traveller', capacity: '12 Seats', fare: result.tempo, perKm: result.rates.tempo, popular: false },
+                  { name: 'Luxury', emoji: '✨', models: 'Fortuner, Mercedes', capacity: '4 Seats', fare: result.luxury, perKm: result.rates.luxury, popular: false },
                 ].map((v) => (
                   <div
                     key={v.name}
@@ -269,7 +269,7 @@ export default function FareCalculator({ defaultFrom = '', defaultTo = '' }: Far
                   >
                     {v.popular && (
                       <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-primary text-white text-xs font-bold rounded-full">
-                        Most Popular
+                        Top Pick
                       </span>
                     )}
                     <div className="text-3xl mb-2">{v.emoji}</div>
@@ -277,9 +277,9 @@ export default function FareCalculator({ defaultFrom = '', defaultTo = '' }: Far
                     <p className="text-xs text-gray-500 mb-1">{v.models}</p>
                     <p className="text-xs text-gray-400 mb-3">{v.capacity}</p>
                     <div className="border-t border-gray-100 pt-3">
-                      <p className="text-xs text-gray-400">Estimated Fare</p>
+                      <p className="text-xs text-gray-400">Estimated Price</p>
                       <p className="text-2xl font-extrabold text-primary">₹{v.fare.toLocaleString('en-IN')}</p>
-                      <p className="text-xs text-gray-400 mt-1">Est. for {result.distance} km journey</p>
+                      <p className="text-xs text-gray-400 mt-1">For a ~{result.distance} km trip</p>
                     </div>
                     <a
                       href={`tel:${BUSINESS.phone}`}
@@ -297,7 +297,7 @@ export default function FareCalculator({ defaultFrom = '', defaultTo = '' }: Far
                   href={`tel:${BUSINESS.phone}`}
                   className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-gradient-to-r from-primary to-amber-500 text-white font-bold rounded-full shadow-lg hover:scale-105 transition-all"
                 >
-                  <Phone size={18} /> Book Now: {BUSINESS.phone}
+                  <Phone size={18} /> Reserve Now: {BUSINESS.phone}
                 </a>
                 <a
                   href={getWhatsAppUrl()}
@@ -305,13 +305,13 @@ export default function FareCalculator({ defaultFrom = '', defaultTo = '' }: Far
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-green-500 text-white font-bold rounded-full shadow-lg hover:scale-105 transition-all"
                 >
-                  💬 Get Quote on WhatsApp
+                  💬 Get Fare on WhatsApp
                 </a>
               </div>
 
               {/* Disclaimer */}
               <p className="text-center text-xs text-gray-400 mt-4">
-                * Fares include fuel & driver. Toll, parking & night charges extra. Final fare confirmed at booking.
+                * Rates cover fuel and driver. Tolls, parking, and night charges are extra. The final amount is confirmed at booking.
               </p>
             </div>
           )}

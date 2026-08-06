@@ -168,13 +168,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
           {/* Author / CTA */}
           <div className="mt-12 p-6 bg-gradient-to-r from-secondary to-gray-800 rounded-2xl text-white text-center">
-            <h3 className="text-xl font-bold mb-2">Need a Cab? We&apos;re a Call Away!</h3>
-            <p className="text-gray-300 text-sm mb-4">Book with {BUSINESS.name} — 24/7 availability, transparent pricing, verified drivers.</p>
+            <h3 className="text-xl font-bold mb-2">Need a Ride? We&apos;re a Call Away!</h3>
+            <p className="text-gray-300 text-sm mb-4">Travel with {BUSINESS.name} — round-the-clock service, clear pricing, vetted drivers.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a href={`tel:${BUSINESS.phone}`} className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-amber-500 text-white font-bold rounded-full shadow-lg">
                 <Phone size={18} /> {BUSINESS.phone}
               </a>
-              <a href={`https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent('Hi! I want to book a cab.')}`} className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-green-500 text-white font-bold rounded-full shadow-lg">
+              <a href={`https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent('Hi! I would like to book a cab.')}`} className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-green-500 text-white font-bold rounded-full shadow-lg">
                 💬 WhatsApp
               </a>
             </div>
@@ -186,7 +186,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       {relatedBlogs.length > 0 && (
         <section className="py-12 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-2xl font-bold text-secondary mb-6">More Articles</h2>
+            <h2 className="text-2xl font-bold text-secondary mb-6">More Reads</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {relatedBlogs.map((b) => (
                 <Link key={b.slug} href={`/blog/${b.slug}`} className="group bg-white rounded-xl border border-gray-100 p-5 shadow-sm hover:shadow-md transition-all">
