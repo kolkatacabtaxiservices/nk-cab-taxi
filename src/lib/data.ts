@@ -206,8 +206,8 @@ export const BUSINESS = {
   payment: 'Cash, UPI, Card, Online Transfer',
   domain: 'https://www.nkcabtaxi.com',
   foundYear: 2019,
-  gbpLink: 'https://g.page/r/nkcabtaxi/review',
-  gbpReviewLink: 'https://g.page/r/nkcabtaxi/review',
+  gbpLink: 'https://g.page/r/CVj0IXiBoX-NEBM/review',
+  gbpReviewLink: 'https://g.page/r/CVj0IXiBoX-NEBM/review',
   states: ['West Bengal', 'Jharkhand', 'Odisha', 'Bihar', 'Uttar Pradesh'],
   hubs: ['Kolkata', 'Ranchi', 'Bhubaneswar', 'Jamshedpur', 'Patna'],
 };

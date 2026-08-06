@@ -1,7 +1,8 @@
 'use client';
 
 import { useRef, useState, useEffect } from 'react';
-import { MapPin } from 'lucide-react';
+import { MapPin, Star } from 'lucide-react';
+import { BUSINESS } from '@/lib/data';
 
 interface GoogleMapEmbedProps {
   /** For route pages: show directions from → to */
@@ -141,13 +142,24 @@ export default function GoogleMapEmbed({
               href={`https://www.google.com/maps/search/cab+service+${encodeURIComponent(cityName + ', India')}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-primary font-medium hover:underline"
+              className="inline-flex items-center gap-2 text-sm text-primary font-medium hover:underline mr-4"
             >
               <MapPin size={14} />
               Open {cityName} in Google Maps ↗
             </a>
           </div>
         )}
+        <div className="mt-4 text-center">
+          <a
+            href={BUSINESS.gbpReviewLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-white border border-amber-300 rounded-full text-xs sm:text-sm font-bold text-gray-800 hover:bg-amber-50 shadow-sm transition-all"
+          >
+            <Star size={16} className="text-amber-500 fill-amber-500" />
+            <span>Rate &amp; Review NK Cab &amp; Taxi on Google My Business ↗</span>
+          </a>
+        </div>
       </div>
     </section>
   );

@@ -136,6 +136,16 @@ export default async function Footer() {
                 </div>
                 24/7, 365 Days a Year
               </div>
+              <a
+                href={BUSINESS.gbpReviewLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-2 px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white rounded-xl text-xs font-semibold transition-all group"
+              >
+                <span className="text-amber-400 font-bold">⭐ 4.8</span>
+                <span>Review Us on Google Business</span>
+                <span className="text-gray-400 group-hover:translate-x-0.5 transition-transform">↗</span>
+              </a>
             </div>
 
             {/* States badges - Clickable links for all 5 states */}

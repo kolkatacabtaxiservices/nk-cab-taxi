@@ -120,6 +120,27 @@ export default function ContactPage() {
                     <p className="text-secondary font-medium text-sm mt-1">West Bengal • Jharkhand • Odisha</p>
                   </div>
                 </div>
+
+                <a
+                  href={BUSINESS.gbpReviewLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-4 p-5 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200/70 rounded-2xl hover:shadow-md transition-all group"
+                >
+                  <div className="w-12 h-12 bg-amber-500 rounded-xl flex items-center justify-center text-white shrink-0 font-extrabold text-xl">
+                    ⭐
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-secondary group-hover:text-primary transition-colors flex items-center gap-2">
+                      Google My Business
+                      <span className="text-xs bg-amber-200 text-amber-900 px-2 py-0.5 rounded-full font-bold">4.8 Rating</span>
+                    </h3>
+                    <p className="text-gray-600 text-sm mt-0.5">Rate &amp; Review NK Cab &amp; Taxi on Google</p>
+                    <p className="text-primary font-bold text-sm mt-1 flex items-center gap-1">
+                      Leave a Google Review ↗
+                    </p>
+                  </div>
+                </a>
               </div>
             </div>
 
