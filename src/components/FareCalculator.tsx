@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback, useMemo } from 'react';
+import { useState, useCallback, useMemo, useRef, useEffect } from 'react';
 import { Calculator, MapPin, Phone, Clock, Route as RouteIcon, Sparkles } from 'lucide-react';
 import { BUSINESS, getAllCities, getStateFares } from '@/lib/data';
 
@@ -31,7 +31,16 @@ export default function FareCalculator({ defaultFrom = '', defaultTo = '' }: Far
   const [calculating, setCalculating] = useState(false);
   const [error, setError] = useState('');
 
+  // FIX #8: Track the calculation animation timer to prevent state updates on unmounted component
+  const calcTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+  useEffect(() => {
+    return () => {
+      if (calcTimerRef.current) {
+        clearTimeout(calcTimerRef.current);
+      }
+    };
+  }, []);
   const findCitySlug = useCallback((input: string): string | null => {
     const normalized = input.toLowerCase().trim().split(',')[0].trim();
     const city = allCities.find(
@@ -67,8 +76,8 @@ export default function FareCalculator({ defaultFrom = '', defaultTo = '' }: Far
 
     setCalculating(true);
 
-    // Simulate a brief calculation animation
-    setTimeout(() => {
+    // FIX #8: Store timer ref so it can be cancelled if the component unmounts
+    calcTimerRef.current = setTimeout(() => {
       const fromSlug = findCitySlug(from);
       const toSlug = findCitySlug(to);
       // Get state-specific rates for the FROM city

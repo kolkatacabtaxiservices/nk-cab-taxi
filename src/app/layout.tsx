@@ -97,12 +97,12 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: '',
-    other: {
-      'msvalidate.01': [''],
-    },
-  },
+  // NOTE: Add your real Google Search Console and Bing Webmaster verification codes here
+  // once confirmed. Empty strings are omitted to avoid emitting useless <meta> tags.
+  // verification: {
+  //   google: 'YOUR_GOOGLE_SITE_VERIFICATION_CODE',
+  //   other: { 'msvalidate.01': ['YOUR_BING_VERIFICATION_CODE'] },
+  // },
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
@@ -157,11 +157,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         /> */}
         {/* End Google tag */}
 
-        {/* DNS Prefetch for external resources */}
+        {/* DNS Prefetch — only for resources actually loaded on this page */}
         <link rel="dns-prefetch" href="https://wa.me" />
         <link rel="dns-prefetch" href="https://g.page" />
+        {/* Uncomment when GA/GTM is enabled:
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        */}
 
         {/* ═══ CRITICAL: Preload LCP hero image ═══
             This eliminates the 2,000ms "Element render delay" in PageSpeed.

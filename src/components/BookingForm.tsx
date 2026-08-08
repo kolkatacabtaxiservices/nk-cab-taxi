@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback, useMemo } from 'react';
+import { useState, useCallback, useMemo, useRef, useEffect } from 'react';
 import { MapPin, Calendar, Car, User, Phone, Send, ChevronDown, CheckCircle, AlertCircle, RotateCcw } from 'lucide-react';
 import { BUSINESS, getAllCities } from '@/lib/data';
 
@@ -41,6 +41,18 @@ export default function BookingForm({ defaultFrom = '', defaultTo = '', compact 
   // Store submitted data for the success screen
   const [submittedData, setSubmittedData] = useState<{ phone: string; whatsappUrl: string } | null>(null);
 
+  // FIX #7: Track auto-reset timer so we can clear it on unmount or manual reset
+  const autoResetTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Clear the timer when the component unmounts to prevent state updates on dead component
+  useEffect(() => {
+    return () => {
+      if (autoResetTimerRef.current) {
+        clearTimeout(autoResetTimerRef.current);
+      }
+    };
+  }, []);
+
   const getCarLabel = (carType: string) => {
     switch (carType) {
       case 'sedan': return 'Sedan';
@@ -71,23 +83,28 @@ export default function BookingForm({ defaultFrom = '', defaultTo = '', compact 
     return `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(message)}`;
   };
 
-  const resetForm = () => {
+  const resetForm = useCallback(() => {
+    // FIX #7: Cancel any pending auto-reset timer before manually resetting
+    if (autoResetTimerRef.current) {
+      clearTimeout(autoResetTimerRef.current);
+      autoResetTimerRef.current = null;
+    }
     setForm(getInitialForm());
     setStatus('idle');
     setErrorMsg('');
     setSubmittedData(null);
-  };
+  }, [getInitialForm]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('submitting');
     setErrorMsg('');
 
-    // Client-side phone validation
+    // FIX #9: Client-side phone validation aligned with server (10–13 digits after stripping non-digits)
     const cleanPhone = form.phone.replace(/\D/g, '');
-    if (cleanPhone.length < 10) {
+    if (cleanPhone.length < 10 || cleanPhone.length > 13) {
       setStatus('error');
-      setErrorMsg('Enter a valid 10-digit mobile number.');
+      setErrorMsg('Enter a valid 10-digit mobile number (e.g. 9876543210 or +91 98765 43210).');
       return;
     }
 
@@ -114,8 +131,9 @@ export default function BookingForm({ defaultFrom = '', defaultTo = '', compact 
       if (response.ok && data.success) {
         setSubmittedData({ phone: phoneForDisplay, whatsappUrl });
         setStatus('success');
-        // Auto reset form after 10 seconds if user doesn't interact
-        setTimeout(() => {
+        // FIX #7: Store timer ref so it can be cancelled on unmount or manual reset
+        autoResetTimerRef.current = setTimeout(() => {
+          autoResetTimerRef.current = null;
           setForm(getInitialForm());
           setStatus('idle');
           setSubmittedData(null);
@@ -275,7 +293,8 @@ export default function BookingForm({ defaultFrom = '', defaultTo = '', compact 
             </div>
             <div className="relative">
               <Phone size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-              <input aria-label="Mobile Number" type="tel" placeholder="Mobile Number" value={form.phone} onChange={e => setForm({...form, phone: e.target.value})} required pattern="[0-9]{10}"
+              {/* FIX #9: Pattern relaxed to accept +91 prefix, spaces and hyphens — server strips non-digits */}
+              <input aria-label="Mobile Number" type="tel" placeholder="e.g. 9876543210 or +91 98765 43210" value={form.phone} onChange={e => setForm({...form, phone: e.target.value})} required pattern="[\+\d][\d\s\-]{9,14}"
                 className="w-full pl-8 pr-3 py-2.5 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none bg-gray-50" />
             </div>
           </div>
@@ -402,7 +421,8 @@ export default function BookingForm({ defaultFrom = '', defaultTo = '', compact 
             <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700 mb-1">Mobile Number</label>
             <div className="relative">
               <Phone size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-              <input id="phoneNumber" type="tel" placeholder="10 digit mobile number" value={form.phone} onChange={e => setForm({...form, phone: e.target.value})} required pattern="[0-9]{10}"
+              {/* FIX #9: Pattern relaxed to accept +91 prefix, spaces and hyphens — server strips non-digits */}
+              <input id="phoneNumber" type="tel" placeholder="e.g. 9876543210 or +91 98765 43210" value={form.phone} onChange={e => setForm({...form, phone: e.target.value})} required pattern="[\+\d][\d\s\-]{9,14}"
                 className="w-full pl-9 pr-3 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none bg-gray-50" />
             </div>
           </div>

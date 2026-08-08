@@ -3,15 +3,20 @@
  *
  * Cloudflare Pages Function — replaces src/app/api/indexnow/route.ts
  *
- * GET  /api/indexnow — submit all priority URLs to search engines
- * POST /api/indexnow — submit custom URL list
+ * GET  /api/indexnow — submit all priority URLs to search engines (requires x-api-key)
+ * POST /api/indexnow — submit custom URL list (requires x-api-key)
+ *
+ * Security fixes applied:
+ *  - INDEXNOW_API_KEY hard-coded fallback removed; env var is now required.
+ *  - GET endpoint now requires the same x-api-key header as the reindex endpoint.
+ *  - Domain read from NEXT_PUBLIC_SITE_URL env var; no hard-coded string.
  */
 
 interface Env {
   INDEXNOW_API_KEY?: string;
+  INDEXNOW_ADMIN_KEY?: string; // separate secret used to call this endpoint
+  NEXT_PUBLIC_SITE_URL?: string;
 }
-
-const DOMAIN = 'https://www.nkcabtaxi.com';
 
 // Top priority pages to submit on every deploy
 const PRIORITY_URLS = [
@@ -102,8 +107,8 @@ const PRIORITY_URLS = [
   '/sitemap_index.xml',
 ];
 
-async function submitToIndexNow(urls: string[], indexNowKey: string) {
-  const fullUrls = urls.map(u => u.startsWith('http') ? u : `${DOMAIN}${u}`);
+async function submitToIndexNow(urls: string[], indexNowKey: string, domain: string) {
+  const fullUrls = urls.map(u => u.startsWith('http') ? u : `${domain}${u}`);
   const results: { engine: string; status: string; error?: string }[] = [];
 
   const engines = [
@@ -117,9 +122,9 @@ async function submitToIndexNow(urls: string[], indexNowKey: string) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          host: 'www.nkcabtaxi.com',
+          host: new URL(domain).hostname,
           key: indexNowKey,
-          keyLocation: `${DOMAIN}/${indexNowKey}.txt`,
+          keyLocation: `${domain}/${indexNowKey}.txt`,
           urlList: fullUrls.slice(0, 10000),
         }),
       });
@@ -135,7 +140,7 @@ async function submitToIndexNow(urls: string[], indexNowKey: string) {
   // Also ping Google sitemap
   try {
     const googlePing = await fetch(
-      `https://www.google.com/ping?sitemap=${encodeURIComponent(`${DOMAIN}/sitemap_index.xml`)}`,
+      `https://www.google.com/ping?sitemap=${encodeURIComponent(`${domain}/sitemap_index.xml`)}`,
       { method: 'GET' }
     );
     results.push({
@@ -149,9 +154,34 @@ async function submitToIndexNow(urls: string[], indexNowKey: string) {
   return results;
 }
 
-export const onRequestGet: PagesFunction<Env> = async ({ env }) => {
-  const INDEXNOW_KEY = (env.INDEXNOW_API_KEY || 'f63a562479e04845a7090b84784a9e52').trim();
-  const results = await submitToIndexNow(PRIORITY_URLS, INDEXNOW_KEY);
+/** Authenticate request using the x-api-key header. */
+function isAuthorized(request: Request, env: Env): boolean {
+  const providedKey = request.headers.get('x-api-key');
+  const expectedKey = (env.INDEXNOW_ADMIN_KEY || '').trim();
+  // Reject if env var is not configured or key doesn't match
+  return expectedKey.length > 0 && providedKey === expectedKey;
+}
+
+export const onRequestGet: PagesFunction<Env> = async ({ request, env }) => {
+  // FIX #3: GET endpoint now requires authentication
+  if (!isAuthorized(request, env)) {
+    return Response.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
+  // FIX #2: No hard-coded fallback — env var is required
+  const INDEXNOW_KEY = (env.INDEXNOW_API_KEY || '').trim();
+  if (!INDEXNOW_KEY) {
+    console.error('INDEXNOW_API_KEY env variable is not set!');
+    return Response.json({ error: 'IndexNow service not configured.' }, { status: 500 });
+  }
+
+  // FIX #15: Domain from env var, not hard-coded
+  const DOMAIN = (env.NEXT_PUBLIC_SITE_URL || '').replace(/\/$/, '').trim();
+  if (!DOMAIN) {
+    return Response.json({ error: 'NEXT_PUBLIC_SITE_URL env variable is not set.' }, { status: 500 });
+  }
+
+  const results = await submitToIndexNow(PRIORITY_URLS, INDEXNOW_KEY, DOMAIN);
 
   return Response.json({
     message: `Submitted ${PRIORITY_URLS.length} URLs to search engines`,
@@ -162,12 +192,29 @@ export const onRequestGet: PagesFunction<Env> = async ({ env }) => {
 };
 
 export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
+  // POST also requires authentication
+  if (!isAuthorized(request, env)) {
+    return Response.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
   try {
-    const INDEXNOW_KEY = (env.INDEXNOW_API_KEY || 'f63a562479e04845a7090b84784a9e52').trim();
+    // FIX #2: No hard-coded fallback — env var is required
+    const INDEXNOW_KEY = (env.INDEXNOW_API_KEY || '').trim();
+    if (!INDEXNOW_KEY) {
+      console.error('INDEXNOW_API_KEY env variable is not set!');
+      return Response.json({ error: 'IndexNow service not configured.' }, { status: 500 });
+    }
+
+    // FIX #15: Domain from env var, not hard-coded
+    const DOMAIN = (env.NEXT_PUBLIC_SITE_URL || '').replace(/\/$/, '').trim();
+    if (!DOMAIN) {
+      return Response.json({ error: 'NEXT_PUBLIC_SITE_URL env variable is not set.' }, { status: 500 });
+    }
+
     const body = await request.json() as { urls?: string[] };
     const urls = body.urls || PRIORITY_URLS;
 
-    const results = await submitToIndexNow(urls, INDEXNOW_KEY);
+    const results = await submitToIndexNow(urls, INDEXNOW_KEY, DOMAIN);
 
     return Response.json({
       message: `Submitted ${urls.length} URLs to search engines`,
