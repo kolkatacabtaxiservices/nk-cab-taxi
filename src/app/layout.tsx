@@ -135,6 +135,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en-IN" dir="ltr" className={inter.variable} suppressHydrationWarning>
       <head>
+        {/* Google Tag Manager — GTM-5VKP87LN */}
+        <Script
+          id="gtm-head"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5VKP87LN');`,
+          }}
+        />
+        {/* End Google Tag Manager */}
+
         {/* Google Analytics GA4 — Measurement ID: G-X4V31JY158 */}
         <Script
           id="gtag-js"
@@ -213,7 +223,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className={`${inter.variable} ${plusJakarta.variable} ${inter.className} font-sans antialiased`} suppressHydrationWarning>
-        {/* noscript fallback — update with your GA4 ID */}
+        {/* Google Tag Manager (noscript) — required fallback for browsers with JS disabled */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-5VKP87LN"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
+        {/* End Google Tag Manager (noscript) */}
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
