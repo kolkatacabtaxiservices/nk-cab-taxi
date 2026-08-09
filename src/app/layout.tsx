@@ -135,11 +135,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en-IN" dir="ltr" className={inter.variable} suppressHydrationWarning>
       <head>
-        {/* Google Analytics GA4 — Replace G-XXXXXXXXXX with your real Measurement ID from analytics.google.com */}
+        {/* Google Analytics GA4 — Measurement ID: G-X4V31JY158 */}
         <Script
           id="gtag-js"
           strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+          src="https://www.googletagmanager.com/gtag/js?id=G-X4V31JY158"
         />
         <Script
           id="gtag-config"
@@ -149,7 +149,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-XXXXXXXXXX', {
+              gtag('config', 'G-X4V31JY158', {
                 page_path: window.location.pathname,
                 send_page_view: true
               });
