@@ -110,4 +110,3 @@ User-agent: DuckAssistBot
 Allow: /
 
 Sitemap: https://www.nkcabtaxi.com/sitemap_index.xml
-Sitemap: https://www.nkcabtaxi.com/sitemap.xml

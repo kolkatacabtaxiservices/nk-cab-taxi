@@ -101,19 +101,21 @@ export default async function CityPage({ params }: { params: Promise<{ state: st
 
   const routesFrom = await getRoutesFrom(citySlug);
   const routesTo = await getRoutesTo(citySlug);
-  const localRoutes = await getPopularLocalRoutes(citySlug, 12);
+  // Show 24 local routes (was 12) — more internal links = more PageRank flow to route pages
+  const localRoutes = await getPopularLocalRoutes(citySlug, 24);
 
   const vehicles = getVehicles();
   const prices = getStatePriceLabels(stateSlug);
   const fares = getStateFares(stateSlug);
 
   // Generate rich, unique content for this city
+  // Pass up to 50 routes (was 20) — ensures all cities show full route lists
   const content = generateCityPageContent({
     city,
     stateName: state.name,
     stateSlug: state.slug,
-    routesFrom: routesFrom.slice(0, 20),
-    routesTo: routesTo.slice(0, 20),
+    routesFrom: routesFrom.slice(0, 50),
+    routesTo: routesTo.slice(0, 30),
   });
 
   const serviceTypes = [
@@ -357,12 +359,12 @@ export default async function CityPage({ params }: { params: Promise<{ state: st
         </section>
       )}
 
-      {/* All Routes From City */}
-      {routesFrom.length > 12 && (
+      {/* All Routes From City — Always shown (removed >12 threshold), ensures all route pages get internal links */}
+      {routesFrom.length > 0 && (
         <section className="py-12 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-secondary mb-2">Full Route List from <span className="text-primary">{city.name}</span></h2>
-            <p className="text-gray-500 text-sm mb-6">{routesFrom.length} outstation routes from {city.name}</p>
+            <p className="text-gray-500 text-sm mb-6">{routesFrom.length} outstation routes from {city.name} — one-way and round-trip available</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
               {routesFrom.map((route) => (
                 <Link key={route.slug} href={`/routes/${route.slug}`} className="flex items-center justify-between p-3 bg-white rounded-lg border border-gray-100 hover:border-primary/30 transition-all text-sm">

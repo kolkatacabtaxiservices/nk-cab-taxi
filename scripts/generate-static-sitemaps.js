@@ -218,16 +218,34 @@ console.log('✓ Generated public/sitemap/1.xml');
 // --- Sitemap 2+: Routes — split into chunks of 500 URLs max (~1MB each) ---
 // Splitting prevents crawler timeout on large sitemaps (2.8MB was too large)
 const sitemap2Urls = routes.map(route => {
-  const isHighPriority = (
-    (HUB_SLUGS.includes(route.from) && POPULAR_DESTINATIONS.includes(route.to)) ||
-    (HUB_SLUGS.includes(route.to) && POPULAR_DESTINATIONS.includes(route.from))
-  );
   const isReverseHubRoute = REVERSE_HUB_ROUTES.includes(route.slug);
+  const isFromHub = HUB_SLUGS.includes(route.from);
+  const isToHub = HUB_SLUGS.includes(route.to);
+  const isPopularDest = POPULAR_DESTINATIONS.includes(route.to) || POPULAR_DESTINATIONS.includes(route.from);
+  const isShortRoute = route.distance <= 300;
+
+  let priority = 0.65;
+  if (isReverseHubRoute) {
+    priority = 0.95; // hand-picked high-value reverse routes
+  } else if (isFromHub && isPopularDest) {
+    priority = 0.88; // kolkata/hub → popular destination (highest volume)
+  } else if (isToHub && isPopularDest) {
+    priority = 0.85; // popular destination → hub (return trips)
+  } else if (isFromHub) {
+    priority = 0.82; // any route FROM a hub city
+  } else if (isToHub) {
+    priority = 0.80; // any route TO a hub city
+  } else if (isShortRoute && isPopularDest) {
+    priority = 0.75; // short cross-state routes between popular cities
+  } else if (isShortRoute) {
+    priority = 0.70; // short regional routes
+  }
+
   return {
     url: `${DOMAIN}/routes/${route.slug}`,
     lastModified: LAST_MODIFIED,
     changeFrequency: 'monthly',
-    priority: isReverseHubRoute ? 0.95 : isHighPriority ? 0.88 : 0.65
+    priority
   };
 });
 const ROUTE_CHUNK_SIZE = 500;

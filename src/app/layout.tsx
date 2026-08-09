@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
@@ -134,8 +135,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en-IN" dir="ltr" className={inter.variable} suppressHydrationWarning>
       <head>
-        {/* Google tag (gtag.js) — Replace G-XXXXXXXXXX with your GA4 ID */}
-        {/* <Script
+        {/* Google Analytics GA4 — Replace G-XXXXXXXXXX with your real Measurement ID from analytics.google.com */}
+        <Script
           id="gtag-js"
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
@@ -154,16 +155,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               });
             `,
           }}
-        /> */}
-        {/* End Google tag */}
+        />
+        {/* End Google Analytics */}
 
         {/* DNS Prefetch — only for resources actually loaded on this page */}
         <link rel="dns-prefetch" href="https://wa.me" />
         <link rel="dns-prefetch" href="https://g.page" />
-        {/* Uncomment when GA/GTM is enabled:
+        {/* Uncomment when GA/GTM is enabled: */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-        */}
 
         {/* ═══ CRITICAL: Preload LCP hero image ═══
             This eliminates the 2,000ms "Element render delay" in PageSpeed.

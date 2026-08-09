@@ -932,39 +932,133 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ═══ SEO LINK CLOUD ═══ */}
+      {/* ═══ SEO LINK CLOUD — Comprehensive Internal Links ═══ */}
       <section className="py-10 bg-white" id="popular-searches">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-xl font-bold text-[#0D1B2A] mb-6">Popular Searches</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div>
-              <h3 className="text-sm font-bold text-[#0D1B2A] mb-3 flex items-center gap-1.5"><MapPin size={13} className="text-[#FF6B00]" /> By City</h3>
+              <h3 className="text-sm font-bold text-[#0D1B2A] mb-3 flex items-center gap-1.5"><MapPin size={13} className="text-[#FF6B00]" /> West Bengal Cities</h3>
               <div className="space-y-0.5">
                 {[
-                  { name: 'Kolkata', href: '/west-bengal/kolkata' }, { name: 'Howrah', href: '/west-bengal/howrah' },
-                  { name: 'Siliguri', href: '/west-bengal/siliguri' }, { name: 'Darjeeling', href: '/west-bengal/darjeeling' },
-                  { name: 'Durgapur', href: '/west-bengal/durgapur' }, { name: 'Asansol', href: '/west-bengal/asansol' },
-                  { name: 'Ranchi', href: '/jharkhand/ranchi' }, { name: 'Jamshedpur', href: '/jharkhand/jamshedpur' },
-                  { name: 'Bhubaneswar', href: '/odisha/bhubaneswar' }, { name: 'Puri', href: '/odisha/puri' },
+                  { name: 'Kolkata', href: '/west-bengal/kolkata' },
+                  { name: 'Howrah', href: '/west-bengal/howrah' },
+                  { name: 'Siliguri', href: '/west-bengal/siliguri' },
+                  { name: 'Darjeeling', href: '/west-bengal/darjeeling' },
+                  { name: 'Durgapur', href: '/west-bengal/durgapur' },
+                  { name: 'Asansol', href: '/west-bengal/asansol' },
+                  { name: 'Kharagpur', href: '/west-bengal/kharagpur' },
+                  { name: 'Bardhaman', href: '/west-bengal/bardhaman' },
+                  { name: 'Haldia', href: '/west-bengal/haldia' },
+                  { name: 'Malda', href: '/west-bengal/malda' },
+                  { name: 'Digha', href: '/west-bengal/digha' },
+                  { name: 'Shantiniketan', href: '/west-bengal/bolpur-shantiniketan' },
+                  { name: 'Midnapore', href: '/west-bengal/midnapore' },
+                  { name: 'Barasat', href: '/west-bengal/barasat' },
+                  { name: 'Kalyani', href: '/west-bengal/kalyani' },
+                  { name: 'Mandarmani', href: '/west-bengal/mandarmani' },
+                  { name: 'Cooch Behar', href: '/west-bengal/cooch-behar' },
+                  { name: 'Jalpaiguri', href: '/west-bengal/jalpaiguri' },
+                  { name: 'Bankura', href: '/west-bengal/bankura' },
+                  { name: 'Murshidabad', href: '/west-bengal/murshidabad' },
                 ].map(c => <Link key={c.href} href={c.href} className="block py-1 text-sm text-gray-500 hover:text-[#FF6B00] transition-colors">Cab in {c.name}</Link>)}
               </div>
             </div>
             <div>
-              <h3 className="text-sm font-bold text-[#0D1B2A] mb-3 flex items-center gap-1.5"><Route size={13} className="text-[#FF6B00]" /> Popular Routes</h3>
+              <h3 className="text-sm font-bold text-[#0D1B2A] mb-3 flex items-center gap-1.5"><MapPin size={13} className="text-[#FF6B00]" /> Other State Cities</h3>
               <div className="space-y-0.5">
-                {popularRoutes.slice(0, 10).map(r => (
-                  <Link key={r.slug} href={`/routes/${r.slug}`} className="block py-1 text-sm text-gray-500 hover:text-[#FF6B00] transition-colors">{r.fromName} to {r.toName} Cab</Link>
-                ))}
+                {[
+                  { name: 'Ranchi', href: '/jharkhand/ranchi' },
+                  { name: 'Jamshedpur', href: '/jharkhand/jamshedpur' },
+                  { name: 'Dhanbad', href: '/jharkhand/dhanbad' },
+                  { name: 'Bokaro', href: '/jharkhand/bokaro' },
+                  { name: 'Deoghar', href: '/jharkhand/deoghar' },
+                  { name: 'Hazaribagh', href: '/jharkhand/hazaribagh' },
+                  { name: 'Giridih', href: '/jharkhand/giridih' },
+                  { name: 'Dumka', href: '/jharkhand/dumka' },
+                  { name: 'Bhubaneswar', href: '/odisha/bhubaneswar' },
+                  { name: 'Puri', href: '/odisha/puri' },
+                  { name: 'Cuttack', href: '/odisha/cuttack' },
+                  { name: 'Rourkela', href: '/odisha/rourkela' },
+                  { name: 'Berhampur', href: '/odisha/berhampur' },
+                  { name: 'Balasore', href: '/odisha/balasore' },
+                  { name: 'Konark', href: '/odisha/konark' },
+                  { name: 'Sambalpur', href: '/odisha/sambalpur' },
+                  { name: 'Patna', href: '/bihar/patna' },
+                  { name: 'Gaya', href: '/bihar/gaya' },
+                  { name: 'Varanasi', href: '/uttar-pradesh/varanasi' },
+                  { name: 'Prayagraj', href: '/uttar-pradesh/prayagraj' },
+                ].map(c => <Link key={c.href} href={c.href} className="block py-1 text-sm text-gray-500 hover:text-[#FF6B00] transition-colors">Cab in {c.name}</Link>)}
               </div>
             </div>
+            <div>
+              <h3 className="text-sm font-bold text-[#0D1B2A] mb-3 flex items-center gap-1.5"><Route size={13} className="text-[#FF6B00]" /> Kolkata Routes</h3>
+              <div className="space-y-0.5">
+                {[
+                  ['Kolkata to Darjeeling Cab', '/routes/kolkata-to-darjeeling'],
+                  ['Kolkata to Puri Cab', '/routes/kolkata-to-puri'],
+                  ['Kolkata to Digha Cab', '/routes/kolkata-to-digha'],
+                  ['Kolkata to Siliguri Cab', '/routes/kolkata-to-siliguri'],
+                  ['Kolkata to Bhubaneswar Cab', '/routes/kolkata-to-bhubaneswar'],
+                  ['Kolkata to Ranchi Cab', '/routes/kolkata-to-ranchi'],
+                  ['Kolkata to Jamshedpur Cab', '/routes/kolkata-to-jamshedpur'],
+                  ['Kolkata to Deoghar Cab', '/routes/kolkata-to-deoghar'],
+                  ['Kolkata to Durgapur Cab', '/routes/kolkata-to-durgapur'],
+                  ['Kolkata to Balasore Cab', '/routes/kolkata-to-balasore'],
+                  ['Kolkata to Mandarmani Cab', '/routes/kolkata-to-mandarmani'],
+                  ['Kolkata to Kharagpur Cab', '/routes/kolkata-to-kharagpur'],
+                  ['Kolkata to Haldia Cab', '/routes/kolkata-to-haldia'],
+                  ['Kolkata to Midnapore Cab', '/routes/kolkata-to-midnapore'],
+                  ['Kolkata to Asansol Cab', '/routes/kolkata-to-asansol'],
+                  ['Kolkata to Shantiniketan Cab', '/routes/kolkata-to-bolpur-shantiniketan'],
+                  ['Kolkata to Gangasagar Cab', '/routes/kolkata-to-gangasagar'],
+                  ['Kolkata to Mayapur Cab', '/routes/kolkata-to-mayapur'],
+                  ['Kolkata to Patna Cab', '/routes/kolkata-to-patna'],
+                  ['Kolkata to Varanasi Cab', '/routes/kolkata-to-varanasi'],
+                ].map(([name, href]) => <Link key={href} href={href} className="block py-1 text-sm text-gray-500 hover:text-[#FF6B00] transition-colors">{name}</Link>)}
+              </div>
+            </div>
+            <div>
+              <h3 className="text-sm font-bold text-[#0D1B2A] mb-3 flex items-center gap-1.5"><Route size={13} className="text-[#FF6B00]" /> Other Popular Routes</h3>
+              <div className="space-y-0.5">
+                {[
+                  ['Ranchi to Kolkata Cab', '/routes/ranchi-to-kolkata'],
+                  ['Jamshedpur to Kolkata Cab', '/routes/jamshedpur-to-kolkata'],
+                  ['Bhubaneswar to Kolkata Cab', '/routes/bhubaneswar-to-kolkata'],
+                  ['Siliguri to Kolkata Cab', '/routes/siliguri-to-kolkata'],
+                  ['Dhanbad to Kolkata Cab', '/routes/dhanbad-to-kolkata'],
+                  ['Puri to Bhubaneswar Cab', '/routes/puri-to-bhubaneswar'],
+                  ['Balasore to Kolkata Cab', '/routes/balasore-to-kolkata'],
+                  ['Ranchi to Jamshedpur Cab', '/routes/ranchi-to-jamshedpur'],
+                  ['Jamshedpur to Ranchi Cab', '/routes/jamshedpur-to-ranchi'],
+                  ['Deoghar to Kolkata Cab', '/routes/deoghar-to-kolkata'],
+                  ['Bokaro to Kolkata Cab', '/routes/bokaro-to-kolkata'],
+                  ['Durgapur to Kolkata Cab', '/routes/durgapur-to-kolkata'],
+                  ['Asansol to Kolkata Cab', '/routes/asansol-to-kolkata'],
+                  ['Darjeeling to Kolkata Cab', '/routes/darjeeling-to-kolkata'],
+                  ['Patna to Kolkata Cab', '/routes/patna-to-kolkata'],
+                  ['Howrah to Ranchi Cab', '/routes/howrah-to-ranchi'],
+                  ['Ranchi to Bhubaneswar Cab', '/routes/ranchi-to-bhubaneswar'],
+                  ...popularRoutes.slice(0, 3).map(r => ([`${r.fromName} to ${r.toName} Cab`, `/routes/${r.slug}`])),
+                ].map(([name, href]) => <Link key={href} href={href} className="block py-1 text-sm text-gray-500 hover:text-[#FF6B00] transition-colors">{name}</Link>)}
+              </div>
+            </div>
+          </div>
+
+          {/* Services & Tours quick links */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8 pt-8 border-t border-gray-100">
             <div>
               <h3 className="text-sm font-bold text-[#0D1B2A] mb-3 flex items-center gap-1.5"><Car size={13} className="text-[#FF6B00]" /> Services</h3>
               <div className="space-y-0.5">
                 {[
-                  ['Airport Transfer', '/services/airport-transfer'], ['Outstation Cab', '/services/outstation'],
-                  ['One-Way Taxi', '/services/one-way'], ['Round Trip', '/services/round-trip'],
-                  ['Local Taxi', '/services/local-taxi'], ['Wedding Car', '/services/wedding-car-rental'],
-                  ['Corporate Car', '/services/corporate-car-rental'], ['Tempo Traveller', '/fleet'],
+                  ['Airport Transfer', '/services/airport-transfer'],
+                  ['Outstation Cab', '/services/outstation'],
+                  ['One-Way Taxi', '/services/one-way'],
+                  ['Round Trip', '/services/round-trip'],
+                  ['Local Taxi', '/services/local-taxi'],
+                  ['Wedding Car', '/services/wedding-car-rental'],
+                  ['Corporate Car', '/services/corporate-car-rental'],
+                  ['Tempo Traveller', '/fleet'],
                 ].map(([name, href]) => <Link key={href} href={href} className="block py-1 text-sm text-gray-500 hover:text-[#FF6B00] transition-colors">{name}</Link>)}
               </div>
             </div>
@@ -972,11 +1066,45 @@ export default async function HomePage() {
               <h3 className="text-sm font-bold text-[#0D1B2A] mb-3 flex items-center gap-1.5"><Star size={13} className="text-[#FF6B00]" /> Tour Packages</h3>
               <div className="space-y-0.5">
                 {[
-                  ['Darjeeling Tour', '/tours/darjeeling-tour'], ['Puri & Konark', '/tours/puri-konark-tour'],
-                  ['Sundarbans Safari', '/tours/sundarbans-tour'], ['Varanasi Tour', '/tours/varanasi-ayodhya-tour'],
-                  ['North Bengal Tour', '/tours/north-bengal-tour'], ['Kolkata City Tour', '/tours/kolkata-city-tour'],
-                  ['Digha Beach Trip', '/tours/digha-beach'], ['Mandarmani Tour', '/tours/mandarmani'],
+                  ['Darjeeling Tour', '/tours/darjeeling-tour'],
+                  ['Puri & Konark', '/tours/puri-konark-tour'],
+                  ['Sundarbans Safari', '/tours/sundarbans-tour'],
+                  ['Varanasi Tour', '/tours/varanasi-ayodhya-tour'],
+                  ['North Bengal Tour', '/tours/north-bengal-tour'],
+                  ['Kolkata City Tour', '/tours/kolkata-city-tour'],
+                  ['Digha Beach Trip', '/tours/digha-beach'],
+                  ['Mandarmani Tour', '/tours/mandarmani'],
                 ].map(([name, href]) => <Link key={name} href={href} className="block py-1 text-sm text-gray-500 hover:text-[#FF6B00] transition-colors">{name}</Link>)}
+              </div>
+            </div>
+            <div>
+              <h3 className="text-sm font-bold text-[#0D1B2A] mb-3 flex items-center gap-1.5"><Route size={13} className="text-[#FF6B00]" /> Ranchi & Jharkhand Routes</h3>
+              <div className="space-y-0.5">
+                {[
+                  ['Ranchi to Patna Cab', '/routes/ranchi-to-patna'],
+                  ['Ranchi to Deoghar Cab', '/routes/ranchi-to-deoghar'],
+                  ['Ranchi to Dhanbad Cab', '/routes/ranchi-to-dhanbad'],
+                  ['Ranchi to Bokaro Cab', '/routes/ranchi-to-bokaro'],
+                  ['Ranchi to Hazaribagh Cab', '/routes/ranchi-to-hazaribagh'],
+                  ['Ranchi to Puri Cab', '/routes/ranchi-to-puri'],
+                  ['Ranchi to Siliguri Cab', '/routes/ranchi-to-siliguri'],
+                  ['Ranchi to Darjeeling Cab', '/routes/ranchi-to-darjeeling'],
+                ].map(([name, href]) => <Link key={href} href={href} className="block py-1 text-sm text-gray-500 hover:text-[#FF6B00] transition-colors">{name}</Link>)}
+              </div>
+            </div>
+            <div>
+              <h3 className="text-sm font-bold text-[#0D1B2A] mb-3 flex items-center gap-1.5"><Route size={13} className="text-[#FF6B00]" /> Bhubaneswar & Odisha Routes</h3>
+              <div className="space-y-0.5">
+                {[
+                  ['Bhubaneswar to Puri Cab', '/routes/bhubaneswar-to-puri'],
+                  ['Bhubaneswar to Konark Cab', '/routes/bhubaneswar-to-konark'],
+                  ['Bhubaneswar to Cuttack Cab', '/routes/bhubaneswar-to-cuttack'],
+                  ['Bhubaneswar to Ranchi Cab', '/routes/bhubaneswar-to-ranchi'],
+                  ['Bhubaneswar to Kolkata Cab', '/routes/bhubaneswar-to-kolkata'],
+                  ['Puri to Kolkata Cab', '/routes/puri-to-kolkata'],
+                  ['Cuttack to Bhubaneswar Cab', '/routes/cuttack-to-bhubaneswar'],
+                  ['Rourkela to Bhubaneswar Cab', '/routes/rourkela-to-bhubaneswar'],
+                ].map(([name, href]) => <Link key={href} href={href} className="block py-1 text-sm text-gray-500 hover:text-[#FF6B00] transition-colors">{name}</Link>)}
               </div>
             </div>
           </div>

@@ -687,16 +687,16 @@ export default async function RoutePage({ params }: { params: Promise<{ route: s
                 <p className="text-xs text-gray-400 mt-1">One-way and round-trip options offered</p>
               </Link>
             )}
-            {/* Source City Page */}
-            {fromState && !['bihar', 'uttar-pradesh', 'delhi-ncr', 'uttarakhand', 'madhya-pradesh'].includes(route.fromState) && (
+            {/* Source City Page — cross-link to city page from route page for PageRank flow */}
+            {fromState && (
               <Link href={`/${route.fromState}/${route.from}`} className="group p-4 bg-gray-50 rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-md transition-all">
                 <p className="text-xs text-gray-400 mb-1">Taxi Service In</p>
                 <p className="font-semibold text-secondary text-sm group-hover:text-primary transition-colors">📍 {route.fromName}</p>
                 <p className="text-xs text-gray-400 mt-1">City, outstation and airport taxi</p>
               </Link>
             )}
-            {/* Destination City Page */}
-            {toState && !['bihar', 'uttar-pradesh', 'delhi-ncr', 'uttarakhand', 'madhya-pradesh'].includes(route.toState) && (
+            {/* Destination City Page — cross-link to city page for PageRank flow */}
+            {toState && (
               <Link href={`/${route.toState}/${route.to}`} className="group p-4 bg-gray-50 rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-md transition-all">
                 <p className="text-xs text-gray-400 mb-1">Taxi Service In</p>
                 <p className="font-semibold text-secondary text-sm group-hover:text-primary transition-colors">📍 {route.toName}</p>
