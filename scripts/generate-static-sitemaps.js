@@ -409,6 +409,7 @@ for (const sitemapFile of generatedSitemapFiles) {
 }
 indexXml += `</sitemapindex>`;
 fs.writeFileSync(path.join(publicDir, 'sitemap_index.xml'), indexXml);
-console.log(`✓ Generated public/sitemap_index.xml (${generatedSitemapFiles.length} sitemaps: ${generatedSitemapFiles.join(', ')})`);
+fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), indexXml);
+console.log(`✓ Generated public/sitemap_index.xml and public/sitemap.xml (${generatedSitemapFiles.length} sitemaps: ${generatedSitemapFiles.join(', ')})`);
 console.log('🎉 All static sitemaps generated successfully!');
 
