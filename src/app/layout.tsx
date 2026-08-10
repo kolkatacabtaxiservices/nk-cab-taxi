@@ -98,10 +98,18 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  // NOTE: Add your real Google Search Console and Bing Webmaster verification codes here
-  // once confirmed. Empty strings are omitted to avoid emitting useless <meta> tags.
+  // ─── Google Search Console Verification ────────────────────────────────────
+  // IMPORTANT: Uncomment and fill in your verification code below to enable
+  // meta-tag ownership verification for Google Search Console.
+  // To get the code: GSC → Settings → Ownership Verification → HTML Tag method
+  // Example: if the tag is <meta name="google-site-verification" content="ABC123" />
+  // then set google: 'ABC123'
+  //
+  // NOTE: The public/b8e4c2a1f3d7e9b0.txt file already provides HTML-file verification.
+  // Adding the meta tag below provides a second verification method (belt & suspenders).
+  //
   // verification: {
-  //   google: 'YOUR_GOOGLE_SITE_VERIFICATION_CODE',
+  //   google: 'YOUR_GOOGLE_SITE_VERIFICATION_CODE',  // from GSC HTML Tag method
   //   other: { 'msvalidate.01': ['YOUR_BING_VERIFICATION_CODE'] },
   // },
   icons: {

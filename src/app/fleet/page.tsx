@@ -7,7 +7,7 @@ import FAQSection from '@/components/FAQSection';
 import GoogleMapEmbed from '@/components/GoogleMapEmbed';
 
 import { BUSINESS, getVehicles } from '@/lib/data';
-import { generateFleetOfferCatalogSchema, generateBreadcrumbSchema, generateFaqSchema, generateAggregateRatingSchema } from '@/lib/seo';
+import { generateFleetOfferCatalogSchema, generateBreadcrumbSchema, generateFaqSchema } from '@/lib/seo';
 
 export const dynamic = 'force-static';
 export const revalidate = false;

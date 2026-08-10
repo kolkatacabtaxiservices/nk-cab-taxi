@@ -34,7 +34,7 @@ const FareCalculator = nextDynamic(() => import('@/components/FareCalculator'), 
 import { getCity, getState, BUSINESS } from '@/lib/data';
 import { getRoute, getRoutesFrom, getPopularLocalRoutes, isHubRoute } from '@/lib/routeData';
 import { getAllRouteSlugs } from '@/lib/routeDataStatic';
-import { generateRouteMetadata, generateFaqSchema, generateBreadcrumbSchema, generateEnhancedRouteSchema, generateRouteTripActionSchema, generateAggregateRatingSchema } from '@/lib/seo';
+import { generateRouteMetadata, generateFaqSchema, generateBreadcrumbSchema, generateEnhancedRouteSchema, generateRouteTripActionSchema } from '@/lib/seo';
 import { generateRoutePageContent } from '@/lib/routeContent';
 import { formatBoldText, parseParagraphsWithBold } from '@/lib/textHelper';
 

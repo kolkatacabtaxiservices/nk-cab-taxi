@@ -9,12 +9,71 @@ Disallow: /*?car=suv
 Disallow: /*?car=tempo
 Disallow: /*?car=luxury
 Disallow: /*?car=innova
-# Block path-based car type variants (returned 403/404 for 8,149 pages in GSC)
+# ── Vehicle-type route pages (/routes/*/sedan|suv|tempo|luxury) ──────────────
+# Non-hub vehicle pages 404 if not pre-built — block all, then allow hub origins.
+# Allow rules (more specific) override the Disallow (more general) per robots.txt spec.
+
+# Step 1: Block ALL vehicle route variants by default
 Disallow: /routes/*/sedan
 Disallow: /routes/*/suv
 Disallow: /routes/*/tempo
 Disallow: /routes/*/luxury
 Disallow: /routes/*/innova
+Disallow: /routes/*/crysta
+
+# Step 2: Allow hub-city-origin routes (these pages exist and are indexed)
+Allow: /routes/kolkata-*/sedan
+Allow: /routes/kolkata-*/suv
+Allow: /routes/kolkata-*/tempo
+Allow: /routes/kolkata-*/luxury
+Allow: /routes/ranchi-*/sedan
+Allow: /routes/ranchi-*/suv
+Allow: /routes/ranchi-*/tempo
+Allow: /routes/ranchi-*/luxury
+Allow: /routes/bhubaneswar-*/sedan
+Allow: /routes/bhubaneswar-*/suv
+Allow: /routes/bhubaneswar-*/tempo
+Allow: /routes/bhubaneswar-*/luxury
+Allow: /routes/jamshedpur-*/sedan
+Allow: /routes/jamshedpur-*/suv
+Allow: /routes/jamshedpur-*/tempo
+Allow: /routes/jamshedpur-*/luxury
+Allow: /routes/patna-*/sedan
+Allow: /routes/patna-*/suv
+Allow: /routes/patna-*/tempo
+Allow: /routes/patna-*/luxury
+
+# ── City vehicle pages (/[state]/[city]/sedan|suv|tempo|luxury) ───────────────
+# Only 5 hub cities have these pages: kolkata, ranchi, bhubaneswar, jamshedpur, patna.
+# All non-hub cities → 404. Block all, then allow hub cities explicitly.
+
+# Step 1: Block ALL city vehicle pages by default
+Disallow: /*/*/sedan
+Disallow: /*/*/suv
+Disallow: /*/*/tempo
+Disallow: /*/*/luxury
+
+# Step 2: Allow only hub city vehicle pages (these exist and are indexed)
+Allow: /west-bengal/kolkata/sedan
+Allow: /west-bengal/kolkata/suv
+Allow: /west-bengal/kolkata/tempo
+Allow: /west-bengal/kolkata/luxury
+Allow: /jharkhand/ranchi/sedan
+Allow: /jharkhand/ranchi/suv
+Allow: /jharkhand/ranchi/tempo
+Allow: /jharkhand/ranchi/luxury
+Allow: /odisha/bhubaneswar/sedan
+Allow: /odisha/bhubaneswar/suv
+Allow: /odisha/bhubaneswar/tempo
+Allow: /odisha/bhubaneswar/luxury
+Allow: /jharkhand/jamshedpur/sedan
+Allow: /jharkhand/jamshedpur/suv
+Allow: /jharkhand/jamshedpur/tempo
+Allow: /jharkhand/jamshedpur/luxury
+Allow: /bihar/patna/sedan
+Allow: /bihar/patna/suv
+Allow: /bihar/patna/tempo
+Allow: /bihar/patna/luxury
 
 User-agent: Amazonbot
 Disallow: /
@@ -110,3 +169,4 @@ User-agent: DuckAssistBot
 Allow: /
 
 Sitemap: https://www.nkcabtaxi.com/sitemap_index.xml
+Sitemap: https://www.nkcabtaxi.com/sitemap.xml

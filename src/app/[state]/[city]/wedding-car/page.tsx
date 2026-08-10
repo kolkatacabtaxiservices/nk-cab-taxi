@@ -7,8 +7,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import HeroBanner from '@/components/HeroBanner';
 import BookingForm from '@/components/BookingForm';
 import FAQSection from '@/components/FAQSection';
-import { getState, getCity, getAllCities, BUSINESS } from '@/lib/data';
-import { getStatePriceLabels } from '@/lib/data';
+import { getState, getCity, getAllCities, BUSINESS, getStatePriceLabels } from '@/lib/data';
 import { generateFaqSchema, generateBreadcrumbSchema, getCityGeoMeta, generateCitySubServiceSchema } from '@/lib/seo';
 import { generateWeddingCarServiceContent } from '@/lib/serviceContent';
 import { formatBoldText } from '@/lib/textHelper';
@@ -27,7 +26,6 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const { state: stateSlug, city: citySlug } = await params;
   const city = getCity(stateSlug, citySlug);
   if (!city) return {};
-  const metaPrices = getStatePriceLabels(stateSlug);
   const canonicalUrl = `${BUSINESS.domain}/${stateSlug}/${citySlug}/wedding-car`;
   return {
     title: `Bridal Car Hire in ${city.name} from ₹5,000 | Decorated Baraat Car | ${BUSINESS.name}`,

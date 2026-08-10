@@ -9,7 +9,7 @@ import BookingForm from '@/components/BookingForm';
 import FAQSection from '@/components/FAQSection';
 import GoogleMapEmbed from '@/components/GoogleMapEmbed';
 import { getCity, getState, getVehicle, getVehicles, getStateFares, getStatePriceLabels, BUSINESS } from '@/lib/data';
-import { generateFaqSchema, generateBreadcrumbSchema, getCityGeoMeta, generateAggregateRatingSchema } from '@/lib/seo';
+import { generateFaqSchema, generateBreadcrumbSchema, getCityGeoMeta } from '@/lib/seo';
 
 // Hub cities jinke liye vehicle-specific pages build hongi
 const HUB_CITY_VEHICLE_PARAMS: { state: string; city: string }[] = [

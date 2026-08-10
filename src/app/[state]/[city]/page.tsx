@@ -13,7 +13,7 @@ import FareCalculator from '@/components/FareCalculator';
 import FleetSection from '@/components/FleetSection';
 import { getState, getCity, getAllCities, getVehicles, BUSINESS, getStatePriceLabels, getStateFares } from '@/lib/data';
 import { getRoutesFrom, getRoutesTo, getPopularLocalRoutes } from '@/lib/routeData';
-import { generateCityMetadata, generateFaqSchema, generateBreadcrumbSchema, generateCityServiceSchema, getCityGeoMeta, generateCityGeoCircleSchema, generateAggregateRatingSchema, generateServiceAreaSchema, generateCityOfferCatalogSchema } from '@/lib/seo';
+import { generateCityMetadata, generateFaqSchema, generateBreadcrumbSchema, generateCityServiceSchema, getCityGeoMeta, generateCityGeoCircleSchema, generateCityOfferCatalogSchema } from '@/lib/seo';
 import { generateCityPageContent } from '@/lib/cityContent';
 import { formatBoldText } from '@/lib/textHelper';
 

@@ -6,7 +6,7 @@ import HeroBanner from '@/components/HeroBanner';
 import FAQSection from '@/components/FAQSection';
 import GoogleMapEmbed from '@/components/GoogleMapEmbed';
 import { BUSINESS, getAllCities } from '@/lib/data';
-import { generateFaqSchema, generateBreadcrumbSchema, generateAggregateRatingSchema } from '@/lib/seo';
+import { generateFaqSchema, generateBreadcrumbSchema } from '@/lib/seo';
 
 export const dynamic = 'force-static';
 export const revalidate = false;

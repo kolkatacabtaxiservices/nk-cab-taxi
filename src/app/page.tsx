@@ -13,10 +13,9 @@ import FAQSection from '@/components/FAQSection';
 import { BUSINESS, getServices, getVehicles } from '@/lib/data';
 import { getPopularRoutes } from '@/lib/routeData';
 import {
-  generateFaqSchema, generateReviewSchema,
+  generateFaqSchema,
   generatePopularRoutesItemListSchema, generateHomePageMetadata,
-  generateSeasonalOfferSchema, generateAggregateRatingSchema,
-  generateSitelinksSearchBoxSchema, generateServiceAreaSchema,
+  generateSeasonalOfferSchema,
 } from '@/lib/seo';
 
 const FareCalculator = nextDynamic(() => import('@/components/FareCalculator'), {

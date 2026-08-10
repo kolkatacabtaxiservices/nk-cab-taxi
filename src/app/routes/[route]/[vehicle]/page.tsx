@@ -30,7 +30,7 @@ const FareCalculator = nextDynamic(() => import('@/components/FareCalculator'), 
   ),
 });
 import { getCity, getState, getVehicle, getVehicles, VEHICLE_SLUGS, BUSINESS } from '@/lib/data';
-import { getRoute } from '@/lib/routeData';
+import { getRoute, isHubRoute } from '@/lib/routeData';
 import { getStaticVehicleRouteSlugs } from '@/lib/routeDataStatic';
 import { generateVehicleRouteMetadata, generateVehicleRouteSchema, generateFaqSchema, generateBreadcrumbSchema } from '@/lib/seo';
 
@@ -62,9 +62,13 @@ export async function generateMetadata({ params }: { params: Promise<{ route: st
   const vehicle = getVehicle(vehicleSlug);
   if (!route || !vehicle) return {};
   const fare = vehicleSlug === 'sedan' ? route.priceSaloon : vehicleSlug === 'suv' ? route.priceSuv : vehicleSlug === 'tempo' ? route.priceTempo : Math.round(route.distance * vehicle.pricePerKm);
+  const isHub = isHubRoute(routeSlug);
   const baseMetadata = generateVehicleRouteMetadata(route.fromName, route.toName, route.distance, vehicleSlug, fare, route.slug);
   return {
     ...baseMetadata,
+    // Non-hub route vehicle pages: noindex to preserve crawl budget.
+    // Hub city routes (Kolkata, Ranchi, Bhubaneswar, Jamshedpur, Patna) stay indexed.
+    ...(!isHub ? { robots: { index: false, follow: false } } : {}),
     keywords: [
       `${vehicle.name} cab ${route.fromName} to ${route.toName}`,
       `${vehicle.name} taxi ${route.fromName} to ${route.toName}`,
