@@ -1,17 +1,26 @@
 User-agent: *
 Allow: /
-Disallow: /api/
-Disallow: /_next/
-# Block car-type query parameter variants — these caused 13,103 GSC redirect errors
+
+# Block query-parameter variants — caused 13,103 GSC redirect errors
 # ?car=sedan/suv/tempo/luxury are internal UI filters, NOT indexable pages
 Disallow: /*?car=sedan
 Disallow: /*?car=suv
 Disallow: /*?car=tempo
 Disallow: /*?car=luxury
 Disallow: /*?car=innova
+
+# Block internal Next.js routes
+Disallow: /api/
+Disallow: /_next/
+
+# Block stub state pages (no content, X-Robots-Tag: noindex via _headers)
+Disallow: /delhi-ncr/
+Disallow: /uttarakhand/
+Disallow: /madhya-pradesh/
+
 # ── Vehicle-type route pages (/routes/*/sedan|suv|tempo|luxury) ──────────────
 # Non-hub vehicle pages 404 if not pre-built — block all, then allow hub origins.
-# Allow rules (more specific) override the Disallow (more general) per robots.txt spec.
+# Allow rules (more specific) override Disallow (more general) per Google spec.
 
 # Step 1: Block ALL vehicle route variants by default
 Disallow: /routes/*/sedan
@@ -42,8 +51,12 @@ Allow: /routes/patna-*/sedan
 Allow: /routes/patna-*/suv
 Allow: /routes/patna-*/tempo
 Allow: /routes/patna-*/luxury
+Allow: /routes/siliguri-*/sedan
+Allow: /routes/siliguri-*/suv
+Allow: /routes/siliguri-*/tempo
+Allow: /routes/siliguri-*/luxury
 
-# ── City vehicle pages (/[state]/[city]/sedan|suv|tempo|luxury) ───────────────
+# ── City vehicle pages (/{state}/{city}/sedan|suv|tempo|luxury) ───────────────
 # Only 5 hub cities have these pages: kolkata, ranchi, bhubaneswar, jamshedpur, patna.
 # All non-hub cities → 404. Block all, then allow hub cities explicitly.
 
@@ -75,6 +88,7 @@ Allow: /bihar/patna/suv
 Allow: /bihar/patna/tempo
 Allow: /bihar/patna/luxury
 
+# ── AI training crawlers — block ──────────────────────────────────────────────
 User-agent: Amazonbot
 Disallow: /
 
@@ -98,12 +112,6 @@ Disallow: /
 
 User-agent: FacebookBot
 Disallow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: Google-CloudVertexBot
-Allow: /
 
 User-agent: GPTBot
 Disallow: /
@@ -141,7 +149,14 @@ Disallow: /
 User-agent: Anchor Browser
 Disallow: /
 
+# ── Search engine bots — allow ────────────────────────────────────────────────
 User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Google-CloudVertexBot
 Allow: /
 
 User-agent: BingBot
@@ -168,5 +183,6 @@ Allow: /
 User-agent: DuckAssistBot
 Allow: /
 
+# ── Sitemap ───────────────────────────────────────────────────────────────────
+# Single canonical sitemap index. /sitemap.xml is an alias — do not list twice.
 Sitemap: https://www.nkcabtaxi.com/sitemap_index.xml
-Sitemap: https://www.nkcabtaxi.com/sitemap.xml

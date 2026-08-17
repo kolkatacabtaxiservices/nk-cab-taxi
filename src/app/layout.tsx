@@ -30,34 +30,12 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(BUSINESS.domain),
   title: {
-    default: 'NK Cab & Taxi Kolkata | ₹12/km | ⭐4.8 | Airport, Outstation, Local Taxi 24/7',
-    template: '%s',
+    default: 'NK Cab & Taxi Kolkata | ₹12/km | Airport, Outstation & Local Taxi 24/7',
+    template: '%s | NK Cab & Taxi',
   },
   description: `★4.8 NK Cab & Taxi — Best cab service in Kolkata & East India from ₹12/km. Airport taxi Kolkata | Outstation to Darjeeling, Puri, Ranchi, Bhubaneswar | Local 4hr ₹1,800. AC Innova, Ertiga, Sedan. No surge 24/7. Call ${BUSINESS.phone}`,
-  keywords: [
-    // Brand keywords
-    'NK Cab & Taxi', 'NK cab', 'NK taxi', 'nkcabtaxi', 'nk cab service', 'nk taxi kolkata',
-    // Kolkata primary
-    'cab service in kolkata', 'kolkata taxi service', 'kolkata cab service',
-    'kolkata airport cab', 'kolkata airport taxi', 'CCU airport cab',
-    'outstation cab kolkata', 'one way cab kolkata', 'local taxi kolkata',
-    'book cab kolkata', 'best cab service kolkata', 'kolkata to darjeeling cab',
-    'kolkata to puri cab', 'kolkata to digha cab', 'kolkata to siliguri cab',
-    // West Bengal cities
-    'cab service west bengal', 'howrah cab service', 'siliguri taxi service',
-    'darjeeling cab service', 'durgapur cab service', 'asansol taxi service',
-    'cab service in bardhaman', 'kharagpur cab service', 'haldia taxi',
-    // Jharkhand
-    'cab service jharkhand', 'ranchi cab service', 'jamshedpur cab service',
-    'dhanbad taxi', 'bokaro cab', 'deoghar taxi service',
-    // Odisha
-    'bhubaneswar cab service', 'puri taxi service', 'cuttack cab',
-    // Service types
-    'airport transfer kolkata', 'outstation cab east india', 'one way taxi',
-    'no surge cab', 'fixed rate taxi', '24 hour cab service kolkata',
-    'wedding car rental kolkata', 'corporate cab kolkata', 'innova cab kolkata',
-    'tempo traveller kolkata', 'sedan cab kolkata', 'suv cab kolkata',
-  ],
+  // keywords meta tag intentionally removed — Google has ignored it since 2009
+  // and a long list signals keyword stuffing. Page-level metadata handles targeting.
   authors: [{ name: BUSINESS.name, url: BUSINESS.domain }],
   creator: BUSINESS.name,
   publisher: BUSINESS.name,

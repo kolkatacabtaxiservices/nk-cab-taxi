@@ -1069,7 +1069,8 @@ export function generateLocalBusinessSchema() {
     '@type': 'LocalBusiness',
     '@id': `${DOMAIN}/#business`,
     name: BUSINESS.name,
-    alternateName: ['Kolkata Taxi Service', 'Kolkata Cab', 'Kolkata Car Rental', 'Cab Kolkata', 'Taxi Kolkata', 'Cab in Kolkata', 'Taxi in Kolkata', 'Car Rental in Kolkata', 'Kolkata Cab Booking', 'NK Cab & Taxi', 'Kolkata Taxi', 'Cab Booking Kolkata', 'Best Cab in Kolkata', 'Best Taxi in Kolkata', 'Best Car Rental in Kolkata', 'Affordable Cab in Kolkata'],
+    // Genuine alternate names only — schema validators flag long arrays as keyword spam
+    alternateName: ['NK Cab Taxi', 'NK Cab Service Kolkata', 'NK Taxi Kolkata', 'nkcabtaxi'],
     telephone: BUSINESS.phone,
     email: BUSINESS.email,
     url: DOMAIN,
@@ -1142,10 +1143,10 @@ export function generateLocalBusinessSchema() {
         availableLanguage: ['English', 'Hindi', 'Bengali'],
       },
     ],
+    // gbpLink and gbpReviewLink are the same URL — keep one to avoid duplicate sameAs
     sameAs: [
       `https://wa.me/${BUSINESS.whatsapp}`,
       BUSINESS.gbpLink,
-      BUSINESS.gbpReviewLink,
     ],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
@@ -1237,10 +1238,10 @@ export function generateOrganizationSchema() {
         availableLanguage: ['English', 'Hindi', 'Bengali'],
       },
     ],
+    // gbpLink and gbpReviewLink are the same URL — keep one to avoid duplicate sameAs
     sameAs: [
       `https://wa.me/${BUSINESS.whatsapp}`,
       BUSINESS.gbpLink,
-      BUSINESS.gbpReviewLink,
     ],
     slogan: 'Your Trusted Cab Service in Kolkata & East India',
     ethicsPolicy: `${DOMAIN}/about`,

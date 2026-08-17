@@ -1,6 +1,20 @@
 # Cloudflare Pages _redirects file
 # Processed by Cloudflare CDN — 301/302 redirects for legacy URLs only.
 # Docs: https://developers.cloudflare.com/pages/configuration/redirects/
+#
+# ══════════════════════════════════════════════════════════════════════════════
+# ⚠️  IMPORTANT: APEX DOMAIN REDIRECT — MUST BE IN CLOUDFLARE DASHBOARD
+# ══════════════════════════════════════════════════════════════════════════════
+# Cloudflare Pages _redirects CANNOT handle hostname-level redirects.
+# The apex→www redirect (nkcabtaxi.com → www.nkcabtaxi.com) MUST be set in:
+#
+#   Cloudflare Dashboard → Rules → Redirect Rules → Create Rule
+#     IF:   Hostname equals "nkcabtaxi.com"
+#     THEN: Redirect to https://www.nkcabtaxi.com${http.request.uri.path}
+#           Type: Static  |  Status: 301  |  Preserve query string: YES
+#
+# Without that dashboard rule, nkcabtaxi.com returns 405 — killing PageRank.
+# ══════════════════════════════════════════════════════════════════════════════
 
 # ── Fix: Legacy singular path typos → canonical plural paths ──────────────────
 /route/* /routes/:splat 301
