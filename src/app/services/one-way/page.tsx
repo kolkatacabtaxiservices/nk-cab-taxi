@@ -16,13 +16,7 @@ export const revalidate = false;
 export const metadata: Metadata = {
   title: `One Way Cab Kolkata ₹12/km | No Return Fare | 500+ Routes | ${BUSINESS.name}`,
   description: `One-way taxi from Kolkata — pay only for the trip you take, zero return charges. Sedan ₹12/km. Kolkata→Digha ₹2,280, →Ranchi ₹4,800, →Puri ₹5,880. 500+ destinations. Call ${BUSINESS.phone}.`.slice(0, 160),
-  keywords: [
-    'one way cab kolkata', 'one way taxi kolkata', 'one side cab kolkata',
-    'kolkata one way drop', 'no return cab kolkata', 'one way outstation kolkata',
-    'kolkata to digha one way cab', 'kolkata to puri one way', 'kolkata to ranchi one way cab',
-    'one way cab booking kolkata', 'single journey cab kolkata', 'drop cab kolkata',
-    'cheap one way cab kolkata', 'one way cab fare kolkata', 'point to point cab kolkata',
-  ],
+    // keywords meta tag removed — Google ignores it (ignored since 2009), signals spam
   alternates: { canonical: `${BUSINESS.domain}/services/one-way` },
   openGraph: {
     title: `One Way Cab Kolkata ₹12/km | No Return Fare | ${BUSINESS.name}`,

@@ -15,13 +15,7 @@ export const revalidate = false;
 export const metadata: Metadata = {
   title: `Kolkata Local Taxi ₹1,800/4hr | Hourly Cab Rental 24/7 | ${BUSINESS.name}`,
   description: `Hourly cab rental in Kolkata from ₹1,800 (4hr/40km Sedan). 8hr/80km ₹2,800, SUV ₹2,500. Hospital runs, airport pickups, sightseeing and shopping. Covers Salt Lake, New Town, Howrah, Behala. Call ${BUSINESS.phone}.`.slice(0, 160),
-  keywords: [
-    'local taxi kolkata', 'kolkata local cab', 'hourly cab kolkata', 'cab on rent kolkata',
-    'local taxi booking kolkata', 'local cab service kolkata', 'cab for hospital kolkata',
-    'salt lake taxi', 'new town cab', 'howrah taxi', 'dum dum cab',
-    'half day cab kolkata', 'full day taxi kolkata', 'kolkata city cab rent',
-    'kolkata sightseeing cab', 'cab for shopping kolkata', 'local innova kolkata',
-  ],
+    // keywords meta tag removed — Google ignores it (ignored since 2009), signals spam
   alternates: { canonical: `${BUSINESS.domain}/services/local-taxi` },
   openGraph: {
     title: `Local Taxi Kolkata ₹1,800/4hr | Hourly Cab on Rent | ${BUSINESS.name}`,

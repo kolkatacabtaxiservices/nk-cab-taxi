@@ -15,17 +15,7 @@ export const revalidate = false;
 export const metadata: Metadata = {
   title: 'Kolkata Airport Cab ₹1200 | CCU Pickup & Drop Taxi | 24/7 Booking',
   description: `Airport taxi service across Kolkata (CCU), Ranchi (IXR), Bhubaneswar (BBI). Sedan ₹1,200, SUV ₹1,800, Innova ₹2,200. Live flight tracking, arrivals meet & greet, round-the-clock. Flat fares. Call ${BUSINESS.phone}`.slice(0, 160),
-  keywords: [
-    'kolkata airport cab', 'kolkata airport taxi', 'ccu airport cab', 'ccu airport taxi',
-    'netaji subhash airport cab', 'netaji subhash chandra bose airport taxi',
-    'dum dum airport cab', 'dum dum airport taxi', 'kolkata airport transfer',
-    'airport pickup kolkata', 'airport drop kolkata', 'cab from kolkata airport',
-    'taxi from kolkata airport', 'kolkata to airport cab', 'airport cab service kolkata',
-    'kolkata airport innova cab', 'airport cab 24/7 kolkata', 'flight pickup taxi kolkata',
-    'kolkata airport cab booking', 'airport shuttle kolkata', 'cheap airport cab kolkata',
-    'ranchi airport cab', 'birsa munda airport taxi', 'bhubaneswar airport cab',
-    'biju patnaik airport taxi', 'bagdogra airport cab', 'siliguri airport taxi',
-  ],
+    // keywords meta tag removed — Google ignores it (ignored since 2009), signals spam
   alternates: { canonical: `${BUSINESS.domain}/services/airport-transfer` },
   openGraph: {
     title: 'Kolkata Airport Taxi ₹1200 | CCU Pickup & Drop | 24/7',

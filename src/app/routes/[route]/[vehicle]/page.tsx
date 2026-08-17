@@ -69,20 +69,7 @@ export async function generateMetadata({ params }: { params: Promise<{ route: st
     // Non-hub route vehicle pages: noindex to preserve crawl budget.
     // Hub city routes (Kolkata, Ranchi, Bhubaneswar, Jamshedpur, Patna) stay indexed.
     ...(!isHub ? { robots: { index: false, follow: false } } : {}),
-    keywords: [
-      `${vehicle.name} cab ${route.fromName} to ${route.toName}`,
-      `${vehicle.name} taxi ${route.fromName} to ${route.toName}`,
-      `${route.fromName} to ${route.toName} ${vehicle.name}`,
-      `${vehicle.name} fare ${route.fromName} to ${route.toName}`,
-      `${vehicle.name} price ${route.fromName} to ${route.toName}`,
-      `${vehicle.name} booking ${route.fromName} to ${route.toName}`,
-      `${vehicleSlug} cab ${route.fromName} to ${route.toName}`,
-      `${vehicleSlug} taxi ${route.fromName} to ${route.toName}`,
-      `book ${vehicle.name} ${route.fromName} to ${route.toName}`,
-      `${route.fromName} to ${route.toName} cab fare ₹${fare}`,
-      ...vehicle.models.map(m => `${m} ${route.fromName} to ${route.toName}`),
-      ...vehicle.models.map(m => `book ${m} ${route.fromName} to ${route.toName}`),
-    ],
+    // keywords meta tag removed — Google ignores it (ignored since 2009), signals spam
   };
 }
 

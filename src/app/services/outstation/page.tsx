@@ -16,13 +16,7 @@ export const revalidate = false;
 export const metadata: Metadata = {
   title: `Outstation Taxi Kolkata ₹12/km | One-Way & Round Trip | 500+ Routes | ${BUSINESS.name}`,
   description: `Intercity cab from Kolkata on 500+ routes. Sedan ₹12/km, SUV ₹16/km, Innova ₹18/km. Darjeeling, Puri, Digha, Ranchi, Jamshedpur, Bhubaneswar. Round-the-clock booking. Call ${BUSINESS.phone}.`.slice(0, 160),
-  keywords: [
-    'outstation cab kolkata', 'outstation taxi kolkata', 'intercity cab kolkata',
-    'kolkata to darjeeling cab', 'kolkata to puri cab', 'kolkata to digha cab',
-    'kolkata to ranchi cab', 'kolkata to bhubaneswar cab', 'kolkata outstation booking',
-    'outstation cab fare kolkata', 'long distance cab kolkata', 'kolkata to jamshedpur cab',
-    'ac outstation cab kolkata', 'outstation innova kolkata', 'verified driver outstation kolkata',
-  ],
+    // keywords meta tag removed — Google ignores it (ignored since 2009), signals spam
   alternates: { canonical: `${BUSINESS.domain}/services/outstation` },
   openGraph: {
     title: `Outstation Taxi Kolkata ₹12/km | 500+ Routes | ${BUSINESS.name}`,

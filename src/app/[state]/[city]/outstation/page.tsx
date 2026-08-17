@@ -46,25 +46,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
     twitter: { card: 'summary_large_image', title: `Outstation Taxi from ${city.name} | ${BUSINESS.name}`, images: [`${BUSINESS.domain}/navbanner.webp`] },
     alternates: { canonical: canonicalUrl },
     other: { thumbnail: `${BUSINESS.domain}/navbanner.webp` },
-    keywords: [
-      `outstation cab from ${city.name}`,
-      `outstation taxi from ${city.name}`,
-      `intercity cab ${city.name}`,
-      `${city.name} outstation cab`,
-      `${city.name} outstation taxi`,
-      `${city.name} outstation cab booking`,
-      `${city.name} intercity taxi`,
-      `one way cab from ${city.name}`,
-      `round trip cab from ${city.name}`,
-      `${city.name} cab ${metaPrices.sedanPerKm}`,
-      `outstation sedan ${city.name}`,
-      `outstation suv ${city.name}`,
-      `outstation innova ${city.name}`,
-      `outstation tempo traveller ${city.name}`,
-      `${city.name} to kolkata outstation cab`,
-      `best outstation cab ${city.name}`,
-      `24/7 outstation cab ${city.name}`,
-    ],
+    // keywords meta tag removed — Google ignores it (ignored since 2009), signals spam
   };
 }
 

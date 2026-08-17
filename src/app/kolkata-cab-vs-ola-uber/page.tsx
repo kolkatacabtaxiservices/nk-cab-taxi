@@ -14,12 +14,7 @@ export const revalidate = false;
 export const metadata: Metadata = {
   title: { absolute: `NK Cab & Taxi vs Ola vs Uber — A Fair 2026 Showdown` },
   description: `See how ${BUSINESS.name} measures up against Ola, Uber, Rapido and InDrive in Kolkata. Surge-free fares, fixed rates, vetted chauffeurs. Find out why 5000+ riders prefer us to app taxis. Call ${BUSINESS.phone}.`,
-  keywords: [
-    'ola alternative kolkata', 'uber alternative kolkata', 'best cab service kolkata',
-    'kolkata cab vs ola', 'kolkata cab vs uber', 'no surge pricing cab kolkata',
-    'fixed rate taxi kolkata', 'rapido alternative kolkata', 'best taxi app kolkata',
-    'reliable cab service kolkata', 'cheap cab kolkata no surge',
-  ],
+    // keywords meta tag removed — Google ignores it (ignored since 2009), signals spam
   openGraph: {
     title: 'NK Cab & Taxi vs Ola vs Uber — Straight-Talk Comparison',
     description: 'Flat fares, zero surge, vetted drivers. Discover why riders move away from Ola and Uber.',

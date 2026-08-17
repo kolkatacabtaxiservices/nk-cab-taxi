@@ -37,22 +37,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
     twitter: { card: 'summary_large_image', title: `Multi-Day Ride from ${city.name} | ${BUSINESS.name}`, images: [`${BUSINESS.domain}/navbanner.webp`] },
     alternates: { canonical: canonicalUrl },
     other: { thumbnail: `${BUSINESS.domain}/navbanner.webp` },
-    keywords: [
-      `round trip cab from ${city.name}`,
-      `round trip taxi ${city.name}`,
-      `${city.name} round trip cab`,
-      `${city.name} round trip taxi`,
-      `round trip cab booking ${city.name}`,
-      `multi day cab ${city.name}`,
-      `driver stay cab ${city.name}`,
-      `round trip ${metaPrices.sedanPerKm} ${city.name}`,
-      `${city.name} to kolkata round trip`,
-      `weekend tour cab ${city.name}`,
-      `family tour cab ${city.name}`,
-      `pilgrimage cab ${city.name}`,
-      `2 day cab trip ${city.name}`,
-      `3 day cab trip ${city.name}`,
-    ],
+    // keywords meta tag removed — Google ignores it (ignored since 2009), signals spam
   };
 }
 

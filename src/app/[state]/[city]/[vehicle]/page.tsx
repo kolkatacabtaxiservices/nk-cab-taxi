@@ -77,17 +77,7 @@ export async function generateMetadata({
       description,
       images: [`${BUSINESS.domain}/navbanner.webp`],
     },
-    keywords: [
-      `${vehicle.name.toLowerCase()} cab in ${city.name}`,
-      `${vehicle.name.toLowerCase()} taxi in ${city.name}`,
-      `${city.name} ${vehicle.name.toLowerCase()} cab`,
-      `${city.name} ${vehicle.name.toLowerCase()} hire`,
-      `book ${vehicle.name.toLowerCase()} ${city.name}`,
-      ...vehicle.models.map(m => `${m.toLowerCase()} ${city.name}`),
-      ...vehicle.models.map(m => `${m.toLowerCase()} cab ${city.name}`),
-      `${vehicle.name.toLowerCase()} outstation ${city.name}`,
-      `${vehicle.name.toLowerCase()} airport ${city.name}`,
-    ],
+    // keywords meta tag removed — Google ignores it (ignored since 2009), signals spam
   };
 }
 

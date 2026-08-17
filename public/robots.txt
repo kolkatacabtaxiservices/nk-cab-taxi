@@ -1,3 +1,15 @@
+# NOTE: Cloudflare AI Crawl Control injects managed content ABOVE this file.
+# That managed section handles: Amazonbot, Bytespider, CCBot, ClaudeBot, GPTBot,
+# meta-externalagent, Google-Extended (it BLOCKS Google-Extended — we override below).
+# Our custom rules appear AFTER Cloudflare's section. Per robots.txt spec, for the
+# same user-agent, the FIRST matching Disallow/Allow wins. Since Cloudflare's
+# "Google-Extended: Disallow: /" appears first, we CANNOT override it here.
+#
+# ACTION REQUIRED: Disable Cloudflare "AI Crawl Control" in Cloudflare Dashboard:
+#   Security → Bots → AI Crawl Control → Toggle OFF
+# This removes the injected managed section so our rules below take full control.
+
+# ── Main crawl policy ────────────────────────────────────────────────────────
 User-agent: *
 Allow: /
 
@@ -57,8 +69,7 @@ Allow: /routes/siliguri-*/tempo
 Allow: /routes/siliguri-*/luxury
 
 # ── City vehicle pages (/{state}/{city}/sedan|suv|tempo|luxury) ───────────────
-# Only 5 hub cities have these pages: kolkata, ranchi, bhubaneswar, jamshedpur, patna.
-# All non-hub cities → 404. Block all, then allow hub cities explicitly.
+# Only 5 hub cities have these pages. Block all, allow hub cities explicitly.
 
 # Step 1: Block ALL city vehicle pages by default
 Disallow: /*/*/sedan
@@ -66,7 +77,7 @@ Disallow: /*/*/suv
 Disallow: /*/*/tempo
 Disallow: /*/*/luxury
 
-# Step 2: Allow only hub city vehicle pages (these exist and are indexed)
+# Step 2: Allow only hub city vehicle pages
 Allow: /west-bengal/kolkata/sedan
 Allow: /west-bengal/kolkata/suv
 Allow: /west-bengal/kolkata/tempo
@@ -88,7 +99,49 @@ Allow: /bihar/patna/suv
 Allow: /bihar/patna/tempo
 Allow: /bihar/patna/luxury
 
-# ── AI training crawlers — block ──────────────────────────────────────────────
+# ── Googlebot — explicit allow (overrides any Cloudflare managed rules) ───────
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Google-CloudVertexBot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+# ── Other search engine bots ─────────────────────────────────────────────────
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: archive.org_bot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+# ── AI training crawlers — block ─────────────────────────────────────────────
+# Note: Cloudflare may also block these above — duplication is harmless.
 User-agent: Amazonbot
 Disallow: /
 
@@ -125,64 +178,11 @@ Disallow: /
 User-agent: MistralAI-User
 Disallow: /
 
-User-agent: Manus Bot
-Disallow: /
-
 User-agent: Perplexity-User
 Disallow: /
 
 User-agent: PetalBot
 Disallow: /
 
-User-agent: ProRataInc
-Disallow: /
-
-User-agent: TikTok Spider
-Disallow: /
-
-User-agent: Timpibot
-Disallow: /
-
-User-agent: Novellum AI Crawl
-Disallow: /
-
-User-agent: Anchor Browser
-Disallow: /
-
-# ── Search engine bots — allow ────────────────────────────────────────────────
-User-agent: Googlebot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: Google-CloudVertexBot
-Allow: /
-
-User-agent: BingBot
-Allow: /
-
-User-agent: Applebot
-Allow: /
-
-User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Claude-SearchBot
-Allow: /
-
-User-agent: Baidu
-Allow: /
-
-User-agent: archive.org_bot
-Allow: /
-
-User-agent: DuckAssistBot
-Allow: /
-
 # ── Sitemap ───────────────────────────────────────────────────────────────────
-# Single canonical sitemap index. /sitemap.xml is an alias — do not list twice.
 Sitemap: https://www.nkcabtaxi.com/sitemap_index.xml

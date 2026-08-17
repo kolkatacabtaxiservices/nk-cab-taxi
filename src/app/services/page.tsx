@@ -13,11 +13,7 @@ export const revalidate = false;
 export const metadata: Metadata = {
   title: `Cab & Taxi Services in Kolkata | ${BUSINESS.name}`,
   description: `Every cab & taxi service offered by ${BUSINESS.name} — local taxi ₹2,800/8hr, outstation ₹12/km, one-way, round trip, airport transfer ₹1200, wedding car ₹5,000, corporate car rental. Round the clock. Call ${BUSINESS.phone}`.slice(0, 160),
-  keywords: [
-    'NK Cab & Taxis', 'taxi services kolkata', 'cab types kolkata', 'kolkata taxi booking',
-    'outstation cab kolkata', 'local taxi kolkata', 'airport taxi kolkata', 'wedding car kolkata',
-    'corporate cab kolkata', 'one way taxi kolkata', 'round trip cab kolkata',
-  ],
+    // keywords meta tag removed — Google ignores it (ignored since 2009), signals spam
   openGraph: {
     title: `Taxi & Cab Services | ${BUSINESS.name}`,
     description: `Full range of cab services — local, outstation, airport, wedding, corporate. From ₹12/km. Call ${BUSINESS.phone}`,

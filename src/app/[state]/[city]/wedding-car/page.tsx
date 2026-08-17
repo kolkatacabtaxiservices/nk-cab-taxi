@@ -34,25 +34,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
     twitter: { card: 'summary_large_image', title: `Wedding Ride ${city.name} | ${BUSINESS.name}`, images: [`${BUSINESS.domain}/navbanner.webp`] },
     alternates: { canonical: canonicalUrl },
     other: { thumbnail: `${BUSINESS.domain}/navbanner.webp` },
-    keywords: [
-      `wedding car rental ${city.name}`,
-      `wedding car ${city.name}`,
-      `baraat car ${city.name}`,
-      `decorated car rental ${city.name}`,
-      `vidaai car ${city.name}`,
-      `wedding cab ${city.name}`,
-      `wedding vehicle ${city.name}`,
-      `flower decorated car ${city.name}`,
-      `bridal car ${city.name}`,
-      `wedding innova ${city.name}`,
-      `wedding fortuner ${city.name}`,
-      `wedding sedan ${city.name}`,
-      `guest shuttle wedding ${city.name}`,
-      `luxury wedding car ${city.name}`,
-      `wedding car booking ${city.name}`,
-      `sangeet transport ${city.name}`,
-      `reception cab ${city.name}`,
-    ],
+    // keywords meta tag removed — Google ignores it (ignored since 2009), signals spam
   };
 }
 

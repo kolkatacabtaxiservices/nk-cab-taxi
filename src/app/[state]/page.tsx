@@ -30,26 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const cityNames = state.cities.slice(0, 8).map(c => c.name);
   return {
     ...baseMetadata,
-    keywords: [
-      `cab service in ${state.name}`,
-      `taxi in ${state.name}`,
-      `${state.name} cab service`,
-      `${state.name} taxi service`,
-      `cab booking ${state.name}`,
-      `outstation cab ${state.name}`,
-      `one way cab ${state.name}`,
-      `round trip cab ${state.name}`,
-      `airport cab ${state.name}`,
-      `car rental ${state.name}`,
-      `taxi booking ${state.name}`,
-      `24/7 cab ${state.name}`,
-      `best cab service ${state.name}`,
-      `cheap cab ${state.name}`,
-      `ac cab ${state.name}`,
-      ...cityNames.map(c => `cab service in ${c}`),
-      ...cityNames.map(c => `taxi in ${c}`),
-      ...cityNames.map(c => `${c} to kolkata cab`),
-    ],
+    // keywords meta tag removed — Google ignores it (ignored since 2009), signals spam
   };
 }
 

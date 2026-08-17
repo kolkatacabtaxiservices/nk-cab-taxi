@@ -46,23 +46,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
     twitter: { card: 'summary_large_image', title: `One-Way Car Hire from ${city.name} | ${BUSINESS.name}`, images: [`${BUSINESS.domain}/navbanner.webp`] },
     alternates: { canonical: canonicalUrl },
     other: { thumbnail: `${BUSINESS.domain}/navbanner.webp` },
-    keywords: [
-      `one way cab from ${city.name}`,
-      `one way taxi from ${city.name}`,
-      `one side cab ${city.name}`,
-      `${city.name} one way cab`,
-      `${city.name} one way taxi`,
-      `one way cab booking ${city.name}`,
-      `one way cab ${metaPrices.sedanPerKm} ${city.name}`,
-      `one way drop cab ${city.name}`,
-      `${city.name} to kolkata one way cab`,
-      `kolkata to ${city.name} one way cab`,
-      `cheap one way cab ${city.name}`,
-      `no return charge cab ${city.name}`,
-      `single trip cab ${city.name}`,
-      `one way sedan ${city.name}`,
-      `one way suv ${city.name}`,
-    ],
+    // keywords meta tag removed — Google ignores it (ignored since 2009), signals spam
   };
 }
 

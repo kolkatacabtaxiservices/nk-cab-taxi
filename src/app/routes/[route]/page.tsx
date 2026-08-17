@@ -66,31 +66,7 @@ export async function generateMetadata({ params }: { params: Promise<{ route: st
   );
   return {
     ...baseMetadata,
-    keywords: [
-      `${route.fromName} to ${route.toName} cab`,
-      `${route.fromName} to ${route.toName} taxi`,
-      `${route.fromName} to ${route.toName} cab fare`,
-      `${route.fromName} to ${route.toName} cab price`,
-      `${route.fromName} to ${route.toName} cab booking`,
-      `${route.fromName} to ${route.toName} cab service`,
-      `${route.fromName} to ${route.toName} distance`,
-      `${route.fromName} to ${route.toName} taxi fare`,
-      `${route.fromName} to ${route.toName} one way cab`,
-      `${route.fromName} to ${route.toName} round trip cab`,
-      `${route.fromName} to ${route.toName} cab rate`,
-      `${route.fromName} to ${route.toName} innova`,
-      `${route.fromName} to ${route.toName} suv cab`,
-      `${route.fromName} to ${route.toName} sedan`,
-      `${route.fromName} to ${route.toName} tempo traveller`,
-      `cab from ${route.fromName} to ${route.toName}`,
-      `taxi from ${route.fromName} to ${route.toName}`,
-      `book cab ${route.fromName} to ${route.toName}`,
-      `${route.toName} to ${route.fromName} cab`,
-      `${route.toName} to ${route.fromName} taxi`,
-      // Alternate name variants
-      ...(fromCity?.alternateNames || []).map((n: string) => `${n} to ${route.toName} cab`),
-      ...(toCity?.alternateNames || []).map((n: string) => `${route.fromName} to ${n} cab`),
-    ],
+    // keywords meta tag removed — Google ignores it (ignored since 2009), signals spam
   };
 }
 

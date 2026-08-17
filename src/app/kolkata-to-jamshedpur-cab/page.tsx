@@ -25,20 +25,7 @@ export const revalidate = false;
 export const metadata: Metadata = {
   title: `Kolkata to Jamshedpur Cab ₹${PRICE_SEDAN} | One Way Taxi, Cheapest Cab | ${BUSINESS.name}`,
   description: `Kolkata to Jamshedpur cab fare starts at ₹${PRICE_SEDAN}. One-way drop, round trips and airport pickups over ${DISTANCE} km of highway driving — AC sedan, SUV & Tempo Traveller, available round the clock. Call ${BUSINESS.phone} for an instant fare quote.`,
-  keywords: [
-    'kolkata to jamshedpur cab', 'kolkata to jamshedpur taxi', 'kolkata to jamshedpur car',
-    'kolkata to jamshedpur cab fare', 'kolkata to jamshedpur one way cab',
-    'kolkata to jamshedpur one way taxi', 'kolkata to jamshedpur cheapest cab',
-    'kolkata to jamshedpur cab booking', 'kolkata to jamshedpur cab price',
-    'kolkata to jamshedpur taxi fare', 'kolkata to jamshedpur distance',
-    'kolkata to jamshedpur cab service', 'kolkata to jamshedpur car rental',
-    'kolkata to jamshedpur round trip cab', 'kolkata to jamshedpur drop taxi',
-    'cab from kolkata to jamshedpur', 'taxi from kolkata to jamshedpur',
-    'cheapest cab kolkata to jamshedpur', 'best cab kolkata to jamshedpur',
-    'kolkata jamshedpur cab rate', 'book cab kolkata jamshedpur',
-    'kolkata to tatanagar cab', 'kolkata to tatanagar taxi',
-    'howrah to jamshedpur cab', 'airport to jamshedpur cab',
-  ],
+    // keywords meta tag removed — Google ignores it (ignored since 2009), signals spam
   openGraph: {
     title: `Kolkata to Jamshedpur Cab ₹${PRICE_SEDAN} | ${BUSINESS.name}`,
     description: `Door-to-door Kolkata to Jamshedpur taxi covering ${DISTANCE} km from ₹${PRICE_SEDAN}. One-way drops and round trips with AC cars. Call ${BUSINESS.phone}`,

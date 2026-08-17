@@ -16,13 +16,7 @@ export const revalidate = false;
 export const metadata: Metadata = {
   title: `Round Trip Cab Kolkata | Driver Stays With You | Darjeeling, Puri & More | ${BUSINESS.name}`,
   description: `Multi-day round trip cab from Kolkata. Driver stays throughout your tour. Sedan ₹12/km, Innova ₹18/km. Darjeeling 4–5 days, Puri 3–4 days, Varanasi 5–6 days. Call ${BUSINESS.phone}.`.slice(0, 160),
-  keywords: [
-    'round trip cab kolkata', 'round trip taxi kolkata', 'kolkata round trip cab',
-    'multi day cab kolkata', 'driver stays kolkata tour', 'kolkata to darjeeling round trip cab',
-    'kolkata to puri round trip', 'kolkata to varanasi round trip cab',
-    'tour cab kolkata', 'pilgrimage cab kolkata', 'family tour cab from kolkata',
-    'kolkata round trip package', 'driver accommodation included kolkata', 'kolkata holiday cab',
-  ],
+    // keywords meta tag removed — Google ignores it (ignored since 2009), signals spam
   alternates: { canonical: `${BUSINESS.domain}/services/round-trip` },
   openGraph: {
     title: `Round Trip Cab Kolkata | Driver Stays | Darjeeling, Puri, Varanasi | ${BUSINESS.name}`,

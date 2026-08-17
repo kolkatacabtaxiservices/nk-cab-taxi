@@ -37,25 +37,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
     twitter: { card: 'summary_large_image', title: `Airport Cab ${city.name} | ${BUSINESS.name}`, images: [`${BUSINESS.domain}/navbanner.webp`] },
     alternates: { canonical: canonicalUrl },
     other: { thumbnail: `${BUSINESS.domain}/navbanner.webp` },
-    keywords: [
-      `airport cab ${city.name}`,
-      `airport taxi ${city.name}`,
-      `airport transfer ${city.name}`,
-      `${airportName} cab`,
-      `${airportName} taxi`,
-      `${airportName} pickup`,
-      `${airportName} drop`,
-      `${city.name} airport pickup`,
-      `${city.name} airport drop`,
-      `${city.name} airport cab service`,
-      `airport cab booking ${city.name}`,
-      `flight tracking cab ${city.name}`,
-      `meet and greet airport ${city.name}`,
-      `24/7 airport taxi ${city.name}`,
-      `airport sedan cab ${city.name}`,
-      `airport suv cab ${city.name}`,
-      `corporate airport transfer ${city.name}`,
-    ],
+    // keywords meta tag removed — Google ignores it (ignored since 2009), signals spam
   };
 }
 

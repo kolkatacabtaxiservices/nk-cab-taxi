@@ -53,24 +53,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
     },
     alternates: { canonical: canonicalUrl },
     other: { thumbnail: `${BUSINESS.domain}/navbanner.webp` },
-    keywords: [
-      `local cab service ${city.name}`,
-      `local taxi ${city.name}`,
-      `hourly cab ${city.name}`,
-      `hourly taxi ${city.name}`,
-      `local cab booking ${city.name}`,
-      `${city.name} local taxi rental`,
-      `4 hour cab ${city.name}`,
-      `8 hour cab ${city.name}`,
-      `local cab for hospital ${city.name}`,
-      `${city.name} sightseeing cab`,
-      `local cab rental ${city.name}`,
-      `full day taxi ${city.name}`,
-      `half day taxi ${city.name}`,
-      `local cab for shopping ${city.name}`,
-      `city tour cab ${city.name}`,
-      `local taxi near me ${city.name}`,
-    ],
+    // keywords meta tag removed — Google ignores it (ignored since 2009), signals spam
   };
 }
 

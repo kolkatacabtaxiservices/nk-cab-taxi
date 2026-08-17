@@ -25,19 +25,7 @@ export const revalidate = false;
 export const metadata: Metadata = {
   title: `Jamshedpur to Kolkata Cab from ₹${PRICE_SEDAN} | One-Way Taxi & Round Trip | ${BUSINESS.name}`,
   description: `Hire a Jamshedpur to Kolkata taxi starting ₹${PRICE_SEDAN}. One-way drop, round trips, budget-friendly AC sedan & SUV. ${DISTANCE} km journey. Book anytime at ${BUSINESS.phone}.`,
-  keywords: [
-    'jamshedpur to kolkata cab', 'jamshedpur to kolkata taxi', 'jamshedpur to kolkata car',
-    'jamshedpur to kolkata cab fare', 'jamshedpur to kolkata one way cab',
-    'jamshedpur to kolkata one way taxi', 'jamshedpur to kolkata cheapest cab',
-    'jamshedpur to kolkata cab booking', 'jamshedpur to kolkata cab price',
-    'jamshedpur to kolkata taxi fare', 'jamshedpur to kolkata distance',
-    'jamshedpur to NK Cab & Taxi', 'jamshedpur to kolkata car rental',
-    'jamshedpur to kolkata round trip cab', 'jamshedpur to kolkata drop taxi',
-    'cab from jamshedpur to kolkata', 'taxi from jamshedpur to kolkata',
-    'cheapest cab jamshedpur to kolkata', 'best cab jamshedpur to kolkata',
-    'tatanagar to kolkata cab', 'tatanagar to howrah cab',
-    'jamshedpur to kolkata airport cab', 'jamshedpur to howrah cab',
-  ],
+    // keywords meta tag removed — Google ignores it (ignored since 2009), signals spam
   openGraph: {
     title: `Jamshedpur to Kolkata Taxi ₹${PRICE_SEDAN} | ${BUSINESS.name}`,
     description: `Reserve your Jamshedpur to Kolkata ride. ${DISTANCE} km, starting ₹${PRICE_SEDAN}. One-way and round trip. Call ${BUSINESS.phone}`,
