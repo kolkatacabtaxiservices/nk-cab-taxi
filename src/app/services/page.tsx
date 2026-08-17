@@ -11,7 +11,7 @@ import { generateFaqSchema, generateBreadcrumbSchema } from '@/lib/seo';
 export const dynamic = 'force-static';
 export const revalidate = false;
 export const metadata: Metadata = {
-  title: `Cab & Taxi Services in Kolkata | ${BUSINESS.name}`,
+  title: `Cab & Taxi Services in Kolkata — Local, Outstation, Airport & Wedding`,
   description: `Every cab & taxi service offered by ${BUSINESS.name} — local taxi ₹2,800/8hr, outstation ₹12/km, one-way, round trip, airport transfer ₹1200, wedding car ₹5,000, corporate car rental. Round the clock. Call ${BUSINESS.phone}`.slice(0, 160),
     // keywords meta tag removed — Google ignores it (ignored since 2009), signals spam
   openGraph: {

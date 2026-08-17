@@ -32,22 +32,23 @@ export function getCityGeoMeta(cityName: string, stateSlug: string, lat?: number
 export function generateHomePageMetadata(): Metadata {
   return {
     // `absolute` prevents layout template from appending again
-    title: { absolute: 'NK Cab & Taxi Kolkata | ₹12/km | ⭐4.8 | Airport, Outstation, Local Taxi 24/7' },
-    description: `NK Cab & Taxi — #1 cab service in Kolkata & East India. Outstation ₹12/km | Airport taxi | Local 4hr ₹1,800. ⭐4.8 rated, 5000+ trips. Innova, Ertiga, Dzire. No surge. Call ${BUSINESS.phone}`,
-    alternates: { canonical: DOMAIN },
+    // Note: No emoji in title — Google strips them in SERPs, signals spam to quality raters
+    title: { absolute: 'NK Cab & Taxi Kolkata | Cab Service from ₹12/km | Airport, Outstation & Local Taxi 24/7' },
+    description: `NK Cab & Taxi — Best cab service in Kolkata & East India. Outstation from ₹12/km | Airport taxi from ₹1,800 | Local 4hr ₹1,800. Rated 4.8/5, 5000+ trips. AC Innova, Ertiga, Dzire. No surge. Call ${BUSINESS.phone}`,
+    alternates: { canonical: `${DOMAIN}/` },
     openGraph: {
       type: 'website',
       locale: 'en_IN',
       siteName: 'NK Cab & Taxi',
-      title: 'NK Cab & Taxi Kolkata ⭐4.8 | ₹12/km Outstation | Airport Taxi 24/7',
-      description: `⭐4.8 NK Cab & Taxi — Best cab in Kolkata & East India. Outstation ₹12/km | Airport ₹1,800 | Local packages. WB, Jharkhand, Odisha. No surge. Call ${BUSINESS.phone}.`,
-      images: [{ url: OG_IMAGE_URL, width: 1200, height: 630, alt: 'NK Cab & Taxi — ⭐4.8 Rated Cab & Taxi Service in Kolkata & East India' }],
-      url: DOMAIN,
+      title: 'NK Cab & Taxi Kolkata | Cab from ₹12/km | Airport & Outstation Taxi 24/7',
+      description: `Rated 4.8/5. NK Cab & Taxi — Best cab in Kolkata & East India. Outstation ₹12/km | Airport from ₹1,800 | Local packages. WB, Jharkhand, Odisha. No surge. Call ${BUSINESS.phone}.`,
+      images: [{ url: OG_IMAGE_URL, width: 1200, height: 630, alt: 'NK Cab & Taxi — Rated 4.8/5 Cab & Taxi Service in Kolkata & East India' }],
+      url: `${DOMAIN}/`,
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'NK Cab & Taxi Kolkata ⭐4.8 | ₹12/km | 24/7 East India',
-      description: `⭐4.8 NK Cab & Taxi. Outstation ₹12/km | Airport from ₹1,800. AC Innova, Ertiga, Dzire. No surge. Call ${BUSINESS.phone}.`,
+      title: 'NK Cab & Taxi Kolkata | ₹12/km | Rated 4.8 | 24/7 East India',
+      description: `Rated 4.8/5. NK Cab & Taxi. Outstation ₹12/km | Airport from ₹1,800. AC Innova, Ertiga, Dzire. No surge. Call ${BUSINESS.phone}.`,
       images: [OG_IMAGE_URL],
     },
     other: {
@@ -125,30 +126,28 @@ export function generateRouteMetadata(
 
   // 4 structurally different title templates — avoids identical <title> across all route pages
   const titles = [
-    `${fromName} to ${toName} Cab ₹${priceSaloon} | ⭐4.8 AC Taxi | Book 24/7`,
+    `${fromName} to ${toName} Cab ₹${priceSaloon} | ${distance}km AC Taxi | Book 24/7`,
     `${fromName} to ${toName} Taxi ₹${priceSaloon} | ${distance}km One Way | NK Cab & Taxi`,
-    `Book ${fromName}→${toName} Cab | Sedan ₹${priceSaloon} SUV ₹${priceSuv} | ⭐4.8 Rated`,
+    `Book ${fromName}→${toName} Cab | Sedan ₹${priceSaloon} SUV ₹${priceSuv} | Rated 4.8`,
     `${fromName} to ${toName} One Way Cab ₹${priceSaloon} | ${distance}km AC Taxi 24/7`,
   ];
   const title = titles[tv];
 
   // 6 structurally different description templates — uniquifies meta across route pages
   const descs = [
-    `Book ${fromName} to ${toName} cab from ₹${priceSaloon}.${altSuffix} ${distance} km. Sedan ₹${priceSaloon} | SUV ₹${priceSuv}. AC, ⭐4.8, 24/7. Instant WhatsApp confirm. Call ${BUSINESS.phone}`.slice(0, 160),
+    `Book ${fromName} to ${toName} cab from ₹${priceSaloon}.${altSuffix} ${distance} km. Sedan ₹${priceSaloon} | SUV ₹${priceSuv}. AC, rated 4.8/5, 24/7. Instant WhatsApp confirm. Call ${BUSINESS.phone}`.slice(0, 160),
     `${fromName} to ${toName} taxi: ${distance} km, Sedan ₹${priceSaloon}, SUV ₹${priceSuv}.${altSuffix} AC cab, verified driver, zero surge. Fixed fare. Book now: ${BUSINESS.phone}`.slice(0, 160),
     `${distance} km ${fromName}–${toName} cab from ₹${priceSaloon}. One-way & round trip.${altSuffix} AC Sedan, SUV, Innova available. 24/7, no cancellation. Call ${BUSINESS.phone}`.slice(0, 160),
     `Best fare: ${fromName} to ${toName} cab ₹${priceSaloon} (Sedan), ₹${priceSuv} (SUV).${altSuffix} ${distance} km outstation trip, AC, 24/7 booking. WhatsApp ${BUSINESS.phone}`.slice(0, 160),
-    `${fromName} to ${toName} outstation cab ₹${priceSaloon}.${altSuffix} ${distance} km | ⭐4.8 | Police-verified driver | No surge | Cash/UPI. Book: ${BUSINESS.phone}`.slice(0, 160),
+    `${fromName} to ${toName} outstation cab ₹${priceSaloon}.${altSuffix} ${distance} km | Rated 4.8 | Police-verified driver | No surge | Cash/UPI. Book: ${BUSINESS.phone}`.slice(0, 160),
     `Cheap ${fromName} to ${toName} cab from ₹${priceSaloon}.${altSuffix} ${distance} km drive. Sedan, SUV, Innova Crysta, Tempo Traveller. AC, 24/7 available. Call ${BUSINESS.phone}`.slice(0, 160),
   ];
   const desc = descs[dv];
 
-  const keywords = generateRouteKeywords(fromName, toName, fromAlternateNames, toAlternateNames);
-
+  // keywords intentionally omitted — Google ignores meta keywords (deprecated since 2009)
   return {
     title,
     description: desc,
-    keywords,
     openGraph: {
       title: `${fromName} to ${toName} Cab ₹${priceSaloon} | ${BUSINESS.name}`,
       description: `Book ${fromName} to ${toName} cab. ${distance} km, Sedan ₹${priceSaloon}, SUV ₹${priceSuv}. AC, 24/7. No surge. Call ${BUSINESS.phone}`,
