@@ -1,25 +1,14 @@
-# NOTE: Cloudflare AI Crawl Control injects managed content ABOVE this file.
-# That managed section handles: Amazonbot, Bytespider, CCBot, ClaudeBot, GPTBot,
-# meta-externalagent, Google-Extended (it BLOCKS Google-Extended — we override below).
-# Our custom rules appear AFTER Cloudflare's section. Per robots.txt spec, for the
-# same user-agent, the FIRST matching Disallow/Allow wins. Since Cloudflare's
-# "Google-Extended: Disallow: /" appears first, we CANNOT override it here.
-#
-# ACTION REQUIRED: Disable Cloudflare "AI Crawl Control" in Cloudflare Dashboard:
-#   Security → Bots → AI Crawl Control → Toggle OFF
-# This removes the injected managed section so our rules below take full control.
-
 # ── Main crawl policy ────────────────────────────────────────────────────────
+# Cloudflare AI Crawl Control has been disabled — no injected rules above.
 User-agent: *
 Allow: /
 
-# Block query-parameter variants — caused 13,103 GSC redirect errors
-# ?car=sedan/suv/tempo/luxury are internal UI filters, NOT indexable pages
-Disallow: /*?car=sedan
-Disallow: /*?car=suv
-Disallow: /*?car=tempo
-Disallow: /*?car=luxury
-Disallow: /*?car=innova
+# Block query-parameter variants — internal UI filters, NOT indexable pages
+Disallow: /?car=sedan
+Disallow: /?car=suv
+Disallow: /?car=tempo
+Disallow: /?car=luxury
+Disallow: /?car=innova
 
 # Block internal Next.js routes
 Disallow: /api/
@@ -69,7 +58,7 @@ Allow: /routes/siliguri-*/tempo
 Allow: /routes/siliguri-*/luxury
 
 # ── City vehicle pages (/{state}/{city}/sedan|suv|tempo|luxury) ───────────────
-# Only 5 hub cities have these pages. Block all, allow hub cities explicitly.
+# Only hub cities have these pages. Block all, allow hub cities explicitly.
 
 # Step 1: Block ALL city vehicle pages by default
 Disallow: /*/*/sedan
@@ -99,9 +88,11 @@ Allow: /bihar/patna/suv
 Allow: /bihar/patna/tempo
 Allow: /bihar/patna/luxury
 
-# ── Googlebot — explicit allow (overrides any Cloudflare managed rules) ───────
+# ── Googlebot — explicit full access ─────────────────────────────────────────
 User-agent: Googlebot
 Allow: /
+Disallow: /api/
+Disallow: /_next/
 
 User-agent: Google-Extended
 Allow: /
@@ -141,7 +132,6 @@ User-agent: DuckAssistBot
 Allow: /
 
 # ── AI training crawlers — block ─────────────────────────────────────────────
-# Note: Cloudflare may also block these above — duplication is harmless.
 User-agent: Amazonbot
 Disallow: /
 
