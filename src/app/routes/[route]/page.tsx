@@ -38,8 +38,9 @@ import { generateRouteMetadata, generateFaqSchema, generateBreadcrumbSchema, gen
 import { generateRoutePageContent } from '@/lib/routeContent';
 import { formatBoldText, parseParagraphsWithBold } from '@/lib/textHelper';
 
-// Pre-build ALL routes (~13,800) as static HTML at build time.
-// This ensures 0ms Worker CPU usage per request and eliminates 503 errors on the CF Free Tier.
+// Pre-build TOP 2000 priority routes as static HTML at build time.
+// Kolkata routes first, then hub-city routes, then tourist destinations.
+// Quality > quantity: fewer pages = Google trusts them more = better rankings.
 export const dynamicParams = false;
 export const dynamic = 'force-static';
 

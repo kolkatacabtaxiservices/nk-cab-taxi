@@ -215,39 +215,64 @@ const cityPages = cities
 fs.writeFileSync(path.join(sitemapDir, '1.xml'), buildSitemapXml([...statePages, ...cityPages]));
 console.log('✓ Generated public/sitemap/1.xml');
 
-// --- Sitemap 2+: Routes — split into chunks of 500 URLs max (~1MB each) ---
-// Splitting prevents crawler timeout on large sitemaps (2.8MB was too large)
-const sitemap2Urls = routes.map(route => {
-  const isReverseHubRoute = REVERSE_HUB_ROUTES.includes(route.slug);
-  const isFromHub = HUB_SLUGS.includes(route.from);
-  const isToHub = HUB_SLUGS.includes(route.to);
-  const isPopularDest = POPULAR_DESTINATIONS.includes(route.to) || POPULAR_DESTINATIONS.includes(route.from);
-  const isShortRoute = route.distance <= 300;
+// --- Sitemap 2+: Routes — priority-ordered, capped at 2000 (quality > quantity) ---
+// SEO strategy: Google's "Scaled Content Abuse" filter penalizes sites with thousands
+// of near-identical programmatic pages. We submit only our BEST 2000 routes.
+const MAX_SITEMAP_ROUTES = 2000;
+const primaryHub = new Set(['kolkata']);
+const hubSlugsSet = new Set(['kolkata', 'ranchi', 'bhubaneswar', 'jamshedpur', 'patna', 'siliguri', 'dhanbad', 'durgapur', 'asansol']);
+const touristSlugsSet = new Set([
+  'digha', 'mandarmani', 'darjeeling', 'puri', 'konark', 'sundarbans', 'mayapur',
+  'gangasagar', 'bishnupur', 'shantiniketan', 'bolpur-shantiniketan', 'murshidabad',
+  'deoghar', 'netarhat', 'hazaribagh', 'betla', 'bodh-gaya', 'gaya', 'rajgir',
+  'nalanda', 'varanasi', 'prayagraj', 'tajpur', 'bakkhali', 'kolkata-airport',
+]);
 
-  let priority = 0.65;
-  if (isReverseHubRoute) {
-    priority = 0.95; // hand-picked high-value reverse routes
-  } else if (isFromHub && isPopularDest) {
-    priority = 0.88; // kolkata/hub → popular destination (highest volume)
-  } else if (isToHub && isPopularDest) {
-    priority = 0.85; // popular destination → hub (return trips)
-  } else if (isFromHub) {
-    priority = 0.82; // any route FROM a hub city
-  } else if (isToHub) {
-    priority = 0.80; // any route TO a hub city
-  } else if (isShortRoute && isPopularDest) {
-    priority = 0.75; // short cross-state routes between popular cities
-  } else if (isShortRoute) {
-    priority = 0.70; // short regional routes
+const seenSlugs = new Set();
+const priorityRoutes = [];
+
+function addRoute(route, priority) {
+  if (!seenSlugs.has(route.slug) && priorityRoutes.length < MAX_SITEMAP_ROUTES) {
+    seenSlugs.add(route.slug);
+    priorityRoutes.push({ route, priority });
   }
+}
 
-  return {
-    url: `${DOMAIN}/routes/${route.slug}`,
-    lastModified: LAST_MODIFIED,
-    changeFrequency: 'monthly',
-    priority
-  };
-});
+// Tier 1: All Kolkata routes (both directions) — highest search volume
+routes.filter(r => primaryHub.has(r.from) || primaryHub.has(r.to))
+  .sort((a, b) => a.distance - b.distance)
+  .forEach(r => addRoute(r, 0.92));
+
+// Tier 2: Hub ↔ Hub routes
+routes.filter(r => hubSlugsSet.has(r.from) && hubSlugsSet.has(r.to))
+  .sort((a, b) => a.distance - b.distance)
+  .forEach(r => addRoute(r, 0.85));
+
+// Tier 3: Hub → Tourist city routes
+routes.filter(r =>
+  (hubSlugsSet.has(r.from) && touristSlugsSet.has(r.to)) ||
+  (touristSlugsSet.has(r.from) && hubSlugsSet.has(r.to))
+).sort((a, b) => a.distance - b.distance)
+  .forEach(r => addRoute(r, 0.80));
+
+// Tier 4: Short routes < 200km
+routes.filter(r => r.distance < 200 && !seenSlugs.has(r.slug))
+  .sort((a, b) => a.distance - b.distance)
+  .forEach(r => addRoute(r, 0.72));
+
+// Tier 5: Remaining routes by distance
+routes.filter(r => !seenSlugs.has(r.slug))
+  .sort((a, b) => a.distance - b.distance)
+  .forEach(r => addRoute(r, 0.65));
+
+const sitemap2Urls = priorityRoutes.slice(0, MAX_SITEMAP_ROUTES).map(({ route, priority }) => ({
+  url: `${DOMAIN}/routes/${route.slug}`,
+  lastModified: LAST_MODIFIED,
+  changeFrequency: 'monthly',
+  priority
+}));
+console.log(`✓ Selected ${sitemap2Urls.length} priority routes for sitemap (from ${routes.length} total)`);
+
 const ROUTE_CHUNK_SIZE = 500;
 const routeChunks = [];
 for (let i = 0; i < sitemap2Urls.length; i += ROUTE_CHUNK_SIZE) {
@@ -259,6 +284,7 @@ routeChunks.forEach((chunk, idx) => {
   console.log(`✓ Generated public/sitemap/${fileName} (${chunk.length} links)`);
 });
 console.log(`✓ Routes split into ${routeChunks.length} sitemap chunks`);
+
 
 
 

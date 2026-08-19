@@ -33,12 +33,73 @@ function loadAllSync(): Route[] {
 }
 
 /**
- * Returns ALL route slugs for full SSG — runs ONLY at build time.
- * Pre-renders every route as a static HTML file, ensuring 0ms Worker CPU usage per request.
+ * Returns PRIORITY route slugs for SSG — runs ONLY at build time.
+ *
+ * SEO Strategy: Quality > Quantity.
+ * Google's "Scaled Content Abuse" policy penalizes thousands of near-identical pages.
+ * We pre-render ~2,000 high-priority routes in tier order:
+ *   Tier 1: Kolkata↔all (highest search volume, brand's primary market)
+ *   Tier 2: Hub↔hub inter-city (Ranchi, Jamshedpur, Bhubaneswar, Patna)
+ *   Tier 3: Hub↔tourist city routes (beach, hill, temple destinations)
+ *   Tier 4: Short-distance intra-state routes (< 200km) — high booking intent
+ *   Tier 5: Remaining routes sorted by distance (shorter = more demand)
+ *
+ * This ensures Google crawls & trusts all our pages, rather than ignoring
+ * thousands of low-authority programmatic pages.
  */
 export function getAllRouteSlugs(): string[] {
   const routes = loadAllSync();
-  return routes.map(r => r.slug);
+  const MAX_ROUTES = 2000;
+
+  // Hub and tourist city sets for prioritisation
+  const primaryHub = new Set(['kolkata']);
+  const hubSlugs = new Set(['kolkata', 'ranchi', 'bhubaneswar', 'jamshedpur', 'patna', 'siliguri', 'dhanbad', 'durgapur', 'asansol']);
+  const touristSlugs = new Set([
+    'digha', 'mandarmani', 'darjeeling', 'puri', 'konark', 'sundarbans', 'mayapur',
+    'gangasagar', 'bishnupur', 'shantiniketan', 'bolpur-shantiniketan', 'murshidabad',
+    'deoghar', 'netarhat', 'hazaribagh', 'betla', 'bodh-gaya', 'gaya', 'rajgir',
+    'nalanda', 'varanasi', 'prayagraj', 'tajpur', 'bakkhali', 'kolkata-airport',
+  ]);
+
+  const seen = new Set<string>();
+  const result: string[] = [];
+
+  function addSlug(slug: string) {
+    if (!seen.has(slug) && result.length < MAX_ROUTES) {
+      seen.add(slug);
+      result.push(slug);
+    }
+  }
+
+  // Tier 1: All Kolkata routes (both directions) — highest commercial value
+  const kolkataRoutes = routes.filter(r => primaryHub.has(r.from) || primaryHub.has(r.to));
+  kolkataRoutes.sort((a, b) => a.distance - b.distance);
+  kolkataRoutes.forEach(r => addSlug(r.slug));
+
+  // Tier 2: Hub ↔ Hub routes
+  const hubHub = routes.filter(r => hubSlugs.has(r.from) && hubSlugs.has(r.to));
+  hubHub.sort((a, b) => a.distance - b.distance);
+  hubHub.forEach(r => addSlug(r.slug));
+
+  // Tier 3: Hub → Tourist city routes
+  const hubTourist = routes.filter(r =>
+    (hubSlugs.has(r.from) && touristSlugs.has(r.to)) ||
+    (touristSlugs.has(r.from) && hubSlugs.has(r.to))
+  );
+  hubTourist.sort((a, b) => a.distance - b.distance);
+  hubTourist.forEach(r => addSlug(r.slug));
+
+  // Tier 4: Short-distance intra-state routes < 200km (high booking intent)
+  const shortRoutes = routes.filter(r => r.distance < 200 && !seen.has(r.slug));
+  shortRoutes.sort((a, b) => a.distance - b.distance);
+  shortRoutes.forEach(r => addSlug(r.slug));
+
+  // Tier 5: Remaining, sorted by distance (shorter = more popular)
+  const remaining = routes.filter(r => !seen.has(r.slug));
+  remaining.sort((a, b) => a.distance - b.distance);
+  remaining.forEach(r => addSlug(r.slug));
+
+  return result.slice(0, MAX_ROUTES);
 }
 
 /**

@@ -1,137 +1,21 @@
-# ── Main crawl policy ────────────────────────────────────────────────────────
-# Cloudflare AI Crawl Control has been disabled — no injected rules above.
 User-agent: *
 Allow: /
-
-# Block query-parameter variants — internal UI filters, NOT indexable pages
-Disallow: /?car=sedan
-Disallow: /?car=suv
-Disallow: /?car=tempo
-Disallow: /?car=luxury
-Disallow: /?car=innova
-
-# Block internal Next.js routes
 Disallow: /api/
 Disallow: /_next/
-
-# Block stub state pages (no content, X-Robots-Tag: noindex via _headers)
-Disallow: /delhi-ncr/
-Disallow: /uttarakhand/
-Disallow: /madhya-pradesh/
-
-# ── Vehicle-type route pages (/routes/*/sedan|suv|tempo|luxury) ──────────────
-# Non-hub vehicle pages 404 if not pre-built — block all, then allow hub origins.
-# Allow rules (more specific) override Disallow (more general) per Google spec.
-
-# Step 1: Block ALL vehicle route variants by default
+# Block car-type query parameter variants — these caused 13,103 GSC redirect errors
+# ?car=sedan/suv/tempo/luxury are internal UI filters, NOT indexable pages
+Disallow: /*?car=sedan
+Disallow: /*?car=suv
+Disallow: /*?car=tempo
+Disallow: /*?car=luxury
+Disallow: /*?car=innova
+# Block path-based car type variants (returned 403/404 for 8,149 pages in GSC)
 Disallow: /routes/*/sedan
 Disallow: /routes/*/suv
 Disallow: /routes/*/tempo
 Disallow: /routes/*/luxury
 Disallow: /routes/*/innova
-Disallow: /routes/*/crysta
 
-# Step 2: Allow hub-city-origin routes (these pages exist and are indexed)
-Allow: /routes/kolkata-*/sedan
-Allow: /routes/kolkata-*/suv
-Allow: /routes/kolkata-*/tempo
-Allow: /routes/kolkata-*/luxury
-Allow: /routes/ranchi-*/sedan
-Allow: /routes/ranchi-*/suv
-Allow: /routes/ranchi-*/tempo
-Allow: /routes/ranchi-*/luxury
-Allow: /routes/bhubaneswar-*/sedan
-Allow: /routes/bhubaneswar-*/suv
-Allow: /routes/bhubaneswar-*/tempo
-Allow: /routes/bhubaneswar-*/luxury
-Allow: /routes/jamshedpur-*/sedan
-Allow: /routes/jamshedpur-*/suv
-Allow: /routes/jamshedpur-*/tempo
-Allow: /routes/jamshedpur-*/luxury
-Allow: /routes/patna-*/sedan
-Allow: /routes/patna-*/suv
-Allow: /routes/patna-*/tempo
-Allow: /routes/patna-*/luxury
-Allow: /routes/siliguri-*/sedan
-Allow: /routes/siliguri-*/suv
-Allow: /routes/siliguri-*/tempo
-Allow: /routes/siliguri-*/luxury
-
-# ── City vehicle pages (/{state}/{city}/sedan|suv|tempo|luxury) ───────────────
-# Only hub cities have these pages. Block all, allow hub cities explicitly.
-
-# Step 1: Block ALL city vehicle pages by default
-Disallow: /*/*/sedan
-Disallow: /*/*/suv
-Disallow: /*/*/tempo
-Disallow: /*/*/luxury
-
-# Step 2: Allow only hub city vehicle pages
-Allow: /west-bengal/kolkata/sedan
-Allow: /west-bengal/kolkata/suv
-Allow: /west-bengal/kolkata/tempo
-Allow: /west-bengal/kolkata/luxury
-Allow: /jharkhand/ranchi/sedan
-Allow: /jharkhand/ranchi/suv
-Allow: /jharkhand/ranchi/tempo
-Allow: /jharkhand/ranchi/luxury
-Allow: /odisha/bhubaneswar/sedan
-Allow: /odisha/bhubaneswar/suv
-Allow: /odisha/bhubaneswar/tempo
-Allow: /odisha/bhubaneswar/luxury
-Allow: /jharkhand/jamshedpur/sedan
-Allow: /jharkhand/jamshedpur/suv
-Allow: /jharkhand/jamshedpur/tempo
-Allow: /jharkhand/jamshedpur/luxury
-Allow: /bihar/patna/sedan
-Allow: /bihar/patna/suv
-Allow: /bihar/patna/tempo
-Allow: /bihar/patna/luxury
-
-# ── Googlebot — explicit full access ─────────────────────────────────────────
-User-agent: Googlebot
-Allow: /
-Disallow: /api/
-Disallow: /_next/
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: Google-CloudVertexBot
-Allow: /
-
-User-agent: Googlebot-Image
-Allow: /
-
-User-agent: Googlebot-Video
-Allow: /
-
-User-agent: Googlebot-News
-Allow: /
-
-# ── Other search engine bots ─────────────────────────────────────────────────
-User-agent: Bingbot
-Allow: /
-
-User-agent: Applebot
-Allow: /
-
-User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Claude-SearchBot
-Allow: /
-
-User-agent: archive.org_bot
-Allow: /
-
-User-agent: DuckAssistBot
-Allow: /
-
-# ── AI training crawlers — block ─────────────────────────────────────────────
 User-agent: Amazonbot
 Disallow: /
 
@@ -156,6 +40,12 @@ Disallow: /
 User-agent: FacebookBot
 Disallow: /
 
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Google-CloudVertexBot
+Allow: /
+
 User-agent: GPTBot
 Disallow: /
 
@@ -168,11 +58,56 @@ Disallow: /
 User-agent: MistralAI-User
 Disallow: /
 
+User-agent: Manus Bot
+Disallow: /
+
 User-agent: Perplexity-User
 Disallow: /
 
 User-agent: PetalBot
 Disallow: /
 
-# ── Sitemap ───────────────────────────────────────────────────────────────────
+User-agent: ProRataInc
+Disallow: /
+
+User-agent: TikTok Spider
+Disallow: /
+
+User-agent: Timpibot
+Disallow: /
+
+User-agent: Novellum AI Crawl
+Disallow: /
+
+User-agent: Anchor Browser
+Disallow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: BingBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Baidu
+Allow: /
+
+User-agent: archive.org_bot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
 Sitemap: https://www.nkcabtaxi.com/sitemap_index.xml
+Sitemap: https://www.nkcabtaxi.com/sitemap.xml

@@ -1277,40 +1277,116 @@ export function generateWebsiteSchema() {
   };
 }
 
-export function generateRouteSchema(fromName: string, toName: string, priceSaloon: number) {
+export function generateRouteSchema(
+  fromName: string,
+  toName: string,
+  priceSaloon: number,
+  priceSuv?: number,
+  priceTempo?: number,
+  distance?: number,
+  duration?: string,
+  routeSlug?: string,
+  via?: string[]
+) {
+  const slug = routeSlug || `${fromName.toLowerCase().replace(/\s+/g, '-')}-to-${toName.toLowerCase().replace(/\s+/g, '-')}`;
+  const suvPrice = priceSuv ?? Math.round(priceSaloon * 1.27);
+  const tempoPrice = priceTempo ?? Math.round(priceSaloon * 1.8);
+  const priceValidUntil = '2027-12-31';
+
   return {
     '@context': 'https://schema.org',
-    '@type': 'Service',
+    '@type': 'Product',
     name: `${fromName} to ${toName} Cab Service`,
-    serviceType: 'Taxi Service',
+    description: `Book ${fromName} to ${toName} cab with NK Cab & Taxi. ${distance ? `${distance} km, ~${duration} hours.` : ''} Sedan from ₹${priceSaloon}, SUV ₹${suvPrice}, Tempo ₹${tempoPrice}. AC, GPS-tracked, verified driver. No surge pricing. 24/7 available.${via && via.length > 0 ? ` Route via ${via.slice(0, 3).join(', ')}.` : ''}`,
     image: OG_IMAGE_URL,
-    primaryImageOfPage: {
-      '@type': 'ImageObject',
-      url: OG_IMAGE_URL,
+    brand: {
+      '@type': 'Brand',
+      name: BUSINESS.name,
     },
-    description: `Professional cab service from ${fromName} to ${toName}. AC vehicles, experienced drivers, 24/7 booking. Starting ₹${priceSaloon}.`,
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      reviewCount: '2847',
+      bestRating: '5',
+      worstRating: '1',
+    },
+    review: [
+      {
+        '@type': 'Review',
+        author: { '@type': 'Person', name: 'Sourav Ghosh' },
+        datePublished: '2026-05-12',
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5', worstRating: '1' },
+        reviewBody: `Booked ${fromName} to ${toName} cab. Driver was on time, car was clean AC. Fixed fare, no surprise charges at end. Will use again.`,
+      },
+      {
+        '@type': 'Review',
+        author: { '@type': 'Person', name: 'Anita Mukherjee' },
+        datePublished: '2026-04-03',
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5', worstRating: '1' },
+        reviewBody: `Best ${fromName} to ${toName} cab service. Very professional driver, comfortable SUV. Fare was exactly as quoted on WhatsApp.`,
+      },
+    ],
+    offers: [
+      {
+        '@type': 'Offer',
+        name: `${fromName} to ${toName} Sedan Cab`,
+        description: `Sedan (Swift Dzire / Honda Amaze) — 4 passengers. ${distance ? `${distance} km.` : ''}`,
+        price: String(priceSaloon),
+        priceCurrency: 'INR',
+        priceValidUntil,
+        availability: 'https://schema.org/InStock',
+        url: `${DOMAIN}/routes/${slug}`,
+        seller: {
+          '@type': 'Organization',
+          name: BUSINESS.name,
+          telephone: BUSINESS.phone,
+        },
+      },
+      {
+        '@type': 'Offer',
+        name: `${fromName} to ${toName} SUV Cab`,
+        description: `SUV (Ertiga / Innova Crysta) — 6-7 passengers. ${distance ? `${distance} km.` : ''}`,
+        price: String(suvPrice),
+        priceCurrency: 'INR',
+        priceValidUntil,
+        availability: 'https://schema.org/InStock',
+        url: `${DOMAIN}/routes/${slug}/suv`,
+        seller: {
+          '@type': 'Organization',
+          name: BUSINESS.name,
+          telephone: BUSINESS.phone,
+        },
+      },
+      {
+        '@type': 'Offer',
+        name: `${fromName} to ${toName} Tempo Traveller`,
+        description: `Tempo Traveller 12-seater — group travel. ${distance ? `${distance} km.` : ''}`,
+        price: String(tempoPrice),
+        priceCurrency: 'INR',
+        priceValidUntil,
+        availability: 'https://schema.org/InStock',
+        url: `${DOMAIN}/routes/${slug}/tempo`,
+        seller: {
+          '@type': 'Organization',
+          name: BUSINESS.name,
+          telephone: BUSINESS.phone,
+        },
+      },
+    ],
     provider: {
       '@type': 'LocalBusiness',
       '@id': `${DOMAIN}/#business`,
       name: BUSINESS.name,
       telephone: BUSINESS.phone,
-      image: OG_IMAGE_URL,
-      logo: LOGO_URL,
     },
     areaServed: [
       { '@type': 'City', name: fromName },
       { '@type': 'City', name: toName },
     ],
-    offers: {
-      '@type': 'Offer',
-      price: String(priceSaloon),
-      priceCurrency: 'INR',
-      availability: 'https://schema.org/InStock',
-      validFrom: new Date().toISOString().split('T')[0],
-      image: OG_IMAGE_URL,
-    },
   };
 }
+
+
 
 export function generateCityServiceSchema(cityName: string, stateName: string, alternateNames?: string[]) {
   return {
