@@ -32,9 +32,9 @@ export function getCityGeoMeta(cityName: string, stateSlug: string, lat?: number
 export function generateHomePageMetadata(): Metadata {
   return {
     // `absolute` prevents layout template from appending again
-    // Note: No emoji in title — Google strips them in SERPs, signals spam to quality raters
-    title: { absolute: 'NK Cab & Taxi Kolkata | Cab Service from ₹12/km | Airport, Outstation & Local Taxi 24/7' },
-    description: `NK Cab & Taxi — Best cab service in Kolkata & East India. Outstation from ₹12/km | Airport taxi from ₹1,800 | Local 4hr ₹1,800. Rated 4.8/5, 5000+ trips. AC Innova, Ertiga, Dzire. No surge. Call ${BUSINESS.phone}`,
+    // Keyword-first title: primary keyword before brand for SERP click-through
+    title: { absolute: 'Cab Service Kolkata ₹12/km | Airport Taxi ₹1,800 | NK Cab & Taxi 4.8★' },
+    description: `NK Cab & Taxi — Kolkata's #1 outstation one-way drop taxi. Sedan ₹12/km | Airport ₹1,800 | Local 4hr ₹1,800 | 5000+ trips, rated 4.8/5. Innova, Ertiga, Dzire. No surge 24/7. Call ${BUSINESS.phone}`,
     alternates: { canonical: `${DOMAIN}/` },
     openGraph: {
       type: 'website',
@@ -614,8 +614,8 @@ export function generateStateMetadata(stateName: string): Metadata {
 
 export function generateAboutMetadata(): Metadata {
   return {
-    title: `About Us | ${BUSINESS.name} | Trusted Cab Service Since ${BUSINESS.foundYear}`,
-    description: `About ${BUSINESS.name} — Kolkata's most trusted cab & car rental service since ${BUSINESS.foundYear}. Serving 80+ cities across West Bengal, Jharkhand, Odisha, Bihar, and Uttar Pradesh. Verified drivers, AC vehicles, transparent pricing. Call ${BUSINESS.phone}.`.slice(0, 160),
+    title: `About NK Cab & Taxi | Est. ${BUSINESS.foundYear} | Verified Fleet | 80+ Cities East India`,
+    description: `NK Cab & Taxi — established ${BUSINESS.foundYear} in Kolkata. One-way outstation specialist, 5000+ trips, rated 4.8/5. Verified drivers, AC fleet (Sedan/SUV/Innova), transparent fares. 80+ cities. Call ${BUSINESS.phone}.`.slice(0, 160),
     // NOTE: Google ignores meta keywords since 2009. Removed to avoid spam signals.
     openGraph: {
       title: `About ${BUSINESS.name} | Trusted Since ${BUSINESS.foundYear}`,
@@ -641,8 +641,8 @@ export function generateAboutMetadata(): Metadata {
 
 export function generateContactMetadata(): Metadata {
   return {
-    title: `Contact Us | Book Cab Now | ${BUSINESS.name} | Call ${BUSINESS.phone}`,
-    description: `Contact ${BUSINESS.name} for cab booking in Kolkata. Call ${BUSINESS.phone}, WhatsApp, or fill the online booking form. 24/7 service across 80+ cities.`.slice(0, 160),
+    title: `Book Cab Now | Call ${BUSINESS.phoneDisplay} | NK Cab & Taxi Kolkata 24/7`,
+    description: `Book your cab instantly — call or WhatsApp ${BUSINESS.phone}. NK Cab & Taxi serves 80+ cities 24/7. Outstation ₹12/km, airport ₹1,800, local ₹1,800/4hr. Instant confirmation.`.slice(0, 160),
     // NOTE: Google ignores meta keywords since 2009. Removed to avoid spam signals.
     openGraph: {
       title: `Contact ${BUSINESS.name} | Book Cab Now`,
@@ -668,8 +668,8 @@ export function generateContactMetadata(): Metadata {
 
 export function generateFleetMetadata(): Metadata {
   return {
-    title: `Car Rental Kolkata | Innova Crysta, Sedan, SUV, Tempo | ₹12/km 24/7`,
-    description: `Car rental in Kolkata from ₹12/km. Sedan (Dzire, Amaze), SUV (Ertiga, Innova Crysta ₹18/km), Tempo Traveller (12-seater). AC fleet, verified drivers. Kolkata, Ranchi, Jamshedpur. Call ${BUSINESS.phone}.`.slice(0, 160),
+    title: `Innova Crysta Rent Kolkata ₹18/km | Sedan ₹12/km | SUV Ertiga | NK Cab`,
+    description: `Car rental Kolkata: Sedan (Dzire ₹12/km), SUV Ertiga (₹16/km), Innova Crysta (₹18/km), Tempo Traveller (12-seater). AC, GPS, verified drivers. 80+ cities. Call ${BUSINESS.phone}.`.slice(0, 160),
     keywords: [
       'car rental kolkata', 'car hire kolkata', 'cab rental kolkata',
       'innova on rent kolkata', 'innova crysta kolkata', 'innova cab kolkata',
@@ -706,8 +706,8 @@ export function generateFleetMetadata(): Metadata {
 
 export function generateToursListingMetadata(): Metadata {
   return {
-    title: `Tour Packages | Darjeeling Puri Varanasi Sundarbans Tours | ${BUSINESS.name}`,
-    description: `Book affordable tour packages from Kolkata, Ranchi, Jamshedpur. Darjeeling, Puri-Konark, Sundarbans tours with AC cab & driver. Call ${BUSINESS.phone}.`.slice(0, 160),
+    title: `Tour Packages from Kolkata | Darjeeling Puri Varanasi | AC Cab + Driver`,
+    description: `Curated tour packages from Kolkata: Darjeeling (2N/3D), Puri-Konark, Sundarbans, Varanasi, Ayodhya. AC cab + driver included. Custom pickups from Ranchi & Jamshedpur. Call ${BUSINESS.phone}.`.slice(0, 160),
     keywords: [
       'tour packages from kolkata', 'darjeeling tour package from kolkata',
       'puri tour package from kolkata', 'sundarbans tour package',
@@ -1071,10 +1071,12 @@ export function generateLocalBusinessSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    '@id': `${DOMAIN}/#business`,
+    // @id ties this entity to nkcabtaxi.com ONLY — unique identifier per website
+    '@id': `${DOMAIN}/#nk-cab-taxi`,
     name: BUSINESS.name,
+    legalName: 'NK Cab & Taxi',
     // Genuine alternate names only — schema validators flag long arrays as keyword spam
-    alternateName: ['NK Cab Taxi', 'NK Cab Service Kolkata', 'NK Taxi Kolkata', 'nkcabtaxi'],
+    alternateName: ['NK Cab Taxi', 'NK Cab Service', 'NK Taxi Kolkata', 'nkcabtaxi'],
     telephone: BUSINESS.phone,
     email: BUSINESS.email,
     url: DOMAIN,
@@ -1089,15 +1091,16 @@ export function generateLocalBusinessSchema() {
       width: 1024,
       height: 1024,
     },
-    description: `${BUSINESS.name} is Kolkata's most trusted cab and taxi service. We provide outstation, local, one-way, round trip, airport transfer, wedding car rental, and corporate car rental across West Bengal, Jharkhand, and Odisha.`,
+    // Unique description — clearly distinct from Kolkata Cab Service website
+    description: `NK Cab & Taxi (nkcabtaxi.com) is a premium cab and taxi operator based in Kolkata with a dedicated fleet serving East India since 2019. We specialize in outstation cabs from ₹12/km, airport pickups from ₹1,800, local taxi packages, one-way intercity travel, and wedding car rentals across West Bengal, Jharkhand, Odisha, and Bihar.`,
     foundingDate: `${BUSINESS.foundYear}`,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Park Street Area',
+      streetAddress: 'Salt Lake Sector V Area',
       addressLocality: 'Kolkata',
       addressRegion: 'West Bengal',
       addressCountry: 'IN',
-      postalCode: '700001',
+      postalCode: '700091',
     },
     geo: {
       '@type': 'GeoCoordinates',
@@ -1148,7 +1151,9 @@ export function generateLocalBusinessSchema() {
       },
     ],
     // gbpLink and gbpReviewLink are the same URL — keep one to avoid duplicate sameAs
+    // DOMAIN included: explicitly maps this entity to nkcabtaxi.com
     sameAs: [
+      DOMAIN,
       `https://wa.me/${BUSINESS.whatsapp}`,
       BUSINESS.gbpLink,
     ],
@@ -1177,7 +1182,7 @@ export function generateLocalBusinessSchema() {
     review: [
       {
         '@type': 'Review',
-        author: { '@type': 'Person', name: 'Rahul Sharma', sameAs: 'https://g.page/r/CcJ-ldDglNfaEBM/review' },
+        author: { '@type': 'Person', name: 'Rahul Sharma', sameAs: BUSINESS.gbpLink },
         datePublished: '2026-04-15',
         reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5', worstRating: '1' },
         reviewBody: 'Best cab service in Kolkata. Driver was on time, vehicle was AC and clean. Kolkata to Jamshedpur trip was very comfortable. Highly recommended!',
@@ -1221,6 +1226,7 @@ export function generateOrganizationSchema() {
       'Taxi Service', 'Cab Booking', 'Airport Transfer', 'Outstation Travel',
       'Car Rental', 'Wedding Car Rental', 'Corporate Transportation',
       'Local Taxi Service', 'One-Way Cab Service', 'Tour Packages',
+      'Outstation Taxi Kolkata', 'One-Way Drop Cab East India', 'Airport Transfer Kolkata',
     ],
     hasCredential: {
       '@type': 'EducationalOccupationalCredential',
@@ -1247,8 +1253,9 @@ export function generateOrganizationSchema() {
       `https://wa.me/${BUSINESS.whatsapp}`,
       BUSINESS.gbpLink,
     ],
-    slogan: 'Your Trusted Cab Service in Kolkata & East India',
+    slogan: 'East India One-Way Drop Taxi Specialist Since 2019',
     ethicsPolicy: `${DOMAIN}/about`,
+    award: '★4.8/5 Customer Rating · 5000+ Trips Completed',
   };
 }
 
@@ -1268,7 +1275,7 @@ export function generateWebsiteSchema() {
       'NK Cab & Taxi Kolkata',
     ],
     url: DOMAIN,
-    description: 'Best cab service in Kolkata — outstation, local, one-way, airport transfer, wedding car & corporate rental.',
+    description: 'NK Cab & Taxi (nkcabtaxi.com) — East India outstation one-way drop taxi specialist. Sedan from ₹12/km. Airport, intercity, local & wedding car. 80+ cities across West Bengal, Jharkhand, Odisha, Bihar.',
     publisher: { '@id': `${DOMAIN}/#organization` },
     inLanguage: 'en-IN',
     potentialAction: {
@@ -1279,6 +1286,13 @@ export function generateWebsiteSchema() {
       },
       'query-input': 'required name=search_term_string',
     },
+    // AI/LLM SEO: helps ChatGPT, Gemini, Perplexity cite this page accurately
+    about: {
+      '@type': 'Thing',
+      name: 'Outstation Cab Booking Service Kolkata',
+      description: 'One-way drop taxi from Kolkata and East India cities. Fixed fare, no surge pricing, AC vehicles.',
+    },
+    keywords: 'cab service kolkata, outstation taxi kolkata, one way cab kolkata, airport taxi kolkata, nkcabtaxi, NK Cab Taxi',
   };
 }
 
@@ -2693,5 +2707,143 @@ export function generateCabPriceSchema() {
         },
       ],
     },
+  };
+}
+
+// ===================================================
+// ROUTE FAQ SCHEMA - People Also Ask rich results
+// ===================================================
+
+export function generateRouteFAQSchema(
+  fromName: string, toName: string,
+  priceSaloon: number, priceSuv: number,
+  distance: number, duration: string
+) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: `How much does a cab from ${fromName} to ${toName} cost?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `One-way cab from ${fromName} to ${toName}: Sedan ₹${priceSaloon} (Swift Dzire/Amaze), SUV ₹${priceSuv} (Ertiga/Innova). All-inclusive fare — fuel, driver, AC. No return charge. Book via WhatsApp ${BUSINESS.phone}.`,
+        },
+      },
+      {
+        '@type': 'Question',
+        name: `How far is ${fromName} to ${toName} by road?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `Road distance from ${fromName} to ${toName} is approximately ${distance} km. Travel time around ${duration} hours by cab.`,
+        },
+      },
+      {
+        '@type': 'Question',
+        name: `Is one-way cab available from ${fromName} to ${toName}?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `Yes. NK Cab & Taxi specialises in one-way drop cabs. Pay only for ${fromName} to ${toName} — driver returns empty at our cost. Sedan ₹${priceSaloon}, SUV ₹${priceSuv}.`,
+        },
+      },
+      {
+        '@type': 'Question',
+        name: `How to book cab from ${fromName} to ${toName}?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `WhatsApp ${BUSINESS.phone} with pickup address in ${fromName}, drop in ${toName}, date/time, vehicle choice. Confirmed in 5 minutes with driver name and vehicle number.`,
+        },
+      },
+      {
+        '@type': 'Question',
+        name: `Which vehicles are available for ${fromName} to ${toName} cab?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `Sedan (Dzire/Amaze, 4 seats) ₹${priceSaloon}; SUV (Ertiga/Innova, 6-7 seats) ₹${priceSuv}; Tempo Traveller (12-17 seats) for groups. All AC, GPS-tracked, verified drivers.`,
+        },
+      },
+      {
+        '@type': 'Question',
+        name: `Is NK Cab & Taxi available 24/7 for ${fromName} to ${toName}?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `Yes, NK Cab & Taxi runs 24/7 for ${fromName} to ${toName}. Early morning, late night, holiday bookings accepted. Call or WhatsApp ${BUSINESS.phone} anytime.`,
+        },
+      },
+    ],
+  };
+}
+
+// Breadcrumb schemas
+export function generateCityBreadcrumbSchema(cityName: string, stateName: string, citySlug: string, stateSlug: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: DOMAIN },
+      { '@type': 'ListItem', position: 2, name: stateName, item: `${DOMAIN}/${stateSlug}` },
+      { '@type': 'ListItem', position: 3, name: `Cab Service in ${cityName}`, item: `${DOMAIN}/${stateSlug}/${citySlug}` },
+    ],
+  };
+}
+
+export function generateRouteBreadcrumbSchema(fromName: string, toName: string, routeSlug: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: DOMAIN },
+      { '@type': 'ListItem', position: 2, name: 'Routes', item: `${DOMAIN}/routes` },
+      { '@type': 'ListItem', position: 3, name: `${fromName} to ${toName} Cab`, item: `${DOMAIN}/routes/${routeSlug}` },
+    ],
+  };
+}
+
+export function generateServiceBreadcrumbSchema(serviceName: string, serviceSlug: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: DOMAIN },
+      { '@type': 'ListItem', position: 2, name: 'Services', item: `${DOMAIN}/services` },
+      { '@type': 'ListItem', position: 3, name: serviceName, item: `${DOMAIN}/services/${serviceSlug}` },
+    ],
+  };
+}
+
+// E-E-A-T Person schema
+export function generateAboutPersonSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'NK Transport Operations',
+    jobTitle: 'Transport Operations Manager',
+    worksFor: { '@type': 'Organization', name: BUSINESS.name, url: DOMAIN },
+    knowsAbout: ['Outstation Cab Service Kolkata', 'Airport Taxi', 'One-Way Drop Cab East India', 'Wedding Car Rental', 'Corporate Transport'],
+    url: `${DOMAIN}/about`,
+    sameAs: [BUSINESS.gbpLink],
+  };
+}
+
+// Voice/LLM speakable for route pages
+export function generateRouteSpeakableSchema(fromName: string, toName: string, priceSaloon: number) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['h1', '.route-price', '.route-summary'],
+    name: `${fromName} to ${toName} cab fare`,
+    text: `One-way cab from ${fromName} to ${toName} costs ₹${priceSaloon} for a Sedan. Book via NK Cab & Taxi at ${BUSINESS.phone}.`,
+  };
+}
+
+// Voice/LLM speakable for city pages
+export function generateCitySpeakableSchema(cityName: string, baseRate: string, airportRate: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['h1', '.city-fare', '.city-description'],
+    name: `Cab service in ${cityName}`,
+    text: `Cab service in ${cityName} from ${baseRate}. Airport transfer from ₹${airportRate}. 24/7. Call NK Cab & Taxi at ${BUSINESS.phone}.`,
   };
 }

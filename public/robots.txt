@@ -109,5 +109,5 @@ Allow: /
 User-agent: DuckAssistBot
 Allow: /
 
-Sitemap: https://www.nkcabtaxi.com/sitemap_index.xml
+# Primary sitemap index — Googlebot fetches this first
 Sitemap: https://www.nkcabtaxi.com/sitemap.xml

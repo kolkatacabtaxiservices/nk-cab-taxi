@@ -196,10 +196,10 @@ export function getServices() {
 
 export const BUSINESS = {
   name: 'NK Cab & Taxi',
-  phone: '+916204811752',
-  phoneDisplay: '+91 620-481-1752',
-  whatsapp: '916204811752',
-  whatsappLink: 'https://wa.me/916204811752',
+  phone: '+919883619471',
+  phoneDisplay: '+91 988-361-9471',
+  whatsapp: '919883619471',
+  whatsappLink: 'https://wa.me/919883619471',
   email: 'nkcabtaxi@gmail.com',
   tagline: 'Your Trusted Cab & Taxi Service in Kolkata & East India',
   hours: '24/7, 365 Days',

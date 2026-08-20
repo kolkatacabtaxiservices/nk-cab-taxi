@@ -2,7 +2,7 @@ import { Shield, Users, Award, Phone, Heart, Building, CheckCircle, Star, Trendi
 import Breadcrumbs from '@/components/Breadcrumbs';
 import HeroBanner from '@/components/HeroBanner';
 import { BUSINESS } from '@/lib/data';
-import { generateAboutMetadata, generateAboutPageSchema, generateBreadcrumbSchema, generateFaqSchema, generateWebPageSchema } from '@/lib/seo';
+import { generateAboutMetadata, generateAboutPageSchema, generateBreadcrumbSchema, generateFaqSchema, generateWebPageSchema, generateAboutPersonSchema } from '@/lib/seo';
 import FAQSection from '@/components/FAQSection';
 import GoogleMapEmbed from '@/components/GoogleMapEmbed';
 
@@ -39,6 +39,8 @@ export default function AboutPage() {
         `${BUSINESS.domain}/about`,
         'AboutPage'
       )) }} />
+      {/* E-E-A-T: Person schema — signals domain expertise to Google Quality Raters */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateAboutPersonSchema()) }} />
 
       {/* Hero */}
       <section className="relative text-white py-16 overflow-hidden">

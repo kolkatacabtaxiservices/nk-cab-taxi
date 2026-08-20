@@ -30,7 +30,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(BUSINESS.domain),
   title: {
-    default: 'NK Cab & Taxi Kolkata | ₹12/km | Airport, Outstation & Local Taxi 24/7',
+    default: 'Cab Service Kolkata ₹12/km | Airport Taxi ₹1,800 | NK Cab & Taxi 24/7',
     template: '%s | NK Cab & Taxi',
   },
   description: `NK Cab & Taxi — Best cab service in Kolkata & East India from ₹12/km. Airport taxi Kolkata | Outstation to Darjeeling, Puri, Ranchi, Bhubaneswar | Local 4hr ₹1,800. AC Innova, Ertiga, Sedan. Rated 4.8/5. No surge 24/7. Call ${BUSINESS.phone}`,
@@ -118,6 +118,35 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const howToBookSchema = generateHowToBookSchema();
   const speakableSchema = generateSpeakableSchema();
 
+  // BreadcrumbList for homepage — signals site hierarchy to Google
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: BUSINESS.domain },
+      { '@type': 'ListItem', position: 2, name: 'Services', item: `${BUSINESS.domain}/services` },
+      { '@type': 'ListItem', position: 3, name: 'Routes', item: `${BUSINESS.domain}/routes` },
+      { '@type': 'ListItem', position: 4, name: 'Fleet', item: `${BUSINESS.domain}/fleet` },
+      { '@type': 'ListItem', position: 5, name: 'Tours', item: `${BUSINESS.domain}/tours` },
+    ],
+  };
+
+  // ItemList of services — eligible for Google\'s "Sitelinks" and rich results
+  const servicesItemList = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'NK Cab & Taxi — Cab Services',
+    description: 'All taxi and cab services offered by NK Cab & Taxi across East India',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Outstation Cab Service', url: `${BUSINESS.domain}/services/outstation` },
+      { '@type': 'ListItem', position: 2, name: 'Airport Transfer Service', url: `${BUSINESS.domain}/services/airport-transfer` },
+      { '@type': 'ListItem', position: 3, name: 'Local Taxi Service', url: `${BUSINESS.domain}/services/local-taxi` },
+      { '@type': 'ListItem', position: 4, name: 'One Way Cab Service', url: `${BUSINESS.domain}/services/one-way` },
+      { '@type': 'ListItem', position: 5, name: 'Wedding Car Rental', url: `${BUSINESS.domain}/services/wedding-car-rental` },
+      { '@type': 'ListItem', position: 6, name: 'Corporate Car Rental', url: `${BUSINESS.domain}/services/corporate-car-rental` },
+    ],
+  };
+
   return (
     <html lang="en-IN" dir="ltr" className={inter.variable} suppressHydrationWarning>
       <head>
@@ -180,6 +209,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 
         
+        {/* Geo meta — critical for 'cab near me Kolkata' Local Pack ranking */}
+        <meta name="geo.region" content="IN-WB" />
+        <meta name="geo.placename" content="Kolkata, West Bengal, India" />
+        <meta name="geo.position" content="22.5726;88.3639" />
+        <meta name="ICBM" content="22.5726, 88.3639" />
+
         {/* GMB Integration — update with your GBP link */}
         <link rel="me" href={BUSINESS.gbpLink} />
         <link rel="author" href={BUSINESS.gbpLink} />
@@ -206,6 +241,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesItemList) }}
         />
       </head>
       <body className={`${inter.variable} ${plusJakarta.variable} ${inter.className} font-sans antialiased`} suppressHydrationWarning>
