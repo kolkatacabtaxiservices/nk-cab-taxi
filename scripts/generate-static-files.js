@@ -22,7 +22,7 @@ const ROOT = path.join(__dirname, '..');
 const BLOGS_PATH = path.join(ROOT, 'src/data/blogs.json');
 const PUBLIC_DIR = path.join(ROOT, 'public');
 
-const DOMAIN = 'https://www.nkcabtaxi.com';
+const DOMAIN = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.nkcabtaxi.com';
 const BUSINESS_NAME = 'NK Cab & Taxi';
 const BUSINESS_EMAIL = 'nkcabtaxi@gmail.com';
 const LAST_BUILD_DATE = 'Wed, 11 Jun 2026 00:00:00 +0000';

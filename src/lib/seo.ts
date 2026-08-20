@@ -124,23 +124,27 @@ export function generateRouteMetadata(
   if (toAlternateNames && toAlternateNames.length > 0) altWords.push(...toAlternateNames);
   const altSuffix = altWords.length > 0 ? ` Also: ${altWords.slice(0, 2).join(', ')}.` : '';
 
-  // 4 structurally different title templates — avoids identical <title> across all route pages
+  // 4 structurally different title templates — avoids identical <title> across all route pages.
+  // POSITIONING: this site is the OUTSTATION / ONE-WAY DROP specialist brand.
+  // Title phrasing is deliberately distinct from generic "cab service" patterns
+  // so search engines see two clearly differentiated sites, not mirrors.
   const titles = [
-    `${fromName} to ${toName} Cab ₹${priceSaloon} | ${distance}km AC Taxi | Book 24/7`,
-    `${fromName} to ${toName} Taxi ₹${priceSaloon} | ${distance}km One Way | NK Cab & Taxi`,
-    `Book ${fromName}→${toName} Cab | Sedan ₹${priceSaloon} SUV ₹${priceSuv} | Rated 4.8`,
-    `${fromName} to ${toName} One Way Cab ₹${priceSaloon} | ${distance}km AC Taxi 24/7`,
+    `${fromName} to ${toName} One-Way Taxi ₹${priceSaloon} | Fixed Drop Fare, No Return Charge`,
+    `${fromName} → ${toName} Outstation Drop Taxi ₹${priceSaloon} | Pay One Side Only`,
+    `${fromName}–${toName} One Way Cab ₹${priceSaloon} | ${distance}km Door-to-Door Drop`,
+    `${fromName} to ${toName} Drop Taxi ₹${priceSaloon} Fixed | Sedan, SUV & Innova | One-Way Specialist`,
   ];
   const title = titles[tv];
 
-  // 6 structurally different description templates — uniquifies meta across route pages
+  // 6 structurally different description templates — uniquifies meta across route pages.
+  // All lead with one-way / drop-trip value props instead of generic cab booking copy.
   const descs = [
-    `Book ${fromName} to ${toName} cab from ₹${priceSaloon}.${altSuffix} ${distance} km. Sedan ₹${priceSaloon} | SUV ₹${priceSuv}. AC, rated 4.8/5, 24/7. Instant WhatsApp confirm. Call ${BUSINESS.phone}`.slice(0, 160),
-    `${fromName} to ${toName} taxi: ${distance} km, Sedan ₹${priceSaloon}, SUV ₹${priceSuv}.${altSuffix} AC cab, verified driver, zero surge. Fixed fare. Book now: ${BUSINESS.phone}`.slice(0, 160),
-    `${distance} km ${fromName}–${toName} cab from ₹${priceSaloon}. One-way & round trip.${altSuffix} AC Sedan, SUV, Innova available. 24/7, no cancellation. Call ${BUSINESS.phone}`.slice(0, 160),
-    `Best fare: ${fromName} to ${toName} cab ₹${priceSaloon} (Sedan), ₹${priceSuv} (SUV).${altSuffix} ${distance} km outstation trip, AC, 24/7 booking. WhatsApp ${BUSINESS.phone}`.slice(0, 160),
-    `${fromName} to ${toName} outstation cab ₹${priceSaloon}.${altSuffix} ${distance} km | Rated 4.8 | Police-verified driver | No surge | Cash/UPI. Book: ${BUSINESS.phone}`.slice(0, 160),
-    `Cheap ${fromName} to ${toName} cab from ₹${priceSaloon}.${altSuffix} ${distance} km drive. Sedan, SUV, Innova Crysta, Tempo Traveller. AC, 24/7 available. Call ${BUSINESS.phone}`.slice(0, 160),
+    `One-way taxi from ${fromName} to ${toName} — ₹${priceSaloon} all-inclusive.${altSuffix} ${distance} km door-to-door drop. Pay one side only, no return fare. AC cab, verified driver. Call ${BUSINESS.phone}`.slice(0, 160),
+    `${fromName} to ${toName} drop service: fixed ₹${priceSaloon} sedan fare.${altSuffix} Fuel + driver included, toll told upfront. No surge at any hour. WhatsApp booking: ${BUSINESS.phone}`.slice(0, 160),
+    `Save 40% vs round trip — book one-way ${fromName}–${toName} cab at ₹${priceSaloon}.${altSuffix} ${distance} km door-to-door. Sedan, SUV, Innova available. Call ${BUSINESS.phone}`.slice(0, 160),
+    `Outstation drop taxi ${fromName} → ${toName} from ₹${priceSaloon}.${altSuffix} Door pickup, highway-experienced driver, GPS-tracked AC cab. Instant confirm: ${BUSINESS.phone}`.slice(0, 160),
+    `${fromName} to ${toName} one-way fare just ₹${priceSaloon} (Sedan) / ₹${priceSuv} (SUV).${altSuffix} No return charge, no night halt fee. 24/7 drops. Book: ${BUSINESS.phone}`.slice(0, 160),
+    `Intercity drop cab ${fromName}–${toName} (${distance} km) at flat ₹${priceSaloon}.${altSuffix} Pay only for the drop — driver returns empty, you don't pay for it. Call ${BUSINESS.phone}`.slice(0, 160),
   ];
   const desc = descs[dv];
 
@@ -149,18 +153,18 @@ export function generateRouteMetadata(
     title,
     description: desc,
     openGraph: {
-      title: `${fromName} to ${toName} Cab ₹${priceSaloon} | ${BUSINESS.name}`,
-      description: `Book ${fromName} to ${toName} cab. ${distance} km, Sedan ₹${priceSaloon}, SUV ₹${priceSuv}. AC, 24/7. No surge. Call ${BUSINESS.phone}`,
+      title: `${fromName} to ${toName} One-Way Taxi ₹${priceSaloon} | ${BUSINESS.name}`,
+      description: `One-way drop cab ${fromName} to ${toName}. ${distance} km, Sedan ₹${priceSaloon}, SUV ₹${priceSuv}. Pay one side only. Call ${BUSINESS.phone}`,
       type: 'website',
       siteName: BUSINESS.name,
       url: `${DOMAIN}/routes/${routeSlug}`,
       locale: 'en_IN',
-      images: [{ url: OG_IMAGE_URL, width: 1200, height: 630, alt: `${fromName} to ${toName} Cab Service - ${BUSINESS.name}` }],
+      images: [{ url: OG_IMAGE_URL, width: 1200, height: 630, alt: `${fromName} to ${toName} One-Way Drop Taxi - ${BUSINESS.name}` }],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${fromName} to ${toName} Cab ₹${priceSaloon} | Taxi 24/7`,
-      description: `Book ${fromName} to ${toName} taxi/cab. ${distance} km. SUV ₹${priceSuv}. AC, 24/7. No surge. Call ${BUSINESS.phone}`,
+      title: `${fromName} to ${toName} One-Way Taxi ₹${priceSaloon} | Drop 24/7`,
+      description: `One-way outstation taxi ${fromName}–${toName}. ${distance} km. Fixed fare, no return charge. Call ${BUSINESS.phone}`,
       images: [OG_IMAGE_URL],
     },
     alternates: { canonical: `${DOMAIN}/routes/${routeSlug}` },
@@ -401,54 +405,55 @@ export function generateCityMetadata(cityName: string, stateName: string): Metad
   };
 
   // 4 type-specific fallback templates — for remaining cities not in the map above
-  // Each template has a different structure/emphasis to avoid identical meta across city types
+  // OUTSTATION/DROP positioning — distinct from generic city-service copy
   function getCityFallbackDesc(slug: string, name: string, rate: string, airRate: string): string {
     const hash = slug.split('').reduce((a, c) => a + c.charCodeAt(0), 0) % 4;
     const templates = [
-      `★4.8 cab service in ${name} from ${rate}. Local taxi, outstation & airport transfer ₹${airRate}. AC Sedan, SUV, Innova. Verified driver. No surge pricing. Book now: ${BUSINESS.phone}`,
-      `Reliable cab in ${name} from ${rate}. One-way & round trip outstation, airport ₹${airRate}, local hourly hire. AC fleet — Dzire, Ertiga, Innova. 24/7 availability. Call ${BUSINESS.phone}`,
-      `Book taxi in ${name} from ${rate}. Outstation, airport drop ₹${airRate}, local sightseeing. AC Sedan, Innova Crysta, Tempo. ★4.8 rated. Instant confirm. WhatsApp ${BUSINESS.phone}`,
-      `${name} cab service from ${rate}. Airport transfer ₹${airRate} | one-way & round trip | local taxi. AC fleet with verified drivers. No hidden charges. Available 24/7. Call ${BUSINESS.phone}`,
+      `One-way drop taxi in ${name} from ${rate}. Intercity & airport drops ₹${airRate}. Pay one side only — driver returns empty, you don't pay. AC Sedan, SUV, Innova. Call ${BUSINESS.phone}`,
+      `Outstation cab service in ${name} from ${rate}. One-way drops, round trips & airport transfer ₹${airRate}. Fixed fare, no surge, no return charge. 24/7. Call ${BUSINESS.phone}`,
+      `Book intercity drop taxi in ${name} from ${rate}. Door pickup, highway-experienced drivers, GPS-tracked AC cabs. Airport ₹${airRate}. Instant WhatsApp confirm: ${BUSINESS.phone}`,
+      `${name} one-way taxi from ${rate}. Drop to any city — fuel & driver included, toll told upfront. No night halt fee, no hidden charges. Available 24/7. Call ${BUSINESS.phone}`,
     ];
     return templates[hash];
   }
 
   const desc = cityDescs[citySlug] || getCityFallbackDesc(citySlug, cityName, baseRate, airportRate);
 
-  // City-specific titles — hub cities get unique keyword-rich titles, others get type-specific variants
+  // City-specific titles — OUTSTATION/DROP positioning to differentiate this brand
+  // from generic "Cab Service in {city}" patterns used by other regional sites.
   const cityTitles: Record<string, string> = {
-    'kolkata':             `Cab Service in Kolkata ₹12/km | Kolkata Taxi Booking | ★4.8 24/7`,
-    'ranchi':              `Cab Service in Ranchi ₹12/km | Ranchi Taxi Booking | ★4.8 24/7`,
-    'jamshedpur':          `Cab Service in Jamshedpur ₹12/km | Jamshedpur Taxi | ★4.8 24/7`,
-    'bhubaneswar':         `Cab Service in Bhubaneswar ₹12/km | Airport Taxi | ★4.8 24/7`,
-    'siliguri':            `Cab Service in Siliguri ₹12/km | Bagdogra Airport Cab | ★4.8`,
-    'darjeeling':          `Cab Service in Darjeeling ₹12/km | Hill Station Taxi | ★4.8 24/7`,
-    'dhanbad':             `Cab Service in Dhanbad ₹12/km | Dhanbad Taxi Booking | ★4.8`,
-    'puri':                `Cab Service in Puri ₹12/km | Jagannath Temple Taxi | ★4.8`,
-    'deoghar':             `Cab Service in Deoghar ₹12/km | Baidyanath Dham Taxi | ★4.8`,
-    'bokaro':              `Cab Service in Bokaro ₹12/km | Bokaro Taxi Booking | ★4.8`,
-    'durgapur':            `Cab Service in Durgapur ₹12/km | Durgapur Taxi | Book Online ★4.8`,
-    'asansol':             `Cab Service in Asansol ₹12/km | Asansol Taxi Booking | ★4.8`,
-    'howrah':              `Cab Service in Howrah ₹12/km | Howrah Station Taxi | ★4.8 24/7`,
-    'cuttack':             `Cab Service in Cuttack ₹12/km | Cuttack Taxi | Bhubaneswar Route ★4.8`,
-    'rourkela':            `Cab Service in Rourkela ₹12/km | Rourkela Taxi Booking | ★4.8`,
-    'patna':               `Cab Service in Patna ₹14/km | Patna Taxi Booking | ★4.8 24/7`,
-    'varanasi':            `Cab Service in Varanasi ₹14/km | Kashi Temple Taxi | ★4.8 24/7`,
-    'prayagraj':           `Cab Service in Prayagraj ₹14/km | Kumbh Mela Taxi | ★4.8`,
-    'gaya':                `Cab Service in Gaya ₹14/km | Bodh Gaya Taxi | Airport Transfer ★4.8`,
-    'bodh-gaya':           `Cab Service in Bodh Gaya ₹14/km | Buddhist Circuit Taxi | ★4.8`,
-    'hazaribagh':          `Cab Service in Hazaribagh ₹12/km | Hazaribagh Taxi | Ranchi Route ★4.8`,
-    'haldia':              `Cab Service in Haldia ₹12/km | Haldia Port Taxi | Kolkata Route ★4.8`,
-    'konark':              `Cab Service in Konark ₹12/km | Sun Temple Taxi | Puri–Bhubaneswar ★4.8`,
+    'kolkata':             `Outstation Cab from Kolkata ₹12/km | One-Way Drop Taxi 24/7`,
+    'ranchi':              `Outstation Cab from Ranchi ₹12/km | One-Way Drop & Airport Taxi`,
+    'jamshedpur':          `Jamshedpur Outstation Taxi ₹12/km | One-Way Drop, Tatanagar Pickup`,
+    'bhubaneswar':         `Bhubaneswar Outstation Cab ₹12/km | Puri-Konark Drop Taxi`,
+    'siliguri':            `Siliguri Drop Taxi ₹12/km | Bagdogra Pickup, Hill Route Drops`,
+    'darjeeling':          `Darjeeling Taxi Drop ₹12/km | Hill-Route Specialist Driver`,
+    'dhanbad':             `Dhanbad Outstation Drop Taxi ₹12/km | Coal-Belt Route Expert`,
+    'puri':                `Puri Drop Taxi ₹12/km | Jagannath Temple Route, Konark Trip`,
+    'deoghar':             `Deoghar One-Way Taxi ₹12/km | Jasidih Station & Temple Drop`,
+    'bokaro':              `Bokaro Outstation Cab ₹12/km | Steel City One-Way Drop`,
+    'durgapur':            `Durgapur Drop Taxi ₹12/km | Industrial Belt Intercity Drop`,
+    'asansol':             `Asansol One-Way Taxi ₹12/km | Coalfield Corridor Drop Service`,
+    'howrah':              `Howrah Station Drop Taxi ₹12/km | One-Way Intercity Cab`,
+    'cuttack':             `Cuttack Outstation Taxi ₹12/km | Silver City One-Way Drop`,
+    'rourkela':            `Rourkela Drop Cab ₹12/km | RSP Town One-Way Outstation Taxi`,
+    'patna':               `Patna Outstation Taxi ₹14/km | One-Way Drop, Gandhi Maidan Pickup`,
+    'varanasi':            `Varanasi Drop Taxi ₹14/km | Ghats Pickup, Kashi Route Drop`,
+    'prayagraj':           `Prayagraj One-Way Cab ₹14/km | Sangam Pickup, Kumbh Route Drop`,
+    'gaya':                `Gaya Outstation Taxi ₹14/km | Airport & Vishnupad Drop Service`,
+    'bodh-gaya':           `Bodh Gaya Drop Taxi ₹14/km | Buddhist Circuit One-Way Drop`,
+    'hazaribagh':          `Hazaribagh One-Way Taxi ₹12/km | Ranchi-Dhanbad Corridor Drop`,
+    'haldia':              `Haldia Port Drop Taxi ₹12/km | Industrial Zone One-Way Cab`,
+    'konark':              `Konark Sun Temple Drop Taxi ₹12/km | Coastal Route One-Way`,
   };
-  // 4 title variants for cities not in the map — different structures avoid identical <title>
+  // 4 title variants for cities not in the map — outstation/drop positioning
   function getCityFallbackTitle(slug: string, name: string, rate: string): string {
     const hash = slug.split('').reduce((a, c) => a + c.charCodeAt(0), 0) % 4;
     const variants = [
-      `Cab Service in ${name} ${rate} | ★4.8 Taxi & Car Rental 24/7`,
-      `${name} Cab Service ${rate} | Taxi Booking | ★4.8 Rated`,
-      `Book Cab in ${name} ${rate} | One Way & Outstation Taxi | ★4.8`,
-      `${name} Taxi Service ${rate} | AC Cab, Airport Transfer | ★4.8 24/7`,
+      `${name} Outstation Cab ${rate} | One-Way & Round Trip Drop Taxi`,
+      `${name} One-Way Drop Taxi ${rate} | Pay One Side Only | ★4.8`,
+      `Book Outstation Taxi in ${name} ${rate} | Intercity & Airport Drop`,
+      `${name} Drop Taxi Service ${rate} | One-Way Specialist, 24/7`,
     ];
     return variants[hash];
   }

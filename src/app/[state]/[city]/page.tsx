@@ -131,9 +131,9 @@ export default async function CityPage({ params }: { params: Promise<{ state: st
           ]} />
           <h1 className="text-3xl md:text-4xl font-extrabold mt-4 mb-3">
             {city.slug === 'kolkata' ? (
-              <>Taxi Service in <span className="text-gradient">Kolkata</span> — Reserve {prices.displayRate} | Airport, Outstation and City Runs 24/7</>
+              <>Outstation Cab from <span className="text-gradient">Kolkata</span> {prices.displayRate} | One-Way Drop, Airport & Intercity Taxi 24/7</>
             ) : (
-              <>Taxi Service in <span className="text-gradient">{city.name}</span> {prices.displayRate} | {city.name} Cabs Run 24/7</>
+              <>Outstation Taxi in <span className="text-gradient">{city.name}</span> {prices.displayRate} | One-Way Drop & Round Trip Cabs</>
             )}
           </h1>
           {city.alternateNames && city.alternateNames.length > 0 && (

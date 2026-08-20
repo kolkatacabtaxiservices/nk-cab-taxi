@@ -1,4 +1,4 @@
-/**
+﻿/**
  * IndexNow Batch Submission Script
  * Submits all URLs to Bing/Yandex IndexNow API for instant crawl signaling.
  * 
@@ -8,11 +8,11 @@
  * Bing, Yandex, Seznam, and Naver support IndexNow natively.
  */
 
-const DOMAIN = 'https://www.nkcabtaxi.com';
+const DOMAIN = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.nkcabtaxi.com';
 const INDEXNOW_KEY = 'f63a562479e04845a7090b84784a9e52';
 const INDEXNOW_ENDPOINT = 'https://api.indexnow.org/IndexNow';
 
-// All URLs that need indexing — focus on "Discovered - currently not indexed" pages
+// All URLs that need indexing â€” focus on "Discovered - currently not indexed" pages
 const urls = [
   // Blog pages
   `${DOMAIN}/blog`,
@@ -34,7 +34,7 @@ const urls = [
   `${DOMAIN}/bihar`,
   `${DOMAIN}/uttar-pradesh`,
 
-  // City pages — West Bengal (ALL major cities)
+  // City pages â€” West Bengal (ALL major cities)
   `${DOMAIN}/west-bengal/kolkata`,
   `${DOMAIN}/west-bengal/howrah`,
   `${DOMAIN}/west-bengal/siliguri`,
@@ -61,7 +61,7 @@ const urls = [
   `${DOMAIN}/west-bengal/new-town-kolkata`,
   `${DOMAIN}/west-bengal/salt-lake-kolkata`,
 
-  // City pages — Jharkhand
+  // City pages â€” Jharkhand
   `${DOMAIN}/jharkhand/ranchi`,
   `${DOMAIN}/jharkhand/jamshedpur`,
   `${DOMAIN}/jharkhand/dhanbad`,
@@ -71,7 +71,7 @@ const urls = [
   `${DOMAIN}/jharkhand/giridih`,
   `${DOMAIN}/jharkhand/dumka`,
 
-  // City pages — Odisha (ALL)
+  // City pages â€” Odisha (ALL)
   `${DOMAIN}/odisha/bhubaneswar`,
   `${DOMAIN}/odisha/puri`,
   `${DOMAIN}/odisha/cuttack`,
@@ -83,13 +83,13 @@ const urls = [
   `${DOMAIN}/odisha/baripada`,
   `${DOMAIN}/odisha/paradip`,
 
-  // City pages — Bihar
+  // City pages â€” Bihar
   `${DOMAIN}/bihar/patna`,
   `${DOMAIN}/bihar/gaya`,
   `${DOMAIN}/bihar/bodh-gaya`,
   `${DOMAIN}/bihar/muzaffarpur`,
 
-  // City pages — Uttar Pradesh
+  // City pages â€” Uttar Pradesh
   `${DOMAIN}/uttar-pradesh/varanasi`,
   `${DOMAIN}/uttar-pradesh/prayagraj`,
   `${DOMAIN}/uttar-pradesh/agra`,
@@ -104,7 +104,7 @@ const urls = [
   `${DOMAIN}/services/one-way`,
   `${DOMAIN}/services/wedding-car-rental`,
 
-  // Route pages — Kolkata to all destinations
+  // Route pages â€” Kolkata to all destinations
   `${DOMAIN}/routes/kolkata-to-balasore`,
   `${DOMAIN}/routes/kolkata-to-bhubaneswar`,
   `${DOMAIN}/routes/kolkata-to-darjeeling`,
@@ -129,13 +129,13 @@ const urls = [
   `${DOMAIN}/routes/kolkata-to-asansol`,
   `${DOMAIN}/routes/kolkata-to-bolpur-shantiniketan`,
 
-  // Route pages — Balasore routes (specifically not indexed)
+  // Route pages â€” Balasore routes (specifically not indexed)
   `${DOMAIN}/routes/balasore-to-kolkata`,
   `${DOMAIN}/routes/balasore-to-bhubaneswar`,
   `${DOMAIN}/routes/balasore-to-cuttack`,
   `${DOMAIN}/routes/balasore-to-puri`,
 
-  // Route pages — all major return routes
+  // Route pages â€” all major return routes
   `${DOMAIN}/routes/asansol-to-bhubaneswar`,
   `${DOMAIN}/routes/asansol-to-kolkata`,
   `${DOMAIN}/routes/asansol-to-ranchi`,
@@ -223,13 +223,13 @@ const urls = [
 ];
 
 async function submitToIndexNow() {
-  console.log(`\n🚀 IndexNow Batch Submission`);
-  console.log(`📊 Total URLs: ${urls.length}`);
-  console.log(`🔑 Key: ${INDEXNOW_KEY}`);
-  console.log(`🌐 Host: www.nkcabtaxi.com\n`);
+  console.log(`\nðŸš€ IndexNow Batch Submission`);
+  console.log(`ðŸ“Š Total URLs: ${urls.length}`);
+  console.log(`ðŸ”‘ Key: ${INDEXNOW_KEY}`);
+  console.log(`Host: ${new URL(DOMAIN).hostname}\n`);
 
   const payload = {
-    host: 'www.nkcabtaxi.com',
+    host: new URL(DOMAIN).hostname,
     key: INDEXNOW_KEY,
     keyLocation: `${DOMAIN}/${INDEXNOW_KEY}.txt`,
     urlList: urls,
@@ -242,18 +242,18 @@ async function submitToIndexNow() {
       body: JSON.stringify(payload),
     });
 
-    console.log(`📡 Response Status: ${response.status} ${response.statusText}`);
+    console.log(`ðŸ“¡ Response Status: ${response.status} ${response.statusText}`);
     
     if (response.status === 200 || response.status === 202) {
-      console.log(`✅ SUCCESS! All ${urls.length} URLs submitted to IndexNow.`);
-      console.log(`📋 Search engines notified: Bing, Yandex, Seznam, Naver`);
-      console.log(`⏰ Crawlers will visit these URLs within hours to days.\n`);
+      console.log(`âœ… SUCCESS! All ${urls.length} URLs submitted to IndexNow.`);
+      console.log(`ðŸ“‹ Search engines notified: Bing, Yandex, Seznam, Naver`);
+      console.log(`â° Crawlers will visit these URLs within hours to days.\n`);
     } else {
       const body = await response.text();
-      console.log(`⚠️ Response body: ${body}`);
+      console.log(`âš ï¸ Response body: ${body}`);
     }
   } catch (error) {
-    console.error(`❌ Error submitting to IndexNow:`, error);
+    console.error(`âŒ Error submitting to IndexNow:`, error);
   }
 }
 

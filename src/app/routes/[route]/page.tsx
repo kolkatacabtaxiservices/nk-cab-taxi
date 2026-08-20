@@ -141,7 +141,7 @@ export default async function RoutePage({ params }: { params: Promise<{ route: s
             { name: `${route.fromName} to ${route.toName}`, href: `/routes/${route.slug}` },
           ]} />
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold mt-4 mb-4">
-            {route.fromName} to {route.toName} <span className="text-gradient">Cab Fare ₹{route.priceSaloon}</span> — Reserve Round the Clock
+            {route.fromName} to {route.toName} <span className="text-gradient">One-Way Taxi Fare ₹{route.priceSaloon}</span> — Fixed Price Drop Service
           </h1>
           {((fromCity?.alternateNames && fromCity.alternateNames.length > 0) || (toCity?.alternateNames && toCity.alternateNames.length > 0)) && (
             <p className="text-xs text-gray-300 font-medium mb-3 italic">

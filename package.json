@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "eslint",
     "build:cf": "node scripts/split-routes-by-city.js && node scripts/generate-static-sitemaps.js && node scripts/generate-static-files.js && next build && node scripts/cleanup-out.js",
-    "deploy": "wrangler pages deploy out --project-name=kolkata-cab-service --commit-dirty=true"
+    "deploy": "wrangler pages deploy out --project-name=nk-cab-taxi --branch=main --commit-dirty=true"
   },
   "dependencies": {
     "framer-motion": "^12.38.0",

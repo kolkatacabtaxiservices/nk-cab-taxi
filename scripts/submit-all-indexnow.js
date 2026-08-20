@@ -3,7 +3,7 @@
  * Submits key URLs to IndexNow (Bing, Yandex).
  * Run after deploy: node scripts/submit-all-indexnow.js
  */
-const DOMAIN = 'https://www.nkcabtaxi.com';
+const DOMAIN = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.nkcabtaxi.com';
 const INDEXNOW_KEY = 'f63a562479e04845a7090b84784a9e52';
 const INDEXNOW_ENDPOINT = 'https://api.indexnow.org/IndexNow';
 const CORE_PAGES = [
@@ -26,7 +26,7 @@ const CORE_PAGES = [
 ];
 async function main() {
   console.log(`Submitting ${CORE_PAGES.length} URLs to IndexNow...`);
-  const payload = { host: 'www.nkcabtaxi.com', key: INDEXNOW_KEY, keyLocation: `${DOMAIN}/.txt`, urlList: CORE_PAGES };
+  const payload = { host: new URL(DOMAIN).hostname, key: INDEXNOW_KEY, keyLocation: `${DOMAIN}/.txt`, urlList: CORE_PAGES };
   const response = await fetch(INDEXNOW_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json; charset=utf-8' }, body: JSON.stringify(payload) });
   console.log(`Response: ${response.status}`);
   if (response.status === 200 || response.status === 202) console.log(`SUCCESS! ${CORE_PAGES.length} URLs submitted.`);

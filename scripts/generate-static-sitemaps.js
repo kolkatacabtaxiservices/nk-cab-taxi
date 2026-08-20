@@ -9,15 +9,18 @@
 const fs = require('fs');
 const path = require('path');
 
-const DOMAIN = 'https://www.nkcabtaxi.com';
+const DOMAIN = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.nkcabtaxi.com';
 const LAST_MODIFIED = new Date().toISOString().split('T')[0] + 'T00:00:00.000Z';
 const publicDir = path.join(__dirname, '../public');
 const sitemapDir = path.join(publicDir, 'sitemap');
 
-// Ensure directories exist
-if (!fs.existsSync(sitemapDir)) {
-  fs.mkdirSync(sitemapDir, { recursive: true });
+// Ensure directory exists and is clean — stale chunks from previous builds
+// (e.g. old 13,808-route era files) would otherwise linger and get listed in
+// the sitemap index, pointing Google at thousands of removed thin pages.
+if (fs.existsSync(sitemapDir)) {
+  fs.rmSync(sitemapDir, { recursive: true, force: true });
 }
+fs.mkdirSync(sitemapDir, { recursive: true });
 
 // ─── 1. Load raw data files ───
 const citiesData = JSON.parse(fs.readFileSync(path.join(__dirname, '../src/data/cities.json'), 'utf8'));
