@@ -45,10 +45,7 @@ export const revalidate = false;
 export const metadata: Metadata = {
   ...generateHomePageMetadata(),
   other: {
-    'geo.region': 'IN-WB',
-    'geo.placename': 'Kolkata',
-    'geo.position': '22.5726;88.3639',
-    'ICBM': '22.5726, 88.3639',
+    // geo meta already injected globally via layout.tsx <head> — no duplication needed here
     'format-detection': 'telephone=yes',
     'thumbnail': `${BUSINESS.domain}/navbanner.webp`,
   },
