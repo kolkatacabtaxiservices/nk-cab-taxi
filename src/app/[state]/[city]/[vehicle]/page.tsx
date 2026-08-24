@@ -183,13 +183,6 @@ export default async function CityVehiclePage({
       },
       seller: { '@type': 'Organization', name: 'NK Cab & Taxi', telephone: BUSINESS.phone, url: BUSINESS.domain },
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '5000',
-      bestRating: '5',
-      worstRating: '1',
-    },
   };
 
   return (

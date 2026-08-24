@@ -1170,38 +1170,6 @@ export function generateLocalBusinessSchema() {
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Corporate Car Rental in Kolkata' } },
       ],
     },
-    // aggregateRating on LocalBusiness — enables star snippet in Google search results
-    // IMPORTANT: reviewCount must match actual GBP reviews to avoid manual action
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '2847',
-      bestRating: '5',
-      worstRating: '1',
-    },
-    review: [
-      {
-        '@type': 'Review',
-        author: { '@type': 'Person', name: 'Rahul Sharma', sameAs: BUSINESS.gbpLink },
-        datePublished: '2026-04-15',
-        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5', worstRating: '1' },
-        reviewBody: 'Best cab service in Kolkata. Driver was on time, vehicle was AC and clean. Kolkata to Jamshedpur trip was very comfortable. Highly recommended!',
-      },
-      {
-        '@type': 'Review',
-        author: { '@type': 'Person', name: 'Priya Banerjee' },
-        datePublished: '2026-03-22',
-        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5', worstRating: '1' },
-        reviewBody: 'Booked innova cab from Kolkata airport. Driver was waiting with name board. No surge pricing, transparent fare. Will book again!',
-      },
-      {
-        '@type': 'Review',
-        author: { '@type': 'Person', name: 'Amit Das' },
-        datePublished: '2026-02-10',
-        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5', worstRating: '1' },
-        reviewBody: 'Used for Kolkata to Digha outstation trip. Driver was professional, car was well-maintained. Fare was exactly as quoted. No hidden charges.',
-      },
-    ],
   };
 }
 
@@ -1322,29 +1290,6 @@ export function generateRouteSchema(
       '@type': 'Brand',
       name: BUSINESS.name,
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '2847',
-      bestRating: '5',
-      worstRating: '1',
-    },
-    review: [
-      {
-        '@type': 'Review',
-        author: { '@type': 'Person', name: 'Sourav Ghosh' },
-        datePublished: '2026-05-12',
-        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5', worstRating: '1' },
-        reviewBody: `Booked ${fromName} to ${toName} cab. Driver was on time, car was clean AC. Fixed fare, no surprise charges at end. Will use again.`,
-      },
-      {
-        '@type': 'Review',
-        author: { '@type': 'Person', name: 'Anita Mukherjee' },
-        datePublished: '2026-04-03',
-        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5', worstRating: '1' },
-        reviewBody: `Best ${fromName} to ${toName} cab service. Very professional driver, comfortable SUV. Fare was exactly as quoted on WhatsApp.`,
-      },
-    ],
     offers: [
       {
         '@type': 'Offer',
@@ -1759,54 +1704,7 @@ export function generateToursItemListSchema(tours: { name: string; slug: string;
   };
 }
 
-export function generateReviewSchema(reviews: { name: string; location: string; rating: number; text: string }[]) {
-  // Use varied realistic dates so Google doesn't flag as fake
-  const reviewDates = [
-    '2025-03-12', '2025-06-20', '2025-09-05', '2025-11-18', '2026-01-10',
-    '2026-02-14', '2026-03-01', '2026-03-22', '2026-04-05', '2026-04-15',
-    '2025-04-30', '2025-08-14',
-  ];
-  // Reference the SAME @id as the global LocalBusiness to avoid duplicate entities.
-  // aggregateRating is already on the global LocalBusiness schema (layout.tsx).
-  // This schema only adds the individual review items.
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': `${DOMAIN}/#business`,
-    name: BUSINESS.name,
-    url: DOMAIN,
-    telephone: BUSINESS.phone,
-    image: OG_IMAGE_URL,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Park Street Area',
-      addressLocality: 'Kolkata',
-      addressRegion: 'West Bengal',
-      addressCountry: 'IN',
-      postalCode: '700001',
-    },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '2847',
-      bestRating: '5',
-      worstRating: '1',
-    },
-    review: reviews.map((r, i) => ({
-      '@type': 'Review',
-      author: { '@type': 'Person', name: r.name },
-      publisher: { '@type': 'Organization', name: BUSINESS.name },
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: String(r.rating),
-        bestRating: '5',
-        worstRating: '1',
-      },
-      reviewBody: r.text,
-      datePublished: reviewDates[i % reviewDates.length],
-    })),
-  };
-}
+
 
 export function generatePopularRoutesItemListSchema(routes: { fromName: string; toName: string; slug: string; priceSaloon: number; distance: number }[]) {
   return {
@@ -1998,12 +1896,6 @@ export function generateVehicleRentalSchema(
         telephone: BUSINESS.phone,
         url: DOMAIN,
       },
-    },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '5000',
-      bestRating: '5',
     },
   };
 }
@@ -2551,8 +2443,6 @@ export function getBookingWhatsAppLink(from: string, to: string, date?: string, 
 // ═══════════════════════════════════════════════════
 
 export function generateCityGeoCircleSchema(cityName: string, stateName: string, lat: number, lng: number, alternateNames?: string[]) {
-  const ratingValue = '4.9';
-  const reviewCount = String(Math.floor(12403 + (cityName.length % 7) * 512));
   return {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
@@ -2561,13 +2451,6 @@ export function generateCityGeoCircleSchema(cityName: string, stateName: string,
     url: DOMAIN,
     telephone: BUSINESS.phone,
     image: OG_IMAGE_URL,
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue,
-      reviewCount,
-      bestRating: '5',
-      worstRating: '1',
-    },
     provider: { '@type': 'LocalBusiness', '@id': `${DOMAIN}/#business`, name: BUSINESS.name },
     ...(alternateNames && alternateNames.length > 0 ? { alternateName: alternateNames } : {}),
     areaServed: [
