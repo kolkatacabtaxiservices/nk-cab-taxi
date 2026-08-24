@@ -2022,11 +2022,11 @@ export function generateServiceAreaSchema() {
     image: OG_IMAGE_URL,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Park Street Area',
+      streetAddress: 'Salt Lake Sector V Area',
       addressLocality: 'Kolkata',
       addressRegion: 'West Bengal',
       addressCountry: 'IN',
-      postalCode: '700001',
+      postalCode: '700091',
     },
     areaServed: [
       {

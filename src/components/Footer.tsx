@@ -128,7 +128,7 @@ export default async function Footer() {
                 <div className="w-8 h-8 bg-[#FF6B00]/15 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
                   <MapPin size={14} className="text-[#FF6B00]" />
                 </div>
-                <span>Park Street Area, Kolkata<br />West Bengal — 700001</span>
+                <span>Salt Lake Sector V Area, Kolkata<br />West Bengal — 700091</span>
               </div>
               <div className="flex items-center gap-3 text-gray-400 text-sm">
                 <div className="w-8 h-8 bg-[#FF6B00]/15 rounded-lg flex items-center justify-center shrink-0">

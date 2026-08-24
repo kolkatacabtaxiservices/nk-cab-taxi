@@ -853,8 +853,8 @@ export default async function HomePage() {
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   <div className="space-y-1.5">
                     <p className="font-bold text-white">NK Cab & Taxi</p>
-                    <p className="text-gray-400">Park Street Area, Kolkata</p>
-                    <p className="text-gray-400">West Bengal, India — 700001</p>
+                    <p className="text-gray-400">Salt Lake Sector V Area, Kolkata</p>
+                    <p className="text-gray-400">West Bengal, India — 700091</p>
                   </div>
                   <div className="space-y-1.5">
                     <p><a href={`tel:${BUSINESS.phone}`} className="text-[#FF6B00] font-bold hover:underline">{BUSINESS.phone}</a></p>

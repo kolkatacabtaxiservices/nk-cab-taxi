@@ -92,7 +92,7 @@ function doPost(e) {
         "",
         "📊 View all bookings: " + SpreadsheetApp.getActiveSpreadsheet().getUrl(),
         "",
-        "— NK Cab & Taxi | nkcabtaxi.com | +916204811752"
+        "— NK Cab & Taxi | nkcabtaxi.com | +919883619471"
       ].join("\n");
       
       MailApp.sendEmail(NOTIFICATION_EMAIL, subject, body);

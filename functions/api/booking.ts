@@ -198,7 +198,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
       if (err instanceof Error && err.name === 'AbortError') {
         console.error('Google Script timed out after 25s');
         return Response.json(
-          { success: false, error: 'Request timed out. Please call us at +916204811752.' },
+          { success: false, error: 'Request timed out. Please call us at +919883619471.' },
           { status: 504 }
         );
       }
