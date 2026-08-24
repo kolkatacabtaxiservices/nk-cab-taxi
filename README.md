@@ -5,7 +5,7 @@
 **Trusted Cab & Taxi Service across Kolkata, Ranchi, Bhubaneswar & East India**
 
 [![Live Website](https://img.shields.io/badge/Live%20Site-nkcabtaxi.com-FF6B00?style=for-the-badge&logo=googlechrome&logoColor=white)](https://www.nkcabtaxi.com)
-[![Book Now](https://img.shields.io/badge/Book%20Now-+91%206204811752-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/916204811752)
+[![Book Now](https://img.shields.io/badge/Book%20Now-+91%209883619471-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/919883619471)
 [![Google Rating](https://img.shields.io/badge/Google%20Rating-⭐%204.8%2F5-F5A623?style=for-the-badge)](https://www.nkcabtaxi.com)
 [![Built with Next.js](https://img.shields.io/badge/Next.js-15-000000?style=for-the-badge&logo=next.js)](https://nextjs.org)
 [![Deployed on Cloudflare](https://img.shields.io/badge/Cloudflare-Pages-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)](https://pages.cloudflare.com)
@@ -19,8 +19,8 @@
 **NK Cab & Taxi** is East India's most trusted cab service operating since **2019**, serving **80+ cities** across **5 states** — West Bengal, Jharkhand, Odisha, Bihar, and Uttar Pradesh.
 
 - 📍 **Primary Hub:** Kolkata, West Bengal, India
-- ☎️ **24/7 Booking:** [+91 6204811752](tel:+916204811752)
-- 💬 **WhatsApp:** [wa.me/916204811752](https://wa.me/916204811752)
+- ☎️ **24/7 Booking:** [+91 9883619471](tel:+919883619471)
+- 💬 **WhatsApp:** [wa.me/919883619471](https://wa.me/919883619471)
 - 📧 **Email:** [nkcabtaxi@gmail.com](mailto:nkcabtaxi@gmail.com)
 - 🌐 **Website:** [www.nkcabtaxi.com](https://www.nkcabtaxi.com)
 - ⭐ **Rating:** 4.8/5 (5,000+ customers)
@@ -285,8 +285,8 @@ nk-cab-taxi/
 
 | Channel | Details |
 |---------|---------|
-| 📞 Phone | [+91 6204811752](tel:+916204811752) |
-| 💬 WhatsApp | [Chat with us](https://wa.me/916204811752?text=Hi!%20I%20need%20a%20cab%20booking.) |
+| 📞 Phone | [+91 9883619471](tel:+919883619471) |
+| 💬 WhatsApp | [Chat with us](https://wa.me/919883619471?text=Hi!%20I%20need%20a%20cab%20booking.) |
 | 📧 Email | [nkcabtaxi@gmail.com](mailto:nkcabtaxi@gmail.com) |
 | 🌐 Website | [www.nkcabtaxi.com](https://www.nkcabtaxi.com) |
 | ⭐ Google Review | [Leave a review](https://g.page/r/nkcabtaxi/review) |
@@ -319,6 +319,6 @@ This source code is proprietary. The website content, brand assets, and business
 
 **⭐ If this helps you, consider [leaving a Google Review](https://g.page/r/nkcabtaxi/review) — it helps our small business grow!**
 
-[🌐 Website](https://www.nkcabtaxi.com) · [📞 Call](tel:+916204811752) · [💬 WhatsApp](https://wa.me/916204811752) · [📧 Email](mailto:nkcabtaxi@gmail.com)
+[🌐 Website](https://www.nkcabtaxi.com) · [📞 Call](tel:+919883619471) · [💬 WhatsApp](https://wa.me/919883619471) · [📧 Email](mailto:nkcabtaxi@gmail.com)
 
 </div>
