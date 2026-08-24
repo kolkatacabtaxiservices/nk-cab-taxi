@@ -10,6 +10,16 @@
  */
 import { Route } from './data';
 
+/**
+ * Duplicate-content consolidation: these two routes have dedicated, hand-built
+ * landing pages (/kolkata-to-jamshedpur-cab and /jamshedpur-to-kolkata-cab)
+ * which are canonical. The /routes/<slug> variants 301-redirect via
+ * public/_redirects, so NO static pages are generated for them — on Cloudflare
+ * Pages a built asset takes precedence over _redirects, so the duplicate page
+ * must not exist for the redirect to fire.
+ */
+const EXCLUDED_ROUTE_SLUGS = new Set(['kolkata-to-jamshedpur', 'jamshedpur-to-kolkata']);
+
 function loadAllSync(): Route[] {
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   const wb = require('@/data/routes-west-bengal.json') as Route[];
@@ -65,7 +75,7 @@ export function getAllRouteSlugs(): string[] {
   const result: string[] = [];
 
   function addSlug(slug: string) {
-    if (!seen.has(slug) && result.length < MAX_ROUTES) {
+    if (!seen.has(slug) && !EXCLUDED_ROUTE_SLUGS.has(slug) && result.length < MAX_ROUTES) {
       seen.add(slug);
       result.push(slug);
     }
@@ -175,7 +185,7 @@ export function getStaticVehicleRouteSlugs(limit = 1400): string[] {
 
   for (const r of hubFromRoutes) {
     if (result.length >= limit) break;
-    if (!seen.has(r.slug)) {
+    if (!seen.has(r.slug) && !EXCLUDED_ROUTE_SLUGS.has(r.slug)) {
       seen.add(r.slug);
       result.push(r.slug);
     }
