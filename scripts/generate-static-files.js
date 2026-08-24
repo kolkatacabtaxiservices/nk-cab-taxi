@@ -199,6 +199,7 @@ Allow: /
 User-agent: DuckAssistBot
 Allow: /
 
+# Primary sitemap index — Googlebot fetches this first
 Sitemap: ${DOMAIN}/sitemap_index.xml
 Sitemap: ${DOMAIN}/sitemap.xml
 `;
