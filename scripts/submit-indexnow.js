@@ -245,15 +245,15 @@ async function submitToIndexNow() {
     console.log(`ðŸ“¡ Response Status: ${response.status} ${response.statusText}`);
     
     if (response.status === 200 || response.status === 202) {
-      console.log(`âœ… SUCCESS! All ${urls.length} URLs submitted to IndexNow.`);
+      console.log(`SUCCESS! All ${urls.length} URLs submitted to IndexNow.`);
       console.log(`ðŸ“‹ Search engines notified: Bing, Yandex, Seznam, Naver`);
-      console.log(`â° Crawlers will visit these URLs within hours to days.\n`);
+      console.log(`Crawlers will visit these URLs within hours to days.\n`);
     } else {
       const body = await response.text();
-      console.log(`âš ï¸ Response body: ${body}`);
+      console.log(`Response body: ${body}`);
     }
   } catch (error) {
-    console.error(`âŒ Error submitting to IndexNow:`, error);
+    console.error(`Error submitting to IndexNow:`, error);
   }
 }
 
