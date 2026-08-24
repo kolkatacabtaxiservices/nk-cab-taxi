@@ -86,6 +86,11 @@ function generateRobotsTxt() {
   const robotsTxt = `User-agent: *
 Allow: /
 Disallow: /api/
+# Allow JS/CSS chunks — Googlebot needs them for rendering, CWV and
+# mobile-usability evaluation. Blocking all of /_next/ degrades page
+# experience signals. Only /_next/data/ (RSC payloads, unused in static
+# export) and non-static /_next/ paths stay disallowed.
+Allow: /_next/static/
 Disallow: /_next/
 # Block car-type query parameter variants — these caused 13,103 GSC redirect errors
 # ?car=sedan/suv/tempo/luxury are internal UI filters, NOT indexable pages
