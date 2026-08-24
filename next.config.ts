@@ -168,6 +168,28 @@ const nextConfig: NextConfig = {
         destination: "/:state/:city/round-trip",
         permanent: true,
       },
+      // Duplicate route pages → dedicated hand-built landing pages (canonical).
+      // Production parity lives in public/_redirects (Cloudflare CDN).
+      {
+        source: "/routes/kolkata-to-jamshedpur",
+        destination: "/kolkata-to-jamshedpur-cab",
+        permanent: true,
+      },
+      {
+        source: "/routes/kolkata-to-jamshedpur/:path*",
+        destination: "/kolkata-to-jamshedpur-cab",
+        permanent: true,
+      },
+      {
+        source: "/routes/jamshedpur-to-kolkata",
+        destination: "/jamshedpur-to-kolkata-cab",
+        permanent: true,
+      },
+      {
+        source: "/routes/jamshedpur-to-kolkata/:path*",
+        destination: "/jamshedpur-to-kolkata-cab",
+        permanent: true,
+      },
       // Delhi-NCR, Uttarakhand, MP remain redirected (no content yet)
       { source: "/delhi-ncr", destination: "/", permanent: true },
       { source: "/delhi-ncr/:path*", destination: "/", permanent: true },

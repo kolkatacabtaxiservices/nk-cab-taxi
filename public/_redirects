@@ -20,6 +20,16 @@
 /route/* /routes/:splat 301
 /service/* /services/:splat 301
 
+# ── Fix: Duplicate route pages → dedicated hand-built landing pages ───────────
+# /routes/<slug> duplicates the hardcoded /kolkata-to-jamshedpur-cab and
+# /jamshedpur-to-kolkata-cab pages (canonical). MUST stay ABOVE the suffix-
+# stripping rules below — first match wins, and /routes/<slug>-cab must still
+# resolve to the same final destination without a redirect loop.
+/routes/kolkata-to-jamshedpur/* /kolkata-to-jamshedpur-cab 301
+/routes/kolkata-to-jamshedpur /kolkata-to-jamshedpur-cab 301
+/routes/jamshedpur-to-kolkata/* /jamshedpur-to-kolkata-cab 301
+/routes/jamshedpur-to-kolkata /jamshedpur-to-kolkata-cab 301
+
 # ── Fix: Legacy suffix variants → canonical route ─────────────────────────────
 /routes/*-cab /routes/:splat 301
 /routes/*-taxi /routes/:splat 301

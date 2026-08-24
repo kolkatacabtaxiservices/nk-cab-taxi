@@ -234,8 +234,18 @@ const touristSlugsSet = new Set([
 const seenSlugs = new Set();
 const priorityRoutes = [];
 
+// Duplicate-content consolidation: these two routes have dedicated, hand-built
+// landing pages (/kolkata-to-jamshedpur-cab and /jamshedpur-to-kolkata-cab,
+// already listed in sitemap 0) which are canonical. The /routes/<slug> variants
+// 301-redirect to them via public/_redirects — never list redirects in a sitemap.
+const EXCLUDED_ROUTE_SLUGS = new Set(['kolkata-to-jamshedpur', 'jamshedpur-to-kolkata']);
+
 function addRoute(route, priority) {
-  if (!seenSlugs.has(route.slug) && priorityRoutes.length < MAX_SITEMAP_ROUTES) {
+  if (
+    !seenSlugs.has(route.slug) &&
+    !EXCLUDED_ROUTE_SLUGS.has(route.slug) &&
+    priorityRoutes.length < MAX_SITEMAP_ROUTES
+  ) {
     seenSlugs.add(route.slug);
     priorityRoutes.push({ route, priority });
   }
@@ -381,8 +391,8 @@ function getStaticVehicleRouteSlugsJs(limit = 300) {
 const linkedVehicleSlugs = getStaticVehicleRouteSlugsJs(300);
 const sitemap5Urls = [];
 for (const slug of linkedVehicleSlugs) {
+  if (EXCLUDED_ROUTE_SLUGS.has(slug)) continue; // parent /routes/<slug> is 301'd
   const route = routes.find(r => r.slug === slug);
-  if (!route) continue;
   const isHighPriority = (
     (HUB_SLUGS.includes(route.from) && POPULAR_DESTINATIONS.includes(route.to)) ||
     (HUB_SLUGS.includes(route.to) && POPULAR_DESTINATIONS.includes(route.from))
