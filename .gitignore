@@ -20,9 +20,12 @@
 # production
 /build
 
-# OpenNext / Cloudflare build outputs
+# OpenNext build outputs
 /.open-next/
 /.worker-next/
+
+# netlify
+.netlify/
 
 # misc
 .DS_Store
@@ -47,5 +50,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# wrangler
+# wrangler (legacy — kept for reference)
 .wrangler/

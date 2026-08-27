@@ -1,6 +1,7 @@
-# Cloudflare Pages _headers file
-# Processed by Cloudflare CDN — applies to ALL static assets served from Pages.
-# Docs: https://developers.cloudflare.com/pages/configuration/headers/
+# Netlify _headers file
+# Processed by Netlify CDN — applies to ALL static assets served from Netlify.
+# Docs: https://docs.netlify.com/routing/headers/
+# NOTE: This format is identical to Cloudflare Pages _headers — no changes needed.
 
 # ── Security Headers — applied to all routes ─────────────────────────────────
 # FIX #12: X-XSS-Protection removed — deprecated in modern browsers, can cause issues in old IE.

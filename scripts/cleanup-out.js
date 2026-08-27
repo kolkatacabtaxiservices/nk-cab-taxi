@@ -1,7 +1,7 @@
 /**
  * scripts/cleanup-out.js
  *
- * Postbuild cleanup for Cloudflare Pages free tier (20,000 file limit).
+ * Postbuild cleanup for static export builds.
  * Removes Next.js RSC payload .txt files from ./out/ SUBDIRECTORIES ONLY —
  * they are only needed for client-side navigation in ISR mode, which we don't use.
  *
@@ -63,14 +63,7 @@ if (!fs.existsSync(robotsPath)) {
 
 const remaining = countFiles(OUT_DIR);
 console.log(`✅ Removed ${removedCount} RSC .txt files. Total files remaining: ${remaining}`);
-
-if (remaining > 20000) {
-  console.warn(`⚠️  WARNING: ${remaining} files in ./out/ — exceeds Cloudflare Pages 20,000 limit!`);
-  console.warn('   Deploy will fail. Reduce pages in generateStaticParams() or increase hub route limit.');
-  process.exit(1); // Fail the build so the issue is caught early
-} else {
-  console.log('✅ File count OK — within Cloudflare Pages 20,000 limit.');
-}
+console.log('✅ Build complete — Netlify has no file count limit.');
 
 function countFiles(dir) {
   if (!fs.existsSync(dir)) return 0;

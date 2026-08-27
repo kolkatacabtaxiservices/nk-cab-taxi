@@ -1,0 +1,53 @@
+# netlify.toml — Netlify deployment configuration
+#
+# This project uses Next.js static export (output: "export") which produces
+# ./out/ — a pure static HTML directory served directly by Netlify's CDN.
+#
+# API routes are handled by Netlify Functions in ./netlify/functions/
+# which run as serverless Node.js functions (125,000 invocations/month free).
+#
+# Static files: unlimited on free tier
+# Bandwidth: 100 GB/month free
+# Functions: 125k invocations/month free
+# Build minutes: 300 min/month free
+#
+# ─────────────────────────────────────────────────────────────────────────────
+# BUILD SETTINGS
+# ─────────────────────────────────────────────────────────────────────────────
+
+[build]
+  # Netlify builds on Linux — && chain works perfectly (no Windows path issues).
+  # Runs on every git push to main branch.
+  command = "npm run build:netlify"
+  publish = "out"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "20"
+  # Disable auto-injected Next.js SSR plugin — this project uses static export
+  # (output: "export") and does NOT need server-side rendering.
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
+  NEXT_PUBLIC_SITE_URL = "https://www.nkcabtaxi.com"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# REDIRECTS
+# NOTE: public/_redirects is also supported and takes precedence over this
+# section. Keep using public/_redirects for Netlify CDN-level redirects.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ─────────────────────────────────────────────────────────────────────────────
+# HEADERS
+# NOTE: public/_headers is fully supported by Netlify — identical format to
+# Cloudflare Pages. All existing _headers rules work without any changes.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ─────────────────────────────────────────────────────────────────────────────
+# LOCAL DEV (netlify dev)
+# ─────────────────────────────────────────────────────────────────────────────
+
+[dev]
+  command = "npm run dev"
+  targetPort = 3000
+  port = 8888
+  publish = "out"
+  autoLaunch = false

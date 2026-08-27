@@ -8,8 +8,9 @@
     "postbuild": "node scripts/cleanup-out.js",
     "start": "next start",
     "lint": "eslint",
-    "build:cf": "node scripts/split-routes-by-city.js && node scripts/generate-static-sitemaps.js && node scripts/generate-static-files.js && next build && node scripts/cleanup-out.js",
-    "deploy": "wrangler pages deploy out --project-name=nk-cab-taxi --branch=main --commit-dirty=true"
+    "build:netlify": "node scripts/split-routes-by-city.js && node scripts/generate-static-sitemaps.js && node scripts/generate-static-files.js && next build && node scripts/cleanup-out.js",
+    "deploy:netlify": "netlify deploy --prod --dir=out",
+    "build:cf-legacy": "node scripts/split-routes-by-city.js && node scripts/generate-static-sitemaps.js && node scripts/generate-static-files.js && next build && node scripts/cleanup-out.js"
   },
   "dependencies": {
     "framer-motion": "^12.38.0",
@@ -19,7 +20,7 @@
     "react-dom": "19.1.0"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^5.20260710.1",
+    "@netlify/functions": "^3.1.10",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -28,9 +29,9 @@
     "cross-env": "^10.1.0",
     "eslint": "^9",
     "eslint-config-next": "16.2.1",
+    "netlify-cli": "^27.4.0",
     "tailwindcss": "^4",
-    "typescript": "^5",
-    "wrangler": "4.111.0"
+    "typescript": "^5"
   },
   "browserslist": [
     "Chrome >= 94",

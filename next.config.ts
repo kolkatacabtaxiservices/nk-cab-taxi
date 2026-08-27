@@ -1,9 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // ── Static Export for Cloudflare Pages ──────────────────────────────────────
+  // ── Static Export for Netlify ───────────────────────────────────────────────────
   // Generates ./out/ directory with pure static HTML — served directly by
-  // Cloudflare's CDN with ZERO CPU usage. Eliminates Error 1102 permanently.
+  // Netlify's CDN with zero server overhead.
   output: "export",
 
   // Fixed deployment ID — keeps the buildId stable across rebuilds.
@@ -35,8 +35,8 @@ const nextConfig: NextConfig = {
   },
 
   // NOTE: Headers and redirects below are for local `next dev` development only.
-  // In production (Cloudflare Pages), these are handled by public/_headers
-  // and public/_redirects files which are processed by Cloudflare's CDN layer.
+  // In production (Netlify), these are handled by public/_headers
+  // and public/_redirects files which are processed by Netlify's CDN layer.
   // Keep them here so local development works correctly.
   async headers() {
     return [
@@ -120,10 +120,9 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
-      // NOTE: sitemap.xml → sitemap_index.xml redirect removed.
-      // public/sitemap.xml IS the sitemap index already (static file).
-      // Cloudflare Pages serves it directly. Having a redirect caused
-      // inconsistent behavior between CF Pages and local Next.js dev.
+      // NOTE: These redirects are for local `next dev` only.
+      // In production (Netlify), redirects live in public/_redirects
+      // which are processed by Netlify's CDN layer at the edge.
       // Redirect /route/xxx to /routes/xxx (common typo)
       {
         source: "/route/:path*",

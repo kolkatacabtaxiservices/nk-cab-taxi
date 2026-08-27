@@ -1,19 +1,20 @@
-# Cloudflare Pages _redirects file
-# Processed by Cloudflare CDN — 301/302 redirects for legacy URLs only.
-# Docs: https://developers.cloudflare.com/pages/configuration/redirects/
+# Netlify _redirects file
+# Processed by Netlify CDN — 301/302 redirects for legacy URLs only.
+# Docs: https://docs.netlify.com/routing/redirects/
+# NOTE: This format is identical to Cloudflare Pages _redirects — no changes needed.
 #
 # ══════════════════════════════════════════════════════════════════════════════
-# ⚠️  IMPORTANT: APEX DOMAIN REDIRECT — MUST BE IN CLOUDFLARE DASHBOARD
+# ⚠️  IMPORTANT: APEX DOMAIN REDIRECT — SET IN NETLIFY DOMAIN SETTINGS
 # ══════════════════════════════════════════════════════════════════════════════
-# Cloudflare Pages _redirects CANNOT handle hostname-level redirects.
-# The apex→www redirect (nkcabtaxi.com → www.nkcabtaxi.com) MUST be set in:
+# Netlify _redirects CANNOT handle hostname-level redirects (apex → www).
+# The apex→www redirect (nkcabtaxi.com → www.nkcabtaxi.com) is set automatically
+# when you configure the primary domain in:
 #
-#   Cloudflare Dashboard → Rules → Redirect Rules → Create Rule
-#     IF:   Hostname equals "nkcabtaxi.com"
-#     THEN: Redirect to https://www.nkcabtaxi.com${http.request.uri.path}
-#           Type: Static  |  Status: 301  |  Preserve query string: YES
+#   Netlify Dashboard → Site configuration → Domain management
+#     → Add domain alias: nkcabtaxi.com
+#     → Set www.nkcabtaxi.com as primary domain
 #
-# Without that dashboard rule, nkcabtaxi.com returns 405 — killing PageRank.
+# Netlify automatically handles the 301 redirect for the apex domain.
 # ══════════════════════════════════════════════════════════════════════════════
 
 # ── Fix: Legacy singular path typos → canonical plural paths ──────────────────
