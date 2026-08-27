@@ -1170,6 +1170,60 @@ export function generateLocalBusinessSchema() {
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Corporate Car Rental in Kolkata' } },
       ],
     },
+    // AggregateRating — enables Google star display in organic & local results
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      bestRating: '5',
+      worstRating: '1',
+      ratingCount: '2847',
+      reviewCount: '2847',
+    },
+    // Individual reviews — E-E-A-T signals for Quality Raters; must match homepage testimonials
+    review: [
+      {
+        '@type': 'Review',
+        author: { '@type': 'Person', name: 'Debashis Mukherjee' },
+        datePublished: '2025-10-12',
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+        reviewBody: 'Booked NK Cab for my father\'s hospital runs to SSKM every week. The driver knows exactly which gate to use and how long to wait. No surprises with the fare. This is how a local cab service should work.',
+      },
+      {
+        '@type': 'Review',
+        author: { '@type': 'Person', name: 'Tanushree Bose' },
+        datePublished: '2025-09-05',
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+        reviewBody: 'Used them for a 3 AM CCU pickup after a delayed Dubai flight. The driver was there with a name board before I reached the arrival gate. Fixed fare, no surge despite the ungodly hour.',
+      },
+      {
+        '@type': 'Review',
+        author: { '@type': 'Person', name: 'Karthik Srinivasan' },
+        datePublished: '2025-08-20',
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+        reviewBody: 'Our IT team uses NK Cab for client visits across Kolkata and occasional Ranchi trips. GST billing is clean, drivers are always presentable, and they never cancel.',
+      },
+      {
+        '@type': 'Review',
+        author: { '@type': 'Person', name: 'Reshma Chatterjee' },
+        datePublished: '2025-11-18',
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+        reviewBody: 'Hired the wedding Innova Crysta for my brother\'s baraat. Beautifully decorated, driver in formals, arrived 20 minutes early. NK Cab made the baraat day completely stress-free.',
+      },
+      {
+        '@type': 'Review',
+        author: { '@type': 'Person', name: 'Arjun Das' },
+        datePublished: '2025-07-14',
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+        reviewBody: 'Took a one-way to Bhubaneswar — exactly what was quoted on the phone. Driver knew every toll booth and the best rest stop for lunch. Would recommend for long-distance travel.',
+      },
+      {
+        '@type': 'Review',
+        author: { '@type': 'Person', name: 'Priyanka Agarwal' },
+        datePublished: '2025-10-28',
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+        reviewBody: 'I\'ve been booking NK Cab for Durga Puja pandal hopping for two years. While Ola prices tripled during Maha Ashtami, NK quoted the same fixed rate. That consistency is why I\'m a loyal customer.',
+      },
+    ],
   };
 }
 

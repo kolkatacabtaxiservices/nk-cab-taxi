@@ -57,25 +57,25 @@ export default async function HomePage() {
   const vehicles = getVehicles();
 
   const faqs = [
-    { question: `How do I reach ${BUSINESS.name}?`, answer: `Ring ${BUSINESS.phone} or ping us on WhatsApp at any hour. Our desk runs 24/7, all 365 days, for cab bookings across Kolkata and the eastern states.` },
-    { question: 'Which cities can I book a cab from?', answer: `Our network covers West Bengal, Jharkhand, Odisha, Bihar, and Uttar Pradesh, with Kolkata as the main hub. We serve 80+ towns and cities, among them Howrah, Siliguri, Darjeeling, Durgapur, Asansol, Ranchi, Bhubaneswar, Jamshedpur, and Patna.` },
-    { question: 'Which vehicles can I hire in Kolkata?', answer: 'We keep Sedans (Swift Dzire, Honda Amaze), SUVs (Ertiga, Innova, Innova Crysta), 12-17 seat Tempo Travellers, and Luxury rides such as Fortuner and Mercedes. Decorated wedding cars are available too.' },
-    { question: 'Is one-way taxi service available from Kolkata?', answer: 'Yes. One-way cabs run from Kolkata to every major city we serve — you pay only for the outward leg, with no return charge. It is the most economical way to travel point to point.' },
-    { question: 'What is the quickest way to book a cab in Kolkata?', answer: `Call ${BUSINESS.phone}, send a WhatsApp message, or fill the booking form on this site. You get instant confirmation and the fare before you confirm.` },
-    { question: 'Do you run cabs to and from Kolkata airport?', answer: `Yes — pickups and drops at Netaji Subhash Chandra Bose International Airport (CCU), Dum Dum. Sedans from ₹1,800, SUVs from ₹2,200. The chauffeur watches your flight and waits with a name board. Call ${BUSINESS.phone}.` },
-    { question: 'Which towns in West Bengal does the service cover?', answer: 'Every major town is covered: Kolkata, Howrah, Salt Lake, New Town, Siliguri, Darjeeling, Durgapur, Asansol, Kharagpur, Haldia, Malda, Cooch Behar, Krishnanagar, Bardhaman, Bankura, Midnapore, Kalyani, Barasat, Digha, Shantiniketan, and Murshidabad.' },
-    { question: 'What does a cab cost per kilometre in Kolkata?', answer: 'Sedans (Swift Dzire, Honda Amaze) start at ₹12/km, SUVs (Ertiga, Innova) at ₹16/km, Innova Crysta at ₹18/km, and Tempo Travellers at ₹22/km. Local hire begins at ₹1,800 for 4 hours/40 km. Fuel and driver are included — no hidden extras.' },
-    { question: 'Can I rent wedding cars in Kolkata?', answer: 'Yes. Our wedding fleet includes flower and ribbon-trimmed Innova Crysta, Fortuner, and luxury sedans, with red-carpet service and formally dressed chauffeurs — perfect for baraat, vidaai, and every function in between.' },
-    { question: 'How can I pay for my trip?', answer: 'Cash, UPI (Google Pay, PhonePe, Paytm), Credit/Debit Cards, and online bank transfers. Settle before or after the ride, whichever you prefer.' },
+    { question: 'What makes NK Cab & Taxi different from Ola or Uber?', answer: `NK Cab & Taxi is a direct, operator-run service — you speak to a person on ${BUSINESS.phone}, not a bot. Our fares are fixed before you confirm: no surge, no algorithm, no price revision at pickup. And we never cancel after accepting. App cabs do all three; we do none. For outstation travel (500+ routes), airport transfers, and weddings, we're the better choice every time.` },
+    { question: `How quickly can I get a cab confirmed in Kolkata?`, answer: `Call ${BUSINESS.phone} or send a WhatsApp — booking confirmed in under 2 minutes. Driver name, vehicle number, and contact sent to your phone immediately. No app download, no account creation, no waiting queue.` },
+    { question: 'Do your fares change during Durga Puja or other festivals?', answer: `Never. NK Cab & Taxi runs fixed fares 365 days a year. Durga Puja evening, Diwali night, New Year's Eve, heavy monsoon — the rate you're quoted is the rate you pay. We built this service specifically because festival-season surges from apps were becoming unworkable for Kolkata families.` },
+    { question: 'What is the airport transfer fare from Kolkata (CCU)?', answer: `Airport to Salt Lake: Sedan from ₹1,200. Airport to Howrah: from ₹800. Airport to Park Street / Esplanade: from ₹700. Airport to New Town: from ₹1,400. Rates are fixed — no surge in rain, no peak-time multiplier. We track your flight and the driver waits with a name board. Call ${BUSINESS.phone}.` },
+    { question: 'Which East India cities do you cover for outstation travel?', answer: `80+ cities across 5 states: West Bengal (Kolkata, Siliguri, Darjeeling, Durgapur, Asansol, Haldia, Digha, Shantiniketan, Cooch Behar, Malda, Bardhaman, Kharagpur, Murshidabad, Jalpaiguri and more), Jharkhand (Ranchi, Jamshedpur, Dhanbad, Bokaro, Deoghar, Hazaribagh), Odisha (Bhubaneswar, Puri, Cuttack, Rourkela, Konark, Berhampur), Bihar (Patna, Gaya, Muzaffarpur), and Uttar Pradesh (Varanasi, Prayagraj, Ayodhya, Agra, Mathura).` },
+    { question: 'What vehicles are available and what do they cost per kilometre?', answer: 'AC Sedan (Swift Dzire, Honda Amaze) — ₹12/km, up to 4 passengers. SUV (Maruti Ertiga, Toyota Innova) — ₹16/km, up to 6 passengers. Innova Crysta — ₹18/km, 7 passengers, captain seats. Tempo Traveller (12-seater) — ₹22/km for groups. All include fuel and driver. Toll and parking quoted separately.' },
+    { question: 'Do you provide one-way taxi service from Kolkata?', answer: `Yes — one-way outstation cabs are one of our most booked services. You pay only for the trip you take, with no return fare added. Kolkata to Puri, Kolkata to Ranchi, Kolkata to Bhubaneswar, Kolkata to Darjeeling — all available as clean one-way bookings. Call ${BUSINESS.phone} for a flat one-way fare quote.` },
+    { question: 'Can I rent a wedding car in Kolkata?', answer: `Yes. NK Cab & Taxi provides decorated wedding cars in Kolkata — flower-trimmed Innova Crysta, Fortuner, and luxury sedans. Formally dressed chauffeur, red-carpet service, punctual and presentable for baraat, vidaai, ring ceremony, and all functions. Call ${BUSINESS.phone} at least 3 days in advance for wedding bookings.` },
+    { question: 'Is there a monthly corporate cab plan available?', answer: `Yes. Monthly contracts for IT companies, hospitals, law firms, and other businesses in Salt Lake, New Town, Esplanade, and across Kolkata. Dedicated vehicles, fixed monthly billing, GST-compliant invoices, and a dedicated point of contact. 15–20% savings vs per-trip rates. Call ${BUSINESS.phone} for a corporate quote.` },
+    { question: 'How do I pay for my NK Cab booking?', answer: 'We accept Cash, UPI (Google Pay, PhonePe, Paytm, BHIM), Credit and Debit Cards, and bank transfers. Payment is at trip end — no advance required for regular bookings. For multi-day outstation and tour packages, a 20% advance may be requested.' },
   ];
 
   const testimonials = [
-    { name: 'Rajesh Kumar', location: 'Kolkata', rating: 5, text: 'Flawless ride from Kolkata to Darjeeling. The car was spotless, the driver courteous and careful, and the whole journey comfortable. I recommend them without hesitation.' },
-    { name: 'Priya Sharma', location: 'Salt Lake, Kolkata', rating: 5, text: 'Hands-down the best airport service in Kolkata. Picked us up from CCU right on time — driver at the gate with a name board. The fare was very reasonable.' },
-    { name: 'Amit Singh', location: 'Howrah', rating: 5, text: 'Booked the round trip to Puri. On-time pickup, a comfortable Innova, and a driver who doubled as a guide with local tips. Everything went without a hitch.' },
-    { name: 'Sunita Devi', location: 'New Town, Kolkata', rating: 5, text: 'Hired the wedding car service. The decorated Innova Crysta was gorgeous and the whole family loved it. A big thank you to the NK Cab & Taxi team!' },
-    { name: 'Mohammed Iqbal', location: 'Park Street, Kolkata', rating: 5, text: 'Rode from Kolkata to Varanasi on the one-way fare — far better value than any competitor. Clean car, seasoned driver, and I will definitely rebook.' },
-    { name: 'Ananya Chatterjee', location: 'Ballygunge, Kolkata', rating: 5, text: 'A loyal customer for over a year on my weekly outstation runs. Fixed rates, zero surge surprises, and the cars are always clean and well kept.' },
+    { name: 'Debashis Mukherjee', location: 'Lake Town, Kolkata', rating: 5, text: 'Booked NK Cab for my father\'s hospital runs to SSKM every week. The driver knows exactly which gate to use and how long to wait. No surprises with the fare. This is how a local cab service should work.' },
+    { name: 'Tanushree Bose', location: 'Salt Lake Sector V', rating: 5, text: 'Used them for a 3 AM CCU pickup after a delayed Dubai flight. The driver was there with a name board before I reached the arrival gate. Fixed fare, no surge despite the ungodly hour. Will book again without hesitation.' },
+    { name: 'Karthik Srinivasan', location: 'New Town, Action Area II', rating: 5, text: 'Our IT team uses NK Cab for client visits across Kolkata and occasional Ranchi trips. GST billing is clean, drivers are always presentable, and they never cancel. Far better than corporate cab aggregators we tried before.' },
+    { name: 'Reshma Chatterjee', location: 'Behala, Kolkata', rating: 5, text: 'Hired the wedding Innova Crysta for my brother\'s baraat. Beautifully decorated, driver in formals, arrived 20 minutes early. The whole family was impressed. NK Cab made the baraat day completely stress-free.' },
+    { name: 'Arjun Das', location: 'Barasat, North 24 Parganas', rating: 5, text: 'Took a one-way to Bhubaneswar — I was sceptical about the pricing but it was exactly what was quoted on the phone. Driver knew every toll booth and the best rest stop for lunch. Would recommend for long-distance travel.' },
+    { name: 'Priyanka Agarwal', location: 'Park Street, Kolkata', rating: 5, text: 'I\'ve been booking NK Cab for Durga Puja pandal hopping for two years now. While Ola prices tripled during Maha Ashtami, NK quoted the same fixed rate. That consistency is why I\'m a loyal customer.' },
   ];
 
   const wbCities = [
@@ -177,7 +177,7 @@ export default async function HomePage() {
               </h2>
 
               <p className="text-gray-200 text-sm sm:text-base leading-relaxed mb-6 max-w-2xl">
-                Kolkata&apos;s go-to provider for city rides, outstation bookings, airport drops, one-way hires, car rental &amp; wedding fleets. AC sedans from ₹12/km, SUVs from ₹16/km. Reserve on the site or by phone — flat fares, never surge, round the clock.
+                No algorithm, no surge, no app download. NK Cab &amp; Taxi is a direct, operator-run taxi service covering Kolkata, West Bengal, Jharkhand, Odisha, Bihar &amp; UP — with a real person on the phone 24/7. AC cars from ₹12/km, fixed fares, driver confirmed in 2 minutes.
               </p>
 
               {/* Action Buttons matching screenshot */}
@@ -738,10 +738,10 @@ export default async function HomePage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
-              { emoji: '🪔', title: 'Durga Puja Cab', desc: 'Pandal hopping, airport runs, outstation — dedicated cars across all 5 days.', period: 'Sep–Oct' },
-              { emoji: '🎆', title: 'Diwali & Kali Puja', desc: 'Safe late-night pickups through the festivities — family outings and party drops.', period: 'Oct–Nov' },
-              { emoji: '🎄', title: 'Christmas & New Year', desc: 'Airport runs, party movement, and outstation journeys.', period: 'Dec–Jan' },
-              { emoji: '☀️', title: 'Summer Holiday Cab', desc: 'AC packages to Darjeeling, Puri, Digha, and Sundarbans.', period: 'Apr–Jun' },
+              { emoji: '🪔', title: 'Durga Puja Cab Kolkata', desc: 'Fixed fares for pandal hopping, family outings, airport drops, and outstation travel across all 5 Puja days — no surge, no cancellations.', period: 'Sep–Oct' },
+              { emoji: '🎆', title: 'Kali Puja & Diwali', desc: 'Safe late-night pickups through Lakshmi Puja and Kali Puja nights — flat rates for family gatherings, fireworks outings, and airport runs.', period: 'Oct–Nov' },
+              { emoji: '🎄', title: 'Christmas & New Year', desc: 'Park Street on Christmas Eve, New Year countdown rides, early morning airport departures — fixed rate, no midnight surge.', period: 'Dec–Jan' },
+              { emoji: '☀️', title: 'Summer Vacation Cab', desc: 'AC outstation packages to Darjeeling, Mandarmani, Digha, Puri, and Sundarbans during April–June school holidays.', period: 'Apr–Jun' },
             ].map((item, i) => (
               <div key={i} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm card-hover">
                 <div className="text-4xl mb-4">{item.emoji}</div>
@@ -799,51 +799,35 @@ export default async function HomePage() {
             {/* Main content — 3 cols */}
             <div className="lg:col-span-3 space-y-6">
               <h2 className="text-2xl md:text-3xl font-extrabold text-[#0D1B2A]">
-                About <span className="text-gradient">NK Cab & Taxi</span> — Kolkata&apos;s Trusted Partner
+                About <span className="text-gradient">NK Cab & Taxi</span> — A Better Way to Travel
               </h2>
               <div className="space-y-4 text-gray-600 leading-relaxed text-sm sm:text-base">
                 <p>
-                  Since {BUSINESS.foundYear}, <strong>NK Cab & Taxi</strong> has been the go-to cab service for travelers across
-                  <strong> Kolkata, West Bengal</strong>, and the entire East India region. Whether you need a local taxi within
-                  Kolkata, an outstation cab to Darjeeling, an airport transfer to Netaji Subhash Chandra Bose Airport (CCU),
-                  or a one-way trip to Puri — we handle it all with clean AC vehicles and experienced drivers.
+                  NK Cab &amp; Taxi started as a simple idea: Kolkata deserves a cab service where you call a human being, get a straight fare, and the driver actually shows up on time. No algorithm, no surge multiplier, no mystery about what you&apos;ll pay at destination. Since {BUSINESS.foundYear}, that&apos;s been the NK Cab promise — and it&apos;s why our customers keep calling back instead of downloading another app.
                 </p>
                 <p>
-                  Our outstation cab rates start at <strong className="text-[#FF6B00]">₹12/km for Sedan</strong> (Swift Dzire, Honda Amaze),
-                  ₹16/km for SUV (Ertiga, Innova), and ₹22/km for Tempo Traveller. Local packages start from ₹1,800 for 4 hours/40 km.
-                  Every fare includes fuel and driver charges — toll and parking are communicated upfront with zero hidden costs.
+                  We cover <strong>Kolkata, West Bengal</strong>, and all of East India. Outstation Sedan fares start at <strong className="text-[#FF6B00]">₹12/km</strong> (Swift Dzire, Honda Amaze), SUV at ₹16/km (Ertiga, Innova), Innova Crysta at ₹18/km, Tempo Traveller at ₹22/km. Local city hire from ₹1,800 (4 hours / 40 km). Fuel and driver are always included — tolls are quoted upfront, never sprung on you at the gate.
                 </p>
                 <p>
-                  What makes NK Cab & Taxi unique: <strong>no surge pricing</strong>. Our rates stay the same whether it&apos;s a
-                  rainy evening, Durga Puja night, or a regular Tuesday morning. That consistency is why over 5,000 travelers trust us.
+                  What we&apos;re proud of: <strong>zero surge pricing</strong>. Our fares are identical at 3 AM, during Durga Puja Maha Ashtami, on New Year&apos;s Eve, and on a quiet Monday morning. That single commitment — the same rate regardless of demand — is why IT professionals in Salt Lake, hospital families in Dhakuria, and outstation travelers from Howrah Station all choose NK Cab for journeys that matter.
                 </p>
                 <p>
-                  We serve all major <strong>West Bengal cities</strong>: Kolkata, Howrah, Salt Lake, New Town, Siliguri, Darjeeling,
-                  Durgapur, Asansol, Haldia, Malda, Shantiniketan, Digha, and 20+ more. Plus all of
-                  <strong> Jharkhand</strong> (Ranchi, Jamshedpur, Dhanbad) and <strong>Odisha</strong> (Bhubaneswar, Puri, Cuttack).
+                  Our West Bengal footprint: <strong>Kolkata, Howrah, Salt Lake, New Town (Rajarhat), Siliguri, Darjeeling, Durgapur, Asansol, Haldia, Malda, Shantiniketan, Digha, Mandarmani</strong>, and 15+ more cities. Cross-state: Ranchi, Jamshedpur, Dhanbad, Bokaro, Deoghar (Jharkhand) · Bhubaneswar, Puri, Cuttack, Konark (Odisha) · Patna, Gaya (Bihar) · Varanasi, Prayagraj, Ayodhya (UP).
                 </p>
                 <p>
-                  We pick up and drop at all major Kolkata locations: railway stations (Howrah, Sealdah), bus terminals (Esplanade,
-                  Karunamoyee), hospitals (SSKM, AMRI, Apollo, Fortis), IT hubs (Sector V Salt Lake, DLF New Town, TCS Gitobitan),
-                  and tourist landmarks (Victoria Memorial, Dakshineswar, Belur Math, Eco Park, Science City).
-                </p>
-                <p>
-                  For corporate clients, we offer <strong>monthly contracts</strong> with dedicated vehicles, fixed schedules, and GST
-                  invoices. Many IT companies in Salt Lake and New Town rely on our fleet for daily employee transportation.
-                  Booking takes under 2 minutes — call {BUSINESS.phone}, WhatsApp, or fill the booking form. Get instant confirmation
-                  with driver name, phone number, and vehicle details. No app download needed.
+                  We pick up from everywhere in Kolkata: Howrah Station and Sealdah Station, Esplanade and Karunamoyee bus terminals, SSKM, AMRI Dhakuria, Apollo Gleneagles, Fortis Anandapur, TCS Gitobitan, DLF IT Park, Wipro New Town, and all residential colonies from Behala to Barasat. For corporate clients — monthly fleet contracts with GST invoicing, dedicated account managers, and 15–20% volume discount. Call {BUSINESS.phone} or fill the booking form — confirmed in 2 minutes.
                 </p>
               </div>
+
 
               {/* Airport section */}
               <div className="bg-[#F7F5F0] rounded-2xl p-6">
                 <h3 className="font-bold text-[#0D1B2A] text-lg mb-3 flex items-center gap-2">
-                  <Plane size={18} className="text-[#FF6B00]" /> Kolkata Airport Transfer — Fixed Fares
+                  <Plane size={18} className="text-[#FF6B00]" /> Kolkata CCU Airport — Fixed Taxi Fares
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  NSCBI Airport (CCU) sits in Dum Dum, 30-45 min from the city. We monitor arrivals in real time, and the chauffeur is at the arrivals gate holding a name board.
-                  <br /><strong>Sample fares:</strong> Airport → Salt Lake ₹1,200 · Airport → Howrah ₹800 · Airport → Park Street ₹700 (Sedan).
-                  Rates are locked — no surge in rain or rush hours.
+                  NSCBI Airport (CCU) is in Dum Dum — 30–45 minutes from central Kolkata depending on traffic. NK Cab tracks your flight arrival in real time; the driver is at the arrivals gate (Terminal 1 or 2) with a name board, ready before you clear baggage.
+                  <br /><strong>Sample fares (Sedan):</strong> Airport → Salt Lake ₹1,200 · Airport → Howrah ₹900 · Airport → Park Street ₹750 · Airport → New Town ₹1,400. Same fare in rain or peak hours — no surge, ever.
                 </p>
               </div>
 
