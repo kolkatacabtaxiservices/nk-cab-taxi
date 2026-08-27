@@ -30368,5 +30368,3983 @@
     "priceSaloon": 12500,
     "priceSuv": 16000,
     "priceTempo": 21400
+  },
+  {
+    "from": "adityapur",
+    "fromName": "Adityapur",
+    "fromState": "jharkhand",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 270,
+    "duration": "5-5.5",
+    "slug": "adityapur-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 3800,
+    "priceSuv": 4900,
+    "priceTempo": 7000
+  },
+  {
+    "from": "alipurduar",
+    "fromName": "Alipurduar",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 780,
+    "duration": "15-16",
+    "slug": "alipurduar-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 10900,
+    "priceSuv": 14000,
+    "priceTempo": 20300
+  },
+  {
+    "from": "angul",
+    "fromName": "Angul",
+    "fromState": "odisha",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 325,
+    "duration": "6-6.5",
+    "slug": "angul-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4600,
+    "priceSuv": 5900,
+    "priceTempo": 8500
+  },
+  {
+    "from": "arambagh",
+    "fromName": "Arambagh",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 290,
+    "duration": "5-6",
+    "slug": "arambagh-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4100,
+    "priceSuv": 5200,
+    "priceTempo": 7500
+  },
+  {
+    "from": "asansol",
+    "fromName": "Asansol",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 375,
+    "duration": "7-7.5",
+    "slug": "asansol-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5300,
+    "priceSuv": 6800,
+    "priceTempo": 9800
+  },
+  {
+    "from": "bagnan",
+    "fromName": "Bagnan",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 260,
+    "duration": "5-5.5",
+    "slug": "bagnan-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 3600,
+    "priceSuv": 4700,
+    "priceTempo": 6800
+  },
+  {
+    "from": "baharampur",
+    "fromName": "Baharampur",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 465,
+    "duration": "9-9.5",
+    "slug": "baharampur-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 6500,
+    "priceSuv": 8400,
+    "priceTempo": 12100
+  },
+  {
+    "from": "bakkhali",
+    "fromName": "Bakkhali",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 245,
+    "duration": "4-5",
+    "slug": "bakkhali-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 3400,
+    "priceSuv": 4400,
+    "priceTempo": 6400
+  },
+  {
+    "from": "balurghat",
+    "fromName": "Balurghat",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 610,
+    "duration": "12-12.5",
+    "slug": "balurghat-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 8500,
+    "priceSuv": 11000,
+    "priceTempo": 15900
+  },
+  {
+    "from": "bankura",
+    "fromName": "Bankura",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 310,
+    "duration": "6-6.5",
+    "slug": "bankura-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4300,
+    "priceSuv": 5600,
+    "priceTempo": 8100
+  },
+  {
+    "from": "barasat",
+    "fromName": "Barasat",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 330,
+    "duration": "6-7",
+    "slug": "barasat-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4600,
+    "priceSuv": 5900,
+    "priceTempo": 8600
+  },
+  {
+    "from": "bardhaman",
+    "fromName": "Bardhaman",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 340,
+    "duration": "6-7",
+    "slug": "bardhaman-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4800,
+    "priceSuv": 6100,
+    "priceTempo": 8800
+  },
+  {
+    "from": "baripada",
+    "fromName": "Baripada",
+    "fromState": "odisha",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 155,
+    "duration": "3-3.5",
+    "slug": "baripada-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 2200,
+    "priceSuv": 2800,
+    "priceTempo": 4000
+  },
+  {
+    "from": "barrackpore",
+    "fromName": "Barrackpore",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 325,
+    "duration": "6-6.5",
+    "slug": "barrackpore-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4600,
+    "priceSuv": 5900,
+    "priceTempo": 8500
+  },
+  {
+    "from": "basirhat",
+    "fromName": "Basirhat",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 370,
+    "duration": "7-7.5",
+    "slug": "basirhat-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5200,
+    "priceSuv": 6700,
+    "priceTempo": 9600
+  },
+  {
+    "from": "beldanga",
+    "fromName": "Beldanga",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 440,
+    "duration": "8-9",
+    "slug": "beldanga-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 6200,
+    "priceSuv": 7900,
+    "priceTempo": 11400
+  },
+  {
+    "from": "berhampur",
+    "fromName": "Berhampur",
+    "fromState": "odisha",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 475,
+    "duration": "9-9.5",
+    "slug": "berhampur-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 6700,
+    "priceSuv": 8600,
+    "priceTempo": 12400
+  },
+  {
+    "from": "betla",
+    "fromName": "Betla",
+    "fromState": "jharkhand",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 560,
+    "duration": "11-11.5",
+    "slug": "betla-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 7800,
+    "priceSuv": 10100,
+    "priceTempo": 14600
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "adityapur",
+    "toName": "Adityapur",
+    "toState": "jharkhand",
+    "distance": 270,
+    "duration": "5-5.5",
+    "slug": "bhadrak-to-adityapur",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 3800,
+    "priceSuv": 4900,
+    "priceTempo": 7000
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "alipurduar",
+    "toName": "Alipurduar",
+    "toState": "west-bengal",
+    "distance": 780,
+    "duration": "15-16",
+    "slug": "bhadrak-to-alipurduar",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 10900,
+    "priceSuv": 14000,
+    "priceTempo": 20300
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "angul",
+    "toName": "Angul",
+    "toState": "odisha",
+    "distance": 325,
+    "duration": "6-6.5",
+    "slug": "bhadrak-to-angul",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4600,
+    "priceSuv": 5900,
+    "priceTempo": 8500
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "arambagh",
+    "toName": "Arambagh",
+    "toState": "west-bengal",
+    "distance": 290,
+    "duration": "5-6",
+    "slug": "bhadrak-to-arambagh",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4100,
+    "priceSuv": 5200,
+    "priceTempo": 7500
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "asansol",
+    "toName": "Asansol",
+    "toState": "west-bengal",
+    "distance": 375,
+    "duration": "7-7.5",
+    "slug": "bhadrak-to-asansol",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5300,
+    "priceSuv": 6800,
+    "priceTempo": 9800
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "bagnan",
+    "toName": "Bagnan",
+    "toState": "west-bengal",
+    "distance": 260,
+    "duration": "5-5.5",
+    "slug": "bhadrak-to-bagnan",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 3600,
+    "priceSuv": 4700,
+    "priceTempo": 6800
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "baharampur",
+    "toName": "Baharampur",
+    "toState": "west-bengal",
+    "distance": 465,
+    "duration": "9-9.5",
+    "slug": "bhadrak-to-baharampur",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 6500,
+    "priceSuv": 8400,
+    "priceTempo": 12100
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "bakkhali",
+    "toName": "Bakkhali",
+    "toState": "west-bengal",
+    "distance": 245,
+    "duration": "4-5",
+    "slug": "bhadrak-to-bakkhali",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 3400,
+    "priceSuv": 4400,
+    "priceTempo": 6400
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "balurghat",
+    "toName": "Balurghat",
+    "toState": "west-bengal",
+    "distance": 610,
+    "duration": "12-12.5",
+    "slug": "bhadrak-to-balurghat",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 8500,
+    "priceSuv": 11000,
+    "priceTempo": 15900
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "bankura",
+    "toName": "Bankura",
+    "toState": "west-bengal",
+    "distance": 310,
+    "duration": "6-6.5",
+    "slug": "bhadrak-to-bankura",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4300,
+    "priceSuv": 5600,
+    "priceTempo": 8100
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "barasat",
+    "toName": "Barasat",
+    "toState": "west-bengal",
+    "distance": 330,
+    "duration": "6-7",
+    "slug": "bhadrak-to-barasat",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4600,
+    "priceSuv": 5900,
+    "priceTempo": 8600
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "bardhaman",
+    "toName": "Bardhaman",
+    "toState": "west-bengal",
+    "distance": 340,
+    "duration": "6-7",
+    "slug": "bhadrak-to-bardhaman",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4800,
+    "priceSuv": 6100,
+    "priceTempo": 8800
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "baripada",
+    "toName": "Baripada",
+    "toState": "odisha",
+    "distance": 155,
+    "duration": "3-3.5",
+    "slug": "bhadrak-to-baripada",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 2200,
+    "priceSuv": 2800,
+    "priceTempo": 4000
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "barrackpore",
+    "toName": "Barrackpore",
+    "toState": "west-bengal",
+    "distance": 325,
+    "duration": "6-6.5",
+    "slug": "bhadrak-to-barrackpore",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4600,
+    "priceSuv": 5900,
+    "priceTempo": 8500
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "basirhat",
+    "toName": "Basirhat",
+    "toState": "west-bengal",
+    "distance": 370,
+    "duration": "7-7.5",
+    "slug": "bhadrak-to-basirhat",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5200,
+    "priceSuv": 6700,
+    "priceTempo": 9600
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "beldanga",
+    "toName": "Beldanga",
+    "toState": "west-bengal",
+    "distance": 440,
+    "duration": "8-9",
+    "slug": "bhadrak-to-beldanga",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 6200,
+    "priceSuv": 7900,
+    "priceTempo": 11400
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "berhampur",
+    "toName": "Berhampur",
+    "toState": "odisha",
+    "distance": 475,
+    "duration": "9-9.5",
+    "slug": "bhadrak-to-berhampur",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 6700,
+    "priceSuv": 8600,
+    "priceTempo": 12400
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "betla",
+    "toName": "Betla",
+    "toState": "jharkhand",
+    "distance": 560,
+    "duration": "11-11.5",
+    "slug": "bhadrak-to-betla",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 7800,
+    "priceSuv": 10100,
+    "priceTempo": 14600
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "bhubaneswar",
+    "toName": "Bhubaneswar",
+    "toState": "odisha",
+    "distance": 284,
+    "duration": "5-6",
+    "slug": "bhadrak-to-bhubaneswar",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4000,
+    "priceSuv": 5100,
+    "priceTempo": 7400
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "bishnupur",
+    "toName": "Bishnupur",
+    "toState": "west-bengal",
+    "distance": 295,
+    "duration": "5-6",
+    "slug": "bhadrak-to-bishnupur",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4100,
+    "priceSuv": 5300,
+    "priceTempo": 7700
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "bodh-gaya",
+    "toName": "Bodh Gaya",
+    "toState": "bihar",
+    "distance": 550,
+    "duration": "11-11.5",
+    "slug": "bhadrak-to-bodh-gaya",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 7700,
+    "priceSuv": 9900,
+    "priceTempo": 14300
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "bokaro",
+    "toName": "Bokaro",
+    "toState": "jharkhand",
+    "distance": 380,
+    "duration": "7-8",
+    "slug": "bhadrak-to-bokaro",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5300,
+    "priceSuv": 6800,
+    "priceTempo": 9900
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "bolpur-shantiniketan",
+    "toName": "Bolpur Shantiniketan",
+    "toState": "west-bengal",
+    "distance": 380,
+    "duration": "7-8",
+    "slug": "bhadrak-to-bolpur-shantiniketan",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5300,
+    "priceSuv": 6800,
+    "priceTempo": 9900
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "bongaon",
+    "toName": "Bongaon",
+    "toState": "west-bengal",
+    "distance": 390,
+    "duration": "7-8",
+    "slug": "bhadrak-to-bongaon",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5500,
+    "priceSuv": 7000,
+    "priceTempo": 10100
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "chaibasa",
+    "toName": "Chaibasa",
+    "toState": "jharkhand",
+    "distance": 275,
+    "duration": "5-5.5",
+    "slug": "bhadrak-to-chaibasa",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 3900,
+    "priceSuv": 5000,
+    "priceTempo": 7200
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "chakdah",
+    "toName": "Chakdah",
+    "toState": "west-bengal",
+    "distance": 375,
+    "duration": "7-7.5",
+    "slug": "bhadrak-to-chakdah",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5300,
+    "priceSuv": 6800,
+    "priceTempo": 9800
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "chandannagar",
+    "toName": "Chandannagar",
+    "toState": "west-bengal",
+    "distance": 335,
+    "duration": "6-7",
+    "slug": "bhadrak-to-chandannagar",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4700,
+    "priceSuv": 6000,
+    "priceTempo": 8700
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "chatra",
+    "toName": "Chatra",
+    "toState": "jharkhand",
+    "distance": 525,
+    "duration": "10-10.5",
+    "slug": "bhadrak-to-chatra",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 7400,
+    "priceSuv": 9500,
+    "priceTempo": 13700
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "chilika",
+    "toName": "Chilika",
+    "toState": "odisha",
+    "distance": 385,
+    "duration": "7-8",
+    "slug": "bhadrak-to-chilika",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5400,
+    "priceSuv": 6900,
+    "priceTempo": 10000
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "contai",
+    "toName": "Contai",
+    "toState": "west-bengal",
+    "distance": 185,
+    "duration": "3-4",
+    "slug": "bhadrak-to-contai",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 2600,
+    "priceSuv": 3300,
+    "priceTempo": 4800
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "cooch-behar",
+    "toName": "Cooch Behar",
+    "toState": "west-bengal",
+    "distance": 785,
+    "duration": "15-16",
+    "slug": "bhadrak-to-cooch-behar",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 11000,
+    "priceSuv": 14100,
+    "priceTempo": 20400
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "cuttack",
+    "toName": "Cuttack",
+    "toState": "odisha",
+    "distance": 260,
+    "duration": "5-5.5",
+    "slug": "bhadrak-to-cuttack",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 3600,
+    "priceSuv": 4700,
+    "priceTempo": 6800
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "dalkhola",
+    "toName": "Dalkhola",
+    "toState": "west-bengal",
+    "distance": 660,
+    "duration": "13-13.5",
+    "slug": "bhadrak-to-dalkhola",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 9200,
+    "priceSuv": 11900,
+    "priceTempo": 17200
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "darjeeling",
+    "toName": "Darjeeling",
+    "toState": "west-bengal",
+    "distance": 800,
+    "duration": "16-16.5",
+    "slug": "bhadrak-to-darjeeling",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 11200,
+    "priceSuv": 14400,
+    "priceTempo": 20800
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "deoghar",
+    "toName": "Deoghar",
+    "toState": "jharkhand",
+    "distance": 480,
+    "duration": "9-10",
+    "slug": "bhadrak-to-deoghar",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 6700,
+    "priceSuv": 8600,
+    "priceTempo": 12500
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "dhanbad",
+    "toName": "Dhanbad",
+    "toState": "jharkhand",
+    "distance": 390,
+    "duration": "7-8",
+    "slug": "bhadrak-to-dhanbad",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5500,
+    "priceSuv": 7000,
+    "priceTempo": 10100
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "dhenkanal",
+    "toName": "Dhenkanal",
+    "toState": "odisha",
+    "distance": 275,
+    "duration": "5-5.5",
+    "slug": "bhadrak-to-dhenkanal",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 3900,
+    "priceSuv": 5000,
+    "priceTempo": 7200
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "diamond-harbour",
+    "toName": "Diamond Harbour",
+    "toState": "west-bengal",
+    "distance": 255,
+    "duration": "5-5.5",
+    "slug": "bhadrak-to-diamond-harbour",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 3600,
+    "priceSuv": 4600,
+    "priceTempo": 6600
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "digha",
+    "toName": "Digha",
+    "toState": "west-bengal",
+    "distance": 150,
+    "duration": "3-3.5",
+    "slug": "bhadrak-to-digha",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 2100,
+    "priceSuv": 2700,
+    "priceTempo": 3900
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "dooars",
+    "toName": "Dooars",
+    "toState": "west-bengal",
+    "distance": 800,
+    "duration": "16-16.5",
+    "slug": "bhadrak-to-dooars",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 11200,
+    "priceSuv": 14400,
+    "priceTempo": 20800
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "dum-dum",
+    "toName": "Dum Dum",
+    "toState": "west-bengal",
+    "distance": 315,
+    "duration": "6-6.5",
+    "slug": "bhadrak-to-dum-dum",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4400,
+    "priceSuv": 5700,
+    "priceTempo": 8200
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "dumka",
+    "toName": "Dumka",
+    "toState": "jharkhand",
+    "distance": 450,
+    "duration": "9-9.5",
+    "slug": "bhadrak-to-dumka",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 6300,
+    "priceSuv": 8100,
+    "priceTempo": 11700
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "durgapur",
+    "toName": "Durgapur",
+    "toState": "west-bengal",
+    "distance": 355,
+    "duration": "7-7.5",
+    "slug": "bhadrak-to-durgapur",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5000,
+    "priceSuv": 6400,
+    "priceTempo": 9200
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "gangasagar",
+    "toName": "Gangasagar",
+    "toState": "west-bengal",
+    "distance": 220,
+    "duration": "4-4.5",
+    "slug": "bhadrak-to-gangasagar",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 3100,
+    "priceSuv": 4000,
+    "priceTempo": 5700
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "gaya",
+    "toName": "Gaya",
+    "toState": "bihar",
+    "distance": 565,
+    "duration": "11-11.5",
+    "slug": "bhadrak-to-gaya",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 7900,
+    "priceSuv": 10200,
+    "priceTempo": 14700
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "giridih",
+    "toName": "Giridih",
+    "toState": "jharkhand",
+    "distance": 445,
+    "duration": "8-9",
+    "slug": "bhadrak-to-giridih",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 6200,
+    "priceSuv": 8000,
+    "priceTempo": 11600
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "godda",
+    "toName": "Godda",
+    "toState": "jharkhand",
+    "distance": 530,
+    "duration": "10-11",
+    "slug": "bhadrak-to-godda",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 7400,
+    "priceSuv": 9500,
+    "priceTempo": 13800
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "gopalpur",
+    "toName": "Gopalpur",
+    "toState": "odisha",
+    "distance": 475,
+    "duration": "9-9.5",
+    "slug": "bhadrak-to-gopalpur",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 6700,
+    "priceSuv": 8600,
+    "priceTempo": 12400
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "gumla",
+    "toName": "Gumla",
+    "toState": "jharkhand",
+    "distance": 440,
+    "duration": "8-9",
+    "slug": "bhadrak-to-gumla",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 6200,
+    "priceSuv": 7900,
+    "priceTempo": 11400
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "habra",
+    "toName": "Habra",
+    "toState": "west-bengal",
+    "distance": 360,
+    "duration": "7-7.5",
+    "slug": "bhadrak-to-habra",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5000,
+    "priceSuv": 6500,
+    "priceTempo": 9400
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "haldia",
+    "toName": "Haldia",
+    "toState": "west-bengal",
+    "distance": 240,
+    "duration": "4-5",
+    "slug": "bhadrak-to-haldia",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 3400,
+    "priceSuv": 4300,
+    "priceTempo": 6200
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "hazaribagh",
+    "toName": "Hazaribagh",
+    "toState": "jharkhand",
+    "distance": 465,
+    "duration": "9-9.5",
+    "slug": "bhadrak-to-hazaribagh",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 6500,
+    "priceSuv": 8400,
+    "priceTempo": 12100
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "hooghly",
+    "toName": "Hooghly",
+    "toState": "west-bengal",
+    "distance": 340,
+    "duration": "6-7",
+    "slug": "bhadrak-to-hooghly",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4800,
+    "priceSuv": 6100,
+    "priceTempo": 8800
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "howrah",
+    "toName": "Howrah",
+    "toState": "west-bengal",
+    "distance": 300,
+    "duration": "6-6.5",
+    "slug": "bhadrak-to-howrah",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4200,
+    "priceSuv": 5400,
+    "priceTempo": 7800
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "islampur",
+    "toName": "Islampur",
+    "toState": "west-bengal",
+    "distance": 720,
+    "duration": "14-14.5",
+    "slug": "bhadrak-to-islampur",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 10100,
+    "priceSuv": 13000,
+    "priceTempo": 18700
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "jalpaiguri",
+    "toName": "Jalpaiguri",
+    "toState": "west-bengal",
+    "distance": 775,
+    "duration": "15-15.5",
+    "slug": "bhadrak-to-jalpaiguri",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 10900,
+    "priceSuv": 14000,
+    "priceTempo": 20200
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "jamshedpur",
+    "toName": "Jamshedpur",
+    "toState": "jharkhand",
+    "distance": 270,
+    "duration": "5-5.5",
+    "slug": "bhadrak-to-jamshedpur",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 3800,
+    "priceSuv": 4900,
+    "priceTempo": 7000
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "jamtara",
+    "toName": "Jamtara",
+    "toState": "jharkhand",
+    "distance": 405,
+    "duration": "8-8.5",
+    "slug": "bhadrak-to-jamtara",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5700,
+    "priceSuv": 7300,
+    "priceTempo": 10500
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "jeypore",
+    "toName": "Jeypore",
+    "toState": "odisha",
+    "distance": 715,
+    "duration": "14-14.5",
+    "slug": "bhadrak-to-jeypore",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 10000,
+    "priceSuv": 12900,
+    "priceTempo": 18600
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "jhargram",
+    "toName": "Jhargram",
+    "toState": "west-bengal",
+    "distance": 200,
+    "duration": "4-4.5",
+    "slug": "bhadrak-to-jhargram",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 2800,
+    "priceSuv": 3600,
+    "priceTempo": 5200
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "jharsuguda",
+    "toName": "Jharsuguda",
+    "toState": "odisha",
+    "distance": 445,
+    "duration": "8-9",
+    "slug": "bhadrak-to-jharsuguda",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 6200,
+    "priceSuv": 8000,
+    "priceTempo": 11600
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "kakdwip",
+    "toName": "Kakdwip",
+    "toState": "west-bengal",
+    "distance": 240,
+    "duration": "4-5",
+    "slug": "bhadrak-to-kakdwip",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 3400,
+    "priceSuv": 4300,
+    "priceTempo": 6200
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "kalna",
+    "toName": "Kalna",
+    "toState": "west-bengal",
+    "distance": 375,
+    "duration": "7-7.5",
+    "slug": "bhadrak-to-kalna",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5300,
+    "priceSuv": 6800,
+    "priceTempo": 9800
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "kalyani",
+    "toName": "Kalyani",
+    "toState": "west-bengal",
+    "distance": 355,
+    "duration": "7-7.5",
+    "slug": "bhadrak-to-kalyani",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5000,
+    "priceSuv": 6400,
+    "priceTempo": 9200
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "karimpur",
+    "toName": "Karimpur",
+    "toState": "west-bengal",
+    "distance": 470,
+    "duration": "9-9.5",
+    "slug": "bhadrak-to-karimpur",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 6600,
+    "priceSuv": 8500,
+    "priceTempo": 12200
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "katwa",
+    "toName": "Katwa",
+    "toState": "west-bengal",
+    "distance": 400,
+    "duration": "8-8.5",
+    "slug": "bhadrak-to-katwa",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5600,
+    "priceSuv": 7200,
+    "priceTempo": 10400
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "kharagpur",
+    "toName": "Kharagpur",
+    "toState": "west-bengal",
+    "distance": 195,
+    "duration": "3-4",
+    "slug": "bhadrak-to-kharagpur",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 2700,
+    "priceSuv": 3500,
+    "priceTempo": 5100
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "khunti",
+    "toName": "Khunti",
+    "toState": "jharkhand",
+    "distance": 380,
+    "duration": "7-8",
+    "slug": "bhadrak-to-khunti",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5300,
+    "priceSuv": 6800,
+    "priceTempo": 9900
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "koderma",
+    "toName": "Koderma",
+    "toState": "jharkhand",
+    "distance": 515,
+    "duration": "10-10.5",
+    "slug": "bhadrak-to-koderma",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 7200,
+    "priceSuv": 9300,
+    "priceTempo": 13400
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "kolaghat",
+    "toName": "Kolaghat",
+    "toState": "west-bengal",
+    "distance": 240,
+    "duration": "4-5",
+    "slug": "bhadrak-to-kolaghat",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 3400,
+    "priceSuv": 4300,
+    "priceTempo": 6200
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "kolkata",
+    "toName": "Kolkata",
+    "toState": "west-bengal",
+    "distance": 302,
+    "duration": "6-6.5",
+    "slug": "bhadrak-to-kolkata",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4200,
+    "priceSuv": 5400,
+    "priceTempo": 7900
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "kolkata-airport",
+    "toName": "Kolkata Airport",
+    "toState": "west-bengal",
+    "distance": 320,
+    "duration": "6-6.5",
+    "slug": "bhadrak-to-kolkata-airport",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4500,
+    "priceSuv": 5800,
+    "priceTempo": 8300
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "konark",
+    "toName": "Konark",
+    "toState": "odisha",
+    "distance": 315,
+    "duration": "6-6.5",
+    "slug": "bhadrak-to-konark",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4400,
+    "priceSuv": 5700,
+    "priceTempo": 8200
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "koraput",
+    "toName": "Koraput",
+    "toState": "odisha",
+    "distance": 705,
+    "duration": "14-14.5",
+    "slug": "bhadrak-to-koraput",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 9900,
+    "priceSuv": 12700,
+    "priceTempo": 18300
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "krishnanagar",
+    "toName": "Krishnanagar",
+    "toState": "west-bengal",
+    "distance": 395,
+    "duration": "7-8",
+    "slug": "bhadrak-to-krishnanagar",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5500,
+    "priceSuv": 7100,
+    "priceTempo": 10300
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "lalbagh",
+    "toName": "Lalbagh",
+    "toState": "west-bengal",
+    "distance": 475,
+    "duration": "9-9.5",
+    "slug": "bhadrak-to-lalbagh",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 6700,
+    "priceSuv": 8600,
+    "priceTempo": 12400
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "latehar",
+    "toName": "Latehar",
+    "toState": "jharkhand",
+    "distance": 505,
+    "duration": "10-10.5",
+    "slug": "bhadrak-to-latehar",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 7100,
+    "priceSuv": 9100,
+    "priceTempo": 13100
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "lohardaga",
+    "toName": "Lohardaga",
+    "toState": "jharkhand",
+    "distance": 460,
+    "duration": "9-9.5",
+    "slug": "bhadrak-to-lohardaga",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 6400,
+    "priceSuv": 8300,
+    "priceTempo": 12000
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "malda",
+    "toName": "Malda",
+    "toState": "west-bengal",
+    "distance": 555,
+    "duration": "11-11.5",
+    "slug": "bhadrak-to-malda",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 7800,
+    "priceSuv": 10000,
+    "priceTempo": 14400
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "mandarmani",
+    "toName": "Mandarmani",
+    "toState": "west-bengal",
+    "distance": 175,
+    "duration": "3-3.5",
+    "slug": "bhadrak-to-mandarmani",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 2500,
+    "priceSuv": 3200,
+    "priceTempo": 4600
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "mayapur",
+    "toName": "Mayapur",
+    "toState": "west-bengal",
+    "distance": 390,
+    "duration": "7-8",
+    "slug": "bhadrak-to-mayapur",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5500,
+    "priceSuv": 7000,
+    "priceTempo": 10100
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "midnapore",
+    "toName": "Midnapore",
+    "toState": "west-bengal",
+    "distance": 210,
+    "duration": "4-4.5",
+    "slug": "bhadrak-to-midnapore",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 2900,
+    "priceSuv": 3800,
+    "priceTempo": 5500
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "murshidabad",
+    "toName": "Murshidabad",
+    "toState": "west-bengal",
+    "distance": 475,
+    "duration": "9-9.5",
+    "slug": "bhadrak-to-murshidabad",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 6700,
+    "priceSuv": 8600,
+    "priceTempo": 12400
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "muzaffarpur",
+    "toName": "Muzaffarpur",
+    "toState": "bihar",
+    "distance": 710,
+    "duration": "14-14.5",
+    "slug": "bhadrak-to-muzaffarpur",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 9900,
+    "priceSuv": 12800,
+    "priceTempo": 18500
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "nabadwip",
+    "toName": "Nabadwip",
+    "toState": "west-bengal",
+    "distance": 385,
+    "duration": "7-8",
+    "slug": "bhadrak-to-nabadwip",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5400,
+    "priceSuv": 6900,
+    "priceTempo": 10000
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "naihati",
+    "toName": "Naihati",
+    "toState": "west-bengal",
+    "distance": 345,
+    "duration": "6-7",
+    "slug": "bhadrak-to-naihati",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4800,
+    "priceSuv": 6200,
+    "priceTempo": 9000
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "nalanda",
+    "toName": "Nalanda",
+    "toState": "bihar",
+    "distance": 585,
+    "duration": "11-12",
+    "slug": "bhadrak-to-nalanda",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 8200,
+    "priceSuv": 10500,
+    "priceTempo": 15200
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "netarhat",
+    "toName": "Netarhat",
+    "toState": "jharkhand",
+    "distance": 505,
+    "duration": "10-10.5",
+    "slug": "bhadrak-to-netarhat",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 7100,
+    "priceSuv": 9100,
+    "priceTempo": 13100
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "new-town-kolkata",
+    "toName": "New Town",
+    "toState": "west-bengal",
+    "distance": 315,
+    "duration": "6-6.5",
+    "slug": "bhadrak-to-new-town-kolkata",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4400,
+    "priceSuv": 5700,
+    "priceTempo": 8200
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "pakur",
+    "toName": "Pakur",
+    "toState": "jharkhand",
+    "distance": 520,
+    "duration": "10-10.5",
+    "slug": "bhadrak-to-pakur",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 7300,
+    "priceSuv": 9400,
+    "priceTempo": 13500
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "palamu",
+    "toName": "Palamu",
+    "toState": "jharkhand",
+    "distance": 560,
+    "duration": "11-11.5",
+    "slug": "bhadrak-to-palamu",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 7800,
+    "priceSuv": 10100,
+    "priceTempo": 14600
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "patna",
+    "toName": "Patna",
+    "toState": "bihar",
+    "distance": 655,
+    "duration": "13-13.5",
+    "slug": "bhadrak-to-patna",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 9200,
+    "priceSuv": 11800,
+    "priceTempo": 17000
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "prayagraj",
+    "toName": "Prayagraj",
+    "toState": "uttar-pradesh",
+    "distance": 855,
+    "duration": "17-17.5",
+    "slug": "bhadrak-to-prayagraj",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 12000,
+    "priceSuv": 15400,
+    "priceTempo": 22200
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "puri",
+    "toName": "Puri",
+    "toState": "odisha",
+    "distance": 345,
+    "duration": "6-7",
+    "slug": "bhadrak-to-puri",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4800,
+    "priceSuv": 6200,
+    "priceTempo": 9000
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "purulia",
+    "toName": "Purulia",
+    "toState": "west-bengal",
+    "distance": 335,
+    "duration": "6-7",
+    "slug": "bhadrak-to-purulia",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4700,
+    "priceSuv": 6000,
+    "priceTempo": 8700
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "raiganj",
+    "toName": "Raiganj",
+    "toState": "west-bengal",
+    "distance": 635,
+    "duration": "12-13",
+    "slug": "bhadrak-to-raiganj",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 8900,
+    "priceSuv": 11400,
+    "priceTempo": 16500
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "rajgir",
+    "toName": "Rajgir",
+    "toState": "bihar",
+    "distance": 570,
+    "duration": "11-11.5",
+    "slug": "bhadrak-to-rajgir",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 8000,
+    "priceSuv": 10300,
+    "priceTempo": 14800
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "ramgarh",
+    "toName": "Ramgarh",
+    "toState": "jharkhand",
+    "distance": 410,
+    "duration": "8-8.5",
+    "slug": "bhadrak-to-ramgarh",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5700,
+    "priceSuv": 7400,
+    "priceTempo": 10700
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "ranaghat",
+    "toName": "Ranaghat",
+    "toState": "west-bengal",
+    "distance": 375,
+    "duration": "7-7.5",
+    "slug": "bhadrak-to-ranaghat",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5300,
+    "priceSuv": 6800,
+    "priceTempo": 9800
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "ranchi",
+    "toName": "Ranchi",
+    "toState": "jharkhand",
+    "distance": 399,
+    "duration": "7-8",
+    "slug": "bhadrak-to-ranchi",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5600,
+    "priceSuv": 7200,
+    "priceTempo": 10400
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "raniganj",
+    "toName": "Raniganj",
+    "toState": "west-bengal",
+    "distance": 370,
+    "duration": "7-7.5",
+    "slug": "bhadrak-to-raniganj",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5200,
+    "priceSuv": 6700,
+    "priceTempo": 9600
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "rayagada",
+    "toName": "Rayagada",
+    "toState": "odisha",
+    "distance": 605,
+    "duration": "12-12.5",
+    "slug": "bhadrak-to-rayagada",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 8500,
+    "priceSuv": 10900,
+    "priceTempo": 15700
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "rourkela",
+    "toName": "Rourkela",
+    "toState": "odisha",
+    "distance": 355,
+    "duration": "7-7.5",
+    "slug": "bhadrak-to-rourkela",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5000,
+    "priceSuv": 6400,
+    "priceTempo": 9200
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "sahebganj",
+    "toName": "Sahebganj",
+    "toState": "jharkhand",
+    "distance": 570,
+    "duration": "11-11.5",
+    "slug": "bhadrak-to-sahebganj",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 8000,
+    "priceSuv": 10300,
+    "priceTempo": 14800
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "salt-lake-kolkata",
+    "toName": "Salt Lake",
+    "toState": "west-bengal",
+    "distance": 310,
+    "duration": "6-6.5",
+    "slug": "bhadrak-to-salt-lake-kolkata",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4300,
+    "priceSuv": 5600,
+    "priceTempo": 8100
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "sambalpur",
+    "toName": "Sambalpur",
+    "toState": "odisha",
+    "distance": 445,
+    "duration": "8-9",
+    "slug": "bhadrak-to-sambalpur",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 6200,
+    "priceSuv": 8000,
+    "priceTempo": 11600
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "satragachhi",
+    "toName": "Satragachhi",
+    "toState": "west-bengal",
+    "distance": 295,
+    "duration": "5-6",
+    "slug": "bhadrak-to-satragachhi",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4100,
+    "priceSuv": 5300,
+    "priceTempo": 7700
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "seraikela",
+    "toName": "Seraikela",
+    "toState": "jharkhand",
+    "distance": 265,
+    "duration": "5-5.5",
+    "slug": "bhadrak-to-seraikela",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 3700,
+    "priceSuv": 4800,
+    "priceTempo": 6900
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "serampore",
+    "toName": "Serampore",
+    "toState": "west-bengal",
+    "distance": 320,
+    "duration": "6-6.5",
+    "slug": "bhadrak-to-serampore",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4500,
+    "priceSuv": 5800,
+    "priceTempo": 8300
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "siliguri",
+    "toName": "Siliguri",
+    "toState": "west-bengal",
+    "distance": 765,
+    "duration": "15-15.5",
+    "slug": "bhadrak-to-siliguri",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 10700,
+    "priceSuv": 13800,
+    "priceTempo": 19900
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "simdega",
+    "toName": "Simdega",
+    "toState": "jharkhand",
+    "distance": 415,
+    "duration": "8-8.5",
+    "slug": "bhadrak-to-simdega",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5800,
+    "priceSuv": 7500,
+    "priceTempo": 10800
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "sundarbans",
+    "toName": "Sundarbans",
+    "toState": "west-bengal",
+    "distance": 330,
+    "duration": "6-7",
+    "slug": "bhadrak-to-sundarbans",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4600,
+    "priceSuv": 5900,
+    "priceTempo": 8600
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "tamluk",
+    "toName": "Tamluk",
+    "toState": "west-bengal",
+    "distance": 235,
+    "duration": "4-5",
+    "slug": "bhadrak-to-tamluk",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 3300,
+    "priceSuv": 4200,
+    "priceTempo": 6100
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "tarkeshwar",
+    "toName": "Tarkeshwar",
+    "toState": "west-bengal",
+    "distance": 305,
+    "duration": "6-6.5",
+    "slug": "bhadrak-to-tarkeshwar",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4300,
+    "priceSuv": 5500,
+    "priceTempo": 7900
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "tatanagar",
+    "toName": "Tatanagar",
+    "toState": "jharkhand",
+    "distance": 270,
+    "duration": "5-5.5",
+    "slug": "bhadrak-to-tatanagar",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 3800,
+    "priceSuv": 4900,
+    "priceTempo": 7000
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "uluberia",
+    "toName": "Uluberia",
+    "toState": "west-bengal",
+    "distance": 270,
+    "duration": "5-5.5",
+    "slug": "bhadrak-to-uluberia",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 3800,
+    "priceSuv": 4900,
+    "priceTempo": 7000
+  },
+  {
+    "from": "bhadrak",
+    "fromName": "Bhadrak",
+    "fromState": "odisha",
+    "to": "varanasi",
+    "toName": "Varanasi",
+    "toState": "uttar-pradesh",
+    "distance": 770,
+    "duration": "15-15.5",
+    "slug": "bhadrak-to-varanasi",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 10800,
+    "priceSuv": 13900,
+    "priceTempo": 20000
+  },
+  {
+    "from": "bhubaneswar",
+    "fromName": "Bhubaneswar",
+    "fromState": "odisha",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 284,
+    "duration": "5-6",
+    "slug": "bhubaneswar-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4000,
+    "priceSuv": 5100,
+    "priceTempo": 7400
+  },
+  {
+    "from": "bishnupur",
+    "fromName": "Bishnupur",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 295,
+    "duration": "5-6",
+    "slug": "bishnupur-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4100,
+    "priceSuv": 5300,
+    "priceTempo": 7700
+  },
+  {
+    "from": "bodh-gaya",
+    "fromName": "Bodh Gaya",
+    "fromState": "bihar",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 550,
+    "duration": "11-11.5",
+    "slug": "bodh-gaya-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 7700,
+    "priceSuv": 9900,
+    "priceTempo": 14300
+  },
+  {
+    "from": "bokaro",
+    "fromName": "Bokaro",
+    "fromState": "jharkhand",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 380,
+    "duration": "7-8",
+    "slug": "bokaro-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5300,
+    "priceSuv": 6800,
+    "priceTempo": 9900
+  },
+  {
+    "from": "bolpur-shantiniketan",
+    "fromName": "Bolpur Shantiniketan",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 380,
+    "duration": "7-8",
+    "slug": "bolpur-shantiniketan-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5300,
+    "priceSuv": 6800,
+    "priceTempo": 9900
+  },
+  {
+    "from": "bongaon",
+    "fromName": "Bongaon",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 390,
+    "duration": "7-8",
+    "slug": "bongaon-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5500,
+    "priceSuv": 7000,
+    "priceTempo": 10100
+  },
+  {
+    "from": "chaibasa",
+    "fromName": "Chaibasa",
+    "fromState": "jharkhand",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 275,
+    "duration": "5-5.5",
+    "slug": "chaibasa-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 3900,
+    "priceSuv": 5000,
+    "priceTempo": 7200
+  },
+  {
+    "from": "chakdah",
+    "fromName": "Chakdah",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 375,
+    "duration": "7-7.5",
+    "slug": "chakdah-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5300,
+    "priceSuv": 6800,
+    "priceTempo": 9800
+  },
+  {
+    "from": "chandannagar",
+    "fromName": "Chandannagar",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 335,
+    "duration": "6-7",
+    "slug": "chandannagar-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4700,
+    "priceSuv": 6000,
+    "priceTempo": 8700
+  },
+  {
+    "from": "chatra",
+    "fromName": "Chatra",
+    "fromState": "jharkhand",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 525,
+    "duration": "10-10.5",
+    "slug": "chatra-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 7400,
+    "priceSuv": 9500,
+    "priceTempo": 13700
+  },
+  {
+    "from": "chilika",
+    "fromName": "Chilika",
+    "fromState": "odisha",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 385,
+    "duration": "7-8",
+    "slug": "chilika-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5400,
+    "priceSuv": 6900,
+    "priceTempo": 10000
+  },
+  {
+    "from": "contai",
+    "fromName": "Contai",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 185,
+    "duration": "3-4",
+    "slug": "contai-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 2600,
+    "priceSuv": 3300,
+    "priceTempo": 4800
+  },
+  {
+    "from": "cooch-behar",
+    "fromName": "Cooch Behar",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 785,
+    "duration": "15-16",
+    "slug": "cooch-behar-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 11000,
+    "priceSuv": 14100,
+    "priceTempo": 20400
+  },
+  {
+    "from": "cuttack",
+    "fromName": "Cuttack",
+    "fromState": "odisha",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 260,
+    "duration": "5-5.5",
+    "slug": "cuttack-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 3600,
+    "priceSuv": 4700,
+    "priceTempo": 6800
+  },
+  {
+    "from": "dalkhola",
+    "fromName": "Dalkhola",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 660,
+    "duration": "13-13.5",
+    "slug": "dalkhola-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 9200,
+    "priceSuv": 11900,
+    "priceTempo": 17200
+  },
+  {
+    "from": "darjeeling",
+    "fromName": "Darjeeling",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 800,
+    "duration": "16-16.5",
+    "slug": "darjeeling-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 11200,
+    "priceSuv": 14400,
+    "priceTempo": 20800
+  },
+  {
+    "from": "deoghar",
+    "fromName": "Deoghar",
+    "fromState": "jharkhand",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 480,
+    "duration": "9-10",
+    "slug": "deoghar-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 6700,
+    "priceSuv": 8600,
+    "priceTempo": 12500
+  },
+  {
+    "from": "dhanbad",
+    "fromName": "Dhanbad",
+    "fromState": "jharkhand",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 390,
+    "duration": "7-8",
+    "slug": "dhanbad-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5500,
+    "priceSuv": 7000,
+    "priceTempo": 10100
+  },
+  {
+    "from": "dhenkanal",
+    "fromName": "Dhenkanal",
+    "fromState": "odisha",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 275,
+    "duration": "5-5.5",
+    "slug": "dhenkanal-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 3900,
+    "priceSuv": 5000,
+    "priceTempo": 7200
+  },
+  {
+    "from": "diamond-harbour",
+    "fromName": "Diamond Harbour",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 255,
+    "duration": "5-5.5",
+    "slug": "diamond-harbour-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 3600,
+    "priceSuv": 4600,
+    "priceTempo": 6600
+  },
+  {
+    "from": "digha",
+    "fromName": "Digha",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 150,
+    "duration": "3-3.5",
+    "slug": "digha-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 2100,
+    "priceSuv": 2700,
+    "priceTempo": 3900
+  },
+  {
+    "from": "dooars",
+    "fromName": "Dooars",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 800,
+    "duration": "16-16.5",
+    "slug": "dooars-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 11200,
+    "priceSuv": 14400,
+    "priceTempo": 20800
+  },
+  {
+    "from": "dum-dum",
+    "fromName": "Dum Dum",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 315,
+    "duration": "6-6.5",
+    "slug": "dum-dum-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4400,
+    "priceSuv": 5700,
+    "priceTempo": 8200
+  },
+  {
+    "from": "dumka",
+    "fromName": "Dumka",
+    "fromState": "jharkhand",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 450,
+    "duration": "9-9.5",
+    "slug": "dumka-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 6300,
+    "priceSuv": 8100,
+    "priceTempo": 11700
+  },
+  {
+    "from": "durgapur",
+    "fromName": "Durgapur",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 355,
+    "duration": "7-7.5",
+    "slug": "durgapur-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5000,
+    "priceSuv": 6400,
+    "priceTempo": 9200
+  },
+  {
+    "from": "gangasagar",
+    "fromName": "Gangasagar",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 220,
+    "duration": "4-4.5",
+    "slug": "gangasagar-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 3100,
+    "priceSuv": 4000,
+    "priceTempo": 5700
+  },
+  {
+    "from": "gaya",
+    "fromName": "Gaya",
+    "fromState": "bihar",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 565,
+    "duration": "11-11.5",
+    "slug": "gaya-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 7900,
+    "priceSuv": 10200,
+    "priceTempo": 14700
+  },
+  {
+    "from": "giridih",
+    "fromName": "Giridih",
+    "fromState": "jharkhand",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 445,
+    "duration": "8-9",
+    "slug": "giridih-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 6200,
+    "priceSuv": 8000,
+    "priceTempo": 11600
+  },
+  {
+    "from": "godda",
+    "fromName": "Godda",
+    "fromState": "jharkhand",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 530,
+    "duration": "10-11",
+    "slug": "godda-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 7400,
+    "priceSuv": 9500,
+    "priceTempo": 13800
+  },
+  {
+    "from": "gopalpur",
+    "fromName": "Gopalpur",
+    "fromState": "odisha",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 475,
+    "duration": "9-9.5",
+    "slug": "gopalpur-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 6700,
+    "priceSuv": 8600,
+    "priceTempo": 12400
+  },
+  {
+    "from": "gumla",
+    "fromName": "Gumla",
+    "fromState": "jharkhand",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 440,
+    "duration": "8-9",
+    "slug": "gumla-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 6200,
+    "priceSuv": 7900,
+    "priceTempo": 11400
+  },
+  {
+    "from": "habra",
+    "fromName": "Habra",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 360,
+    "duration": "7-7.5",
+    "slug": "habra-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5000,
+    "priceSuv": 6500,
+    "priceTempo": 9400
+  },
+  {
+    "from": "haldia",
+    "fromName": "Haldia",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 240,
+    "duration": "4-5",
+    "slug": "haldia-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 3400,
+    "priceSuv": 4300,
+    "priceTempo": 6200
+  },
+  {
+    "from": "hazaribagh",
+    "fromName": "Hazaribagh",
+    "fromState": "jharkhand",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 465,
+    "duration": "9-9.5",
+    "slug": "hazaribagh-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 6500,
+    "priceSuv": 8400,
+    "priceTempo": 12100
+  },
+  {
+    "from": "hooghly",
+    "fromName": "Hooghly",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 340,
+    "duration": "6-7",
+    "slug": "hooghly-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4800,
+    "priceSuv": 6100,
+    "priceTempo": 8800
+  },
+  {
+    "from": "howrah",
+    "fromName": "Howrah",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 300,
+    "duration": "6-6.5",
+    "slug": "howrah-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4200,
+    "priceSuv": 5400,
+    "priceTempo": 7800
+  },
+  {
+    "from": "islampur",
+    "fromName": "Islampur",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 720,
+    "duration": "14-14.5",
+    "slug": "islampur-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 10100,
+    "priceSuv": 13000,
+    "priceTempo": 18700
+  },
+  {
+    "from": "jalpaiguri",
+    "fromName": "Jalpaiguri",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 775,
+    "duration": "15-15.5",
+    "slug": "jalpaiguri-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 10900,
+    "priceSuv": 14000,
+    "priceTempo": 20200
+  },
+  {
+    "from": "jamshedpur",
+    "fromName": "Jamshedpur",
+    "fromState": "jharkhand",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 270,
+    "duration": "5-5.5",
+    "slug": "jamshedpur-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 3800,
+    "priceSuv": 4900,
+    "priceTempo": 7000
+  },
+  {
+    "from": "jamtara",
+    "fromName": "Jamtara",
+    "fromState": "jharkhand",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 405,
+    "duration": "8-8.5",
+    "slug": "jamtara-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5700,
+    "priceSuv": 7300,
+    "priceTempo": 10500
+  },
+  {
+    "from": "jeypore",
+    "fromName": "Jeypore",
+    "fromState": "odisha",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 715,
+    "duration": "14-14.5",
+    "slug": "jeypore-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 10000,
+    "priceSuv": 12900,
+    "priceTempo": 18600
+  },
+  {
+    "from": "jhargram",
+    "fromName": "Jhargram",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 200,
+    "duration": "4-4.5",
+    "slug": "jhargram-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 2800,
+    "priceSuv": 3600,
+    "priceTempo": 5200
+  },
+  {
+    "from": "jharsuguda",
+    "fromName": "Jharsuguda",
+    "fromState": "odisha",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 445,
+    "duration": "8-9",
+    "slug": "jharsuguda-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 6200,
+    "priceSuv": 8000,
+    "priceTempo": 11600
+  },
+  {
+    "from": "kakdwip",
+    "fromName": "Kakdwip",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 240,
+    "duration": "4-5",
+    "slug": "kakdwip-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 3400,
+    "priceSuv": 4300,
+    "priceTempo": 6200
+  },
+  {
+    "from": "kalna",
+    "fromName": "Kalna",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 375,
+    "duration": "7-7.5",
+    "slug": "kalna-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5300,
+    "priceSuv": 6800,
+    "priceTempo": 9800
+  },
+  {
+    "from": "kalyani",
+    "fromName": "Kalyani",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 355,
+    "duration": "7-7.5",
+    "slug": "kalyani-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5000,
+    "priceSuv": 6400,
+    "priceTempo": 9200
+  },
+  {
+    "from": "karimpur",
+    "fromName": "Karimpur",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 470,
+    "duration": "9-9.5",
+    "slug": "karimpur-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 6600,
+    "priceSuv": 8500,
+    "priceTempo": 12200
+  },
+  {
+    "from": "katwa",
+    "fromName": "Katwa",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 400,
+    "duration": "8-8.5",
+    "slug": "katwa-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5600,
+    "priceSuv": 7200,
+    "priceTempo": 10400
+  },
+  {
+    "from": "kharagpur",
+    "fromName": "Kharagpur",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 195,
+    "duration": "3-4",
+    "slug": "kharagpur-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 2700,
+    "priceSuv": 3500,
+    "priceTempo": 5100
+  },
+  {
+    "from": "khunti",
+    "fromName": "Khunti",
+    "fromState": "jharkhand",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 380,
+    "duration": "7-8",
+    "slug": "khunti-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5300,
+    "priceSuv": 6800,
+    "priceTempo": 9900
+  },
+  {
+    "from": "koderma",
+    "fromName": "Koderma",
+    "fromState": "jharkhand",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 515,
+    "duration": "10-10.5",
+    "slug": "koderma-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 7200,
+    "priceSuv": 9300,
+    "priceTempo": 13400
+  },
+  {
+    "from": "kolaghat",
+    "fromName": "Kolaghat",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 240,
+    "duration": "4-5",
+    "slug": "kolaghat-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 3400,
+    "priceSuv": 4300,
+    "priceTempo": 6200
+  },
+  {
+    "from": "kolkata",
+    "fromName": "Kolkata",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 302,
+    "duration": "6-6.5",
+    "slug": "kolkata-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4200,
+    "priceSuv": 5400,
+    "priceTempo": 7900
+  },
+  {
+    "from": "kolkata-airport",
+    "fromName": "Kolkata Airport",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 320,
+    "duration": "6-6.5",
+    "slug": "kolkata-airport-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4500,
+    "priceSuv": 5800,
+    "priceTempo": 8300
+  },
+  {
+    "from": "konark",
+    "fromName": "Konark",
+    "fromState": "odisha",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 315,
+    "duration": "6-6.5",
+    "slug": "konark-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4400,
+    "priceSuv": 5700,
+    "priceTempo": 8200
+  },
+  {
+    "from": "koraput",
+    "fromName": "Koraput",
+    "fromState": "odisha",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 705,
+    "duration": "14-14.5",
+    "slug": "koraput-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 9900,
+    "priceSuv": 12700,
+    "priceTempo": 18300
+  },
+  {
+    "from": "krishnanagar",
+    "fromName": "Krishnanagar",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 395,
+    "duration": "7-8",
+    "slug": "krishnanagar-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5500,
+    "priceSuv": 7100,
+    "priceTempo": 10300
+  },
+  {
+    "from": "lalbagh",
+    "fromName": "Lalbagh",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 475,
+    "duration": "9-9.5",
+    "slug": "lalbagh-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 6700,
+    "priceSuv": 8600,
+    "priceTempo": 12400
+  },
+  {
+    "from": "latehar",
+    "fromName": "Latehar",
+    "fromState": "jharkhand",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 505,
+    "duration": "10-10.5",
+    "slug": "latehar-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 7100,
+    "priceSuv": 9100,
+    "priceTempo": 13100
+  },
+  {
+    "from": "lohardaga",
+    "fromName": "Lohardaga",
+    "fromState": "jharkhand",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 460,
+    "duration": "9-9.5",
+    "slug": "lohardaga-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 6400,
+    "priceSuv": 8300,
+    "priceTempo": 12000
+  },
+  {
+    "from": "malda",
+    "fromName": "Malda",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 555,
+    "duration": "11-11.5",
+    "slug": "malda-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 7800,
+    "priceSuv": 10000,
+    "priceTempo": 14400
+  },
+  {
+    "from": "mandarmani",
+    "fromName": "Mandarmani",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 175,
+    "duration": "3-3.5",
+    "slug": "mandarmani-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 2500,
+    "priceSuv": 3200,
+    "priceTempo": 4600
+  },
+  {
+    "from": "mayapur",
+    "fromName": "Mayapur",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 390,
+    "duration": "7-8",
+    "slug": "mayapur-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5500,
+    "priceSuv": 7000,
+    "priceTempo": 10100
+  },
+  {
+    "from": "midnapore",
+    "fromName": "Midnapore",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 210,
+    "duration": "4-4.5",
+    "slug": "midnapore-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 2900,
+    "priceSuv": 3800,
+    "priceTempo": 5500
+  },
+  {
+    "from": "murshidabad",
+    "fromName": "Murshidabad",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 475,
+    "duration": "9-9.5",
+    "slug": "murshidabad-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 6700,
+    "priceSuv": 8600,
+    "priceTempo": 12400
+  },
+  {
+    "from": "muzaffarpur",
+    "fromName": "Muzaffarpur",
+    "fromState": "bihar",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 710,
+    "duration": "14-14.5",
+    "slug": "muzaffarpur-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 9900,
+    "priceSuv": 12800,
+    "priceTempo": 18500
+  },
+  {
+    "from": "nabadwip",
+    "fromName": "Nabadwip",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 385,
+    "duration": "7-8",
+    "slug": "nabadwip-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5400,
+    "priceSuv": 6900,
+    "priceTempo": 10000
+  },
+  {
+    "from": "naihati",
+    "fromName": "Naihati",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 345,
+    "duration": "6-7",
+    "slug": "naihati-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4800,
+    "priceSuv": 6200,
+    "priceTempo": 9000
+  },
+  {
+    "from": "nalanda",
+    "fromName": "Nalanda",
+    "fromState": "bihar",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 585,
+    "duration": "11-12",
+    "slug": "nalanda-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 8200,
+    "priceSuv": 10500,
+    "priceTempo": 15200
+  },
+  {
+    "from": "netarhat",
+    "fromName": "Netarhat",
+    "fromState": "jharkhand",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 505,
+    "duration": "10-10.5",
+    "slug": "netarhat-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 7100,
+    "priceSuv": 9100,
+    "priceTempo": 13100
+  },
+  {
+    "from": "new-town-kolkata",
+    "fromName": "New Town",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 315,
+    "duration": "6-6.5",
+    "slug": "new-town-kolkata-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4400,
+    "priceSuv": 5700,
+    "priceTempo": 8200
+  },
+  {
+    "from": "pakur",
+    "fromName": "Pakur",
+    "fromState": "jharkhand",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 520,
+    "duration": "10-10.5",
+    "slug": "pakur-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 7300,
+    "priceSuv": 9400,
+    "priceTempo": 13500
+  },
+  {
+    "from": "palamu",
+    "fromName": "Palamu",
+    "fromState": "jharkhand",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 560,
+    "duration": "11-11.5",
+    "slug": "palamu-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 7800,
+    "priceSuv": 10100,
+    "priceTempo": 14600
+  },
+  {
+    "from": "patna",
+    "fromName": "Patna",
+    "fromState": "bihar",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 655,
+    "duration": "13-13.5",
+    "slug": "patna-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 9200,
+    "priceSuv": 11800,
+    "priceTempo": 17000
+  },
+  {
+    "from": "prayagraj",
+    "fromName": "Prayagraj",
+    "fromState": "uttar-pradesh",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 855,
+    "duration": "17-17.5",
+    "slug": "prayagraj-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 12000,
+    "priceSuv": 15400,
+    "priceTempo": 22200
+  },
+  {
+    "from": "puri",
+    "fromName": "Puri",
+    "fromState": "odisha",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 345,
+    "duration": "6-7",
+    "slug": "puri-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4800,
+    "priceSuv": 6200,
+    "priceTempo": 9000
+  },
+  {
+    "from": "purulia",
+    "fromName": "Purulia",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 335,
+    "duration": "6-7",
+    "slug": "purulia-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4700,
+    "priceSuv": 6000,
+    "priceTempo": 8700
+  },
+  {
+    "from": "raiganj",
+    "fromName": "Raiganj",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 635,
+    "duration": "12-13",
+    "slug": "raiganj-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 8900,
+    "priceSuv": 11400,
+    "priceTempo": 16500
+  },
+  {
+    "from": "rajgir",
+    "fromName": "Rajgir",
+    "fromState": "bihar",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 570,
+    "duration": "11-11.5",
+    "slug": "rajgir-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 8000,
+    "priceSuv": 10300,
+    "priceTempo": 14800
+  },
+  {
+    "from": "ramgarh",
+    "fromName": "Ramgarh",
+    "fromState": "jharkhand",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 410,
+    "duration": "8-8.5",
+    "slug": "ramgarh-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5700,
+    "priceSuv": 7400,
+    "priceTempo": 10700
+  },
+  {
+    "from": "ranaghat",
+    "fromName": "Ranaghat",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 375,
+    "duration": "7-7.5",
+    "slug": "ranaghat-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5300,
+    "priceSuv": 6800,
+    "priceTempo": 9800
+  },
+  {
+    "from": "ranchi",
+    "fromName": "Ranchi",
+    "fromState": "jharkhand",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 399,
+    "duration": "7-8",
+    "slug": "ranchi-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5600,
+    "priceSuv": 7200,
+    "priceTempo": 10400
+  },
+  {
+    "from": "raniganj",
+    "fromName": "Raniganj",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 370,
+    "duration": "7-7.5",
+    "slug": "raniganj-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5200,
+    "priceSuv": 6700,
+    "priceTempo": 9600
+  },
+  {
+    "from": "rayagada",
+    "fromName": "Rayagada",
+    "fromState": "odisha",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 605,
+    "duration": "12-12.5",
+    "slug": "rayagada-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 8500,
+    "priceSuv": 10900,
+    "priceTempo": 15700
+  },
+  {
+    "from": "rourkela",
+    "fromName": "Rourkela",
+    "fromState": "odisha",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 355,
+    "duration": "7-7.5",
+    "slug": "rourkela-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5000,
+    "priceSuv": 6400,
+    "priceTempo": 9200
+  },
+  {
+    "from": "sahebganj",
+    "fromName": "Sahebganj",
+    "fromState": "jharkhand",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 570,
+    "duration": "11-11.5",
+    "slug": "sahebganj-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 8000,
+    "priceSuv": 10300,
+    "priceTempo": 14800
+  },
+  {
+    "from": "salt-lake-kolkata",
+    "fromName": "Salt Lake",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 310,
+    "duration": "6-6.5",
+    "slug": "salt-lake-kolkata-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4300,
+    "priceSuv": 5600,
+    "priceTempo": 8100
+  },
+  {
+    "from": "sambalpur",
+    "fromName": "Sambalpur",
+    "fromState": "odisha",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 445,
+    "duration": "8-9",
+    "slug": "sambalpur-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 6200,
+    "priceSuv": 8000,
+    "priceTempo": 11600
+  },
+  {
+    "from": "satragachhi",
+    "fromName": "Satragachhi",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 295,
+    "duration": "5-6",
+    "slug": "satragachhi-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4100,
+    "priceSuv": 5300,
+    "priceTempo": 7700
+  },
+  {
+    "from": "seraikela",
+    "fromName": "Seraikela",
+    "fromState": "jharkhand",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 265,
+    "duration": "5-5.5",
+    "slug": "seraikela-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 3700,
+    "priceSuv": 4800,
+    "priceTempo": 6900
+  },
+  {
+    "from": "serampore",
+    "fromName": "Serampore",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 320,
+    "duration": "6-6.5",
+    "slug": "serampore-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4500,
+    "priceSuv": 5800,
+    "priceTempo": 8300
+  },
+  {
+    "from": "siliguri",
+    "fromName": "Siliguri",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 765,
+    "duration": "15-15.5",
+    "slug": "siliguri-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 10700,
+    "priceSuv": 13800,
+    "priceTempo": 19900
+  },
+  {
+    "from": "simdega",
+    "fromName": "Simdega",
+    "fromState": "jharkhand",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 415,
+    "duration": "8-8.5",
+    "slug": "simdega-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 5800,
+    "priceSuv": 7500,
+    "priceTempo": 10800
+  },
+  {
+    "from": "sundarbans",
+    "fromName": "Sundarbans",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 330,
+    "duration": "6-7",
+    "slug": "sundarbans-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4600,
+    "priceSuv": 5900,
+    "priceTempo": 8600
+  },
+  {
+    "from": "tamluk",
+    "fromName": "Tamluk",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 235,
+    "duration": "4-5",
+    "slug": "tamluk-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 3300,
+    "priceSuv": 4200,
+    "priceTempo": 6100
+  },
+  {
+    "from": "tarkeshwar",
+    "fromName": "Tarkeshwar",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 305,
+    "duration": "6-6.5",
+    "slug": "tarkeshwar-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 4300,
+    "priceSuv": 5500,
+    "priceTempo": 7900
+  },
+  {
+    "from": "tatanagar",
+    "fromName": "Tatanagar",
+    "fromState": "jharkhand",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 270,
+    "duration": "5-5.5",
+    "slug": "tatanagar-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 3800,
+    "priceSuv": 4900,
+    "priceTempo": 7000
+  },
+  {
+    "from": "uluberia",
+    "fromName": "Uluberia",
+    "fromState": "west-bengal",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 270,
+    "duration": "5-5.5",
+    "slug": "uluberia-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 3800,
+    "priceSuv": 4900,
+    "priceTempo": 7000
+  },
+  {
+    "from": "varanasi",
+    "fromName": "Varanasi",
+    "fromState": "uttar-pradesh",
+    "to": "bhadrak",
+    "toName": "Bhadrak",
+    "toState": "odisha",
+    "distance": 770,
+    "duration": "15-15.5",
+    "slug": "varanasi-to-bhadrak",
+    "via": [
+      "NH 16"
+    ],
+    "priceSaloon": 10800,
+    "priceSuv": 13900,
+    "priceTempo": 20000
   }
 ]

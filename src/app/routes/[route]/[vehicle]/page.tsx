@@ -31,7 +31,7 @@ const FareCalculator = nextDynamic(() => import('@/components/FareCalculator'), 
 });
 import { getCity, getState, getVehicle, getVehicles, VEHICLE_SLUGS, BUSINESS } from '@/lib/data';
 import { getRoute, isHubRoute } from '@/lib/routeData';
-import { getStaticVehicleRouteSlugs } from '@/lib/routeDataStatic';
+import { getStaticVehicleRouteSlugs, getAllRouteSlugs } from '@/lib/routeDataStatic';
 import { generateVehicleRouteMetadata, generateVehicleRouteSchema, generateFaqSchema, generateBreadcrumbSchema } from '@/lib/seo';
 
 // dynamicParams=false: With output: 'export', all pages must be pre-rendered at build time.
@@ -42,10 +42,13 @@ export const dynamicParams = false;
 export const dynamic = 'force-static';
 export const revalidate = false; // fully static, no ISR — zero CPU at request time
 
-// Pre-build hub route × vehicle combos at build time.
-// ~300 hub routes × 4 vehicles = ~1200 static files.
+// Pre-build vehicle detail pages for hub routes only.
+// Main route pages (/routes/[slug]) = ALL ~14,000 routes via getAllRouteSlugs().
+// Vehicle pages (/routes/[slug]/sedan etc) = top 2500 hub routes only.
+// This keeps vehicle pages focused on high-booking-intent hubs while every
+// route still has a main page (no more 404s).
 export async function generateStaticParams() {
-  const routeSlugs = getStaticVehicleRouteSlugs(500);
+  const routeSlugs = getStaticVehicleRouteSlugs(2500);
   const params: { route: string; vehicle: string }[] = [];
   for (const rs of routeSlugs) {
     for (const vs of VEHICLE_SLUGS) {

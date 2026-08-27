@@ -10,8 +10,12 @@ const nextConfig: NextConfig = {
   // Without this, every `next build` generates a new random buildId.
   deploymentId: "nk-cab-taxi-v1",
 
-  // Ensure consistent URLs — no trailing slashes
-  trailingSlash: false,
+  // trailingSlash: true — REQUIRED for static export when pages have sub-routes.
+  // Without this, Next.js exports /routes/slug as slug.html, but vehicle
+  // sub-pages (/routes/slug/sedan) force a folder named slug/ which conflicts
+  // with slug.html on the filesystem. With trailingSlash: true, every page
+  // exports as slug/index.html so both the main page and sub-pages coexist.
+  trailingSlash: true,
 
   // `sharp` is NOT supported in the Cloudflare Pages build environment.
   // Use unoptimized: true so Next.js skips server-side image processing.

@@ -1,7 +1,6 @@
 # Netlify _redirects file
 # Processed by Netlify CDN — 301/302 redirects for legacy URLs only.
 # Docs: https://docs.netlify.com/routing/redirects/
-# NOTE: This format is identical to Cloudflare Pages _redirects — no changes needed.
 #
 # ══════════════════════════════════════════════════════════════════════════════
 # ⚠️  IMPORTANT: APEX DOMAIN REDIRECT — SET IN NETLIFY DOMAIN SETTINGS
@@ -22,26 +21,28 @@
 /service/* /services/:splat 301
 
 # ── Fix: Duplicate route pages → dedicated hand-built landing pages ───────────
-# /routes/<slug> duplicates the hardcoded /kolkata-to-jamshedpur-cab and
-# /jamshedpur-to-kolkata-cab pages (canonical). MUST stay ABOVE the suffix-
-# stripping rules below — first match wins, and /routes/<slug>-cab must still
-# resolve to the same final destination without a redirect loop.
-/routes/kolkata-to-jamshedpur/* /kolkata-to-jamshedpur-cab 301
-/routes/kolkata-to-jamshedpur /kolkata-to-jamshedpur-cab 301
-/routes/jamshedpur-to-kolkata/* /jamshedpur-to-kolkata-cab 301
-/routes/jamshedpur-to-kolkata /jamshedpur-to-kolkata-cab 301
+/routes/kolkata-to-jamshedpur/* /kolkata-to-jamshedpur-cab/ 301
+/routes/kolkata-to-jamshedpur /kolkata-to-jamshedpur-cab/ 301
+/routes/jamshedpur-to-kolkata/* /jamshedpur-to-kolkata-cab/ 301
+/routes/jamshedpur-to-kolkata /jamshedpur-to-kolkata-cab/ 301
 
 # ── Fix: Legacy suffix variants → canonical route ─────────────────────────────
-/routes/*-cab /routes/:splat 301
-/routes/*-taxi /routes/:splat 301
-/routes/*-service /routes/:splat 301
-/routes/*-booking /routes/:splat 301
+/routes/*-cab /routes/:splat/ 301
+/routes/*-taxi /routes/:splat/ 301
+/routes/*-service /routes/:splat/ 301
+/routes/*-booking /routes/:splat/ 301
 
 # ── Fix: Legacy Kolkata area URLs ─────────────────────────────────────────────
-/west-bengal/salt-lake-kolkata /kolkata/salt-lake 301
-/west-bengal/new-town-kolkata /kolkata/new-town 301
+/west-bengal/salt-lake-kolkata /kolkata/salt-lake/ 301
+/west-bengal/new-town-kolkata /kolkata/new-town/ 301
 
 # ── Fix: Service rename: Two-Way → Round Trip ──────────────────────────────────
-/services/two-way /services/round-trip 301
-/:state/:city/two-way /:state/:city/round-trip 301
+/services/two-way /services/round-trip/ 301
+/:state/:city/two-way /:state/:city/round-trip/ 301
 
+# ── Fix: Non-trailing-slash → trailing slash (trailingSlash: true canonical) ──
+# Netlify serves index.html automatically for /path/ but NOT for /path
+# This catch-all ensures old links (GSC-indexed, backlinks) get 301'd cleanly.
+/routes/:slug /routes/:slug/ 301
+/:state/:city/:service /:state/:city/:service/ 301
+/:state/:city /:state/:city/ 301
