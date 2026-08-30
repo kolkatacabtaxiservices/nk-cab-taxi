@@ -32,6 +32,19 @@
 /routes/*-service /routes/:splat/ 301
 /routes/*-booking /routes/:splat/ 301
 
+# ── Fix: 404 tour pages → /tours/ (19 GSC 404 errors from old tour slugs) ────
+/tours/kolkata-beach-tour-digha-mandarmani /tours/ 301
+/tours/dehradun-mussoorie-weekend-tour /tours/ 301
+/tours/puri-konark-temple-tour /tours/ 301
+/tours/north-bengal-complete-tour /tours/ 301
+/tours/* /tours/ 301
+
+# ── Fix: 403 route pages (no trailing slash → Netlify serves 403) ─────────────
+/routes/barrackpore-to-angul /routes/barrackpore-to-angul/ 301
+/routes/ranaghat-to-ranchi /routes/ranaghat-to-ranchi/ 301
+/routes/*/tempo /routes/:splat/ 301
+
+
 # ── Fix: Legacy Kolkata area URLs ─────────────────────────────────────────────
 /west-bengal/salt-lake-kolkata /kolkata/salt-lake/ 301
 /west-bengal/new-town-kolkata /kolkata/new-town/ 301
