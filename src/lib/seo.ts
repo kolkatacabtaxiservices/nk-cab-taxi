@@ -32,23 +32,22 @@ export function getCityGeoMeta(cityName: string, stateSlug: string, lat?: number
 export function generateHomePageMetadata(): Metadata {
   return {
     // `absolute` prevents layout template from appending again
-    // Keyword-first title: primary keyword before brand for SERP click-through
-    title: { absolute: 'Cab Service Kolkata ₹12/km | Airport Taxi ₹1,800 | NK Cab & Taxi 4.8★' },
-    description: `NK Cab & Taxi — Kolkata's #1 outstation one-way drop taxi. Sedan ₹12/km | Airport ₹1,800 | Local 4hr ₹1,800 | 5000+ trips, rated 4.8/5. Innova, Ertiga, Dzire. No surge 24/7. Call ${BUSINESS.phone}`,
+    title: { absolute: 'NK Cab & Taxi Kolkata | One-Way Drop ₹12/km | Outstation & Airport Taxi Since 2019' },
+    description: `NK Cab & Taxi — East India's trusted one-way drop specialist since 2019. Kolkata outstation ₹12/km | CCU airport ₹1,800 | Local 4hr ₹1,800. Police-verified drivers, AC fleet, no surge ever. 5,000+ trips, 4.8★. Call ${BUSINESS.phone}`,
     alternates: { canonical: `${DOMAIN}/` },
     openGraph: {
       type: 'website',
       locale: 'en_IN',
       siteName: 'NK Cab & Taxi',
-      title: 'NK Cab & Taxi Kolkata | Cab from ₹12/km | Airport & Outstation Taxi 24/7',
-      description: `Rated 4.8/5. NK Cab & Taxi — Best cab in Kolkata & East India. Outstation ₹12/km | Airport from ₹1,800 | Local packages. WB, Jharkhand, Odisha. No surge. Call ${BUSINESS.phone}.`,
-      images: [{ url: OG_IMAGE_URL, width: 1200, height: 630, alt: 'NK Cab & Taxi — Rated 4.8/5 Cab & Taxi Service in Kolkata & East India' }],
+      title: 'NK Cab & Taxi | East India One-Way Drop Taxi Specialist Since 2019',
+      description: `Trusted cab & taxi service across East India since 2019. One-way outstation from ₹12/km | Airport ₹1,800 | Local packages. WB, Jharkhand, Odisha, Bihar. No surge pricing. Police-verified drivers. Call ${BUSINESS.phone}.`,
+      images: [{ url: OG_IMAGE_URL, width: 1200, height: 630, alt: 'NK Cab & Taxi — Premium Cab Service in Kolkata with Howrah Bridge in background' }],
       url: `${DOMAIN}/`,
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'NK Cab & Taxi Kolkata | ₹12/km | Rated 4.8 | 24/7 East India',
-      description: `Rated 4.8/5. NK Cab & Taxi. Outstation ₹12/km | Airport from ₹1,800. AC Innova, Ertiga, Dzire. No surge. Call ${BUSINESS.phone}.`,
+      title: 'NK Cab & Taxi | One-Way Drop from ₹12/km | East India Since 2019',
+      description: `East India's one-way drop specialist. Outstation ₹12/km | Airport ₹1,800. AC Innova, Ertiga, Dzire. No surge. Call ${BUSINESS.phone}.`,
       images: [OG_IMAGE_URL],
     },
     other: {

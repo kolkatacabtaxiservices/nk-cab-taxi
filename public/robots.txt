@@ -1,26 +1,16 @@
 User-agent: *
 Allow: /
 Disallow: /api/
-# Allow JS/CSS chunks — Googlebot needs them for rendering, CWV and
-# mobile-usability evaluation. Blocking all of /_next/ degrades page
-# experience signals. Only /_next/data/ (RSC payloads, unused in static
-# export) and non-static /_next/ paths stay disallowed.
+# Allow JS/CSS chunks for full rendering (Core Web Vitals, mobile-usability)
 Allow: /_next/static/
-Disallow: /_next/
-# Block car-type query parameter variants — these caused 13,103 GSC redirect errors
-# ?car=sedan/suv/tempo/luxury are internal UI filters, NOT indexable pages
+# Block car-type query parameter variants (internal UI filters, not indexable)
 Disallow: /*?car=sedan
 Disallow: /*?car=suv
 Disallow: /*?car=tempo
 Disallow: /*?car=luxury
 Disallow: /*?car=innova
-# Block path-based car type variants (returned 403/404 for 8,149 pages in GSC)
-Disallow: /routes/*/sedan
-Disallow: /routes/*/suv
-Disallow: /routes/*/tempo
-Disallow: /routes/*/luxury
-Disallow: /routes/*/innova
 
+# ── AI / scraper bots — disallow training crawls ──────────────────────────────
 User-agent: Amazonbot
 Disallow: /
 
@@ -44,12 +34,6 @@ Disallow: /
 
 User-agent: FacebookBot
 Disallow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: Google-CloudVertexBot
-Allow: /
 
 User-agent: GPTBot
 Disallow: /
@@ -87,7 +71,14 @@ Disallow: /
 User-agent: Anchor Browser
 Disallow: /
 
+# ── Search engine crawlers — full access ──────────────────────────────────────
 User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Google-CloudVertexBot
 Allow: /
 
 User-agent: BingBot
@@ -116,5 +107,3 @@ Allow: /
 
 # Primary sitemap index — Googlebot fetches this first
 Sitemap: https://www.nkcabtaxi.com/sitemap_index.xml
-# Note: sitemap.xml is an alias for sitemap_index.xml (identical content, legacy only)
-# Only one is advertised here to avoid duplicate sitemap fetching by Googlebot.

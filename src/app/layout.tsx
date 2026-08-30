@@ -30,10 +30,10 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(BUSINESS.domain),
   title: {
-    default: 'Cab Service Kolkata ₹12/km | Airport Taxi ₹1,800 | NK Cab & Taxi 24/7',
+    default: 'NK Cab & Taxi Kolkata | One-Way Drop ₹12/km | Outstation & Airport Taxi Since 2019',
     template: '%s | NK Cab & Taxi',
   },
-  description: `NK Cab & Taxi — Best cab service in Kolkata & East India from ₹12/km. Airport taxi Kolkata | Outstation to Darjeeling, Puri, Ranchi, Bhubaneswar | Local 4hr ₹1,800. AC Innova, Ertiga, Sedan. Rated 4.8/5. No surge 24/7. Call ${BUSINESS.phone}`,
+  description: `NK Cab & Taxi — East India's one-way drop taxi specialist since 2019. Kolkata outstation ₹12/km | Airport taxi ₹1,800 | Local 4hr ₹1,800. Police-verified drivers, AC Innova Crysta, Ertiga, Dzire. 4.8★ rated. No surge ever. Call ${BUSINESS.phone}`,
   // keywords meta tag intentionally removed — Google has ignored it since 2009
   // and a long list signals keyword stuffing. Page-level metadata handles targeting.
   authors: [{ name: BUSINESS.name, url: BUSINESS.domain }],
@@ -49,14 +49,14 @@ export const metadata: Metadata = {
         url: `${BUSINESS.domain}/navbanner.webp`,
         width: 1200,
         height: 630,
-        alt: 'NK Cab & Taxi — Best Cab Service in Kolkata & East India',
+        alt: 'NK Cab & Taxi — Premium Innova Crysta cab on Kolkata highway with Howrah Bridge backdrop',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NK Cab & Taxi Kolkata | ₹12/km | Airport, Outstation, Local Taxi 24/7',
-    description: `Best cab service in Kolkata & East India. Airport taxi, outstation to Darjeeling, Puri, Ranchi. AC Innova, Ertiga, Sedan. No surge 24/7. Call ${BUSINESS.phone}`,
+    title: 'NK Cab & Taxi | One-Way Drop ₹12/km | East India Outstation Specialist 2019',
+    description: `East India one-way drop specialist since 2019. Kolkata airport taxi, outstation to Darjeeling, Puri, Ranchi. AC Innova Crysta, Ertiga, Sedan. No surge 24/7. Call ${BUSINESS.phone}`,
     images: [`${BUSINESS.domain}/navbanner.webp`],
   },
   alternates: {
