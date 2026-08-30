@@ -1,4 +1,4 @@
-import { Phone, Mail, Clock, MapPin } from 'lucide-react';
+﻿import { Phone, Mail, Clock, MapPin } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import HeroBanner from '@/components/HeroBanner';
 
@@ -20,16 +20,16 @@ export const metadata = {
     siteName: 'NK Cab & Taxi',
     url: `${BUSINESS.domain}/contact`,
     locale: 'en_IN',
-    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: 'Reach out to NK Cab & Taxi' }],
+    images: [{ url: `${BUSINESS.domain}/herobanner.webp`, width: 1200, height: 630, alt: 'Reach out to NK Cab & Taxi' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: `Get a Ride — ${BUSINESS.phone} | ${BUSINESS.name}`,
     description: `Call or WhatsApp ${BUSINESS.phone}. No app needed. Confirmed in 2 minutes from ₹12/km.`,
-    images: [`${BUSINESS.domain}/navbanner.webp`],
+    images: [`${BUSINESS.domain}/herobanner.webp`],
   },
   alternates: { canonical: `${BUSINESS.domain}/contact/` },
-  other: { thumbnail: `${BUSINESS.domain}/navbanner.webp` },
+  other: { thumbnail: `${BUSINESS.domain}/herobanner.webp` },
 };
 
 const contactFaqs = [

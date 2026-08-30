@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+﻿import { Metadata } from 'next';
 import Link from 'next/link';
 import { Clock, ChevronRight } from 'lucide-react';
 import HeroBanner from '@/components/HeroBanner';
@@ -20,17 +20,17 @@ export const metadata: Metadata = {
     siteName: BUSINESS.name,
     locale: 'en_IN',
     type: 'website',
-    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: `Kolkata Travel Blog — ${BUSINESS.name}` }],
+    images: [{ url: `${BUSINESS.domain}/herobanner.webp`, width: 1200, height: 630, alt: `Kolkata Travel Blog — ${BUSINESS.name}` }],
   },
   twitter: {
     card: 'summary_large_image',
     title: `Kolkata Travel Blog — ${BUSINESS.name} | Route Guides & Cab Tips`,
     description: `Practical travel guides, fare charts, and booking tips for cab trips in Kolkata and East India.`,
-    images: [`${BUSINESS.domain}/navbanner.webp`],
+    images: [`${BUSINESS.domain}/herobanner.webp`],
   },
   alternates: { canonical: `${BUSINESS.domain}/blog/` },
   other: {
-    thumbnail: `${BUSINESS.domain}/navbanner.webp`,
+    thumbnail: `${BUSINESS.domain}/herobanner.webp`,
   },
 };
 

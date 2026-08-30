@@ -1,4 +1,4 @@
-import Image from 'next/image';
+﻿import Image from 'next/image';
 import Link from 'next/link';
 import { Phone, Shield, Star, CheckCircle, Clock, Car, Users, Briefcase, Fuel, Gauge } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -21,16 +21,16 @@ export const metadata = {
     siteName: 'NK Cab & Taxi',
     url: `${BUSINESS.domain}/fleet`,
     locale: 'en_IN',
-    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: 'NK Cab & Taxi Fleet — Innova Crysta, Ertiga, Dzire, Tempo Traveller' }],
+    images: [{ url: `${BUSINESS.domain}/herobanner.webp`, width: 1200, height: 630, alt: 'NK Cab & Taxi Fleet — Innova Crysta, Ertiga, Dzire, Tempo Traveller' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: `Car Rental Kolkata | Innova ₹18/km | Sedan ₹12/km — NK Cab & Taxi`,
     description: `Driver-included. AC fleet. No surge. Kolkata, Ranchi, 80+ cities. Call ${BUSINESS.phone}`,
-    images: [`${BUSINESS.domain}/navbanner.webp`],
+    images: [`${BUSINESS.domain}/herobanner.webp`],
   },
   alternates: { canonical: `${BUSINESS.domain}/fleet/` },
-  other: { thumbnail: `${BUSINESS.domain}/navbanner.webp` },
+  other: { thumbnail: `${BUSINESS.domain}/herobanner.webp` },
 };
 
 export default function FleetPage() {

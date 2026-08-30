@@ -1,4 +1,4 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 import { MapPin, Clock, Car, Phone, ChevronRight } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import HeroBanner from '@/components/HeroBanner';
@@ -17,16 +17,16 @@ export const metadata = {
     siteName: 'NK Cab & Taxi',
     url: `${BUSINESS.domain}/tours`,
     locale: 'en_IN',
-    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: 'Kolkata Tour Packages — NK Cab & Taxi' }],
+    images: [{ url: `${BUSINESS.domain}/herobanner.webp`, width: 1200, height: 630, alt: 'Kolkata Tour Packages — NK Cab & Taxi' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: `Tour Packages — Darjeeling, Puri, Bodh Gaya | NK Cab & Taxi`,
     description: `East India tours with chauffeur and air-conditioned cab. Kolkata, Ranchi, Jharkhand. Call ${BUSINESS.phone}`,
-    images: [`${BUSINESS.domain}/navbanner.webp`],
+    images: [`${BUSINESS.domain}/herobanner.webp`],
   },
   alternates: { canonical: `${BUSINESS.domain}/tours/` },
-  other: { thumbnail: `${BUSINESS.domain}/navbanner.webp` },
+  other: { thumbnail: `${BUSINESS.domain}/herobanner.webp` },
 };
 
 // Force fully static SSG — zero ISR Reads/Writes on Vercel

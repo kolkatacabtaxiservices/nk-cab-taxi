@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+﻿import { Metadata } from 'next';
 import { Phone, CheckCircle, XCircle, Shield, Clock, Car, CreditCard, MapPin } from 'lucide-react';
 
 import HeroBanner from '@/components/HeroBanner';
@@ -22,17 +22,17 @@ export const metadata: Metadata = {
     siteName: BUSINESS.name,
     locale: 'en_IN',
     type: 'article',
-    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: 'NK Cab & Taxi compared against Ola and Uber' }],
+    images: [{ url: `${BUSINESS.domain}/herobanner.webp`, width: 1200, height: 630, alt: 'NK Cab & Taxi compared against Ola and Uber' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'NK Cab & Taxi vs Ola vs Uber — Straight-Talk Comparison',
     description: 'Flat fares, zero surge, vetted drivers. Discover why riders move away from Ola and Uber.',
-    images: [`${BUSINESS.domain}/navbanner.webp`],
+    images: [`${BUSINESS.domain}/herobanner.webp`],
   },
   alternates: { canonical: `${BUSINESS.domain}/kolkata-cab-vs-ola-uber/` },
   other: {
-    thumbnail: `${BUSINESS.domain}/navbanner.webp`,
+    thumbnail: `${BUSINESS.domain}/herobanner.webp`,
   },
 };
 

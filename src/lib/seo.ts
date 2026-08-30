@@ -1,9 +1,9 @@
-import { Metadata } from 'next';
+﻿import { Metadata } from 'next';
 import { BUSINESS } from './data';
 
 const DOMAIN = BUSINESS.domain;
 const LOGO_URL = `${DOMAIN}/logo.png`;
-const OG_IMAGE_URL = `${DOMAIN}/navbanner.webp`;
+const OG_IMAGE_URL = `${DOMAIN}/herobanner.webp`;
 
 // ═══════════════════════════════════════════════════
 // GEO META HELPERS
@@ -1924,7 +1924,7 @@ export function generateVehicleRentalSchema(
     name: `${vehicleName} Cab in ${cityName}`,
     description: `Hire ${vehicleName} (${vehicleModels.slice(0, 2).join(', ')}) in ${cityName}, ${stateName}. Seats ${capacity} passengers. AC, GPS tracked, police-verified driver. Available 24/7 for airport, outstation, local & one-way trips.`,
     brand: { '@type': 'Brand', name: BUSINESS.name },
-    image: imageUrl || `${DOMAIN}/navbanner.webp`,
+    image: imageUrl || `${DOMAIN}/herobanner.webp`,
     offers: {
       '@type': 'Offer',
       priceCurrency: 'INR',
@@ -2058,7 +2058,7 @@ export function generateGenericArticleSchema(
     url,
     datePublished,
     dateModified: dateModified || datePublished,
-    image: imageUrl || `${DOMAIN}/navbanner.webp`,
+    image: imageUrl || `${DOMAIN}/herobanner.webp`,
     author: {
       '@type': 'Organization',
       name: BUSINESS.name,

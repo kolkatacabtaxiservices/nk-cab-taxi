@@ -33,13 +33,13 @@ export const metadata: Metadata = {
     siteName: BUSINESS.name,
     url: `${BUSINESS.domain}/jamshedpur-to-kolkata-cab`,
     locale: 'en_IN',
-    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: 'Jamshedpur to Kolkata cab booking with NK Cab & Taxi' }],
+    images: [{ url: `${BUSINESS.domain}/herobanner.webp`, width: 1200, height: 630, alt: 'Jamshedpur to Kolkata cab booking with NK Cab & Taxi' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: `Jamshedpur to Kolkata Taxi ₹${PRICE_SEDAN}`,
     description: `Jamshedpur to Kolkata taxi reserved in minutes. ${DISTANCE} km, AC vehicles. Call ${BUSINESS.phone}`,
-    images: [`${BUSINESS.domain}/navbanner.webp`],
+    images: [`${BUSINESS.domain}/herobanner.webp`],
   },
   alternates: {
     // This page has richer, hand-crafted content for the flagship route.
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     canonical: `${BUSINESS.domain}/jamshedpur-to-kolkata-cab`,
   },
   other: {
-    thumbnail: `${BUSINESS.domain}/navbanner.webp`,
+    thumbnail: `${BUSINESS.domain}/herobanner.webp`,
   },
 };
 
@@ -172,7 +172,7 @@ export default function JamshedpurToKolkataCabPage() {
             </div>
             <div className="relative w-full md:w-48 h-32 rounded-xl overflow-hidden shrink-0 border border-amber-200 shadow-sm">
               <Image
-                src="/navbanner.webp"
+                src="/herobanner.webp"
                 alt="Jamshedpur to Kolkata Cab booking - AC sedan and SUV taxi"
                 fill
                 className="object-cover"

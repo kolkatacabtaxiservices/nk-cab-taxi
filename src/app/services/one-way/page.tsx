@@ -1,4 +1,4 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import HeroBanner from '@/components/HeroBanner';
 import BookingForm from '@/components/BookingForm';
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: BUSINESS.name,
     url: `${BUSINESS.domain}/services/one-way`,
     locale: 'en_IN',
-    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: `One Way Taxi Service Kolkata — ${BUSINESS.name}` }],
+    images: [{ url: `${BUSINESS.domain}/herobanner.webp`, width: 1200, height: 630, alt: `One Way Taxi Service Kolkata — ${BUSINESS.name}` }],
   },
   twitter: {
     card: 'summary_large_image',

@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "/",
   "name": "NK Cab & Taxi — East India One-Way Specialist",
   "short_name": "NK Cab Taxi",
@@ -64,7 +64,7 @@
   ],
   "screenshots": [
     {
-      "src": "/navbanner.webp",
+      "src": "/herobanner.webp",
       "sizes": "1200x630",
       "type": "image/webp",
       "label": "NK Cab & Taxi — Premium cab service with Howrah Bridge backdrop"

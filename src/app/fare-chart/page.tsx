@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+﻿import { Metadata } from 'next';
 import Link from 'next/link';
 import { Phone } from 'lucide-react';
 import HeroBanner from '@/components/HeroBanner';
@@ -20,17 +20,17 @@ export const metadata: Metadata = {
     siteName: 'NK Cab & Taxi',
     url: `${BUSINESS.domain}/fare-chart`,
     locale: 'en_IN',
-    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: 'Kolkata Cab Fare Chart 2026' }],
+    images: [{ url: `${BUSINESS.domain}/herobanner.webp`, width: 1200, height: 630, alt: 'Kolkata Cab Fare Chart 2026' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: `Kolkata Taxi Rates 2026 | From ₹12/km Sedan`,
     description: `Outstation ₹12/km | Local 4hr ₹1,800 | Airport from ₹800. Surge-free. Call ${BUSINESS.phone}`,
-    images: [`${BUSINESS.domain}/navbanner.webp`],
+    images: [`${BUSINESS.domain}/herobanner.webp`],
   },
   alternates: { canonical: `${BUSINESS.domain}/fare-chart/` },
   other: {
-    thumbnail: `${BUSINESS.domain}/navbanner.webp`,
+    thumbnail: `${BUSINESS.domain}/herobanner.webp`,
   },
 };
 

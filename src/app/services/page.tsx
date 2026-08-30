@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+﻿import { Metadata } from 'next';
 import Link from 'next/link';
 import { MapPin, Route, ArrowRight, Repeat, Plane, Heart, Building, Phone } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -21,17 +21,17 @@ export const metadata: Metadata = {
     siteName: BUSINESS.name,
     url: `${BUSINESS.domain}/services`,
     locale: 'en_IN',
-    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: `Cab Services by ${BUSINESS.name}` }],
+    images: [{ url: `${BUSINESS.domain}/herobanner.webp`, width: 1200, height: 630, alt: `Cab Services by ${BUSINESS.name}` }],
   },
   twitter: {
     card: 'summary_large_image',
     title: `Our Services | ${BUSINESS.name}`,
     description: `Every cab service — local, outstation, airport, wedding. Call ${BUSINESS.phone}`,
-    images: [`${BUSINESS.domain}/navbanner.webp`],
+    images: [`${BUSINESS.domain}/herobanner.webp`],
   },
   alternates: { canonical: `${BUSINESS.domain}/services/` },
   other: {
-    thumbnail: `${BUSINESS.domain}/navbanner.webp`,
+    thumbnail: `${BUSINESS.domain}/herobanner.webp`,
   },
 };
 

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import nextDynamic from 'next/dynamic';
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   other: {
     // geo meta already injected globally via layout.tsx <head> — no duplication needed here
     'format-detection': 'telephone=yes',
-    'thumbnail': `${BUSINESS.domain}/navbanner.webp`,
+    'thumbnail': `${BUSINESS.domain}/herobanner.webp`,
   },
 };
 

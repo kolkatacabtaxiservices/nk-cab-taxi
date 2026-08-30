@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+﻿import { Metadata } from 'next';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import HeroBanner from '@/components/HeroBanner';
 import { BUSINESS } from '@/lib/data';
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   alternates: { canonical: `${BUSINESS.domain}/terms/` },
   other: {
-    thumbnail: `${BUSINESS.domain}/navbanner.webp`,
+    thumbnail: `${BUSINESS.domain}/herobanner.webp`,
   },
 };
 

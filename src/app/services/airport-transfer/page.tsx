@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import HeroBanner from '@/components/HeroBanner';
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     siteName: BUSINESS.name,
     url: `${BUSINESS.domain}/services/airport-transfer`,
     locale: 'en_IN',
-    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: 'Kolkata CCU Airport Transfer Cab Service' }],
+    images: [{ url: `${BUSINESS.domain}/herobanner.webp`, width: 1200, height: 630, alt: 'Kolkata CCU Airport Transfer Cab Service' }],
   },
   twitter: {
     card: 'summary_large_image',

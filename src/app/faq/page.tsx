@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+﻿import { Metadata } from 'next';
 import { Phone } from 'lucide-react';
 import HeroBanner from '@/components/HeroBanner';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -20,17 +20,17 @@ export const metadata: Metadata = {
     siteName: 'NK Cab & Taxi',
     url: `${BUSINESS.domain}/faq`,
     locale: 'en_IN',
-    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: 'NK Cab & Taxi questions and answers' }],
+    images: [{ url: `${BUSINESS.domain}/herobanner.webp`, width: 1200, height: 630, alt: 'NK Cab & Taxi questions and answers' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: `NK Cab & Taxi Q&A | Booking and Fares`,
     description: `Quick answers to common questions. Fares from ₹12/km. Call ${BUSINESS.phone}.`,
-    images: [`${BUSINESS.domain}/navbanner.webp`],
+    images: [`${BUSINESS.domain}/herobanner.webp`],
   },
   alternates: { canonical: `${BUSINESS.domain}/faq/` },
   other: {
-    thumbnail: `${BUSINESS.domain}/navbanner.webp`,
+    thumbnail: `${BUSINESS.domain}/herobanner.webp`,
   },
 };
 

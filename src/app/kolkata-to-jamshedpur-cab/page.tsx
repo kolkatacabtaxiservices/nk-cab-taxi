@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+﻿import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Phone, MapPin, Clock, Car, ArrowRight, Route, Shield, CreditCard, Star } from 'lucide-react';
@@ -33,13 +33,13 @@ export const metadata: Metadata = {
     siteName: BUSINESS.name,
     url: `${BUSINESS.domain}/kolkata-to-jamshedpur-cab`,
     locale: 'en_IN',
-    images: [{ url: `${BUSINESS.domain}/navbanner.webp`, width: 1200, height: 630, alt: 'Kolkata to Jamshedpur Cab Service' }],
+    images: [{ url: `${BUSINESS.domain}/herobanner.webp`, width: 1200, height: 630, alt: 'Kolkata to Jamshedpur Cab Service' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: `Kolkata to Jamshedpur Cab ₹${PRICE_SEDAN}`,
     description: `Kolkata to Jamshedpur cab, ${DISTANCE} km highway run in an AC car. Call ${BUSINESS.phone}`,
-    images: [`${BUSINESS.domain}/navbanner.webp`],
+    images: [`${BUSINESS.domain}/herobanner.webp`],
   },
   alternates: {
     // This page has richer, hand-crafted content for the flagship route.
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     canonical: `${BUSINESS.domain}/kolkata-to-jamshedpur-cab`,
   },
   other: {
-    thumbnail: `${BUSINESS.domain}/navbanner.webp`,
+    thumbnail: `${BUSINESS.domain}/herobanner.webp`,
   },
 };
 
@@ -174,7 +174,7 @@ export default function KolkataToJamshedpurCabPage() {
             </div>
             <div className="relative w-full md:w-48 h-32 rounded-xl overflow-hidden shrink-0 border border-amber-200 shadow-sm">
               <Image
-                src="/navbanner.webp"
+                src="/herobanner.webp"
                 alt="Kolkata to Jamshedpur Cab booking - AC sedan and SUV taxi"
                 fill
                 className="object-cover"

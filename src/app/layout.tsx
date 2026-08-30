@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Script from 'next/script';
 import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     siteName: 'NK Cab & Taxi',
     images: [
       {
-        url: `${BUSINESS.domain}/navbanner.webp`,
+        url: `${BUSINESS.domain}/herobanner.webp`,
         width: 1200,
         height: 630,
         alt: 'NK Cab & Taxi — Premium Innova Crysta cab on Kolkata highway with Howrah Bridge backdrop',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'NK Cab & Taxi | One-Way Drop ₹12/km | East India Outstation Specialist 2019',
     description: `East India one-way drop specialist since 2019. Kolkata airport taxi, outstation to Darjeeling, Puri, Ranchi. AC Innova Crysta, Ertiga, Sedan. No surge 24/7. Call ${BUSINESS.phone}`,
-    images: [`${BUSINESS.domain}/navbanner.webp`],
+    images: [`${BUSINESS.domain}/herobanner.webp`],
   },
   alternates: {
     languages: {
@@ -193,7 +193,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* ═══ CRITICAL: Preload LCP hero image ═══
             This eliminates the 2,000ms "Element render delay" in PageSpeed.
             Without this, browser waits for React hydration before discovering the image. */}
-        <link rel="preload" as="image" type="image/webp" href="/navbanner.webp" fetchPriority="high" />
+        <link rel="preload" as="image" type="image/webp" href="/herobanner.webp" fetchPriority="high" />
         
         {/* Content-Language for SEO */}
         <meta httpEquiv="Content-Language" content="en-IN" />
