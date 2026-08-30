@@ -1,14 +1,15 @@
-﻿'use client';
+'use client';
 
 import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 
 const bannerImages = [
-  { src: '/navbanner.webp', alt: 'NK Cab & Taxi - Trusted cab booking across East India' },
-  { src: '/navbanner1.webp', alt: 'Outstation Cab Rental - Low-cost trips between cities' },
-  { src: '/navbanner2.webp', alt: 'Wedding Car Fleet - Dressed-up cars for any celebration' },
-  { src: '/navbanner3.webp', alt: 'Airport Transfer Service - Punctual pickup and drop-off' },
+  { src: '/navbanner.webp', alt: 'NK Cab & Taxi — Premium Innova Crysta on Kolkata highway, Howrah Bridge backdrop, est. 2019' },
+  { src: '/navbanner1.webp', alt: 'NK Cab & Taxi Outstation One-Way Drop — No return charges, fixed fare East India' },
+  { src: '/navbanner2.webp', alt: 'NK Cab & Taxi Wedding Car Rental Kolkata — Decorated Innova Crysta with professional chauffeur' },
+  { src: '/navbanner3.webp', alt: 'NK Cab & Taxi CCU Airport Transfer — Police-verified driver with name board, 24/7' },
 ];
+
 
 interface HeroBannerProps {
   hideDots?: boolean;

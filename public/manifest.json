@@ -1,12 +1,12 @@
 {
   "id": "/",
-  "name": "NK Cab & Taxi — Book Cab 24/7",
-  "short_name": "NK Cab",
-  "description": "Book cab in Jamshedpur, Kolkata, Ranchi & 70+ cities. Airport transfer, outstation, local taxi. ₹12/km. Call +919883619471.",
+  "name": "NK Cab & Taxi — East India One-Way Specialist",
+  "short_name": "NK Cab Taxi",
+  "description": "NK Cab & Taxi (Est. 2019) — Kolkata's one-way drop taxi specialist. Police-verified drivers, AC fleet. Outstation ₹12/km, Airport ₹1,800. Call +919883619471.",
   "start_url": "/?source=pwa",
   "display": "standalone",
   "display_override": ["standalone", "browser"],
-  "background_color": "#ffffff",
+  "background_color": "#0D1B2A",
   "theme_color": "#FF6B00",
   "orientation": "portrait",
   "scope": "/",
@@ -41,31 +41,25 @@
   ],
   "shortcuts": [
     {
-      "name": "Book Cab Now",
-      "short_name": "Book",
-      "url": "/contact?source=pwa-shortcut",
-      "description": "Book a cab instantly",
-      "icons": [
-        { "src": "/logo.png", "sizes": "512x512", "type": "image/png" }
-      ]
-    },
-    {
-      "name": "Fare Chart",
-      "short_name": "Fares",
-      "url": "/fare-chart?source=pwa-shortcut",
-      "description": "Check cab fare rates",
-      "icons": [
-        { "src": "/logo.png", "sizes": "512x512", "type": "image/png" }
-      ]
+      "name": "Book Outstation Cab",
+      "short_name": "Outstation",
+      "description": "Book one-way outstation cab from Kolkata",
+      "url": "/services/outstation/?source=pwa-shortcut",
+      "icons": [{ "src": "/logo.png", "sizes": "192x192" }]
     },
     {
       "name": "Airport Transfer",
       "short_name": "Airport",
-      "url": "/services/airport-transfer?source=pwa-shortcut",
-      "description": "Book airport pickup/drop",
-      "icons": [
-        { "src": "/logo.png", "sizes": "512x512", "type": "image/png" }
-      ]
+      "description": "Book CCU airport pickup or drop",
+      "url": "/services/airport-transfer/?source=pwa-shortcut",
+      "icons": [{ "src": "/logo.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Call NK Cab",
+      "short_name": "Call Now",
+      "description": "Call NK Cab & Taxi directly",
+      "url": "tel:+919883619471",
+      "icons": [{ "src": "/logo.png", "sizes": "192x192" }]
     }
   ],
   "screenshots": [
@@ -73,10 +67,9 @@
       "src": "/navbanner.webp",
       "sizes": "1200x630",
       "type": "image/webp",
-      "form_factor": "wide",
-      "label": "NK Cab & Taxi Homepage"
+      "label": "NK Cab & Taxi — Premium cab service with Howrah Bridge backdrop"
     }
   ],
-  "prefer_related_applications": false,
-  "related_applications": []
+  "related_applications": [],
+  "prefer_related_applications": false
 }

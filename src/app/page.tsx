@@ -163,21 +163,21 @@ export default async function HomePage() {
               {/* Trust pill */}
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-xs sm:text-sm mb-5 border border-white/20 shadow-md">
                 <span className="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse shadow-sm shadow-green-400" />
-                <span className="text-white font-medium">★ Rated 4.8 on Google — 80+ Cities in Five States</span>
+                <span className="text-white font-medium">★ 4.8 Google Rating — East India One-Way Drop Specialist Since 2019</span>
               </div>
 
               {/* Main Heading */}
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.15] mb-4">
-                <span className="text-[#FF6B00]">NK Cab &amp; Taxi</span> — Kolkata&apos;s Trusted Taxi from ₹12/km
+                <span className="text-[#FF6B00]">NK Cab &amp; Taxi</span> — One-Way Drop Taxi from ₹12/km · Est. 2019
               </h1>
 
               {/* Subheading */}
               <h2 className="text-lg sm:text-2xl font-bold text-white/95 mb-4">
-                City Rides, Outstation Cars &amp; Airport Pickups — Kolkata | Always Open
+                Outstation One-Way | Airport Transfer | Local Taxi — Kolkata &amp; East India, 24/7
               </h2>
 
               <p className="text-gray-200 text-sm sm:text-base leading-relaxed mb-6 max-w-2xl">
-                No algorithm, no surge, no app download. NK Cab &amp; Taxi is a direct, operator-run taxi service covering Kolkata, West Bengal, Jharkhand, Odisha, Bihar &amp; UP — with a real person on the phone 24/7. AC cars from ₹12/km, fixed fares, driver confirmed in 2 minutes.
+                NK Cab &amp; Taxi (est. 2019) is Kolkata&apos;s one-way outstation specialist — you pay only for your direction, no return charges. Police-verified drivers, AC fleet (Sedan, Ertiga, Innova Crysta), and fixed fares that never surge. Real person on the phone 24/7. Booking confirmed in 2 minutes.
               </p>
 
               {/* Action Buttons matching screenshot */}
@@ -197,11 +197,11 @@ export default async function HomePage() {
                 </a>
               </div>
 
-              {/* Trust Badges with Green Checkmarks matching screenshot */}
+              {/* Trust Badges */}
               <div className="flex flex-wrap gap-x-5 gap-y-2 text-xs sm:text-sm text-gray-200 font-medium">
-                <span className="flex items-center gap-1.5"><CheckCircle size={15} className="text-green-400" /> Top-Rated Cabs in Kolkata</span>
-                <span className="flex items-center gap-1.5"><CheckCircle size={15} className="text-green-400" /> Fixed Fares at Every Hour</span>
-                <span className="flex items-center gap-1.5"><CheckCircle size={15} className="text-green-400" /> ★4.8 from 5,000+ Riders</span>
+                <span className="flex items-center gap-1.5"><CheckCircle size={15} className="text-green-400" />Police-Verified Drivers Since 2019</span>
+                <span className="flex items-center gap-1.5"><CheckCircle size={15} className="text-green-400" />No Return Charges on One-Way Trips</span>
+                <span className="flex items-center gap-1.5"><CheckCircle size={15} className="text-green-400" />★4.8 · 5,000+ Trips Completed</span>
               </div>
             </div>
 

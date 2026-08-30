@@ -109,7 +109,7 @@ export default async function Footer() {
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              Dependable cab and taxi service based in Kolkata, serving East India. Airport pickups, outstation rides, and city taxis — air-conditioned cars, background-checked drivers, and steady fixed pricing.
+              NK Cab &amp; Taxi (est. 2019) — East India&apos;s one-way drop taxi specialist. You pay only for your direction, never for the driver&apos;s return. Police-verified drivers, AC fleet, fixed fares that never surge. Salt Lake Sector V, Kolkata.
             </p>
             <div className="space-y-3">
               <a href={`tel:${BUSINESS.phone}`} className="flex items-center gap-3 text-gray-300 hover:text-[#FF6B00] transition-colors text-sm">
