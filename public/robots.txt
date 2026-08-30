@@ -1,7 +1,7 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
 Disallow: /api/
-# Allow JS/CSS chunks for full rendering (Core Web Vitals, mobile-usability)
+# Allow JS/CSS chunks for full rendering (Core Web Vitals, mobile-usability) -- v2
 Allow: /_next/static/
 # Block car-type query parameter variants (internal UI filters, not indexable)
 Disallow: /*?car=sedan
