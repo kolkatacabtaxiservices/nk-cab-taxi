@@ -73,7 +73,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: blog.description,
       images: [`${BUSINESS.domain}/navbanner.webp`],
     },
-    alternates: { canonical: `${BUSINESS.domain}/blog/${blog.slug}` },
+    alternates: { canonical: `${BUSINESS.domain}/blog/${blog.slug}/` },
     other: { thumbnail: `${BUSINESS.domain}/navbanner.webp` },
   };
 }

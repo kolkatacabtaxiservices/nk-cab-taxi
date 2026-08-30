@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   if (!city) return {};
   const metaPrices = getStatePriceLabels(stateSlug);
   const airportName = city.airport || `${city.name} Airport`;
-  const canonicalUrl = `${BUSINESS.domain}/${stateSlug}/${citySlug}/airport-transfer`;
+  const canonicalUrl = `${BUSINESS.domain}/${stateSlug}/${citySlug}/airport-transfer/`;
   return {
     title: `Airport Taxi in ${city.name} from ${metaPrices.airportSedan} | ${airportName} Pickup and Drop Any Hour | ${BUSINESS.name}`,
     description: `Airport cab in ${city.name} with pickup and drop at ${airportName}. Sedan ${metaPrices.airportSedan}, SUV ₹2,500. Live flight monitoring plus a personal meet and greet, round the clock. Ring ${BUSINESS.phone}`.slice(0, 160),

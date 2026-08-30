@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: { params: Promise<{ area: str
       description: `Reserve a cab in ${area.shortName}. Airport ${area.fareToAirport}. Local and outstation trips. 24/7. Call ${BUSINESS.phone}.`,
       images: [`${BUSINESS.domain}/navbanner.webp`],
     },
-    alternates: { canonical: `${BUSINESS.domain}/kolkata/${area.slug}` },
+    alternates: { canonical: `${BUSINESS.domain}/kolkata/${area.slug}/` },
     // keywords meta tag removed — Google ignores it (ignored since 2009), signals spam
     other: {
       thumbnail: `${BUSINESS.domain}/navbanner.webp`,

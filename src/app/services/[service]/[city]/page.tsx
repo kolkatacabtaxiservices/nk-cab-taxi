@@ -108,7 +108,7 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ se
     'Flat fares all day — no surge pricing',
   ];
 
-  const canonicalUrl = `${BUSINESS.domain}/services/${serviceSlug}/${citySlug}`;
+  const canonicalUrl = `${BUSINESS.domain}/services/${serviceSlug}/${citySlug}/`;
 
 
   return (

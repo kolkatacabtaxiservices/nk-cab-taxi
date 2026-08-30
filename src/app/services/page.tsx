@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description: `Every cab service — local, outstation, airport, wedding. Call ${BUSINESS.phone}`,
     images: [`${BUSINESS.domain}/navbanner.webp`],
   },
-  alternates: { canonical: `${BUSINESS.domain}/services` },
+  alternates: { canonical: `${BUSINESS.domain}/services/` },
   other: {
     thumbnail: `${BUSINESS.domain}/navbanner.webp`,
   },

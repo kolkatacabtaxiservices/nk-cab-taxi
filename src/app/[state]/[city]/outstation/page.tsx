@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   if (!city) return {};
   const metaPrices = getStatePriceLabels(stateSlug);
   const stateName = state?.name || stateSlug;
-  const canonicalUrl = `${BUSINESS.domain}/${stateSlug}/${citySlug}/outstation`;
+  const canonicalUrl = `${BUSINESS.domain}/${stateSlug}/${citySlug}/outstation/`;
   return {
     title: `Outstation Taxi from ${city.name} at ${metaPrices.sedanPerKm} | AC Hire, One-Way or Return | ${BUSINESS.name}`,
     description: `Reserve an outstation car out of ${city.name}, ${stateName}. Air-conditioned intercity fleet: Sedan ${metaPrices.sedanPerKm}, SUV ${metaPrices.suvPerKm}, Crysta ${metaPrices.crystaPerKm}. One-way or return, at any hour. Ring ${BUSINESS.phone}`.slice(0, 160),

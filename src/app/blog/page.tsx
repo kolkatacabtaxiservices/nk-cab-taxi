@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     description: `Practical travel guides, fare charts, and booking tips for cab trips in Kolkata and East India.`,
     images: [`${BUSINESS.domain}/navbanner.webp`],
   },
-  alternates: { canonical: `${BUSINESS.domain}/blog` },
+  alternates: { canonical: `${BUSINESS.domain}/blog/` },
   other: {
     thumbnail: `${BUSINESS.domain}/navbanner.webp`,
   },

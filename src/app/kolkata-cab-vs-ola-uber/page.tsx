@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description: 'Flat fares, zero surge, vetted drivers. Discover why riders move away from Ola and Uber.',
     images: [`${BUSINESS.domain}/navbanner.webp`],
   },
-  alternates: { canonical: `${BUSINESS.domain}/kolkata-cab-vs-ola-uber` },
+  alternates: { canonical: `${BUSINESS.domain}/kolkata-cab-vs-ola-uber/` },
   other: {
     thumbnail: `${BUSINESS.domain}/navbanner.webp`,
   },

@@ -157,7 +157,7 @@ export function generateRouteMetadata(
       description: `One-way drop cab ${fromName} to ${toName}. ${distance} km, Sedan ₹${priceSaloon}, SUV ₹${priceSuv}. Pay one side only. Call ${BUSINESS.phone}`,
       type: 'website',
       siteName: BUSINESS.name,
-      url: `${DOMAIN}/routes/${routeSlug}`,
+      url: `${DOMAIN}/routes/${routeSlug}/`,
       locale: 'en_IN',
       images: [{ url: OG_IMAGE_URL, width: 1200, height: 630, alt: `${fromName} to ${toName} One-Way Drop Taxi - ${BUSINESS.name}` }],
     },
@@ -167,7 +167,7 @@ export function generateRouteMetadata(
       description: `One-way outstation taxi ${fromName}–${toName}. ${distance} km. Fixed fare, no return charge. Call ${BUSINESS.phone}`,
       images: [OG_IMAGE_URL],
     },
-    alternates: { canonical: `${DOMAIN}/routes/${routeSlug}` },
+    alternates: { canonical: `${DOMAIN}/routes/${routeSlug}/` },
     other: {
       thumbnail: OG_IMAGE_URL,
     },
@@ -548,7 +548,7 @@ export function generateCityMetadata(cityName: string, stateName: string): Metad
       description: `Book cab in ${cityName}. Airport ₹${airportRate} | Outstation ${baseRate} | Local ₹1,800. No surge pricing. Call ${BUSINESS.phone}`,
       images: [OG_IMAGE_URL],
     },
-    alternates: { canonical: `${DOMAIN}/${stateSlug}/${citySlug}` },
+    alternates: { canonical: `${DOMAIN}/${stateSlug}/${citySlug}/` },
     other: {
       thumbnail: OG_IMAGE_URL,
     },
@@ -605,7 +605,7 @@ export function generateStateMetadata(stateName: string): Metadata {
       description: `Book cab across ${stateName}. All cities covered. ₹12/km. Call ${BUSINESS.phone}`,
       images: [OG_IMAGE_URL],
     },
-    alternates: { canonical: `${DOMAIN}/${stateSlug}` },
+    alternates: { canonical: `${DOMAIN}/${stateSlug}/` },
     other: {
       thumbnail: OG_IMAGE_URL,
     },
@@ -632,7 +632,7 @@ export function generateAboutMetadata(): Metadata {
       description: `Trusted cab service since ${BUSINESS.foundYear}. 80+ cities. Call ${BUSINESS.phone}`,
       images: [OG_IMAGE_URL],
     },
-    alternates: { canonical: `${DOMAIN}/about` },
+    alternates: { canonical: `${DOMAIN}/about/` },
     other: {
       thumbnail: OG_IMAGE_URL,
     },
@@ -659,7 +659,7 @@ export function generateContactMetadata(): Metadata {
       description: `Book cab. Call ${BUSINESS.phone} or WhatsApp. 24/7 service across East India.`,
       images: [OG_IMAGE_URL],
     },
-    alternates: { canonical: `${DOMAIN}/contact` },
+    alternates: { canonical: `${DOMAIN}/contact/` },
     other: {
       thumbnail: OG_IMAGE_URL,
     },
@@ -697,7 +697,7 @@ export function generateFleetMetadata(): Metadata {
       description: `Sedan, SUV, Innova Crysta, Tempo for rent. AC, GPS tracked. Kolkata & 80+ cities. Call ${BUSINESS.phone}`,
       images: [OG_IMAGE_URL],
     },
-    alternates: { canonical: `${DOMAIN}/fleet` },
+    alternates: { canonical: `${DOMAIN}/fleet/` },
     other: {
       thumbnail: OG_IMAGE_URL,
     },
@@ -731,7 +731,7 @@ export function generateToursListingMetadata(): Metadata {
       description: `Book Darjeeling, Puri, Varanasi tours with AC cab. Call ${BUSINESS.phone}`,
       images: [OG_IMAGE_URL],
     },
-    alternates: { canonical: `${DOMAIN}/tours` },
+    alternates: { canonical: `${DOMAIN}/tours/` },
     other: {
       thumbnail: OG_IMAGE_URL,
     },
@@ -760,7 +760,7 @@ export function generateTourMetadata(tourName: string, destination: string, dura
       description: desc,
       images: [OG_IMAGE_URL],
     },
-    alternates: { canonical: `${DOMAIN}/tours/${tourSlug}` },
+    alternates: { canonical: `${DOMAIN}/tours/${tourSlug}/` },
     other: {
       thumbnail: OG_IMAGE_URL,
     },
@@ -902,7 +902,7 @@ export function generateServicePageMetadata(serviceName: string, description: st
       description: strongDesc,
       images: [OG_IMAGE_URL],
     },
-    alternates: { canonical: `${DOMAIN}/services/${serviceConfig.slug}` },
+    alternates: { canonical: `${DOMAIN}/services/${serviceConfig.slug}/` },
     other: {
       thumbnail: OG_IMAGE_URL,
     },
@@ -916,7 +916,7 @@ export function generateServiceCityMetadata(
   serviceSlug: string,
 ): Metadata {
   const citySlug = cityName.toLowerCase().replace(/\s+/g, '-');
-  const canonicalUrl = `${DOMAIN}/services/${serviceSlug}/${citySlug}`;
+  const canonicalUrl = `${DOMAIN}/services/${serviceSlug}/${citySlug}/`;
   const title = `${serviceName} in ${cityName} ₹12/km | Book 24/7 | ${BUSINESS.name}`;
   const desc = `${serviceName} service in ${cityName}, ${stateName}. AC Sedan, SUV, Innova Crysta. Verified drivers, no surge pricing. 24/7. Call ${BUSINESS.phone}`.slice(0, 160);
 
@@ -983,7 +983,7 @@ export function generateVehicleRouteMetadata(
   vehicleSlug: string, fare: number, routeSlug: string
 ): Metadata {
   const v = VEHICLE_DISPLAY[vehicleSlug] || VEHICLE_DISPLAY.sedan;
-  const canonicalUrl = `${DOMAIN}/routes/${routeSlug}/${vehicleSlug}`;
+  const canonicalUrl = `${DOMAIN}/routes/${routeSlug}/${vehicleSlug}/`;
   
   // Short title — under 60 chars
   const title = `${fromName} to ${toName} ${v.name} ₹${fare} | Book 24/7`;

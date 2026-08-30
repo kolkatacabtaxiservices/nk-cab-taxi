@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: `Wedding Car Rental Kolkata | Decorated Innova, Fortuner ₹3,500 | Baraat & Vidaai | ${BUSINESS.name}`,
   description: `Premium wedding car rental in Kolkata with fresh flower decoration. Innova Crysta ₹5,000, Fortuner ₹8,000, Sedan ₹3,500. Baraat fleet, vidaai car, guest transport. Book 2 weeks early. Call ${BUSINESS.phone}.`.slice(0, 160),
     // keywords meta tag removed — Google ignores it (ignored since 2009), signals spam
-  alternates: { canonical: `${BUSINESS.domain}/services/wedding-car-rental` },
+  alternates: { canonical: `${BUSINESS.domain}/services/wedding-car-rental/` },
   openGraph: {
     title: `Wedding Car Rental Kolkata | Decorated Innova & Fortuner | ${BUSINESS.name}`,
     description: `Flower-decorated wedding cars in Kolkata. Innova Crysta ₹5,000, Fortuner ₹8,000. Baraat fleet, vidaai arrangements. Professional chauffeur. Fixed fares. Call ${BUSINESS.phone}`,

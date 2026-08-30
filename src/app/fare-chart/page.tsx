@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     description: `Outstation ₹12/km | Local 4hr ₹1,800 | Airport from ₹800. Surge-free. Call ${BUSINESS.phone}`,
     images: [`${BUSINESS.domain}/navbanner.webp`],
   },
-  alternates: { canonical: `${BUSINESS.domain}/fare-chart` },
+  alternates: { canonical: `${BUSINESS.domain}/fare-chart/` },
   other: {
     thumbnail: `${BUSINESS.domain}/navbanner.webp`,
   },

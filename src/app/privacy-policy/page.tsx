@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: `Privacy Policy | ${BUSINESS.name}`,
   description: `How ${BUSINESS.name} handles your data. Read about what we gather, why we use it, and the steps we take to keep your details safe when booking a cab in Kolkata and East India.`,
   robots: { index: true, follow: true },
-  alternates: { canonical: `${BUSINESS.domain}/privacy-policy` },
+  alternates: { canonical: `${BUSINESS.domain}/privacy-policy/` },
   other: {
     thumbnail: `${BUSINESS.domain}/navbanner.webp`,
   },

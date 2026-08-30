@@ -25,7 +25,7 @@ export const metadata = {
     description: `East India tours with chauffeur and air-conditioned cab. Kolkata, Ranchi, Jharkhand. Call ${BUSINESS.phone}`,
     images: [`${BUSINESS.domain}/navbanner.webp`],
   },
-  alternates: { canonical: `${BUSINESS.domain}/tours` },
+  alternates: { canonical: `${BUSINESS.domain}/tours/` },
   other: { thumbnail: `${BUSINESS.domain}/navbanner.webp` },
 };
 

@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     description: `Quick answers to common questions. Fares from ₹12/km. Call ${BUSINESS.phone}.`,
     images: [`${BUSINESS.domain}/navbanner.webp`],
   },
-  alternates: { canonical: `${BUSINESS.domain}/faq` },
+  alternates: { canonical: `${BUSINESS.domain}/faq/` },
   other: {
     thumbnail: `${BUSINESS.domain}/navbanner.webp`,
   },

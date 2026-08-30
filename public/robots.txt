@@ -116,4 +116,5 @@ Allow: /
 
 # Primary sitemap index — Googlebot fetches this first
 Sitemap: https://www.nkcabtaxi.com/sitemap_index.xml
-Sitemap: https://www.nkcabtaxi.com/sitemap.xml
+# Note: sitemap.xml is an alias for sitemap_index.xml (identical content, legacy only)
+# Only one is advertised here to avoid duplicate sitemap fetching by Googlebot.

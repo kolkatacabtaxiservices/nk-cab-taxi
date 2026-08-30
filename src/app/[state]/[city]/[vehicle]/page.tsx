@@ -56,7 +56,7 @@ export async function generateMetadata({
 
   const title = `${vehicle.name} Taxi in ${city.name} ₹${rate}/km | Reserve 24/7 | NK Cab & Taxi`;
   const description = `Hire a ${vehicle.name} (${vehicle.models.slice(0, 2).join(', ')}) in ${city.name} from ₹${rate}/km. Airport runs, outstation trips, city packages. AC, GPS fitted, verified drivers. Fixed fares round the clock. Call ${BUSINESS.phone}`;
-  const canonical = `${BUSINESS.domain}/${stateSlug}/${citySlug}/${vehicleSlug}`;
+  const canonical = `${BUSINESS.domain}/${stateSlug}/${citySlug}/${vehicleSlug}/`;
 
   return {
     title,

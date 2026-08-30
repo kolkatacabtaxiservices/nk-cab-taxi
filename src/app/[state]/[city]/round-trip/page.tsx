@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const city = getCity(stateSlug, citySlug);
   if (!city) return {};
   const metaPrices = getStatePriceLabels(stateSlug);
-  const canonicalUrl = `${BUSINESS.domain}/${stateSlug}/${citySlug}/round-trip`;
+  const canonicalUrl = `${BUSINESS.domain}/${stateSlug}/${citySlug}/round-trip/`;
   return {
     title: `Return-Trip Hire from ${city.name} at ${metaPrices.sedanPerKm} | Multi-Day Car | ${BUSINESS.name}`,
     description: `Hire a return-trip car out of ${city.name} and keep the same chauffeur for the whole journey. Sedan ${metaPrices.sedanPerKm}, SUV ${metaPrices.suvPerKm}. Multi-day travel, day or night. Ring ${BUSINESS.phone}`.slice(0, 160),

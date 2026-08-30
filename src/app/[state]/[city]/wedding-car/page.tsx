@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const { state: stateSlug, city: citySlug } = await params;
   const city = getCity(stateSlug, citySlug);
   if (!city) return {};
-  const canonicalUrl = `${BUSINESS.domain}/${stateSlug}/${citySlug}/wedding-car`;
+  const canonicalUrl = `${BUSINESS.domain}/${stateSlug}/${citySlug}/wedding-car/`;
   return {
     title: `Bridal Car Hire in ${city.name} from ₹5,000 | Decorated Baraat Car | ${BUSINESS.name}`,
     description: `Marriage car hire in ${city.name} for your decorated baraat, guest shuttles and vidaai rides. Sedan ₹5,000, Crysta ₹8,000, Fortuner ₹12,000. Ring ${BUSINESS.phone}`.slice(0, 160),

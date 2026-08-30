@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: `Corporate Car Rental Kolkata | GST Invoice | Employee Transport | ₹25,000/month | ${BUSINESS.name}`,
   description: `B2B corporate cab service in Kolkata. GST invoice for ITC claims. Employee transport from Salt Lake Sector V, New Town IT Park. Monthly contracts from ₹25,000. Call ${BUSINESS.phone}.`.slice(0, 160),
     // keywords meta tag removed — Google ignores it (ignored since 2009), signals spam
-  alternates: { canonical: `${BUSINESS.domain}/services/corporate-car-rental` },
+  alternates: { canonical: `${BUSINESS.domain}/services/corporate-car-rental/` },
   openGraph: {
     title: `Corporate Car Rental Kolkata | GST Invoice | Monthly Contracts | ${BUSINESS.name}`,
     description: `Corporate cab in Kolkata with GST invoice for ITC. Employee transport, executive rental, event fleets. Salt Lake, New Town, Rajarhat coverage. Fixed rates. Call ${BUSINESS.phone}`,

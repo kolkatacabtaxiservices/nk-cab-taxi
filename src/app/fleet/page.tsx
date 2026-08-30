@@ -29,7 +29,7 @@ export const metadata = {
     description: `Driver-included. AC fleet. No surge. Kolkata, Ranchi, 80+ cities. Call ${BUSINESS.phone}`,
     images: [`${BUSINESS.domain}/navbanner.webp`],
   },
-  alternates: { canonical: `${BUSINESS.domain}/fleet` },
+  alternates: { canonical: `${BUSINESS.domain}/fleet/` },
   other: { thumbnail: `${BUSINESS.domain}/navbanner.webp` },
 };
 

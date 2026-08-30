@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: `Terms & Conditions | ${BUSINESS.name}`,
   description: `The booking rules for ${BUSINESS.name} — covering reservations, cancellations, payments, and how we run each trip. Questions? Call ${BUSINESS.phone}.`,
   robots: { index: true, follow: true },
-  alternates: { canonical: `${BUSINESS.domain}/terms` },
+  alternates: { canonical: `${BUSINESS.domain}/terms/` },
   other: {
     thumbnail: `${BUSINESS.domain}/navbanner.webp`,
   },

@@ -154,13 +154,23 @@ function getLinkedVehicleRouteSlugs() {
   return linked.filter(isHubRoute);
 }
 
-// ─── 3. XML Sitemap Builder ───
+// ─── 3. URL Normaliser ───
+// Ensures every sitemap <loc> ends with a trailing slash.
+// The homepage (bare domain, no path) is left as-is — a trailing slash there
+// would be https://www.nkcabtaxi.com/ which is correct and already handled.
+// All other URLs get a `/` appended if they don't already have one.
+function normalizeUrl(url) {
+  if (url === DOMAIN || url === `${DOMAIN}/`) return `${DOMAIN}/`;
+  return url.endsWith('/') ? url : `${url}/`;
+}
+
+// ─── 4. XML Sitemap Builder ───
 function buildSitemapXml(urls) {
   let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
   xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
   for (const item of urls) {
     xml += `  <url>\n`;
-    xml += `    <loc>${item.url}</loc>\n`;
+    xml += `    <loc>${normalizeUrl(item.url)}</loc>\n`;
     xml += `    <lastmod>${item.lastModified}</lastmod>\n`;
     xml += `    <changefreq>${item.changeFrequency}</changefreq>\n`;
     xml += `    <priority>${item.priority.toFixed(2)}</priority>\n`;
@@ -170,7 +180,7 @@ function buildSitemapXml(urls) {
   return xml;
 }
 
-// ─── 4. Generate Sitemaps 0-6 ───
+// ─── 5. Generate Sitemaps 0-6 ───
 
 // --- Sitemap 0: Core pages ---
 const sitemap0Urls = [
@@ -428,7 +438,7 @@ for (const city of cities) {
 fs.writeFileSync(path.join(sitemapDir, '6.xml'), buildSitemapXml(sitemap6Urls));
 console.log(`✓ Generated public/sitemap/6.xml (${sitemap6Urls.length} links)`);
 
-// ─── 5. Generate sitemap_index.xml (auto-discover all generated sitemaps) ───
+// ─── 6. Generate sitemap_index.xml (auto-discover all generated sitemaps) ───
 // Dynamically scan the sitemapDir for all .xml files so we never miss any.
 const generatedSitemapFiles = fs.readdirSync(sitemapDir)
   .filter(f => f.endsWith('.xml'))

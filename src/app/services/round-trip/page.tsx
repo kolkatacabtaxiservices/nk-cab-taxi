@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: `Round Trip Cab Kolkata | Driver Stays With You | Darjeeling, Puri & More | ${BUSINESS.name}`,
   description: `Multi-day round trip cab from Kolkata. Driver stays throughout your tour. Sedan ₹12/km, Innova ₹18/km. Darjeeling 4–5 days, Puri 3–4 days, Varanasi 5–6 days. Call ${BUSINESS.phone}.`.slice(0, 160),
     // keywords meta tag removed — Google ignores it (ignored since 2009), signals spam
-  alternates: { canonical: `${BUSINESS.domain}/services/round-trip` },
+  alternates: { canonical: `${BUSINESS.domain}/services/round-trip/` },
   openGraph: {
     title: `Round Trip Cab Kolkata | Driver Stays | Darjeeling, Puri, Varanasi | ${BUSINESS.name}`,
     description: `Multi-day round trip from Kolkata with driver accommodation included. Darjeeling 4–5 days, Puri 3–4 days. Sedan ₹12/km. Fixed fares. Call ${BUSINESS.phone}`,

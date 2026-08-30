@@ -123,11 +123,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: BUSINESS.domain },
-      { '@type': 'ListItem', position: 2, name: 'Services', item: `${BUSINESS.domain}/services` },
-      { '@type': 'ListItem', position: 3, name: 'Routes', item: `${BUSINESS.domain}/routes` },
-      { '@type': 'ListItem', position: 4, name: 'Fleet', item: `${BUSINESS.domain}/fleet` },
-      { '@type': 'ListItem', position: 5, name: 'Tours', item: `${BUSINESS.domain}/tours` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${BUSINESS.domain}/` },
+      { '@type': 'ListItem', position: 2, name: 'Services', item: `${BUSINESS.domain}/services/` },
+      { '@type': 'ListItem', position: 3, name: 'Routes', item: `${BUSINESS.domain}/routes/` },
+      { '@type': 'ListItem', position: 4, name: 'Fleet', item: `${BUSINESS.domain}/fleet/` },
+      { '@type': 'ListItem', position: 5, name: 'Tours', item: `${BUSINESS.domain}/tours/` },
     ],
   };
 
@@ -138,12 +138,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     name: 'NK Cab & Taxi — Cab Services',
     description: 'All taxi and cab services offered by NK Cab & Taxi across East India',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Outstation Cab Service', url: `${BUSINESS.domain}/services/outstation` },
-      { '@type': 'ListItem', position: 2, name: 'Airport Transfer Service', url: `${BUSINESS.domain}/services/airport-transfer` },
-      { '@type': 'ListItem', position: 3, name: 'Local Taxi Service', url: `${BUSINESS.domain}/services/local-taxi` },
-      { '@type': 'ListItem', position: 4, name: 'One Way Cab Service', url: `${BUSINESS.domain}/services/one-way` },
-      { '@type': 'ListItem', position: 5, name: 'Wedding Car Rental', url: `${BUSINESS.domain}/services/wedding-car-rental` },
-      { '@type': 'ListItem', position: 6, name: 'Corporate Car Rental', url: `${BUSINESS.domain}/services/corporate-car-rental` },
+      { '@type': 'ListItem', position: 1, name: 'Outstation Cab Service', url: `${BUSINESS.domain}/services/outstation/` },
+      { '@type': 'ListItem', position: 2, name: 'Airport Transfer Service', url: `${BUSINESS.domain}/services/airport-transfer/` },
+      { '@type': 'ListItem', position: 3, name: 'Local Taxi Service', url: `${BUSINESS.domain}/services/local-taxi/` },
+      { '@type': 'ListItem', position: 4, name: 'One Way Cab Service', url: `${BUSINESS.domain}/services/one-way/` },
+      { '@type': 'ListItem', position: 5, name: 'Wedding Car Rental', url: `${BUSINESS.domain}/services/wedding-car-rental/` },
+      { '@type': 'ListItem', position: 6, name: 'Corporate Car Rental', url: `${BUSINESS.domain}/services/corporate-car-rental/` },
     ],
   };
 

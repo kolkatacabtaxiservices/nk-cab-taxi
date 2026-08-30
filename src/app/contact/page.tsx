@@ -28,7 +28,7 @@ export const metadata = {
     description: `Call or WhatsApp ${BUSINESS.phone}. No app needed. Confirmed in 2 minutes from ₹12/km.`,
     images: [`${BUSINESS.domain}/navbanner.webp`],
   },
-  alternates: { canonical: `${BUSINESS.domain}/contact` },
+  alternates: { canonical: `${BUSINESS.domain}/contact/` },
   other: { thumbnail: `${BUSINESS.domain}/navbanner.webp` },
 };
 

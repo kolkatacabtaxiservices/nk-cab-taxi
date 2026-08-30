@@ -40,9 +40,16 @@
 /services/two-way /services/round-trip/ 301
 /:state/:city/two-way /:state/:city/round-trip/ 301
 
-# ── Fix: Non-trailing-slash → trailing slash (trailingSlash: true canonical) ──
-# Netlify serves index.html automatically for /path/ but NOT for /path
-# This catch-all ensures old links (GSC-indexed, backlinks) get 301'd cleanly.
-/routes/:slug /routes/:slug/ 301
-/:state/:city/:service /:state/:city/:service/ 301
-/:state/:city /:state/:city/ 301
+# ── Trailing slash: handled natively by Next.js trailingSlash:true ────────────
+# With output:"export" + trailingSlash:true, Next.js generates every page as
+# slug/index.html. Netlify serves slug/index.html at /slug/ returning 200.
+# The old catch-all rules below are REMOVED — they were redundant with the
+# static file structure and could create loops in edge cases.
+#
+# REMOVED (redundant):
+#   /routes/:slug /routes/:slug/ 301
+#   /:state/:city/:service /:state/:city/:service/ 301
+#   /:state/:city /:state/:city/ 301
+#
+# If Netlify ever needs a fallback for non-slash → slash, uncomment ONE rule:
+# /* /:splat/ 301  <-- nuclear option: only if Netlify stops serving index.html
