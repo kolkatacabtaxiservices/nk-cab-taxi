@@ -1,4 +1,4 @@
-﻿User-agent: *
+User-agent: *
 Allow: /
 Disallow: /api/
 # Allow JS/CSS chunks for full rendering (Core Web Vitals, mobile-usability) -- v2
@@ -9,6 +9,8 @@ Disallow: /*?car=suv
 Disallow: /*?car=tempo
 Disallow: /*?car=luxury
 Disallow: /*?car=innova
+# Block all other query string variants (prevent crawl budget waste)
+Disallow: /*?*
 
 # ── AI / scraper bots — disallow training crawls ──────────────────────────────
 User-agent: Amazonbot
@@ -107,3 +109,14 @@ Allow: /
 
 # Primary sitemap index — Googlebot fetches this first
 Sitemap: https://www.nkcabtaxi.com/sitemap_index.xml
+# Sub-sitemaps — listed explicitly for faster discovery
+Sitemap: https://www.nkcabtaxi.com/sitemap/0.xml
+Sitemap: https://www.nkcabtaxi.com/sitemap/1.xml
+Sitemap: https://www.nkcabtaxi.com/sitemap/2.xml
+Sitemap: https://www.nkcabtaxi.com/sitemap/2_1.xml
+Sitemap: https://www.nkcabtaxi.com/sitemap/2_2.xml
+Sitemap: https://www.nkcabtaxi.com/sitemap/2_3.xml
+Sitemap: https://www.nkcabtaxi.com/sitemap/3.xml
+Sitemap: https://www.nkcabtaxi.com/sitemap/4.xml
+Sitemap: https://www.nkcabtaxi.com/sitemap/5.xml
+Sitemap: https://www.nkcabtaxi.com/sitemap/6.xml

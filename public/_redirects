@@ -44,6 +44,28 @@
 /routes/ranaghat-to-ranchi /routes/ranaghat-to-ranchi/ 301
 /routes/*/tempo /routes/:splat/ 301
 
+# ── Fix: GSC 404 errors — route slugs removed from data → redirect to routes/ ──
+# These routes were previously indexed but no longer have pages.
+# 301 redirect resolves the GSC "Not found (404)" validation failures.
+/routes/latehar-to-prayagraj /routes/ 301
+/routes/asansol-to-lohardaga /routes/ 301
+/routes/purulia-to-mayapur /routes/ 301
+/routes/purulia-to-mandarmani /routes/ 301
+/routes/jamshedpur-to-jhargram /routes/ 301
+/routes/mandarmani-to-gaya /routes/ 301
+/routes/siliguri-to-lohardaga /routes/ 301
+/routes/howrah-to-lohardaga /routes/ 301
+/routes/murshidabad-to-lohardaga /routes/ 301
+/routes/berhampore-to-lohardaga /routes/ 301
+/routes/krishnanagar-to-lohardaga /routes/ 301
+/routes/ranaghat-to-lohardaga /routes/ 301
+/routes/barrackpore-to-lohardaga /routes/ 301
+/routes/kalyani-to-lohardaga /routes/ 301
+/routes/kolkata-to-lohardaga /routes/ 301
+/routes/balurghat-to-prayagraj /routes/ 301
+/routes/malda-to-lohardaga /routes/ 301
+/routes/bolpur-to-lohardaga /routes/ 301
+
 
 # ── Fix: Legacy Kolkata area URLs ─────────────────────────────────────────────
 /west-bengal/salt-lake-kolkata /kolkata/salt-lake/ 301
